@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 class App extends Component {
     render() {
         return (
-            <h1>Hello world it works !</h1>
+            <h1>Hello world! Django + React is complete</h1>
         )
     }
 }
