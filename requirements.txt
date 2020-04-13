@@ -1,5 +1,16 @@
+aniso8601==7.0.0
 asgiref==3.2.7
 Django==3.0.5
+django-rest-framework==0.1.0
+djangorestframework==3.11.0
+graphene==2.1.8
+graphene-django==2.9.1
+graphql-core==2.3.1
+graphql-relay==2.0.1
 Pillow==7.1.1
+promise==2.3
 pytz==2019.3
+Rx==1.6.1
+singledispatch==3.4.0.3
+six==1.14.0
 sqlparse==0.3.1
