@@ -1,0 +1,25 @@
+{
+  "name": "thapar_app",
+  "version": "1.0.0",
+  "description": "Thapar Application",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/developer-student-club-thapar/thapar_app.git"
+  },
+  "keywords": [
+    "Thapar",
+    "University",
+    "Application"
+  ],
+  "author": "Shreshth Arora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developer-student-club-thapar/thapar_app/issues"
+  },
+  "homepage": "https://github.com/developer-student-club-thapar/thapar_app#readme"
+}
