@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import Header from './layout/Header';
-import Dashboard from './leads/Dashboard';
+// import Header from './layout/Header';
+// import Dashboard from './leads/Dashboard';
 import store from '../store';
 import { Provider } from 'react-redux';
 
