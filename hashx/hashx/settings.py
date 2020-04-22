@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     'users',
+    'acad',
+    'society',
+    'members',
     'frontend'
+
 ]
 
 MIDDLEWARE = [
@@ -122,4 +126,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'users.models.Student'
