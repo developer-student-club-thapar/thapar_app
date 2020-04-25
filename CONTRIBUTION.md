@@ -7,6 +7,11 @@ We follow a systematic Git Workflow -
 - **Every change** that you do, it has to be on a branch. Commits on master would directly be closed.
 - Make sure that before you create a new branch for new changes,[syncing with upstream](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) is neccesary.
 
+## Setting up pre-commit hooks
+Make sure that you install pre-commit hooks before you make any contributions so that your code is refactored according to standards.
+To do that run the following inside the project repo -
+```pre-commit install``` 
+
 ## Setup and running of project (Backend)
 - Fork the repo and clone it.
 - Go in the repo and setup virtualenvironment using <br>
