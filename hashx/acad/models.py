@@ -30,7 +30,7 @@ class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=35)
     code = models.CharField(max_length=10)
-    course_site = models.URLField()
+    course_site = models.URLField()  # Links to old field of the site
 
     credit = models.DecimalField(default=0.0, decimal_places=1, max_digits=3)
     l = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
@@ -49,7 +49,7 @@ class Course(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
-    syllabus = models.TextField()
+    syllabus = models.TextField()  # Need this to makdown
 
     class Meta:
         verbose_name = ("Course")

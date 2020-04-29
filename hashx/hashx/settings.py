@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'users',
     'acad',
     'society',
+    'featurenbug',
+    'buzz',
+    'wifipass',
+    'timetable',
     'members',
     'frontend'
 
