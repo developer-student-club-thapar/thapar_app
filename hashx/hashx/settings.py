@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'society',
     'featurenbug',
     'buzz',
+    'hostel',
     'wifipass',
     'timetable',
     'members',
