@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from timetable.models import Location
 import uuid
 
 
@@ -47,23 +47,23 @@ class Event(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
-
+    date_modified = models.DateTimeField(null=True)
     # WHEN
     start_time = models.DateTimeField(default=timezone.now)
     end_time = models.DateTimeField(default=timezone.now)
 
     # WHERE
-    place = models.CharField(max_length=100)
+    place = models.ForeignKey(Location, on_delete=models.SET_NULL, null=True)
     inCampus = models.BooleanField()
-    #location = map_fields.AddressField(max_length=200)
-    location = models.URLField(null=True)
+
+    # if Outside Campus
+    location = models.CharField(max_length=200, null=True)
+    location_url = models.URLField(null=True)
 
     # Poster Image
     poster_image = models.ImageField(
         default='event_photo.jpg', upload_to='event_photos')
     external_link = models.URLField()
-
-    # Logical Connections
 
     #attendee = models.ManyToManyField(User)
     society = models.ForeignKey(

@@ -42,6 +42,11 @@ class TimetableBoard(models.Model):
 
 
 class Location(models.Model):
+    """
+    This Location Model is used to contain all the non resendital buildings that are in Thapar 
+    It Connects to both the TimeTable Locations and the Society Event Location. 
+    This Database needs to be populated by the members Team
+    """
     BUILDING = [
         ("TAN", "TAN"),
         ("LP", "LP"),
@@ -53,21 +58,35 @@ class Location(models.Model):
         ("E", "E Block"),
         ("F", "F Block"),
         ("G", "G Block"),
+        ("COS", "COS"),  # COS ke andar vale room
+        ("OAT", "OAT"),
+        ("LIB", "Library"),
+        ("MEC", "Mechanical Block"),
+        ("AUDI", "Auditorium"),
+        ("GH", "Guest House"),
+        ("SP", "Sports Ground"),  # Fill Room no. with Game Names in this field
+
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    building = models.CharField(max_length=3, choices=BUILDING)
-    room_no = models.CharField(max_length=4)
-    floor = models.PositiveSmallIntegerField()
+    building = models.CharField(max_length=4, choices=BUILDING)
+    room = models.CharField(max_length=10,  null=True)
+    floor = models.PositiveSmallIntegerField(null=True)
+
+    published = models.BooleanField(default=True)
+    # Use it as a visibilty Switch
 
     # Latitude and Logitude Data
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     latitute = models.DecimalField(max_digits=9, decimal_places=6)
-
+    location = models.URLField(null=True)  # Google Map link for location
     # Maybe connect online DWG CAD files in it one day 😂 so that it can be made as a virtual campus who knows LOLLL
 
     def __str__(self):
-        return f'{self.building} {self.room_no}'
+        if self.room:
+            return f'{self.building} {self.room}'
+        else:
+            return f'{self.building}'
 
 
 class Class(models.Model):
