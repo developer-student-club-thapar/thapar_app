@@ -16,8 +16,8 @@ Including another URLconf
 from .schema import schema
 from django.contrib import admin
 from django.urls import path, include
-# from django.views.decorators.csrf import csrf_exempt
-# from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
 
 
 urlpatterns = [
@@ -25,6 +25,6 @@ urlpatterns = [
 
     # Frontend should load before any application !
     path('', include('frontend.urls')),
-    #path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
     # path('', include('users.urls'))
 ]
