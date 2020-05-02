@@ -47,10 +47,13 @@ INSTALLED_APPS = [
     'acad',
     'society',
     'featurenbug',
+    'lostandfound',
     'buzz',
     'hostel',
+    'shop',
     'wifipass',
     'timetable',
+    'analytics',
     'members',
     'frontend'
 
