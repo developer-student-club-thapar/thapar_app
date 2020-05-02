@@ -117,3 +117,12 @@ class Class(models.Model):
     published = models.BooleanField(default=True)  # Site Wide On-OFF Switch
     # Public/Private On-OFF Switch
     private = models.BooleanField(default=False)
+
+
+class Holidays(models.Model):
+    """
+    Listed Holidays from Thapar Website
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.DateTimeField(max_length=250)
+    date = models.DateField()

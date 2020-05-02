@@ -124,3 +124,15 @@ class Textbook(models.Model):
 
     def get_absolute_url(self):
         return reverse("textbook-detail", kwargs={"pk": self.pk})
+
+
+class AcademicCalendar(models.Model):
+    TYPES = [
+        ("ODD", "ODD"),
+        ("EVEN", "EVEN"),
+    ]
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    type = models.CharField(choices=TYPES, max_length=30)
+    name = models.CharField(max_length=256)
+    start_date = models.DateField()
+    end_date = models.DateField()
