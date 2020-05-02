@@ -64,7 +64,7 @@ class ShopItemReview(models.Model):
 
 class ShopReview(models.Model):
     """
-    Shop Review for User to make Review on whole Shop Item 
+    Shop Review for User to make Review on whole Shop 
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
