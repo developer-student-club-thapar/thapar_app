@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'acad',
     'society',
     'featurebug',
-    'lostandfound',
+    'lostfound',
     'buzz',
     'hostel',
     'shop',
