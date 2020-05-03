@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import FeaturenBug, FeaturenBugCategory, FeaturenBugStatus
+
 # Register your models here.
+from .models import FeaturenBug, FeaturenBugCategory, FeaturenBugStatus
 admin.site.register(FeaturenBug)
-admin.site.register(FeaturenBugStatus)
 admin.site.register(FeaturenBugCategory)
+admin.site.register(FeaturenBugStatus)

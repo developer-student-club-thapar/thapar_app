@@ -159,3 +159,6 @@ yarn-debug.log*
 yarn-error.log*
 
 venv/
+
+# Testing Database
+db.json
