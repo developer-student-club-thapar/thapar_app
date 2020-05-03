@@ -1,11 +1,14 @@
 import graphene
 from graphene_django.types import DjangoObjectType
 from .models import Society, Event
-from users.schema import UserType
+# from users.schema import UserType
+
 
 class SocietyType(DjangoObjectType):
     class Meta:
         model = Society
+
+
 class EventType(DjangoObjectType):
     class Meta:
         model = Event
@@ -14,29 +17,29 @@ class EventType(DjangoObjectType):
 class Query(object):
     all_society = graphene.List(SocietyType)
     society = graphene.List(
-        SocietyType ,
+        SocietyType,
         id=graphene.UUID(),
         name=graphene.String(),
         student_head=graphene.String(),
         category=graphene.String(),
         site_link=graphene.String(),
-        logo = graphene.String(),
-        image = graphene.String(),
-        user = graphene.String()
-        )
+        logo=graphene.String(),
+        image=graphene.String(),
+        user=graphene.String()
+    )
 
     def resolve_all_society(self, info, **kwargs):
         return Society.objects.all()
 
-    def resolve_society(self , info , **kwargs):
+    def resolve_society(self, info, **kwargs):
         id = kwargs.get('id')
         name = kwargs.get('name')
-        student_head=kwargs.get('student_head')
-        category=kwargs.get('category')
-        site_link=kwargs.get('site_link')
+        student_head = kwargs.get('student_head')
+        category = kwargs.get('category')
+        site_link = kwargs.get('site_link')
         logo = kwargs.get('logo')
         image = kwargs.get('image')
-        user = kwargs.get('user')#takes id as input
+        user = kwargs.get('user')  # takes id as input
 
         if id is not None:
             return Society.objects.filter(pk=id)
@@ -49,42 +52,42 @@ class Query(object):
         if site_link is not None:
             return Society.objects.filter(site_link=site_link).all()
         if user is not None:
-            return Society.objects.filter(user=user).all() 
+            return Society.objects.filter(user=user).all()
         return None
-        #Add query for returning image and logo path
-        
+        # Add query for returning image and logo path
+
     event = graphene.List(
         EventType,
-        id = graphene.UUID(),
-        title = graphene.String(),
-        content = graphene.String(),
-        date_posted = graphene.types.datetime.Date(),
-        start_time = graphene.types.datetime.Time(),
-        end_time = graphene.types.datetime.Time(),
-        place = graphene.String(),
-        inCampus = graphene.Boolean(),
-        location = graphene.String(),
-        society = graphene.String(),
-        external_link = graphene.String(),
-        poster_image = graphene.String()
-        )    
+        id=graphene.UUID(),
+        title=graphene.String(),
+        content=graphene.String(),
+        date_posted=graphene.types.datetime.Date(),
+        start_time=graphene.types.datetime.Time(),
+        end_time=graphene.types.datetime.Time(),
+        place=graphene.String(),
+        inCampus=graphene.Boolean(),
+        location=graphene.String(),
+        society=graphene.String(),
+        external_link=graphene.String(),
+        poster_image=graphene.String()
+    )
 
     all_event = graphene.List(EventType)
 
     def resolve_all_event(self, info, **kwargs):
         return Event.objects.all()
 
-    def resolve_event(self , info , **kwargs):
+    def resolve_event(self, info, **kwargs):
         id = kwargs.get('id')
-        title=kwargs.get('title')
-        date_posted=kwargs.get('date_posted')
-        start_time=kwargs.get('start_time')
+        title = kwargs.get('title')
+        date_posted = kwargs.get('date_posted')
+        start_time = kwargs.get('start_time')
         end_time = kwargs.get('end_time')
-        place=kwargs.get('place')
-        inCampus=kwargs.get('inCampus')
-        location=kwargs.get('location')
-        external_link=kwargs.get('external_link')
-        society=kwargs.get('society') #takes UUID as argument
+        place = kwargs.get('place')
+        inCampus = kwargs.get('inCampus')
+        location = kwargs.get('location')
+        external_link = kwargs.get('external_link')
+        society = kwargs.get('society')  # takes UUID as argument
         if id is not None:
             return Event.objects.filter(pk=id)
         if title is not None:
@@ -106,4 +109,4 @@ class Query(object):
         if external_link is not None:
             return Event.objects.filter(external_link=external_link).all()
         return None
-        #add query for returning poster_image
+        # add query for returning poster_image
