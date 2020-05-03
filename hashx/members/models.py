@@ -7,6 +7,7 @@ from django import forms
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
+import uuid
 
 
 class Member(models.Model):
@@ -24,6 +25,7 @@ class Member(models.Model):
         Instagram_url : URLField
         Image : imageField
     """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=255)
     user = models.ForeignKey(User, related_name='Member', related_query_name='Member',
                              on_delete=models.CASCADE)
@@ -35,23 +37,23 @@ class Member(models.Model):
     medium_url = models.URLField(blank=True)
     dev_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)
-    image = models.ImageField(
-        upload_to='member-profile-images/', blank=True)
+    # image = models.ImageField(
+    #     upload_to='member-profile-images/', blank=True)
 
     def save(self, *args, **kwargs):
-        if not self.id:
-            self.image = self.compressImage(self.image)
+        # if not self.id:
+        #     self.image = self.compressImage(self.image)
         super(Member, self).save(*args, **kwargs)
 
-    def compressImage(self, image):
-        imageTemproary = Image.open(image)
-        outputIoStream = BytesIO()
-        # imageTemproaryResized = imageTemproary.resize((1020, 573))
-        imageTemproary.save(outputIoStream, format='JPEG', quality=60)
-        outputIoStream.seek(0)
-        image = InMemoryUploadedFile(outputIoStream, 'ImageField', "%s.jpg" % image.name.split('.')[
-            0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
-        return image
+    # def compressImage(self, image):
+    #     imageTemproary = Image.open(image)
+    #     outputIoStream = BytesIO()
+    #     # imageTemproaryResized = imageTemproary.resize((1020, 573))
+    #     imageTemproary.save(outputIoStream, format='JPEG', quality=60)
+    #     outputIoStream.seek(0)
+    #     image = InMemoryUploadedFile(outputIoStream, 'ImageField', "%s.jpg" % image.name.split('.')[
+    #         0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+    #     return image
 
     def __str__(self):
         return self.name
