@@ -80,8 +80,9 @@ class Branch(models.Model):
     code = models.CharField(max_length=3, default=None, blank=True, null=True)
     name = models.CharField(max_length=35, default=None, blank=True, null=True)
     course = models.ManyToManyField(Course, default=None, blank=True)
+    # The Above Course Many To Many Field will be used always for checking out which subjects the student is categories to
     created_date = models.DateTimeField(
-        default=timezone.now, blank=True, null=True)
+        default=timezone.now, editable=False)
 
     def __str__(self):
         return f'{self.year} {self.name} ({self.code}) {self.created_date}'
@@ -90,11 +91,29 @@ class Branch(models.Model):
         return reverse("branch-detail", kwargs={"pk": self.pk})
 
 
+class FirstYearBatch(models.Model):
+    """
+    This is being designed For For Handling Batchs for First Year 
+    cause they follow a different pattern than most, rest 3 years ( 2 - 4 )
+    When First Year Signs Up this is the Batch to be alloted
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    code = models.CharField(max_length=1)  # Batch Code Stuff ABCD...MNOP Part
+    no = models.PositiveSmallIntegerField()  # 1..5
+    GR = models.OneToOneField(User, on_delete=models.CASCADE)
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
+
+
 class Batch(models.Model):
+    """
+    Valid Only for 2 - 4th Year 
+    When 2-4 yearuser Signs Up this is the Batch to be alloted
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    num = models.IntegerField()
-    created_date = models.DateTimeField(default=timezone.now)
+    num = models.IntegerField()  # 1..N
+    GR = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
         verbose_name = ("Batch")
@@ -126,7 +145,8 @@ class Textbook(models.Model):
         return reverse("textbook-detail", kwargs={"pk": self.pk})
 
 
-class AcademicCalendar(models.Model):
+class AcademicCalendar(models.Model):  # Don't make mutations of this model
+
     TYPES = [
         ("ODD", "ODD"),
         ("EVEN", "EVEN"),
