@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'timetable',
     'analytics',
     'members',
+    'chat',
     'frontend'
 
 ]
