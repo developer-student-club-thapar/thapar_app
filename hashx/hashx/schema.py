@@ -10,6 +10,7 @@ import acad.schema as acad_schema
 import members.schema as members_schema
 import acad.mutation as acad_mutations
 import members.mutation as member_mutations
+import shop.mutation as shop_mutations
 
 
 class Query(acad_schema.Query, members_schema.Query, society_schema.Query, shop_schema.RelayQuery, timetable_schema.RelayQuery, wifipass_schema.Query,  graphene.ObjectType):
@@ -18,8 +19,8 @@ class Query(acad_schema.Query, members_schema.Query, society_schema.Query, shop_
     # as we begin to add more apps to the project
     pass
 
-class Mutation(acad_mutations.Mutation, member_mutations.Mutation, graphene.ObjectType):
+class Mutation(acad_mutations.Mutation,shop_mutations.Mutation ,member_mutations.Mutation, graphene.ObjectType):
     pass
 
 
-schema = graphene.Schema(query=Query)
+schema = graphene.Schema(query=Query , mutation=Mutation)
