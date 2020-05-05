@@ -1,7 +1,7 @@
 import graphene
 from .shoptype_crud import CreateShopType , UpdateShopType
 from .shop_crud import CreateShop , UpdateShop
-from shoptitem_crud import CreateShopItem , UpdateShopItem
+from .shopitem_crud import CreateShopItem , UpdateShopItem
 class Mutation(graphene.AbstractType):
     create_shop = CreateShop.Field()
     update_shop = UpdateShop.Field()
