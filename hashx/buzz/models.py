@@ -84,9 +84,6 @@ class BuzzPost(models.Model):
         ordering = ['-date_posted']
         verbose_name_plural = "Buzz Posts"
 
-    def __str__(self):
-        return self.name
-
     def get_absolute_url(self):
         return reverse("buzz-buzzpost-detail", kwargs={"pk": self.pk})
 

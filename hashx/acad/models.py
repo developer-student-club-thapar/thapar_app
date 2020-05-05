@@ -80,8 +80,9 @@ class Branch(models.Model):
     code = models.CharField(max_length=3, default=None, blank=True, null=True)
     name = models.CharField(max_length=35, default=None, blank=True, null=True)
     course = models.ManyToManyField(Course, default=None, blank=True)
+    # The Above Course Many To Many Field will be used always for checking out which subjects the student is categories to
     created_date = models.DateTimeField(
-        default=timezone.now, blank=True, null=True)
+        default=timezone.now, editable=False)
 
     def __str__(self):
         return f'{self.year} {self.name} ({self.code}) {self.created_date}'
@@ -90,11 +91,29 @@ class Branch(models.Model):
         return reverse("branch-detail", kwargs={"pk": self.pk})
 
 
+class FirstYearBatch(models.Model):
+    """
+    This is being designed For For Handling Batchs for First Year 
+    cause they follow a different pattern than most, rest 3 years ( 2 - 4 )
+    When First Year Signs Up this is the Batch to be alloted
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    code = models.CharField(max_length=1)  # Batch Code Stuff ABCD...MNOP Part
+    no = models.PositiveSmallIntegerField()  # 1..5
+    GR = models.OneToOneField(User, on_delete=models.CASCADE)
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
+
+
 class Batch(models.Model):
+    """
+    Valid Only for 2 - 4th Year 
+    When 2-4 yearuser Signs Up this is the Batch to be alloted
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    num = models.IntegerField()
-    created_date = models.DateTimeField(default=timezone.now)
+    num = models.IntegerField()  # 1..N
+    GR = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
+    created_date = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
         verbose_name = ("Batch")
@@ -126,7 +145,70 @@ class Textbook(models.Model):
         return reverse("textbook-detail", kwargs={"pk": self.pk})
 
 
-class AcademicCalendar(models.Model):
+class FileType(models.Model):
+    """
+    Used to Mark weather this file is a Tutorial File, Tutorial Solution File or a Notes File. etc. depednding on
+    the needs and requirements of the course 
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=64, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class FileTags(models.Model):
+    """
+    No description needed
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=64, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class File(models.Model):
+    """
+    Not More than 10 file upload day per day per user so that traffic is handleable
+    Functions work for the models need to built in.
+    """
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    type = models.ForeignKey(FileType, on_delete=models.PROTECT)
+    tags = models.ManyToManyField(FileTags)
+    file = models.FileField(upload_to="academic_File")
+    thumnail_image = models.ImageField(upload_to="academic_file_thumbnails")
+    # Main Object
+    date_posted = models.DateTimeField(default=timezone.now, editable=False)
+    name = models.CharField(max_length=128)
+    about = models.TextField(max_length=512, null=True)
+    # This Allows anytype of user to post on the website checks neeeded for authrization.
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    # Connect this with any Academic Object that is required.
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True)
+    # Batch Specific Academic Files are also entertained.  So That specfic stuff could be made.
+    # Keep Batch Support for Later Stages
+    batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
+    drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
+    # Turn this off to False after inital DB Setup
+    published = models.BooleanField(default=True)
+
+    admin_starred = models.BooleanField(default=False)
+    # in UI a star to show as if like Editor's Choice Stuff
+    is_reviewed = models.BooleanField(default=False)
+    # Is Reviewed is a File that has been checked by an independent Fact Checker!
+    slug = models.SlugField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+class AcademicCalendar(models.Model):  # Don't make mutations of this model
+    """
+    Refer to doc : https://drive.google.com/file/d/1NZLMKmbKw_S0W0MKPcbpGS9RUSddqBNl/view
+    for poulating this Data in Database 
+    """
     TYPES = [
         ("ODD", "ODD"),
         ("EVEN", "EVEN"),

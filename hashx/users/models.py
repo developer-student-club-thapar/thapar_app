@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from acad.models import Branch, Batch, Course, Textbook
+from acad.models import Branch, Batch, Course, Textbook, FirstYearBatch, File
 from django.utils import timezone
 import uuid
 
@@ -21,9 +21,10 @@ class Student(models.Model):
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     bio = models.CharField(max_length=256)
 
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    batch = models.ForeignKey(Batch,  on_delete=models.CASCADE)
-
+    branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
+    batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True)
+    firstyearbatch = models.ForeignKey(
+        FirstYearBatch, on_delete=models.PROTECT, null=True)
     points = models.DecimalField(default=0, max_digits=20, decimal_places=2)
     GENDER_CHOICES = [
         ('M', 'MALE'),
@@ -33,6 +34,8 @@ class Student(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
+    # starred Files of any particular user
+    starred_files = models.ManyToManyField(File)
 
     def __str__(self):
         return f'{self.user.username} Profile'
