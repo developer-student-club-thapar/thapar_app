@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from acad.models import Branch, Batch, Course, Textbook, FirstYearBatch
+from acad.models import Branch, Batch, Course, Textbook, FirstYearBatch, File
 from django.utils import timezone
 import uuid
 
@@ -34,6 +34,8 @@ class Student(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
+    # starred Files of any particular user
+    starred_files = models.ManyToManyField(File)
 
     def __str__(self):
         return f'{self.user.username} Profile'

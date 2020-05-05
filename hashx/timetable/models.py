@@ -122,6 +122,8 @@ class Class(models.Model):
 class Holidays(models.Model):
     """
     Listed Holidays from Thapar Website
+    refer to this doc for populating
+    https://drive.google.com/file/d/1IrTFyWEsGBiRxkKnN2l4Fr9Nnp_hqJmA/view
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.DateTimeField(max_length=250)
