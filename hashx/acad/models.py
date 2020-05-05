@@ -177,7 +177,7 @@ class File(models.Model):
     type = models.ForeignKey(FileType, on_delete=models.PROTECT)
     tags = models.ManyToManyField(FileTags)
     file = models.FileField(upload_to="academic_File")
-    thumnail_image = models.ImageField(upload_to="academic_file")
+    thumnail_image = models.ImageField(upload_to="academic_file_thumbnails")
     # Main Object
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
     name = models.CharField(max_length=128)
