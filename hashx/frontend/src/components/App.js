@@ -1,17 +1,23 @@
-import React, { Component, Fragment } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, Fragment } from "react";
+import ReactDOM from "react-dom";
 // import Header from './layout/Header';
 // import Dashboard from './leads/Dashboard';
-import store from '../store';
-import { Provider } from 'react-redux';
+import store from "../store";
+import { Provider } from "react-redux";
+import SideNav from "./SideNav";
+import { HashRouter as Router } from "react-router-dom";
+import Routes from "../routes";
+import history from "../services/history";
 
+const App = () => {
+  return (
+    <Router history={history}>
+      <div className="App">
+        <SideNav />
+        <Routes />
+      </div>
+    </Router>
+  );
+};
 
-class App extends Component {
-    render() {
-        return (
-            <h1>Hello world! Django + React is complete</h1>
-        )
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById("app"));
