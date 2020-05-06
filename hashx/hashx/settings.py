@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'society',
     'featurebug',
     'lostfound',
+    'permission',
     'buzz',
     'hostel',
     'forum',
