@@ -79,7 +79,7 @@ class Location(models.Model):
     # Latitude and Logitude Data
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     latitute = models.DecimalField(max_digits=9, decimal_places=6)
-    location = models.URLField(null=True)  # Google Map link for location
+    location_url = models.URLField(null=True)  # Google Map link for location
     # Maybe connect online DWG CAD files in it one day 😂 so that it can be made as a virtual campus who knows LOLLL
 
     def __str__(self):
@@ -103,8 +103,7 @@ class Class(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(null=True)
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
-    timetableboard = models.ForeignKey(
-        TimetableBoard, on_delete=models.CASCADE)
+    
 
     # WHEN
     day = models.DateTimeField(max_length=10, choices=DAYS)
@@ -126,5 +125,5 @@ class Holidays(models.Model):
     https://drive.google.com/file/d/1IrTFyWEsGBiRxkKnN2l4Fr9Nnp_hqJmA/view
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.DateTimeField(max_length=250)
+    name = models.TextField()
     date = models.DateField()
