@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'analytics',
     'members',
     'chat',
+    'exam',
     'frontend'
 
 ]
