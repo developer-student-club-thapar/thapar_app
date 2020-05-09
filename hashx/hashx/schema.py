@@ -7,6 +7,7 @@ import timetable.schema as timetable_schema
 import shop.schema as shop_schema
 import acad.schema as acad_schema
 import featurebug.schema as featurebug_schema
+import featurebug.mutation as featurebug_mutations
 import members.schema as members_schema
 import acad.mutation as acad_mutations
 import members.mutation as member_mutations
@@ -21,7 +22,7 @@ class Query(acad_schema.Query, members_schema.Query, society_schema.Query,exam_s
     # as we begin to add more apps to the project
     pass
 
-class Mutation(acad_mutations.Mutation,exam_mutations.Mutation ,timetable_mutations.Mutation , shop_mutations.Mutation ,member_mutations.Mutation, graphene.ObjectType):
+class Mutation(acad_mutations.Mutation,exam_mutations.Mutation ,featurebug_mutations.Mutation,timetable_mutations.Mutation , shop_mutations.Mutation ,member_mutations.Mutation, graphene.ObjectType):
     pass
 
 
