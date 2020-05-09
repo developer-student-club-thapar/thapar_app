@@ -1,5 +1,4 @@
 import graphene
-from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
@@ -41,12 +40,8 @@ class ShopNode(DjangoObjectType):
     class Meta:
         model = Shop
         interfaces = (graphene.relay.Node , )
-to_global_id(ShopNode._meta.name, Shop.pk)
         
     
-    # pk = graphene.UUID()
-    # def resolve_pk(self , info):
-    #     return self.pk
        
 
 class ShopItemFilter(django_filters.FilterSet):
