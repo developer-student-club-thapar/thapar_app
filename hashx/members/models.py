@@ -37,35 +37,35 @@ class Member(models.Model):
     medium_url = models.URLField(blank=True)
     dev_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)
-    # image = models.ImageField(
-    #     upload_to='member-profile-images/', blank=True)
+    image = models.ImageField(
+        upload_to='member-profile-images/', blank=True)
 
     def save(self, *args, **kwargs):
-        # if not self.id:
-        #     self.image = self.compressImage(self.image)
+        if not self.id:
+            self.image = self.compressImage(self.image)
         super(Member, self).save(*args, **kwargs)
 
-    # def compressImage(self, image):
-    #     imageTemproary = Image.open(image)
-    #     outputIoStream = BytesIO()
-    #     # imageTemproaryResized = imageTemproary.resize((1020, 573))
-    #     imageTemproary.save(outputIoStream, format='JPEG', quality=60)
-    #     outputIoStream.seek(0)
-    #     image = InMemoryUploadedFile(outputIoStream, 'ImageField', "%s.jpg" % image.name.split('.')[
-    #         0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
-    #     return image
+    def compressImage(self, image):
+        imageTemproary = Image.open(image)
+        outputIoStream = BytesIO()
+        # imageTemproaryResized = imageTemproary.resize((1020, 573))
+        imageTemproary.save(outputIoStream, format='JPEG', quality=60)
+        outputIoStream.seek(0)
+        image = InMemoryUploadedFile(outputIoStream, 'ImageField', "%s.jpg" % image.name.split('.')[
+            0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
+        return image
 
     def __str__(self):
         return self.name
 
 
-class VoluteershipType(models.Model):
+class VolunteershipType(models.Model):
     name = models.CharField(max_length=50)
     details = models.TextField(max_length=500)
     mini_logo = models.ImageField(null=True)
 
 
-class VoluteershipApplication(models.Model):
+class VolunteershipApplication(models.Model):
     # User Type connection for Application of Volunteership
-    type = models.ForeignKey(VoluteershipType, on_delete=models.CASCADE)
+    type = models.ForeignKey(VolunteershipType, on_delete=models.CASCADE)
     why = models.TextField(max_length=1000)
