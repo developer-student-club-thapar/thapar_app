@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Badge from "@material-ui/core/Badge";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import IconButton from "@material-ui/core/IconButton";
-import Popover from "@material-ui/core/Popover";
-import Paper from "@material-ui/core/Paper";
+import React, { Fragment } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import IconButton from '@material-ui/core/IconButton';
+import Popover from '@material-ui/core/Popover';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& > *": {
+    '& > *': {
       margin: theme.spacing(1),
     },
   },
@@ -26,12 +26,12 @@ const Notifications = () => {
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const id = open ? 'simple-popover' : undefined;
   return (
     <Fragment>
       <IconButton
         color="inherit"
-        style={{ height: "35px" }}
+        style={{ height: '35px' }}
         onClick={handleClick}
       >
         <Badge color="secondary" variant="dot">
@@ -44,20 +44,20 @@ const Notifications = () => {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "center",
+          vertical: 'bottom',
+          horizontal: 'center',
         }}
         transformOrigin={{
-          vertical: "top",
-          horizontal: "right",
+          vertical: 'top',
+          horizontal: 'right',
         }}
       >
-        <Paper elevation={0} style={{ width: "300px" }}>
+        <Paper elevation={0} style={{ width: '300px' }}>
           <h4
             style={{
-              marginTop: "10px",
-              marginLeft: "10px",
-              fontWeight: "bold",
+              marginTop: '10px',
+              marginLeft: '10px',
+              fontWeight: 'bold',
             }}
           >
             Notifications
@@ -66,18 +66,18 @@ const Notifications = () => {
           <a
             href="#"
             style={{
-              textDecoration: "none",
-              color: "black",
-              borderColor: "transparent",
+              textDecoration: 'none',
+              color: 'black',
+              borderColor: 'transparent',
             }}
           >
-            <h5 style={{ marginLeft: "10px" }}>
+            <h5 style={{ marginLeft: '10px' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </h5>
           </a>
-          <a href="#" style={{ textDecoration: "none", color: "black" }}>
-            <h5 style={{ marginLeft: "10px" }}>
+          <a href="#" style={{ textDecoration: 'none', color: 'black' }}>
+            <h5 style={{ marginLeft: '10px' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </h5>
