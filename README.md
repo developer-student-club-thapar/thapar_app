@@ -5,9 +5,8 @@ The Plan is to build an amazing application for Thapar Campus People from all wa
 ## About  💫
 
 The Aim of the project is to create something of value for people in Thapar Campus.
-It is our current belief that the information disposal and spread isn't upto mark and we 
-believe there is ample opportunity for growth and making better systems for everyone's daily use, 
-One of our goals is to make this application system something of a daily tool which people look up to.
+It is our current belief that the information disposal and spread isn't upto mark and there is ample opportunity for growth and making better systems for everyone's daily use. 
+Our goals is to make this application system that is of daily tool which people look up to.
 
 
 ### Some Salient Features of Project 🔭
