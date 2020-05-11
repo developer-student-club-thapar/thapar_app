@@ -4,6 +4,7 @@ from .schema import ShopNode
 import graphene
 from graphene_django.types import DjangoObjectType
 
+
 class CreateShop(graphene.relay.ClientIDMutation):
     shop = graphene.Field(ShopNode)
     
