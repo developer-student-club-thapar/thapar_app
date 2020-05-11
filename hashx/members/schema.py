@@ -1,106 +1,46 @@
 import graphene
-from graphene_django.types import DjangoObjectType
-from .models import Member, VoluteershipApplication, VoluteershipType
-from django.contrib.auth.models import User
+from graphql_relay import to_global_id
+import django_filters
+from graphene_django import DjangoObjectType
+from graphene_django.filter import DjangoFilterConnectionField
+from .models import Member, VolunteershipApplication
+from django.db import models
 
-class MemberType(DjangoObjectType):
+
+class MemberFilter(django_filters.FilterSet):
     class Meta:
         model = Member
         fields = '__all__'
+        filter_overrides = {
+            models.ImageField :{
+                'filter_class' : django_filters.CharFilter,
+                'extra' : lambda f:{
+                    'lookup_expr': 'icontains'
+                }
+            }
+        }
 
 
-class VolunteershipApplicationType(DjangoObjectType):
+class MemberNode(DjangoObjectType):
     class Meta:
-        model = VoluteershipApplication
+        model = Member
+        interfaces = (graphene.relay.Node , )
+
+
+class VolunteershipApplicationFilter(django_filters.FilterSet):
+    class Meta:
+        model = VolunteershipApplication
         fields = '__all__'
 
 
-class VolunteershipTypeType(DjangoObjectType):
+class VolunteershipApplicationNode(DjangoObjectType):
     class Meta:
-        model = VoluteershipType
-        fields = '__all__'
+        model = VolunteershipApplication
+        interfaces = (graphene.relay.Node , )
 
 
-class UserType(DjangoObjectType):
-    class Meta:
-        model = User
-
-
-class Query(object):
-    all_member = graphene.List(MemberType)
-    member = graphene.List(
-        MemberType,
-        name = graphene.String(),
-        user = graphene.String(),
-        role = graphene.String(),
-        email = graphene.String(),
-    )
-
-    def resolve_all_member(self, info, **kwargs):
-        return Member.objects.all()
-
-    def resolve_member(self, info, **kwargs):
-        name = kwargs.get("name")
-        user = kwargs.get("user")
-        role = kwargs.get("role")
-        email = kwargs.get("email")
-
-        if name is not None:
-            return Member.objects.filter(name=name)
-        if user is not None:
-            return Member.objects.filter(user=user).all()
-        if role is not None:
-            return Member.objects.filter(role=role).all()
-        if email is not None:
-            return Member.objects.filter(email=email)
-
-################################################################################################################
-
-    all_volunteershipapplication = graphene.List(VolunteershipApplicationType)
-
-    def resolve_all_volunteershipapplication(self, info, **kwargs):
-        return VoluteershipApplication.objects.all()
-
-################################################################################################################
-
-    all_volunteershiptype = graphene.List(VolunteershipTypeType)
-    volunteershiptype = graphene.List(
-        VolunteershipTypeType,
-        name = graphene.String(),
-    )
-
-    def resolve_all_volunteershiptype(self, info, **kwargs):
-        return VoluteershipType.objects.all()
-
-    def resolve_volunteershiptype(self, info, **kwargs):
-        name = kwargs.get("name")
-
-        if name is not None:
-            return VoluteershipType.objects.filter(name=name)
-
-
-class CreateMember(graphene.Mutation):
-    id = graphene.Int()
-    role = graphene.String()
-    email = graphene.String()
-
-
-    class Arguments:
-        role = graphene.String(required = False)
-        email = graphene.String(required = False)
-
-    member = graphene.Field(MemberType)
-
-    def mutate(self, info, role, email):
-        member = Member(role=role, email=email)
-        member.save()
-
-        return CreateMember(
-            id = member.id,
-            role = member.role,
-            email = member.email,
-        )
-
-
-class Mutation(graphene.ObjectType):
-    create_member = CreateMember.Field()
+class RelayQuery(graphene.ObjectType):
+    all_members = DjangoFilterConnectionField(MemberNode, filterset_class=MemberFilter)
+    member = graphene.relay.Node.Field(MemberNode)
+    all_volunteershipapplications = DjangoFilterConnectionField(VolunteershipApplicationNode, filterset_class=VolunteershipApplicationFilter)
+    volunteershipapplication = graphene.relay.Node.Field(VolunteershipApplicationNode)

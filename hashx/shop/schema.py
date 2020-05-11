@@ -77,7 +77,6 @@ class ShopReviewNode(DjangoObjectType):
         interfaces = (graphene.relay.Node , )
 
 
-
 class RelayQuery(graphene.ObjectType):
     all_shopitems =  DjangoFilterConnectionField(ShopItemNode , filterset_class=ShopItemFilter)
     shopitem = graphene.relay.Node.Field(ShopItemNode)

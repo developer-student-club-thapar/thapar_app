@@ -13,7 +13,7 @@ class Hostel(models.Model):
     # Details
     name = models.CharField(max_length=1)
     about = models.TextField(max_length=2000, null=True)
-    disscussion = models.OneToOneField(
+    discussion = models.OneToOneField(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
     warden_name = models.CharField(max_length=100)
     caretaker_name = models.CharField(max_length=100)

@@ -121,7 +121,6 @@ class Batch(models.Model):
 
     def __str__(self):
         return f'{self.branch.year} {self.branch.code} {str(self.num)}'
-
     def get_absolute_url(self):
         return reverse("batch-detail", kwargs={"pk": self.pk})
 
@@ -177,7 +176,7 @@ class File(models.Model):
     type = models.ForeignKey(FileType, on_delete=models.PROTECT)
     tags = models.ManyToManyField(FileTags)
     file = models.FileField(upload_to="academic_File")
-    thumnail_image = models.ImageField(upload_to="academic_file_thumbnails")
+    thumbnail_image = models.ImageField(upload_to="academic_file_thumbnails")
     # Main Object
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
     name = models.CharField(max_length=128)
