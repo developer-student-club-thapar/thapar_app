@@ -1,4 +1,5 @@
 import graphene
+import graphql_jwt
 import users.schema as user_schema
 import society.schema as society_schema
 import exam.schema as exam_schema
@@ -23,7 +24,10 @@ class Query(acad_schema.Query, members_schema.Query, society_schema.Query,exam_s
     pass
 
 class Mutation(acad_mutations.Mutation,exam_mutations.Mutation ,featurebug_mutations.Mutation,timetable_mutations.Mutation , shop_mutations.Mutation ,member_mutations.Mutation, graphene.ObjectType):
-    pass
+    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
+    verify_token = graphql_jwt.Verify.Field()
+    refresh_token = graphql_jwt.Refresh.Field()
+
 
 
 schema = graphene.Schema(query=Query , mutation=Mutation)
