@@ -27,6 +27,14 @@ class InstructorFilter(django_filters.FilterSet):
     class Meta:
         model = Instructor
         fields = '__all__'
+        filter_overrides = {
+            models.ImageField :{
+                'filter_class' : django_filters.CharFilter,
+                'extra' : lambda f:{
+                    'lookup_expr': 'icontains'
+                }
+            }
+        }
 class InstructorNode(DjangoObjectType):
     class Meta:
         model = Instructor
