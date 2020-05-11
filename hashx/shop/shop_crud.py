@@ -34,7 +34,15 @@ class CreateShop(graphene.relay.ClientIDMutation):
         time_close = input.get('time_close')
         paytm_id = input.get('paytm_id')
         location = input.get('location')
-        shop = Shop(name=name , about=about , delivery=delivery , in_campus=in_campus,stars=stars,owner=owner,phone_no=phone_no,time_open=time_open,time_close=time_close,paytm_id=paytm_id,location=location)
+        image = info.context.FILES['image']
+        menu_image = info.context.FILES['menu_image']
+        shop = Shop(name=name,about=about , delivery=delivery , in_campus=in_campus,stars=stars,owner=owner,phone_no=phone_no,time_open=time_open,time_close=time_close,paytm_id=paytm_id,location=location)
+        shop.save()
+        if menu_image:
+            shop.menu_image = menu_image
+        if image:
+            shop.image = image
+        
         shop.save()
         return CreateShop(shop=shop)
 
@@ -72,6 +80,8 @@ class UpdateShop(graphene.relay.ClientIDMutation):
         time_close = input.get('time_close')
         paytm_id = input.get('paytm_id')
         location = input.get('location')
+        image = info.context.FILES['image']
+        menu_image = info.context.FILES['menu_image']
         shop = Shop.objects.get(pk=id)
         if name:
             shop.name = name
@@ -87,12 +97,16 @@ class UpdateShop(graphene.relay.ClientIDMutation):
             shop.type = type
         if owner:
             shop.owner = owner
+        if image:
+            shop.image = image
         if phone_no:
             shop.phone_no = phone_no
         if time_open:
             shop.time_open = time_open
         if time_close:
             shop.time_close = time_close
+        if menu_image:
+            shop.menu_image = menu_image
         if paytm_id:
             shop.paytm_id = paytm_id
         if location:

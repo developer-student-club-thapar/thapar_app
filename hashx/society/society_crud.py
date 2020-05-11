@@ -21,7 +21,14 @@ class CreateSociety(graphene.relay.ClientIDMutation):
         student_head = input.get('student_head')
         site_link = input.get('site_link')
         user = input.get('user')
+        logo = info.context.FILES['logo']
+        image = info.context.FILES['image']
         society = Society(name=name , category=category , about=about ,student_head=student_head , site_link=site_link , user=user)
+        society.save()
+        if image:
+            society.image = image
+        if logo:
+            society.logo = logo
         society.save()
         return  CreateSociety(society=society)
 class UpdateSociety(graphene.relay.ClientIDMutation):
@@ -46,6 +53,8 @@ class UpdateSociety(graphene.relay.ClientIDMutation):
         student_head = input.get('student_head')
         site_link = input.get('site_link')
         user = input.get('user')
+        logo = info.context.FILES['logo']
+        image = info.context.FILES['image']
         society = Society.objects.get(pk=id)
         if name:
             society.name = name
@@ -59,5 +68,9 @@ class UpdateSociety(graphene.relay.ClientIDMutation):
             society.site_link = site_link
         if user:
             society.user = user
+        if image:
+            society.image = image
+        if logo:
+            society.logo = logo
         society.save()
         return UpdateSociety(society=society)
