@@ -40,7 +40,6 @@ class ShopNode(DjangoObjectType):
     class Meta:
         model = Shop
         interfaces = (graphene.relay.Node , )
-        
     
        
 
@@ -89,4 +88,4 @@ class RelayQuery(graphene.ObjectType):
     shopitemreview = graphene.relay.Node.Field(ShopItemReviewNode)
     all_shopreviews =  DjangoFilterConnectionField(ShopReviewNode , filterset_class=ShopReviewFilter)
     shopreview = graphene.relay.Node.Field(ShopReviewNode)
-    node = node = graphene.relay.Node.Field()
+    node = graphene.relay.Node.Field()
