@@ -20,7 +20,7 @@ class Student(models.Model):
                                 related_query_name='student',  on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     bio = models.CharField(max_length=256)
-
+    rollno = models.IntegerField(null=True)
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
     batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True)
     firstyearbatch = models.ForeignKey(
@@ -36,6 +36,8 @@ class Student(models.Model):
         default=timezone.now, blank=True, null=True)
     # starred Files of any particular user
     starred_files = models.ManyToManyField(File)
+    # Email Verification token sent on url
+    token = models.UUIDField(default=uuid.uuid4)
 
     def __str__(self):
         return f'{self.user.username} Profile'

@@ -162,3 +162,4 @@ venv/
 
 # Testing Database
 db.json
+*.sh
