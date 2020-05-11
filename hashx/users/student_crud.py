@@ -25,7 +25,11 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         firstyearbatch = input.get('firstyearbatch')
         points = input.get('points')
         gender = input.get('gender')
-        student.save(user=user , bio = bio , branch=branch , batch = batch , firstyearbatch = firstyearbatch  , points =points , gender = gender)
+        image = info.context.FILES['image'] 
+        student.save(user=user , bio = bio , branch=branch ,batch = batch , firstyearbatch = firstyearbatch  , points =points , gender = gender)
+        if image:
+            student.image = image
+        student.save()
         return  CreateStudent(student=student)
 class UpdateStudent(graphene.relay.ClientIDMutation):
     student = graphene.Field(StudentNode)
@@ -52,6 +56,7 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
         firstyearbatch = input.get('firstyearbatch')
         points = input.get('points')
         gender = input.get('gender')
+        image = info.context.FILES['image'] 
         student = Student.objects.get(pk=id)
         if user:
             student.user = user
@@ -67,5 +72,7 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
             student.points = points
         if gender:
             student.gender = gender
+        if image:
+            student.image = image
         student.save()
         return UpdateStudent(student=student)
