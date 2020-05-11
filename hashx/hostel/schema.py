@@ -3,7 +3,7 @@ from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-from .models import Hostel, Complaint, MessUnit, MessUnitComment, ComplaintStatus, ComplaintTypes
+from .models import Hostel, Complaint, MessUnit, MessUnitComment, ComplaintStatus, ComplaintTypes, Room
 from django.db import models
 
 class HostelFilter(django_filters.FilterSet):
@@ -36,6 +36,11 @@ class ComplaintFilter(django_filters.FilterSet):
                 'extra' : lambda f:{
                     'lookup_expr': 'icontains'
                 }
+            }, models.SlugField: {
+                'filter_class' : django_filters.CharFilter,
+                'extra' : lambda f:{
+                    'lookup_expr': 'icontains'
+                }
             }
         }
 
@@ -56,8 +61,14 @@ class MessUnitFilter(django_filters.FilterSet):
                 'extra' : lambda f:{
                     'lookup_expr': 'icontains'
                 }
+            }, models.SlugField :{
+                'filter_class' : django_filters.CharFilter,
+                'extra' : lambda f:{
+                    'lookup_expr': 'icontains'
+                }
+                
             }
-        }
+        } 
 
 
 class MessUnitNode(DjangoObjectType):
@@ -102,6 +113,18 @@ class ComplaintStatusNode(DjangoObjectType):
         interfaces = (graphene.relay.Node , )
 
 
+class RoomFilter(django_filters.FilterSet):
+    class Meta:
+        model = Room
+        fields = '__all__'
+
+
+class RoomNode(DjangoObjectType):
+    class Meta:
+        model = Room
+        interfaces = (graphene.relay.Node , )
+
+
 class RelayQuery(graphene.ObjectType):
     all_hostels = DjangoFilterConnectionField(HostelNode , filterset_class=HostelFilter)
     hostel = graphene.relay.Node.Field(HostelNode)
@@ -115,3 +138,5 @@ class RelayQuery(graphene.ObjectType):
     complainttypes = graphene.relay.Node.Field(ComplaintTypesNode)
     all_complaintstatus = DjangoFilterConnectionField(ComplaintStatusNode, filterset_class=ComplaintStatusFilter)
     complaintstatus = graphene.relay.Node.Field(ComplaintStatusNode)
+    all_rooms = DjangoFilterConnectionField(RoomNode , filterset_class=RoomFilter)
+    room = graphene.relay.Node.Field(RoomNode)

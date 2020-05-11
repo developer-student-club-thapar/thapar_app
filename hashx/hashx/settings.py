@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'society',
     'featurebug',
     'lostfound',
+    'permission',
     'buzz',
     'hostel',
     'forum',
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'analytics',
     'members',
     'chat',
+    'exam',
     'frontend'
 
 ]

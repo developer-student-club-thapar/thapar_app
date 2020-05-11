@@ -5,6 +5,7 @@ from .complaintstatus_crud import UpdateComplaintStatus, CreateComplaintStatus
 from .complainttypes_crud import UpdateComplaintTypes, CreateComplaintTypes
 from .messunit_crud import UpdateMessUnit, CreateMessUnit
 from .messunitcomment_crud import CreateMessUnitComment, UpdateMessUnitComment
+from .room_crud import UpdateRoom, CreateRoom
 
 
 class Mutation(graphene.AbstractType):
@@ -20,3 +21,5 @@ class Mutation(graphene.AbstractType):
     update_messunit = UpdateMessUnit.Field()
     create_messunitcomment = CreateMessUnitComment.Field()
     update_messunitcomment = UpdateMessUnitComment.Field()
+    create_room = CreateRoom.Field()
+    update_room = UpdateRoom.Field()

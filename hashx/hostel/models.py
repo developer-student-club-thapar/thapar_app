@@ -3,6 +3,7 @@ from django.db import models
 from buzz.models import Category
 from django.utils import timezone
 from django.contrib.auth.models import User
+from users.models import Student
 import uuid
 # Create your models here
 
@@ -112,7 +113,7 @@ class MessUnitComment(models.Model):
                                  related_query_name='MessUnit', on_delete=models.SET_NULL, null=True, blank=True)
     stars = models.PositiveIntegerField()
     comment = models.CharField(max_length=200, blank=True, null=True)
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(default=timezone.now, editable=False)
     user = models.ForeignKey(User, related_name='MessUnitComment',
                              related_query_name='MessUnitComment', on_delete=models.CASCADE)
 
@@ -121,3 +122,14 @@ class MessUnitComment(models.Model):
 
     def __str__(self):
         return f'{self.stars} {self.user.username}'
+
+
+class Room(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    hostel = models.ForeignKey(Hostel, on_delete=models.CASCADE)
+    wing = models.CharField(max_length=3, editable=False)
+    num = models.PositiveIntegerField(editable=False)
+
+    def __str__(self):
+        return f'{self.hostel.name} : {self.wing}-{self.num}'
+
