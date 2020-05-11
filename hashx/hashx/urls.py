@@ -18,13 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
 from graphene_django.views import GraphQLView
+from users import views as user_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+ 
     # Frontend should load before any application !
-    path('', include('frontend.urls')),
+    path('', include('frontend.urls') ), #assuming this will be names home
     path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
+    path('register/', user_views.register , name = 'register'),
+    path('profile/', user_views.profile , name = 'profile'),
     # path('', include('users.urls'))
 ]

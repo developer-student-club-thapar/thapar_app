@@ -40,7 +40,6 @@ class ShopNode(DjangoObjectType):
     class Meta:
         model = Shop
         interfaces = (graphene.relay.Node , )
-        
     
        
 
