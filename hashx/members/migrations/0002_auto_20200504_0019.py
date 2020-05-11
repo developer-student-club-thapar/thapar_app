@@ -5,7 +5,7 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
+    atomic = False
     dependencies = [
         ('members', '0001_initial'),
     ]
