@@ -111,6 +111,10 @@ GRAPHENE = {
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
+    'SCHEMA': 'hashx.schema.schema',
+    'SCHEMA_OUTPUT': 'schema.graphql',  # defaults to schema.json,
+    # Defaults to None (displays all data on a single line)
+    'SCHEMA_INDENT': 2,
 }
 
 AUTHENTICATION_BACKENDS = [

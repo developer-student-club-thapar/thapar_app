@@ -1,0 +1,2164 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AcademicCalendarNode implements Node {
+  id: ID!
+  type: AcademicCalendarType!
+  name: String!
+  startDate: Date!
+  endDate: Date!
+}
+
+type AcademicCalendarNodeConnection {
+  pageInfo: PageInfo!
+  edges: [AcademicCalendarNodeEdge]!
+}
+
+type AcademicCalendarNodeEdge {
+  node: AcademicCalendarNode
+  cursor: String!
+}
+
+enum AcademicCalendarType {
+  ODD
+  EVEN
+}
+
+type AssesmentNode implements Node {
+  id: ID!
+  name: String!
+  course: CourseNode
+  date: DateTime!
+  dateCreated: DateTime!
+  note: String!
+  published: Boolean!
+  exambasePtr: ExamBaseNode!
+  type: AssesmentTypeNode!
+  batch: BatchNode
+  firstyearbatch: FirstYearBatchNode
+}
+
+type AssesmentNodeConnection {
+  pageInfo: PageInfo!
+  edges: [AssesmentNodeEdge]!
+}
+
+type AssesmentNodeEdge {
+  node: AssesmentNode
+  cursor: String!
+}
+
+type AssesmentTypeNode implements Node {
+  id: ID!
+  name: String!
+  assesmentSet(before: String, after: String, first: Int, last: Int): AssesmentNodeConnection!
+}
+
+type AssesmentTypeNodeConnection {
+  pageInfo: PageInfo!
+  edges: [AssesmentTypeNodeEdge]!
+}
+
+type AssesmentTypeNodeEdge {
+  node: AssesmentTypeNode
+  cursor: String!
+}
+
+type BatchNode implements Node {
+  id: ID!
+  branch: BranchNode!
+  num: Int!
+  createdDate: DateTime!
+  fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+  studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
+  timetableboard: TimetableBoardNode
+  assesmentSet(before: String, after: String, first: Int, last: Int): AssesmentNodeConnection!
+}
+
+type BatchNodeConnection {
+  pageInfo: PageInfo!
+  edges: [BatchNodeEdge]!
+}
+
+type BatchNodeEdge {
+  node: BatchNode
+  cursor: String!
+}
+
+type BranchNode implements Node {
+  id: ID!
+  year: BranchYear!
+  code: String
+  name: String
+  course(before: String, after: String, first: Int, last: Int): CourseNodeConnection!
+  createdDate: DateTime!
+  batchSet(before: String, after: String, first: Int, last: Int): BatchNodeConnection!
+  fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+  studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
+}
+
+type BranchNodeConnection {
+  pageInfo: PageInfo!
+  edges: [BranchNodeEdge]!
+}
+
+type BranchNodeEdge {
+  node: BranchNode
+  cursor: String!
+}
+
+enum BranchYear {
+  FR
+  SO
+  JR
+  SR
+}
+
+enum ClassDay {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+type ClassNode implements Node {
+  id: ID!
+  type: ClassType!
+  timetableboard: TimetableBoardNode!
+  createdDate: DateTime!
+  modifiedDate: DateTime
+  course: CourseNode!
+  day: ClassDay!
+  startTime: Time!
+  endTime: Time!
+  location: LocationNode!
+  published: Boolean!
+  private: Boolean!
+}
+
+type ClassNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ClassNodeEdge]!
+}
+
+type ClassNodeEdge {
+  node: ClassNode
+  cursor: String!
+}
+
+enum ClassType {
+  LECTURE
+  PRACTICAL
+  TUTORIAL
+}
+
+type ComplaintNode implements Node {
+  id: ID!
+  types: ComplaintTypesNode!
+  status: ComplaintStatusNode!
+  subject: String!
+  description: String!
+  image: String
+  availStart: Time!
+  availEnd: Time!
+  datePosted: DateTime!
+  comments: String!
+  slug: String
+}
+
+type ComplaintNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ComplaintNodeEdge]!
+}
+
+type ComplaintNodeEdge {
+  node: ComplaintNode
+  cursor: String!
+}
+
+type ComplaintStatusNode implements Node {
+  id: ID!
+  name: String!
+  Complaint(before: String, after: String, first: Int, last: Int): ComplaintNodeConnection!
+}
+
+type ComplaintStatusNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ComplaintStatusNodeEdge]!
+}
+
+type ComplaintStatusNodeEdge {
+  node: ComplaintStatusNode
+  cursor: String!
+}
+
+type ComplaintTypesNode implements Node {
+  id: ID!
+  name: String!
+  Complaint(before: String, after: String, first: Int, last: Int): ComplaintNodeConnection!
+}
+
+type ComplaintTypesNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ComplaintTypesNodeEdge]!
+}
+
+type ComplaintTypesNodeEdge {
+  node: ComplaintTypesNode
+  cursor: String!
+}
+
+type CourseNode implements Node {
+  id: ID!
+  name: String!
+  code: String!
+  courseSite: String!
+  credit: Float!
+  l: Int
+  t: Int
+  p: Int
+  mst: Int
+  tutSes: Int
+  labProj: Int
+  quiz: Int
+  est: Int
+  createdDate: DateTime
+  syllabus: String!
+  branchSet(before: String, after: String, first: Int, last: Int): BranchNodeConnection!
+  textbookSet(before: String, after: String, first: Int, last: Int): TextbookNodeConnection!
+  fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+  instructorSet(before: String, after: String, first: Int, last: Int): InstructorNodeConnection!
+  classSet(before: String, after: String, first: Int, last: Int): ClassNodeConnection!
+  exambaseSet(before: String, after: String, first: Int, last: Int): ExamBaseNodeConnection!
+}
+
+type CourseNodeConnection {
+  pageInfo: PageInfo!
+  edges: [CourseNodeEdge]!
+}
+
+type CourseNodeEdge {
+  node: CourseNode
+  cursor: String!
+}
+
+input CreateAcademicCalendarInput {
+  type: String
+  name: String
+  startDate: String
+  endDate: String
+  clientMutationId: String
+}
+
+type CreateAcademicCalendarPayload {
+  academiccalendar: AcademicCalendarNode
+  clientMutationId: String
+}
+
+input CreateAssesmentInput {
+  type: String
+  batch: String
+  firstyearbatch: String
+  clientMutationId: String
+}
+
+type CreateAssesmentPayload {
+  assesment: AssesmentNode
+  clientMutationId: String
+}
+
+input CreateAssesmentTypeInput {
+  name: String
+  clientMutationId: String
+}
+
+type CreateAssesmentTypePayload {
+  assesmenttype: AssesmentTypeNode
+  clientMutationId: String
+}
+
+input CreateBatchInput {
+  branch: String
+  num: Int
+  GR: String
+  clientMutationId: String
+}
+
+type CreateBatchPayload {
+  batch: BatchNode
+  clientMutationId: String
+}
+
+input CreateBranchInput {
+  year: String
+  code: String
+  name: String
+  course: String
+  clientMutationId: String
+}
+
+type CreateBranchPayload {
+  branch: BranchNode
+  clientMutationId: String
+}
+
+input CreateClassInput {
+  type: String
+  timetableboard: String
+  course: String
+  createdDate: DateTime
+  modifiedDate: DateTime
+  day: Date
+  startTime: Time
+  endTime: Time
+  location: String
+  published: Boolean
+  private: Boolean
+  clientMutationId: String
+}
+
+type CreateClassPayload {
+  classes: ClassNode
+  clientMutationId: String
+}
+
+input CreateComplaintInput {
+  types: String
+  status: String
+  subject: String
+  description: String
+  availStart: String
+  availEnd: String
+  comments: String
+  clientMutationId: String
+}
+
+type CreateComplaintPayload {
+  complaint: ComplaintNode
+  clientMutationId: String
+}
+
+input CreateComplaintStatusInput {
+  name: String
+  clientMutationId: String
+}
+
+type CreateComplaintStatusPayload {
+  complaintstatus: ComplaintStatusNode
+  clientMutationId: String
+}
+
+input CreateComplaintTypesInput {
+  name: String
+  clientMutationId: String
+}
+
+type CreateComplaintTypesPayload {
+  complainttypes: ComplaintTypesNode
+  clientMutationId: String
+}
+
+input CreateCourseInput {
+  name: String
+  code: String
+  courseSite: String
+  credit: Int
+  l: Int
+  t: Int
+  p: Int
+  mst: Int
+  tutSes: Int
+  labProj: Int
+  quiz: Int
+  est: Int
+  syllabus: String
+  clientMutationId: String
+}
+
+type CreateCoursePayload {
+  course: CourseNode
+  clientMutationId: String
+}
+
+input CreateDrivefolderInput {
+  name: String
+  driveId: String
+  year: Int
+  fileName: String
+  clientMutationId: String
+}
+
+type CreateDrivefolderPayload {
+  drivefolder: DrivefolderNode
+  clientMutationId: String
+}
+
+input CreateEventInput {
+  title: String
+  content: String
+  datePosted: DateTime
+  dateModified: DateTime
+  startTime: Time
+  endTime: Time
+  place: String
+  inCampus: Boolean
+  location: String
+  locationUrl: String
+  society: String
+  clientMutationId: String
+}
+
+type CreateEventPayload {
+  event: EventNode
+  clientMutationId: String
+}
+
+input CreateExamBaseInput {
+  name: String
+  course: String
+  date: DateTime
+  dateCreated: DateTime
+  note: String
+  published: Boolean
+  clientMutationId: String
+}
+
+type CreateExamBasePayload {
+  exambase: ExamBaseNode
+  clientMutationId: String
+}
+
+input CreateExaminationInput {
+  type: String
+  clientMutationId: String
+}
+
+type CreateExaminationPayload {
+  examination: ExaminationNode
+  clientMutationId: String
+}
+
+input CreateFeaturenBugCategoryInput {
+  name: String
+  clientMutationId: String
+}
+
+type CreateFeaturenBugCategoryPayload {
+  featurenbugcategory: FeaturenBugCategoryNode
+  clientMutationId: String
+}
+
+input CreateFeaturenBugInput {
+  type: String
+  category: String
+  status: String
+  title: String
+  text: String
+  user: String
+  image: String
+  datePosted: DateTime
+  slug: String
+  clientMutationId: String
+}
+
+type CreateFeaturenBugPayload {
+  featurenbug: FeaturenBugNode
+  clientMutationId: String
+}
+
+input CreateFeaturenBugStatusInput {
+  name: String
+  clientMutationId: String
+}
+
+type CreateFeaturenBugStatusPayload {
+  featurenbugstatus: FeaturenBugStatusNode
+  clientMutationId: String
+}
+
+input CreateFileInput {
+  type: String
+  tags: String
+  name: String
+  about: String
+  user: String
+  course: String
+  branch: String
+  batch: String
+  drivefolder: String
+  published: Boolean
+  adminStarred: Boolean
+  isReviewed: Boolean
+  clientMutationId: String
+}
+
+type CreateFilePayload {
+  file: FileNode
+  clientMutationId: String
+}
+
+input CreateFirstYearBatchInput {
+  code: String
+  no: Int
+  GR: String
+  clientMutationId: String
+}
+
+type CreateFirstYearBatchPayload {
+  firstyearbatch: FirstYearBatchNode
+  clientMutationId: String
+}
+
+input CreateHolidaysInput {
+  name: String
+  date: Date
+  clientMutationId: String
+}
+
+type CreateHolidaysPayload {
+  holiday: HolidaysNode
+  clientMutationId: String
+}
+
+input CreateHostelInput {
+  name: String
+  about: String
+  discussion: String
+  wardenName: String
+  caretakerName: String
+  caretakerContact: String
+  capacity: Int
+  bStart: String
+  bEnd: String
+  lStart: String
+  lEnd: String
+  dStart: String
+  dEnd: String
+  clientMutationId: String
+}
+
+type CreateHostelPayload {
+  hostel: HostelNode
+  clientMutationId: String
+}
+
+input CreateInstructorInput {
+  name: String
+  user: String
+  courseCodinator: Boolean
+  email: String
+  course: String
+  office: String
+  createdDate: DateTime
+  clientMutationId: String
+}
+
+type CreateInstructorPayload {
+  instructor: InstructorNode
+  clientMutationId: String
+}
+
+input CreateItemInput {
+  name: String
+  type: String
+  details: String
+  category: String
+  status: String
+  contactDetails: String
+  datePosted: String
+  isReviewed: Boolean
+  published: Boolean
+  clientMutationId: String
+}
+
+type CreateItemPayload {
+  item: ItemNode
+  clientMutationId: String
+}
+
+input CreateLocationInput {
+  building: String
+  room: String
+  floor: Int
+  published: Boolean
+  longitude: Float
+  latitute: Float
+  locationUrl: String
+  clientMutationId: String
+}
+
+type CreateLocationPayload {
+  location: LocationNode
+  clientMutationId: String
+}
+
+input CreateMemberInput {
+  name: String
+  role: String
+  email: String
+  githubUrl: String
+  linkedinUrl: String
+  twitterUrl: String
+  mediumUrl: String
+  devUrl: String
+  instagramUrl: String
+  clientMutationId: String
+}
+
+type CreateMemberPayload {
+  member: MemberNode
+  clientMutationId: String
+}
+
+input CreateMessUnitCommentInput {
+  messunit: String
+  stars: Int
+  comment: String
+  clientMutationId: String
+}
+
+type CreateMessUnitCommentPayload {
+  messunitcomment: MessUnitCommentNode
+  clientMutationId: String
+}
+
+input CreateMessUnitInput {
+  mess: String
+  day: String
+  type: String
+  food: String
+  clientMutationId: String
+}
+
+type CreateMessUnitPayload {
+  messunit: MessUnitNode
+  clientMutationId: String
+}
+
+input CreateRoomInput {
+  hostel: String
+  wing: String
+  num: String
+  clientMutationId: String
+}
+
+type CreateRoomPayload {
+  room: RoomNode
+  clientMutationId: String
+}
+
+input CreateShopInput {
+  name: String
+  about: String
+  owner: String
+  phoneNo: String
+  timeOpen: Time
+  delivery: Boolean
+  inCampus: Boolean
+  stars: Float
+  timeClose: Time
+  paytmId: String
+  location: String
+  clientMutationId: String
+}
+
+input CreateShopItemInput {
+  shop: String
+  name: String
+  price: Int
+  stars: Float
+  clientMutationId: String
+}
+
+type CreateShopItemPayload {
+  shopitem: ShopItemNode
+  clientMutationId: String
+}
+
+type CreateShopPayload {
+  shop: ShopNode
+  clientMutationId: String
+}
+
+input CreateShopTypeInput {
+  type: String
+  clientMutationId: String
+}
+
+type CreateShopTypePayload {
+  shoptype: ShopTypeNode
+  clientMutationId: String
+}
+
+input CreateSocietyInput {
+  name: String
+  category: String
+  about: String
+  studentHead: String
+  siteLink: String
+  user: String
+  clientMutationId: String
+}
+
+type CreateSocietyPayload {
+  society: SocietyNode
+  clientMutationId: String
+}
+
+input CreateStudentInput {
+  user: String
+  bio: String
+  branch: String
+  batch: String
+  firstyearbatch: String
+  points: String
+  gender: String
+  clientMutationId: String
+}
+
+type CreateStudentPayload {
+  student: StudentNode
+  clientMutationId: String
+}
+
+input CreateTextbookInput {
+  name: String
+  publisher: String
+  course: String
+  clientMutationId: String
+}
+
+type CreateTextbookPayload {
+  textbook: TextbookNode
+  clientMutationId: String
+}
+
+input CreateTimetableBoardInput {
+  name: String
+  startRepetion: DateTime
+  endRepetition: DateTime
+  batch: String
+  adminUser: String
+  createdDate: DateTime
+  modifiedDate: DateTime
+  clientMutationId: String
+}
+
+type CreateTimetableBoardPayload {
+  timetableboard: TimetableBoardNode
+  clientMutationId: String
+}
+
+input CreateVolunteershipApplicationInput {
+  type: String
+  why: String
+  clientMutationId: String
+}
+
+type CreateVolunteershipApplicationPayload {
+  volunteershipapplication: VolunteershipApplicationNode
+  clientMutationId: String
+}
+
+scalar Date
+
+scalar DateTime
+
+type DrivefolderNode implements Node {
+  id: ID!
+  name: String
+  driveId: String!
+  year: Int
+  fileName: String!
+  fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+}
+
+type DrivefolderNodeConnection {
+  pageInfo: PageInfo!
+  edges: [DrivefolderNodeEdge]!
+}
+
+type DrivefolderNodeEdge {
+  node: DrivefolderNode
+  cursor: String!
+}
+
+type EventNode implements Node {
+  id: ID!
+  title: String!
+  content: String!
+  datePosted: DateTime!
+  dateModified: DateTime
+  startTime: DateTime!
+  endTime: DateTime!
+  place: LocationNode
+  inCampus: Boolean!
+  location: String
+  locationUrl: String
+  posterImage: String!
+  externalLink: String!
+  society: SocietyNode!
+}
+
+type EventNodeConnection {
+  pageInfo: PageInfo!
+  edges: [EventNodeEdge]!
+}
+
+type EventNodeEdge {
+  node: EventNode
+  cursor: String!
+}
+
+type ExamBaseNode implements Node {
+  id: ID!
+  name: String!
+  course: CourseNode
+  date: DateTime!
+  dateCreated: DateTime!
+  note: String!
+  published: Boolean!
+  assesment: AssesmentNode
+  examination: ExaminationNode
+}
+
+type ExamBaseNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ExamBaseNodeEdge]!
+}
+
+type ExamBaseNodeEdge {
+  node: ExamBaseNode
+  cursor: String!
+}
+
+type ExaminationNode implements Node {
+  id: ID!
+  name: String!
+  course: CourseNode
+  date: DateTime!
+  dateCreated: DateTime!
+  note: String!
+  published: Boolean!
+  exambasePtr: ExamBaseNode!
+  type: ExaminationType!
+}
+
+type ExaminationNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ExaminationNodeEdge]!
+}
+
+type ExaminationNodeEdge {
+  node: ExaminationNode
+  cursor: String!
+}
+
+enum ExaminationType {
+  MST
+  EST
+}
+
+type FeaturenBugCategoryNode implements Node {
+  id: ID!
+  name: String
+  featurenbugSet(before: String, after: String, first: Int, last: Int): FeaturenBugNodeConnection!
+}
+
+type FeaturenBugCategoryNodeConnection {
+  pageInfo: PageInfo!
+  edges: [FeaturenBugCategoryNodeEdge]!
+}
+
+type FeaturenBugCategoryNodeEdge {
+  node: FeaturenBugCategoryNode
+  cursor: String!
+}
+
+type FeaturenBugNode implements Node {
+  id: ID!
+  type: FeaturenBugType!
+  category: FeaturenBugCategoryNode!
+  status: FeaturenBugStatusNode!
+  title: String!
+  text: String!
+  image: String
+  datePosted: DateTime!
+  slug: String
+}
+
+type FeaturenBugNodeConnection {
+  pageInfo: PageInfo!
+  edges: [FeaturenBugNodeEdge]!
+}
+
+type FeaturenBugNodeEdge {
+  node: FeaturenBugNode
+  cursor: String!
+}
+
+type FeaturenBugStatusNode implements Node {
+  id: ID!
+  name: String
+  featurenbugSet(before: String, after: String, first: Int, last: Int): FeaturenBugNodeConnection!
+}
+
+type FeaturenBugStatusNodeConnection {
+  pageInfo: PageInfo!
+  edges: [FeaturenBugStatusNodeEdge]!
+}
+
+type FeaturenBugStatusNodeEdge {
+  node: FeaturenBugStatusNode
+  cursor: String!
+}
+
+enum FeaturenBugType {
+  FEATURE
+  BUG
+}
+
+type FileNode implements Node {
+  id: ID!
+  file: String!
+  thumbnailImage: String!
+  datePosted: DateTime!
+  name: String!
+  about: String
+  course: CourseNode
+  branch: BranchNode
+  batch: BatchNode
+  drivefolder: DrivefolderNode!
+  published: Boolean!
+  adminStarred: Boolean!
+  isReviewed: Boolean!
+  slug: String
+  studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
+}
+
+type FileNodeConnection {
+  pageInfo: PageInfo!
+  edges: [FileNodeEdge]!
+}
+
+type FileNodeEdge {
+  node: FileNode
+  cursor: String!
+}
+
+type FirstYearBatchNode implements Node {
+  id: ID!
+  code: String!
+  no: Int!
+  createdDate: DateTime!
+  studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
+  assesmentSet(before: String, after: String, first: Int, last: Int): AssesmentNodeConnection!
+}
+
+scalar GenericScalar
+
+type HolidaysNode implements Node {
+  id: ID!
+  name: String!
+  date: Date!
+}
+
+type HolidaysNodeConnection {
+  pageInfo: PageInfo!
+  edges: [HolidaysNodeEdge]!
+}
+
+type HolidaysNodeEdge {
+  node: HolidaysNode
+  cursor: String!
+}
+
+type HostelNode implements Node {
+  id: ID!
+  name: String!
+  about: String
+  wardenName: String!
+  caretakerName: String!
+  caretakerContact: String!
+  capacity: Int
+  slug: String
+  image: String
+  bStart: Time
+  bEnd: Time
+  lStart: Time
+  lEnd: Time
+  dStart: Time
+  dEnd: Time
+  MessUnit(before: String, after: String, first: Int, last: Int): MessUnitNodeConnection!
+  roomSet(before: String, after: String, first: Int, last: Int): RoomNodeConnection!
+}
+
+type HostelNodeConnection {
+  pageInfo: PageInfo!
+  edges: [HostelNodeEdge]!
+}
+
+type HostelNodeEdge {
+  node: HostelNode
+  cursor: String!
+}
+
+type InstructorNode implements Node {
+  id: ID!
+  name: String!
+  courseCodinator: Boolean!
+  email: String
+  office: String!
+  course(before: String, after: String, first: Int, last: Int): CourseNodeConnection!
+  createdDate: DateTime
+}
+
+type InstructorNodeConnection {
+  pageInfo: PageInfo!
+  edges: [InstructorNodeEdge]!
+}
+
+type InstructorNodeEdge {
+  node: InstructorNode
+  cursor: String!
+}
+
+type ItemNode implements Node {
+  id: ID!
+  name: String!
+  type: ItemType!
+  details: String!
+  image: String
+  contactDetails: String!
+  datePosted: DateTime!
+  isReviewed: Boolean!
+  published: Boolean!
+}
+
+type ItemNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ItemNodeEdge]!
+}
+
+type ItemNodeEdge {
+  node: ItemNode
+  cursor: String!
+}
+
+enum ItemType {
+  LOST
+  FOUND
+}
+
+enum LocationBuilding {
+  TAN
+  LP
+  LT
+  A
+  B
+  C
+  D
+  E
+  F
+  G
+  COS
+  OAT
+  LIB
+  MEC
+  AUDI
+  GH
+  SP
+}
+
+type LocationNode implements Node {
+  id: ID!
+  building: LocationBuilding!
+  room: String
+  floor: Int
+  published: Boolean!
+  longitude: Float!
+  latitute: Float!
+  locationUrl: String
+  classSet(before: String, after: String, first: Int, last: Int): ClassNodeConnection!
+  eventSet(before: String, after: String, first: Int, last: Int): EventNodeConnection!
+}
+
+type LocationNodeConnection {
+  pageInfo: PageInfo!
+  edges: [LocationNodeEdge]!
+}
+
+type LocationNodeEdge {
+  node: LocationNode
+  cursor: String!
+}
+
+type MemberNode implements Node {
+  id: ID!
+  name: String!
+  role: String!
+  email: String!
+  githubUrl: String!
+  linkedinUrl: String!
+  twitterUrl: String!
+  mediumUrl: String!
+  devUrl: String!
+  instagramUrl: String!
+  image: String!
+}
+
+type MemberNodeConnection {
+  pageInfo: PageInfo!
+  edges: [MemberNodeEdge]!
+}
+
+type MemberNodeEdge {
+  node: MemberNode
+  cursor: String!
+}
+
+type MessUnitCommentNode implements Node {
+  id: ID!
+  messunit: MessUnitNode
+  stars: Int!
+  comment: String
+  datePosted: DateTime!
+}
+
+type MessUnitCommentNodeConnection {
+  pageInfo: PageInfo!
+  edges: [MessUnitCommentNodeEdge]!
+}
+
+type MessUnitCommentNodeEdge {
+  node: MessUnitCommentNode
+  cursor: String!
+}
+
+enum MessUnitDay {
+  MON
+  TUE
+  WED
+  THR
+  FRI
+  SAT
+  SUN
+}
+
+type MessUnitNode implements Node {
+  id: ID!
+  mess: HostelNode!
+  day: MessUnitDay!
+  type: MessUnitType!
+  food: String!
+  image: String
+  slug: String
+  MessUnit(before: String, after: String, first: Int, last: Int): MessUnitCommentNodeConnection!
+}
+
+type MessUnitNodeConnection {
+  pageInfo: PageInfo!
+  edges: [MessUnitNodeEdge]!
+}
+
+type MessUnitNodeEdge {
+  node: MessUnitNode
+  cursor: String!
+}
+
+enum MessUnitType {
+  BREAKFAST
+  LUNCH
+  DINNER
+}
+
+type Mutation {
+  createMember(input: CreateMemberInput!): CreateMemberPayload
+  updateMember(input: UpdateMemberInput!): UpdateMemberPayload
+  createVolunteershipapplication(input: CreateVolunteershipApplicationInput!): CreateVolunteershipApplicationPayload
+  updateVolunteershipapplication(input: UpdateVolunteershipApplicationInput!): UpdateVolunteershipApplicationPayload
+  createShop(input: CreateShopInput!): CreateShopPayload
+  updateShop(input: UpdateShopInput!): UpdateShopPayload
+  createShoptype(input: CreateShopTypeInput!): CreateShopTypePayload
+  updateShoptype(input: UpdateShopTypeInput!): UpdateShopTypePayload
+  createShopitem(input: CreateShopItemInput!): CreateShopItemPayload
+  updateShopitem(input: UpdateShopItemInput!): UpdateShopItemPayload
+  createTimetableboard(input: CreateTimetableBoardInput!): CreateTimetableBoardPayload
+  updateTimetableboard(input: UpdateTimetableBoardInput!): UpdateTimetableBoardPayload
+  createHoliday(input: CreateHolidaysInput!): CreateHolidaysPayload
+  upadateHoliday(input: UpdateHolidaysInput!): UpdateHolidaysPayload
+  createLocation(input: CreateLocationInput!): CreateLocationPayload
+  upadateLocation(input: UpdateLocationInput!): UpdateLocationPayload
+  createClass(input: CreateClassInput!): CreateClassPayload
+  updateClass(input: UpdateClassInput!): UpdateClassPayload
+  createFeaturenbug(input: CreateFeaturenBugInput!): CreateFeaturenBugPayload
+  updateFeaturenbug(input: UpdateFeaturenBugInput!): UpdateFeaturenBugPayload
+  createFeaturenbugcategory(input: CreateFeaturenBugCategoryInput!): CreateFeaturenBugCategoryPayload
+  updateFeaturenbugcategory(input: UpdateFeaturenBugCategoryInput!): UpdateFeaturenBugCategoryPayload
+  createFeaturenbugstatus(input: CreateFeaturenBugStatusInput!): CreateFeaturenBugStatusPayload
+  updateFeaturenbugstatus(input: UpdateFeaturenBugStatusInput!): UpdateFeaturenBugStatusPayload
+  createExambase(input: CreateExamBaseInput!): CreateExamBasePayload
+  updateExambase(input: UpdateExamBaseInput!): UpdateExamBasePayload
+  createExamination(input: CreateExaminationInput!): CreateExaminationPayload
+  updateExamination(input: UpdateExaminationInput!): UpdateExaminationPayload
+  createAssesment(input: CreateAssesmentInput!): CreateAssesmentPayload
+  updateAssesment(input: UpdateAssesmentInput!): UpdateAssesmentPayload
+  createAssesmenttype(input: CreateAssesmentTypeInput!): CreateAssesmentTypePayload
+  updateAssesmenttype(input: UpdateAssesmentTypeInput!): UpdateAssesmentTypePayload
+  createItem(input: CreateItemInput!): CreateItemPayload
+  updateItem(input: UpdateItemInput!): UpdateItemPayload
+  createHostel(input: CreateHostelInput!): CreateHostelPayload
+  updateHostel(input: UpdateHostelInput!): UpdateHostelPayload
+  createComplaint(input: CreateComplaintInput!): CreateComplaintPayload
+  updateComplaint(input: UpdateComplaintInput!): UpdateComplaintPayload
+  createComplaintstatus(input: CreateComplaintStatusInput!): CreateComplaintStatusPayload
+  updateComplaintstatus(input: UpdateComplaintStatusInput!): UpdateComplaintStatusPayload
+  createComplainttypes(input: CreateComplaintTypesInput!): CreateComplaintTypesPayload
+  updateComplainttypes(input: UpdateComplaintTypesInput!): UpdateComplaintTypesPayload
+  createMessunit(input: CreateMessUnitInput!): CreateMessUnitPayload
+  updateMessunit(input: UpdateMessUnitInput!): UpdateMessUnitPayload
+  createMessunitcomment(input: CreateMessUnitCommentInput!): CreateMessUnitCommentPayload
+  updateMessunitcomment(input: UpdateMessUnitCommentInput!): UpdateMessUnitCommentPayload
+  createRoom(input: CreateRoomInput!): CreateRoomPayload
+  updateRoom(input: UpdateRoomInput!): UpdateRoomPayload
+  createSociety(input: CreateSocietyInput!): CreateSocietyPayload
+  updateSociety(input: UpdateSocietyInput!): UpdateSocietyPayload
+  createEvent(input: CreateEventInput!): CreateEventPayload
+  updateEvent(input: UpdateEventInput!): UpdateEventPayload
+  createStudent(input: CreateStudentInput!): CreateStudentPayload
+  updateStudent(input: UpdateStudentInput!): UpdateStudentPayload
+  createInstructor(input: CreateInstructorInput!): CreateInstructorPayload
+  updateInstructor(input: UpdateInstructorInput!): UpdateInstructorPayload
+  createAcademiccalendar(input: CreateAcademicCalendarInput!): CreateAcademicCalendarPayload
+  updateAcademiccalendar(input: UpdateAcademicCalendarInput!): UpdateAcademicCalendarPayload
+  createBatch(input: CreateBatchInput!): CreateBatchPayload
+  updateBatch(input: UpdateBatchInput!): UpdateBatchPayload
+  createBranch(input: CreateBranchInput!): CreateBranchPayload
+  updateBranch(input: UpdateBranchInput!): UpdateBranchPayload
+  createCourse(input: CreateCourseInput!): CreateCoursePayload
+  updateCourse(input: UpdateCourseInput!): UpdateCoursePayload
+  createDrivefolder(input: CreateDrivefolderInput!): CreateDrivefolderPayload
+  updateDrivefolder(input: UpdateDrivefolderInput!): UpdateDrivefolderPayload
+  createFile(input: CreateFileInput!): CreateFilePayload
+  updateFile(input: UpdateFileInput!): UpdateFilePayload
+  createFirstyearbatch(input: CreateFirstYearBatchInput!): CreateFirstYearBatchPayload
+  updateFirstyearbatch(input: UpdateFirstYearBatchInput!): UpdateFirstYearBatchPayload
+  createTextbook(input: CreateTextbookInput!): CreateTextbookPayload
+  updateTextbook(input: UpdateTextbookInput!): UpdateTextbookPayload
+  tokenAuth(username: String!, password: String!): ObtainJSONWebToken
+  verifyToken(token: String): Verify
+  refreshToken(token: String): Refresh
+}
+
+interface Node {
+  id: ID!
+}
+
+type ObtainJSONWebToken {
+  payload: GenericScalar!
+  refreshExpiresIn: Int!
+  token: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  wificreds(id: Int, networkName: String): WifiCredType
+  allWificreds: [WifiCredType]
+  allTimetable(before: String, after: String, first: Int, last: Int, id: UUID, name: String, startRepetion: DateTime, endRepetition: DateTime, batch: ID, adminUser: ID, createdDate: DateTime, modifiedDate: DateTime): TimetableBoardNodeConnection
+  timetable(id: ID!): TimetableBoardNode
+  allHolidays(before: String, after: String, first: Int, last: Int, id: UUID, name: String, date: Date): HolidaysNodeConnection
+  holidays(id: ID!): HolidaysNode
+  allLocations(before: String, after: String, first: Int, last: Int, id: UUID, building: String, room: String, floor: Int, published: Boolean, longitude: Float, latitute: Float, locationUrl: String): LocationNodeConnection
+  location(id: ID!): LocationNode
+  allClasses(before: String, after: String, first: Int, last: Int, id: UUID, type: String, timetableboard: ID, createdDate: DateTime, modifiedDate: DateTime, course: ID, day: String, startTime: Time, endTime: Time, location: ID, published: Boolean, private: Boolean): ClassNodeConnection
+  classes(id: ID!): ClassNode
+  node(id: ID!): Node
+  allShopitems(before: String, after: String, first: Int, last: Int, id: UUID, shop: ID, name: String, image: String, price: Int, stars: Float): ShopItemNodeConnection
+  shopitem(id: ID!): ShopItemNode
+  allShops(before: String, after: String, first: Int, last: Int, id: UUID, name: String, about: String, delivery: Boolean, inCampus: Boolean, image: String, type: ID, stars: Float, owner: String, phoneNo: String, timeOpen: Time, timeClose: Time, paytmId: String, location: String, menuImage: String): ShopNodeConnection
+  shop(id: ID!): ShopNode
+  allShoptypes(before: String, after: String, first: Int, last: Int, id: UUID, type: String, image: String): ShopTypeNodeConnection
+  shoptype(id: ID!): ShopTypeNode
+  allShopitemreviews(before: String, after: String, first: Int, last: Int, id: UUID, user: ID, shopItem: ID, stars: Float, review: String, datePosted: DateTime): ShopItemReviewNodeConnection
+  shopitemreview(id: ID!): ShopItemReviewNode
+  allShopreviews(before: String, after: String, first: Int, last: Int, id: UUID, user: ID, shop: ID, stars: Float, review: String, datePosted: DateTime): ShopReviewNodeConnection
+  shopreview(id: ID!): ShopReviewNode
+  allFeaturenbug(before: String, after: String, first: Int, last: Int, id: UUID, type: String, category: ID, status: ID, title: String, text: String, user: ID, image: String, datePosted: DateTime, slug: String): FeaturenBugNodeConnection
+  featurenbug(id: ID!): FeaturenBugNode
+  allFeaturenbugstatus(before: String, after: String, first: Int, last: Int, id: UUID, name: String): FeaturenBugStatusNodeConnection
+  featurenbugstatus(id: ID!): FeaturenBugStatusNode
+  allFeaturenbugcategory(before: String, after: String, first: Int, last: Int, id: UUID, name: String): FeaturenBugCategoryNodeConnection
+  featurenbugcategory(id: ID!): FeaturenBugCategoryNode
+  allExambase(before: String, after: String, first: Int, last: Int, id: UUID, name: String, course: ID, date: DateTime, dateCreated: DateTime, note: String, published: Boolean): ExamBaseNodeConnection
+  exambase(id: ID!): ExamBaseNode
+  allExamination(before: String, after: String, first: Int, last: Int, id: UUID, name: String, course: ID, date: DateTime, dateCreated: DateTime, note: String, published: Boolean, type: String): ExaminationNodeConnection
+  examination(id: ID!): ExaminationNode
+  allAssesment(before: String, after: String, first: Int, last: Int, id: UUID, name: String, course: ID, date: DateTime, dateCreated: DateTime, note: String, published: Boolean, type: ID, batch: ID, firstyearbatch: ID): AssesmentNodeConnection
+  assesment(id: ID!): AssesmentNode
+  allAssesmenttype(before: String, after: String, first: Int, last: Int, id: UUID, name: String): AssesmentTypeNodeConnection
+  assesmenttype(id: ID!): AssesmentTypeNode
+  allEvent(before: String, after: String, first: Int, last: Int, id: UUID, title: String, content: String, datePosted: DateTime, dateModified: DateTime, startTime: DateTime, endTime: DateTime, place: ID, inCampus: Boolean, location: String, locationUrl: String, posterImage: String, externalLink: String, society: ID): EventNodeConnection
+  event(id: ID!): EventNode
+  allSociety(before: String, after: String, first: Int, last: Int, id: UUID, name: String, category: String, about: String, studentHead: String, siteLink: String, logo: String, image: String, user: ID): SocietyNodeConnection
+  society(id: ID!): SocietyNode
+  allMembers(before: String, after: String, first: Int, last: Int, id: UUID, name: String, user: ID, role: String, email: String, githubUrl: String, linkedinUrl: String, twitterUrl: String, mediumUrl: String, devUrl: String, instagramUrl: String, image: String): MemberNodeConnection
+  member(id: ID!): MemberNode
+  allVolunteershipapplications(before: String, after: String, first: Int, last: Int, type: ID, why: String): VolunteershipApplicationNodeConnection
+  volunteershipapplication(id: ID!): VolunteershipApplicationNode
+  allItems(before: String, after: String, first: Int, last: Int, name: String, type: String, details: String, image: String, category: ID, status: ID, user: ID, contactDetails: String, datePosted: DateTime, isReviewed: Boolean, published: Boolean): ItemNodeConnection
+  item(id: ID!): ItemNode
+  allInstructor(before: String, after: String, first: Int, last: Int, id: UUID, name: String, user: ID, courseCodinator: Boolean, email: String, office: String, course: [ID], createdDate: DateTime): InstructorNodeConnection
+  instructor(id: ID!): InstructorNode
+  allStudent(before: String, after: String, first: Int, last: Int, id: UUID, user: ID, image: String, bio: String, rollno: Int, branch: ID, batch: ID, firstyearbatch: ID, points: Float, gender: String, createdDate: DateTime, starredFiles: [ID], token: UUID): StudentNodeConnection
+  student(id: ID!): StudentNode
+  allHostels(before: String, after: String, first: Int, last: Int, id: UUID, name: String, about: String, discussion: ID, wardenName: String, caretakerName: String, caretakerContact: String, capacity: Int, slug: String, image: String, user: ID, bStart: Time, bEnd: Time, lStart: Time, lEnd: Time, dStart: Time, dEnd: Time): HostelNodeConnection
+  hostel(id: ID!): HostelNode
+  allComplaints(before: String, after: String, first: Int, last: Int, id: UUID, types: ID, status: ID, subject: String, description: String, image: String, availStart: Time, availEnd: Time, datePosted: DateTime, comments: String, user: ID, slug: String): ComplaintNodeConnection
+  complaint(id: ID!): ComplaintNode
+  allMessunits(before: String, after: String, first: Int, last: Int, id: UUID, mess: ID, day: String, type: String, food: String, image: String, slug: String): MessUnitNodeConnection
+  messunit(id: ID!): MessUnitNode
+  allMessunitcomments(before: String, after: String, first: Int, last: Int, id: UUID, messunit: ID, stars: Int, comment: String, datePosted: DateTime, user: ID): MessUnitCommentNodeConnection
+  messunitcomment(id: ID!): MessUnitCommentNode
+  allComplainttypes(before: String, after: String, first: Int, last: Int, id: UUID, name: String): ComplaintTypesNodeConnection
+  complainttypes(id: ID!): ComplaintTypesNode
+  allComplaintstatus(before: String, after: String, first: Int, last: Int, id: UUID, name: String): ComplaintStatusNodeConnection
+  complaintstatus(id: ID!): ComplaintStatusNode
+  allRooms(before: String, after: String, first: Int, last: Int, id: UUID, hostel: ID, wing: String, num: Int): RoomNodeConnection
+  room(id: ID!): RoomNode
+  allDrivefolders(before: String, after: String, first: Int, last: Int, id: UUID, name: String, driveId: String, year: Int, fileName: String): DrivefolderNodeConnection
+  drivefolder(id: ID!): DrivefolderNode
+  allCourses(before: String, after: String, first: Int, last: Int, id: UUID, name: String, code: String, courseSite: String, credit: Float, l: Int, t: Int, p: Int, mst: Int, tutSes: Int, labProj: Int, quiz: Int, est: Int, createdDate: DateTime, syllabus: String): CourseNodeConnection
+  course(id: ID!): CourseNode
+  allBranches(before: String, after: String, first: Int, last: Int, id: UUID, year: String, code: String, name: String, course: [ID], createdDate: DateTime): BranchNodeConnection
+  branch(id: ID!): BranchNode
+  allAcademiccalendars(before: String, after: String, first: Int, last: Int, id: UUID, type: String, name: String, startDate: Date, endDate: Date): AcademicCalendarNodeConnection
+  academiccalendar(id: ID!): AcademicCalendarNode
+  allFiles(before: String, after: String, first: Int, last: Int, id: UUID, type: ID, tags: [ID], file: String, thumbnailImage: String, datePosted: DateTime, name: String, about: String, user: ID, course: ID, branch: ID, batch: ID, drivefolder: ID, published: Boolean, adminStarred: Boolean, isReviewed: Boolean, slug: String): FileNodeConnection
+  file(id: ID!): FileNode
+  allTextbooks(before: String, after: String, first: Int, last: Int, id: UUID, name: String, authName: String, publisher: String, course: ID, createdDate: DateTime): TextbookNodeConnection
+  textbook(id: ID!): TextbookNode
+  allBatches(before: String, after: String, first: Int, last: Int, id: UUID, branch: ID, num: Int, GR: ID, createdDate: DateTime): BatchNodeConnection
+  batch(id: ID!): BatchNode
+}
+
+type Refresh {
+  payload: GenericScalar!
+  refreshExpiresIn: Int!
+  token: String!
+}
+
+type RoomNode implements Node {
+  id: ID!
+  hostel: HostelNode!
+  wing: String!
+  num: Int!
+}
+
+type RoomNodeConnection {
+  pageInfo: PageInfo!
+  edges: [RoomNodeEdge]!
+}
+
+type RoomNodeEdge {
+  node: RoomNode
+  cursor: String!
+}
+
+type ShopItemNode implements Node {
+  id: ID!
+  shop: ShopNode
+  name: String!
+  image: String
+  price: Int!
+  stars: Float!
+  shopitemreviewSet(before: String, after: String, first: Int, last: Int): ShopItemReviewNodeConnection!
+}
+
+type ShopItemNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ShopItemNodeEdge]!
+}
+
+type ShopItemNodeEdge {
+  node: ShopItemNode
+  cursor: String!
+}
+
+type ShopItemReviewNode implements Node {
+  id: ID!
+  shopItem: ShopItemNode
+  stars: Float!
+  review: String!
+  datePosted: DateTime!
+}
+
+type ShopItemReviewNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ShopItemReviewNodeEdge]!
+}
+
+type ShopItemReviewNodeEdge {
+  node: ShopItemReviewNode
+  cursor: String!
+}
+
+type ShopNode implements Node {
+  id: ID!
+  name: String!
+  about: String
+  delivery: Boolean
+  inCampus: Boolean!
+  image: String!
+  type: ShopTypeNode
+  stars: Float!
+  owner: String
+  phoneNo: String
+  timeOpen: Time!
+  timeClose: Time!
+  paytmId: String
+  location: String!
+  menuImage: String!
+  shopitemSet(before: String, after: String, first: Int, last: Int): ShopItemNodeConnection!
+  shopreviewSet(before: String, after: String, first: Int, last: Int): ShopReviewNodeConnection!
+}
+
+type ShopNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ShopNodeEdge]!
+}
+
+type ShopNodeEdge {
+  node: ShopNode
+  cursor: String!
+}
+
+type ShopReviewNode implements Node {
+  id: ID!
+  shop: ShopNode
+  stars: Float!
+  review: String!
+  datePosted: DateTime!
+}
+
+type ShopReviewNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ShopReviewNodeEdge]!
+}
+
+type ShopReviewNodeEdge {
+  node: ShopReviewNode
+  cursor: String!
+}
+
+type ShopTypeNode implements Node {
+  id: ID!
+  type: String!
+  image: String
+  shopSet(before: String, after: String, first: Int, last: Int): ShopNodeConnection!
+}
+
+type ShopTypeNodeConnection {
+  pageInfo: PageInfo!
+  edges: [ShopTypeNodeEdge]!
+}
+
+type ShopTypeNodeEdge {
+  node: ShopTypeNode
+  cursor: String!
+}
+
+enum SocietyCategory {
+  TECH
+  CUL
+  ADV
+  TRAV
+  SOC
+  BUS
+  ELC
+}
+
+type SocietyNode implements Node {
+  id: ID!
+  name: String!
+  category: SocietyCategory!
+  about: String!
+  studentHead: String!
+  siteLink: String!
+  logo: String!
+  image: String!
+  Event(before: String, after: String, first: Int, last: Int): EventNodeConnection!
+}
+
+type SocietyNodeConnection {
+  pageInfo: PageInfo!
+  edges: [SocietyNodeEdge]!
+}
+
+type SocietyNodeEdge {
+  node: SocietyNode
+  cursor: String!
+}
+
+enum StudentGender {
+  M
+  F
+  T
+}
+
+type StudentNode implements Node {
+  id: ID!
+  image: String!
+  bio: String!
+  rollno: Int
+  branch: BranchNode!
+  batch: BatchNode
+  firstyearbatch: FirstYearBatchNode
+  points: Float!
+  gender: StudentGender!
+  createdDate: DateTime
+  starredFiles(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+  token: UUID!
+}
+
+type StudentNodeConnection {
+  pageInfo: PageInfo!
+  edges: [StudentNodeEdge]!
+}
+
+type StudentNodeEdge {
+  node: StudentNode
+  cursor: String!
+}
+
+type TextbookNode implements Node {
+  id: ID!
+  name: String!
+  authName: String!
+  publisher: String!
+  course: CourseNode!
+  createdDate: DateTime!
+}
+
+type TextbookNodeConnection {
+  pageInfo: PageInfo!
+  edges: [TextbookNodeEdge]!
+}
+
+type TextbookNodeEdge {
+  node: TextbookNode
+  cursor: String!
+}
+
+scalar Time
+
+type TimetableBoardNode implements Node {
+  id: ID!
+  name: String!
+  startRepetion: DateTime!
+  endRepetition: DateTime!
+  batch: BatchNode
+  createdDate: DateTime!
+  modifiedDate: DateTime
+  classSet(before: String, after: String, first: Int, last: Int): ClassNodeConnection!
+}
+
+type TimetableBoardNodeConnection {
+  pageInfo: PageInfo!
+  edges: [TimetableBoardNodeEdge]!
+}
+
+type TimetableBoardNodeEdge {
+  node: TimetableBoardNode
+  cursor: String!
+}
+
+scalar UUID
+
+input UpdateAcademicCalendarInput {
+  id: String
+  type: String
+  name: String
+  startDate: String
+  endDate: String
+  clientMutationId: String
+}
+
+type UpdateAcademicCalendarPayload {
+  academiccalendar: AcademicCalendarNode
+  clientMutationId: String
+}
+
+input UpdateAssesmentInput {
+  id: String
+  batch: String
+  firstyearbatch: String
+  clientMutationId: String
+}
+
+type UpdateAssesmentPayload {
+  assesment: AssesmentNode
+  clientMutationId: String
+}
+
+input UpdateAssesmentTypeInput {
+  id: String
+  name: String
+  clientMutationId: String
+}
+
+type UpdateAssesmentTypePayload {
+  assesmenttype: AssesmentTypeNode
+  clientMutationId: String
+}
+
+input UpdateBatchInput {
+  id: String
+  branch: String
+  num: Int
+  GR: String
+  clientMutationId: String
+}
+
+type UpdateBatchPayload {
+  batch: BatchNode
+  clientMutationId: String
+}
+
+input UpdateBranchInput {
+  id: String
+  year: String
+  code: String
+  name: String
+  course: String
+  clientMutationId: String
+}
+
+type UpdateBranchPayload {
+  branch: BranchNode
+  clientMutationId: String
+}
+
+input UpdateClassInput {
+  id: String
+  type: String
+  timetableboard: String
+  course: String
+  createdDate: DateTime
+  modifiedDate: DateTime
+  day: Date
+  startTime: Time
+  endTime: Time
+  location: String
+  published: Boolean
+  private: Boolean
+  clientMutationId: String
+}
+
+type UpdateClassPayload {
+  classes: ClassNode
+  clientMutationId: String
+}
+
+input UpdateComplaintInput {
+  id: String
+  types: String
+  status: String
+  subject: String
+  description: String
+  availStart: String
+  availEnd: String
+  comments: String
+  clientMutationId: String
+}
+
+type UpdateComplaintPayload {
+  complaint: ComplaintNode
+  clientMutationId: String
+}
+
+input UpdateComplaintStatusInput {
+  id: String
+  name: String
+  clientMutationId: String
+}
+
+type UpdateComplaintStatusPayload {
+  complaintstatus: ComplaintStatusNode
+  clientMutationId: String
+}
+
+input UpdateComplaintTypesInput {
+  id: String
+  name: String
+  clientMutationId: String
+}
+
+type UpdateComplaintTypesPayload {
+  complainttypes: ComplaintTypesNode
+  clientMutationId: String
+}
+
+input UpdateCourseInput {
+  id: String
+  name: String
+  code: String
+  courseSite: String
+  credit: Int
+  l: Int
+  t: Int
+  p: Int
+  mst: Int
+  tutSes: Int
+  labProj: Int
+  quiz: Int
+  est: Int
+  syllabus: String
+  clientMutationId: String
+}
+
+type UpdateCoursePayload {
+  course: CourseNode
+  clientMutationId: String
+}
+
+input UpdateDrivefolderInput {
+  id: String
+  name: String
+  driveId: String
+  year: Int
+  fileName: String
+  clientMutationId: String
+}
+
+type UpdateDrivefolderPayload {
+  drivefolder: DrivefolderNode
+  clientMutationId: String
+}
+
+input UpdateEventInput {
+  id: String
+  title: String
+  content: String
+  datePosted: DateTime
+  dateModified: DateTime
+  startTime: Time
+  endTime: Time
+  place: String
+  inCampus: Boolean
+  location: String
+  locationUrl: String
+  society: String
+  clientMutationId: String
+}
+
+type UpdateEventPayload {
+  event: EventNode
+  clientMutationId: String
+}
+
+input UpdateExamBaseInput {
+  id: String
+  name: String
+  course: String
+  date: DateTime
+  dateCreated: DateTime
+  note: String
+  published: Boolean
+  clientMutationId: String
+}
+
+type UpdateExamBasePayload {
+  exambase: ExamBaseNode
+  clientMutationId: String
+}
+
+input UpdateExaminationInput {
+  id: String
+  type: String
+  clientMutationId: String
+}
+
+type UpdateExaminationPayload {
+  examination: ExaminationNode
+  clientMutationId: String
+}
+
+input UpdateFeaturenBugCategoryInput {
+  id: String
+  name: String
+  clientMutationId: String
+}
+
+type UpdateFeaturenBugCategoryPayload {
+  featurenbugcategory: FeaturenBugCategoryNode
+  clientMutationId: String
+}
+
+input UpdateFeaturenBugInput {
+  id: String
+  type: String
+  category: String
+  status: String
+  title: String
+  text: String
+  user: String
+  image: String
+  datePosted: DateTime
+  slug: String
+  clientMutationId: String
+}
+
+type UpdateFeaturenBugPayload {
+  featurenbug: FeaturenBugNode
+  clientMutationId: String
+}
+
+input UpdateFeaturenBugStatusInput {
+  id: String
+  name: String
+  clientMutationId: String
+}
+
+type UpdateFeaturenBugStatusPayload {
+  featurenbugstatus: FeaturenBugStatusNode
+  clientMutationId: String
+}
+
+input UpdateFileInput {
+  id: String
+  type: String
+  tags: String
+  name: String
+  about: String
+  user: String
+  course: String
+  branch: String
+  batch: String
+  drivefolder: String
+  published: Boolean
+  adminStarred: Boolean
+  isReviewed: Boolean
+  clientMutationId: String
+}
+
+type UpdateFilePayload {
+  file: FileNode
+  clientMutationId: String
+}
+
+input UpdateFirstYearBatchInput {
+  id: String
+  code: String
+  no: Int
+  GR: String
+  clientMutationId: String
+}
+
+type UpdateFirstYearBatchPayload {
+  firstyearbatch: FirstYearBatchNode
+  clientMutationId: String
+}
+
+input UpdateHolidaysInput {
+  id: String
+  name: String
+  date: Date
+  clientMutationId: String
+}
+
+type UpdateHolidaysPayload {
+  holiday: HolidaysNode
+  clientMutationId: String
+}
+
+input UpdateHostelInput {
+  id: String
+  name: String
+  about: String
+  discussion: String
+  wardenName: String
+  caretakerName: String
+  caretakerContact: String
+  capacity: Int
+  bStart: String
+  bEnd: String
+  lStart: String
+  lEnd: String
+  dStart: String
+  dEnd: String
+  clientMutationId: String
+}
+
+type UpdateHostelPayload {
+  hostel: HostelNode
+  clientMutationId: String
+}
+
+input UpdateInstructorInput {
+  id: String
+  name: String
+  user: String
+  courseCodinator: Boolean
+  email: String
+  course: String
+  office: String
+  createdDate: DateTime
+  clientMutationId: String
+}
+
+type UpdateInstructorPayload {
+  instructor: InstructorNode
+  clientMutationId: String
+}
+
+input UpdateItemInput {
+  id: String
+  name: String
+  type: String
+  details: String
+  category: String
+  status: String
+  contactDetails: String
+  datePosted: String
+  isReviewed: String
+  published: String
+  clientMutationId: String
+}
+
+type UpdateItemPayload {
+  item: ItemNode
+  clientMutationId: String
+}
+
+input UpdateLocationInput {
+  id: String
+  building: String
+  room: String
+  floor: Int
+  published: Boolean
+  longitude: Float
+  latitute: Float
+  locationUrl: String
+  clientMutationId: String
+}
+
+type UpdateLocationPayload {
+  location: LocationNode
+  clientMutationId: String
+}
+
+input UpdateMemberInput {
+  id: String
+  name: String
+  role: String
+  email: String
+  githubUrl: String
+  linkedinUrl: String
+  twitterUrl: String
+  mediumUrl: String
+  devUrl: String
+  instagramUrl: String
+  clientMutationId: String
+}
+
+type UpdateMemberPayload {
+  member: MemberNode
+  clientMutationId: String
+}
+
+input UpdateMessUnitCommentInput {
+  id: String
+  messunit: String
+  stars: Int
+  comment: String
+  clientMutationId: String
+}
+
+type UpdateMessUnitCommentPayload {
+  messunitcomment: MessUnitCommentNode
+  clientMutationId: String
+}
+
+input UpdateMessUnitInput {
+  id: String
+  mess: String
+  day: String
+  type: String
+  food: String
+  clientMutationId: String
+}
+
+type UpdateMessUnitPayload {
+  messunit: MessUnitNode
+  clientMutationId: String
+}
+
+input UpdateRoomInput {
+  id: String
+  hostel: String
+  wing: String
+  num: String
+  clientMutationId: String
+}
+
+type UpdateRoomPayload {
+  room: RoomNode
+  clientMutationId: String
+}
+
+input UpdateShopInput {
+  id: String
+  name: String
+  about: String
+  owner: String
+  phoneNo: String
+  timeOpen: Time
+  delivery: Boolean
+  inCampus: Boolean
+  stars: Float
+  timeClose: Time
+  paytmId: String
+  location: String
+  clientMutationId: String
+}
+
+input UpdateShopItemInput {
+  id: String
+  shop: String
+  name: String
+  price: Int
+  stars: Float
+  clientMutationId: String
+}
+
+type UpdateShopItemPayload {
+  shopitem: ShopItemNode
+  clientMutationId: String
+}
+
+type UpdateShopPayload {
+  shop: ShopNode
+  clientMutationId: String
+}
+
+input UpdateShopTypeInput {
+  id: String
+  type: String
+  clientMutationId: String
+}
+
+type UpdateShopTypePayload {
+  shop: ShopTypeNode
+  clientMutationId: String
+}
+
+input UpdateSocietyInput {
+  id: String
+  name: String
+  category: String
+  about: String
+  studentHead: String
+  siteLink: String
+  user: String
+  clientMutationId: String
+}
+
+type UpdateSocietyPayload {
+  society: SocietyNode
+  clientMutationId: String
+}
+
+input UpdateStudentInput {
+  id: String
+  user: String
+  bio: String
+  branch: String
+  batch: String
+  firstyearbatch: String
+  points: String
+  gender: String
+  clientMutationId: String
+}
+
+type UpdateStudentPayload {
+  student: StudentNode
+  clientMutationId: String
+}
+
+input UpdateTextbookInput {
+  id: String
+  name: String
+  publisher: String
+  course: String
+  clientMutationId: String
+}
+
+type UpdateTextbookPayload {
+  textbook: TextbookNode
+  clientMutationId: String
+}
+
+input UpdateTimetableBoardInput {
+  id: String
+  name: String
+  startRepetion: DateTime
+  endRepetition: DateTime
+  batch: String
+  adminUser: String
+  createdDate: DateTime
+  modifiedDate: DateTime
+  clientMutationId: String
+}
+
+type UpdateTimetableBoardPayload {
+  timetableboard: TimetableBoardNode
+  clientMutationId: String
+}
+
+input UpdateVolunteershipApplicationInput {
+  id: String
+  type: String
+  why: String
+  clientMutationId: String
+}
+
+type UpdateVolunteershipApplicationPayload {
+  volunteershipapplication: VolunteershipApplicationNode
+  clientMutationId: String
+}
+
+type Verify {
+  payload: GenericScalar!
+}
+
+type VolunteershipApplicationNode implements Node {
+  id: ID!
+  why: String!
+}
+
+type VolunteershipApplicationNodeConnection {
+  pageInfo: PageInfo!
+  edges: [VolunteershipApplicationNodeEdge]!
+}
+
+type VolunteershipApplicationNodeEdge {
+  node: VolunteershipApplicationNode
+  cursor: String!
+}
+
+type WifiCredType {
+  id: UUID!
+  networkName: String
+  password: String
+}
