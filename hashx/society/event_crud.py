@@ -31,7 +31,11 @@ class CreateEvent(graphene.relay.ClientIDMutation):
         location = input.get('location')
         location_url = input.get('location_url')
         society = input.get('society')
+        poster_image = info.context.FILES['poster_image'] 
         event = Event(title=title , content= content , date_posted=date_posted , date_modified = date_modified , start_time = start_time , end_time=end_time , place=place , inCampus=inCampus , location = location , location_url  = location_url , society=society)
+        event.save()
+        if poster_image:
+            event.poster_image = poster_image
         event.save()
         return  CreateEvent(event=event)
 class UpdateEvent(graphene.relay.ClientIDMutation):
@@ -66,6 +70,7 @@ class UpdateEvent(graphene.relay.ClientIDMutation):
         location = input.get('location')
         location_url = input.get('location_url')
         society = input.get('society')
+        poster_image = info.context.FILES['poster_image'] 
         event = Event.objects.get(pk=id)
         if title:
             event.title = title
@@ -89,5 +94,8 @@ class UpdateEvent(graphene.relay.ClientIDMutation):
             event.location_url = location_url
         if society:
             event.society = society
+        if poster_image:
+            event.poster_image = poster_image
+        
         event.save()
         return UpdateEvent(event=event)

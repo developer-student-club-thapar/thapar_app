@@ -27,7 +27,12 @@ class CreateFeaturenBug(graphene.relay.ClientIDMutation):
         user = input.get('user')
         date_posted = input.get('date_posted')
         slug = input.get('slug')
-        featurenbug.save(type = type ,category = category , status=status , title = title , text = text , user = user , date_posted=date_posted , slug = slug)
+        image = info.context.FILES['image'] 
+        featurenbug = FeaturenBug(type = type ,category = category ,status=status , title = title , text = text , user = user , date_posted=date_posted , slug = slug)
+        featurenbug.save()
+        if image:
+            featurenbug.image = image
+        featurenbug.save()
         return  CreateFeaturenBug(featurenbug=featurenbug)
 class UpdateFeaturenBug(graphene.relay.ClientIDMutation):
     featurenbug = graphene.Field(FeaturenBugNode)
@@ -57,6 +62,7 @@ class UpdateFeaturenBug(graphene.relay.ClientIDMutation):
         user = input.get('user')
         date_posted = input.get('date_posted')
         slug = input.get('slug')
+        image = info.context.FILES['image'] 
         featurenbug = FeaturenBug.objects.get(pk=id)
         if type:
             featurenbug.type = type
@@ -74,5 +80,7 @@ class UpdateFeaturenBug(graphene.relay.ClientIDMutation):
             featurenbug.date_posted = date_posted
         if slug:
             featurenbug.slug = slug
+        if image:
+            featurenbug.image = image
         featurenbug.save()
         return UpdateFeaturenBug(featurenbug=featurenbug)

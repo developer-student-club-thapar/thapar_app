@@ -18,7 +18,11 @@ class CreateShopItem(graphene.relay.ClientIDMutation):
         name = input.get('name')
         price = input.get('price')
         stars = input.get('stars')
-        shopitem = ShopItem(shop=shop , name=name , price=price , stars=stars)
+        image = info.context.FILES['image']
+        shopitem = ShopItem(shop=shop ,name=name , price=price , stars=stars)
+        shopitem.save()
+        if image:
+            shopitem.image = image
         shopitem.save()
         return  CreateShopItem(shopitem=shopitem)
 
@@ -40,6 +44,7 @@ class UpdateShopItem(graphene.relay.ClientIDMutation):
         name = input.get('name')
         price = input.get('price')
         stars = input.get('stars')
+        image = info.context.FILES['image']
         shopitem = ShopItem.objects.get(pk=id)
         if shop:
             shopitem.shop = shop
@@ -49,6 +54,8 @@ class UpdateShopItem(graphene.relay.ClientIDMutation):
             shopitem.price = price
         if stars:
             shopitem.stars = stars
+        if image:
+            shopitem.image = image
         shopitem.save()
         return UpdateShopItem(shopitem=shopitem)
         
