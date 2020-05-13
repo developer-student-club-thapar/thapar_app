@@ -16,6 +16,7 @@ class CreateComplaint(graphene.relay.ClientIDMutation):
         avail_start = graphene.String()
         avail_end = graphene.String()
         comments = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -26,7 +27,9 @@ class CreateComplaint(graphene.relay.ClientIDMutation):
         avail_start = input.get('avail_start')
         avail_end = input.get('avail_end')
         comments = input.get('comments')
-        complaint = Complaint(types=types, status=status, subject=subject, description=description, avail_end=avail_end, avail_start=avail_start, comments=comments)
+        slug = input.get('slug')
+        image = info.context.FILES
+        complaint = Complaint(types=types, status=status, subject=subject, description=description, avail_end=avail_end, avail_start=avail_start, comments=comments, slug=slug, image=image)
 
         complaint.save()
         return CreateComplaint(complaint=complaint)
@@ -44,6 +47,7 @@ class UpdateComplaint(graphene.relay.ClientIDMutation):
         avail_start = graphene.String()
         avail_end = graphene.String()
         comments = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -57,6 +61,8 @@ class UpdateComplaint(graphene.relay.ClientIDMutation):
         avail_start = input.get('avail_start')
         avail_end = input.get('avail_end')
         comments = input.get('comments')
+        slug = input.get('slug')
+        image = info.context.FILES
         complaint = Complaint.objects.get(pk=id)
 
         if types:
@@ -79,6 +85,12 @@ class UpdateComplaint(graphene.relay.ClientIDMutation):
 
         if comments:
             complaint.comments = comments
+
+        if slug:
+            complaint.slug = slug
+
+        if image:
+            complaint.image = image
 
         complaint.save()
         return UpdateComplaint(complaint=complaint)

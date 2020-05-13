@@ -30,7 +30,8 @@ class CreateItem(graphene.relay.ClientIDMutation):
         date_posted = input.get('date_posted')
         is_reviewed = input.get('is_reviewed')
         published = input.get('published')
-        item = Item(name=name, type=type, details=details, category=category, status=status, contact_details=contact_details, date_posted=date_posted, is_reviewed=is_reviewed, published=published)
+        image = info.context.FILES
+        item = Item(name=name, type=type, details=details, category=category, status=status, contact_details=contact_details, date_posted=date_posted, is_reviewed=is_reviewed, published=published, image=image)
 
         item.save()
         return CreateItem(item=item)
@@ -65,6 +66,7 @@ class UpdateItem(graphene.relay.ClientIDMutation):
         date_posted = input.get('date_posted')
         is_reviewed = input.get('is_reviewed')
         published = input.get('published')
+        image = info.context.FILES
         item = Item.objects.get(pk=id)
 
         if name:
@@ -93,6 +95,9 @@ class UpdateItem(graphene.relay.ClientIDMutation):
 
         if published:
             item.published = published
+
+        if image:
+            item.image = image
 
         item.save()
         return UpdateItem(item=item)

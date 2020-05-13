@@ -4,6 +4,19 @@ from .models import Student , Instructor
 from django.db import models
 from graphene_django.types import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
+from django.contrib.auth.models import User
+
+class UserFilter(django_filters.FilterSet):
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
+class UserNode(DjangoObjectType):
+    class Meta:
+        model = User
+        interfaces = (graphene.relay.Node , )
+
 
 class StudentFilter(django_filters.FilterSet):
     class Meta:
@@ -46,4 +59,5 @@ class RelayQuery(graphene.ObjectType):
     instructor = graphene.relay.Node.Field(InstructorNode)
     all_student =  DjangoFilterConnectionField(StudentNode , filterset_class=StudentFilter)
     student = graphene.relay.Node.Field(StudentNode)
-
+    all_users = DjangoFilterConnectionField(UserNode , filterset_class=UserFilter)
+    user = graphene.relay.Node.Field(UserNode)

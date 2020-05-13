@@ -13,6 +13,7 @@ class CreateMessUnit(graphene.relay.ClientIDMutation):
         day = graphene.String()
         type = graphene.String()
         food = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -20,7 +21,9 @@ class CreateMessUnit(graphene.relay.ClientIDMutation):
         day = input.get('day')
         type = input.get('type')
         food = input.get('food')
-        messunit = MessUnit(mess=mess, day=day, type=type, food=food)
+        slug = input.get('slug')
+        image = info.context.FILES
+        messunit = MessUnit(mess=mess, day=day, type=type, food=food, slug=slug, image=image)
 
         messunit.save()
         return CreateMessUnit(messunit=messunit)
@@ -35,6 +38,7 @@ class UpdateMessUnit(graphene.relay.ClientIDMutation):
         day = graphene.String()
         type = graphene.String()
         food = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -45,6 +49,8 @@ class UpdateMessUnit(graphene.relay.ClientIDMutation):
         day = input.get('day')
         type = input.get('type')
         food = input.get('food')
+        slug = input.get('slug')
+        image = info.context.FILES
         messunit = MessUnit.objects.get(pk=id)
 
         if mess:
@@ -58,6 +64,12 @@ class UpdateMessUnit(graphene.relay.ClientIDMutation):
 
         if food:
             messunit.food = food
+
+        if slug:
+            messunit.slug = slug
+
+        if image:
+            messunit.image = image
 
         messunit.save()
         return UpdateMessUnit(messunit=messunit)
