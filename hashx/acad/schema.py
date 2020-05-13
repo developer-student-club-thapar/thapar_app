@@ -6,6 +6,7 @@ from graphene_django.filter import DjangoFilterConnectionField
 from .models import Drivefolder, Course, Batch, Branch, Textbook, File, FirstYearBatch, AcademicCalendar
 from django.db import models
 
+
 class DrivefolderFilter(django_filters.FilterSet):
     class Meta:
         model = Drivefolder
@@ -137,3 +138,5 @@ class RelayQuery(graphene.ObjectType):
     textbook = graphene.relay.Node.Field(TextbookNode)
     all_batches = DjangoFilterConnectionField(BatchNode , filterset_class=BatchFilter)
     batch = graphene.relay.Node.Field(BatchNode)
+    all_firstyearbatches = DjangoFilterConnectionField(FirstYearBatchNode , filterset_class=FirstYearBatchFilter)
+    firstyearbatch = graphene.relay.Node.Field(FirstYearBatchNode)

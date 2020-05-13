@@ -30,7 +30,8 @@ class CreateMember(graphene.relay.ClientIDMutation):
         medium_url = input.get('medium_url')
         dev_url = input.get('dev_url')
         instagram_url = input.get('instagram_url')
-        member = Member(name=name, role=role, email=email, github_url=github_url, linkedin_url=linkedin_url, twitter_url=twitter_url, medium_url=medium_url, dev_url=dev_url, instagram_url=instagram_url)
+        image = info.context.FILES
+        member = Member(name=name, role=role, email=email, github_url=github_url, linkedin_url=linkedin_url, twitter_url=twitter_url, medium_url=medium_url, dev_url=dev_url, instagram_url=instagram_url, image=image)
 
         member.save()
         return CreateMember(member=member)
@@ -65,6 +66,7 @@ class UpdateMember(graphene.relay.ClientIDMutation):
         medium_url = input.get('medium_url')
         dev_url = input.get('dev_url')
         instagram_url = input.get('instagram_url')
+        image = info.context.FILES
         member = Member.objects.get(pk=id)
 
         if name:
@@ -93,6 +95,9 @@ class UpdateMember(graphene.relay.ClientIDMutation):
 
         if instagram_url:
             member.instagram_url = instagram_url
+
+        if image:
+            member.image = image
 
         member.save()
         return UpdateMember(member=member)
