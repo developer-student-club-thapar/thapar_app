@@ -22,6 +22,7 @@ class CreateHostel(graphene.relay.ClientIDMutation):
         l_end = graphene.String()
         d_start = graphene.String()
         d_end = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -38,7 +39,9 @@ class CreateHostel(graphene.relay.ClientIDMutation):
         l_end = input.get('l_end')
         d_start = input.get('d_start')
         d_end = input.get('d_end')
-        hostel = Hostel(name=name, about=about, discussion=discussion, warden_name=warden_name, caretaker_contact=caretaker_contact, caretaker_name=caretaker_name, capacity=capacity, b_start=b_start, b_end=b_end, l_start=l_start, l_end=l_end, d_end=d_end, d_start=d_start)
+        slug = input.get('slug')
+        image = info.context.FILES
+        hostel = Hostel(name=name, about=about, discussion=discussion, warden_name=warden_name, caretaker_contact=caretaker_contact, caretaker_name=caretaker_name, capacity=capacity, b_start=b_start, b_end=b_end, l_start=l_start, l_end=l_end, d_end=d_end, d_start=d_start, slug=slug, image=image)
 
         hostel.save()
         return CreateHostel(hostel=hostel)
@@ -62,6 +65,7 @@ class UpdateHostel(graphene.relay.ClientIDMutation):
         l_end = graphene.String()
         d_start = graphene.String()
         d_end = graphene.String()
+        slug = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -81,6 +85,8 @@ class UpdateHostel(graphene.relay.ClientIDMutation):
         l_end = input.get('l_end')
         d_start = input.get('d_start')
         d_end = input.get('d_end')
+        slug = input.get('slug')
+        image = info.context.FILES
         hostel = Hostel.objects.get(pk=id)
 
         if name:
@@ -121,6 +127,12 @@ class UpdateHostel(graphene.relay.ClientIDMutation):
 
         if d_end:
             hostel.d_end = d_end
+
+        if slug:
+            hostel.slug = slug
+
+        if image:
+            hostel.image = image
 
         hostel.save()
         return UpdateHostel(hostel=hostel)

@@ -36,7 +36,9 @@ class CreateFile(graphene.relay.ClientIDMutation):
         published = input.get('published')
         admin_starred = input.get('admin_starred')
         is_reviewed = input.get('is_reviewed')
-        file = File(name=name, )
+        fileupload = info.context.FILES['file']
+
+        file = File(type=type, tags=tags, name=name, about=about, user=user, course=course, branch=branch, batch=batch, drivefolder=drivefolder, published=published, is_reviewed=is_reviewed, admin_starred=admin_starred, fileupload=fileupload)
 
         file.save()
         return CreateFile(file=file)
@@ -77,6 +79,7 @@ class UpdateFile(graphene.relay.ClientIDMutation):
         published = input.get('published')
         admin_starred = input.get('admin_starred')
         is_reviewed = input.get('is_reviewed')
+        fileupload = info.context.FILES['file']
         file = File.objects.get(pk=id)
 
         if type:
@@ -114,6 +117,9 @@ class UpdateFile(graphene.relay.ClientIDMutation):
 
         if is_reviewed:
             file.is_reviewed = is_reviewed
+        
+        if fileupload:
+            file.fileupload = fileupload
 
         file.save()
         return UpdateFile(file=file)
