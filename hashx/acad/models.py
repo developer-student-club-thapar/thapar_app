@@ -100,7 +100,7 @@ class FirstYearBatch(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(max_length=1)  # Batch Code Stuff ABCD...MNOP Part
     no = models.PositiveSmallIntegerField()  # 1..5
-    GR = models.OneToOneField(User, on_delete=models.CASCADE)
+    gr = models.OneToOneField(User, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now, editable=False)
 
 

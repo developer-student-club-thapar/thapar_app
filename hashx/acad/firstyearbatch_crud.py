@@ -11,14 +11,14 @@ class CreateFirstYearBatch(graphene.relay.ClientIDMutation):
     class Input:
         code = graphene.String()
         no = graphene.Int()
-        GR = graphene.String()
+        gr = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
         code = input.get('code')
         no = input.get('no')
-        GR = input.get('GR')
-        firstyearbatch = FirstYearBatch(code=code, no=no, GR=GR)
+        gr = input.get('gr')
+        firstyearbatch = FirstYearBatch(code=code, no=no, gr=gr)
 
         firstyearbatch.save()
         return CreateFirstYearBatch(firstyearbatch=firstyearbatch)
@@ -31,7 +31,7 @@ class UpdateFirstYearBatch(graphene.relay.ClientIDMutation):
         id = graphene.String()
         code = graphene.String()
         no = graphene.Int()
-        GR = graphene.String()
+        gr = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -40,7 +40,7 @@ class UpdateFirstYearBatch(graphene.relay.ClientIDMutation):
         id = id[1]
         code = input.get('code')
         no = input.get('no')
-        GR = input.get('GR')
+        gr = input.get('gr')
         firstyearbatch = FirstYearBatch.objects.get(pk=id)
 
         if code:
@@ -49,8 +49,8 @@ class UpdateFirstYearBatch(graphene.relay.ClientIDMutation):
         if no:
             firstyearbatch.no = no
 
-        if GR:
-            firstyearbatch.GR = GR
+        if gr:
+            firstyearbatch.gr = gr
 
         firstyearbatch.save()
         return UpdateFirstYearBatch(firstyearbatch=firstyearbatch)
