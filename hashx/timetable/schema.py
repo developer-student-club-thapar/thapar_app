@@ -5,6 +5,10 @@ from graphene_django.filter import DjangoFilterConnectionField
 from .models import TimetableBoard , Holidays ,Location,Class
 
 
+def auth_required(queryset, args, request, info):
+  if request.user.is_authenticated():
+    return queryset
+
 class TimetableBoardFilter(django_filters.FilterSet):
     class Meta:
         model = TimetableBoard
@@ -21,12 +25,11 @@ class HolidaysFilter(django_filters.FilterSet):
         model = Holidays
         fields = '__all__'
 class HolidaysNode(DjangoObjectType):
+   
     class Meta:
         model = Holidays
         interfaces = (graphene.relay.Node , )
-  
-
-
+        
 
 class ClassFilter(django_filters.FilterSet):
     class Meta:

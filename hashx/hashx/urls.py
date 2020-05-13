@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth_views
 from graphene_django.views import GraphQLView
 from users import views as user_views
 from .settings import DEBUG
+from graphql_jwt.decorators import jwt_cookie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,4 +40,4 @@ if (DEBUG == True):
                          csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))]
 else:
     urlpatterns += [path('graphql/',
-                         csrf_exempt(GraphQLView.as_view(schema=schema)))]
+                         jwt_cookie(GraphQLView.as_view(schema=schema)))]
