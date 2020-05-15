@@ -62,7 +62,8 @@ INSTALLED_APPS = [
     'members',
     'chat',
     'exam',
-    'frontend'
+    'frontend',
+    'django_extensions',
 
 ]
 
@@ -121,6 +122,10 @@ AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+GRAPH_MODELS = {'all_applications': True,   'group_models': True, }
+# To generate graphs visit https://django-extensions.readthedocs.io/en/latest/graph_models.html#default-settings
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
