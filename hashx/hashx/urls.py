@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from graphene_django.views import GraphQLView
-from users import views as user_views
+from users.views import CreateStudent , CreateUser
 from .settings import DEBUG
 from graphql_jwt.decorators import jwt_cookie
 
@@ -29,10 +29,11 @@ urlpatterns = [
     # Frontend should load before any application !
     # assuming this will be names home
     path('', include('frontend.urls'), name='home'),
-    path('register/', user_views.register, name='register'),
+    path('register/', CreateUser.as_view(), name='register'),
+    path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('profile/', user_views.profile, name='profile'),
+    # path('profile/', user_views.profile, name='profile'),
     # path('', include('users.urls'))
 ]
 if (DEBUG == True):
