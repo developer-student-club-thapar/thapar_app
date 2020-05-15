@@ -4,11 +4,6 @@ from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 from .models import TimetableBoard , Holidays ,Location,Class
 
-
-def auth_required(queryset, args, request, info):
-  if request.user.is_authenticated():
-    return queryset
-
 class TimetableBoardFilter(django_filters.FilterSet):
     class Meta:
         model = TimetableBoard
@@ -29,6 +24,8 @@ class HolidaysNode(DjangoObjectType):
     class Meta:
         model = Holidays
         interfaces = (graphene.relay.Node , )
+    # def __str__(self):
+    #     return type(self).__name__
         
 
 class ClassFilter(django_filters.FilterSet):
