@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -24,7 +24,7 @@ const Notifications = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -58,7 +58,6 @@ const Notifications = () => {
           horizontal: 'right',
         }}
       >
-        {/* <Paper elevation={0} style={{ width: '300px' }}> */}
         <h4
           style={{
             marginTop: '10px',
@@ -87,7 +86,6 @@ const Notifications = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h5>
         </a>
-        {/* </Paper> */}
       </Popover>
     </Fragment>
   );
