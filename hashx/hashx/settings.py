@@ -109,7 +109,9 @@ DATABASES = {
 
 GRAPHENE = {
     'MIDDLEWARE': [
+        'hashx.middleware.CustomAuthorizationMiddleware',
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
+        
     ],
     'SCHEMA': 'hashx.schema.schema',
     'SCHEMA_OUTPUT': 'schema.graphql',  # defaults to schema.json,

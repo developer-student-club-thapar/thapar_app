@@ -4,7 +4,6 @@ from acad.models import Branch, Batch, Course, Textbook, FirstYearBatch, File
 from django.utils import timezone
 import uuid
 
-
 class Student(models.Model):
     ''' Student Model Containg Data of Student, One to One Connection to User Class
         One to One Relation to Branch Class ( Branch Class contains both Branch and Year)
