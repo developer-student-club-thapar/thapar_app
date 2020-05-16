@@ -29,6 +29,10 @@ import Avatar from '@material-ui/core/Avatar';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { withRouter } from 'react-router-dom';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+import SearchBar from './SearchBar';
 
 const drawerWidth = 250;
 
@@ -160,6 +164,11 @@ const useStyles = makeStyles(theme => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  modal: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 }));
 
 function SearchAppBar(props) {
@@ -167,6 +176,7 @@ function SearchAppBar(props) {
   // const [sideDrawer, setSideDrawer] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
+  const [modal, setModal] = React.useState(false);
 
   // const toggleDrawer = (open) => (event) => {
   //   if (
@@ -185,6 +195,14 @@ function SearchAppBar(props) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setModal(true);
+  };
+
+  const handleClose = () => {
+    setModal(false);
   };
   const list = () => (
     <div className={classes.list} role="presentation">
@@ -214,7 +232,7 @@ function SearchAppBar(props) {
                   : props.history.push('/');
               }}
             >
-              <ListItemIcon style={{ color: '#FBF9FF', margin: 'auto' }}>
+              <ListItemIcon style={{ color: '#FBF9FF' }}>
                 {index === 0 && <HomeIcon />}
                 {index === 1 && <EventIcon />}
                 {index === 2 && <LibraryBooksIcon />}
@@ -255,19 +273,31 @@ function SearchAppBar(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             Thapar app
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
               placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
+              onClick={handleOpen}
               inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
+            /> */}
+          <SearchIcon onClick={handleOpen} style={{ cursor: 'pointer' }} />
+          <Modal
+            className={classes.modal}
+            open={modal}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={modal}>
+              <SearchBar />
+            </Fade>
+          </Modal>
+          {/* </div> */}
           <Notification />
         </Toolbar>
       </AppBar>
