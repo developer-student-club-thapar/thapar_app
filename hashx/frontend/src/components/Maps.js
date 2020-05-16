@@ -29,7 +29,7 @@ class Maps extends Component {
       showingInfoWindow: true,
     });
   };
-  onClose = (props) => {
+  onClose = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -90,5 +90,5 @@ class Maps extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s',
+  apiKey: `${process.env.REACT_APP_MAPS_API}`,
 })(Maps);
