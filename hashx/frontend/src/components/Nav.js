@@ -101,8 +101,14 @@ const useStyles = makeStyles(theme => ({
     width: 250,
   },
   large: {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
+    width: theme.spacing(9),
+    height: theme.spacing(9),
+    margin: 'auto',
+  },
+  small: {
+    width: theme.spacing(5),
+    height: theme.spacing(5),
+    margin: 'auto',
   },
   drawer: {
     width: 50,
@@ -185,8 +191,8 @@ function SearchAppBar(props) {
       <Avatar
         alt="Remy Sharp"
         src="https://picsum.photos/200/300"
-        style={{ margin: 'auto', marginTop: '10px' }}
-        className={classes.large}
+        style={{ marginTop: '10px' }}
+        className={clsx({ [classes.large]: open, [classes.small]: !open })}
       />
       <br />
 
@@ -208,7 +214,7 @@ function SearchAppBar(props) {
                   : props.history.push('/');
               }}
             >
-              <ListItemIcon style={{ color: '#FBF9FF' }}>
+              <ListItemIcon style={{ color: '#FBF9FF', margin: 'auto' }}>
                 {index === 0 && <HomeIcon />}
                 {index === 1 && <EventIcon />}
                 {index === 2 && <LibraryBooksIcon />}
