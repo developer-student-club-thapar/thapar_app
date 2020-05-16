@@ -4,13 +4,13 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Notification from './Notifications';
+import Drawer from '@material-ui/core/Drawer';
 import clsx from 'clsx';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -26,13 +26,21 @@ import CodeIcon from '@material-ui/icons/Code';
 import GroupIcon from '@material-ui/icons/Group';
 import BookIcon from '@material-ui/icons/Book';
 import Avatar from '@material-ui/core/Avatar';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { withRouter } from 'react-router-dom';
 
-const useStyles = makeStyles((theme) => ({
+const drawerWidth = 250;
+
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
   },
   title: {
     flexGrow: 1,
@@ -96,37 +104,98 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(7),
     height: theme.spacing(7),
   },
+  drawer: {
+    width: 50,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    background: '#1B233A',
+    color: '#FBF9FF',
+  },
+  drawerClose: {
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9) + 1,
+    },
+    background: '#1B233A',
+    color: '#FBF9FF',
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(0, 1),
+    // necessary for content to be below app bar
+    ...theme.mixins.toolbar,
+  },
 }));
 
-export default function SearchAppBar() {
+function SearchAppBar(props) {
   const classes = useStyles();
-  const [sideDrawer, setSideDrawer] = React.useState(false);
+  // const [sideDrawer, setSideDrawer] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
 
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
-    ) {
-      return;
-    }
+  // const toggleDrawer = (open) => (event) => {
+  //   if (
+  //     event.type === 'keydown' &&
+  //     (event.key === 'Tab' || event.key === 'Shift')
+  //   ) {
+  //     return;
+  //   }
 
-    setSideDrawer(open);
+  //   setSideDrawer(open);
+  // };
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
   };
   const list = () => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
+    <div className={classes.list} role="presentation">
       <Avatar
         alt="Remy Sharp"
         src="https://picsum.photos/200/300"
-        style={{ margin: 'auto', marginTop: '30px' }}
+        style={{ margin: 'auto', marginTop: '10px' }}
         className={classes.large}
       />
       <br />
-      <h3 style={{ textAlign: 'center' }}>Lorem Ipsum</h3>
+
+      <h3
+        style={{ textAlign: 'center' }}
+        className={clsx({ [classes.hide]: !open })}
+      >
+        Lorem Ipsum
+      </h3>
       <List>
         {['Home', 'Events', 'Resources', 'Projects', 'Team', 'Blog'].map(
           (text, index) => (
@@ -161,14 +230,19 @@ export default function SearchAppBar() {
         style={{
           backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
         }}
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
       >
         <Toolbar>
           <IconButton
             edge="start"
-            className={classes.menuButton}
+            className={clsx(classes.menuButton, {
+              [classes.hide]: open,
+            })}
             color="inherit"
             aria-label="open drawer"
-            onClick={toggleDrawer(true)}
+            onClick={handleDrawerOpen}
           >
             <MenuIcon />
           </IconButton>
@@ -191,14 +265,32 @@ export default function SearchAppBar() {
           <Notification />
         </Toolbar>
       </AppBar>
-      <SwipeableDrawer
-        anchor={'left'}
-        open={sideDrawer}
-        onClose={toggleDrawer(false)}
-        classes={{ paper: classes.paper }}
+      <Drawer
+        variant="permanent"
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
       >
+        <div className={classes.toolbar}>
+          <IconButton onClick={handleDrawerClose} style={{ color: '#FBF9FF' }}>
+            {theme.direction === 'rtl' ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
+          </IconButton>
+        </div>
         {list()}
-      </SwipeableDrawer>
+      </Drawer>
     </div>
   );
 }
+
+export default withRouter(SearchAppBar);
