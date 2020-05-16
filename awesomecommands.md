@@ -1,4 +1,4 @@
-# list of Some Awesoem Commands
+# List of Some Awesome Commands
 
 ## To Generate a Database Entity Relationship Model DOT FILE
 
