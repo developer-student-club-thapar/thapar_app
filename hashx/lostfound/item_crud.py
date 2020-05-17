@@ -1,7 +1,8 @@
-from .models import Item
-from graphql_relay.node.node import from_global_id
-from .schema import ItemNode
 import graphene
+from .models import Item
+from .schema import ItemNode
+from hashx.decorators import every_authenticated
+from graphql_relay.node.node import from_global_id
 from graphene_django.types import DjangoObjectType
 
 
@@ -20,6 +21,7 @@ class CreateItem(graphene.relay.ClientIDMutation):
         published = graphene.Boolean()
 
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls, root, info, **input):
         name = input.get('name')
         type = input.get('type')
@@ -53,6 +55,7 @@ class UpdateItem(graphene.relay.ClientIDMutation):
         published = graphene.String()
 
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls, root, info, **input):
         id = input.get('id')
         id = from_global_id(id)

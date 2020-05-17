@@ -1,6 +1,6 @@
 from graphql_jwt.decorators import login_required
 from graphene_django.filter import DjangoFilterConnectionField
-from .decorators import student_check , instructor_check , viewall
+from .decorators import student_check , instructor_check , every_authenticated
 
 
 class StudentOnlyQuery(DjangoFilterConnectionField):
@@ -18,7 +18,7 @@ class InstructorOnlyQuery(DjangoFilterConnectionField):
 class ViewAllAuthenticatedQuery(DjangoFilterConnectionField):
     @classmethod
     @login_required
-    @viewall
+    @every_authenticated
     def resolve_queryset(cls, connection, iterable, info, args, filtering_args=None, filterset_class=None):
         return super(ViewAllAuthenticatedQuery, cls).resolve_queryset(connection, iterable, info, args, filtering_args, filterset_class)
 class OpenForAllQuery(DjangoFilterConnectionField):
