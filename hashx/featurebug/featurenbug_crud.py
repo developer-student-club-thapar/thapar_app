@@ -1,7 +1,8 @@
-from .models import FeaturenBug
-from graphql_relay.node.node import from_global_id
-from .schema import FeaturenBugNode
 import graphene
+from .models import FeaturenBug
+from .schema import FeaturenBugNode
+from hashx.decorators import every_authenticated , same_user
+from graphql_relay.node.node import from_global_id
 from graphene_django.types import DjangoObjectType
 class CreateFeaturenBug(graphene.relay.ClientIDMutation):
     featurenbug = graphene.Field(FeaturenBugNode)
@@ -11,12 +12,12 @@ class CreateFeaturenBug(graphene.relay.ClientIDMutation):
         status = graphene.String()
         title = graphene.String()
         text = graphene.String()
-        user = graphene.String()
         image = graphene.String()
         date_posted  = graphene.types.datetime.DateTime()
         slug = graphene.String()
     
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls,root, info, **input):
         featurenbug = FeaturenBug()
         type = input.get('type')
@@ -24,10 +25,10 @@ class CreateFeaturenBug(graphene.relay.ClientIDMutation):
         status = input.get('status')
         title = input.get('title')
         text = input.get('text')
-        user = input.get('user')
         date_posted = input.get('date_posted')
         slug = input.get('slug')
-        image = info.context.FILES['image'] 
+        image = info.context.FILES['image']
+        user = info.context.user
         featurenbug = FeaturenBug(type = type ,category = category ,status=status , title = title , text = text , user = user , date_posted=date_posted , slug = slug)
         featurenbug.save()
         if image:
@@ -49,21 +50,22 @@ class UpdateFeaturenBug(graphene.relay.ClientIDMutation):
         slug = graphene.String()
         
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls,root, info, **input):
         id = input.get('id')
         id = from_global_id(id)
         id = id[1]
-        featurenbug = FeaturenBug()
         type = input.get('type')
         category = input.get('category')
         status = input.get('status')
         title = input.get('title')
         text = input.get('text')
-        user = input.get('user')
         date_posted = input.get('date_posted')
         slug = input.get('slug')
         image = info.context.FILES['image'] 
         featurenbug = FeaturenBug.objects.get(pk=id)
+        user = featurenbug.user
+        same_user(user,info.context.user)
         if type:
             featurenbug.type = type
         if title:
@@ -74,8 +76,6 @@ class UpdateFeaturenBug(graphene.relay.ClientIDMutation):
             featurenbug.status = status
         if category:
             featurenbug.category = category
-        if user:
-            featurenbug.user = user
         if date_posted:
             featurenbug.date_posted = date_posted
         if slug:
