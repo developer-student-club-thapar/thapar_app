@@ -20,7 +20,7 @@ To do that run the following inside the project repo -
     On Windows
 ```source venv/Scripts/activate```
     On MacOS/Linux
-```source venv/bin/actiavte```
+```source venv/bin/activate```
 - At the root of your project directory <br>
 ```bash 
 pip install -r requirements.txt
@@ -49,6 +49,10 @@ The page will reload if you make edits.<br />
 
 Runs the app in the development mode.<br />
 Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+
+## Setup and running of Google MAPs
+- In your .env file, Set ```REACT_APP_MAPS_API = Your API key```
+- Refer [https://developers.google.com/maps/documentation/javascript/get-api-key] on how to generate an API key.
 
 
 #### Note

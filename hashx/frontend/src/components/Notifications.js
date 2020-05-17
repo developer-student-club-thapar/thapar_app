@@ -7,11 +7,16 @@ import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
     },
+  },
+  paper: {
+    background: '#1B233A',
+    color: '#FBF9FF',
+    width: 300,
   },
 }));
 
@@ -19,7 +24,7 @@ const Notifications = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -43,6 +48,7 @@ const Notifications = () => {
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
+        classes={{ paper: classes.paper }}
         anchorOrigin={{
           vertical: 'bottom',
           horizontal: 'center',
@@ -52,37 +58,34 @@ const Notifications = () => {
           horizontal: 'right',
         }}
       >
-        <Paper elevation={0} style={{ width: '300px' }}>
-          <h4
-            style={{
-              marginTop: '10px',
-              marginLeft: '10px',
-              fontWeight: 'bold',
-            }}
-          >
-            Notifications
-          </h4>
+        <h4
+          style={{
+            marginTop: '10px',
+            marginLeft: '10px',
+            fontWeight: 'bold',
+          }}
+        >
+          Notifications
+        </h4>
 
-          <a
-            href="#"
-            style={{
-              textDecoration: 'none',
-              color: 'black',
-              borderColor: 'transparent',
-            }}
-          >
-            <h5 style={{ marginLeft: '10px' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </h5>
-          </a>
-          <a href="#" style={{ textDecoration: 'none', color: 'black' }}>
-            <h5 style={{ marginLeft: '10px' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </h5>
-          </a>
-        </Paper>
+        <a
+          href="#"
+          style={{
+            textDecoration: 'none',
+            color: '#FBF9FF',
+          }}
+        >
+          <h5 style={{ marginLeft: '10px' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </h5>
+        </a>
+        <a href="#" style={{ textDecoration: 'none', color: '#FBF9FF' }}>
+          <h5 style={{ marginLeft: '10px' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </h5>
+        </a>
       </Popover>
     </Fragment>
   );
