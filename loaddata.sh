@@ -1,0 +1,1 @@
+source venv/bin/activate && cd hashx && python manage.py makemigrations && python3 manage.py loaddata acad && python3 manage.py loaddata hostel && python manage.py migrate python manage.py runserver
