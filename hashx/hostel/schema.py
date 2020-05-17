@@ -2,7 +2,7 @@ import graphene
 from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from .models import Hostel, Complaint, MessUnit, MessUnitComment, ComplaintStatus, ComplaintTypes, Room
 from django.db import models
 
@@ -126,17 +126,17 @@ class RoomNode(DjangoObjectType):
 
 
 class RelayQuery(graphene.ObjectType):
-    all_hostels = DjangoFilterConnectionField(HostelNode , filterset_class=HostelFilter)
+    all_hostels = ViewAllAuthenticatedQuery(HostelNode , filterset_class=HostelFilter)
     hostel = graphene.relay.Node.Field(HostelNode)
-    all_complaints = DjangoFilterConnectionField(ComplaintNode , filterset_class=ComplaintFilter)
+    all_complaints = ViewAllAuthenticatedQuery(ComplaintNode , filterset_class=ComplaintFilter)
     complaint = graphene.relay.Node.Field(ComplaintNode)
-    all_messunits = DjangoFilterConnectionField(MessUnitNode , filterset_class=MessUnitFilter)
+    all_messunits = ViewAllAuthenticatedQuery(MessUnitNode , filterset_class=MessUnitFilter)
     messunit = graphene.relay.Node.Field(MessUnitNode)
-    all_messunitcomments = DjangoFilterConnectionField(MessUnitCommentNode , filterset_class=MessUnitCommentFilter)
+    all_messunitcomments = ViewAllAuthenticatedQuery(MessUnitCommentNode , filterset_class=MessUnitCommentFilter)
     messunitcomment = graphene.relay.Node.Field(MessUnitCommentNode)
-    all_complainttypes = DjangoFilterConnectionField(ComplaintTypesNode, filterset_class=ComplaintTypesFilter)
+    all_complainttypes = ViewAllAuthenticatedQuery(ComplaintTypesNode, filterset_class=ComplaintTypesFilter)
     complainttypes = graphene.relay.Node.Field(ComplaintTypesNode)
-    all_complaintstatus = DjangoFilterConnectionField(ComplaintStatusNode, filterset_class=ComplaintStatusFilter)
+    all_complaintstatus = ViewAllAuthenticatedQuery(ComplaintStatusNode, filterset_class=ComplaintStatusFilter)
     complaintstatus = graphene.relay.Node.Field(ComplaintStatusNode)
-    all_rooms = DjangoFilterConnectionField(RoomNode , filterset_class=RoomFilter)
+    all_rooms = ViewAllAuthenticatedQuery(RoomNode , filterset_class=RoomFilter)
     room = graphene.relay.Node.Field(RoomNode)

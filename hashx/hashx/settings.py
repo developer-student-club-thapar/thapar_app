@@ -111,7 +111,6 @@ DATABASES = {
 
 GRAPHENE = {
     'MIDDLEWARE': [
-        'hashx.middleware.CustomAuthorizationMiddleware',
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
         
     ],
