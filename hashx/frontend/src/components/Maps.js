@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import dsc_icon from '../assets/dsc_icon.png';
+import React, { Component, Fragment } from "react";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
+import dsc_icon from "../assets/dsc_icon.png";
 
 class Maps extends Component {
   state = {
@@ -8,14 +8,14 @@ class Maps extends Component {
       {
         lat: 30.354086,
         lng: 76.362207,
-        name: 'Mudra Nite',
-        time: '5pm onwards',
+        name: "Mudra Nite",
+        time: "5pm onwards",
       },
       {
         lat: 30.35183,
         lng: 76.370889,
-        name: 'Full Stack Bootcamp',
-        time: '5pm-8pm',
+        name: "Full Stack Bootcamp",
+        time: "5pm-8pm",
       },
     ],
     showingInfoWindow: false, //Hides or the shows the infoWindow
@@ -29,7 +29,7 @@ class Maps extends Component {
       showingInfoWindow: true,
     });
   };
-  onClose = props => {
+  onClose = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -62,7 +62,7 @@ class Maps extends Component {
         visible={this.state.showingInfoWindow}
         onClose={this.onClose}
       >
-        <div style={{ color: 'black' }}>
+        <div style={{ color: "black" }}>
           <h4>{this.state.selectedPlace.name}</h4>
           <h5>{this.state.selectedPlace.time}</h5>
         </div>
@@ -72,8 +72,8 @@ class Maps extends Component {
 
   render() {
     const mapStyles = {
-      width: '1232px',
-      height: '400px',
+      width: "1232px",
+      height: "400px",
     };
     return (
       <Map
@@ -90,5 +90,5 @@ class Maps extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: `${process.env.REACT_APP_MAPS_API}`,
+  apiKey: "AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s",
 })(Maps);

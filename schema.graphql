@@ -70,6 +70,7 @@ type BatchNode implements Node {
   id: ID!
   branch: BranchNode!
   num: Int!
+  GR: UserNode
   createdDate: DateTime!
   fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
   studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
@@ -168,6 +169,7 @@ type ComplaintNode implements Node {
   availEnd: Time!
   datePosted: DateTime!
   comments: String!
+  user: UserNode
   slug: String
 }
 
@@ -335,6 +337,7 @@ input CreateComplaintInput {
   availStart: String
   availEnd: String
   comments: String
+  slug: String
   clientMutationId: String
 }
 
@@ -409,7 +412,7 @@ input CreateEventInput {
   inCampus: Boolean
   location: String
   locationUrl: String
-  society: String
+  societyId: String
   clientMutationId: String
 }
 
@@ -505,7 +508,7 @@ type CreateFilePayload {
 input CreateFirstYearBatchInput {
   code: String
   no: Int
-  GR: String
+  gr: String
   clientMutationId: String
 }
 
@@ -539,6 +542,7 @@ input CreateHostelInput {
   lEnd: String
   dStart: String
   dEnd: String
+  slug: String
   clientMutationId: String
 }
 
@@ -632,6 +636,7 @@ input CreateMessUnitInput {
   day: String
   type: String
   food: String
+  slug: String
   clientMutationId: String
 }
 
@@ -887,6 +892,7 @@ type FeaturenBugNode implements Node {
   status: FeaturenBugStatusNode!
   title: String!
   text: String!
+  user: UserNode
   image: String
   datePosted: DateTime!
   slug: String
@@ -930,6 +936,7 @@ type FileNode implements Node {
   datePosted: DateTime!
   name: String!
   about: String
+  user: UserNode
   course: CourseNode
   branch: BranchNode
   batch: BatchNode
@@ -955,9 +962,20 @@ type FirstYearBatchNode implements Node {
   id: ID!
   code: String!
   no: Int!
+  gr: UserNode!
   createdDate: DateTime!
   studentSet(before: String, after: String, first: Int, last: Int): StudentNodeConnection!
   assesmentSet(before: String, after: String, first: Int, last: Int): AssesmentNodeConnection!
+}
+
+type FirstYearBatchNodeConnection {
+  pageInfo: PageInfo!
+  edges: [FirstYearBatchNodeEdge]!
+}
+
+type FirstYearBatchNodeEdge {
+  node: FirstYearBatchNode
+  cursor: String!
 }
 
 scalar GenericScalar
@@ -988,6 +1006,7 @@ type HostelNode implements Node {
   capacity: Int
   slug: String
   image: String
+  user: UserNode
   bStart: Time
   bEnd: Time
   lStart: Time
@@ -1011,6 +1030,7 @@ type HostelNodeEdge {
 type InstructorNode implements Node {
   id: ID!
   name: String!
+  user: UserNode
   courseCodinator: Boolean!
   email: String
   office: String!
@@ -1034,6 +1054,7 @@ type ItemNode implements Node {
   type: ItemType!
   details: String!
   image: String
+  user: UserNode!
   contactDetails: String!
   datePosted: DateTime!
   isReviewed: Boolean!
@@ -1101,6 +1122,7 @@ type LocationNodeEdge {
 type MemberNode implements Node {
   id: ID!
   name: String!
+  user: UserNode!
   role: String!
   email: String!
   githubUrl: String!
@@ -1128,6 +1150,7 @@ type MessUnitCommentNode implements Node {
   stars: Int!
   comment: String
   datePosted: DateTime!
+  user: UserNode!
 }
 
 type MessUnitCommentNodeConnection {
@@ -1322,6 +1345,8 @@ type Query {
   instructor(id: ID!): InstructorNode
   allStudent(before: String, after: String, first: Int, last: Int, id: UUID, user: ID, image: String, bio: String, rollno: Int, branch: ID, batch: ID, firstyearbatch: ID, points: Float, gender: String, createdDate: DateTime, starredFiles: [ID], token: UUID): StudentNodeConnection
   student(id: ID!): StudentNode
+  allUsers(before: String, after: String, first: Int, last: Int, password: String, lastLogin: DateTime, isSuperuser: Boolean, groups: [ID], userPermissions: [ID], username: String, firstName: String, lastName: String, email: String, isStaff: Boolean, isActive: Boolean, dateJoined: DateTime): UserNodeConnection
+  user(id: ID!): UserNode
   allHostels(before: String, after: String, first: Int, last: Int, id: UUID, name: String, about: String, discussion: ID, wardenName: String, caretakerName: String, caretakerContact: String, capacity: Int, slug: String, image: String, user: ID, bStart: Time, bEnd: Time, lStart: Time, lEnd: Time, dStart: Time, dEnd: Time): HostelNodeConnection
   hostel(id: ID!): HostelNode
   allComplaints(before: String, after: String, first: Int, last: Int, id: UUID, types: ID, status: ID, subject: String, description: String, image: String, availStart: Time, availEnd: Time, datePosted: DateTime, comments: String, user: ID, slug: String): ComplaintNodeConnection
@@ -1350,6 +1375,8 @@ type Query {
   textbook(id: ID!): TextbookNode
   allBatches(before: String, after: String, first: Int, last: Int, id: UUID, branch: ID, num: Int, GR: ID, createdDate: DateTime): BatchNodeConnection
   batch(id: ID!): BatchNode
+  allFirstyearbatches(before: String, after: String, first: Int, last: Int, id: UUID, code: String, no: Int, gr: ID, createdDate: DateTime): FirstYearBatchNodeConnection
+  firstyearbatch(id: ID!): FirstYearBatchNode
 }
 
 type Refresh {
@@ -1397,6 +1424,7 @@ type ShopItemNodeEdge {
 
 type ShopItemReviewNode implements Node {
   id: ID!
+  user: UserNode
   shopItem: ShopItemNode
   stars: Float!
   review: String!
@@ -1445,6 +1473,7 @@ type ShopNodeEdge {
 
 type ShopReviewNode implements Node {
   id: ID!
+  user: UserNode
   shop: ShopNode
   stars: Float!
   review: String!
@@ -1497,6 +1526,7 @@ type SocietyNode implements Node {
   siteLink: String!
   logo: String!
   image: String!
+  user: UserNode!
   Event(before: String, after: String, first: Int, last: Int): EventNodeConnection!
 }
 
@@ -1518,6 +1548,7 @@ enum StudentGender {
 
 type StudentNode implements Node {
   id: ID!
+  user: UserNode!
   image: String!
   bio: String!
   rollno: Int
@@ -1568,6 +1599,7 @@ type TimetableBoardNode implements Node {
   startRepetion: DateTime!
   endRepetition: DateTime!
   batch: BatchNode
+  adminUser: UserNode
   createdDate: DateTime!
   modifiedDate: DateTime
   classSet(before: String, after: String, first: Int, last: Int): ClassNodeConnection!
@@ -1679,6 +1711,7 @@ input UpdateComplaintInput {
   availStart: String
   availEnd: String
   comments: String
+  slug: String
   clientMutationId: String
 }
 
@@ -1758,7 +1791,7 @@ input UpdateEventInput {
   inCampus: Boolean
   location: String
   locationUrl: String
-  society: String
+  societyId: String
   clientMutationId: String
 }
 
@@ -1861,7 +1894,7 @@ input UpdateFirstYearBatchInput {
   id: String
   code: String
   no: Int
-  GR: String
+  gr: String
   clientMutationId: String
 }
 
@@ -1897,6 +1930,7 @@ input UpdateHostelInput {
   lEnd: String
   dStart: String
   dEnd: String
+  slug: String
   clientMutationId: String
 }
 
@@ -1996,6 +2030,7 @@ input UpdateMessUnitInput {
   day: String
   type: String
   food: String
+  slug: String
   clientMutationId: String
 }
 
@@ -2136,6 +2171,45 @@ input UpdateVolunteershipApplicationInput {
 type UpdateVolunteershipApplicationPayload {
   volunteershipapplication: VolunteershipApplicationNode
   clientMutationId: String
+}
+
+type UserNode implements Node {
+  id: ID!
+  password: String!
+  lastLogin: DateTime
+  isSuperuser: Boolean!
+  username: String!
+  firstName: String!
+  lastName: String!
+  email: String!
+  isStaff: Boolean!
+  isActive: Boolean!
+  dateJoined: DateTime!
+  firstyearbatch: FirstYearBatchNode
+  batch: BatchNode
+  fileSet(before: String, after: String, first: Int, last: Int): FileNodeConnection!
+  student: StudentNode
+  instructor: InstructorNode
+  timetableboardSet(before: String, after: String, first: Int, last: Int): TimetableBoardNodeConnection!
+  societySet(before: String, after: String, first: Int, last: Int): SocietyNodeConnection!
+  featurenbugSet(before: String, after: String, first: Int, last: Int): FeaturenBugNodeConnection!
+  Item(before: String, after: String, first: Int, last: Int): ItemNodeConnection!
+  hostel(before: String, after: String, first: Int, last: Int): HostelNodeConnection!
+  complaint(before: String, after: String, first: Int, last: Int): ComplaintNodeConnection!
+  MessUnitComment(before: String, after: String, first: Int, last: Int): MessUnitCommentNodeConnection!
+  shopitemreviewSet(before: String, after: String, first: Int, last: Int): ShopItemReviewNodeConnection!
+  shopreviewSet(before: String, after: String, first: Int, last: Int): ShopReviewNodeConnection!
+  Member(before: String, after: String, first: Int, last: Int): MemberNodeConnection!
+}
+
+type UserNodeConnection {
+  pageInfo: PageInfo!
+  edges: [UserNodeEdge]!
+}
+
+type UserNodeEdge {
+  node: UserNode
+  cursor: String!
 }
 
 type Verify {
