@@ -112,6 +112,7 @@ DATABASES = {
 GRAPHENE = {
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
+        'hashx.middleware.FileSizeCheck'
         
     ],
     'SCHEMA': 'hashx.schema.schema',
