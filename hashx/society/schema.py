@@ -3,7 +3,7 @@ import django_filters
 from .models import Society, Event
 from django.db import models
 from graphene_django.types import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 
 
 class SocietyFilter(django_filters.FilterSet):
@@ -47,7 +47,7 @@ class EventNode(DjangoObjectType):
 
 class RelayQuery(graphene.ObjectType):
     node = graphene.relay.Node.Field()
-    all_event =  DjangoFilterConnectionField(EventNode , filterset_class=EventFilter)
+    all_event =  ViewAllAuthenticatedQuery(EventNode , filterset_class=EventFilter)
     event = graphene.relay.Node.Field(EventNode)
-    all_society =  DjangoFilterConnectionField(SocietyNode , filterset_class=SocietyFilter)
+    all_society =  ViewAllAuthenticatedQuery(SocietyNode , filterset_class=SocietyFilter)
     society = graphene.relay.Node.Field(SocietyNode)

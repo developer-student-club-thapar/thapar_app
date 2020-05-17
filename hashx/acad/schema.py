@@ -2,7 +2,7 @@ import graphene
 from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from .models import Drivefolder, Course, Batch, Branch, Textbook, File, FirstYearBatch, AcademicCalendar
 from django.db import models
 
@@ -124,19 +124,19 @@ class AcademicCalendarNode(DjangoObjectType):
 
 
 class RelayQuery(graphene.ObjectType):
-    all_drivefolders = DjangoFilterConnectionField(DrivefolderNode , filterset_class=DrivefolderFilter)
+    all_drivefolders = ViewAllAuthenticatedQuery(DrivefolderNode , filterset_class=DrivefolderFilter)
     drivefolder = graphene.relay.Node.Field(DrivefolderNode)
-    all_courses = DjangoFilterConnectionField(CourseNode , filterset_class=CourseFilter)
+    all_courses = ViewAllAuthenticatedQuery(CourseNode , filterset_class=CourseFilter)
     course = graphene.relay.Node.Field(CourseNode)
-    all_branches = DjangoFilterConnectionField(BranchNode , filterset_class=BranchFilter)
+    all_branches = ViewAllAuthenticatedQuery(BranchNode , filterset_class=BranchFilter)
     branch = graphene.relay.Node.Field(BranchNode)
-    all_academiccalendars = DjangoFilterConnectionField(AcademicCalendarNode , filterset_class=AcademicCalendarFilter)
+    all_academiccalendars = ViewAllAuthenticatedQuery(AcademicCalendarNode , filterset_class=AcademicCalendarFilter)
     academiccalendar = graphene.relay.Node.Field(AcademicCalendarNode)
-    all_files = DjangoFilterConnectionField(FileNode , filterset_class=FileFilter)
+    all_files = ViewAllAuthenticatedQuery(FileNode , filterset_class=FileFilter)
     file = graphene.relay.Node.Field(FileNode)
-    all_textbooks = DjangoFilterConnectionField(TextbookNode , filterset_class=TextbookFilter)
+    all_textbooks = ViewAllAuthenticatedQuery(TextbookNode , filterset_class=TextbookFilter)
     textbook = graphene.relay.Node.Field(TextbookNode)
-    all_batches = DjangoFilterConnectionField(BatchNode , filterset_class=BatchFilter)
+    all_batches = ViewAllAuthenticatedQuery(BatchNode , filterset_class=BatchFilter)
     batch = graphene.relay.Node.Field(BatchNode)
-    all_firstyearbatches = DjangoFilterConnectionField(FirstYearBatchNode , filterset_class=FirstYearBatchFilter)
+    all_firstyearbatches = ViewAllAuthenticatedQuery(FirstYearBatchNode , filterset_class=FirstYearBatchFilter)
     firstyearbatch = graphene.relay.Node.Field(FirstYearBatchNode)

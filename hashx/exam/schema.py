@@ -1,7 +1,7 @@
 import graphene
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from .models import ExamBase , Examination , Assesment , AssesmentType
 
 class ExamBaseFilter(django_filters.FilterSet):
@@ -41,13 +41,13 @@ class AssesmentTypeNode(DjangoObjectType):
         interfaces = (graphene.relay.Node , )
     
 class RelayQuery(graphene.ObjectType):
-    all_exambase =  DjangoFilterConnectionField(ExamBaseNode , filterset_class=ExamBaseFilter)
+    all_exambase =  ViewAllAuthenticatedQuery(ExamBaseNode , filterset_class=ExamBaseFilter)
     exambase = graphene.relay.Node.Field(ExamBaseNode)
-    all_examination =  DjangoFilterConnectionField(ExaminationNode , filterset_class=ExaminationFilter)
+    all_examination =  ViewAllAuthenticatedQuery(ExaminationNode , filterset_class=ExaminationFilter)
     examination = graphene.relay.Node.Field(ExaminationNode)
-    all_assesment =  DjangoFilterConnectionField(AssesmentNode , filterset_class=AssesmentFilter)
+    all_assesment =  ViewAllAuthenticatedQuery(AssesmentNode , filterset_class=AssesmentFilter)
     assesment = graphene.relay.Node.Field(AssesmentNode)
-    all_assesmenttype =  DjangoFilterConnectionField(AssesmentTypeNode , filterset_class=AssesmentTypeFilter)
+    all_assesmenttype =  ViewAllAuthenticatedQuery(AssesmentTypeNode , filterset_class=AssesmentTypeFilter)
     assesmenttype = graphene.relay.Node.Field(AssesmentTypeNode)
 
 
