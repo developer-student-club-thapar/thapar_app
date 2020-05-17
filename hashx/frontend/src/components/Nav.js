@@ -250,7 +250,7 @@ function SearchAppBar(props) {
   return (
     <div className={classes.root}>
       <AppBar
-        position="static"
+        position="fixed"
         style={{
           backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
         }}

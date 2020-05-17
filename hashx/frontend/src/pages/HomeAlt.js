@@ -13,7 +13,7 @@ import Events from '../components/Events';
 import MessMenu from '../components/MessMenu';
 import TimeTable from '../components/TimeTable';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
@@ -34,7 +34,7 @@ const Home = () => {
       <Grid
         container
         spacing={2}
-        style={{ marginTop: '-10px', height: '190px' }}
+        style={{ marginTop: '50px', height: '190px' }}
       >
         <Grid item xs={12} lg={12} xl={12}>
           <Paper
