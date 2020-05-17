@@ -299,7 +299,6 @@ function SearchAppBar(props) {
             </Fade>
           </Modal>
           {/* </div> */}
-          
         </Toolbar>
       </AppBar>
       <Drawer
