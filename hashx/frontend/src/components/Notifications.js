@@ -36,7 +36,7 @@ const Notifications = () => {
     <Fragment>
       <IconButton
         color="inherit"
-        style={{ height: '35px', marginTop: '-10px' }}
+        style={{ height: '35px' }}
         onClick={handleClick}
       >
         <Badge color="secondary" variant="dot">

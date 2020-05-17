@@ -250,7 +250,7 @@ function SearchAppBar(props) {
   return (
     <div className={classes.root}>
       <AppBar
-        position="fixed"
+        position="static"
         style={{
           backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
         }}
@@ -283,7 +283,6 @@ function SearchAppBar(props) {
               inputProps={{ 'aria-label': 'search' }}
             /> */}
           <SearchIcon onClick={handleOpen} style={{ cursor: 'pointer' }} />
-          <Notification />
           <Modal
             className={classes.modal}
             open={modal}
@@ -299,6 +298,7 @@ function SearchAppBar(props) {
             </Fade>
           </Modal>
           {/* </div> */}
+          <Notification />
         </Toolbar>
       </AppBar>
       <Drawer
