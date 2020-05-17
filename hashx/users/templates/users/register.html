@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
-    <div class="content-section">
-        <form method="POST">
+{% extends "./base.html" %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" , style="padding-top: 40px">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend >Join Today</legend>
                 {{ form.as_p }}
             </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            <div style="padding-top:20px" ,>
+                <button class="btn waves-effect waves-light" , style="background-color: rgb(74, 85, 235)" ,type="submit">Submit</button>
             </div>
         </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already Have An Account?Sign In</a>
-            </small>
-        </div>
     </div>
-</body>
-</html>
+
+{% endblock content %}
