@@ -10,5 +10,5 @@ class Profanity(MiddlewareMixin):
         # res = bytes(text, 'UTF-8')
         pf = ProfanityFilter()
         if pf.is_profane(request.body.decode('utf-8')) is True:
-            raise Exception("Swear word")
+            raise Exception("Please remove any profanity/swear words.")
         return None
