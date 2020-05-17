@@ -2,6 +2,7 @@ import graphene
 import django_filters
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import OpenForAllQuery
 from .models import TimetableBoard , Holidays ,Location,Class
 
 class TimetableBoardFilter(django_filters.FilterSet):
@@ -49,7 +50,7 @@ class LocationNode(DjangoObjectType):
 class RelayQuery(graphene.ObjectType):
     all_timetable =  DjangoFilterConnectionField(TimetableBoardNode , filterset_class=TimetableBoardFilter)
     timetable = graphene.relay.Node.Field(TimetableBoardNode)
-    all_holidays =  DjangoFilterConnectionField(HolidaysNode , filterset_class=HolidaysFilter)
+    all_holidays =  OpenForAllQuery(HolidaysNode , filterset_class=HolidaysFilter)
     holidays = graphene.relay.Node.Field(HolidaysNode)
     all_locations =  DjangoFilterConnectionField(LocationNode , filterset_class=LocationFilter)
     location = graphene.relay.Node.Field(LocationNode)
