@@ -1,7 +1,8 @@
-from .models import Item
-from graphql_relay.node.node import from_global_id
-from .schema import ItemNode
 import graphene
+from .models import Item
+from .schema import ItemNode
+from hashx.decorators import every_authenticated , same_user
+from graphql_relay.node.node import from_global_id
 from graphene_django.types import DjangoObjectType
 
 
@@ -20,7 +21,9 @@ class CreateItem(graphene.relay.ClientIDMutation):
         published = graphene.Boolean()
 
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls, root, info, **input):
+        user = info.context.user
         name = input.get('name')
         type = input.get('type')
         details = input.get('details')
@@ -31,7 +34,7 @@ class CreateItem(graphene.relay.ClientIDMutation):
         is_reviewed = input.get('is_reviewed')
         published = input.get('published')
         image = info.context.FILES
-        item = Item(name=name, type=type, details=details, category=category, status=status, contact_details=contact_details, date_posted=date_posted, is_reviewed=is_reviewed, published=published, image=image)
+        item = Item(name=name, type=type, details=details, category=category, status=status, contact_details=contact_details, date_posted=date_posted, is_reviewed=is_reviewed, published=published, image=image , user=user)
 
         item.save()
         return CreateItem(item=item)
@@ -53,10 +56,13 @@ class UpdateItem(graphene.relay.ClientIDMutation):
         published = graphene.String()
 
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls, root, info, **input):
         id = input.get('id')
         id = from_global_id(id)
         id = id[1]
+        item = Item.objects.get(pk=id)
+        user = item.user
         name = input.get('name')
         type = input.get('type')
         details = input.get('details')
@@ -67,8 +73,7 @@ class UpdateItem(graphene.relay.ClientIDMutation):
         is_reviewed = input.get('is_reviewed')
         published = input.get('published')
         image = info.context.FILES
-        item = Item.objects.get(pk=id)
-
+        same_user(user , info.context.user)
         if name:
             item.name = name
 

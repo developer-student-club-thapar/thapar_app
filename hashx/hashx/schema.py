@@ -24,7 +24,6 @@ import exam.mutation as exam_mutations
 
 
 class Query(acad_schema.RelayQuery, hostel_schema.RelayQuery,users_schema.RelayQuery ,lostfound_schema.RelayQuery, members_schema.RelayQuery, society_schema.RelayQuery,exam_schema.RelayQuery,featurebug_schema.RelayQuery ,shop_schema.RelayQuery, timetable_schema.RelayQuery, wifipass_schema.Query,  graphene.ObjectType):
-
     # This Class wil inherit from multiple Queries
     # as we begin to add more apps to the project
     pass

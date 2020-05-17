@@ -1,7 +1,7 @@
 import graphene
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from .models import FeaturenBugCategory , FeaturenBug , FeaturenBugStatus
 from django.db import models
 
@@ -51,11 +51,11 @@ class FeaturenBugCategoryNode(DjangoObjectType):
     
 
 class RelayQuery(graphene.ObjectType):
-    all_featurenbug =  DjangoFilterConnectionField(FeaturenBugNode , filterset_class=FeaturenBugFilter)
+    all_featurenbug =  ViewAllAuthenticatedQuery(FeaturenBugNode , filterset_class=FeaturenBugFilter)
     featurenbug = graphene.relay.Node.Field(FeaturenBugNode)
-    all_featurenbugstatus =  DjangoFilterConnectionField(FeaturenBugStatusNode , filterset_class=FeaturenBugStatusFilter)
+    all_featurenbugstatus =  ViewAllAuthenticatedQuery(FeaturenBugStatusNode , filterset_class=FeaturenBugStatusFilter)
     featurenbugstatus = graphene.relay.Node.Field(FeaturenBugStatusNode)
-    all_featurenbugcategory =  DjangoFilterConnectionField(FeaturenBugCategoryNode , filterset_class=FeaturenBugCategoryFilter)
+    all_featurenbugcategory =  ViewAllAuthenticatedQuery(FeaturenBugCategoryNode , filterset_class=FeaturenBugCategoryFilter)
     featurenbugcategory = graphene.relay.Node.Field(FeaturenBugCategoryNode)
 
 

@@ -2,7 +2,7 @@ import graphene
 from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from .models import Item
 from django.db import models
 
@@ -28,5 +28,5 @@ class ItemNode(DjangoObjectType):
 
 
 class RelayQuery(graphene.ObjectType):
-    all_items = DjangoFilterConnectionField(ItemNode, filterset_class=ItemFilter)
+    all_items = ViewAllAuthenticatedQuery(ItemNode, filterset_class=ItemFilter)
     item = graphene.relay.Node.Field(ItemNode)

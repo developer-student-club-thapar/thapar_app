@@ -12,11 +12,3 @@ class Profanity(MiddlewareMixin):
         if pf.is_profane(request.body.decode('utf-8')) is True:
             raise Exception("Swear word")
         return None
-
-
-class CustomAuthorizationMiddleware(object):
-    def resolve(self, next, root, info, **args):
-        user = info.context.user
-        if not user.is_authenticated:
-            return None
-        return next(root, info, **args)

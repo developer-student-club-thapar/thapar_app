@@ -3,7 +3,7 @@ import django_filters
 from .models import Student , Instructor
 from django.db import models
 from graphene_django.types import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery
 from django.contrib.auth.models import User
 
 class UserFilter(django_filters.FilterSet):
@@ -55,9 +55,9 @@ class InstructorNode(DjangoObjectType):
     
 class RelayQuery(graphene.ObjectType):
     node = graphene.relay.Node.Field()
-    all_instructor =  DjangoFilterConnectionField(InstructorNode , filterset_class=InstructorFilter)
+    all_instructor =  ViewAllAuthenticatedQuery(InstructorNode , filterset_class=InstructorFilter)
     instructor = graphene.relay.Node.Field(InstructorNode)
-    all_student =  DjangoFilterConnectionField(StudentNode , filterset_class=StudentFilter)
+    all_student =  ViewAllAuthenticatedQuery(StudentNode , filterset_class=StudentFilter)
     student = graphene.relay.Node.Field(StudentNode)
-    all_users = DjangoFilterConnectionField(UserNode , filterset_class=UserFilter)
+    all_users = ViewAllAuthenticatedQuery(UserNode , filterset_class=UserFilter)
     user = graphene.relay.Node.Field(UserNode)
