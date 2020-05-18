@@ -1,7 +1,7 @@
+import graphene
 from .models import Holidays
 from graphql_relay.node.node import from_global_id
 from .schema import HolidaysNode
-import graphene
 from graphene_django.types import DjangoObjectType
 from django.http import HttpResponseNotAllowed
 
