@@ -1,0 +1,550 @@
+[
+{
+    "model": "acad.branch",
+    "pk": 1,
+    "fields": {
+        "name": "Electronics and Computer",
+        "year": "Freshman",
+        "code": "ENC"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 2,
+    "fields": {
+        "name": "Electronics and Computer",
+        "year": "Sophomore",
+        "code": "ENC"
+    }
+},
+    
+
+{
+    "model": "acad.branch",
+    "pk": 3,
+    "fields": {
+        "name": "Electronics and Computer",
+        "year": "Junior Year",
+        "code": "ENC"
+    }
+},
+    
+
+{
+    "model": "acad.branch",
+    "pk": 4,
+    "fields": {
+        "name": "Electronics and Computer",
+        "year": "Senior Year",
+        "code": "ENC"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 5,
+    "fields": {
+        "name": "Biomedical Engineering",
+        "year": "Freshman",
+        "code": "BM"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 6,
+    "fields": {
+        "name": "Biomedical Engineering",
+        "year": "Sophomore",
+        "code": "BM"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 7,
+    "fields": {
+        "name": "Biomedical Engineering",
+        "year": "Junior Year",
+        "code": "BM"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 8,
+    "fields": {
+        "name": "Biomedical Engineering",
+        "year": "Senior Year",
+        "code": "BM"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 9,
+    "fields": {
+        "name": "Biotechnology",
+        "year": "Freshman",
+        "code": "BT"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 10,
+    "fields": {
+        "name": "Biotechnology",
+        "year": "Sophomore",
+        "code": "BT"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 11,
+    "fields": {
+        "name": "Biotechnology",
+        "year": "Junior Year",
+        "code": "BT"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 12,
+    "fields": {
+        "name": "Biotechnology",
+        "year": "Senior Year",
+        "code": "BT"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 13,
+    "fields": {
+        "name": "Chemical Engineering",
+        "year": "Freshman",
+        "code": "CHE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 14,
+    "fields": {
+        "name": "Chemical Engineering",
+        "year": "Sophomore",
+        "code": "CHE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 15,
+    "fields": {
+        "name": "Chemical Engineering",
+        "year": "Junior Year",
+        "code": "CHE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 16,
+    "fields": {
+        "name": "Chemical Engineering",
+        "year": "Senior Year",
+        "code": "CHE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 17,
+    "fields": {
+        "name": "Civil Engineering",
+        "year": "Freshman",
+        "code": "CIE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 18,
+    "fields": {
+        "name": "Civil Engineering",
+        "year": "Sophomore",
+        "code": "CIE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 19,
+    "fields": {
+        "name": "Civil Engineering",
+        "year": "Junior Year",
+        "code": "CIE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 20,
+    "fields": {
+        "name": "Civil Engineering",
+        "year": "Senior Year",
+        "code": "CIE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 21,
+    "fields": {
+        "name": "Computer Engineering",
+        "year": "Freshman",
+        "code": "COE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 22,
+    "fields": {
+        "name": "Computer Engineering",
+        "year": "Sophomore",
+        "code": "COE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 23,
+    "fields": {
+        "name": "Computer Engineering",
+        "year": "Junior Year",
+        "code": "COE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 24,
+    "fields": {
+        "name": "Computer Engineering",
+        "year": "Senior Year",
+        "code": "COE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 25,
+    "fields": {
+        "name": "Computer Science Engineering",
+        "year": "Freshman",
+        "code": "CSE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 26,
+    "fields": {
+        "name": "Computer Science Engineering",
+        "year": "Sophomore",
+        "code": "CSE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 27,
+    "fields": {
+        "name": "Computer Science Engineering",
+        "year": "Junior Year",
+        "code": "CSE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 28,
+    "fields": {
+        "name": "Computer Science Engineering",
+        "year": "Senior Year",
+        "code": "CSE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 29,
+    "fields": {
+        "name": "Computer Science and Business Systems",
+        "year": "Freshman",
+        "code": "CSBS"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 30,
+    "fields": {
+        "name": "Computer Science and Business Systems",
+        "year": "Sophomore",
+        "code": "CSBS"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 31,
+    "fields": {
+        "name": "Computer Science and Business Systems",
+        "year": "Junior Year",
+        "code": "CSBS"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 32,
+    "fields": {
+        "name": "Computer Science and Business Systems",
+        "year": "Senior Year",
+        "code": "CSBS"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 33,
+    "fields": {
+        "name": "Electrical Engineering",
+        "year": "Freshman",
+        "code": "ELE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 34,
+    "fields": {
+        "name": "Electrical Engineering",
+        "year": "Sophomore",
+        "code": "ELE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 35,
+    "fields": {
+        "name": "Electrical Engineering",
+        "year": "Junior Year",
+        "code": "ELE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 36,
+    "fields": {
+        "name": "Electrical Engineering",
+        "year": "Senior Year",
+        "code": "ELE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 37,
+    "fields": {
+        "name": "Electronics and Communication",
+        "year": "Freshman",
+        "code": "ECE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 38,
+    "fields": {
+        "name": "Electronics and Communication",
+        "year": "Sophomore",
+        "code": "ECE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 39,
+    "fields": {
+        "name": "Electronics and Communication",
+        "year": "Junior Year",
+        "code": "ECE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 40,
+    "fields": {
+        "name": "Electronics and Communication",
+        "year": "Senior Year",
+        "code": "ECE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 41,
+    "fields": {
+        "name": "Electronics (Instrumentation and Control) Engineering",
+        "year": "Freshman",
+        "code": "EIC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 42,
+    "fields": {
+        "name": "Electronics (Instrumentation and Control) Engineering",
+        "year": "Sophomore",
+        "code": "EIC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 43,
+    "fields": {
+        "name": "Electronics (Instrumentation and Control) Engineering",
+        "year": "Junior Year",
+        "code": "EIC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 44,
+    "fields": {
+        "name": "Electronics (Instrumentation and Control) Engineering",
+        "year": "Senior Year",
+        "code": "EIC"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 45,
+    "fields": {
+        "name": "Mechanical Engineering",
+        "year": "Freshman",
+        "code": "MEE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 46,
+    "fields": {
+        "name": "Mechanical Engineering",
+        "year": "Sophomore",
+        "code": "MEE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 47,
+    "fields": {
+        "name": "Mechanical Engineering",
+        "year": "Junior Year",
+        "code": "MEE"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 48,
+    "fields": {
+        "name": "Mechanical Engineering",
+        "year": "Senior Year",
+        "code": "MEE"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 49,
+    "fields": {
+        "name": "Mechanical Engineering (Production)",
+        "year": "Freshman",
+        "code": "MEP"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 50,
+    "fields": {
+        "name": "Mechanical Engineering (Production)",
+        "year": "Sophomore",
+        "code": "MEP"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 51,
+    "fields": {
+        "name": "Mechanical Engineering (Production)",
+        "year": "Junior Year",
+        "code": "MEP"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 1,
+    "fields": {
+        "name": "Mechanical Engineering (Production)",
+        "year": "Senior Year",
+        "code": "MEP"
+    }
+},
+{
+    "model": "acad.branch",
+    "pk": 52,
+    "fields": {
+        "name": "Mechatronics",
+        "year": "Freshman",
+        "code": "MEC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 53,
+    "fields": {
+        "name": "Mechatronics",
+        "year": "Sophomore",
+        "code": "MEC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 54,
+    "fields": {
+        "name": "Mechatronics",
+        "year": "Junior Year",
+        "code": "MEC"
+    }
+},
+
+{
+    "model": "acad.branch",
+    "pk": 55,
+    "fields": {
+        "name": "Mechatronics",
+        "year": "Senior Year",
+        "code": "MEC"
+    }
+}
+
+]
