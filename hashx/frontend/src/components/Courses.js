@@ -7,6 +7,9 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@apollo/react-hooks';
+import { gql } from 'apollo-boost';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 
 const RandomColor = () => {
   let colorValues = [
@@ -29,7 +32,20 @@ const RandomColor = () => {
   return colorValues[Math.floor(Math.random() * 15)];
 };
 
-const useStyles = makeStyles((theme) => ({
+const COURSES_QUERY = gql`
+  query CoursesQuery {
+    allCourses {
+      edges {
+        node {
+          code
+          id
+        }
+      }
+    }
+  }
+`;
+
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
@@ -44,17 +60,19 @@ const useStyles = makeStyles((theme) => ({
   courseCard: {
     height: '100px',
     width: '150px',
-    backgroundColor: `${RandomColor()}`,
+    // backgroundColor: `${RandomColor()}`,
     borderRadius: '20px',
     margin: 'auto',
+    cursor: 'pointer',
   },
 }));
 
-const Courses = () => {
+const Courses = props => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { loading, error, data } = useQuery(COURSES_QUERY);
 
-  const handleClick = (event) => {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -62,6 +80,12 @@ const Courses = () => {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+  if (loading) return <h4>Loading....</h4>;
+  if (error) {
+    console.log(error);
+  }
+  console.log(data);
+  console.log(props);
   return (
     <Fragment>
       <Paper
@@ -119,282 +143,41 @@ const Courses = () => {
         <br />
         <br />
         <Grid container spacing={2} style={{ justifyContent: 'space-around' }}>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper elevation={0} className={classes.courseCard}>
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-        </Grid>
-        <br />
-        <Grid container spacing={2} style={{ justifyContent: 'space-around' }}>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-        </Grid>
-        <br />
-        <Grid container spacing={2} style={{ justifyContent: 'space-around' }}>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className={classes.gridItem}
-            style={{}}
-          >
-            <Paper
-              elevation={0}
-              style={{
-                height: '100px',
-                width: '150px',
-                backgroundColor: `${RandomColor()}`,
-                borderRadius: '20px',
-                margin: 'auto',
-              }}
-            >
-              <h3
-                style={{
-                  color: 'white',
-                  paddingTop: '34px',
-                  fontWeight: 'bold',
-                }}
-              >
-                UCS101
-              </h3>
-            </Paper>
-          </Grid>
+          {data.allCourses !== null &&
+            data.allCourses.edges.map(course => {
+              const colorBG = `${RandomColor()}`;
+              return (
+                <Grid
+                  item
+                  xs={6}
+                  sm={4}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={classes.gridItem}
+                  style={{}}
+                >
+                  <Paper
+                    elevation={0}
+                    className={classes.courseCard}
+                    style={{ backgroundColor: `${colorBG}` }}
+                    onClick={() => {
+                      props.history.push(`/course/${course.node.id}`);
+                    }}
+                  >
+                    <h3
+                      style={{
+                        color: 'white',
+                        paddingTop: '34px',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      {course.node.code}
+                    </h3>
+                  </Paper>
+                </Grid>
+              );
+            })}
         </Grid>
         <br />
         <br />
@@ -403,4 +186,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default withRouter(Courses);
