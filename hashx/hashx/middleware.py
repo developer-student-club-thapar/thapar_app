@@ -12,10 +12,3 @@ class Profanity(MiddlewareMixin):
         if pf.is_profane(request.body.decode('utf-8')) is True:
             raise Exception("Swear word")
         return None
-
-class FileSizeCheck(object):
-    def resolve(self, next, root, info, **args):
-        print(info.context.FILE.size)
-        if info.context.FILE.size > 10485760:
-            raise Exception("Check File Size")
-        return next(root, info, **args)

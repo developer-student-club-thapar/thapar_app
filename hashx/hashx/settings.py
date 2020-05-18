@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'hashx.middleware.Profanity',
+    #'hashx.middleware.Profanity',
 ]
 
 ROOT_URLCONF = 'hashx.urls'
@@ -112,7 +112,6 @@ DATABASES = {
 GRAPHENE = {
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
-        'hashx.middleware.FileSizeCheck'
         
     ],
     'SCHEMA': 'hashx.schema.schema',
