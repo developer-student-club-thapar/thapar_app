@@ -41,16 +41,12 @@ class Course(models.Model):
     p = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
 
     mst = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
-    tut_ses = models.PositiveSmallIntegerField(
-        default=None, blank=True, null=True)
-    lab_proj = models.PositiveSmallIntegerField(
-        default=None, blank=True, null=True)
-    quiz = models.PositiveSmallIntegerField(
-        default=None, blank=True, null=True)
+    tut_ses = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
+    lab_proj = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
+    quiz = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
     est = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
 
-    created_date = models.DateTimeField(
-        default=timezone.now, blank=True, null=True)
+    created_date = models.DateTimeField(default=timezone.now, blank=True, null=True)
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
     syllabus = models.TextField()  # Need this to markdown
 
@@ -217,8 +213,7 @@ class File(models.Model):
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    type = models.ForeignKey(
-        FileType, on_delete=models.PROTECT, null=True, blank=True)
+    type = models.ForeignKey(FileType, on_delete=models.PROTECT, null=True, blank=True)
     tags = models.ManyToManyField(FileTags)
     file = models.FileField(upload_to="academic_File")
     thumbnail_image = models.ImageField(
@@ -231,13 +226,10 @@ class File(models.Model):
     about = models.TextField(max_length=512, null=True, blank=True)
     # This Allows anytype of user to post on the website checks
     # needed for authorization.
-    user = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     # Connect this with any Academic Object that is required.
-    course = models.ForeignKey(
-        Course, on_delete=models.SET_NULL, null=True, blank=True)
-    branch = models.ForeignKey(
-        Branch, on_delete=models.SET_NULL, null=True, blank=True)
+    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, blank=True)
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     # Batch Specific Academic Files are also entertained.
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
