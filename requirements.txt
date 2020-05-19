@@ -32,7 +32,6 @@ Pillow==7.1.1
 pre-commit==2.3.0
 promise==2.3
 pycodestyle==2.5.0
-pygraphviz==1.5
 PyJWT==1.7.1
 pylint==2.5.0
 pylint-django==2.0.15
