@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from PIL import Image
 from django.urls import reverse
-from django.core.exceptions import ValidationError
 from django.utils import timezone
 import uuid
 from django.utils.text import slugify
@@ -12,7 +10,8 @@ from django.utils.text import slugify
 
 class Drivefolder(models.Model):
     """ 
-    This Models Contains Drive folder IDs with there Folder Type Year and subject : w
+    This Models Contains Drive folder IDs 
+    with there Folder Type Year and subject : w
     It is just for internal Processing 
     """
 
@@ -42,12 +41,16 @@ class Course(models.Model):
     p = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
 
     mst = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
-    tut_ses = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
-    lab_proj = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
-    quiz = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
+    tut_ses = models.PositiveSmallIntegerField(
+        default=None, blank=True, null=True)
+    lab_proj = models.PositiveSmallIntegerField(
+        default=None, blank=True, null=True)
+    quiz = models.PositiveSmallIntegerField(
+        default=None, blank=True, null=True)
     est = models.PositiveSmallIntegerField(default=None, blank=True, null=True)
 
-    created_date = models.DateTimeField(default=timezone.now, blank=True, null=True)
+    created_date = models.DateTimeField(
+        default=timezone.now, blank=True, null=True)
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
     syllabus = models.TextField()  # Need this to markdown
 
@@ -82,7 +85,8 @@ class Branch(models.Model):
     course = models.ManyToManyField(Course, default=None, blank=True)
     # To Label passed out branches and give them away
     passed_out = models.BooleanField(default=False)
-    # The Above Course Many To Many Field will be used always for checking out which subjects the student is categories to
+    # The Above Course Many To Many Field will be used always
+    # for checking out which subjects the student is categories to
     created_date = models.DateTimeField(default=timezone.now, editable=False)
     YEARS = [
         (2021, 2021),
@@ -167,12 +171,10 @@ class Textbook(models.Model):
 
 class FileType(models.Model):
     """
-    Used to Mark weather this file is a Tutorial File, Tutorial Solution File or a Notes File. etc. depending on
+    Used to Mark weather this file is a 
+    Tutorial File, Tutorial Solution File or a Notes File. etc. depending on
     the needs and requirements of the course 
-    Recommended pre loaded types 
-    Tutorials
-    Tutorial Solutions
-    Notes
+
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -209,12 +211,14 @@ class FileTags(models.Model):
 
 class File(models.Model):
     """
-    Not More than 10 file upload day per day per user so that traffic is handleable
+    Not More than 10 file upload day per day per 
+    user so that traffic is handleable
     Functions work for the models need to built in.
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    type = models.ForeignKey(FileType, on_delete=models.PROTECT, null=True, blank=True)
+    type = models.ForeignKey(
+        FileType, on_delete=models.PROTECT, null=True, blank=True)
     tags = models.ManyToManyField(FileTags)
     file = models.FileField(upload_to="academic_File")
     thumbnail_image = models.ImageField(
@@ -225,12 +229,17 @@ class File(models.Model):
     date_modified = models.DateTimeField(default=timezone.now)
     name = models.CharField(max_length=128)
     about = models.TextField(max_length=512, null=True, blank=True)
-    # This Allows anytype of user to post on the website checks neeeded for authrization.
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    # This Allows anytype of user to post on the website checks
+    # needed for authorization.
+    user = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
     # Connect this with any Academic Object that is required.
-    course = models.ForeignKey(Course, on_delete=models.SET_NULL, null=True, blank=True)
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
-    # Batch Specific Academic Files are also entertained.  So That specfic stuff could be made.
+    course = models.ForeignKey(
+        Course, on_delete=models.SET_NULL, null=True, blank=True)
+    branch = models.ForeignKey(
+        Branch, on_delete=models.SET_NULL, null=True, blank=True)
+    # Batch Specific Academic Files are also entertained.
+    # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
     batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
     drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
