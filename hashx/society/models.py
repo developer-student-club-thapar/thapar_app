@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from timetable.models import Location
 import uuid
+from profanity.validators import validate_is_profane
 
 
 class Society(models.Model):
@@ -18,11 +19,11 @@ class Society(models.Model):
         ('ELC', 'Elocution')
     ]
 
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, validators=[validate_is_profane])
     category = models.CharField(max_length=4, choices=CATEGORIES)
-    about = models.CharField(max_length=2000)
+    about = models.CharField(max_length=2000, validators=[validate_is_profane])
 
-    student_head = models.CharField(max_length=100)
+    student_head = models.CharField(max_length=100, validators=[validate_is_profane])
     site_link = models.URLField()
 
     logo = models.ImageField(
@@ -44,8 +45,8 @@ class Society(models.Model):
 class Event(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # META
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+    title = models.CharField(max_length=100, validators=[validate_is_profane])
+    content = models.TextField(validators=[validate_is_profane])
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
     date_modified = models.DateTimeField(null=True)
     # WHEN

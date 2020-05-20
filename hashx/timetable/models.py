@@ -78,7 +78,7 @@ class Location(models.Model):
 
     # Latitude and Logitude Data
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
-    latitute = models.DecimalField(max_digits=9, decimal_places=6)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
     location_url = models.URLField(null=True)  # Google Map link for location
     # Maybe connect online DWG CAD files in it one day 😂 so that it can be made as a virtual campus who knows LOLLL
 

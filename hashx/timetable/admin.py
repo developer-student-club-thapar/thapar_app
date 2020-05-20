@@ -36,7 +36,7 @@ class LocationAdmin(admin.ModelAdmin):
         'floor',
         'published',
         'longitude',
-        'latitute',
+        'latitude',
         'location_url',
     )
     list_filter = ('published',)

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 import uuid
+from profanity.validators import validate_is_profane
 
 
 class ShopType(models.Model):
@@ -58,7 +59,7 @@ class ShopItemReview(models.Model):
     shop_item = models.ForeignKey(
         ShopItem, on_delete=models.SET_NULL, null=True)
     stars = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
-    review = models.CharField(max_length=256)
+    review = models.CharField(max_length=256, validators=[validate_is_profane])
     date_posted = models.DateTimeField(default=timezone.now)
 
 
@@ -71,5 +72,5 @@ class ShopReview(models.Model):
     shop = models.ForeignKey(
         Shop, on_delete=models.SET_NULL, null=True)
     stars = models.DecimalField(max_digits=3, decimal_places=2, default=0.00)
-    review = models.CharField(max_length=256)
+    review = models.CharField(max_length=256, validators=[validate_is_profane])
     date_posted = models.DateTimeField(default=timezone.now)
