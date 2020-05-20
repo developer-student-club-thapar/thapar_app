@@ -8,6 +8,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 import uuid
+from profanity.validators import validate_is_profane
 
 
 class Member(models.Model):
@@ -68,4 +69,4 @@ class VolunteershipType(models.Model):
 class VolunteershipApplication(models.Model):
     # User Type connection for Application of Volunteership
     type = models.ForeignKey(VolunteershipType, on_delete=models.CASCADE)
-    why = models.TextField(max_length=1000)
+    why = models.TextField(max_length=1000, validators=[validate_is_profane])

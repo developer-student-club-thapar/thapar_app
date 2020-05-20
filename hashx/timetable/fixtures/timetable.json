@@ -1,0 +1,2485 @@
+[
+    {
+        "model": "timetable.location",
+        "pk": 0,
+        "fields": {
+            "building": "TAN",
+            "room": "T101",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 1,
+        "fields": {
+            "building": "TAN",
+            "room": "T201",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 2,
+        "fields": {
+            "building": "TAN",
+            "room": "T301",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 3,
+        "fields": {
+            "building": "B",
+            "room": "B101",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 4,
+        "fields": {
+            "building": "B",
+            "room": "B201",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 5,
+        "fields": {
+            "building": "B",
+            "room": "B301",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 6,
+        "fields": {
+            "building": "A",
+            "room": "A101",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 7,
+        "fields": {
+            "building": "A",
+            "room": "A201",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 8,
+        "fields": {
+            "building": "C",
+            "room": "C101",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 9,
+        "fields": {
+            "building": "C",
+            "room": "C201",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 10,
+        "fields": {
+            "building": "D",
+            "room": "D101",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 11,
+        "fields": {
+            "building": "D",
+            "room": "D201",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 12,
+        "fields": {
+            "building": "E",
+            "room": "E101",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 13,
+        "fields": {
+            "building": "E",
+            "room": "E201",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 14,
+        "fields": {
+            "building": "F",
+            "room": "F101",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 15,
+        "fields": {
+            "building": "F",
+            "room": "F201",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 16,
+        "fields": {
+            "building": "LP",
+            "room": "LP101",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 17,
+        "fields": {
+            "building": "LT",
+            "room": "LT101",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 18,
+        "fields": {
+            "building": "LT",
+            "room": "LT201",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 19,
+        "fields": {
+            "building": "LT",
+            "room": "LT301",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 20,
+        "fields": {
+            "building": "G",
+            "room": "G101",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 21,
+        "fields": {
+            "building": "G",
+            "room": "G201",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 22,
+        "fields": {
+            "building": "G",
+            "room": "G301",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 23,
+        "fields": {
+            "building": "TAN",
+            "room": "T102",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 24,
+        "fields": {
+            "building": "TAN",
+            "room": "T202",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 25,
+        "fields": {
+            "building": "TAN",
+            "room": "T302",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 26,
+        "fields": {
+            "building": "B",
+            "room": "B102",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 27,
+        "fields": {
+            "building": "B",
+            "room": "B202",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 28,
+        "fields": {
+            "building": "B",
+            "room": "B302",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 29,
+        "fields": {
+            "building": "A",
+            "room": "A102",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 30,
+        "fields": {
+            "building": "A",
+            "room": "A202",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 31,
+        "fields": {
+            "building": "C",
+            "room": "C102",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 32,
+        "fields": {
+            "building": "C",
+            "room": "C202",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 33,
+        "fields": {
+            "building": "D",
+            "room": "D102",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 34,
+        "fields": {
+            "building": "D",
+            "room": "D202",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 35,
+        "fields": {
+            "building": "E",
+            "room": "E102",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 36,
+        "fields": {
+            "building": "E",
+            "room": "E202",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 37,
+        "fields": {
+            "building": "F",
+            "room": "F102",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 38,
+        "fields": {
+            "building": "F",
+            "room": "F202",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 39,
+        "fields": {
+            "building": "LP",
+            "room": "LP102",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 40,
+        "fields": {
+            "building": "LT",
+            "room": "LT102",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 41,
+        "fields": {
+            "building": "LT",
+            "room": "LT202",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 42,
+        "fields": {
+            "building": "LT",
+            "room": "LT302",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 43,
+        "fields": {
+            "building": "G",
+            "room": "G102",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 44,
+        "fields": {
+            "building": "G",
+            "room": "G202",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 45,
+        "fields": {
+            "building": "G",
+            "room": "G302",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 46,
+        "fields": {
+            "building": "TAN",
+            "room": "T103",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 47,
+        "fields": {
+            "building": "TAN",
+            "room": "T203",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 48,
+        "fields": {
+            "building": "TAN",
+            "room": "T303",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 49,
+        "fields": {
+            "building": "B",
+            "room": "B103",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 50,
+        "fields": {
+            "building": "B",
+            "room": "B203",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 51,
+        "fields": {
+            "building": "B",
+            "room": "B303",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 52,
+        "fields": {
+            "building": "A",
+            "room": "A103",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 53,
+        "fields": {
+            "building": "A",
+            "room": "A203",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 54,
+        "fields": {
+            "building": "C",
+            "room": "C103",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 55,
+        "fields": {
+            "building": "C",
+            "room": "C203",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 56,
+        "fields": {
+            "building": "D",
+            "room": "D103",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 57,
+        "fields": {
+            "building": "D",
+            "room": "D203",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 58,
+        "fields": {
+            "building": "E",
+            "room": "E103",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 59,
+        "fields": {
+            "building": "E",
+            "room": "E203",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 60,
+        "fields": {
+            "building": "F",
+            "room": "F103",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 61,
+        "fields": {
+            "building": "F",
+            "room": "F203",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 62,
+        "fields": {
+            "building": "LP",
+            "room": "LP103",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 63,
+        "fields": {
+            "building": "LT",
+            "room": "LT103",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 64,
+        "fields": {
+            "building": "LT",
+            "room": "LT203",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 65,
+        "fields": {
+            "building": "LT",
+            "room": "LT303",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 66,
+        "fields": {
+            "building": "G",
+            "room": "G103",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 67,
+        "fields": {
+            "building": "G",
+            "room": "G203",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 68,
+        "fields": {
+            "building": "G",
+            "room": "G303",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 69,
+        "fields": {
+            "building": "TAN",
+            "room": "T104",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 70,
+        "fields": {
+            "building": "TAN",
+            "room": "T204",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 71,
+        "fields": {
+            "building": "TAN",
+            "room": "T304",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 72,
+        "fields": {
+            "building": "B",
+            "room": "B104",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 73,
+        "fields": {
+            "building": "B",
+            "room": "B204",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 74,
+        "fields": {
+            "building": "B",
+            "room": "B304",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 75,
+        "fields": {
+            "building": "A",
+            "room": "A104",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 76,
+        "fields": {
+            "building": "A",
+            "room": "A204",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 77,
+        "fields": {
+            "building": "C",
+            "room": "C104",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 78,
+        "fields": {
+            "building": "C",
+            "room": "C204",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 79,
+        "fields": {
+            "building": "D",
+            "room": "D104",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 80,
+        "fields": {
+            "building": "D",
+            "room": "D204",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 81,
+        "fields": {
+            "building": "E",
+            "room": "E104",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 82,
+        "fields": {
+            "building": "E",
+            "room": "E204",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 83,
+        "fields": {
+            "building": "F",
+            "room": "F104",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 84,
+        "fields": {
+            "building": "F",
+            "room": "F204",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 85,
+        "fields": {
+            "building": "LP",
+            "room": "LP104",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 86,
+        "fields": {
+            "building": "LT",
+            "room": "LT104",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 87,
+        "fields": {
+            "building": "LT",
+            "room": "LT204",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 88,
+        "fields": {
+            "building": "LT",
+            "room": "LT304",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 89,
+        "fields": {
+            "building": "G",
+            "room": "G104",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 90,
+        "fields": {
+            "building": "G",
+            "room": "G204",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 91,
+        "fields": {
+            "building": "G",
+            "room": "G304",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 92,
+        "fields": {
+            "building": "TAN",
+            "room": "T105",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 93,
+        "fields": {
+            "building": "TAN",
+            "room": "T205",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 94,
+        "fields": {
+            "building": "TAN",
+            "room": "T305",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 95,
+        "fields": {
+            "building": "B",
+            "room": "B105",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 96,
+        "fields": {
+            "building": "B",
+            "room": "B205",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 97,
+        "fields": {
+            "building": "B",
+            "room": "B305",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 98,
+        "fields": {
+            "building": "A",
+            "room": "A105",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 99,
+        "fields": {
+            "building": "A",
+            "room": "A205",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 100,
+        "fields": {
+            "building": "C",
+            "room": "C105",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 101,
+        "fields": {
+            "building": "C",
+            "room": "C205",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 102,
+        "fields": {
+            "building": "D",
+            "room": "D105",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 103,
+        "fields": {
+            "building": "D",
+            "room": "D205",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 104,
+        "fields": {
+            "building": "E",
+            "room": "E105",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 105,
+        "fields": {
+            "building": "E",
+            "room": "E205",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 106,
+        "fields": {
+            "building": "F",
+            "room": "F105",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 107,
+        "fields": {
+            "building": "F",
+            "room": "F205",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 108,
+        "fields": {
+            "building": "LP",
+            "room": "LP105",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 109,
+        "fields": {
+            "building": "LT",
+            "room": "LT105",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 110,
+        "fields": {
+            "building": "LT",
+            "room": "LT205",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 111,
+        "fields": {
+            "building": "LT",
+            "room": "LT305",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 112,
+        "fields": {
+            "building": "G",
+            "room": "G105",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 113,
+        "fields": {
+            "building": "G",
+            "room": "G205",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 114,
+        "fields": {
+            "building": "G",
+            "room": "G305",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 115,
+        "fields": {
+            "building": "TAN",
+            "room": "T106",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 116,
+        "fields": {
+            "building": "TAN",
+            "room": "T206",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 117,
+        "fields": {
+            "building": "TAN",
+            "room": "T306",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 118,
+        "fields": {
+            "building": "B",
+            "room": "B106",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 119,
+        "fields": {
+            "building": "B",
+            "room": "B206",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 120,
+        "fields": {
+            "building": "B",
+            "room": "B306",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 121,
+        "fields": {
+            "building": "A",
+            "room": "A106",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 122,
+        "fields": {
+            "building": "A",
+            "room": "A206",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 123,
+        "fields": {
+            "building": "C",
+            "room": "C106",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 124,
+        "fields": {
+            "building": "C",
+            "room": "C206",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 125,
+        "fields": {
+            "building": "D",
+            "room": "D106",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 126,
+        "fields": {
+            "building": "D",
+            "room": "D206",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 127,
+        "fields": {
+            "building": "E",
+            "room": "E106",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 128,
+        "fields": {
+            "building": "E",
+            "room": "E206",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 129,
+        "fields": {
+            "building": "F",
+            "room": "F106",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 130,
+        "fields": {
+            "building": "F",
+            "room": "F206",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 131,
+        "fields": {
+            "building": "LP",
+            "room": "LP106",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 132,
+        "fields": {
+            "building": "LT",
+            "room": "LT106",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 133,
+        "fields": {
+            "building": "LT",
+            "room": "LT206",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 134,
+        "fields": {
+            "building": "LT",
+            "room": "LT306",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 135,
+        "fields": {
+            "building": "G",
+            "room": "G106",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 136,
+        "fields": {
+            "building": "G",
+            "room": "G206",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 137,
+        "fields": {
+            "building": "G",
+            "room": "G306",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 138,
+        "fields": {
+            "building": "TAN",
+            "room": "T107",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 139,
+        "fields": {
+            "building": "TAN",
+            "room": "T207",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 140,
+        "fields": {
+            "building": "TAN",
+            "room": "T307",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 141,
+        "fields": {
+            "building": "B",
+            "room": "B107",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 142,
+        "fields": {
+            "building": "B",
+            "room": "B207",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 143,
+        "fields": {
+            "building": "B",
+            "room": "B307",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 144,
+        "fields": {
+            "building": "A",
+            "room": "A107",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 145,
+        "fields": {
+            "building": "A",
+            "room": "A207",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 146,
+        "fields": {
+            "building": "C",
+            "room": "C107",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 147,
+        "fields": {
+            "building": "C",
+            "room": "C207",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 148,
+        "fields": {
+            "building": "D",
+            "room": "D107",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 149,
+        "fields": {
+            "building": "D",
+            "room": "D207",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 150,
+        "fields": {
+            "building": "E",
+            "room": "E107",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 151,
+        "fields": {
+            "building": "E",
+            "room": "E207",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 152,
+        "fields": {
+            "building": "F",
+            "room": "F107",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 153,
+        "fields": {
+            "building": "F",
+            "room": "F207",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 154,
+        "fields": {
+            "building": "LP",
+            "room": "LP107",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 155,
+        "fields": {
+            "building": "LT",
+            "room": "LT107",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 156,
+        "fields": {
+            "building": "LT",
+            "room": "LT207",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 157,
+        "fields": {
+            "building": "LT",
+            "room": "LT307",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 158,
+        "fields": {
+            "building": "G",
+            "room": "G107",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 159,
+        "fields": {
+            "building": "G",
+            "room": "G207",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 160,
+        "fields": {
+            "building": "G",
+            "room": "G307",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 161,
+        "fields": {
+            "building": "TAN",
+            "room": "T108",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 162,
+        "fields": {
+            "building": "TAN",
+            "room": "T208",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 163,
+        "fields": {
+            "building": "TAN",
+            "room": "T308",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 164,
+        "fields": {
+            "building": "B",
+            "room": "B108",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 165,
+        "fields": {
+            "building": "B",
+            "room": "B208",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 166,
+        "fields": {
+            "building": "B",
+            "room": "B308",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 167,
+        "fields": {
+            "building": "A",
+            "room": "A108",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 168,
+        "fields": {
+            "building": "A",
+            "room": "A208",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 169,
+        "fields": {
+            "building": "C",
+            "room": "C108",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 170,
+        "fields": {
+            "building": "C",
+            "room": "C208",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 171,
+        "fields": {
+            "building": "D",
+            "room": "D108",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 172,
+        "fields": {
+            "building": "D",
+            "room": "D208",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 173,
+        "fields": {
+            "building": "E",
+            "room": "E108",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 174,
+        "fields": {
+            "building": "E",
+            "room": "E208",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 175,
+        "fields": {
+            "building": "F",
+            "room": "F108",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 176,
+        "fields": {
+            "building": "F",
+            "room": "F208",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 177,
+        "fields": {
+            "building": "LP",
+            "room": "LP108",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 178,
+        "fields": {
+            "building": "LT",
+            "room": "LT108",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 179,
+        "fields": {
+            "building": "LT",
+            "room": "LT208",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 180,
+        "fields": {
+            "building": "LT",
+            "room": "LT308",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 181,
+        "fields": {
+            "building": "G",
+            "room": "G108",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 182,
+        "fields": {
+            "building": "G",
+            "room": "G208",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 183,
+        "fields": {
+            "building": "G",
+            "room": "G308",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 184,
+        "fields": {
+            "building": "TAN",
+            "room": "T109",
+            "floor": "0",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 185,
+        "fields": {
+            "building": "TAN",
+            "room": "T209",
+            "floor": "1",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 186,
+        "fields": {
+            "building": "TAN",
+            "room": "T309",
+            "floor": "2",
+            "longitude": "76.368572",
+            "latitude": "30.353619"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 187,
+        "fields": {
+            "building": "B",
+            "room": "B109",
+            "floor": "0",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 188,
+        "fields": {
+            "building": "B",
+            "room": "B209",
+            "floor": "1",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 189,
+        "fields": {
+            "building": "B",
+            "room": "B309",
+            "floor": "2",
+            "longitude": "76.371192",
+            "latitude": "30.353082"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 190,
+        "fields": {
+            "building": "A",
+            "room": "A109",
+            "floor": "0",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 191,
+        "fields": {
+            "building": "A",
+            "room": "A209",
+            "floor": "1",
+            "longitude": "76.370709",
+            "latitude": "30.353748"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 192,
+        "fields": {
+            "building": "C",
+            "room": "C109",
+            "floor": "0",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 193,
+        "fields": {
+            "building": "C",
+            "room": "C209",
+            "floor": "1",
+            "longitude": "76.371213",
+            "latitude": "30.353545"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 194,
+        "fields": {
+            "building": "D",
+            "room": "D109",
+            "floor": "0",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 195,
+        "fields": {
+            "building": "D",
+            "room": "D209",
+            "floor": "1",
+            "longitude": "76.371598",
+            "latitude": "30.35329"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 196,
+        "fields": {
+            "building": "E",
+            "room": "E109",
+            "floor": "0",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 197,
+        "fields": {
+            "building": "E",
+            "room": "E209",
+            "floor": "1",
+            "longitude": "76.372296",
+            "latitude": "30.353461"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 198,
+        "fields": {
+            "building": "F",
+            "room": "F109",
+            "floor": "0",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 199,
+        "fields": {
+            "building": "F",
+            "room": "F209",
+            "floor": "1",
+            "longitude": "76.372197",
+            "latitude": "30.35393"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 200,
+        "fields": {
+            "building": "LP",
+            "room": "LP109",
+            "floor": "0",
+            "longitude": "76.369262",
+            "latitude": "30.354963"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 201,
+        "fields": {
+            "building": "LT",
+            "room": "LT109",
+            "floor": "0",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 202,
+        "fields": {
+            "building": "LT",
+            "room": "LT209",
+            "floor": "1",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 203,
+        "fields": {
+            "building": "LT",
+            "room": "LT309",
+            "floor": "2",
+            "longitude": "76.369316",
+            "latitude": "30.354435"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 204,
+        "fields": {
+            "building": "G",
+            "room": "G109",
+            "floor": "0",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 205,
+        "fields": {
+            "building": "G",
+            "room": "G209",
+            "floor": "1",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    },
+
+    {
+        "model": "timetable.location",
+        "pk": 206,
+        "fields": {
+            "building": "G",
+            "room": "G309",
+            "floor": "2",
+            "longitude": "76.36942",
+            "latitude": "30.353601"
+            }
+    }
+]

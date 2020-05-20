@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from users.models import Student
 import uuid
+from profanity.validators import validate_is_profane
 # Create your models here
 
 
@@ -59,14 +60,14 @@ class Complaint(models.Model):
                               related_query_name='Complaint', on_delete=models.CASCADE)
     status = models.ForeignKey(ComplaintStatus, related_name='Complaint',
                                related_query_name='Complaint', on_delete=models.CASCADE)
-    subject = models.CharField(max_length=200)
-    description = models.TextField(max_length=1000)
+    subject = models.CharField(max_length=200, validators=[validate_is_profane])
+    description = models.TextField(max_length=1000, validators=[validate_is_profane])
     image = models.ImageField(
         upload_to='hostel_complaint', null=True, blank=True)
     avail_start = models.TimeField()
     avail_end = models.TimeField()
     date_posted = models.DateTimeField(default=timezone.now)
-    comments = models.TextField(max_length=300)
+    comments = models.TextField(max_length=300, validators=[validate_is_profane])
     user = models.ForeignKey(User, related_name='complaint', related_query_name='complaint',
                              on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.SlugField(max_length=100, null=True, blank=True)
@@ -112,7 +113,7 @@ class MessUnitComment(models.Model):
     messunit = models.ForeignKey(MessUnit, related_name='MessUnit',
                                  related_query_name='MessUnit', on_delete=models.SET_NULL, null=True, blank=True)
     stars = models.PositiveIntegerField()
-    comment = models.CharField(max_length=200, blank=True, null=True)
+    comment = models.CharField(max_length=200, blank=True, null=True, validators=[validate_is_profane])
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
     user = models.ForeignKey(User, related_name='MessUnitComment',
                              related_query_name='MessUnitComment', on_delete=models.CASCADE)
