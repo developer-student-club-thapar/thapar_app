@@ -2,19 +2,21 @@ from django.db import models
 from django.urls import reverse
 import uuid
 from django.utils import timezone
+
 # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 from acad.models import Course, Branch, Batch
 from django.contrib.auth.models import User
+
 # Functions need to written for each of the models
 
 DAYS = [
-    ("Monday", 'Monday'),
+    ("Monday", "Monday"),
     ("Tuesday", "Tuesday"),
     ("Wednesday", "Wednesday"),
     ("Thursday", "Thursday"),
     ("Friday", "Friday"),
     ("Saturday", "Saturday"),
-    ("Sunday", "Sunday")
+    ("Sunday", "Sunday"),
 ]
 
 
@@ -24,15 +26,17 @@ class TimetableBoard(models.Model):
     start_repetion = models.DateTimeField()
     end_repetition = models.DateTimeField()
     batch = models.OneToOneField(
-        Batch, on_delete=models.SET_NULL, null=True, blank=True)
+        Batch, on_delete=models.SET_NULL, null=True, blank=True
+    )
     admin_user = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+        User, on_delete=models.SET_NULL, null=True, blank=True
+    )
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(null=True)
 
     class Meta:
-        verbose_name = ("Timetable")
-        verbose_name_plural = ("Timetables")
+        verbose_name = "Timetable"
+        verbose_name_plural = "Timetables"
 
     def __str__(self):
         return self.name
@@ -47,6 +51,7 @@ class Location(models.Model):
     It Connects to both the TimeTable Locations and the Society Event Location. 
     This Database needs to be populated by the members Team
     """
+
     BUILDING = [
         ("TAN", "TAN"),
         ("LP", "LP"),
@@ -65,12 +70,11 @@ class Location(models.Model):
         ("AUDI", "Auditorium"),
         ("GH", "Guest House"),
         ("SP", "Sports Ground"),  # Fill Room no. with Game Names in this field
-
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     building = models.CharField(max_length=4, choices=BUILDING)
-    room = models.CharField(max_length=10,  null=True)
+    room = models.CharField(max_length=10, null=True)
     floor = models.PositiveSmallIntegerField(null=True)
 
     published = models.BooleanField(default=True)
@@ -84,9 +88,9 @@ class Location(models.Model):
 
     def __str__(self):
         if self.room:
-            return f'{self.building} {self.room}'
+            return f"{self.building} {self.room}"
         else:
-            return f'{self.building}'
+            return f"{self.building}"
 
 
 class Class(models.Model):
@@ -94,19 +98,17 @@ class Class(models.Model):
     TYPE = [
         ("Lecture", "Lecture"),
         ("Practical", "Practical"),
-        ("Tutorial", "Tutorial")
+        ("Tutorial", "Tutorial"),
     ]
     # Meta
     type = models.CharField(max_length=10, choices=TYPE)
-    timetableboard = models.ForeignKey(
-        TimetableBoard, on_delete=models.CASCADE)
+    timetableboard = models.ForeignKey(TimetableBoard, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(null=True)
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
-    
 
     # WHEN
-    day = models.DateTimeField(max_length=10, choices=DAYS)
+    day = models.CharField(max_length=10, choices=DAYS)
     start_time = models.TimeField()
     end_time = models.TimeField()
 
@@ -124,6 +126,7 @@ class Holidays(models.Model):
     refer to this doc for populating
     https://drive.google.com/file/d/1IrTFyWEsGBiRxkKnN2l4Fr9Nnp_hqJmA/view
     """
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.TextField()
     date = models.DateField()
