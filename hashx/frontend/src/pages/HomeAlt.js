@@ -12,8 +12,9 @@ import Announcements from '../components/Announcements';
 import Events from '../components/Events';
 import MessMenu from '../components/MessMenu';
 import TimeTable from '../components/TimeTable';
+import Nav from '../components/Nav';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -29,6 +30,7 @@ const Home = () => {
   const eventsRef = useRef(null);
   return (
     <Fragment>
+      <Nav />
       <CssBaseline />
 
       <Grid
