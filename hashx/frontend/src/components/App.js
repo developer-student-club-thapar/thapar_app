@@ -19,7 +19,6 @@ const App = () => {
     <ApolloProvider client={client}>
       <Router history={history}>
         <div className="App">
-          <Nav />
           <Routes />
         </div>
       </Router>
