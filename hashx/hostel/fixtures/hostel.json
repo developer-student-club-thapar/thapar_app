@@ -1,7 +1,7 @@
 [
 {
     "model": "hostel.hostel",
-    "pk": 1,
+    "pk": "49880699-3bb0-4c74-bc52-366d97552385",
     "fields": {
         "name": "A",
         "about": "Hostel-A is having 2 floors with 8 blocks. There is high speed internet connection in each block for students. Each block is having separate arrangement for water purifiers & bathrooms with washing machines & geysers. There are Lawns between the blocks. Badminton & volley ball nets are also available in lawns. To keep students physically fit gym facility is also provided to students. To keep students updated with current affairs T.V. room with sitting facility & newspaper Stands is also provided. Best quality of food is served in hostel mess. Proper care of balance diet is done in weekly schedule of mess.",
@@ -20,7 +20,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 2,
+    "pk": "2899eea8-41dc-4483-8e39-2cae235b9664",
     "fields": {
         "name": "B",
         "about": "Hostel-B, offers an easy going & relaxing atmosphere. All rooms are spacious, Bright & clean with 3 beds along with study tables and almirahs. Every wing has its own adequate number of bathrooms. Every room has wifi connectivity And can be accessed at reasonable speeds for 24 hours. Hostel has one ground within premises for sport like badminton. Adequate drinking of water facilities is available at each floor. Hostel has two common rooms called as TV room And T T room for recreational activities. As well As common study room which is fully A.C. Gymnasium with modern facilities and music system is available. The hostel mess caters to all the food & nutritional requirements of students. The menu for all meal sessions is changed regularly to provide variety & wholesome nourishment. There is a night canteen in the hostel too. For security purposes, hostel is fully equipped with CCTV cameras along with security guard for 24 hours.",
@@ -39,7 +39,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 3,
+    "pk": "9e7b2efd-b7fa-4220-be5f-e636731f4a80",
     "fields": {
         "name": "C",
         "about": "Hostel C is home for most of the first year students. It is the oldest hostel of the institute having spacious rooms. The Hostel is well maintained and the students have access to the modern facilities like 24 hours IP camera surveillance, Wi-Fi, P A system, and a mini laundry plant. The other facilities in the Hostel include well equipped gym, TV/common room, library cum reading room, hot water, RO treated drinking water, and indoor game facilities like badminton, table tennis, chess and carom, The well maintained big lawns of the Hostel provide a serene environment. The hostel mess serves tasty and hygienic food. The mess menu is decided by the students and a mess committee of the students looks after the mess related affairs. An executive committee of the residents runs the day to day affairs of the hostel.",
@@ -58,7 +58,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 4,
+    "pk": "d3e7e1e0-d712-4e20-ab2d-ec379fafe118",
     "fields": {
         "name": "H",
         "about": "Hostel H is a relatively new hostel in Thapar Institute of Engineering & Technology, with a total intake capacity of 480 students. All 160 rooms in hostel are 3 seaters and out of these 40 rooms are air conditioned. Hostel has all basic facility for the students such as gymnasium, TV room, table tennis room, reading room, library and messing facility.",
@@ -77,7 +77,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 5,
+    "pk": "aa071561-4842-4ff2-ba38-4097b9135745",
     "fields": {
         "name": "J",
         "about": "",
@@ -96,7 +96,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 6,
+    "pk": "4a8eabe4-0de6-4185-84a4-afbf23d15e3b",
     "fields": {
         "name": "K",
         "about": "Hostel-K is having 2 floors with 2 blocks. Each block is having separate arrangements of water purifiers &amp; bathrooms with geysers. There is high speed internet connection in each blocks. To keep students physically fit GYM facility is also provided to students to keep students updated with current affairs T.V. Room with sitting facility &amp; newspapers are also provided. Best quality of food is served in hostel mess. Best cleaning of provided in rooms and washrooms . indoor games T.T TABLES, CARROM BOARD, CHESS are available in hostel. 6 reading rooms, 1 laundry room, night mess, and 2 guest rooms are available for students and there parents for staying in hostel and big parking stand is available in outside of hostel, and big lawns are available inner and outer side hostels.",
@@ -115,7 +115,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 7,
+    "pk": "6fbb1c1a-2358-4a79-9f01-3cfaf1a6bbfa",
     "fields": {
         "name": "L",
         "about": "Hostel L, a 300 bedded hostel is the latest addition to the residential facility amidst the sprawling campus of Thapar University at Patiala. It is located in adjacent to the Thapar polytechnic and has air conditioned double occupancy accommodation with sweeping views of the large ground from the entrance lobby. The main Entrance with double height reception area adds to the grandeur of the building, large dining area having a capacity to cater to 150 students simultaneously and a state-of-the-art fully equipped kitchen, managed professionally by a renowned facility planning firm for an unmatched hygiene and healthy food. Additionally, a provision of a night Canteen to facilitate late study hours for the students. Specific areas intended for reading, air conditioned Common Room with recreational and TV facility, Aerobics, Library, four reading rooms, Cyber room and Gym facility to boost the playful interactivity among the students. A couple of Guest rooms for overnight visitors are also provided on ground floor as an additional amenity. The other facilities in the Hostel include well equipped gym, TV/common room, library cum reading room, hot water, RO treated drinking water, and indoor game facilities like table tennis, chess and carom. The well maintained big lawns of the Hostel provide a serene environment. Paid laundry system is also available for students. The hostel mess serves tasty and hygienic food. The mess menu is decided by the students and a mess committee of the students looks after the mess related affairs. An executive committee of the residents runs the day to day affairs of the hostel. Night mess is also there with a variety of items. Students also celebrate various functions in the hostel like Diwali night, Independence Day, Republic day, Hostel night and Lohri function with great enthusiasm.",
@@ -134,7 +134,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 8,
+    "pk": "977040b7-1a42-4cf7-a7be-c02f461881f8",
     "fields": {
         "name": "M",
         "about": "Iconic Hostel M is multistory boys’ hostel having state-of- the-art facilities. It has 9 floors with 4 with a capacity of 1148 residents. The hostel has both single and double seater AC rooms with both attached and shared toilets. Students are provided with all necessary things in the rooms including study table, chair, Almira, book rack, shoe rack, mattress, geyser, curtains and dustbins. Fifth and seventh floors of each blocks have social space and LCD TVs. On each floor water cooler, RO system, washing machine and sofa sets have been provided. There are 2 elevators in each block to make it easy to move from ground floor to 8th floor and anywhere in between. These elevators also has power backup in case of emergency. Housekeeping staff are available 24 hrs in the hostel for proper cleanliness. A laundry system is also provided to the residents. The hostel has a 24*7 Wi-Fi network for residents to access high speed Internet anywhere within hostel premises. Hostel gymnasium comprises of all necessary modern machinery for residents fitness. The hostel has its own Guest as well as sick rooms. Hostel M has fine security measures. It is guarded by guards at entrances and each block. It also includes Fire alarms within premises. Excellent mess in the hostel caters to provide hygienic food requirements of residents. Food is lovingly cooked under the guidance of the cooperating and vigilant committee members. Mess menu is made by the mess committee members keeping in mind the interests of the residents. Mess menu includes special nutritional supplements like healthy sprouts, cornflakes, soups and boiled eggs etc. Caretakers are present in the hostel for providing their services to the residents. We also have in house developed Online Room Allocation System where residents in the beginning of academic session can choose the room of his choice online through very interactive interface on first cum first serve basis.",
@@ -153,7 +153,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 9,
+    "pk": "bfd8aa88-3519-4ec4-9d71-e3c3f40614af",
     "fields": {
         "name": "E",
         "about": "Hostel E is one of the four girls hostel in the University Campus. With a majestic strength of 237 seats that are available in the form of 48 single rooms, 4 two seater, 39 three and 16 four seater rooms, the hostel boosts of several facilities that become part of everyday life of girl hostellers.The hostel has its own mess that serves with the choice of quality food, hygienically cooked and served. Various student committees within the hostel such as cultural, sports, mess, discipline are constituted with a sole motive of creating a conducive environment for girl students to stay and cherish the hostel life with a sense of responsibility. Each room is furnished with cots, study tables, curtains and a storage space. Basic amenities are provided and entertainment facilities in the form of LCD TV with DTH in the common area, Uninterrupted power supply, well equipped Gym, Photostat corner, Indoor and Outdoor Games facilities, night canteen, medical facilities and first Aid box along with a 24 hour ambulance service adds to the level of comfort that is guaranteed to each hosteller. The water coolers with RO for drinking water and washing machines are installed on each floor. Apart from this, 24 hour security guards posted at the hostel gate ensure a secure abode for the girls. Surrounded with lush green gardens from all the sides and spreading beauty and freshness all around, Hostel E is truly home away from home.",
@@ -172,7 +172,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 10,
+    "pk": "8ce3a05a-bb1b-43b4-b142-77e65d3db964",
     "fields": {
         "name": "G",
         "about": "Surrounded by majestic lawns that encompasses beauty of all sorts, hostel G is a place to cherish. Very recently renovated, the hostel provides accommodation to 234 girls with a choice of 18 four seater, 38 three seater and 48 single seater rooms. Housing this many young girl students, hostel has all the modern facilities that every girl would long for in a home away from home. The facilities include: parking lots, a gymnasium that is equipped with the latest gizmos, rich library populated on demand put forth by all present and past inmates. In addition the students are provided with a Wi-fi facility which they can avail 24x7 throughout the year. Water coolers with RO and washing machines on each floor make it convenient for students to access them. Every fresh year of admissions, the hostel girls voluntarily chose to serve various aspects of the hostel that includes mess, cultural activities and sports. A counselor team, which comprise of few senior inmates, is a separate committee constituted within the hostel to provide guidance to younger lot in dealing with various aspects of hostel life and academic dealings. Many inter and intra hostel competitions are organized time to time so as to promote social interaction of girls from different batches and branches. The hostel has its own mess service, which is overseen by student mess committee duly constituted every year. This committee decides on the menu and takes care of the needs of the students by getting regular inputs. The hostel shares a common hangout corner with hostel E that normally comes alive in the evening. In brief, the culture and the lively spirit of the environment aids in illuminating the ideas that delve in the bright minds of residents of Hostel G, leaving them nostalgic when they move on to another hostel in another year.",
@@ -191,7 +191,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 11,
+    "pk": "7d252c86-095d-4fa6-b6b8-cf00b74ab85e",
     "fields": {  
         "name": "I",
         "about": "Hostel “I” at Thapar Institute of Engineering & Technology, Patiala, provides a budget oriented and socially comfortable accommodation for the girl students. The combination of both serene environment for studies and the diligently enthusiastic convivial ecosystem boosts the students to indulge both in curricular and extracurricular activities leading to overall growth of personality.",
@@ -210,7 +210,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 12,
+    "pk": "f56012d5-3487-47e1-92c3-6761887571a3",
     "fields": {
         "name": "PG",
         "about": "Hostel PG is a single seated hostel with a capacity of 288 rooms. Surrounded with plush green lawns and a beautiful lawn in the center, the hostel has a well ventilated mess and an air conditioned reading room. This hostel also offers a well equipped gym and a meditation room. LED TVs are placed in the mess, reception area along with in the TV room itself.  Students enjoy the beautiful mornings in the hostel along with the peacocks and numerous birds. They also celebrate various functions in the hostel like diwali night, independence day, republic day, hostel night, lohri function etc .with great enthusiasm.",
@@ -229,7 +229,7 @@
 },
 {
     "model": "hostel.hostel",
-    "pk": 13,
+    "pk": "0ec60b86-897f-42d6-b419-b385c2ec5420",
     "fields": {
         "name": "N",
         "about": "Hostel iconic (N) is newly constructed multistory girls’ hostel of Thapar Institute of Engineering &Technology. It is one of the finest hostel in the country with state-of- the-art facilities. The hostel has both single and double seater rooms with a capacity of 499 residents. Rooms with both attach and shared toilets are there including single seater with attached toilet, single seater with shared toilet (shared with one single seater room), and two seater with shared toilet. Students are provided with all necessary things in the rooms including study table, chair, Almira, book rack, shoe rack, mattress, curtains and dustbins. All the rooms are air-conditioned to provide a comfortable environment to the residents. There are 6 floors in the Hostel. On each floor water cooler, RO system, LCD TV and sofa sets have been provided. Maids are available in the hostel for proper cleanliness. A laundry system is also provided to the residents. The hostel has a 24*7 Wi-Fi network for residents to access high speed Internet anywhere within hostel premises. Hostel gymnasium comprises of all necessary modern machinery for residents fitness. Air conditioned Reading rooms are there on each floor providing, cool and silent environment to residents to focus on their studies. There are 2 elevators in the hostel to make it easy to move from ground floor to 6th floor and anywhere in between. These elevators also has power backup in case of emergency. Open stage of Hostel-N provides an excellent platform to conduct cultural functions within the premises of Hostel. The hostel has its own Guest Rooms.. Hostel N has fine security measures. It is guarded by guards at entrances and patrolling in the hostel at day and night. It also includes Fire alarms within premises. Excellent mess in the hostel caters to provide hygienic food requirements of residents. Food is lovingly cooked under the guidance of the cooperating and vigilant committee members. Mess menu is made by the committee members keeping in mind the interests of the residents. Mess menu includes special nutritional supplements like healthy sprouts, cornflakes, soups and boiled eggs etc. For smooth functioning of Hostel, we have our in house developed Hostel-N complaint management system. This online system provides the facility to register complaints online in case of any malfunctioning of equipment. The system automatically extracts room details and ensures speedy processing of complaints. Day and night caretakers are present in the hostel for providing their services to the residents. We also have in house developed Online Room Allocation System where residents in the beginning of academic session can choose the room of his choice online through very interactive interface on first cum first serve basis. At Hostel-N, we are committed to provide excellent services to our residents",

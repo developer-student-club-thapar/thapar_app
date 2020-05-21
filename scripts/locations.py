@@ -1,3 +1,5 @@
+import uuid
+
 l = []
 d = {}
 for i in range(1,10):
@@ -75,12 +77,11 @@ print(d)
 
 f = open('locations.txt', "w")
 f.write("[")
-i = 0
 for i in range(len(l)):
     f.write('''
         {{
             \"model\": \"timetable.location\",
-            \"pk\": {},
+            \"pk\": \"{}\",
             \"fields\": {{
                 \"building\": \"{}\",
                 \"room\": \"{}\",
@@ -89,7 +90,6 @@ for i in range(len(l)):
                 \"latitude\": \"{}\"
                 }}
         }},
-'''.format(i, d[i][2], d[i][0], d[i][1], d[i][4], d[i][3]))
-    i += 1
+'''.format(uuid.uuid4(), d[i][2], d[i][0], d[i][1], d[i][4], d[i][3]))
 
 f.write("]")
