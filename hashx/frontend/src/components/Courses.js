@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Route, Redirect, withRouter } from 'react-router-dom';
+import CoursesSkeleton from './CoursesSkeleton';
 
 const RandomColor = () => {
   let colorValues = [
@@ -45,7 +46,7 @@ const COURSES_QUERY = gql`
   }
 `;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -67,12 +68,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Courses = props => {
+const Courses = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { loading, error, data } = useQuery(COURSES_QUERY);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -80,7 +81,7 @@ const Courses = props => {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-  if (loading) return <h4>Loading....</h4>;
+  if (loading) return <CoursesSkeleton />;
   if (error) {
     console.log(error);
   }
@@ -144,7 +145,7 @@ const Courses = props => {
         <br />
         <Grid container spacing={2} style={{ justifyContent: 'space-around' }}>
           {data.allCourses !== null &&
-            data.allCourses.edges.map(course => {
+            data.allCourses.edges.map((course) => {
               const colorBG = `${RandomColor()}`;
               return (
                 <Grid
