@@ -1,550 +1,1773 @@
 [
-{
-    "model": "acad.branch",
-    "pk": 1,
-    "fields": {
-        "name": "Electronics and Computer",
-        "year": "Freshman",
-        "code": "ENC"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 2,
-    "fields": {
-        "name": "Electronics and Computer",
-        "year": "Sophomore",
-        "code": "ENC"
-    }
-},
+    {
+        "model": "acad.branch",
+        "pk": "84309e00-7e41-488b-93f1-8fb81d0df58e",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Freshman",
+            "code": "ENC"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "15749603-7437-4c5b-a63a-71357bcc7057",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Sophomore",
+            "code": "ENC"
+        }
+    },
+        
     
-
-{
-    "model": "acad.branch",
-    "pk": 3,
-    "fields": {
-        "name": "Electronics and Computer",
-        "year": "Junior Year",
-        "code": "ENC"
-    }
-},
+    {
+        "model": "acad.branch",
+        "pk": "769fc51d-d906-474c-927d-8747112832e9",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Junior Year",
+            "code": "ENC"
+        }
+    },
+        
     
-
-{
-    "model": "acad.branch",
-    "pk": 4,
-    "fields": {
-        "name": "Electronics and Computer",
-        "year": "Senior Year",
-        "code": "ENC"
+    {
+        "model": "acad.branch",
+        "pk": "e5c745e6-d7c3-497b-881a-366f32ea44f7",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Senior Year",
+            "code": "ENC"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "bc5f2bc4-a69e-47ac-962d-8d3443d53ef9",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Freshman",
+            "code": "BM"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "5825f29e-1b5f-49fe-96f6-f989e143fc59",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Sophomore",
+            "code": "BM"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "00209a07-a97f-4794-b94c-355dad1d6b94",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Junior Year",
+            "code": "BM"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "ed26f4d0-c5b4-4753-ad02-8bbd04c48a9b",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Senior Year",
+            "code": "BM"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "7c70012e-3c2c-4372-8922-f32a0f94b9cc",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Freshman",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a5fbdf3b-4160-4b62-83de-94b5fb353436",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Sophomore",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "70915625-6cc4-4e48-ac90-6420f184a516",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Junior Year",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "e31770eb-f29d-4217-9a4b-b57d533277f3",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Senior Year",
+            "code": "BT"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "569b2f80-9fb8-44ae-8702-26a18b433404",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Freshman",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "54cc7f7c-5ddd-4777-a40f-2b6f53b0e164",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Sophomore",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "4da3b4b0-89a7-4dc9-9e1b-4b530677bc1d",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Junior Year",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "1dbfc5d2-3299-4aa2-a214-608f643846bd",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Senior Year",
+            "code": "CHE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "feebd0b4-eeb5-4008-8a5d-f51cd4192b0c",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Freshman",
+            "code": "CIE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "83e7406f-b8f4-4277-ad6f-9294e8e200a4",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Sophomore",
+            "code": "CIE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "bf727545-0ddc-4bae-b5c6-8ed2f6002455",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Junior Year",
+            "code": "CIE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "eda3df32-5080-4d0b-80b5-187cfcc55d62",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Senior Year",
+            "code": "CIE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "a3a5c462-dc52-4082-ba0f-f21a5f0ded59",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Freshman",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "cd7f57b1-316d-4449-baae-03c32c226361",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Sophomore",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "593dcc54-d031-43db-a821-6a82e3c2c34b",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Junior Year",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "d87141ff-f198-479a-bfab-b1fc69eb32fa",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Senior Year",
+            "code": "COE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "8ea1de9e-1390-4e6b-b54a-1d4a5011c654",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Freshman",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "379a7a00-40d7-447c-bd9e-ae9ab6e24f08",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Sophomore",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "f9879f33-0d1d-48ac-b11f-fdc0a3705d9c",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Junior Year",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "96e6dd1a-2634-444b-a820-292cc2c5c9e1",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Senior Year",
+            "code": "CSE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "d2120cba-b1b5-49e4-87d1-70c83d16e7c0",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Freshman",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a20429ec-3428-42f9-a38b-313d5470a1e5",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Sophomore",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "eac7fdac-18dc-4413-9764-03a4c3461507",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Junior Year",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "74c8922e-7e5c-41e5-aad4-787c97fae281",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Senior Year",
+            "code": "CSBS"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "0702b492-2214-4921-b50e-c9fb590444e7",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Freshman",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "2baaafcd-0302-4e97-95e6-5e99f78a5180",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Sophomore",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "703bd317-7904-4467-91ac-304cade92929",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Junior Year",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "e50270f2-6c0f-4153-a204-58c1597b5134",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Senior Year",
+            "code": "ELE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "534f77c4-f58e-4a46-9b17-81c11706cfe8",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Freshman",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "006ab078-2f02-4d86-b0b4-326520e3572f",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Sophomore",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "afd6f5a9-dfff-4bb0-a6b1-18b4c282c8ec",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Junior Year",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "11f0d45d-b7a5-44ca-89cb-1e53f6d3cf72",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Senior Year",
+            "code": "ECE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "30965b70-c015-4b88-8374-ba05288132cf",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Freshman",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "042e6a23-2890-4793-8db1-e05f0fce6151",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Sophomore",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "241cd622-8400-4529-af16-8eb817fffc07",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Junior Year",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "9a7bb3af-a979-4e3e-91eb-2aa270840601",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Senior Year",
+            "code": "EIC"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "e3eca3bd-480c-4778-8463-f93b2fd9fd97",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Freshman",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "807d7135-fed9-4c29-92f6-39e3aa74f7a0",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Sophomore",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "51253db4-511b-4029-87bf-f4946ab35939",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Junior Year",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "f0484df9-bcca-4f91-aa42-f7b355b339b3",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Senior Year",
+            "code": "MEE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "e48ddc12-4a41-4720-a4e9-34021eb03857",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Freshman",
+            "code": "MEP"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "6fa763c9-131f-4191-a6b5-4a29f78425fa",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Sophomore",
+            "code": "MEP"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "93017e99-bcaa-499d-8eae-72b53ffe2b4c",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Junior Year",
+            "code": "MEP"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": 1,
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Senior Year",
+            "code": "MEP"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "c4422bc7-dc2f-4ac7-97ab-98c323ba1f2c",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Freshman",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a7447480-90e0-44a0-9e97-245d150ae9b0",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Sophomore",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "500632da-389c-4c08-9bab-1f531ac528d8",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Junior Year",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "18e08828-b9bf-48d1-840b-78141dfed724",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Senior Year",
+            "code": "MEC"
+        }
+    }, 
+    
+    {
+        "model": "acad.course",
+        "pk": "9dd36710-d59f-44ba-8e00-daf045d80e80",
+        "fields": {
+            "name": "Bio Info and Stats",
+            "code": "UBT602"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e3bfdad9-00bc-48ad-bf35-0b4d6554927c",
+        "fields": {
+            "name": "BioSensors",
+            "code": "UBT508"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "410bfee7-da87-404b-8d10-a27a0f1f150c",
+        "fields": {
+            "name": "AnimalBiology",
+            "code": "UBT601"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f5f72182-7b9a-4a56-a14b-8b1800f903de",
+        "fields": {
+            "name": "Bio Process Engineering",
+            "code": "UBT60"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e5ec8158-7337-4c56-a543-a82d2655c343",
+        "fields": {
+            "name": "Humanities",
+            "code": "UHU005"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "ea7aed3c-69dc-4f10-abf7-ef15ade8a328",
+        "fields": {
+            "name": "MOS CiruitDesign",
+            "code": "UEC609"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "2a40134f-dedb-4a80-aebb-6c4593716133",
+        "fields": {
+            "name": "Digital Communication",
+            "code": "UEC607"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "3186e434-e9ee-467a-8e50-6f7e8d7d3671",
+        "fields": {
+            "name": "Image Processing & ComputerVision",
+            "code": "UEC705"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "71a29ad7-00e6-4c9c-9046-9541da879dda",
+        "fields": {
+            "name": "Digital Signal Processing",
+            "code": "UEC502"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "bdc58704-1395-4e83-b696-13a57f0be451",
+        "fields": {
+            "name": "Data Communication & Computer Networks",
+            "code": "UEC706"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e2b12e1e-065c-4992-b699-b8144f546ba9",
+        "fields": {
+            "name": "Machine Learning",
+            "code": "UCS611"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e3f8aa20-c127-4f03-bf62-8b78455c8e87",
+        "fields": {
+            "name": "Soft Computing",
+            "code": "UEC502"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e7860135-c61e-4fb3-8f1f-33151c537309",
+        "fields": {
+            "name": "Computer Architecture",
+            "code": "UEC509"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cd04f085-b912-40a3-9088-6b1b3e5474f4",
+        "fields": {
+            "name": "Electromagentic Field Theory & Transmission Lines",
+            "code": "UEC307"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "a7f1e939-71b1-47a0-87e9-e66ac7324724",
+        "fields": {
+            "name": "Analog Communication Systems",
+            "code": "UEC401"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e82225ba-69fa-4b54-8332-9ddcc8fcf36a",
+        "fields": {
+            "name": "Innovation & Entrepreneurship",
+            "code": "UTA012"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f1b7dc38-338b-4605-ad76-790315dc2827",
+        "fields": {
+            "name": "Advanced Data Structures & Algorithms  ",
+            "code": "UCS616"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "ae3c93ea-3200-4c3d-a5bb-612850323d77",
+        "fields": {
+            "name": "Professional Practices",
+            "code": "UCS310"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "78acf94f-db88-4dd5-98f4-9b8b6cc32e3b",
+        "fields": {
+            "name": "Theoryof Computation",
+            "code": "UCS701"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "667f3787-ec11-42a7-b6fb-8324ce2400d6",
+        "fields": {
+            "name": "Computer Architecture & Organisation    ",
+            "code": "UCS507"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b97f7b2b-83ca-45c0-9c60-07ff0af7ef8a",
+        "fields": {
+            "name": "Artificial Intelligence",
+            "code": "UCS521"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "6a311a2e-cd15-4b56-8ae5-d1019720563c",
+        "fields": {
+            "name": "Microprocessors",
+            "code": "UCS617"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f0f57ba2-6a64-4303-8e96-7e81ca15999c",
+        "fields": {
+            "name": "Computer Architecture",
+            "code": "UCS507"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "8bffbf80-5713-45e3-b5b2-920b7aef58e9",
+        "fields": {
+            "name": "Image Processing",
+            "code": "UCS615"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d6433397-bee8-46f0-a2ee-cf451e5fe3df",
+        "fields": {
+            "name": "Software Engineering",
+            "code": "UCS503"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d33565bf-ae30-44b0-ab4f-a3d59bf758e8",
+        "fields": {
+            "name": "Embedded Systems",
+            "code": "UCS614"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "fab1c294-3c4c-4cd3-81e6-2551a42796af",
+        "fields": {
+            "name": "Computer Architecture & Architecture    ",
+            "code": "UCS614"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "52d7abc3-c382-42c1-a215-d80d38062515",
+        "fields": {
+            "name": "Natural Language Processing",
+            "code": "UCSXXX"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "fe127058-8717-4d1b-b4c4-dff527af941a",
+        "fields": {
+            "name": "Matrix Computation",
+            "code": "UMCXXX"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "237aaff6-3beb-4dab-bfb8-55d76b6eca8c",
+        "fields": {
+            "name": "GPU Computing        ",
+            "code": "UCS631"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "88dec3fe-5bb3-4419-b1d7-0464c7688817",
+        "fields": {
+            "name": "Mathematical Modeling & Simulation    ",
+            "code": "UMC511"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "766bc20c-a6dd-4850-ac13-776fef005f38",
+        "fields": {
+            "name": "Financial Mathematics",
+            "code": "UMCXXX"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "8d6993ad-2084-48c7-84c0-6f1b4c62a2b2",
+        "fields": {
+            "name": "Cloud Computing        ",
+            "code": "UCS641"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "c5d466bd-0a09-4240-b54b-a859feb9e2bb",
+        "fields": {
+            "name": "Secure Coding    ",
+            "code": "UCS634"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cff8faf3-30ed-412a-8faf-0effceecaefe",
+        "fields": {
+            "name": "Parellel & Distributed Computing    ",
+            "code": "UCS608"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e9b4fd35-7551-4c21-9403-48d2b08142eb",
+        "fields": {
+            "name": "Data Analytics",
+            "code": "UCS633"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "4710d711-a86a-41fb-b0a3-71d05c532fc8",
+        "fields": {
+            "name": "Machine Learning    ",
+            "code": "UML501"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b0d0e2cc-0676-468a-bb9b-197e5c1d0bd9",
+        "fields": {
+            "name": "Cognitive Science    ",
+            "code": "UHU009"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "c154dc0c-e18c-4c2b-b132-f7155bbecfd6",
+        "fields": {
+            "name": "Cyber Security",
+            "code": "UCS001"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1dbf21eb-6b23-441e-bc4e-a4cb8224061b",
+        "fields": {
+            "name": "Introduction to Corporate Finance    ",
+            "code": "UHU008"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "52076002-fc1d-454b-89a8-f4a1b87747a6",
+        "fields": {
+            "name": "Introductory Course to French",
+            "code": "UHU006"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "3df07a4c-047b-4d04-8bf5-9f664791f5bf",
+        "fields": {
+            "name": "Graph Theory    ",
+            "code": "UMA066"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "55417cf0-e3cd-4ec9-bf21-6b4814c2727f",
+        "fields": {
+            "name": "Manufacturing Technology",
+            "code": "UME515"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cdce06c4-9e15-4e04-9dbd-7dbac5b29aa3",
+        "fields": {
+            "name": "Development Biology",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b2ac5b73-7921-4b5d-b951-9828b3a7efa8",
+        "fields": {
+            "name": "Biochemistry1",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "ffe776ec-02bd-4a84-aa83-3cf49b1e5558",
+        "fields": {
+            "name": "Microbiology",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d0c10302-b4a1-432d-9a44-3a9580ccdae6",
+        "fields": {
+            "name": "Professional Communication",
+            "code": "UHU003"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e5708987-3503-4d44-99c9-e718277cc819",
+        "fields": {
+            "name": "Engineering Drawing    1",
+            "code": "UTA015"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e0ea55a3-cb2b-4b2f-bbc0-e947a81878dd",
+        "fields": {
+            "name": "Linear Algebra",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "ecdfd737-7bac-43d8-8f99-2b79680b01a6",
+        "fields": {
+            "name": "Mechanics",
+            "code": "UES009"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "39140cda-d552-44dd-bdc8-c7891c1a7953",
+        "fields": {
+            "name": "Introductory Mathematics 2",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "afda0be1-68a5-4d1e-afee-a87fc9d960bb",
+        "fields": {
+            "name": "Electronics",
+            "code": "UEC001"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "7a3f1e8a-efde-4317-abba-d65f7a551530",
+        "fields": {
+            "name": "Introduction to Biotechnology",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "bddf4adf-cb2e-4fd6-b89e-7acde9815fa6",
+        "fields": {
+            "name": "ComputerScience 1",
+            "code": "UTA017"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b46ceff5-53f4-4113-ab69-80c5da43aef1",
+        "fields": {
+            "name": "Mathematics 1",
+            "code": "UMA003"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0f1c645d-80ed-413b-bad2-ac3b8c62672b",
+        "fields": {
+            "name": "Introduction to BioTechnology",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "507bb028-cdc6-47a7-8dfc-8c220b32ef72",
+        "fields": {
+            "name": "Electrical",
+            "code": "UEE001"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "70f9beb3-6211-4cf3-8dfa-c8d755a27c9d",
+        "fields": {
+            "name": "Cell Biology & Genetics    ",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "a26f3c32-afe1-4a9f-ae82-3a78f2911655",
+        "fields": {
+            "name": "Principles of Electronics        ",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "8cad1ed9-bfdb-4950-a260-fa3d62029a1e",
+        "fields": {
+            "name": "Probability & Statistics",
+            "code": "UBS102"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cec320b8-3240-484c-9b3c-c176867f159e",
+        "fields": {
+            "name": "Environment",
+            "code": "UEN002"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "259c53b5-deeb-49ff-b37e-5718a83db748",
+        "fields": {
+            "name": "Discrete Mathematical Structures    ",
+            "code": "UCT101"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "aa050f74-93eb-4c6a-aadc-96fa92d538f7",
+        "fields": {
+            "name": "Introductory Mathematics 1",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0e964706-a070-45b8-aa4b-177abbf0baa2",
+        "fields": {
+            "name": "Electrical & Electronics",
+            "code": "UES013"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "83c44366-2263-4626-bec9-d6362ed4b729",
+        "fields": {
+            "name": "Computer Science 2",
+            "code": "UTA009"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d1d43f67-2e58-43a0-b888-19abb766b26d",
+        "fields": {
+            "name": "Business Communication and Value Science - II",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d5ba7f4d-dc9c-4bda-afdb-e2419b36ed14",
+        "fields": {
+            "name": "Mathematics 2",
+            "code": "UMA004"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "02f09ca8-fb76-462c-9495-15dd5eb7bb34",
+        "fields": {
+            "name": "Engineering Drawing 2",
+            "code": "UTA013"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "60dbef44-af61-4326-8745-7615e8ff9fbf",
+        "fields": {
+            "name": "Fundamental Physics",
+            "code": "UPH009"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "15d0af90-ba23-428e-a842-d80b72804912",
+        "fields": {
+            "name": "Applied Physics",
+            "code": "UPH004"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "55feb249-68f0-4ee8-ba71-cba2b9c29a9f",
+        "fields": {
+            "name": "Statistical Modelling",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1bbb8a98-3891-4071-95f7-6fe2c6cb634b",
+        "fields": {
+            "name": "Applied Chemistry",
+            "code": "UCBOO8"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "9351ee9f-8a79-46a7-b579-9280a6a73fef",
+        "fields": {
+            "name": "Fundamental of Economics",
+            "code": ""
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "8055cc4e-1ddf-4de3-be02-dc44d5970a37",
+        "fields": {
+            "name": "Fundamentals of Computer Science    ",
+            "code": "UBS103"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "41406799-6450-419f-aeb3-79851ec2621d",
+        "fields": {
+            "name": "BIosafety biosafety & IPR",
+            "code": "UBT801"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0517b30d-057b-4105-8f3b-5cfa9f482092",
+        "fields": {
+            "name": "Industrial Biotechnology",
+            "code": "UBT404"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "6463cacb-6951-4e41-a7f6-5fc3a753d7f9",
+        "fields": {
+            "name": "Food Science",
+            "code": "UBT302"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "db7fa2c2-0cb7-4876-aeaa-f66a3b049294",
+        "fields": {
+            "name": "Biochemistry 2",
+            "code": "UBT303"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "636bf422-729d-4c80-9920-3f2b85147817",
+        "fields": {
+            "name": "Unitoperations",
+            "code": "UCH407"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d9bdf252-ddae-41fc-b007-e4d4fed820ac",
+        "fields": {
+            "name": "Immunotechnology",
+            "code": "UBT504"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1e6e156a-b248-4970-a3d7-6d228a9da618",
+        "fields": {
+            "name": "Bio Analytical techniques 1",
+            "code": "UBT501"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "13b2da67-2669-4be2-b9e2-8c3f5e79e621",
+        "fields": {
+            "name": "Molecular Biology ",
+            "code": "UBT304"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cc563655-d172-44ef-9998-a8c58f9a6eee",
+        "fields": {
+            "name": "Biophysics 2",
+            "code": "UPH305"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "80f400a5-e9e2-4510-93dd-b44f91420972",
+        "fields": {
+            "name": "Genetic & metabolic engineering",
+            "code": "UBT503"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "7870a65a-5954-4aaa-ad12-0d355e6a81f4",
+        "fields": {
+            "name": "DC machine & transformer",
+            "code": "UEE301"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "290740ee-a407-4645-b662-5a2918006c64",
+        "fields": {
+            "name": "Network Theory & Design  ",
+            "code": "UEE405"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "13ed2250-a153-4be2-9e79-01bda2fd9b04",
+        "fields": {
+            "name": "Power System Practices",
+            "code": "UEE406"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f2ac956a-3fd6-4705-945d-a2253a625d1b",
+        "fields": {
+            "name": "Engineering Electromagnets",
+            "code": "UEE507"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "495e751b-34f3-4bd5-92d4-d17cf5478dc3",
+        "fields": {
+            "name": "Transmission & distribution of power",
+            "code": "UEE404"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e3964aab-c8f9-47ad-a8db-d677d4c5d8d0",
+        "fields": {
+            "name": "Analog & digitalelectronics  ",
+            "code": "UEE505"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b3841ef4-8810-48e6-861d-c22f42ebdecc",
+        "fields": {
+            "name": "Architecture drawing & construction  ",
+            "code": "UCE306"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "20a4728e-fcfd-4e83-9c22-ec4e899ba3ec",
+        "fields": {
+            "name": "Surveying",
+            "code": "UCE403"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f4f40a5b-771b-44e3-b048-ee172cd33b6a",
+        "fields": {
+            "name": "Building Materials",
+            "code": "UCE308"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "07aef216-7c4e-4304-9c25-ca8527af32a3",
+        "fields": {
+            "name": "Design of concrete structures  ",
+            "code": "UCE508"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "eafe8655-8440-457f-a2ff-ea6b5a59e1cb",
+        "fields": {
+            "name": "Structure Analysis",
+            "code": "UCE404"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0883e01f-6152-464e-a5d7-c9e8acf6f543",
+        "fields": {
+            "name": "Digital Signal Processing & Applications    ",
+            "code": "UEI409"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "20120551-c24a-4df4-bc43-558032879795",
+        "fields": {
+            "name": "Network Analysis & Synthesis",
+            "code": "UEE503"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0bda5983-40cc-48f5-bdb2-e7993b596951",
+        "fields": {
+            "name": "Humanities",
+            "code": "UHU005"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "e9f29ce1-bdbe-4d26-a38f-47bc393b9953",
+        "fields": {
+            "name": "Analog Devices & Circuits  ",
+            "code": "UEI408"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1ec828ae-55a5-4979-a9bf-d04ccea90770",
+        "fields": {
+            "name": "Sensors & Signals Conditioning",
+            "code": "UEI507"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "898b2917-f1c3-43af-b867-2da3127c59b4",
+        "fields": {
+            "name": "Electric & Electronic Measurements",
+            "code": "UEI403"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "0a5bb3ee-c662-403e-b252-3ccc5c5c6380",
+        "fields": {
+            "name": "Electrical & Electronic Measurements  ",
+            "code": "UIE403"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "31c11712-97a8-4324-86c1-75220861d853",
+        "fields": {
+            "name": "Data Structures & Algorithms  ",
+            "code": "UCS613"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "9a2873d6-d4d7-4949-8173-a9f3e62b43b6",
+        "fields": {
+            "name": "Engineering Design 2",
+            "code": "UTA014"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "82ce5a9e-dc70-4aaa-800c-ebc305f64207",
+        "fields": {
+            "name": "Thermofluids",
+            "code": "UES011"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f971801a-1050-429e-8854-7bec87a81886",
+        "fields": {
+            "name": "Optimization Techniques",
+            "code": "UMA031"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "03143cab-bcd6-4672-b6f5-4d61d2eb3b09",
+        "fields": {
+            "name": "Digital System Design",
+            "code": "UEC612"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f734540b-7b53-4ddf-a59c-bdd9cdef3523",
+        "fields": {
+            "name": "Mechanics of Machines",
+            "code": "UME306"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "55183278-2e32-496f-9af8-943ab660d885",
+        "fields": {
+            "name": "Manufacturing Processes",
+            "code": "UTA002"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "c80ce185-fcf4-4b8f-8678-4a80cf52a956",
+        "fields": {
+            "name": "Solids & Structures",
+            "code": "UES010"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "05d488fc-f570-4c13-8dab-7c5e7714630b",
+        "fields": {
+            "name": "Industrial Engineering",
+            "code": "UME515"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "c322f4a9-6c56-4c7c-8079-a21e891a8680",
+        "fields": {
+            "name": "Analog Electronic Circuits",
+            "code": "UEC301"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "a1e1a946-9ebf-4013-9e8a-e468063b830d",
+        "fields": {
+            "name": "Design & Analysis",
+            "code": "UTA015"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "d3c65386-f2e0-4244-8d31-bc61816d8b42",
+        "fields": {
+            "name": "Embedded Systems",
+            "code": "UEC605"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "557ce34d-4a56-4622-a4b8-4b69e58641e2",
+        "fields": {
+            "name": "Circuit Analysis & Synthesis",
+            "code": "UEC403"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f5fae825-dc3c-43f2-9474-1efae2736f6f",
+        "fields": {
+            "name": "Probability & Information Theory",
+            "code": "UEC408"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "9b9443d6-aa49-4a2c-8c25-ea3e2e1521bd",
+        "fields": {
+            "name": "Engineering Materials",
+            "code": "UES012"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "2cb338c8-f2ad-45a9-9004-70f34df355a8",
+        "fields": {
+            "name": "Material & Energybalance",
+            "code": "UCH301"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "62d39094-d35e-42d8-9e3c-bea74c043aa9",
+        "fields": {
+            "name": "Machine Design 1",
+            "code": "UME504"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cfdbb261-0802-44b7-985a-f824e3128820",
+        "fields": {
+            "name": "Mechatronics",
+            "code": "UME410"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "00cd1574-7dce-4dfa-a103-f55e1d639c2d",
+        "fields": {
+            "name": "Energy & Environment ",
+            "code": "UEN002"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "09d54b34-50d3-40b0-b838-a3eb4b037711",
+        "fields": {
+            "name": "Engineering Design1",
+            "code": "UTA013"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "cf25ef4e-ce5c-4402-9bd0-21468c9f59c7",
+        "fields": {
+            "name": "Numerical Analysis",
+            "code": "UMA007"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "b772f05f-430d-48c6-9d71-49b5ececce9b",
+        "fields": {
+            "name": "Signals & Systems",
+            "code": "UEC404"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1389b2ea-d583-4c2e-88e7-f97e33bf1bd9",
+        "fields": {
+            "name": "Probability & Statistics",
+            "code": "UCS409"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "86d20b50-f10b-400d-8ec5-7f6b4d770aff",
+        "fields": {
+            "name": "Data Structures & Algorithms    ",
+            "code": "UCS406"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "1b4252be-7c9c-4023-aea3-945876533894",
+        "fields": {
+            "name": "Invention & Innovation in Computing  ",
+            "code": "UCS407"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "fa8ff28a-4f16-48b1-a570-356460a50722",
+        "fields": {
+            "name": "Discrete Mathematical Structures    ",
+            "code": "UCS405"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "f77a41f6-3c73-46b4-bb63-6dfb3712860d",
+        "fields": {
+            "name": "Computer Networks",
+            "code": "UCS510"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "056dc8e5-0952-4df5-a72f-3be098b6191b",
+        "fields": {
+            "name": "Measurement Science & Techniques  ",
+            "code": "UES034"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "a2967690-497e-4593-8382-939081844e9c",
+        "fields": {
+            "name": "Database Management System  ",
+            "code": "UCS310"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "c82bca34-4395-402d-9403-97003b05495d",
+        "fields": {
+            "name": "Operating System",
+            "code": "UCS303"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "5ce4eef0-395c-4b3a-96b5-f18073d2d2f4",
+        "fields": {
+            "name": "Chemical Process Engineering",
+            "code": "UCH507"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "03ee2692-b822-4d79-90c1-fb8dd872286a",
+        "fields": {
+            "name": "Fluid & Particle Mechanics  ",
+            "code": "UCH401"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "9058255a-aef3-48ac-a392-23a6ffabd812",
+        "fields": {
+            "name": "Heat transfer ",
+            "code": "UCH402"
+            }
+    },
+        
+    {
+        "model": "acad.course",
+        "pk": "35e8e242-4c0b-46ca-8cd6-2dfcc50c81ca",
+        "fields": {
+            "name": "Thermodynamics ",
+            "code": "UCH303"
+            }
     }
-},
-{
-    "model": "acad.branch",
-    "pk": 5,
-    "fields": {
-        "name": "Biomedical Engineering",
-        "year": "Freshman",
-        "code": "BM"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 6,
-    "fields": {
-        "name": "Biomedical Engineering",
-        "year": "Sophomore",
-        "code": "BM"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 7,
-    "fields": {
-        "name": "Biomedical Engineering",
-        "year": "Junior Year",
-        "code": "BM"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 8,
-    "fields": {
-        "name": "Biomedical Engineering",
-        "year": "Senior Year",
-        "code": "BM"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 9,
-    "fields": {
-        "name": "Biotechnology",
-        "year": "Freshman",
-        "code": "BT"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 10,
-    "fields": {
-        "name": "Biotechnology",
-        "year": "Sophomore",
-        "code": "BT"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 11,
-    "fields": {
-        "name": "Biotechnology",
-        "year": "Junior Year",
-        "code": "BT"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 12,
-    "fields": {
-        "name": "Biotechnology",
-        "year": "Senior Year",
-        "code": "BT"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 13,
-    "fields": {
-        "name": "Chemical Engineering",
-        "year": "Freshman",
-        "code": "CHE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 14,
-    "fields": {
-        "name": "Chemical Engineering",
-        "year": "Sophomore",
-        "code": "CHE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 15,
-    "fields": {
-        "name": "Chemical Engineering",
-        "year": "Junior Year",
-        "code": "CHE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 16,
-    "fields": {
-        "name": "Chemical Engineering",
-        "year": "Senior Year",
-        "code": "CHE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 17,
-    "fields": {
-        "name": "Civil Engineering",
-        "year": "Freshman",
-        "code": "CIE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 18,
-    "fields": {
-        "name": "Civil Engineering",
-        "year": "Sophomore",
-        "code": "CIE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 19,
-    "fields": {
-        "name": "Civil Engineering",
-        "year": "Junior Year",
-        "code": "CIE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 20,
-    "fields": {
-        "name": "Civil Engineering",
-        "year": "Senior Year",
-        "code": "CIE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 21,
-    "fields": {
-        "name": "Computer Engineering",
-        "year": "Freshman",
-        "code": "COE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 22,
-    "fields": {
-        "name": "Computer Engineering",
-        "year": "Sophomore",
-        "code": "COE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 23,
-    "fields": {
-        "name": "Computer Engineering",
-        "year": "Junior Year",
-        "code": "COE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 24,
-    "fields": {
-        "name": "Computer Engineering",
-        "year": "Senior Year",
-        "code": "COE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 25,
-    "fields": {
-        "name": "Computer Science Engineering",
-        "year": "Freshman",
-        "code": "CSE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 26,
-    "fields": {
-        "name": "Computer Science Engineering",
-        "year": "Sophomore",
-        "code": "CSE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 27,
-    "fields": {
-        "name": "Computer Science Engineering",
-        "year": "Junior Year",
-        "code": "CSE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 28,
-    "fields": {
-        "name": "Computer Science Engineering",
-        "year": "Senior Year",
-        "code": "CSE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 29,
-    "fields": {
-        "name": "Computer Science and Business Systems",
-        "year": "Freshman",
-        "code": "CSBS"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 30,
-    "fields": {
-        "name": "Computer Science and Business Systems",
-        "year": "Sophomore",
-        "code": "CSBS"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 31,
-    "fields": {
-        "name": "Computer Science and Business Systems",
-        "year": "Junior Year",
-        "code": "CSBS"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 32,
-    "fields": {
-        "name": "Computer Science and Business Systems",
-        "year": "Senior Year",
-        "code": "CSBS"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 33,
-    "fields": {
-        "name": "Electrical Engineering",
-        "year": "Freshman",
-        "code": "ELE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 34,
-    "fields": {
-        "name": "Electrical Engineering",
-        "year": "Sophomore",
-        "code": "ELE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 35,
-    "fields": {
-        "name": "Electrical Engineering",
-        "year": "Junior Year",
-        "code": "ELE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 36,
-    "fields": {
-        "name": "Electrical Engineering",
-        "year": "Senior Year",
-        "code": "ELE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 37,
-    "fields": {
-        "name": "Electronics and Communication",
-        "year": "Freshman",
-        "code": "ECE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 38,
-    "fields": {
-        "name": "Electronics and Communication",
-        "year": "Sophomore",
-        "code": "ECE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 39,
-    "fields": {
-        "name": "Electronics and Communication",
-        "year": "Junior Year",
-        "code": "ECE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 40,
-    "fields": {
-        "name": "Electronics and Communication",
-        "year": "Senior Year",
-        "code": "ECE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 41,
-    "fields": {
-        "name": "Electronics (Instrumentation and Control) Engineering",
-        "year": "Freshman",
-        "code": "EIC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 42,
-    "fields": {
-        "name": "Electronics (Instrumentation and Control) Engineering",
-        "year": "Sophomore",
-        "code": "EIC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 43,
-    "fields": {
-        "name": "Electronics (Instrumentation and Control) Engineering",
-        "year": "Junior Year",
-        "code": "EIC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 44,
-    "fields": {
-        "name": "Electronics (Instrumentation and Control) Engineering",
-        "year": "Senior Year",
-        "code": "EIC"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 45,
-    "fields": {
-        "name": "Mechanical Engineering",
-        "year": "Freshman",
-        "code": "MEE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 46,
-    "fields": {
-        "name": "Mechanical Engineering",
-        "year": "Sophomore",
-        "code": "MEE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 47,
-    "fields": {
-        "name": "Mechanical Engineering",
-        "year": "Junior Year",
-        "code": "MEE"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 48,
-    "fields": {
-        "name": "Mechanical Engineering",
-        "year": "Senior Year",
-        "code": "MEE"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 49,
-    "fields": {
-        "name": "Mechanical Engineering (Production)",
-        "year": "Freshman",
-        "code": "MEP"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 50,
-    "fields": {
-        "name": "Mechanical Engineering (Production)",
-        "year": "Sophomore",
-        "code": "MEP"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 51,
-    "fields": {
-        "name": "Mechanical Engineering (Production)",
-        "year": "Junior Year",
-        "code": "MEP"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 1,
-    "fields": {
-        "name": "Mechanical Engineering (Production)",
-        "year": "Senior Year",
-        "code": "MEP"
-    }
-},
-{
-    "model": "acad.branch",
-    "pk": 52,
-    "fields": {
-        "name": "Mechatronics",
-        "year": "Freshman",
-        "code": "MEC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 53,
-    "fields": {
-        "name": "Mechatronics",
-        "year": "Sophomore",
-        "code": "MEC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 54,
-    "fields": {
-        "name": "Mechatronics",
-        "year": "Junior Year",
-        "code": "MEC"
-    }
-},
-
-{
-    "model": "acad.branch",
-    "pk": 55,
-    "fields": {
-        "name": "Mechatronics",
-        "year": "Senior Year",
-        "code": "MEC"
-    }
-}
-
 ]

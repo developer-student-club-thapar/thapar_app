@@ -19,14 +19,11 @@ class HolidaysFilter(django_filters.FilterSet):
     class Meta:
         model = Holidays
         fields = '__all__'
-class HolidaysNode(DjangoObjectType):
-   
+class HolidaysNode(DjangoObjectType):   
     class Meta:
         model = Holidays
         interfaces = (graphene.relay.Node , )
-    # def __str__(self):
-    #     return type(self).__name__
-        
+
 
 class ClassFilter(django_filters.FilterSet):
     class Meta:

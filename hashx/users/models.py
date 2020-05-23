@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from acad.models import Branch, Batch, Course, Textbook, FirstYearBatch, File
 from django.utils import timezone
+from profanity.validators import validate_is_profane
 import uuid
 
 class Student(models.Model):
@@ -18,7 +19,7 @@ class Student(models.Model):
     user = models.OneToOneField(User, related_name='student',
                                 related_query_name='student',  on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    bio = models.CharField(max_length=256)
+    bio = models.CharField(max_length=256, validators=[validate_is_profane])
     rollno = models.IntegerField(null=True)
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
     batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True)
@@ -34,7 +35,7 @@ class Student(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # starred Files of any particular user
-    starred_files = models.ManyToManyField(File)
+    starred_files = models.ManyToManyField(File , blank = True)
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
 

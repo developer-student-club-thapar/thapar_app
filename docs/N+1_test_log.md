@@ -28,7 +28,7 @@
       "edges": [
         {
           "node": {
-            "name": "CCS",
+            "name": "DSC",
             "Event": {
               "edges": [
                 {

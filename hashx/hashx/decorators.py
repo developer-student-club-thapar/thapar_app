@@ -13,7 +13,7 @@ def same_user(object_user , current_user):
     if object_user != current_user:
         raise PermissionDenied
     return True
-    
+
 '''
 usage example @file_size_check(lambda image: image.size , 'logo' , '10485760') 
 it limits the file size to 10mb
@@ -46,9 +46,6 @@ def compare_users(func, model,exc=PermissionDenied):
             id = id[1]
             object = model.objects.get(pk=id)
             model_user = object.user
-            print(f'=====> Model user {model_user}')
-            print(f'=====> context user {context.user}')
-            print(f'=====> function check {func(model_user , context.user)}')
             if func(model_user , context.user):
                 return f(*args, **kwargs)
             raise exc
