@@ -35,7 +35,7 @@ class Student(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # starred Files of any particular user
-    starred_files = models.ManyToManyField(File)
+    starred_files = models.ManyToManyField(File , blank = True)
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
 

@@ -1,8 +1,9 @@
-from .models import Assesment
-from graphql_relay.node.node import from_global_id
-from .schema import AssesmentNode
 import graphene
+from .models import Assesment
+from .schema import AssesmentNode
+from graphql_relay.node.node import from_global_id
 from graphene_django.types import DjangoObjectType
+from hashx.decorators import every_authenticated , same_user , compare_users
 class CreateAssesment(graphene.relay.ClientIDMutation):
     assesment = graphene.Field(AssesmentNode)
     class Input:
@@ -11,6 +12,7 @@ class CreateAssesment(graphene.relay.ClientIDMutation):
         firstyearbatch = graphene.String()
     
     @classmethod
+    @every_authenticated
     def mutate_and_get_payload(cls,root, info, **input):
         type = input.get('type')
         batch = input.get('batch')
@@ -26,6 +28,7 @@ class UpdateAssesment(graphene.relay.ClientIDMutation):
         firstyearbatch = graphene.String()
         
     @classmethod
+    @compare_users(same_user , Assesment)
     def mutate_and_get_payload(cls,root, info, **input):
         id = input.get('id')
         id = from_global_id(id)

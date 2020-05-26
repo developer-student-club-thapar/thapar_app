@@ -15,13 +15,14 @@ Including another URLconf
 """
 from .schema import schema
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include , re_path
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from graphene_django.views import GraphQLView
-from users.views import CreateStudent , CreateUser
+from users.views import UserCreate
 from .settings import DEBUG
 from graphql_jwt.decorators import jwt_cookie
+from users.views import activate_account
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,10 +30,12 @@ urlpatterns = [
     # Frontend should load before any application !
     # assuming this will be names home
     path('', include('frontend.urls'), name='home'),
-    path('register/', CreateUser.as_view(), name='register'),
-    path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
+    path('register/', UserCreate.as_view(), name='register'),
+    #path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/register.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('confirm/<uidb64>/<token>/',
+        activate_account, name='activate'),
     # path('profile/', user_views.profile, name='profile'),
     # path('', include('users.urls'))
 ]
