@@ -6,6 +6,8 @@ import Home from '../pages/Home';
 import HomeAlt from '../pages/HomeAlt';
 import CourseDetail from '../pages/CourseDetail';
 import Register from '../pages/Register';
+import Login from '../pages/Login';
+import StudentDetailsForm from '../pages/StudentDetailsForm';
 
 const Routes = () => {
   return (
@@ -15,6 +17,8 @@ const Routes = () => {
       <Route exact path="/course/:id" component={CourseDetail} />
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/studentdetailform" component={StudentDetailsForm} />
       {/* <Route component={Home} /> */}
     </Switch>
   );
