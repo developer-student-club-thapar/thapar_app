@@ -4,8 +4,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import Nav from '../components/Nav';
 
-const CourseDetail = props => {
+const CourseDetail = (props) => {
   console.log(props.match.params.id);
   const COURSE_QUERY = gql`
     query CourseQuery {
@@ -23,6 +24,7 @@ const CourseDetail = props => {
   console.log(data);
   return (
     <Fragment>
+      <Nav />
       <CssBaseline />
       <Grid
         container
