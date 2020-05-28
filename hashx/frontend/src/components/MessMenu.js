@@ -76,7 +76,7 @@ const MessMenu = () => {
         </h1>
         <br />
         <br />
-        <Fade bottom cascade delay={1000}>
+        <Fade bottom cascade delay={600}>
           <div>
             <h3 style={{ fontWeight: 'bold' }}>Breakfast</h3>
             <h4 style={{ textAlign: 'left' }}>
