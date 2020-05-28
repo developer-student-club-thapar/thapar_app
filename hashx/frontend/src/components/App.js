@@ -16,13 +16,15 @@ const client = new ApolloClient({
 
 const App = () => {
   return (
-    <ApolloProvider client={client}>
-      <Router history={history}>
-        <div className="App">
-          <Routes />
-        </div>
-      </Router>
-    </ApolloProvider>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <Router history={history}>
+          <div className="App">
+            <Routes />
+          </div>
+        </Router>
+      </ApolloProvider>
+    </Provider>
   );
 };
 
