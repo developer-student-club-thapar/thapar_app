@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Animation from '../components/Animation';
+import { connect } from 'react-redux';
+import { registerUser } from '../actions';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,10 +21,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Register = () => {
+const Register = ({
+  auth: { id, isAuthenticated, error },
+  registerUser,
+  resetState,
+  loginUser,
+}) => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(true);
   const [user, setUser] = useState({
     username: '',
     email: '',
@@ -46,7 +54,11 @@ const Register = () => {
     } else if (password !== password2) {
       setOpen2(true);
     } else {
-      console.log(user);
+      registerUser({
+        username,
+        email,
+        password,
+      });
     }
   };
   const handleClose = (event, reason) => {
@@ -63,6 +75,14 @@ const Register = () => {
 
     setOpen2(false);
   };
+  const handleClose3 = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen3(false);
+  };
+
   return (
     <Fragment>
       <Grid container spacing={2}>
@@ -225,6 +245,25 @@ const Register = () => {
                               Passwords did not match
                             </Alert>
                           </Snackbar>
+                          {error && (
+                            <Snackbar
+                              open={open3}
+                              autoHideDuration={6000}
+                              onClose={handleClose3}
+                              anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                              }}
+                            >
+                              <Alert
+                                onClose={handleClose3}
+                                severity="error"
+                                variant="filled"
+                              >
+                                Registration Failed
+                              </Alert>
+                            </Snackbar>
+                          )}
                         </Grid>
                       </Grid>
                     </ValidatorForm>
@@ -259,4 +298,10 @@ const Register = () => {
   );
 };
 
-export default Register;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, {
+  registerUser,
+})(Register);

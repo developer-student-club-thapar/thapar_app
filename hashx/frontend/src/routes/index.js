@@ -16,9 +16,14 @@ const Routes = () => {
       <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:id" component={CourseDetail} />
       <Route exact path="/private" component={PrivateTest} />
-      <Route exact path="/register" component={Register} />
+      <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/studentdetailform" component={StudentDetailsForm} />
+      <Route
+        exact
+        path="/studentdetailform"
+        component={StudentDetailsForm}
+        isPrivate
+      />
       {/* <Route component={Home} /> */}
     </Switch>
   );

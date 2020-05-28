@@ -1,19 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Route, Redirect } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default function RouteWrapper({
+function RouteWrapper({
   component: Component,
   isPrivate,
+  isRestricted,
+  auth: { isAuthenticated, id, token },
   ...rest
 }) {
-  const signed = false;
-
   /**
    * Redirect user to SignIn page if he tries to access a private route
    * without authentication.
    */
-  if (isPrivate && !signed) {
+  if (isPrivate && !isAuthenticated) {
     return <Redirect to="/" />;
   }
 
@@ -21,8 +22,8 @@ export default function RouteWrapper({
    * Redirect user to Main page if he tries to access a non private route
    * (SignIn or SignUp) after being authenticated.
    */
-  if (!isPrivate && signed) {
-    return <Redirect to="/dashboard" />;
+  if (isRestricted && isAuthenticated && id && token === null) {
+    return <Redirect to="/studentdetailform" />;
   }
 
   /**
@@ -40,3 +41,9 @@ RouteWrapper.propTypes = {
 RouteWrapper.defaultProps = {
   isPrivate: false,
 };
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps)(RouteWrapper);
