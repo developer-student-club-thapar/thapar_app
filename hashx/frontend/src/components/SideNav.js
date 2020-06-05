@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
-import "../styles/SideNav.css";
-import { Link } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar";
-import { makeStyles } from "@material-ui/core/styles";
-import Flip from "react-reveal/Flip";
-import Paper from "@material-ui/core/Paper";
-import Zoom from "react-reveal/Zoom";
+import React, { Fragment } from 'react';
+import '../styles/SideNav.css';
+import { Link } from 'react-router-dom';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import Flip from 'react-reveal/Flip';
+import Paper from '@material-ui/core/Paper';
+import Zoom from 'react-reveal/Zoom';
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const SideNav = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <div id="mySidebar" className="sidebar">
         <div className="heading">
           <span>
@@ -60,11 +60,11 @@ const SideNav = () => {
           alt="Lorem Ipsum"
           src="https://picsum.photos/seed/picsum/200/300"
           className={classes.large}
-          style={{ margin: "auto" }}
+          style={{ margin: 'auto' }}
         />
         <br />
         <Flip left cascade>
-          <h2 style={{ textAlign: "center", fontWeight: "bold" }}>
+          <h2 style={{ textAlign: 'center', fontWeight: 'bold' }}>
             Lorem Ipsum
           </h2>
         </Flip>
@@ -73,30 +73,30 @@ const SideNav = () => {
           <Paper
             elevation={0}
             style={{
-              height: "160px",
-              backgroundColor: "#EFE8FC",
-              color: "#4C1AAF",
-              borderRadius: "16px",
-              width: "240px",
-              margin: "auto",
+              height: '160px',
+              backgroundColor: '#EFE8FC',
+              color: '#4C1AAF',
+              borderRadius: '16px',
+              width: '240px',
+              margin: 'auto',
             }}
           >
-            <h3 style={{ textAlign: "center", fontWeight: "bold" }}>
+            <h3 style={{ textAlign: 'center', fontWeight: 'bold' }}>
               Roll no: 101915211
             </h3>
-            <h3 style={{ textAlign: "center", fontWeight: "bold" }}>
+            <h3 style={{ textAlign: 'center', fontWeight: 'bold' }}>
               Branch: BE ENC
             </h3>
-            <h3 style={{ textAlign: "center", fontWeight: "bold" }}>
+            <h3 style={{ textAlign: 'center', fontWeight: 'bold' }}>
               Year: 1st year
             </h3>
-            <h3 style={{ textAlign: "center", fontWeight: "bold" }}>
+            <h3 style={{ textAlign: 'center', fontWeight: 'bold' }}>
               Batch: K4
             </h3>
           </Paper>
         </Zoom>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default SideNav;

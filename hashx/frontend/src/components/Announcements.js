@@ -36,7 +36,7 @@ const Announcements = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -75,7 +75,8 @@ const Announcements = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" />
+                View More
               </h5>
             </Link>
           </Paper>
@@ -86,7 +87,8 @@ const Announcements = () => {
           <i
             className="fas fa-bullhorn fa-sm"
             style={{ display: 'inline-block' }}
-          />{' '}
+          />
+          {`\t`}
           Announcements
         </h1>
         <br />
@@ -94,29 +96,34 @@ const Announcements = () => {
         <Bounce bottom cascade>
           <div>
             <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
-              announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
+              <i className="fas fa-arrow-alt-circle-right" />
+              This is a announcement.Blah blah blah.Lorem ipsum sommte
+              siodfgosidh.
             </h4>
             <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
-              announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
+              <i className="fas fa-arrow-alt-circle-right" />
+              This is a announcement.Blah blah blah.Lorem ipsum sommte
+              siodfgosidh.
             </h4>
             <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
-              announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
+              <i className="fas fa-arrow-alt-circle-right" />
+              This is a announcement.Blah blah blah.Lorem ipsum sommte
+              siodfgosidh.
             </h4>
             <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
-              announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
+              <i className="fas fa-arrow-alt-circle-right" />
+              This is a announcement.Blah blah blah.Lorem ipsum sommte
+              siodfgosidh.
             </h4>
             <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
-              announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
+              <i className="fas fa-arrow-alt-circle-right" />
+              This is a announcement.Blah blah blah.Lorem ipsum sommte
+              siodfgosidh.
             </h4>
           </div>
         </Bounce>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 
