@@ -9,7 +9,7 @@ import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 
 const RandomColor = () => {
-  let colorValues = [
+  const colorValues = [
     '#C51212',
     '#117CCE',
     '#11B4CE',
@@ -63,7 +63,7 @@ const Courses = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -102,7 +102,8 @@ const Courses = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" />
+                View More
               </h5>
             </Link>
           </Paper>
@@ -113,7 +114,8 @@ const Courses = () => {
           <i
             className="fas fa-book fa-sm"
             style={{ display: 'inline-block' }}
-          />{' '}
+          />
+{' '}
           Courses
         </h1>
         <br />
@@ -399,7 +401,7 @@ const Courses = () => {
         <br />
         <br />
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

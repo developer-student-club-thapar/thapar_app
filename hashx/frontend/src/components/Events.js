@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const Events = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -40,12 +40,13 @@ const Events = () => {
           <i
             className="fas fa-calendar-day fa-sm"
             style={{ display: 'inline-block' }}
-          />{' '}
-          Today's Events
+          />
+          {` `}
+          Todays Events
         </h1>
         <Maps />
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

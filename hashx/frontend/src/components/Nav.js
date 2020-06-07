@@ -7,7 +7,6 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import Notification from './Notifications';
 import Drawer from '@material-ui/core/Drawer';
 import clsx from 'clsx';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -32,11 +31,12 @@ import { withRouter } from 'react-router-dom';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import Notification from './Notifications';
 import SearchBar from './SearchBar';
 
 const drawerWidth = 250;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },

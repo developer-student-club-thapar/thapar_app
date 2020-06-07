@@ -13,7 +13,7 @@ import Events from '../components/Events';
 import MessMenu from '../components/MessMenu';
 import TimeTable from '../components/TimeTable';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -28,7 +28,7 @@ const Home = () => {
   const classes = useStyles();
   const eventsRef = useRef(null);
   return (
-    <Fragment>
+    <>
       <CssBaseline />
 
       <Grid
@@ -257,7 +257,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

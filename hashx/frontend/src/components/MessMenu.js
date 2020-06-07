@@ -21,7 +21,7 @@ const MessMenu = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -60,7 +60,8 @@ const MessMenu = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" />
+                View More
               </h5>
             </Link>
           </Paper>
@@ -71,7 +72,8 @@ const MessMenu = () => {
           <i
             className="fas fa-utensils fa-sm"
             style={{ display: 'inline-block' }}
-          />{' '}
+          />
+          {` `}
           Mess Menu
         </h1>
         <br />
@@ -99,7 +101,7 @@ const MessMenu = () => {
           </div>
         </Fade>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 
