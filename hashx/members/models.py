@@ -61,6 +61,11 @@ class Member(models.Model):
 
 
 class VolunteershipType(models.Model):
+    """
+    This would contain various Volunteership Application Types 
+    example Software stuff like React Django , travis or devops or 
+    Marketing etc. of this site
+    """
     name = models.CharField(max_length=50)
     details = models.TextField(max_length=500)
     mini_logo = models.ImageField(null=True)
