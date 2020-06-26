@@ -54,8 +54,8 @@ class BranchAdmin(admin.ModelAdmin):
 
 @admin.register(FirstYearBatch)
 class FirstYearBatchAdmin(admin.ModelAdmin):
-    list_display = ("id", "code", "no", "gr", "created_date")
-    list_filter = ("gr", "created_date")
+    list_display = ("id", "code", "no", "GR", "created_date")
+    list_filter = ("GR", "created_date")
 
 
 @admin.register(Batch)
