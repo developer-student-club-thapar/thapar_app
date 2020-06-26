@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import dsc_icon from '../assets/dsc_icon.png';
+import dsc_icon from '../../assets/dsc_icon.png';
 
 class Maps extends Component {
   state = {
