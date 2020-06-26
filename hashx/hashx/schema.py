@@ -29,30 +29,32 @@ class Query(acad_schema.RelayQuery,
             members_schema.RelayQuery,
             society_schema.RelayQuery,
             featurebug_schema.RelayQuery,
-             graphene.ObjectType):
+            graphene.ObjectType):
     # This Class wil inherit from multiple Queries
     # as we begin to add more apps to the project
     pass
 
-            # exam_schema.RelayQuery,
-            # shop_schema.RelayQuery,
-            # timetable_schema.RelayQuery,
-            # wifipass_schema.Query,
-            # lostfound_schema.RelayQuery,
-            # hostel_schema.RelayQuery,
+    # exam_schema.RelayQuery,
+    # shop_schema.RelayQuery,
+    # timetable_schema.RelayQuery,
+    # wifipass_schema.Query,
+    # lostfound_schema.RelayQuery,
+    # hostel_schema.RelayQuery,
 
-            #Open these end points in next update
+    # Open these end points in next update
+
 
 class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, featurebug_mutations.Mutation, graphene.ObjectType):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
-            #    hostel_mutations.Mutation, 
-            #    lostfound_mutations.Mutation, 
-            #    exam_mutations.Mutation,
-            #    timetable_mutations.Mutation, 
-            #    shop_mutations.Mutation, 
-            #    member_mutations.Mutation,
-            #Open these end points in next update
+    #    hostel_mutations.Mutation,
+    #    lostfound_mutations.Mutation,
+    #    exam_mutations.Mutation,
+    #    timetable_mutations.Mutation,
+    #    shop_mutations.Mutation,
+    #    member_mutations.Mutation,
+    # Open these end points in next update
+
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
