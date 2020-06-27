@@ -4,14 +4,14 @@ import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import SearchBar from '../components/SearchBar';
-import Notifications from '../components/Notifications';
+import SearchBar from '../components/home/SearchBar';
+import Notifications from '../components/home/Notifications';
 import HomeImg from '../assets/HomeImg.svg';
-import Courses from '../components/Courses';
-import Announcements from '../components/Announcements';
-import Events from '../components/Events';
-import MessMenu from '../components/MessMenu';
-import TimeTable from '../components/TimeTable';
+import Courses from '../components/home/Courses';
+import Announcements from '../components/home/Announcements';
+import Events from '../components/home/Events';
+import MessMenu from '../components/home/MessMenu';
+import TimeTable from '../components/home/TimeTable';
 import Nav from '../components/Nav';
 
 const useStyles = makeStyles((theme) => ({

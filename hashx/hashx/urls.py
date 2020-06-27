@@ -30,7 +30,7 @@ urlpatterns = [
     # Frontend should load before any application !
     # assuming this will be names home
     path('', include('frontend.urls'), name='home'),
-    path('register/', UserCreate.as_view(), name='register'),
+    path('register/',UserCreate.as_view(), name='register'),
     #path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/register.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
