@@ -38,7 +38,8 @@ class Item(models.Model):
 
     name = models.CharField(max_length=150, validators=[validate_is_profane])
     type = models.CharField(max_length=5, choices=TYPE)
-    details = models.TextField(max_length=1000, validators=[validate_is_profane])
+    details = models.TextField(
+        max_length=1000, validators=[validate_is_profane])
     image = models.ImageField(
         upload_to="lostandfound_photos", blank=True, null=True)
 
@@ -50,7 +51,8 @@ class Item(models.Model):
     # ADD Conection to user model who posted Lost and Found Stuff be student or User
     user = models.ForeignKey(User, related_name="Item",
                              related_query_name="Item", on_delete=models.CASCADE)
-    contact_details = models.CharField(max_length=200, validators=[validate_is_profane])
+    contact_details = models.CharField(
+        max_length=200, validators=[validate_is_profane])
     date_posted = models.DateTimeField(default=timezone.now)
     is_reviewed = models.BooleanField(default=False)
     published = models.BooleanField(default=True)
