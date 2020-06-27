@@ -35,7 +35,7 @@ const CourseDetail = (props) => {
           <Paper
             elevation={0}
             style={{
-              height: '160px',
+              height: '200px',
               backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
               color: '#FFFFFF',
             }}
