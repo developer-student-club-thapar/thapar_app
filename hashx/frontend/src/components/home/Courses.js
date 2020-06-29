@@ -168,7 +168,9 @@ const Courses = (props) => {
                       className={classes.courseCard}
                       style={{ backgroundColor: `${colorBG}` }}
                       onClick={() => {
-                        props.history.push(`/course/${course.node.id}`);
+                        props.history.push(
+                          `/course/tutorials/${course.node.id}`,
+                        );
                       }}
                     >
                       <h3

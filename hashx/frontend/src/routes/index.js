@@ -8,13 +8,16 @@ import CourseDetail from '../pages/CourseDetail';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import StudentDetailsForm from '../pages/StudentDetailsForm';
+import PdfView from '../pages/PdfView';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={HomeAlt} />
       <Route exact path="/alternate" component={Home} />
-      <Route exact path="/course/:id" component={CourseDetail} />
+      <Route exact path="/course/:content/:id" component={CourseDetail} />
+      <Route exact path="/pdfview" component={PdfView} />
+
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} />
