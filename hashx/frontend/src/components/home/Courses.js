@@ -11,6 +11,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import CoursesSkeleton from './CoursesSkeleton';
+import { motion } from 'framer-motion';
 
 const RandomColor = () => {
   let colorValues = [
@@ -158,24 +159,31 @@ const Courses = (props) => {
                   className={classes.gridItem}
                   style={{}}
                 >
-                  <Paper
-                    elevation={0}
-                    className={classes.courseCard}
-                    style={{ backgroundColor: `${colorBG}` }}
-                    onClick={() => {
-                      props.history.push(`/course/${course.node.id}`);
-                    }}
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.8 }}
                   >
-                    <h3
-                      style={{
-                        color: 'white',
-                        paddingTop: '34px',
-                        fontWeight: 'bold',
+                    <Paper
+                      elevation={0}
+                      className={classes.courseCard}
+                      style={{ backgroundColor: `${colorBG}` }}
+                      onClick={() => {
+                        props.history.push(
+                          `/course/tutorials/${course.node.id}`,
+                        );
                       }}
                     >
-                      {course.node.code}
-                    </h3>
-                  </Paper>
+                      <h3
+                        style={{
+                          color: 'white',
+                          paddingTop: '34px',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        {course.node.code}
+                      </h3>
+                    </Paper>
+                  </motion.div>
                 </Grid>
               );
             })}
