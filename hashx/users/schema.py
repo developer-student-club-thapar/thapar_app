@@ -6,6 +6,7 @@ from graphene_django.types import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery
 from django.contrib.auth.models import User
 
+
 class UserFilter(django_filters.FilterSet):
     class Meta:
         model = User
@@ -16,6 +17,7 @@ class UserNode(DjangoObjectType):
     class Meta:
         model = User
         interfaces = (graphene.relay.Node , )
+        fields = ['username' , 'email' , 'first_name' , 'last_name']
 
 
 class StudentFilter(django_filters.FilterSet):
