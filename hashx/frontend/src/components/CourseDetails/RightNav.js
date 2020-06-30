@@ -19,7 +19,7 @@ const RightNav = ({ id, path }) => {
           //   width: "550px",
           borderRadius: '20px',
           textAlign: 'center',
-          height: '500px',
+          height: '617px',
           backgroundColor: '#2C3055',
           color: '#FBF9FF',
           marginTop: '-30px',
@@ -95,13 +95,23 @@ const RightNav = ({ id, path }) => {
         </NavLink>
         <br />
         <NavLink
-          to="/course/tutorials/"
+          exact
+          to={`/course/notes/${id}`}
           style={{ textDecoration: 'none', color: 'white' }}
         >
           <Grid
             container
             spacing={2}
-            style={{ textAlign: 'right', paddingLeft: '30px' }}
+            style={
+              path === 'notes'
+                ? {
+                    backgroundColor: '#7c73f0',
+                    borderRadius: '10px',
+                    textAlign: 'right',
+                    paddingLeft: '30px',
+                  }
+                : { textAlign: 'right', paddingLeft: '30px' }
+            }
             className="hover-4"
           >
             <Grid item xs={2}>
@@ -118,13 +128,23 @@ const RightNav = ({ id, path }) => {
         </NavLink>
         <br />
         <NavLink
-          to="/course/tutorials/"
+          exact
+          to={`/course/previousyearpapers/${id}`}
           style={{ textDecoration: 'none', color: 'white' }}
         >
           <Grid
             container
             spacing={2}
-            style={{ textAlign: 'right', paddingLeft: '30px' }}
+            style={
+              path === 'previousyearpapers'
+                ? {
+                    backgroundColor: '#7c73f0',
+                    borderRadius: '10px',
+                    textAlign: 'right',
+                    paddingLeft: '30px',
+                  }
+                : { textAlign: 'right', paddingLeft: '30px' }
+            }
             className="hover-4"
           >
             <Grid item xs={2}>
@@ -141,13 +161,23 @@ const RightNav = ({ id, path }) => {
         </NavLink>
         <br />
         <NavLink
-          to="/course/tutorials/"
+          exact
+          to={`/course/tutorialssolution/${id}`}
           style={{ textDecoration: 'none', color: 'white' }}
         >
           <Grid
             container
             spacing={2}
-            style={{ textAlign: 'right', paddingLeft: '30px' }}
+            style={
+              path === 'tutorialssolution'
+                ? {
+                    backgroundColor: '#7c73f0',
+                    borderRadius: '10px',
+                    textAlign: 'right',
+                    paddingLeft: '30px',
+                  }
+                : { textAlign: 'right', paddingLeft: '30px' }
+            }
             className="hover-4"
           >
             <Grid item xs={2}>
