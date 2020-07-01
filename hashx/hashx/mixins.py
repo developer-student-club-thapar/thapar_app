@@ -26,7 +26,6 @@ class ViewAllAuthenticatedQuery(DjangoFilterConnectionField):
     def resolve_queryset(cls, connection, iterable, info, args, filtering_args=None, filterset_class=None):
         return super(ViewAllAuthenticatedQuery, cls).resolve_queryset(connection, iterable, info, args, filtering_args, filterset_class)
 
-
 class OpenForAllQuery(DjangoFilterConnectionField):
     @classmethod
     def resolve_queryset(cls, connection, iterable, info, args, filtering_args=None, filterset_class=None):
