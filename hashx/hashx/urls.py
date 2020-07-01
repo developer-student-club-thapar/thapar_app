@@ -24,9 +24,9 @@ from .settings import DEBUG
 from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     # Frontend should load before any application !
     # assuming this will be names home
     path('', include('frontend.urls'), name='home'),
