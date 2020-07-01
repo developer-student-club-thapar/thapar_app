@@ -65,6 +65,9 @@ class Instructor(models.Model):
     email = models.EmailField(default=None, blank=True, null=True)
     office = models.CharField(max_length=5)
     course = models.ManyToManyField(Course)
+    role = models.CharField(max_length=50)
+    specialisation = models.CharField(max_length=100)
+    biography = models.CharField(max_length=500)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
 
