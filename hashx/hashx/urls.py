@@ -23,7 +23,7 @@ from users.views import UserCreate
 from .settings import DEBUG
 from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
-from .views import PrivateGraphQLView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -41,7 +41,7 @@ urlpatterns = [
 ]
 if (DEBUG == True):
     urlpatterns += [path('graphql/',
-                         csrf_exempt(PrivateGraphQLView.as_view(graphiql=True, schema=schema)))]
+                         csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))]
 else:
     urlpatterns += [path('graphql/',
                          jwt_cookie(GraphQLView.as_view(schema=schema)))]
