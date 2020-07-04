@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import environ
+import datetime
 
 
 env = environ.Env(DEBUG=(bool, False))
@@ -38,6 +39,12 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'allauth',
+    'social_django',
+    'allauth.socialaccount.providers.google',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -91,6 +98,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -112,17 +120,24 @@ DATABASES = {
 GRAPHENE = {
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
-        
+
     ],
     'SCHEMA': 'hashx.schema.schema',
     'SCHEMA_OUTPUT': 'schema.graphql',  # defaults to schema.json,
     # Defaults to None (displays all data on a single line)
     'SCHEMA_INDENT': 2,
 }
+GRAPHQL_JWT = {
+    # ...
+    "JWT_VERIFY_EXPIRATION": True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=180),
+}
 
 AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.google.GoogleOAuth2',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 GRAPH_MODELS = {'all_applications': True,   'group_models': True, }
@@ -161,7 +176,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+SITE_ID = 1
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
@@ -204,8 +219,21 @@ LOGGING = {
         },
     },
 }
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE' : ['email'],
+        'AUTH_PARAMS' : {'access_type' : 'online'}
+    }
+}
 
-
+# SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+ACCOUNT_AUTHENTICATION_METHOD = 'email' 
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET="DWUYJullIXwbKIbpyNOINszt"
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': [
 #         'rest_framework.authentication.BasicAuthentication',

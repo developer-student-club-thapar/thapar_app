@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import {userQuery} from '@apollo/react-hooks';
 import Button from '@material-ui/core/Button';
 import Bounce from 'react-reveal/Bounce';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -10,9 +11,12 @@ import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import image from '../../assets/img.jpg';
 import { useHistory } from 'react-router-dom';
+import CourseDetail from '../../pages/CourseDetail';
 
 const Tutorials = () => {
   let history = useHistory();
+  const courseID = props.match.params.id;
+ 
   const tutorialsheets = [];
   for (let i = 0; i < 6; i++) {
     tutorialsheets.push(
