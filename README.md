@@ -58,24 +58,24 @@ To do that run the following inside the project repo -
 ```source venv/Scripts/activate```
     On MacOS/Linux
 ```source venv/bin/actiavte```
-- At the root of your project directory <br>
-```bash 
-pip install -r requirements.txt
-```
 
-- Rename ```.env.example``` to ```.env```
-- Put the ```.env``` file in ```/hashx ```set secret key for your django project.
+- Change into the `./hashx` directory.
+   > All the following steps are to be executed in the hashx directory.
+- Install requirements\
+```pip install -r requirements.txt```
+- Rename ```.env.debug``` to ```.env```
+- set secret key for your django project.
 - You can use [https://djecrety.ir/] to generate your secret key
-- Set ```DEBUG = True``` during development in ```.env``` file
 
-- After the above setup, run <br>
-```python hashx/manage.py makemigrations```
-```python hashx/manage.py migrate```
 
-- Start the backend server 
-```python hashx/manage.py runserver```
-Runs the backend server at default port ```8000```.<br />
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+- After the above setup, run \
+```python manage.py makemigrations```\
+```python manage.py migrate```
+
+- Start the backend server\
+    ```python manage.py runserver```\
+    Runs the backend server at default port ```8000```.\
+    Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 
