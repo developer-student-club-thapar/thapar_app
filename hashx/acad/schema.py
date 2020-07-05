@@ -113,7 +113,7 @@ class FileTypeFilter(django_filters.FilterSet):
 class FileTypeNode(DjangoObjectType):
     class Meta:
         model = FileType
-        interfaces = (CustomNode, )
+        interfaces = (graphene.relay.Node, )
 
 
 class AcademicCalendarFilter(django_filters.FilterSet):
@@ -138,7 +138,7 @@ class AcademicCalendarNode(DjangoObjectType):
 class RelayQuery(graphene.ObjectType):
     all_filetypes = ViewAllAuthenticatedQuery(
         FileTypeNode, filterset_class=FileTypeFilter)
-    filetypes  = CustomNode.Field(FileTypeNode)
+    filetypes  = graphene.relay.Node.Field(FileTypeNode)
     all_drivefolders = ViewAllAuthenticatedQuery(
         DrivefolderNode, filterset_class=DrivefolderFilter)
     drivefolder = graphene.relay.Node.Field(DrivefolderNode)
