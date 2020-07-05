@@ -48,7 +48,7 @@ if settings.DEBUG:
     ]
 
     # Add urls for the debug toolbar
-import debug_toolbar
+    import debug_toolbar
 
     urlpatterns += [path("__debug__", include(debug_toolbar.urls))]
 
