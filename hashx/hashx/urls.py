@@ -15,7 +15,7 @@ Including another URLconf
 """
 from .schema import schema
 from django.contrib import admin
-from django.urls import path, include , re_path
+from django.urls import path, include, re_path
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from graphene_django.views import GraphQLView
@@ -26,29 +26,32 @@ from users.views import activate_account
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     # Frontend should load before any application !
     # assuming this will be names home
-    path('', include('frontend.urls'), name='home'),
-    path('register/',UserCreate.as_view(), name='register'),
-    #path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/register.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('confirm/<uidb64>/<token>/',
-        activate_account, name='activate'),
+    path("", include("frontend.urls"), name="home"),
+    path("register/", UserCreate.as_view(), name="register"),
+    # path('register/create_profile/', CreateStudent.as_view(), name='create_profile'),
+    path(
+        "login/",
+        auth_views.LoginView.as_view(template_name="users/register.html"),
+        name="login",
+    ),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path("confirm/<uidb64>/<token>/", activate_account, name="activate"),
     # path('profile/', user_views.profile, name='profile'),
     # path('', include('users.urls'))
 ]
 if settings.DEBUG:
-    urlpatterns += [path('graphql/',
-                         csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))]
+    urlpatterns += [
+        path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))
+    ]
 
     # Add urls for the debug toolbar
     import debug_toolbar
-    urlpatterns += [path('__debug__', include(debug_toolbar.urls))]
+
+    urlpatterns += [path("__debug__", include(debug_toolbar.urls))]
 
 
 else:
-    urlpatterns += [path('graphql/',
-                         jwt_cookie(GraphQLView.as_view(schema=schema)))]
-
+    urlpatterns += [path("graphql/", jwt_cookie(GraphQLView.as_view(schema=schema)))]
