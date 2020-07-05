@@ -20,7 +20,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import views as auth_views
 from graphene_django.views import GraphQLView
 from users.views import UserCreate
-from .settings import DEBUG
+from django.conf import settings
 from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
 
@@ -39,9 +39,16 @@ urlpatterns = [
     # path('profile/', user_views.profile, name='profile'),
     # path('', include('users.urls'))
 ]
-if (DEBUG == True):
+if settings.DEBUG:
     urlpatterns += [path('graphql/',
                          csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))]
+
+    # Add urls for the debug toolbar
+    import debug_toolbar
+    urlpatterns += [path('__debug__', include(debug_toolbar.urls))]
+
+
 else:
     urlpatterns += [path('graphql/',
                          jwt_cookie(GraphQLView.as_view(schema=schema)))]
+
