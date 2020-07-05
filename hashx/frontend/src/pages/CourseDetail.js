@@ -14,7 +14,6 @@ import Books from '../components/CourseDetails/Books';
 import Notes from '../components/CourseDetails/Notes';
 import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
-import Popover from '@material-ui/core/Popover';
 
 const useStyles = makeStyles((theme) => ({
   root: {
