@@ -4,7 +4,7 @@ from .schema import StudentNode
 import graphene
 from django.contrib.auth.models import User
 from graphene_django.types import DjangoObjectType
-from hashx.decorators import every_authenticated ,  same_user , compare_users
+from hashx.decorators import every_authenticated ,  same_user , compare_users, file_size_check
 class CreateStudent(graphene.relay.ClientIDMutation):
     student = graphene.Field(StudentNode)
     class Input:
@@ -20,6 +20,7 @@ class CreateStudent(graphene.relay.ClientIDMutation):
     
     @classmethod
     @every_authenticated
+    @file_size_check('image' , 10485760)
     def mutate_and_get_payload(cls,root, info, **input):
         user = info.context.user
         bio = input.get('bio')
@@ -28,7 +29,9 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         firstyearbatch = input.get('firstyearbatch')
         points = input.get('points')
         gender = input.get('gender')
-        image = info.context.FILES['image'] 
+        try:
+            image = info.context.FILES['image'] 
+        except : pass
         student = Student(user=user , bio = bio , branch=branch ,batch = batch , firstyearbatch = firstyearbatch  , points =points , gender = gender)
         student.save()
         if image:
@@ -50,6 +53,7 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
     @classmethod
     @every_authenticated
     @compare_users(same_user , Student)
+    @file_size_check('image' , 10485760)
     def mutate_and_get_payload(cls,root, info, **input):
         try:
             id = input.get('id')
@@ -63,7 +67,10 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
             firstyearbatch = input.get('firstyearbatch')
             points = input.get('points')
             gender = input.get('gender')
-            image = info.context.FILES['image'] 
+            try:
+                image = info.context.FILES['image'] 
+            except :
+                pass
             student = Student.objects.get(pk=id)
             if bio:
                 student.bio = bio

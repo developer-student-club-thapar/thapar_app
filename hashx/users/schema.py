@@ -4,18 +4,20 @@ from .models import Student , Instructor
 from django.db import models
 from graphene_django.types import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery
-from django.contrib.auth.models import User
+from django.contrib.auth import  get_user_model
+
 
 class UserFilter(django_filters.FilterSet):
     class Meta:
-        model = User
+        model = get_user_model()
         fields = '__all__'
 
 
 class UserNode(DjangoObjectType):
     class Meta:
-        model = User
+        model = get_user_model()
         interfaces = (graphene.relay.Node , )
+        fields = ['username' , 'email' , 'first_name' , 'last_name']
 
 
 class StudentFilter(django_filters.FilterSet):

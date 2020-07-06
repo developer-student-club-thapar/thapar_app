@@ -3,6 +3,7 @@ from graphql_relay.node.node import from_global_id
 from .schema import EventNode
 import graphene
 from graphene_django.types import DjangoObjectType
+
 class CreateEvent(graphene.relay.ClientIDMutation):
     event = graphene.Field(EventNode)
     class Input:
@@ -60,6 +61,7 @@ class UpdateEvent(graphene.relay.ClientIDMutation):
         societyId = graphene.String()
         
     @classmethod
+    
     def mutate_and_get_payload(cls,root, info, **input):
         id = input.get('id')
         id = from_global_id(id)

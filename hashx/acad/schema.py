@@ -3,20 +3,20 @@ from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery
-from .models import Drivefolder, Course, Batch, Branch, Textbook, File, FirstYearBatch, AcademicCalendar
+from .models import Drivefolder, Course, Batch, Branch, Textbook, File, FirstYearBatch, AcademicCalendar, FileType
 from django.db import models
-
+from hashx.mixins import CustomNode
 
 class DrivefolderFilter(django_filters.FilterSet):
     class Meta:
         model = Drivefolder
         fields = '__all__'
 
-        
+
 class DrivefolderNode(DjangoObjectType):
     class Meta:
         model = Drivefolder
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class CourseFilter(django_filters.FilterSet):
@@ -28,7 +28,7 @@ class CourseFilter(django_filters.FilterSet):
 class CourseNode(DjangoObjectType):
     class Meta:
         model = Course
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class BranchFilter(django_filters.FilterSet):
@@ -40,7 +40,7 @@ class BranchFilter(django_filters.FilterSet):
 class BranchNode(DjangoObjectType):
     class Meta:
         model = Branch
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class FirstYearBatchFilter(django_filters.FilterSet):
@@ -52,7 +52,7 @@ class FirstYearBatchFilter(django_filters.FilterSet):
 class FirstYearBatchNode(DjangoObjectType):
     class Meta:
         model = FirstYearBatch
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class BatchFilter(django_filters.FilterSet):
@@ -64,7 +64,7 @@ class BatchFilter(django_filters.FilterSet):
 class BatchNode(DjangoObjectType):
     class Meta:
         model = Batch
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class TextbookFilter(django_filters.FilterSet):
@@ -76,7 +76,7 @@ class TextbookFilter(django_filters.FilterSet):
 class TextbookNode(DjangoObjectType):
     class Meta:
         model = Textbook
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class FileFilter(django_filters.FilterSet):
@@ -84,24 +84,36 @@ class FileFilter(django_filters.FilterSet):
         model = File
         fields = '__all__'
         filter_overrides = {
-        models.FileField :{
-            'filter_class' : django_filters.CharFilter,
-            'extra' : lambda f:{
-                'lookup_expr': 'icontains'
-            }
-        },
-        models.ImageField :{
-            'filter_class' : django_filters.CharFilter,
-            'extra' : lambda f:{
-                'lookup_expr': 'icontains'
-            }
-        }}
+            models.FileField: {
+                'filter_class': django_filters.CharFilter,
+                'extra': lambda f: {
+                    'lookup_expr': 'icontains'
+                }
+            },
+            models.ImageField: {
+                'filter_class': django_filters.CharFilter,
+                'extra': lambda f: {
+                    'lookup_expr': 'icontains'
+                }
+            }}
 
 
 class FileNode(DjangoObjectType):
     class Meta:
         model = File
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
+
+
+class FileTypeFilter(django_filters.FilterSet):
+    class Meta:
+        model = FileType
+        fields = '__all__'
+
+
+class FileTypeNode(DjangoObjectType):
+    class Meta:
+        model = FileType
+        interfaces = (graphene.relay.Node, )
 
 
 class AcademicCalendarFilter(django_filters.FilterSet):
@@ -109,34 +121,44 @@ class AcademicCalendarFilter(django_filters.FilterSet):
         model = AcademicCalendar
         fields = '__all__'
         filter_overrides = {
-        models.FileField :{
-            'filter_class' : django_filters.CharFilter,
-            'extra' : lambda f:{
-                'lookup_expr': 'icontains'
-            }
-        }}
+            models.FileField: {
+                'filter_class': django_filters.CharFilter,
+                'extra': lambda f: {
+                    'lookup_expr': 'icontains'
+                }
+            }}
 
 
 class AcademicCalendarNode(DjangoObjectType):
     class Meta:
         model = AcademicCalendar
-        interfaces = (graphene.relay.Node , )
+        interfaces = (graphene.relay.Node, )
 
 
 class RelayQuery(graphene.ObjectType):
-    all_drivefolders = ViewAllAuthenticatedQuery(DrivefolderNode , filterset_class=DrivefolderFilter)
+    all_filetypes = ViewAllAuthenticatedQuery(
+        FileTypeNode, filterset_class=FileTypeFilter)
+    filetypes  = graphene.relay.Node.Field(FileTypeNode)
+    all_drivefolders = ViewAllAuthenticatedQuery(
+        DrivefolderNode, filterset_class=DrivefolderFilter)
     drivefolder = graphene.relay.Node.Field(DrivefolderNode)
-    all_courses = ViewAllAuthenticatedQuery(CourseNode , filterset_class=CourseFilter)
+    all_courses = ViewAllAuthenticatedQuery(
+        CourseNode, filterset_class=CourseFilter)
     course = graphene.relay.Node.Field(CourseNode)
-    all_branches = ViewAllAuthenticatedQuery(BranchNode , filterset_class=BranchFilter)
+    all_branches = ViewAllAuthenticatedQuery(
+        BranchNode, filterset_class=BranchFilter)
     branch = graphene.relay.Node.Field(BranchNode)
-    all_academiccalendars = ViewAllAuthenticatedQuery(AcademicCalendarNode , filterset_class=AcademicCalendarFilter)
+    all_academiccalendars = ViewAllAuthenticatedQuery(
+        AcademicCalendarNode, filterset_class=AcademicCalendarFilter)
     academiccalendar = graphene.relay.Node.Field(AcademicCalendarNode)
-    all_files = ViewAllAuthenticatedQuery(FileNode , filterset_class=FileFilter)
+    all_files = ViewAllAuthenticatedQuery(FileNode, filterset_class=FileFilter)
     file = graphene.relay.Node.Field(FileNode)
-    all_textbooks = ViewAllAuthenticatedQuery(TextbookNode , filterset_class=TextbookFilter)
+    all_textbooks = ViewAllAuthenticatedQuery(
+        TextbookNode, filterset_class=TextbookFilter)
     textbook = graphene.relay.Node.Field(TextbookNode)
-    all_batches = ViewAllAuthenticatedQuery(BatchNode , filterset_class=BatchFilter)
+    all_batches = ViewAllAuthenticatedQuery(
+        BatchNode, filterset_class=BatchFilter)
     batch = graphene.relay.Node.Field(BatchNode)
-    all_firstyearbatches = ViewAllAuthenticatedQuery(FirstYearBatchNode , filterset_class=FirstYearBatchFilter)
+    all_firstyearbatches = ViewAllAuthenticatedQuery(
+        FirstYearBatchNode, filterset_class=FirstYearBatchFilter)
     firstyearbatch = graphene.relay.Node.Field(FirstYearBatchNode)
