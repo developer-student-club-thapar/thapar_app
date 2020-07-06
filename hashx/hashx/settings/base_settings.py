@@ -7,7 +7,8 @@ DEBUG = config("DEBUG", default=True)
 SECRET_KEY = config("SECRET_KEY", default="default-secret-key")
 ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -72,11 +73,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "hashx.wsgi.application"
 
-## IMPORTANT :  Database configrations are now in their respective dev and production files
+# IMPORTANT :  Database configrations are now in their respective dev and production files
 
 
 GRAPHENE = {
-    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware",],
+    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware", ],
     "SCHEMA": "hashx.schema.schema",
     "SCHEMA_OUTPUT": "schema.graphql",  # defaults to schema.json,
     # Defaults to None (displays all data on a single line)
@@ -98,9 +99,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
@@ -138,7 +139,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 
-## IMPORTANT: Logging section moved to dev settings
+# IMPORTANT: Logging section moved to dev settings
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': [
