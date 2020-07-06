@@ -24,10 +24,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CourseDetail = (props) => {
+  console.log('hy ma skdksjdsdsds');
   const classes = useStyles();
-  let history = useHistory();
-  let id = props.match.params.id;
-  let path = history.location.pathname.split('/')[2];
+  const history = useHistory();
+  const id = props.match.params.id;
+  const path = history.location.pathname.split('/')[2];
   const COURSE_QUERY = gql`
     query CourseQuery {
       course(id: "${props.match.params.id}") {

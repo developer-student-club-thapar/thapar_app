@@ -1,6 +1,7 @@
 from decouple import config
 from django.contrib import messages
 import os
+import datetime
 
 
 DEBUG = config("DEBUG", default=True)
@@ -19,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "graphene_django",
+    'social_django',
     "rest_framework",
     "users.apps.UsersConfig",
     "acad",
@@ -66,6 +68,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -83,10 +86,15 @@ GRAPHENE = {
     # Defaults to None (displays all data on a single line)
     "SCHEMA_INDENT": 2,
 }
-
+GRAPHQL_JWT = {
+    # ...
+    "JWT_VERIFY_EXPIRATION": True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=180),
+}
 AUTHENTICATION_BACKENDS = [
     "graphql_jwt.backends.JSONWebTokenBackend",
     "django.contrib.auth.backends.ModelBackend",
+    'social_core.backends.google.GoogleOAuth2'
 ]
 
 GRAPH_MODELS = {
@@ -139,6 +147,16 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['email'],
+        'AUTH_PARAMS': {'access_type': 'online'}
+    }
+}
+# SOCIAL_AUTH_POSTGRES_JSONFIELD = True
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "DWUYJullIXwbKIbpyNOINszt"
 # IMPORTANT: Logging section moved to dev settings
 
 # REST_FRAMEWORK = {

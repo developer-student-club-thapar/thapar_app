@@ -3,7 +3,6 @@ from .models import Holidays
 from graphql_relay.node.node import from_global_id
 from .schema import HolidaysNode
 from graphene_django.types import DjangoObjectType
-from django.http import HttpResponseNotAllowed
 
 
 class CreateHolidays(graphene.relay.ClientIDMutation):
@@ -12,6 +11,8 @@ class CreateHolidays(graphene.relay.ClientIDMutation):
     class Input:
         name = graphene.String()
         date = graphene.types.datetime.Date()
+        username = graphene.String()
+        password = graphene.String()
 
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
@@ -24,6 +25,7 @@ class CreateHolidays(graphene.relay.ClientIDMutation):
         else:
             holiday.save()
         return CreateHolidays(holiday=holiday)
+    
 
 
 class UpdateHolidays(graphene.relay.ClientIDMutation):
