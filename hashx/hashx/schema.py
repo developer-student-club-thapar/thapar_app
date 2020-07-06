@@ -24,12 +24,14 @@ import hostel.schema as hostel_schema
 import timetable.mutation as timetable_mutations"""
 
 
-class Query(acad_schema.RelayQuery,
-            users_schema.RelayQuery,
-            members_schema.RelayQuery,
-            society_schema.RelayQuery,
-            featurebug_schema.RelayQuery,
-            graphene.ObjectType):
+class Query(
+    acad_schema.RelayQuery,
+    users_schema.RelayQuery,
+    members_schema.RelayQuery,
+    society_schema.RelayQuery,
+    featurebug_schema.RelayQuery,
+    graphene.ObjectType,
+):
     # This Class wil inherit from multiple Queries
     # as we begin to add more apps to the project
     pass
@@ -44,7 +46,13 @@ class Query(acad_schema.RelayQuery,
     # Open these end points in next update
 
 
-class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, featurebug_mutations.Mutation, graphene.ObjectType):
+class Mutation(
+    acad_mutations.Mutation,
+    users_mutations.Mutation,
+    society_mutations.Mutation,
+    featurebug_mutations.Mutation,
+    graphene.ObjectType,
+):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
