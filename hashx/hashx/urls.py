@@ -23,7 +23,7 @@ from users.views import UserCreate
 from django.conf import settings
 from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
-
+from social_django.utils import load_strategy
 
 urlpatterns = [
     path("admin/", admin.site.urls),
