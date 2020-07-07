@@ -116,6 +116,8 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Aniket Biswas** - *React Web Application* - [aniketbiswas21](https://github.com/aniketbiswas21)
 * **Vividh Mauriya** - *Docker CI/CD* - [MagnumDingusEdu](https://github.com/MagnumDingusEdu)
 * **Rishab** - *React WebApplication* - [Rishabh-malhotraa](https://github.com/Rishabh-malhotraa)
+
+Supports from :
 * **Sanchit Nanda** - *UI/UX Designer* - [sanchitnanda](https://github.com/sanchitnanda)
 
 See also the list of [contributors](https://github.com/developer-student-club-thapar/thapar_app/graphs/contributors) who participated in this project.
