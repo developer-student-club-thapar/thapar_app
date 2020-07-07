@@ -84,7 +84,7 @@ const Courses = (props) => {
   const id = open ? 'simple-popover' : undefined;
   if (loading) return <CoursesSkeleton />;
   if (error) {
-    console.log(error);
+    <CoursesSkeleton />;
   }
   console.log(data);
   console.log(props);
