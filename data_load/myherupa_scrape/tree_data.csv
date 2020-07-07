@@ -442,12 +442,12 @@ Fourth Semester,Third Semester,"
       UEC607
     ","
       DigitalCommunication
-","['Books/Lab Material', 'third-year', '1xqBxTUJO8kHeggySFfvuThjaqakMaMe2', 'encece', 'digicomm.html']","['Previous Year Papers', 'third-year', '1-oZQ48Em6WodZsxMIWXha-a_5Ll8V_c4', 'encece', 'digicomm.html']"
+","['Books/Lab Material', 'third-year', '1xqBxTUJO8kHeggySFfvuThjaqakMaMe2', 'encece', 'digicomm.html']","['Notes & Slides', 'third-year', '1tpLRp-jHDfBbpWtJgzrUK6lcsbhP0Sgs', 'encece', 'digicomm.html']","['Previous Year Papers', 'third-year', '1-oZQ48Em6WodZsxMIWXha-a_5Ll8V_c4', 'encece', 'digicomm.html']"
 "
       UEC705
     ","
       ImageProcessing&ComputerVision
-","['Books', 'third-year', '1FAH0AxgXeBcTvea7FCknupeq5iINOC8J', 'encece', 'ipcv.html']","['Tutorials', 'third-year', '1VUHRM9AgHhQWsLoJNnBn86_AJ75eEQsC', 'encece', 'ipcv.html']","['Notes & Slides', 'third-year', '1P2reYTwtYQFlMPvj1snFrGUD1PVWNGfh', 'encece', 'ipcv.html']","['Previous Year Papers', 'third-year', '1oAjNXU6J0j2xoMUXoyzOIGX2UqrWYwiX', 'encece', 'ipcv.html']"
+","['Books', 'third-year', '1FAH0AxgXeBcTvea7FCknupeq5iINOC8J', 'encece', 'ipcv.html']","['Tutorials', 'third-year', '1VUHRM9AgHhQWsLoJNnBn86_AJ75eEQsC', 'encece', 'ipcv.html']","['Tutorial Solutions', 'third-year', '1T9641pdpgV07ewoBgmwDF86FSsbn_ZQJ', 'encece', 'ipcv.html']","['Notes & Slides', 'third-year', '1P2reYTwtYQFlMPvj1snFrGUD1PVWNGfh', 'encece', 'ipcv.html']","['Previous Year Papers', 'third-year', '1oAjNXU6J0j2xoMUXoyzOIGX2UqrWYwiX', 'encece', 'ipcv.html']"
 "
       UEC502
     ","
@@ -484,9 +484,9 @@ Fourth Semester,Third Semester,"
       AnalogCommunicationSystems
 ","['Syllabus', 'third-year', '15HrLIG2B995Yd5MRLrXdVKLTgFt6DQOa', 'encece', 'acsys.html']","['Books/Lab Material', 'third-year', '1QEv6vdEwPZckopOXa6dEPzdTe6BkC_ZI', 'encece', 'acsys.html']","['Notes & Slides', 'third-year', '14BRQ0CfDQ1tcOyP2jLKtnuiybQclGyXO', 'encece', 'acsys.html']","['Tutorials', 'third-year', '1hxF5uNEVdZwfcRcDtrMBHp2V8CIIR5MK', 'encece', 'acsys.html']","['Tutorial Solutions', 'third-year', '1n-l-_xGqNNr8zHRxzkbUK60eTJZfNH4M', 'encece', 'acsys.html']","['Previous Year Papers', 'third-year', '1X2A_f-oNDjAQCcAmeRO6Lq3T_PfEudy5', 'encece', 'acsys.html']"
 "
-            UTA012
-        ","
-            Innovation&Entrepreneurship
+      UTA012
+    ","
+      Innovation&Entrepreneurship
 ","['Syllabus', 'third-year', '1z6R16F-NspB-OypSON7TznxShpYC_aMj', 'Common', 'innovationentre.html']","['Notes & Slides', 'third-year', '1yTR7C0aAD9hZRqKYpkm22N3ge6I8TRTT', 'Common', 'innovationentre.html']","['Lab', 'third-year', '1274LysGvGREIE8JgsAg-vP1atOFutiNK', 'Common', 'innovationentre.html']","['Old Assignments', 'third-year', '1fa8oUFM-yMwnfxJqsLyNVa-SPlAhfBkz', 'Common', 'innovationentre.html']","['Previous Year Quizzes', 'third-year', '1tJEybtpyhXdr4dNlBAKjHktiMkKg1SCK', 'Common', 'innovationentre.html']"
 "
     UCS616
@@ -529,10 +529,10 @@ Fourth Semester,Third Semester,"
                 BranchElectives
 "
 "
-            UCS617
-        ","
-            Microprocessors
-","['Syllabus', 'third-year', '1gtAKQSJRM4xv2ccuA5I1494lzst1p2YH', 'cse', 'microprocessor.html']","['Lab', 'third-year', '1y41Ae-9w1Ark2lfDMaJLKQpk4wOoo2L9', 'cse', 'microprocessor.html']","['Books', 'third-year', '1oSO8NoY9yTo98kOPyFl8lRU1Wft7DFCF', 'cse', 'microprocessor.html']","['Notes & Slides', 'third-year', '1s8E0Q-JoDv8wqFqew4c016I5xA7nHWH3', 'cse', 'microprocessor.html']","['Previous Year Papers', 'third-year', '1Cn4JL_yfZi6QEjaof5yXmvcjX7ZC8dvZ', 'cse', 'microprocessor.html']"
+      UCS617
+    ","
+      Microprocessors
+","['Syllabus', 'third-year', '1gtAKQSJRM4xv2ccuA5I1494lzst1p2YH', 'cse', 'microprocessor.html']","['Lab', 'third-year', '1y41Ae-9w1Ark2lfDMaJLKQpk4wOoo2L9\n\n        ', 'cse', 'microprocessor.html']","['Books', 'third-year', '1oSO8NoY9yTo98kOPyFl8lRU1Wft7DFCF', 'cse', 'microprocessor.html']","['Notes & Slides', 'third-year', '1s8E0Q-JoDv8wqFqew4c016I5xA7nHWH3', 'cse', 'microprocessor.html']","['Previous Year Papers', 'third-year', '1Cn4JL_yfZi6QEjaof5yXmvcjX7ZC8dvZ\n\n        ', 'cse', 'microprocessor.html']"
 "
       UCS507
 
@@ -540,10 +540,10 @@ Fourth Semester,Third Semester,"
       ComputerArchitecture
 ","['Lab', 'third-year', '1yL0T7P4pEmZ7NCWOK1_NzPfw8vT_EW9u', 'cse', 'comparch.html']","['Books', 'third-year', '1eGpGBJ7Ra_QxjgvVSjj5g9DU6QqQikHO', 'cse', 'comparch.html']","['Notes & Slides', 'third-year', '1QmuthC8rQ55S307Bb2BYFiybxQh6pFTw', 'cse', 'comparch.html']","['Previous Year Papers', 'third-year', '1i_YWQ_wtod1of3A7OZ-p1g4xGXJvAZUC', 'cse', 'comparch.html']"
 "
-            UCS615
-        ","
-            ImageProcessing
-","['Syllabus', 'third-year', '1jVihdmkKqVd6jHodJdwxK-lXt7YksSBg', 'cse', 'imgpros.html']","['Lab', 'third-year', '1GeX8zl8y9UIkcJ-nXiCViyje1d4n9RK9', 'cse', 'imgpros.html']","['Books', 'third-year', '1wb0iwtkhk2wuzcGDTbxikwAzPVrAE7ge', 'cse', 'imgpros.html']","['Notes & Slides', 'third-year', '14O38RotoXO7G0Ci3VhXckEYw9i5lMB2D', 'cse', 'imgpros.html']","['Previous Year Papers', 'third-year', '1cfgqobPbrAguODL3lV9N4Pa7RqVOc1Hs', 'cse', 'imgpros.html']"
+      UCSXXX
+    ","
+      ImageProcessing
+","['Notes & Slides', 'third-year', '14O38RotoXO7G0Ci3VhXckEYw9i5lMB2D\n\n        ', 'cse', 'imgpros.html']"
 "
       UCS503
     ","
@@ -907,7 +907,7 @@ IntroductiontoBiotechnology,"['Notes\n            & Slides', 'first-year', '1rNt
       UTA002
     ","
       ManufacturingProcesses
-","['Books/Lab Material', 'second-year', '1hc58WpXrHLqBSpYvC-DVGXzlyDeEDufu', 'common', 'manufacture.html']","['Notes & Slides', 'second-year', '1fwusXLwrSbwzdQE2dxWKdpMrCy3WzcDR', 'common', 'manufacture.html']","['Previous Year Papers', 'second-year', '1rYxJVrBX-pvGXhKZwIZ2jH2kELLTplPy', 'common', 'manufacture.html']"
+","['Quarantine Content', 'second-year', '1sfMfDEUuZAiV8dqXWs2aClYVJLOdrUqF', 'common', 'manufacture.html']","['Books/Lab Material', 'second-year', '1hc58WpXrHLqBSpYvC-DVGXzlyDeEDufu', 'common', 'manufacture.html']","['Notes & Slides', 'second-year', '1fwusXLwrSbwzdQE2dxWKdpMrCy3WzcDR', 'common', 'manufacture.html']","['Previous Year Papers', 'second-year', '1rYxJVrBX-pvGXhKZwIZ2jH2kELLTplPy', 'common', 'manufacture.html']"
 "
       UES010
     ",Solids&structures,"['Books/Lab Material', 'second-year', '1KDknj_--kVS5poTnyC9LBQHj0p3eyXkM', 'common', 'solidsandstruct.html']","['Notes & Slides', 'second-year', '1YUs_HUFpeNNsLTOLvFeLMXLy6TyoTdzU', 'common', 'solidsandstruct.html']","['Tutorials', 'second-year', '1eRkqfGjR278Z7BWGNW8YFIMbt18dcHpU', 'common', 'solidsandstruct.html']","['Tutorial Solutions', 'second-year', '1MWV1NkD51XAq4YqpiSf6VhAQWslf4ql8', 'common', 'solidsandstruct.html']","['Previous Year Papers', 'second-year', '15HmV4EDoUJw8AOXuqJKeiPM1j_g0tfAI', 'common', 'solidsandstruct.html']"
@@ -964,7 +964,10 @@ IntroductiontoBiotechnology,"['Notes\n            & Slides', 'first-year', '1rNt
     ",Numericalanalysis,"['Books/Lab Material', 'second-year', '1GSZQiG2Kv9kRqAgj8Sd9udpa4480w9NQ', 'common', 'numerical.html']","['Notes & Slides', 'second-year', '1g1FvS4fWneLRLuUcJwIFGjiQv4sCzUga', 'common', 'numerical.html']","['Tutorials', 'second-year', '19Zjr9dj3vrUAqBMFqwkJFTlPE2oXX01x', 'common', 'numerical.html']","['Tutorial Solutions', 'second-year', '1rTAERFzr2gIu-5a6aXsiffHv8TaFCbfH', 'common', 'numerical.html']","['Previous Year Papers', 'second-year', '1k37ZLCClWCQS3D09F1Qdg8gy6syRpU71', 'common', 'numerical.html']"
 "
       UEC404
-    ",Signals & Systems,"['Books/Lab Material', 'second-year', '1pfWiHD5bZLt9SzIB0s0B8QK_Xa2dbtlt', 'common', 'signals&systems.html']","['Notes & Slides', 'second-year', '1nn_Ho2EqRZ72CNJB2tdRQ0POL9ECHSY-', 'common', 'signals&systems.html']","['Tutorials', 'second-year', '1RFuDR7V5xwHUXAdQ6dY-0rbJGwv19mNe', 'common', 'signals&systems.html']","['Tutorial Solutions', 'second-year', '14Mru8rwTYQk54zYIKbhHaWoqmJmmKEEs', 'common', 'signals&systems.html']","['Previous Year Papers', 'second-year', '1zKRljM3R9Afmb-6aufrpA0v-HGaku9ve', 'common', 'signals&systems.html']"
+    ","
+      Signals
+        & Systems
+","['Books/Lab Material', 'second-year', '1pfWiHD5bZLt9SzIB0s0B8QK_Xa2dbtlt', 'common', 'signals&systems.html']","['Notes & Slides', 'second-year', '1nn_Ho2EqRZ72CNJB2tdRQ0POL9ECHSY-', 'common', 'signals&systems.html']","['Tutorials', 'second-year', '1RFuDR7V5xwHUXAdQ6dY-0rbJGwv19mNe', 'common', 'signals&systems.html']","['Tutorial Solutions', 'second-year', '14Mru8rwTYQk54zYIKbhHaWoqmJmmKEEs', 'common', 'signals&systems.html']","['Previous Year Papers', 'second-year', '1zKRljM3R9Afmb-6aufrpA0v-HGaku9ve', 'common', 'signals&systems.html']"
 Industrialautomation
 "
       UCS409
@@ -996,10 +999,10 @@ Industrialautomation
     Science&Techniques
   ","['Books/Lab\n      Material', 'second-year', '1-D93jc1_lUhOmLBHahhhtijbQr3kk856', 'cse', 'measurement.html']","['Notes & Slides', 'second-year', '157TDvg3CDEtKWzGeBEGXVoj8-vTzMvsC', 'cse', 'measurement.html']","['Tutorials', 'second-year', '11eVI79PkNzrVY08L9pHx0SozE5jkNZfA', 'cse', 'measurement.html']","['Tutorial\n      Solutions', 'second-year', '1aNmQOgMIseQ1XspfKAY6xlFLAGk3bKa6', 'cse', 'measurement.html']","['Previous Year Papers', 'second-year', '1H5jIHd48_dxxRW3bae4XTJXvVu6fo6Aa', 'cse', 'measurement.html']"
 "
-    UCS310
-  ","
-    DatabaseManagementSystem
-  ","['Books', 'second-year', '1Sns6l4X80B5Tpr5cg24GZ60-fnr3iytm', 'cse', 'dbms.html']","['Lab Material', 'second-year', '1gGuy9NMGHXSASnlGbdpSskpxIUhwp9bB', 'cse', 'dbms.html']","['Notes &\n      Slides', 'second-year', '1ICMvw7idN1z4v-U3OqjRYjZjfiUWooR4', 'cse', 'dbms.html']","['Previous Year\n      Papers', 'second-year', '1RJEdoQxXgV3pCVoJrpd3HEH3Pf9wEDK9', 'cse', 'dbms.html']"
+      UCS310
+    ","
+      DatabaseManagementSystem
+    ","['Books', 'second-year', '1Sns6l4X80B5Tpr5cg24GZ60-fnr3iytm', 'cse', 'dbms.html']","['Lab Material', 'second-year', '1gGuy9NMGHXSASnlGbdpSskpxIUhwp9bB', 'cse', 'dbms.html']","['Notes & Slides', 'second-year', '1ICMvw7idN1z4v-U3OqjRYjZjfiUWooR4', 'cse', 'dbms.html']","['Previous Year Papers', 'second-year', '1RJEdoQxXgV3pCVoJrpd3HEH3Pf9wEDK9', 'cse', 'dbms.html']"
 "
     UCS303
   ","
