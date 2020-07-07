@@ -93,8 +93,6 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 - Use only ```npm install package_name``` to add new packages to the frontend part.
 
 
-
-
 ## Built With ⚒
 ### Backend 📡
 * [Django 3.0](https://www.djangoproject.com) - The web framework used in the project.
@@ -103,7 +101,7 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 ### Web Application 🖥
 * [React](https://reactjs.org) - Do you Even Need an introduction to this ? 😂
 * [Relay](https://relay.dev) - Relay is specialized Framework from Facebook to integrate GraphQL in React
-### Mobile Application( New Repo Soon ) 📲
+### Mobile Application () 📲
 * [React Native](https://reactnative.dev)- Better to write one codebase instead of two 😉
 
 ## Versioning 🗓
@@ -116,6 +114,8 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Ramyak Mehra** - *Backend Django and API* - [ramyak-mehra](https://github.com/ramyak-mehra)
 * **Sanchit Jain** - *Backend Django and API* - [sanchjain](https://github.com/sanchjain)
 * **Aniket Biswas** - *React Web Application* - [aniketbiswas21](https://github.com/aniketbiswas21)
+* **Vividh Mauriya** - *Docker CI/CD* - [MagnumDingusEdu](https://github.com/MagnumDingusEdu)
+* **Rishab** - *React WebApplication* - [Rishabh-malhotraa](https://github.com/Rishabh-malhotraa)
 * **Sanchit Nanda** - *UI/UX Designer* - [sanchitnanda](https://github.com/sanchitnanda)
 
 See also the list of [contributors](https://github.com/developer-student-club-thapar/thapar_app/graphs/contributors) who participated in this project.
