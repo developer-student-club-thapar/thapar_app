@@ -1,3 +1,4 @@
+import logging
 from .base_settings import *
 
 DEBUG = config("DEBUG", default=True)
@@ -11,9 +12,17 @@ MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    # }
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": config("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": config("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
+        "USER": config("SQL_USER", "user"),
+        "PASSWORD": config("SQL_PASSWORD", ""),
+        "HOST": config("SQL_HOST", "localhost"),
+        "PORT": config("SQL_PORT", "5432"),
     }
 }
 
@@ -45,15 +54,13 @@ DEBUG_TOOLBAR_PANELS = [
 
 # Add custom toolbar settings here
 DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-    "SHOW_COLLAPSED": False,
+    "INTERCEPT_REDIRECTS": True,
+    "SHOW_COLLAPSED": True,
 }
 
 STATIC_ROOT = ""
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-
-import logging
 
 l = logging.getLogger("django.db.backends")
 l.setLevel(logging.DEBUG)
