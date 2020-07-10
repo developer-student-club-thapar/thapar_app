@@ -3,7 +3,7 @@ import json
 import urllib.request
 import os
 
-f = open('file.txt', "w")
+# f = open('file.txt', "w")
 
 
 def fetch_data(resURL):
@@ -12,7 +12,7 @@ def fetch_data(resURL):
     # print(url)
     response = requests.request("GET", url, headers={}, data={})
     json_data = json.loads(response.text.encode('utf8'))
-    f.write(json.dumps(json_data, indent=4, sort_keys=True))
+    # f.write(json.dumps(json_data, indent=4, sort_keys=True))
     try:
         for file in json_data["files"]:
             name = file["name"]
