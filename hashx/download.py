@@ -1,6 +1,7 @@
 import requests
 import os
 
+# The download file function downloads the files when provided id and file destination
 
 def download_file(id, destination):
     URL = "https://docs.google.com/uc?export=download"
@@ -16,13 +17,4 @@ def save_response_content(response, destination):
         for chunk in response.iter_content(CHUNK_SIZE):
             if chunk: # filter out keep-alive new chunks
                 f.write(chunk)
-
-
-if __name__ == "__main__":
-    try:
-        file_id = '1nxiOo81cedGWTmyeMvVtjUOV0MokShuZ'
-        folder_path = '/Users/sanchitjain/Desktop'
-        file_name = 'abcd.pdf'
-        download_file(file_id, os.path.join(folder_path, file_name))
-    except:
-        print("Could not download file", file_id, file_name)
+                
