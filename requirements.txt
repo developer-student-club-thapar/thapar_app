@@ -16,6 +16,7 @@ django-graphql-jwt==0.3.1
 django-imagekit==4.0.2
 django-rest-framework==0.1.0
 djangorestframework==3.11.0
+docutils==0.16
 filelock==3.0.12
 graphene==2.1.8
 graphene-django==2.9.1

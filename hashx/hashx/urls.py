@@ -25,6 +25,7 @@ from graphql_jwt.decorators import jwt_cookie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('admin/doc/', include('django.contrib.admindocs.urls')),       # Path to documentation for admin panel
 
     # Frontend should load before any application !
     # assuming this will be names home
