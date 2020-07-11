@@ -1,9 +1,10 @@
 import graphene
 import django_filters
+from graphene_django.filter import DjangoFilterConnectionField
 from .models import Society, Event
 from django.db import models
 from graphene_django.types import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode , AuthenticatedNode
 
 
 class SocietyFilter(django_filters.FilterSet):
@@ -22,7 +23,7 @@ class SocietyFilter(django_filters.FilterSet):
 class SocietyNode(DjangoObjectType):
     class Meta:
         model = Society
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 class EventFilter(django_filters.FilterSet):
     class Meta:
@@ -39,15 +40,14 @@ class EventFilter(django_filters.FilterSet):
 class EventNode(DjangoObjectType):
     class Meta:
         model = Event
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 
 
 
 
 class RelayQuery(graphene.ObjectType):
-    node = graphene.relay.Node.Field()
     all_event =  ViewAllAuthenticatedQuery(EventNode , filterset_class=EventFilter)
-    event = graphene.relay.Node.Field(EventNode)
+    event = AuthenticatedNode.Field(EventNode)
     all_society =  ViewAllAuthenticatedQuery(SocietyNode , filterset_class=SocietyFilter)
-    society = graphene.relay.Node.Field(SocietyNode)
+    society = AuthenticatedNode.Field(SocietyNode)

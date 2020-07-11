@@ -1,7 +1,7 @@
 import graphene
 import django_filters
 from graphene_django import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery , InstructorOnlyQuery
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
 from .models import TimetableBoard , Holidays ,Location,Class
 
 class TimetableBoardFilter(django_filters.FilterSet):
@@ -11,7 +11,7 @@ class TimetableBoardFilter(django_filters.FilterSet):
 class TimetableBoardNode(DjangoObjectType):
     class Meta:
         model = TimetableBoard
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 
@@ -22,7 +22,7 @@ class HolidaysFilter(django_filters.FilterSet):
 class HolidaysNode(DjangoObjectType):   
     class Meta:
         model = Holidays
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class ClassFilter(django_filters.FilterSet):
@@ -32,7 +32,7 @@ class ClassFilter(django_filters.FilterSet):
 class ClassNode(DjangoObjectType):
     class Meta:
         model = Class
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 class LocationFilter(django_filters.FilterSet):
     class Meta:
         model = Location
@@ -40,16 +40,16 @@ class LocationFilter(django_filters.FilterSet):
 class LocationNode(DjangoObjectType):
     class Meta:
         model = Location
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class RelayQuery(graphene.ObjectType):
     all_timetable =  ViewAllAuthenticatedQuery(TimetableBoardNode , filterset_class=TimetableBoardFilter)
-    timetable = graphene.relay.Node.Field(TimetableBoardNode)
+    timetable = AuthenticatedNode.Field(TimetableBoardNode)
     all_holidays =  ViewAllAuthenticatedQuery(HolidaysNode , filterset_class=HolidaysFilter)
-    holidays = graphene.relay.Node.Field(HolidaysNode)
+    holidays = AuthenticatedNode.Field(HolidaysNode)
     all_locations =  ViewAllAuthenticatedQuery(LocationNode , filterset_class=LocationFilter)
-    location = graphene.relay.Node.Field(LocationNode)
+    location = AuthenticatedNode.Field(LocationNode)
     all_classes =  ViewAllAuthenticatedQuery(ClassNode , filterset_class=ClassFilter)
-    classes = graphene.relay.Node.Field(ClassNode)
-    node = graphene.relay.Node.Field()
+    classes = AuthenticatedNode.Field(ClassNode)
+    node = AuthenticatedNode.Field()

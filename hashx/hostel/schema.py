@@ -2,7 +2,7 @@ import graphene
 from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
 from .models import Hostel, Complaint, MessUnit, MessUnitComment, ComplaintStatus, ComplaintTypes, Room
 from django.db import models
 
@@ -23,7 +23,7 @@ class HostelFilter(django_filters.FilterSet):
 class HostelNode(DjangoObjectType):
     class Meta:
         model = Hostel
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class ComplaintFilter(django_filters.FilterSet):
@@ -48,7 +48,7 @@ class ComplaintFilter(django_filters.FilterSet):
 class ComplaintNode(DjangoObjectType):
     class Meta:
         model = Complaint
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class MessUnitFilter(django_filters.FilterSet):
@@ -74,7 +74,7 @@ class MessUnitFilter(django_filters.FilterSet):
 class MessUnitNode(DjangoObjectType):
     class Meta:
         model = MessUnit
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class MessUnitCommentFilter(django_filters.FilterSet):
@@ -86,7 +86,7 @@ class MessUnitCommentFilter(django_filters.FilterSet):
 class MessUnitCommentNode(DjangoObjectType):
     class Meta:
         model = MessUnitComment
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class ComplaintTypesFilter(django_filters.FilterSet):
@@ -98,7 +98,7 @@ class ComplaintTypesFilter(django_filters.FilterSet):
 class ComplaintTypesNode(DjangoObjectType):
     class Meta:
         model = ComplaintTypes
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class ComplaintStatusFilter(django_filters.FilterSet):
@@ -110,7 +110,7 @@ class ComplaintStatusFilter(django_filters.FilterSet):
 class ComplaintStatusNode(DjangoObjectType):
     class Meta:
         model = ComplaintStatus
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class RoomFilter(django_filters.FilterSet):
@@ -122,21 +122,21 @@ class RoomFilter(django_filters.FilterSet):
 class RoomNode(DjangoObjectType):
     class Meta:
         model = Room
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class RelayQuery(graphene.ObjectType):
     all_hostels = ViewAllAuthenticatedQuery(HostelNode , filterset_class=HostelFilter)
-    hostel = graphene.relay.Node.Field(HostelNode)
+    hostel = AuthenticatedNode.Field(HostelNode)
     all_complaints = ViewAllAuthenticatedQuery(ComplaintNode , filterset_class=ComplaintFilter)
-    complaint = graphene.relay.Node.Field(ComplaintNode)
+    complaint = AuthenticatedNode.Field(ComplaintNode)
     all_messunits = ViewAllAuthenticatedQuery(MessUnitNode , filterset_class=MessUnitFilter)
-    messunit = graphene.relay.Node.Field(MessUnitNode)
+    messunit = AuthenticatedNode.Field(MessUnitNode)
     all_messunitcomments = ViewAllAuthenticatedQuery(MessUnitCommentNode , filterset_class=MessUnitCommentFilter)
-    messunitcomment = graphene.relay.Node.Field(MessUnitCommentNode)
+    messunitcomment = AuthenticatedNode.Field(MessUnitCommentNode)
     all_complainttypes = ViewAllAuthenticatedQuery(ComplaintTypesNode, filterset_class=ComplaintTypesFilter)
-    complainttypes = graphene.relay.Node.Field(ComplaintTypesNode)
+    complainttypes = AuthenticatedNode.Field(ComplaintTypesNode)
     all_complaintstatus = ViewAllAuthenticatedQuery(ComplaintStatusNode, filterset_class=ComplaintStatusFilter)
-    complaintstatus = graphene.relay.Node.Field(ComplaintStatusNode)
+    complaintstatus = AuthenticatedNode.Field(ComplaintStatusNode)
     all_rooms = ViewAllAuthenticatedQuery(RoomNode , filterset_class=RoomFilter)
-    room = graphene.relay.Node.Field(RoomNode)
+    room = AuthenticatedNode.Field(RoomNode)
