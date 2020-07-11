@@ -27,6 +27,7 @@ from social_django.utils import load_strategy
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('admin/doc/', include('django.contrib.admindocs.urls')),
     # Frontend should load before any application !
     # assuming this will be names home
     path("", include("frontend.urls"), name="home"),
