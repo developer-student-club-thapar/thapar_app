@@ -1,0 +1,1 @@
+source venv/bin/activate && cd hashx && python3 manage.py shell < download_files.py

@@ -2,7 +2,7 @@
 #import pandas as pd
 from pathlib import Path
 import mmap
-basepath = "/Users/shreshth/sandbox/myHerupa/pages/"
+basepath = "/Users/sanchitjain/Downloads/myherupa/pages/"
 find_data="../pages/resource.html#resURL="
 from bs4 import BeautifulSoup
 import re

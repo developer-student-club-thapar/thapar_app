@@ -7,6 +7,9 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+class DrivefolderManager(models.Manager):
+    def get_by_natural_key(self, year, drive_id):
+        return self.get(year = year, drive_id = drive_id)
 
 class Drivefolder(models.Model):
     """ 
@@ -21,14 +24,25 @@ class Drivefolder(models.Model):
     year = models.SmallIntegerField(blank=True, null=True)
     file_name = models.CharField(max_length=50)
 
+    objects = DrivefolderManager()
+
     class Meta:
         verbose_name_plural = "Drive ID"
+        unique_together = [['year', 'drive_id']]
 
     def __str__(self):
         return f"{self.name} {self.drive_id} {self.year} {self.file_name}"
 
+class CourseManager(models.Manager):
+    def get_by_natural_key(self, name, code):
+        return self.get(name = name, code = code)
 
 class Course(models.Model):
+
+    class Meta:
+        verbose_name = "Course"
+        verbose_name_plural = "Courses"
+        unique_together = [['name', 'code']]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=35)
@@ -59,9 +73,7 @@ class Course(models.Model):
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
     syllabus = models.TextField()  # Need this to markdown
 
-    class Meta:
-        verbose_name = "Course"
-        verbose_name_plural = "Courses"
+    objects = CourseManager()
 
     def __str__(self):
         return f"{self.name} {self.code} "
@@ -70,12 +82,19 @@ class Course(models.Model):
         return reverse("course-detail", kwargs={"pk": self.pk})
 
 
+class BranchManager(models.Manager):
+    def get_by_natural_key(self, code, year):
+        return self.get(code = code, year = year)
+
+
 class Branch(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     class Meta:
         verbose_name = "Branch"
         verbose_name_plural = "Branches"
+        unique_together = [['code', 'year']]
+
 
     YEAR_IN_SCHOOL_CHOICES = [
         ("FR", "Freshman"),
@@ -100,6 +119,8 @@ class Branch(models.Model):
         (2024, 2024),
     ]
     batch_of = models.IntegerField(choices=YEARS, null=True)
+
+    objects = BranchManager()
 
     def __str__(self):
         return f"{self.year} {self.name} ({self.code}) {self.created_date}"
@@ -247,10 +268,10 @@ class File(models.Model):
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
     batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
-    drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
+    file_id = models.CharField(max_length = 100, null=True)
+    # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
-
     admin_starred = models.BooleanField(default=False)
     # in UI a star to show as if like Editor's Choice Stuff
     is_reviewed = models.BooleanField(default=False)
