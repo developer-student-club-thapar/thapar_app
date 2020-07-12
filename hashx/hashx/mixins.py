@@ -51,7 +51,7 @@ class OpenForAllQuery(DjangoFilterConnectionField):
         )
 
 
-class CustomNode(Node):
+class AuthenticatedNode(Node):
     @classmethod
     def Field(cls, *args, **kwargs):  # noqa: N802
         return NodeField(cls, *args, **kwargs)

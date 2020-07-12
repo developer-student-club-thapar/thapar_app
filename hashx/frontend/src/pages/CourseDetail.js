@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CourseDetail = (props) => {
-  console.log('hy ma skdksjdsdsds');
   const classes = useStyles();
   const history = useHistory();
   const id = props.match.params.id;

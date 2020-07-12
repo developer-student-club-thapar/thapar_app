@@ -226,7 +226,7 @@ const Home = () => {
                   fontWeight: 'bold',
                 }}
               >
-                Time Table
+                Time yo
               </h3>
             </Paper>
           </Grid>

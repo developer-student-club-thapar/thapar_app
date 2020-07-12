@@ -16,7 +16,7 @@ import { FILE_TYPE_QUERY, FILES_QUERY } from './Queries';
 
 //call file type query before loading the component
 
-const Tutorials = () => {
+const Tutorials = (props) => {
   let history = useHistory();
   const courseID = props.match.params.id;
   const { fileTypeLoading, fileTypeError, fileTypeData } = useQuery(
@@ -36,7 +36,7 @@ const Tutorials = () => {
     filesData.allFiles.edges.map((files) => {
       const { thumbnailImage, name, file, id } = files.node;
       return (
-        <Grid item xs={6} sm={6} md={6} lg={4} xl={4} kry={id}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
           <img
             src={thumbnailImage}
             style={{ borderRadius: '10px', cursor: 'pointer' }}
