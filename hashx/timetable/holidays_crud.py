@@ -11,9 +11,6 @@ class CreateHolidays(graphene.relay.ClientIDMutation):
     class Input:
         name = graphene.String()
         date = graphene.types.datetime.Date()
-        username = graphene.String()
-        password = graphene.String()
-
     @classmethod
     def mutate_and_get_payload(cls, root, info, **input):
         user = info.context.user

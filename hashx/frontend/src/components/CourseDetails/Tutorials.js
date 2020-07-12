@@ -16,7 +16,7 @@ import { FILE_TYPE_QUERY, FILES_QUERY } from './Queries';
 
 //call file type query before loading the component
 
-const Tutorials = () => {
+const Tutorials = (props) => {
   let history = useHistory();
   const courseID = props.match.params.id;
   const { fileTypeLoading, fileTypeError, fileTypeData } = useQuery(
