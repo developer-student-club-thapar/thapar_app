@@ -95,6 +95,14 @@ const StudentDetailsForm = () => {
       batch === '' ||
       gender === ''
     ) {
+      sendStudentData({
+        variables: {
+          branch: branch,
+          batch: batch,
+          gender: gender,
+          rollNo: rollNo,
+        },
+      });
       setOpen(true);
     } else {
       sendStudentData({
