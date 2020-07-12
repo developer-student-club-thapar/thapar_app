@@ -2,7 +2,7 @@ name: PythonCI
 
 on:
   push:
-    branches: [master]
+    branches: [dev]
 
 jobs:
   container-test:
