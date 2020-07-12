@@ -45,15 +45,15 @@ const CourseDetail = (props) => {
   console.log(data);
   const renderComponent = () => {
     if (path === 'tutorials') {
-      return <Tutorials />;
+      return <Tutorials id={id} path={path} />;
     } else if (path === 'books') {
-      return <Books />;
+      return <Books id={id} path={path} />;
     } else if (path === 'notes') {
-      return <Notes />;
+      return <Notes id={id} path={path} />;
     } else if (path === 'previousyearpapers') {
-      return <PreviousYearPapers />;
+      return <PreviousYearPapers id={id} path={path} />;
     } else if (path === 'tutorialssolution') {
-      return <TutorialsSolution />;
+      return <TutorialsSolution id={id} path={path} />;
     }
   };
   return (

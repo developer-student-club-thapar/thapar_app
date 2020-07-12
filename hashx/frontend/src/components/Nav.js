@@ -36,7 +36,7 @@ import SearchBar from './home/SearchBar';
 
 const drawerWidth = 250;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },

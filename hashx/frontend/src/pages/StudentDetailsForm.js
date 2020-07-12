@@ -21,6 +21,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import '../styles/StudentDetailsForm.css';
+import { useMutation } from '@apollo/react-hooks';
+import { SEND_STUDENT_DETAILS } from './Mutations';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const StudentDetailsForm = () => {
   const classes = useStyles();
+  const [sendStudentData, { studentData }] = useMutation(SEND_STUDENT_DETAILS);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [user, setUser] = useState({
@@ -59,6 +62,7 @@ const StudentDetailsForm = () => {
       batch === '' ||
       gender === ''
     ) {
+      addTodo({ variables: { type: input.value } });
       setOpen(true);
     } else {
       console.log(user);
