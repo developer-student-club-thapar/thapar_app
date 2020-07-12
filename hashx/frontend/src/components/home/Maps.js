@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import dsc_icon from '../../assets/dsc_icon.png';
+import { Hidden } from '@material-ui/core';
 
 class Maps extends Component {
   state = {
@@ -75,16 +76,50 @@ class Maps extends Component {
       width: '1232px',
       height: '400px',
     };
+    const mapStylesMobile = {
+      width: '328px',
+      height: '400px',
+    };
+    const mapStylesTab = {
+      width: '552px',
+      height: '400px',
+    };
     return (
-      <Map
-        google={this.props.google}
-        zoom={16}
-        style={mapStyles}
-        initialCenter={{ lat: 30.356674, lng: 76.364787 }}
-      >
-        {this.displayMarkers()}
-        {this.displayInfo()}
-      </Map>
+      <>
+        <Hidden mdDown>
+          <Map
+            google={this.props.google}
+            zoom={16}
+            style={mapStyles}
+            initialCenter={{ lat: 30.356674, lng: 76.364787 }}
+          >
+            {this.displayMarkers()}
+            {this.displayInfo()}
+          </Map>
+        </Hidden>
+        <Hidden only={['sm', 'md', 'lg', 'xl']}>
+          <Map
+            google={this.props.google}
+            zoom={16}
+            style={mapStylesMobile}
+            initialCenter={{ lat: 30.356674, lng: 76.364787 }}
+          >
+            {this.displayMarkers()}
+            {this.displayInfo()}
+          </Map>
+        </Hidden>
+        <Hidden only={['md', 'xs', 'lg', 'xl']}>
+          <Map
+            google={this.props.google}
+            zoom={16}
+            style={mapStylesTab}
+            initialCenter={{ lat: 30.356674, lng: 76.364787 }}
+          >
+            {this.displayMarkers()}
+            {this.displayInfo()}
+          </Map>
+        </Hidden>
+      </>
     );
   }
 }

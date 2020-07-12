@@ -10,11 +10,14 @@ import Login from '../pages/Login';
 import StudentDetailsForm from '../pages/StudentDetailsForm';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
+import RegisterGoogle from '../pages/RegisterGoogle';
+import Landing from '../pages/Landing';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={HomeAlt} />
+      <Route exact path="/landing" component={Landing} />
       <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:content/:id" component={CourseDetail} />
       <Route exact path="/pdfview" component={PdfView} />
@@ -22,12 +25,9 @@ const Routes = () => {
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} />
-      <Route
-        exact
-        path="/studentdetailform"
-        component={StudentDetailsForm}
-        isPrivate
-      />
+      <Route exact path="/registergoogle" component={RegisterGoogle} />
+      <Route exact path="/studentdetailform" component={StudentDetailsForm} />
+
       {/* <Route component={Home} /> */}
     </Switch>
   );

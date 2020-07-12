@@ -24,7 +24,7 @@ from django.conf import settings
 from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
 from social_django.utils import load_strategy
-
+from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
@@ -53,6 +53,10 @@ if settings.DEBUG:
 
     urlpatterns += [path("__debug__", include(debug_toolbar.urls))]
 
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+
 
 else:
-    urlpatterns += [path("graphql/", jwt_cookie(GraphQLView.as_view(schema=schema)))]
+    urlpatterns += [path("graphql/",
+                         jwt_cookie(GraphQLView.as_view(schema=schema)))]

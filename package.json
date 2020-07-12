@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js",
+    "devtest": "webpack --mode development ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js",
     "build": "webpack --mode production ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js"
   },
   "repository": {
@@ -56,11 +57,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-google-login": "^5.1.21",
     "react-lottie": "^1.2.3",
     "react-material-ui-form-validator": "^2.0.10",
     "react-redux": "^7.2.0",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.1.2",
+    "react-spring": "^8.0.27",
+    "react-use-gesture": "^7.0.15",
+    "react-with-gesture": "^4.0.8",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"

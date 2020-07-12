@@ -1,0 +1,22 @@
+name: NodeJS_CI
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  testReact:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build JS Files
+        run: npm run build
+      - name: Test JS Files
+        run: npm run devtest      

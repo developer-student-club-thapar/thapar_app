@@ -3,7 +3,7 @@ import django_filters
 from .models import Student , Instructor
 from django.db import models
 from graphene_django.types import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode , AuthenticatedNode
 from django.contrib.auth import  get_user_model
 
 
@@ -16,7 +16,7 @@ class UserFilter(django_filters.FilterSet):
 class UserNode(DjangoObjectType):
     class Meta:
         model = get_user_model()
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
         fields = ['username' , 'email' , 'first_name' , 'last_name']
 
 
@@ -36,7 +36,7 @@ class StudentFilter(django_filters.FilterSet):
 class StudentNode(DjangoObjectType):
     class Meta:
         model = Student
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 class InstructorFilter(django_filters.FilterSet):
     class Meta:
@@ -53,13 +53,12 @@ class InstructorFilter(django_filters.FilterSet):
 class InstructorNode(DjangoObjectType):
     class Meta:
         model = Instructor
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 class RelayQuery(graphene.ObjectType):
-    node = graphene.relay.Node.Field()
     all_instructor =  ViewAllAuthenticatedQuery(InstructorNode , filterset_class=InstructorFilter)
-    instructor = graphene.relay.Node.Field(InstructorNode)
+    instructor = AuthenticatedNode.Field(InstructorNode)
     all_student =  ViewAllAuthenticatedQuery(StudentNode , filterset_class=StudentFilter)
-    student = graphene.relay.Node.Field(StudentNode)
+    student = AuthenticatedNode.Field(StudentNode)
     all_users = ViewAllAuthenticatedQuery(UserNode , filterset_class=UserFilter)
-    user = graphene.relay.Node.Field(UserNode)
+    user = AuthenticatedNode.Field(UserNode)

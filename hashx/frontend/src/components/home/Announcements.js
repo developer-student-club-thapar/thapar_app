@@ -21,6 +21,13 @@ const useStyles = makeStyles((theme) => ({
   gridItem: {
     width: 'auto',
   },
+  text: {
+    textAlign: 'left',
+    paddingLeft: '20px',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '18px',
+    },
+  },
 }));
 
 const Announcements = () => {
@@ -93,23 +100,23 @@ const Announcements = () => {
         <br />
         <Bounce bottom cascade>
           <div>
-            <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <h4 className={classes.text}>
               <i class="fas fa-arrow-alt-circle-right"></i> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
-            <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <h4 className={classes.text}>
               <i class="fas fa-arrow-alt-circle-right"></i> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
-            <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <h4 className={classes.text}>
               <i class="fas fa-arrow-alt-circle-right"></i> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
-            <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <h4 className={classes.text}>
               <i class="fas fa-arrow-alt-circle-right"></i> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
-            <h4 style={{ textAlign: 'left', paddingLeft: '20px' }}>
+            <h4 className={classes.text}>
               <i class="fas fa-arrow-alt-circle-right"></i> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>

@@ -14,6 +14,8 @@
 
 The Plan is to build an amazing application for Thapar Campus People from all walks of life !
 
+
+![PythonCI](https://github.com/developer-student-club-thapar/thapar_app/workflows/PythonCI/badge.svg) ![NodeJS_CI](https://github.com/developer-student-club-thapar/thapar_app/workflows/NodeJS_CI/badge.svg)
 </div>
 
 ## About  💫

@@ -26,6 +26,18 @@ DATABASES = {
     }
 }
 
+if os.environ.get('GITHUB_WORKFLOW'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'test_database',
+            'USER': 'test_user',
+            'PASSWORD': 'test_password',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
+
 
 # Debug Toolbar
 
@@ -84,3 +96,4 @@ LOGGING = {
         },
     },
 }
+AXES_ENABLED = True
