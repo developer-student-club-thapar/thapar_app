@@ -17,6 +17,7 @@ Django==3.0.5
 django-allauth==0.42.0
 django-analytical==2.6.0
 django-appconf==1.0.4
+django-axes==5.4.1
 django-debug-toolbar==2.2
 django-environ==0.4.5
 django-extensions==2.2.9
@@ -26,6 +27,7 @@ django-graphql-geojson==0.1.4
 django-graphql-jwt==0.3.1
 django-graphql-social-auth==0.1.4
 django-imagekit==4.0.2
+django-ipware==3.0.0
 django-model-utils==4.0.0
 django-push-notifications==2.0.0
 django-rest-framework==0.1.0

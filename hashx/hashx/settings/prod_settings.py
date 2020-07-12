@@ -11,3 +11,5 @@ DATABASES = {
         "PORT": config("SQL_PORT", "5432"),
     }
 }
+# Axes has been Enabled
+AXES_ENABLED = True

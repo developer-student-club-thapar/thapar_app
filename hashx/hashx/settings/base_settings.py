@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.admindocs",
+    'axes',
     "graphene_django",
     'social_django',
     "rest_framework",
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Caution Axes Middle Ware Should be last one
+    "axes.middleware.AxesMiddleware",
 ]
 
 ROOT_URLCONF = "hashx.urls"
@@ -93,7 +96,12 @@ GRAPHQL_JWT = {
     "JWT_VERIFY_EXPIRATION": True,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=180),
 }
+
 AUTHENTICATION_BACKENDS = [
+    # Caution Axes Backedn should be the first one
+    # because it should process every login request via any system
+    "axes.backends.AxesBackend",
+    # Insert New Auth if adding below this point
     "graphql_jwt.backends.JSONWebTokenBackend",
     "django.contrib.auth.backends.ModelBackend",
     'social_core.backends.google.GoogleOAuth2'
@@ -160,6 +168,7 @@ SOCIALACCOUNT_PROVIDERS = {
 # SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "DWUYJullIXwbKIbpyNOINszt"
+
 # IMPORTANT: Logging section moved to dev settings
 
 # REST_FRAMEWORK = {
@@ -180,3 +189,18 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "DWUYJullIXwbKIbpyNOINszt"
 #     "WP_PRIVATE_KEY": "/path/to/your/private.pem",
 #     "WP_CLAIMS": {'sub': "mailto: development@example.com"}
 # }
+
+# Axes Config
+"""
+axes.W001 for invalid CACHES configuration.
+axes.W002 for invalid MIDDLEWARE configuration.
+axes.W003 for invalid AUTHENTICATION_BACKENDS configuration.
+axes.W004 for deprecated use of AXES_* setting flags.
+"""
+SILENCED_SYSTEM_CHECKS = ['axes.W003']
+AXES_FAILURE_LIMIT = 7
+AXES_LOCK_OUT_AT_FAILURE: True
+AXES_COOLOFF_TIME = 15  # No. of Hours after with Restrcited User will be allowed to login
+AXES_USE_USER_AGENT = True
+AXES_VERBOSE = True
+AXES_RESET_ON_SUCCESS = True
