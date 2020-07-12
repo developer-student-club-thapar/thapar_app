@@ -9,6 +9,7 @@ import history from '../services/history';
 import Nav from './Nav';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import UserContextProvider from '../context/UserProvider';
 
 const client = new ApolloClient({
   uri: '/graphql/',
@@ -18,13 +19,15 @@ const App = () => {
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
+      <UserContextProvider>
         <Router history={history}>
           <div className="App">
             <Routes />
           </div>
         </Router>
+        </UserContextProvider>
       </ApolloProvider>
-    </Provider>
+      </Provider>
   );
 };
 

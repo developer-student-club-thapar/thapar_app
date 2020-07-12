@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useContext} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
@@ -6,6 +6,7 @@ import GoogleLogin from 'react-google-login';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Deck from '../components/Landing/Deck';
+import {UserContext} from '../context/UserProvider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,15 +35,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Landing = () => {
   const classes = useStyles();
+  const { addGoogleToken , authenticate , user } = useContext(UserContext);
   const responseGoogle = (response) => {
-    console.log(response);
+    addGoogleToken(response.wc.access_token);
+    
   };
   const responseGoogleFail = (response) => {
     console.log(response);
     console.log('fail');
   };
+  
   return (
+    
     <>
+    {console.log(user)}
       <Grid container spacing={2}>
         <Grid item xs={12} className={classes.mainSection}>
           <Container fixed>
