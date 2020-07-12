@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js",
+    "devtest": "webpack --mode development ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js",
     "build": "webpack --mode production ./hashx/frontend/src/index.js --output ./hashx/frontend/static/frontend/main.js"
   },
   "repository": {
