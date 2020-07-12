@@ -55,4 +55,5 @@ if settings.DEBUG:
 
 
 else:
-    urlpatterns += [path("graphql/", jwt_cookie(GraphQLView.as_view(schema=schema)))]
+    urlpatterns += [path("graphql/",
+                         jwt_cookie(GraphQLView.as_view(schema=schema)))]

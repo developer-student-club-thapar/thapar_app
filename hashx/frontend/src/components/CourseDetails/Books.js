@@ -27,14 +27,14 @@ const Books = () => {
   const tutorialsheets = [];
   {
     filesData.allFiles.edges.map((files) => {
-      const { thumbnailImage , name , file , id } = file.node;
+      const { thumbnailImage, name, file, id } = files.node;
       return (
         <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
           <img
             src={thumbnailImage}
             style={{ borderRadius: '10px', cursor: 'pointer' }}
             onClick={() => {
-              history.push(`/pdfview`);//file
+              history.push(`/pdfview`); //file
             }}
           />
           <div

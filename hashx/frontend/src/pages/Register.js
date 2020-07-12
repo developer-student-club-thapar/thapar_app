@@ -105,7 +105,7 @@ const Register = ({
             <Container fixed>
               <Grid container spacing={2} style={{ paddingTop: '100px' }}>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
-                  <h1 style={{ fontWeight: 'bold' }}>jhj your Account</h1>
+                  <h1 style={{ fontWeight: 'bold' }}>Don't your Account</h1>
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <h4>
