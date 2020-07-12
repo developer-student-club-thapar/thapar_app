@@ -11,15 +11,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@master
-      - name: npm install
-        uses: actions/npm@master
+      - uses: actions/setup-node@v1
         with:
-          args: install
-      - name: Test using "devtest"
-        uses: actions/npm@master
-        with:
-          args: run devtest
-      - name: Build
-        uses: actions/npm@master
-        with:
-          args: run build
+          node-version: '10.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build JS Files
+        run: npm run build
+      - name: Test JS Files
+        run: npm run devtest      
