@@ -5,6 +5,7 @@ import { Container } from '@material-ui/core';
 import GoogleLogin from 'react-google-login';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import Deck from '../components/Landing/Deck';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#FFBC4B',
   },
   mainTitle: {
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
     fontSize: '80px',
     marginTop: '100px',
     fontFamily: 'Gugi',
@@ -74,6 +75,9 @@ const Landing = () => {
                   cookiePolicy={'single_host_origin'}
                   hostedDomain={'thapar.edu'}
                 />
+              </Grid>
+              <Grid item xs={6}>
+                <Deck />
               </Grid>
             </Grid>
           </Container>

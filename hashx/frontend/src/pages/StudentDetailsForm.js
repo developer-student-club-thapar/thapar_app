@@ -36,11 +36,18 @@ const useStyles = makeStyles((theme) => ({
 
 const StudentDetailsForm = () => {
   const classes = useStyles();
-  const [sendStudentData, { studentData }] = useMutation(SEND_STUDENT_DETAILS);
+  const [
+    sendStudentData,
+    {
+      loading: studentDetailLoading,
+      error: studentDetailError,
+      data: studentData,
+    },
+  ] = useMutation(SEND_STUDENT_DETAILS);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [user, setUser] = useState({
-    Rollno: '',
+    rollNo: '',
     year: '',
     branch: '',
     batch: '',
@@ -48,7 +55,7 @@ const StudentDetailsForm = () => {
     bio: '',
     profile: '',
   });
-  const { Rollno, year, branch, batch, gender, bio } = user;
+  const { rollNo, year, branch, batch, gender, bio } = user;
   const onChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
@@ -56,13 +63,20 @@ const StudentDetailsForm = () => {
     e.preventDefault();
 
     if (
-      Rollno === '' ||
+      rollNo === '' ||
       year === '' ||
       branch === '' ||
       batch === '' ||
       gender === ''
     ) {
-      addTodo({ variables: { type: input.value } });
+      sendStudentData({
+        variables: {
+          branch: branch,
+          batch: batch,
+          gender: gender,
+          rollNo: rollNo,
+        },
+      });
       setOpen(true);
     } else {
       console.log(user);
@@ -119,12 +133,12 @@ const StudentDetailsForm = () => {
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
                           <TextValidator
-                            id="Rollno"
+                            id="rollNo"
                             label="Roll no"
                             variant="outlined"
                             style={{ width: '300px' }}
                             onChange={onChange}
-                            value={Rollno}
+                            value={rollNo}
                             validators={['required']}
                             errorMessages={['this field is required']}
                             required
