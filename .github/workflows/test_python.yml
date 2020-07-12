@@ -1,0 +1,54 @@
+name: PythonCI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  container-test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    services:
+      postgres:
+        image: postgres:12.3
+        env:
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: test_database
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Set up Environment
+        run: |
+          cp hashx/.env.prod hashx/.env
+          export KEY=`uuidgen`
+          sed "s/YOUR SECRET_KEY/$KEY/g" hashx/.env -i
+      - name: Install psycopg2 dependencies
+        run: sudo apt-get install python-dev libpq-dev
+      - name: Install Dependencies
+        run: |
+          python -m pip install wheel
+          python -m pip install --upgrade pip
+          pip install -r hashx/requirements.txt
+      
+      - name: Run Migrations and Tests
+        run: |
+          cd hashx
+          python manage.py migrate
+          python manage.py test
