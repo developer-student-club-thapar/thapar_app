@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import { FILE_TYPE_QUERY, FILES_QUERY } from './Queries';
 
 const Books = () => {
   let history = useHistory();
@@ -28,7 +29,7 @@ const Books = () => {
     filesData.allFiles.edges.map((files) => {
       const { thumbnailImage, name, file, id } = files.node;
       return (
-        <Grid item xs={6} sm={6} md={6} lg={4} xl={4} kry={id}>
+        <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
           <img
             src={thumbnailImage}
             style={{ borderRadius: '10px', cursor: 'pointer' }}

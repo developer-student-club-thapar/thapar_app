@@ -1,7 +1,7 @@
 import graphene
 import django_filters
 from graphene_django import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
 from .models import Shop , ShopItem , ShopType,ShopItemReview,ShopReview
 from django.db import models
 
@@ -21,7 +21,7 @@ class ShopTypeFilter(django_filters.FilterSet):
 class ShopTypeNode(DjangoObjectType):
     class Meta:
         model = ShopType
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 
 class ShopFilter(django_filters.FilterSet):
@@ -39,7 +39,7 @@ class ShopFilter(django_filters.FilterSet):
 class ShopNode(DjangoObjectType):
     class Meta:
         model = Shop
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
        
 
@@ -57,7 +57,7 @@ class ShopItemFilter(django_filters.FilterSet):
 class ShopItemNode(DjangoObjectType):
     class Meta:
         model = ShopItem
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 class ShopItemReviewFilter(django_filters.FilterSet):
     class Meta:
@@ -66,7 +66,7 @@ class ShopItemReviewFilter(django_filters.FilterSet):
 class ShopItemReviewNode(DjangoObjectType):
     class Meta:
         model = ShopItemReview
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 class ShopReviewFilter(django_filters.FilterSet):
     class Meta:
         model = ShopReview
@@ -74,18 +74,18 @@ class ShopReviewFilter(django_filters.FilterSet):
 class ShopReviewNode(DjangoObjectType):
     class Meta:
         model = ShopReview
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class RelayQuery(graphene.ObjectType):
     all_shopitems =  ViewAllAuthenticatedQuery(ShopItemNode , filterset_class=ShopItemFilter)
-    shopitem = graphene.relay.Node.Field(ShopItemNode)
+    shopitem = AuthenticatedNode.Field(ShopItemNode)
     all_shops =  ViewAllAuthenticatedQuery(ShopNode , filterset_class=ShopFilter)
-    shop = graphene.relay.Node.Field(ShopNode)
+    shop = AuthenticatedNode.Field(ShopNode)
     all_shoptypes =  ViewAllAuthenticatedQuery(ShopTypeNode , filterset_class=ShopTypeFilter)
-    shoptype = graphene.relay.Node.Field(ShopTypeNode)
+    shoptype = AuthenticatedNode.Field(ShopTypeNode)
     all_shopitemreviews =  ViewAllAuthenticatedQuery(ShopItemReviewNode , filterset_class=ShopItemReviewFilter)
-    shopitemreview = graphene.relay.Node.Field(ShopItemReviewNode)
+    shopitemreview = AuthenticatedNode.Field(ShopItemReviewNode)
     all_shopreviews =  ViewAllAuthenticatedQuery(ShopReviewNode , filterset_class=ShopReviewFilter)
-    shopreview = graphene.relay.Node.Field(ShopReviewNode)
-    node = graphene.relay.Node.Field()
+    shopreview = AuthenticatedNode.Field(ShopReviewNode)
+    node = AuthenticatedNode.Field()
