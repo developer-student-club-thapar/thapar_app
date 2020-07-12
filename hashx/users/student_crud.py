@@ -13,6 +13,7 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         branch = graphene.String()
         batch = graphene.String()
         gender = graphene.String()
+        rollno = graphene.Int()
         #starred files
     
     @classmethod
@@ -22,11 +23,12 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         gender = input.get('gender')
         branch = input.get('branch')
         batch = input.get('batch')
+        rollno = input.get('rollno')
         branchId = from_global_id(branch)[1]
         batchId = from_global_id(batch)[1]
         branchObject = Branch.objects.get(pk=branchId)
         batchObject = Batch.objects.get(pk=batchId)
-        student = Student.objects.create(user=user, branch=branchObject, batch = batchObject , gender = 'M')
+        student = Student.objects.create(user=user, branch=branchObject, batch = batchObject , gender = gender , rollno=rollno)
         student.save()
         return  CreateStudent(student=student)
 class UpdateStudent(graphene.relay.ClientIDMutation):
