@@ -84,3 +84,4 @@ LOGGING = {
         },
     },
 }
+AXES_ENABLED = True

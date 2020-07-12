@@ -5,6 +5,7 @@ from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
 from .models import Member, VolunteershipApplication
 from django.db import models
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
 
 
 class MemberFilter(django_filters.FilterSet):
@@ -24,7 +25,7 @@ class MemberFilter(django_filters.FilterSet):
 class MemberNode(DjangoObjectType):
     class Meta:
         model = Member
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class VolunteershipApplicationFilter(django_filters.FilterSet):
@@ -36,11 +37,11 @@ class VolunteershipApplicationFilter(django_filters.FilterSet):
 class VolunteershipApplicationNode(DjangoObjectType):
     class Meta:
         model = VolunteershipApplication
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 
 
 class RelayQuery(graphene.ObjectType):
     all_members = DjangoFilterConnectionField(MemberNode, filterset_class=MemberFilter)
-    member = graphene.relay.Node.Field(MemberNode)
+    member = AuthenticatedNode.Field(MemberNode)
     all_volunteershipapplications = DjangoFilterConnectionField(VolunteershipApplicationNode, filterset_class=VolunteershipApplicationFilter)
-    volunteershipapplication = graphene.relay.Node.Field(VolunteershipApplicationNode)
+    volunteershipapplication = AuthenticatedNode.Field(VolunteershipApplicationNode)
