@@ -11,7 +11,7 @@
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
 # Thapar Application 🚀
-
+![PythonCI](https://github.com/developer-student-club-thapar/thapar_app/workflows/PythonCI/badge.svg) ![NodeJS_CI](https://github.com/developer-student-club-thapar/thapar_app/workflows/NodeJS_CI/badge.svg)
 The Plan is to build an amazing application for Thapar Campus People from all walks of life !
 
 </div>
