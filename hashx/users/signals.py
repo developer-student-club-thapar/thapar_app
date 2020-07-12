@@ -35,10 +35,10 @@ def signup(student):
 
 @receiver(pre_save, sender = Student)
 def user_verification(sender, instance, *args, **kwargs):
-    if not instance.matched_in_database:
+    if instance.rollno is None:
         v = Verification.objects.get(email = instance.user.email)
         print(v)
         if v:
             print(f'{v.rollno} registered')
-            if v.rollno == instance.rollno:
-                instance.matched_in_database = True
+            instance.rollno = v.rollno
+            instance.matched_in_database = True

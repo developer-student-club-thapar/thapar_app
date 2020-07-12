@@ -31,11 +31,11 @@ class Student(models.Model):
                                 related_query_name='student',  on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     bio = models.CharField(max_length=256, validators=[validate_is_profane])
-    rollno = models.IntegerField(null=True)
+    rollno = models.IntegerField(null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
-    batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True)
+    batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True, blank=True)
     firstyearbatch = models.ForeignKey(
-        FirstYearBatch, on_delete=models.PROTECT, null=True)
+        FirstYearBatch, on_delete=models.PROTECT, null=True, blank=True)
     points = models.DecimalField(default=0, max_digits=20, decimal_places=2)
     GENDER_CHOICES = [
         ('M', 'MALE'),
