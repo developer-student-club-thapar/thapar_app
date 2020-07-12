@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bolder',
     fontSize: '18px',
   },
+  deck: {
+    marginTop: '70px',
+  },
 }));
 
 const Landing = () => {
@@ -82,7 +85,15 @@ const Landing = () => {
                   hostedDomain={'thapar.edu'}
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={6}
+                xl={6}
+                className={classes.deck}
+              >
                 <Deck />
               </Grid>
             </Grid>

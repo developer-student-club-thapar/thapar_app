@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSprings, animated, interpolate } from 'react-spring';
-import { useGesture } from 'react-use-gesture';
+import { useGesture } from 'react-with-gesture';
 import './styles.css';
 
 const cards = [
@@ -8,8 +8,6 @@ const cards = [
   'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
   'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
   'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg',
 ];
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -23,7 +21,7 @@ const to = (i) => ({
 const from = (i) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r, s) =>
-  `perspective(1500px) rotateX(30deg) rotateY(${
+  `perspective(0px) rotateX(30deg) rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
 
