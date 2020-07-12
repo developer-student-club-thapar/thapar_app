@@ -21,8 +21,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import '../styles/StudentDetailsForm.css';
-import { useMutation } from '@apollo/react-hooks';
-import { SEND_STUDENT_DETAILS } from './Mutations';
+import { useMutation, useQuery } from '@apollo/react-hooks';
+import {
+  SEND_STUDENT_DETAILS,
+  ALL_BATCHES,
+  ALL_BRANCHES,
+} from './AuthQueriesMutations';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,19 +39,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const StudentDetailsForm = () => {
+  let batchesMap = new Map();
+  let branchesMap = new Map();
   const classes = useStyles();
+  const {
+    loading: batchLoading,
+    error: batchError,
+    data: batchData,
+  } = useQuery(ALL_BATCHES);
+  const {
+    loading: branchLoading,
+    error: branchError,
+    data: branchData,
+  } = useQuery(ALL_BRANCHES);
+  if (batchLoading || branchLoading) return 'Loading...';
+  if (batchError || branchError) return `Error! ${error.message}`;
+  batchData.allBatches.edges.map((batches) => {
+    const { id: batchId, num } = batches.node;
+    batchesMap.set(batchId, num);
+  });
+  branchData.allBranches.edges.map((branches) => {
+    const { id: branchId, name } = branches.node;
+    branchesMap.set(branchId, name);
+  });
   const [
     sendStudentData,
     {
-      loading: studentDetailLoading,
-      error: studentDetailError,
-      data: studentData,
+      loading: studentSendLoading,
+      error: studentSendError,
+      data: studentSendData,
     },
   ] = useMutation(SEND_STUDENT_DETAILS);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [user, setUser] = useState({
-    rollNo: '',
+    rollno: '',
     year: '',
     branch: '',
     batch: '',
@@ -55,7 +81,7 @@ const StudentDetailsForm = () => {
     bio: '',
     profile: '',
   });
-  const { rollNo, year, branch, batch, gender, bio } = user;
+  const { rollno, year, branch, batch, gender, bio } = user;
   const onChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
@@ -63,7 +89,7 @@ const StudentDetailsForm = () => {
     e.preventDefault();
 
     if (
-      rollNo === '' ||
+      rollno === '' ||
       year === '' ||
       branch === '' ||
       batch === '' ||
@@ -79,6 +105,15 @@ const StudentDetailsForm = () => {
       });
       setOpen(true);
     } else {
+      sendStudentData({
+        variables: {
+          branch: branch,
+          batch: batch,
+          gender: gender,
+          rollno: rollno,
+        },
+      });
+      console.log(sendStudentData);
       console.log(user);
     }
   };
@@ -96,6 +131,12 @@ const StudentDetailsForm = () => {
 
     setOpen2(false);
   };
+  try {
+    console.log(studentSenddata);
+  } catch (e) {
+    console.log(e);
+  }
+
   return (
     <Fragment>
       <Grid container spacing={2}>
@@ -133,12 +174,12 @@ const StudentDetailsForm = () => {
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
                           <TextValidator
-                            id="rollNo"
+                            id="rollno"
                             label="Roll no"
                             variant="outlined"
                             style={{ width: '300px' }}
                             onChange={onChange}
-                            value={rollNo}
+                            value={rollno}
                             validators={['required']}
                             errorMessages={['this field is required']}
                             required
@@ -273,6 +314,8 @@ const StudentDetailsForm = () => {
                           >
                             Proceed
                           </Button>
+                          {studentSendLoading && <p>Loading...</p>}
+                          {studentSendError && <p>Error :( Please try again</p>}
                         </Grid>
                       </Grid>
                       <Grid container spacing={2}>
