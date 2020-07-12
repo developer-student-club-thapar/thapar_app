@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost';
 
-const FILE_TYPE_QUERY = gql`
+export const FILE_TYPE_QUERY = gql`
   query AllFileTypes($slug: String!) {
     allFiletypes(slug: $slug) {
       edges {
@@ -13,7 +13,7 @@ const FILE_TYPE_QUERY = gql`
   }
 `;
 
-const FILES_QUERY = gql`
+export const FILES_QUERY = gql`
   query AllFiles($course: ID!, $type: ID!) {
     allFiles(course: $course, type: $type) {
       edges {
