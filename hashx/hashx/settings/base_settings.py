@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "social_connect",
     "wifipass",
     "timetable",
+    "online_classes",
     "analytics",
     "members",
     "chat",
