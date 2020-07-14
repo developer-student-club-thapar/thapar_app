@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.admindocs",
     'axes',
     "graphene_django",
+    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'social_django',
     "rest_framework",
     "users.apps.UsersConfig",
@@ -94,13 +95,15 @@ GRAPHENE = {
 GRAPHQL_JWT = {
     # ...
     "JWT_VERIFY_EXPIRATION": True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=180),
+    'JWT_LONG_RUNNING_REFRESH_TOKEN': True,
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=1),
+    'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
 AUTHENTICATION_BACKENDS = [
     # Caution Axes Backedn should be the first one
     # because it should process every login request via any system
-    "axes.backends.AxesBackend",
+    # "axes.backends.AxesBackend",
     # Insert New Auth if adding below this point
     "graphql_jwt.backends.JSONWebTokenBackend",
     "django.contrib.auth.backends.ModelBackend",
