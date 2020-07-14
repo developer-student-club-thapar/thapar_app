@@ -9,8 +9,8 @@ import uuid
 
 class Verification(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    email = models.EmailField(default=None, blank=True, null=True, unique = True)
-    rollno = models.IntegerField(null=True, unique = True)
+    email = models.EmailField(default=None, blank=True, null=True, unique=True)
+    rollno = models.IntegerField(null=True, unique=True)
 
     def __str__(self):
         return f'{self.email} {self.rollno}'
@@ -33,7 +33,8 @@ class Student(models.Model):
     bio = models.CharField(max_length=256, validators=[validate_is_profane])
     rollno = models.IntegerField(null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
-    batch = models.ForeignKey(Batch,  on_delete=models.PROTECT, null=True, blank=True)
+    batch = models.ForeignKey(
+        Batch,  on_delete=models.PROTECT, null=True, blank=True)
     firstyearbatch = models.ForeignKey(
         FirstYearBatch, on_delete=models.PROTECT, null=True, blank=True)
     points = models.DecimalField(default=0, max_digits=20, decimal_places=2)
@@ -46,10 +47,10 @@ class Student(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # starred Files of any particular user
-    starred_files = models.ManyToManyField(File , blank = True)
+    starred_files = models.ManyToManyField(File, blank=True)
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
-    matched_in_database = models.BooleanField(default = False)
+    matched_in_database = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -77,9 +78,11 @@ class Instructor(models.Model):
     email = models.EmailField(default=None, blank=True, null=True)
     office = models.CharField(max_length=5)
     course = models.ManyToManyField(Course)
+    batches = models.ManyToManyField(Batch)
+    firstyearbatches = models.ManyToManyField(FirstYearBatch)
     role = models.CharField(max_length=100)
     specialisation = models.CharField(max_length=500)
-    biography = models.CharField(max_length = 10000)
+    biography = models.CharField(max_length=10000)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
 

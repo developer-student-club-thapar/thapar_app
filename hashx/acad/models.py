@@ -7,9 +7,11 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+
 class DrivefolderManager(models.Manager):
     def get_by_natural_key(self, year, drive_id):
-        return self.get(year = year, drive_id = drive_id)
+        return self.get(year=year, drive_id=drive_id)
+
 
 class Drivefolder(models.Model):
     """ 
@@ -33,9 +35,11 @@ class Drivefolder(models.Model):
     def __str__(self):
         return f"{self.name} {self.drive_id} {self.year} {self.file_name}"
 
+
 class CourseManager(models.Manager):
     def get_by_natural_key(self, name, code):
-        return self.get(name = name, code = code)
+        return self.get(name=name, code=code)
+
 
 class Course(models.Model):
 
@@ -84,7 +88,7 @@ class Course(models.Model):
 
 class BranchManager(models.Manager):
     def get_by_natural_key(self, code, year):
-        return self.get(code = code, year = year)
+        return self.get(code=code, year=year)
 
 
 class Branch(models.Model):
@@ -94,7 +98,6 @@ class Branch(models.Model):
         verbose_name = "Branch"
         verbose_name_plural = "Branches"
         unique_together = [['code', 'year']]
-
 
     YEAR_IN_SCHOOL_CHOICES = [
         ("FR", "Freshman"),
@@ -106,7 +109,9 @@ class Branch(models.Model):
     year = models.CharField(max_length=2, choices=YEAR_IN_SCHOOL_CHOICES)
     code = models.CharField(max_length=3, default=None, blank=True, null=True)
     name = models.CharField(max_length=35, default=None, blank=True, null=True)
-    course = models.ManyToManyField(Course, default=None, blank=True)
+    course = models.ManyToManyField(
+        Course, default=None, blank=True)  # Important for SETUP
+
     # To Label passed out branches and give them away
     passed_out = models.BooleanField(default=False)
     # The Above Course Many To Many Field will be used always
@@ -150,7 +155,7 @@ class Batch(models.Model):
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
+    branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
     num = models.IntegerField()  # 1..N
     GR = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
     created_date = models.DateTimeField(default=timezone.now, editable=False)
@@ -268,7 +273,7 @@ class File(models.Model):
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
     batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
-    file_id = models.CharField(max_length = 100, null=True)
+    file_id = models.CharField(max_length=100, null=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
