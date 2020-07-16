@@ -33,12 +33,14 @@ def signup(student):
     return True
 
 
-# @receiver(pre_save, sender = Student)
-# def user_verification(sender, instance, *args, **kwargs):
-#     if instance.rollno is None:
-#         v = Verification.objects.get(email = instance.user.email)
-#         print(v)
-#         if v:
-#             print(f'{v.rollno} registered')
-#             instance.rollno = v.rollno
-#             instance.matched_in_database = True
+@receiver(pre_save, sender = Student)
+def user_verification(sender, instance, *args, **kwargs):
+    try:
+        v = Verification.objects.get(email = instance.user.email)
+        if v:
+            print(f'{v.rollno} registered')
+            instance.rollno = v.rollno
+            instance.matched_in_database = True
+    except Exception:
+        print(Exception)
+        instance.matched_in_database = False
