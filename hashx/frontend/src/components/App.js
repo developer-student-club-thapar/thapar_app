@@ -1,5 +1,6 @@
-import React, { Component, Fragment, useContext } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import firebase from './init-fcm';
 import store from '../store';
 import { Provider } from 'react-redux';
 import SideNav from './SideNav';
@@ -10,12 +11,11 @@ import Nav from './Nav';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import UserContextProvider from '../context/UserProvider';
-
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const client = new ApolloClient({
   uri: 'graphql/',
-  credentials: 'same-origin',
+  credentials: 'include',
   request: (operation) => {
     const accessToken = localStorage.getItem('token');
     operation.setContext({
@@ -28,6 +28,22 @@ const client = new ApolloClient({
 });
 
 const App = () => {
+  useEffect(() => {
+    const messaging = firebase.messaging();
+    messaging
+      .requestPermission()
+      .then(() => {
+        console.log('Have Permission');
+        return messaging.getToken();
+      })
+      .then((token) => {
+        console.log(token);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <Provider store={store}>
       <ApolloProvider client={client}>
@@ -43,4 +59,6 @@ const App = () => {
   );
 };
 
+
 ReactDOM.render(<App />, document.getElementById('app'));
+
