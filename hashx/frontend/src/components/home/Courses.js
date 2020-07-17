@@ -165,6 +165,7 @@ const Courses = (props) => {
                   >
                     <Paper
                       elevation={0}
+                      
                       className={classes.courseCard}
                       style={{ backgroundColor: `${colorBG}` }}
                       onClick={() => {

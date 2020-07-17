@@ -12,86 +12,50 @@ import { Link } from 'react-router-dom';
 import image from '../../assets/img.jpg';
 import { useHistory } from 'react-router-dom';
 import CourseDetail from '../../pages/CourseDetail';
-import { FILE_TYPE_QUERY, FILES_QUERY } from './Queries';
+import { FILE_TYPE_QUERY } from './Queries';
+import FileList from './FileList';
 
 //call file type query before loading the component
 
 const Tutorials = (props) => {
   let history = useHistory();
-  const tutorialsheets = [];
-  const { id, path } = props;
-  const courseID = id;
-  const { fileTypeLoading, fileTypeError, fileTypeData } = useQuery(
-    FILE_TYPE_QUERY,
-    {
-      variables: { slug: `${path}` }, //add path as slug
-    },
-  );
-
-  if (fileTypeData) {
-    const typeId = fileTypeData.allFiletypes.edges[0].node.id;
-    const { filesLoading, filesError, filesData } = useQuery(FILES_QUERY, {
-      variables: { course: `${courseID}`, type: `${typeId}` },
-    });
-
-    const renderFiles = () => {
-      filesData.allFiles.edges.map((files) => {
-        const { thumbnailImage, name, file, id } = files.node;
-        return (
-          <Grid item xs={6} sm={6} md={6} lg={4} xl={4} kry={id}>
-            <img
-              src={thumbnailImage}
-              style={{ borderRadius: '10px', cursor: 'pointer' }}
-              onClick={() => {
-                history.push(`/pdfview`); //file
-              }}
-            />
-            <div
-              style={{
-                position: 'relative',
-                bottom: '40px',
-                background: 'rgba(57, 57, 57, 0.5)',
-                width: '150px',
-                height: '40px',
-                borderRadius: '0px 0px 10px 10px',
-                cursor: 'pointer',
-                margin: 'auto',
-                textAlign: 'center',
-              }}
-              onClick={() => {
-                history.push(`/pdfview`);
-              }}
-            >
-              <div style={{ paddingTop: '10px' }}>{name}</div>
-            </div>
-          </Grid>
-        );
-      });
-    };
-
-    return (
-      <Fragment>
-        <Paper
-          elevation={3}
-          style={{
-            //   width: "550px",
-            borderRadius: '20px',
-            textAlign: 'center',
-
-            backgroundColor: '#2C3055',
-            color: '#FBF9FF',
-            marginTop: '-30px',
-          }}
-        >
-          <br />
-          <h1 style={{ fontWeight: '400' }}>Tutorials</h1>
-          <Grid container spacing={2}>
-            {renderFiles()}
-          </Grid>
-        </Paper>
-      </Fragment>
-    );
+  const { id: courseId, path } = props;
+  const {
+    loading: fileTypeLoading,
+    error: fileTypeError,
+    data: fileTypeData,
+  } = useQuery(FILE_TYPE_QUERY, { variables: { slug: `${path}` } });
+  if (fileTypeLoading) {
+    return <div> loading...</div>;
   }
+  if (fileTypeError) {
+    return <div>Error..</div>;
+  }
+  if (!fileTypeData || fileTypeData === undefined) {
+    return <div>No Files</div>;
+  }
+  const typeId = fileTypeData.allFiletypes.edges[0].node.id;
+  return (
+    <Fragment>
+      <Paper
+        elevation={3}
+        style={{
+          //   width: "550px",
+          borderRadius: '20px',
+          textAlign: 'center',
+          backgroundColor: '#2C3055',
+          color: '#FBF9FF',
+          marginTop: '-30px',
+        }}
+      >
+        <br />
+        <h1 style={{ fontWeight: '400' }}>Tutorials</h1>
+        <Grid container spacing={2}>
+          <FileList typeId={typeId} courseId={courseId} history = {history} />
+        </Grid>
+      </Paper>
+    </Fragment>
+  );
 };
 
 export default Tutorials;

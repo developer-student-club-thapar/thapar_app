@@ -50,6 +50,7 @@
     "@material-ui/lab": "^4.0.0-alpha.53",
     "apollo-boost": "^0.4.9",
     "axios": "^0.19.2",
+    "firebase": "^7.16.0",
     "framer-motion": "^1.11.0",
     "google-maps-react": "^2.0.6",
     "graphql": "^15.0.0",
