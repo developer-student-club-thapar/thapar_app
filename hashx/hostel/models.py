@@ -12,13 +12,13 @@ from profanity.validators import validate_is_profane
 class Hostel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     # Details
-    name = models.CharField(max_length=1)
+    name = models.CharField(max_length=3)
     about = models.TextField(max_length=2000, null=True)
     discussion = models.OneToOneField(
         Category, on_delete=models.SET_NULL, null=True, blank=True)
     warden_name = models.CharField(max_length=100)
     caretaker_name = models.CharField(max_length=100)
-    caretaker_contact = models.CharField(max_length=10,
+    caretaker_contact = models.CharField(max_length=15,
                                          help_text='Contact phone number')
     capacity = models.PositiveIntegerField(blank=True, null=True,)
     slug = models.SlugField(max_length=250, null=True, blank=True)
