@@ -251,14 +251,14 @@ class File(models.Model):
     type = models.ForeignKey(
         FileType, on_delete=models.PROTECT, null=True, blank=True)
     tags = models.ManyToManyField(FileTags)
-    file = models.FileField(upload_to="academic_File")
+    file = models.FileField(upload_to="academic_File", max_length=255)
     thumbnail_image = models.ImageField(
         upload_to="academic_file_thumbnails", null=True, blank=True
     )
     # Main Object
     date_posted = models.DateTimeField(default=timezone.now, editable=False)
     date_modified = models.DateTimeField(default=timezone.now)
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=200)
     about = models.TextField(max_length=512, null=True, blank=True)
     # This Allows anytype of user to post on the website checks
     # needed for authorization.
@@ -274,6 +274,7 @@ class File(models.Model):
     # Keep Batch Support for Later Stages
     batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
     file_id = models.CharField(max_length=100, null=True)
+    web_content_link = models.URLField(max_length=150, null=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
@@ -281,7 +282,7 @@ class File(models.Model):
     # in UI a star to show as if like Editor's Choice Stuff
     is_reviewed = models.BooleanField(default=False)
     # Is Reviewed is a File that has been checked by an independent Fact Checker!
-    slug = models.SlugField(blank=True, null=True)
+    slug = models.SlugField(blank=True, null=True, max_length=255)
 
     def __str__(self):
         return self.name
