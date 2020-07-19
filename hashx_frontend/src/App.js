@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import firebase from './components/init-fcm';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
@@ -17,7 +16,7 @@ const client = new ApolloClient({
     const accessToken = localStorage.getItem('token');
     operation.setContext({
       headers: {
-        authorization : accessToken ?  `JWT ${accessToken}` : '',
+        authorization: accessToken ? `JWT ${accessToken}` : '',
       },
     });
   },
@@ -42,15 +41,15 @@ const App = () => {
   }, []);
 
   return (
-      <ApolloProvider client={client}>
-        <UserContextProvider>
-          <Router history={history}>
-            <div className="App">
-              <Routes />
-            </div>
-          </Router>
-        </UserContextProvider>
-      </ApolloProvider>
+    <ApolloProvider client={client}>
+      <UserContextProvider>
+        <Router history={history}>
+          <div className="App">
+            <Routes />
+          </div>
+        </Router>
+      </UserContextProvider>
+    </ApolloProvider>
   );
 };
 
