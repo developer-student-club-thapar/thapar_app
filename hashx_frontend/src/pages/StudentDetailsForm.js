@@ -21,11 +21,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import '../styles/StudentDetailsForm.css';
-import { useMutation, useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery, useLazyQuery } from '@apollo/react-hooks';
 import {
   SEND_STUDENT_DETAILS,
   ALL_BATCHES,
-  ALL_BRANCHES,
+  GET_BRANCHES,
 } from './AuthQueriesMutations';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,16 +42,14 @@ const StudentDetailsForm = () => {
   let batchesMap = new Map();
   let branchesMap = new Map();
   const classes = useStyles();
-  const {
-    loading: batchLoading,
-    error: batchError,
-    data: batchData,
-  } = useQuery(ALL_BATCHES);
-  const {
-    loading: branchLoading,
-    error: branchError,
-    data: branchData,
-  } = useQuery(ALL_BRANCHES);
+  const [
+    getBatches,
+    { loading: batchLoading, error: batchError, data: batchData },
+  ] = useLazyQuery(ALL_BATCHES);
+  const [
+    getBranches,
+    { loading: branchLoading, error: branchError, data: branchData },
+  ] = useLazyQuery(GET_BRANCHES);
   // if (batchLoading || branchLoading) return 'Loading...';
   // if (batchError || branchError) return `Error! ${error.message}`;
   // batchData.allBatches.edges.map((batches) => {
