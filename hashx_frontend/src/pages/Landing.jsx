@@ -1,7 +1,4 @@
-import React, { useState, useContext } from 'react';
-import '../styles/Landing.css';
-import logo from '../assets/college.png';
-
+import React, { useState  , useContext} from 'react';
 import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
 import Button from '@material-ui/core/Button';
@@ -16,8 +13,6 @@ import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
 import { UserContext } from '../context/UserProvider';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
@@ -66,15 +61,6 @@ const useStyles = makeStyles((theme) =>
         alignItems: 'center',
       },
     },
-    imageContainer: {
-      display: 'flex',
-      justifyContent: 'center',
-      [theme.breakpoints.down('sm')]: { height: '260px', width: '250px' },
-      [theme.breakpoints.up('sm')]: { height: '420px', width: '370px' },
-      [theme.breakpoints.up('md')]: { height: '460px', width: '420px' },
-      [theme.breakpoints.up('lg')]: { height: '570px', width: '550px' },
-      [theme.breakpoints.up('xl')]: { height: '730px', width: '700px' },
-    },
   }),
 );
 
@@ -91,14 +77,11 @@ const LightTooltip = withStyles((theme) => ({
 const Landing = () => {
   const classes = useStyles();
   let history = useHistory();
-  const [
-    socialMutation,
-    { loading: socialLoading, error: socialError },
-  ] = useMutation(SOCIAL_AUTH, {
+  const [socialMutation, { loading: socialLoading, error: socialError }] = useMutation(SOCIAL_AUTH, {
     onCompleted(data) {
       if (data !== null || data !== undefined) {
         const { token, user, newUser } = data.socialAuth;
-        localStorage.setItem('token', token);
+        localStorage.setItem('token', token)
         authenticate(user.id, user.username, token, newUser);
         if (newUser) {
           history.push(`/studentdetailform`);
@@ -131,99 +114,93 @@ const Landing = () => {
   };
 
   return (
-    <>
-      <div className={classes.landingRoot}>
-        <Scroll />
-        <Navbar />
+    <div className={classes.landingRoot}>
+      <Scroll />
+      <Navbar />
 
-        <br />
-        <Box p={2}>
-          <Grid
-            container
-            direction="row-reverse"
-            spacing={3}
-            alignItems="center"
-            justify="center"
-          >
-            <Grid item xs={12} md={7}>
-              <Box className={classes.deckBox}>
-                {/* <Paper elevation={4} className={classes.deck}>
+      <br />
+      <Box p={2}>
+        <Grid
+          container
+          direction="row-reverse"
+          spacing={3}
+          alignItems="center"
+          justify="center"
+        >
+          <Grid item xs={12} md={7}>
+            <Box className={classes.deckBox}>
+              {/* <Paper elevation={4} className={classes.deck}>
                 yo
               </Paper> */}
-                <Deck />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Paper className={classes.paper}>
-                <Typography variant="h3">PLACEHOLDER TEXT</Typography>
-              </Paper>
-            </Grid>
-            <Grid
-              container
-              item
-              className={classes.iconGridContainer}
-              xs={12}
-              md={1}
-              alignItems="center"
-              spacing={2}
-            >
-              <Grid item>
-                <LightTooltip
-                  TransitionComponent={Zoom}
-                  title="Next Post"
-                  placement="right"
-                >
-                  <IconButton aria-label="next">
-                    <SkipNextIcon style={{ color: 'black' }} />
-                  </IconButton>
-                </LightTooltip>
-              </Grid>
-              <Grid item>
-                <LightTooltip
-                  TransitionComponent={Zoom}
-                  title="Previous Post"
-                  placement="right"
-                >
-                  <IconButton aria-label="delete">
-                    <SkipPreviousIcon style={{ color: 'black' }} />
-                  </IconButton>
-                </LightTooltip>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Box>
-      </div>
-      <Box className="page2-root">
-        <Grid container direction="row">
-          <Grid item xs={12} md={6}>
-            <Box style={{ justifyContent: 'center', display: 'flex' }} m={4}>
-              <Card elevation={0} style={{ backgroundColor: 'transparent' }}>
-                <CardMedia
-                  className={classes.imageContainer}
-                  component="img"
-                  alt="Contemplative Reptile"
-                  image={require('../assets/college.png')}
-                  title="Contemplative Reptile"
-                />
-              </Card>
+              <Deck />
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} style={{ alignSelf: 'center' }}>
-            <Typography
-              variant="h4"
-              style={{
-                fontWeight: '900',
-                fontSize: '30px',
-                textAlign: 'center',
-                display: 'block',
-              }}
-            >
-              To strong beginnings
-            </Typography>
+          <Grid item xs={12} md={4}>
+            <Paper className={classes.paper}>
+              <Typography variant="h3">PLACEHOLDER TEXT</Typography>
+              <GoogleLogin
+                clientId={
+                  '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
+                }
+                render={(renderProps) => (
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    size="large"
+                    endIcon={
+                      <Icon style={{ color: '#9C69E2', fontSize: '40px' }}>
+                        arrow_right_alt
+                        </Icon>
+                    }
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    Sign up with Google
+                  </Button>
+                )}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogleFail}
+                cookiePolicy={'single_host_origin'}
+                hostedDomain={'thapar.edu'}
+              />
+            </Paper>
+          </Grid>
+          <Grid
+            container
+            item
+            className={classes.iconGridContainer}
+            xs={12}
+            md={1}
+            alignItems="center"
+            spacing={2}
+          >
+            <Grid item>
+              <LightTooltip
+                TransitionComponent={Zoom}
+                title="Next Post"
+                placement="right"
+              >
+                <IconButton aria-label="next">
+                  <SkipNextIcon style={{ color: 'black' }} />
+                </IconButton>
+              </LightTooltip>
+            </Grid>
+            <Grid item>
+              <LightTooltip
+                TransitionComponent={Zoom}
+                title="Previous Post"
+                placement="right"
+              >
+                <IconButton aria-label="delete">
+                  <SkipPreviousIcon style={{ color: 'black' }} />
+                </IconButton>
+              </LightTooltip>
+            </Grid>
           </Grid>
         </Grid>
       </Box>
-    </>
+    </div>
   );
 };
 
