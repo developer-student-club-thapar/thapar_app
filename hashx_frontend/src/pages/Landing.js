@@ -89,7 +89,7 @@ const Landing = () => {
                 </h1>
                 <GoogleLogin
                   clientId={
-                    '423818856081-5iamists37kokrddrg0ktfs0j23fbd4v.apps.googleusercontent.com'
+                    '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
                   }
                   render={(renderProps) => (
                     <Button
