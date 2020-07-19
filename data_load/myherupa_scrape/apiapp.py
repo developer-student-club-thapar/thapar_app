@@ -17,11 +17,12 @@ def fetch_data(resURL):
         for file in json_data["files"]:
             name = file["name"]
             file_id = file["id"]
-            l.append(tuple((name, file_id)))
+            webContentLink = file["webContentLink"]
+            l.append(list((name, file_id, webContentLink)))
     except:
         print("Didnt work")
-
+    print(l)
     return l
 
 
-fetch_data("14usany7y80NDQkasoaWix8qCpRVHDjb")
+fetch_data("1y41Ae-9w1Ark2lfDMaJLKQpk4wOoo2L9")

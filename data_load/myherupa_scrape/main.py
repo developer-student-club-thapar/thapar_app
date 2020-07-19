@@ -51,16 +51,20 @@ with open('drive.csv') as data:
             year = "Freshman"
 
         drive_id = re.sub('\s+', ' ', row[4]).strip()
+        course_name = re.sub('\s+', ' ', row[1]).strip()
+        course_name = re.sub(r"(\w)([A-Z])", r"\1 \2", course_name)
         l.append(drive_id)
         print(drive_id)
         folder_data = fetch_data(drive_id)
         for file_data in folder_data:
             file_name = file_data[0]
             file_id = file_data[1]
+            webContentLink = file_data[2]
             print(file_name)
-            d[i] = [re.sub('\s+', ' ', row[0]).strip(), re.sub('\s+', ' ', row[1]).strip(), filetype, re.sub('\s+', ' ', row[2]).strip(), year, drive_id, file_name, branch, file_id]
+            d[i] = [re.sub('\s+', ' ', row[0]).strip(), re.sub('\s+', ' ', row[1]).strip(), filetype, re.sub('\s+', ' ', row[2]).strip(), year, drive_id, file_name, branch, file_id, webContentLink]
             print(i)
             i += 1
+            
 
 # print(l)
 d.pop(0)
@@ -76,9 +80,11 @@ for val in d.values():
             \"course\": [\"{}\", \"{}\"],
             \"branch\": [\"{}\", \"{}\"],
             \"file\": \"academic_File/{}\",
-            \"file_id\": \"{}\"
+            \"file_id\": \"{}\",
+            \"web_content_link\": \"{}\"
             }}
     }},
-    '''.format(uuid.uuid4(), val[6], val[2], val[1], val[0], val[7], val[4], val[6], val[8]))
+    '''.format(uuid.uuid4(), val[6], val[2], val[1], val[0], val[7], val[4], val[6], val[8], val[9]))
+    
 
 
