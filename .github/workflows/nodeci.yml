@@ -3,20 +3,37 @@ name: NodeJS_CI
 on:
   push:
     branches: [dev]
+  pull_request:
+    branches: [dev]
 
 jobs:
-  testReact:
+  React:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: [10.x, 12.x]
+      - name: "CI"
+          working-directory: ./hashx_frontend
+          run: npm ci
+      - name : "Build" 
+          working-directory: ./hashx_frontend
+          run: npm run build --if-present
+      - name : "Test"
+          working-directory: ./hashx_frontend
+          run: npm test
+
       - name: Install Dependencies
-        working-directory: ./hashx_frontend
-        run: npm install
+          working-directory: ./hashx_frontend
+          run: npm install
 
       - name: Test React Build
-        working-directory: ./hashx_frontend
-        run: npm run build
+          working-directory: ./hashx_frontend
+          run: npm run build
