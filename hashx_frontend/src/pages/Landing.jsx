@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState  , useContext} from 'react';
 import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 import Scroll from '../components/Landing/Scroll';
-
+import { useMutation } from '@apollo/react-hooks';
+import { SOCIAL_AUTH } from './AuthQueriesMutations';
+import { useHistory } from 'react-router-dom';
 import { spacing } from '@material-ui/system';
+import GoogleLogin from 'react-google-login';
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
-
+import { UserContext } from '../context/UserProvider';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -71,6 +76,43 @@ const LightTooltip = withStyles((theme) => ({
 
 const Landing = () => {
   const classes = useStyles();
+  let history = useHistory();
+  const [socialMutation, { loading: socialLoading, error: socialError }] = useMutation(SOCIAL_AUTH, {
+    onCompleted(data) {
+      if (data !== null || data !== undefined) {
+        const { token, user, newUser } = data.socialAuth;
+        localStorage.setItem('token', token)
+        authenticate(user.id, user.username, token, newUser);
+        if (newUser) {
+          history.push(`/studentdetailform`);
+        } else {
+          history.push(`/`);
+        }
+      }
+    },
+  });
+  const { addGoogleToken, authenticate, user } = useContext(UserContext);
+  const responseGoogle = (response) => {
+    addGoogleToken(response.wc.access_token);
+    socialMutation({
+      variables: {
+        accessToken: response.wc.access_token,
+      },
+    });
+    if (socialLoading) {
+      console.log(socialLoading);
+      return <h1>{socialLoading}</h1>;
+    }
+    if (socialError) {
+      console.log(socialError);
+      return <h1>{socialError}</h1>;
+    }
+  };
+  const responseGoogleFail = (response) => {
+    console.log(response);
+    console.log('fail');
+  };
+
   return (
     <div className={classes.landingRoot}>
       <Scroll />
@@ -96,6 +138,32 @@ const Landing = () => {
           <Grid item xs={12} md={4}>
             <Paper className={classes.paper}>
               <Typography variant="h3">PLACEHOLDER TEXT</Typography>
+              <GoogleLogin
+                clientId={
+                  '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
+                }
+                render={(renderProps) => (
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    size="large"
+                    endIcon={
+                      <Icon style={{ color: '#9C69E2', fontSize: '40px' }}>
+                        arrow_right_alt
+                        </Icon>
+                    }
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                  >
+                    Sign up with Google
+                  </Button>
+                )}
+                onSuccess={responseGoogle}
+                onFailure={responseGoogleFail}
+                cookiePolicy={'single_host_origin'}
+                hostedDomain={'thapar.edu'}
+              />
             </Paper>
           </Grid>
           <Grid
