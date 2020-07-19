@@ -52,16 +52,16 @@ const StudentDetailsForm = () => {
     error: branchError,
     data: branchData,
   } = useQuery(ALL_BRANCHES);
-  if (batchLoading || branchLoading) return 'Loading...';
-  if (batchError || branchError) return `Error! ${error.message}`;
-  batchData.allBatches.edges.map((batches) => {
-    const { id: batchId, num } = batches.node;
-    batchesMap.set(batchId, num);
-  });
-  branchData.allBranches.edges.map((branches) => {
-    const { id: branchId, name } = branches.node;
-    branchesMap.set(branchId, name);
-  });
+  // if (batchLoading || branchLoading) return 'Loading...';
+  // if (batchError || branchError) return `Error! ${error.message}`;
+  // batchData.allBatches.edges.map((batches) => {
+  //   const { id: batchId, num } = batches.node;
+  //   batchesMap.set(batchId, num);
+  // });
+  // branchData.allBranches.edges.map((branches) => {
+  //   const { id: branchId, name } = branches.node;
+  //   branchesMap.set(branchId, name);
+  // });
   const [
     sendStudentData,
     {
@@ -95,14 +95,6 @@ const StudentDetailsForm = () => {
       batch === '' ||
       gender === ''
     ) {
-      sendStudentData({
-        variables: {
-          branch: branch,
-          batch: batch,
-          gender: gender,
-          rollNo: rollNo,
-        },
-      });
       setOpen(true);
     } else {
       sendStudentData({
@@ -113,7 +105,7 @@ const StudentDetailsForm = () => {
           rollno: rollno,
         },
       });
-      console.log(sendStudentData);
+
       console.log(user);
     }
   };
@@ -157,7 +149,7 @@ const StudentDetailsForm = () => {
             }}
           >
             <Container fixed>
-              <Grid container spacing={2} style={{ paddingTop: '100px' }}>
+              <Grid container spacing={2} style={{ paddingTop: '30px' }}>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <h1 style={{ fontWeight: 'bold' }}>
                     Tell us more about yourself

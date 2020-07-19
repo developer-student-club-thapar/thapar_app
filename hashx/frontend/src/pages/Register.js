@@ -305,3 +305,4 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   registerUser,
 })(Register);
+

@@ -1,0 +1,46 @@
+.nav {
+  position: fixed;
+  z-index: 98;
+}
+.nav:before,
+.nav:after {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 21, 26, 0.6);
+  border-bottom-left-radius: 200%;
+  z-index: -1;
+  -webkit-transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    border-radius linear 0.8s;
+  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    border-radius linear 0.8s;
+  transition: transform cubic-bezier(0.77, 0, 0.175, 1) k 0.6s,
+    border-radius linear 0.8s;
+  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s,
+    border-radius linear 0.8s;
+  -webkit-transform: translateX(100%) translateY(-100%);
+  transform: translateX(100%) translateY(-100%);
+}
+.nav:after {
+  background: rgba(9, 9, 12, 1);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+.nav:before {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.nav-active .nav:before,
+.nav-active .nav:after {
+  transform: translateX(0%) translateY(0%);
+  border-radius: 0;
+}
+.nav-active .nav:after {
+  transition-delay: 0.1s;
+}
+.nav-active .nav:before {
+  transition-delay: 0s;
+}
