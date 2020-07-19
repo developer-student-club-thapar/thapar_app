@@ -105,7 +105,7 @@ const StudentDetailsForm = () => {
           rollno: rollno,
         },
       });
-      
+
       console.log(user);
     }
   };
@@ -149,7 +149,7 @@ const StudentDetailsForm = () => {
             }}
           >
             <Container fixed>
-              <Grid container spacing={2} style={{ paddingTop: '100px' }}>
+              <Grid container spacing={2} style={{ paddingTop: '30px' }}>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <h1 style={{ fontWeight: 'bold' }}>
                     Tell us more about yourself
