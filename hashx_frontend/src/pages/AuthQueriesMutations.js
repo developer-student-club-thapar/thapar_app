@@ -22,9 +22,9 @@ export const SEND_STUDENT_DETAILS = gql`
   }
 `;
 
-export const ALL_BATCHES = gql`
-  {
-    allBatches {
+export const GET_BATCHES = gql`
+  query GetBatches($branch: ID!){
+    allBatches(branch : $branch) {
       edges {
         node {
           id
@@ -35,9 +35,9 @@ export const ALL_BATCHES = gql`
   }
 `;
 
-export const ALL_BRANCHES = gql`
-  {
-    allBranches {
+export const GET_BRANCHES = gql`
+  query GetBranches($year: String!) {
+    allBranches(year: $year) {
       edges {
         node {
           name
@@ -49,14 +49,14 @@ export const ALL_BRANCHES = gql`
 `;
 
 export const SOCIAL_AUTH = gql`
-mutation SocialAuth($accessToken:String!){
-  socialAuth(accessToken:$accessToken , provider:"google-oauth2"){
-    token
-    newUser
-    user{
-      username
-      id
+  mutation SocialAuth($accessToken: String!) {
+    socialAuth(accessToken: $accessToken, provider: "google-oauth2") {
+      token
+      newUser
+      user {
+        username
+        id
+      }
     }
-  } 
-}
+  }
 `;

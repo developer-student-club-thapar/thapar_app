@@ -1,34 +1,21 @@
-import fileinput
+import csv
+import re
 
 
-
-with open("drive.csv", "r") as f:
-    lines = f.readlines()
-i = 0
-while lines:
-    if i>2016:
+csv_in = open('drive_copy.csv', 'r')
 
 
+lines = []
+for row in csv.reader(csv_in):
+    branch = re.sub('\s+', ' ', row[1])
+    branch = re.sub(r"(\w)([A-Z])", r"\1 \2", branch)
+    branch = branch.replace("&", " and ")
+    print(branch)
 
-with open("drive.csv", "w") as f:
-    for line in lines:
-        if line.strip("\n") != "Tutorial Sheets,Notes & Slides,Notes & Slides,Tutorial Solutions 8,Notes & Slides,Tutorial Solutions,Notes,Tutorials,Tutorial Solutions,Notes,Previous Papers,Notes & Slides,Notes & Slides,Notes,Tutorial Sheets,Books,Notes,Tutorials,\"":
-            f.write(line)
-        
-        
+    row[1] = branch
+    lines.append(row)
 
-with open("drive.csv", "r") as f:
-    lines = f.readlines()
-lines = [',' + line if (line[0] in ['P', 'B', 'N', 'T']) else line for line in lines]    
-with open("drive.csv", "w") as f:
-    f.writelines(lines)
-
-f = open('drive.csv')
-text = f.read()
-f.close()
-# open the file again for writing
-f = open('drive.csv', 'w')
-f.write("Code, Type, Year, ID, Branch,,,,,,\"")
-# write the original contents
-f.write(text)
-f.close()
+with open('drive_copy.csv', 'w') as data:
+    writer = csv.writer(data)
+    print("opened")
+    writer.writerows(lines)

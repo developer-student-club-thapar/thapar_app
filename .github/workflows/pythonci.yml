@@ -3,10 +3,11 @@ name: PythonCI
 on:
   push:
     branches: [dev]
+  pull_request:
+    branches: [dev]
 
 jobs:
   djangoWithPostgres:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,7 +26,6 @@ jobs:
           - 5432:5432
         # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-
 
     steps:
       - uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
           python -m pip install wheel
           python -m pip install --upgrade pip
           pip install -r hashx/requirements.txt
-      
+
       - name: Run Migrations and Tests
         run: |
           cd hashx
