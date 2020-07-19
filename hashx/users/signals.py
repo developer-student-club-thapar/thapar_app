@@ -10,6 +10,7 @@ from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
 from invite.models import Invite
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from push_notifications.models import APNSDevice, GCMDevice
 
 
 
@@ -34,6 +35,7 @@ def signup(student):
     )
     email.send()
     return True
+
 
 
 @receiver(pre_save, sender = Student)
