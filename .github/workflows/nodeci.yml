@@ -20,19 +20,20 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: [10.x, 12.x]
+
       - name: "CI"
-          working-directory: ./hashx_frontend
-          run: npm ci
+        working-directory: ./hashx_frontend
+        run: npm ci
       - name : "Build" 
-          working-directory: ./hashx_frontend
-          run: npm run build --if-present
+        working-directory: ./hashx_frontend
+        run: npm run build --if-present
       - name : "Test"
-          working-directory: ./hashx_frontend
-          run: npm test
+        working-directory: ./hashx_frontend
+        run: npm test
 
       - name: Install Dependencies
-          working-directory: ./hashx_frontend
-          run: npm install
+        working-directory: ./hashx_frontend
+        run: npm install
 
       - name: Test React Build
           working-directory: ./hashx_frontend
