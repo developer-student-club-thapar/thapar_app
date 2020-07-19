@@ -6,17 +6,17 @@ on:
 
 jobs:
   testReact:
-
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: '12.x'
       - name: Install Dependencies
+        working-directory: ./hashx_frontend
         run: npm install
-      - name: Build JS Files
+
+      - name: Test React Build
+        working-directory: ./hashx_frontend
         run: npm run build
-      - name: Test JS Files
-        run: npm run devtest      
