@@ -21,13 +21,13 @@ jobs:
         with:
           node-version: [10.x, 12.x]
 
-      - name: "CI"
+      - name: 'CI'
         working-directory: ./hashx_frontend
         run: npm ci
-      - name : "Build" 
+      - name: 'Build'
         working-directory: ./hashx_frontend
         run: npm run build --if-present
-      - name : "Test"
+      - name: 'Test'
         working-directory: ./hashx_frontend
         run: npm test
 
@@ -36,5 +36,5 @@ jobs:
         run: npm install
 
       - name: Test React Build
-          working-directory: ./hashx_frontend
-          run: npm run build
+        working-directory: ./hashx_frontend
+        run: npm run build
