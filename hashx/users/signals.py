@@ -56,17 +56,17 @@ def check_invite_code(sender , instance , *args , **kwargs):
             invite_user = invite_user.first()
             print(f'{invite_user.invite_code} found')
             invite_user.invited_users.add(instance.user)
-            invite_user.can_invite = True
         else:
             raise PermissionDenied
     else:
         raise PermissionDenied
 
 
-@receiver(post_save , sender = Student)
+@receiver(post_save , sender = User)
 def save_invite(sender , instance , created , **kwargs):
     if created:
-        user = instance.user
+        user = instance
         invite  = Invite.objects.create(user = user)
-        invite.invite_code = user.first_name[:3].upper() + get_random_string(5)
+        invite.invite_code = user.first_name[:4].upper() + get_random_string(4)
+        invite.can_invite = True
         invite.save()
