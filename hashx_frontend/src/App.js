@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+
 import firebase from './components/init-fcm';
-import { Provider } from 'react-redux';
-import SideNav from './components/SideNav';
 import { HashRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
@@ -16,10 +14,10 @@ const client = new ApolloClient({
   uri: '/graphql',
   credentials: 'include',
   request: (operation) => {
-    
+    const accessToken = localStorage.getItem('token');
     operation.setContext({
       headers: {
-
+        authorization : accessToken ?  `JWT {accessToken}` : '',
       },
     });
   },

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     "lostfound",
     "permission",
     "buzz",
+    "invite",
     "hostel",
     "forum",
     "notification",
