@@ -1,11 +1,14 @@
 from .models import Student, Verification
 from django.dispatch import receiver
+from django.core.exceptions import PermissionDenied 
 from asgiref.sync import sync_to_async
 from django.core.mail import EmailMessage
+from django.utils.crypto import get_random_string
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save, pre_save
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_text
+from invite.models import Invite
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 
@@ -44,3 +47,23 @@ def user_verification(sender, instance, *args, **kwargs):
     except Exception:
         print(Exception)
         instance.matched_in_database = False
+
+@receiver(pre_save , sender = Student)
+def check_invite_code(sender , instance , *args , **kwargs):
+    
+    if Invite.objects.filter(invite_code = instance.invited_code).exists():
+        invite_user = Invite.objects.get(invite_code = instance.invited_code)
+        print(f'{invite_user.invite_code} found')
+        invite_user.invited_users.add(instance.user)
+        instance.can_invite = True
+    else:
+        raise PermissionDenied
+
+
+@receiver(post_save , sender = Student)
+def save_invite(sender , instance , created , **kwargs):
+    if created:
+        user = instance.user
+        invite  = Invite.objects.create(user = user)
+        invite.invite_code = user.first_name[:3].upper() + get_random_string(5)
+        invite.save()

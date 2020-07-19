@@ -51,6 +51,9 @@ class Student(models.Model):
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
     matched_in_database = models.BooleanField(default=False)
+    #invite logic
+    can_invite = models.BooleanField(default=False)
+    invited_code = models.CharField(max_length=8 , null = True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
