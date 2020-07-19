@@ -6,7 +6,7 @@ import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import { spacing } from '@material-ui/system';
 import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
-import Overlay from '../components/Overlay/Overlay.jsx';
+// import Overlay from '../components/Overlay/Overlay.jsx';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -43,9 +43,7 @@ const Navbar = () => {
               animationDuration={0.5}
             />
           </Box>
-          <Box>
-            <Overlay isOpen={open} />
-          </Box>
+          <Box></Box>
           {/* <Overlay isOpen={open} setOpen={setOpen} /> */}
         </Toolbar>
       </AppBar>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Deck from '../components/Deck';
-import Scroll from '../components/Scroll';
+import Navbar from '../components/Landing/Navbar';
+import Deck from '../components/Landing/Deck';
+import Scroll from '../components/Landing/Scroll';
 
 import { spacing } from '@material-ui/system';
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme) =>
     iconGridContainer: {
       [theme.breakpoints.down('md')]: {
         flexDirection: 'row',
+        flexWrap: 'wrap-reverse',
         justify: 'flex-start',
       },
       [theme.breakpoints.up('md')]: {
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) =>
         alignItems: 'center',
       },
     },
-  })
+  }),
 );
 
 const LightTooltip = withStyles((theme) => ({

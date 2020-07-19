@@ -24,7 +24,7 @@ import '../styles/StudentDetailsForm.css';
 import { useMutation, useQuery, useLazyQuery } from '@apollo/react-hooks';
 import {
   SEND_STUDENT_DETAILS,
-  ALL_BATCHES,
+  GET_BATCHES,
   GET_BRANCHES,
 } from './AuthQueriesMutations';
 
@@ -45,7 +45,7 @@ const StudentDetailsForm = () => {
   const [
     getBatches,
     { loading: batchLoading, error: batchError, data: batchData },
-  ] = useLazyQuery(ALL_BATCHES);
+  ] = useLazyQuery(GET_BATCHES);
   const [
     getBranches,
     { loading: branchLoading, error: branchError, data: branchData },

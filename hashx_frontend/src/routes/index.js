@@ -11,25 +11,21 @@ import StudentDetailsForm from '../pages/StudentDetailsForm';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
-import Landing from '../pages/Landing';
+import LandingII from '../pages/Landing-temp';
 import TimeTable from '../pages/TimeTable';
+import Landing from '../pages/Landing';
 
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Landing} isRestricted />
-      <Route exact path="/dashboard" component={HomeAlt} isPrivate />
-      <Route exact path="/alternate" component={Home} isPrivate />
-      <Route
-        exact
-        path="/course/:content/:id"
-        component={CourseDetail}
-        isPrivate
-      />
-      <Route exact path="/pdfview" component={PdfView} isPrivate />
-      <Route exact path="/hostel" component={Hostel} isPrivate />
+      <Route exact path="/" component={Landing} />
+      <Route exact path="/dashboard" component={HomeAlt} />
+      <Route exact path="/alternate" component={Home} />
+      <Route exact path="/course/:content/:id" component={CourseDetail} />
+      <Route exact path="/pdfview" component={PdfView} />
+      <Route exact path="/hostel" component={Hostel} />
       <Route exact path="/timetable" component={TimeTable} />
-      <Route exact path="/private" component={PrivateTest} isPrivate />
+      <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} isRestricted />
       <Route
@@ -42,7 +38,7 @@ const Routes = () => {
         exact
         path="/studentdetailform"
         component={StudentDetailsForm}
-        isPrivateNew
+        New
       />
 
       {/* <Route component={Home} /> */}

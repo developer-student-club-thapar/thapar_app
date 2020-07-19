@@ -93,7 +93,7 @@ export default function Deck() {
       });
       if (!down && gone.size === cards.length)
         setTimeout(() => gone.clear() || set((i) => to(i)), 600);
-    }
+    },
   );
 
   return props.map(({ x, y, rot, scale }, i) => (
@@ -109,7 +109,7 @@ export default function Deck() {
         alignItems: 'center',
         transform: interpolate(
           [x, y],
-          (x, y) => `translate3d(${x}px,${y}px,0)`
+          (x, y) => `translate3d(${x}px,${y}px,0)`,
         ),
       }}
     >
@@ -122,9 +122,9 @@ export default function Deck() {
             className={classes.card}
             id="card-image"
             component="img"
-            alt="Contemplative Reptile"
-            image={require('../assets/' + cards[5 - i])}
-            title="Contemplative Reptile"
+            alt="Card"
+            image={require('../../assets/' + cards[5 - i])}
+            title="Card Image"
           />
         </Card>
       </animated.div>
