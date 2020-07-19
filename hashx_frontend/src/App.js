@@ -1,26 +1,25 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import firebase from './init-fcm';
-import store from '../store';
+import firebase from './components/init-fcm';
 import { Provider } from 'react-redux';
-import SideNav from './SideNav';
+import SideNav from './components/SideNav';
 import { HashRouter as Router } from 'react-router-dom';
-import Routes from '../routes';
-import history from '../services/history';
-import Nav from './Nav';
+import Routes from './routes';
+import history from './services/history';
+import Nav from './components/Nav';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-import UserContextProvider from '../context/UserProvider';
+import UserContextProvider from './context/UserProvider';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const client = new ApolloClient({
-  uri: 'graphql/',
+  uri: '/graphql',
   credentials: 'include',
   request: (operation) => {
-    const accessToken = localStorage.getItem('token');
+    
     operation.setContext({
       headers: {
-        authorization: accessToken ? `JWT ${accessToken}` : '',
+
       },
     });
   },
@@ -45,7 +44,6 @@ const App = () => {
   }, []);
 
   return (
-    <Provider store={store}>
       <ApolloProvider client={client}>
         <UserContextProvider>
           <Router history={history}>
@@ -55,7 +53,6 @@ const App = () => {
           </Router>
         </UserContextProvider>
       </ApolloProvider>
-    </Provider>
   );
 };
 
