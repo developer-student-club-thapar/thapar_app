@@ -20,9 +20,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: 'CI'
+      - name: 'CI Checks'
         working-directory: ./hashx_frontend
         run: npm ci
+      - name: Install Dependencies
+        working-directory: ./hashx_frontend
+        run: npm install        
       - name: 'Build'
         working-directory: ./hashx_frontend
         run: npm run build --if-present
@@ -30,10 +33,3 @@ jobs:
         working-directory: ./hashx_frontend
         run: npm test
 
-      - name: Install Dependencies
-        working-directory: ./hashx_frontend
-        run: npm install
-
-      - name: Test React Build
-        working-directory: ./hashx_frontend
-        run: npm run build
