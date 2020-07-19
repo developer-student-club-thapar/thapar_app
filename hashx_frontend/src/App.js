@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-
 import firebase from './components/init-fcm';
-import { HashRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 import Nav from './components/Nav';
@@ -11,13 +10,13 @@ import UserContextProvider from './context/UserProvider';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: '/graphql/',
   credentials: 'include',
   request: (operation) => {
     const accessToken = localStorage.getItem('token');
     operation.setContext({
       headers: {
-        authorization : accessToken ?  `JWT {accessToken}` : '',
+        authorization: accessToken ? `JWT ${accessToken}` : '',
       },
     });
   },
@@ -42,15 +41,15 @@ const App = () => {
   }, []);
 
   return (
-      <ApolloProvider client={client}>
-        <UserContextProvider>
-          <Router history={history}>
-            <div className="App">
-              <Routes />
-            </div>
-          </Router>
-        </UserContextProvider>
-      </ApolloProvider>
+    <ApolloProvider client={client}>
+      <UserContextProvider>
+        <Router history={history}>
+          <div className="App">
+            <Routes />
+          </div>
+        </Router>
+      </UserContextProvider>
+    </ApolloProvider>
   );
 };
 

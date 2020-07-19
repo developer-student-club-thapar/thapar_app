@@ -229,7 +229,7 @@ function SearchAppBar(props) {
               onClick={() => {
                 text !== 'Home'
                   ? props.history.push(`/${text.toLowerCase()}`)
-                  : props.history.push('/');
+                  : props.history.push('/dashboard');
               }}
             >
               <ListItemIcon style={{ color: '#FBF9FF' }}>

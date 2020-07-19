@@ -46,7 +46,7 @@ const Landing = () => {
       if (data !== null || data !== undefined) {
         const { token, user, newUser } = data.socialAuth;
         localStorage.setItem('token', token)
-        authenticate(user.id, user.username, token);
+        authenticate(user.id, user.username, token, newUser);
         if (newUser) {
           history.push(`/studentdetailform`);
         } else {
