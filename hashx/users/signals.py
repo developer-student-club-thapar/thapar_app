@@ -51,11 +51,19 @@ def user_verification(sender, instance, *args, **kwargs):
 @receiver(pre_save , sender = Student)
 def check_invite_code(sender , instance , *args , **kwargs):
     
+<<<<<<< HEAD
     if Invite.objects.filter(invite_code = instance.invited_code).exists() and Invite.objects.filter(invite_code=instance.invited_code).first().can_invite:
         invite_user = Invite.objects.get(invite_code = instance.invited_code)
         print(f'{invite_user.invite_code} found')
         invite_user.invited_users.add(instance.user)
         invite_user.can_invite = True
+=======
+    if Invite.objects.filter(invite_code = instance.invited_code).exists():
+        invite_user = Invite.objects.get(invite_code = instance.invited_code)
+        print(f'{invite_user.invite_code} found')
+        invite_user.invited_users.add(instance.user)
+        instance.can_invite = True
+>>>>>>> 927984750382bee2d32ed88b1058f6256cb82e66
     else:
         raise PermissionDenied
 
