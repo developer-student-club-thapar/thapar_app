@@ -49,9 +49,10 @@ class Course(models.Model):
         unique_together = [['name', 'code']]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=35)
+    name = models.CharField(max_length=75)
     code = models.CharField(max_length=10)
     course_site = models.URLField()  # Links to old field of the site
+    is_elective = models.BooleanField(default=False)
 
     credit = models.DecimalField(default=0.0, decimal_places=1, max_digits=3)
     l = models.PositiveSmallIntegerField(
@@ -106,9 +107,9 @@ class Branch(models.Model):
         ("SR", "Senior Year"),
     ]
 
-    year = models.CharField(max_length=2, choices=YEAR_IN_SCHOOL_CHOICES)
-    code = models.CharField(max_length=3, default=None, blank=True, null=True)
-    name = models.CharField(max_length=35, default=None, blank=True, null=True)
+    year = models.CharField(max_length=15, choices=YEAR_IN_SCHOOL_CHOICES)
+    code = models.CharField(max_length=5, default=None, blank=True, null=True)
+    name = models.CharField(max_length=75, default=None, blank=True, null=True)
     course = models.ManyToManyField(
         Course, default=None, blank=True)  # Important for SETUP
 

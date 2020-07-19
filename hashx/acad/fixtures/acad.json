@@ -393,7 +393,7 @@
     },
     {
         "model": "acad.branch",
-        "pk": "30965b70-c015-4b88-8374-ba05288132cf",
+        "pk": "9a8ff12c-cfb5-4181-ba6d-d1e34628f354",
         "fields": {
             "name": "Electronics (Instrumentation and Control) Engineering",
             "year": "Freshman",
