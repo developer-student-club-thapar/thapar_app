@@ -119,6 +119,37 @@ class Class(models.Model):
     # Public/Private On-OFF Switch
     private = models.BooleanField(default=False)
 
+    class Meta:
+        abstract = True
+        verbose_name = "Class"
+        verbose_name_plural = "Classes"
+
+
+class OnlineClass(Class):
+    # Link to join the meeting
+    meetingURL = models.URLField(max_length=200, null=True, blank=True)
+
+    # If the meeting is complete, URL of the recording of the URL
+    isCompleted = models.BooleanField(default=True)
+    recordingURL = models.URLField(max_length=200, null=True, blank=True)
+    time = models.DateTimeField()
+
+    class Meta:
+        verbose_name = "OnlineClass"
+        verbose_name_plural = "OnlineClasses"
+
+    def __str__(self):
+        return f"Lecture scheduled for {self.batch} by {self.instructor} for the course {self.course}." 
+
+
+class OfflineClass(Class):
+    # WHERE
+    location = models.ForeignKey(Location, on_delete=models.PROTECT)
+
+    class Meta:
+        verbose_name = "OfflineClass"
+        verbose_name_plural = "OfflineClasses"
+        
 
 class Holidays(models.Model):
     """
