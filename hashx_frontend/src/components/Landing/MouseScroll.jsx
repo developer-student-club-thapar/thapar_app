@@ -1,9 +1,9 @@
 import React from 'react';
-import './Scroll.css';
+import '../../styles/MouseScroll.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
-  root: {
+  mouseRoot: {
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Scroll = () => {
+const MouseScroll = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.mouseRoot}>
       <div className="mousey">
         <div className="scroller"></div>
       </div>
@@ -41,4 +41,4 @@ const Scroll = () => {
   );
 };
 
-export default Scroll;
+export default MouseScroll;
