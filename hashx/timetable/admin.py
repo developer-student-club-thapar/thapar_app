@@ -44,34 +44,6 @@ class LocationAdmin(admin.ModelAdmin):
     list_filter = ('published',)
 
 
-# @admin.register(Class)
-# class ClassAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'id',
-#         'type',
-#         'timetableboard',
-#         'created_date',
-#         'modified_date',
-#         'course',
-#         'day',
-#         'start_time',
-#         'end_time',
-#         'location',
-#         'published',
-#         'private',
-#     )
-#     list_filter = (
-#         'timetableboard',
-#         'created_date',
-#         'modified_date',
-#         'course',
-#         'day',
-#         'location',
-#         'published',
-#         'private',
-#     )
-
-
 @admin.register(Holidays)
 class HolidaysAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'date')
