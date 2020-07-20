@@ -51,6 +51,8 @@ class Student(models.Model):
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
     matched_in_database = models.BooleanField(default=False)
+    #invite logic
+    invited_code = models.CharField(max_length=8 , null = True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -70,12 +72,29 @@ class Student(models.Model):
 
 
 class Instructor(models.Model):
+
+    DEPARTMENTS = [
+        ("CHEM", "Chemical"),
+        ("BT", "Biotechnology"),
+        ("CIV", "Civil"),
+        ("COMP", "Computer"),
+        ("EI", "Electrical and Instrumentation"),
+        ("EC", "Electronics and Communication"),
+        ("MECH", "Mechanical"),
+        ("SCBC", "School of Chemistry and Biochemistry"),
+        ("SEE", "School of Energy and Environment"),
+        ("SMSS", "School of Humanities & Social Sciences"),
+        ("SOM", "School of Mathematics"),
+        ("SPMS", "School of Physics & Materials Science"),
+    ]
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50)
     user = models.OneToOneField(User, related_name='instructor',
                                 related_query_name='instructor',  on_delete=models.CASCADE, null=True)
     course_codinator = models.BooleanField(default=None, blank=True, null=True)
     email = models.EmailField(default=None, blank=True, null=True)
+    department = models.CharField(max_length=50, null=True, blank=True, choices=DEPARTMENTS)
     office = models.CharField(max_length=5)
     course = models.ManyToManyField(Course)
     batches = models.ManyToManyField(Batch)
@@ -85,6 +104,7 @@ class Instructor(models.Model):
     biography = models.CharField(max_length=10000)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
+
 
     class Meta:
         verbose_name = ("Instructor")
