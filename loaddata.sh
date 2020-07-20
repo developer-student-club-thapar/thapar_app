@@ -13,4 +13,5 @@ python3 manage.py migrate
 python3 manage.py loaddata acad
 python3 manage.py loaddata timetable
 python3 manage.py loaddata hostel
+python3 manage.py loaddata users
 python3 manage.py runserver
