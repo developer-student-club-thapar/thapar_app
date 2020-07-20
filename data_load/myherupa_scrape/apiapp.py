@@ -21,7 +21,7 @@ def fetch_data(resURL):
             l.append(list((name, file_id, webContentLink)))
     except:
         print("Didnt work")
-    print(l)
+    # print(l)
     return l
 
 
