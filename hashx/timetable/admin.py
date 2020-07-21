@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import TimetableBoard, Location, Class, Holidays
+from .models import TimetableBoard, Location, OnlineClass, OfflineClass, Holidays
 
 
 
@@ -44,36 +44,12 @@ class LocationAdmin(admin.ModelAdmin):
     list_filter = ('published',)
 
 
-@admin.register(Class)
-class ClassAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-        'type',
-        'timetableboard',
-        'created_date',
-        'modified_date',
-        'course',
-        'day',
-        'start_time',
-        'end_time',
-        'location',
-        'published',
-        'private',
-    )
-    list_filter = (
-        'timetableboard',
-        'created_date',
-        'modified_date',
-        'course',
-        'day',
-        'location',
-        'published',
-        'private',
-    )
-
-
 @admin.register(Holidays)
 class HolidaysAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'date')
     list_filter = ('date',)
     search_fields = ('name',)
+
+
+admin.site.register(OnlineClass)
+admin.site.register(OfflineClass)
