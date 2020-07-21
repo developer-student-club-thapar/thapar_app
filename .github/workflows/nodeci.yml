@@ -28,7 +28,7 @@ jobs:
         run: npm install        
       - name: 'Build'
         working-directory: ./hashx_frontend
-        run: npm run build --if-present
+        run: CI=false npm run build --if-present
       - name: 'Test'
         working-directory: ./hashx_frontend
         run: npm test
