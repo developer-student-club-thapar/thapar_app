@@ -29,6 +29,6 @@ jobs:
       - name: 'Build'
         working-directory: ./hashx_frontend
         run: CI=false npm run build --if-present
-      - name: 'Test'
-        working-directory: ./hashx_frontend
-        run: npm test --passWithNoTests
+      # - name: 'Test'
+      #   working-directory: ./hashx_frontend
+      #   run: npm test --passWithNoTests
