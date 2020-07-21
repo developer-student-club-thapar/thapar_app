@@ -9,7 +9,8 @@ with open('drive.csv') as data:
     reader = csv.reader(data)
     i = 0
     for row in reader:
-        filetype = re.sub('\s+', ' ', row[1])
+        filetype = re.sub('\s+', ' ', row[2]).strip()
+        # print(filetype)
         if filetype == "Notes & Slides":
             filetype = "0669dfc3-8dce-4a80-bd06-755a468a4c7d"
         elif filetype == "Books":
