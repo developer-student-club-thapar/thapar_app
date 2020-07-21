@@ -15,9 +15,6 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-      -name: Setup env
-      env:
-        CI: false
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -31,7 +28,7 @@ jobs:
         run: npm install        
       - name: 'Build'
         working-directory: ./hashx_frontend
-        run: npm run build --if-present
+        run: CI=false npm run build --if-present
       - name: 'Test'
         working-directory: ./hashx_frontend
         run: npm test
