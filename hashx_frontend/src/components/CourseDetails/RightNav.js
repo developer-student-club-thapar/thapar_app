@@ -1,12 +1,6 @@
 import React, { Fragment } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Bounce from 'react-reveal/Bounce';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconButton from '@material-ui/core/IconButton';
-import Popover from '@material-ui/core/Popover';
 import { NavLink } from 'react-router-dom';
 import '../../styles/RightNav.css';
 
@@ -68,7 +62,6 @@ const RightNav = ({ id, path }) => {
           <Grid
             container
             spacing={2}
-            style={{ textAlign: 'right', paddingLeft: '30px' }}
             className="hover-4"
             style={
               path === 'books'

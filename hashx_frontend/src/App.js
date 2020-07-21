@@ -3,7 +3,6 @@ import firebase from './components/init-fcm';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
-import Nav from './components/Nav';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import UserContextProvider from './context/UserProvider';

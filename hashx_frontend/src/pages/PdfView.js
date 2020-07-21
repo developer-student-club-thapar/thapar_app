@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, CssBaseline, Hidden, Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { useHistory } from 'react-router-dom';
@@ -31,6 +31,7 @@ const PdfView = () => {
             src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
             width="100%"
             height="700px"
+            title="pdf"
           ></iframe>
         </Grid>
       </Grid>
