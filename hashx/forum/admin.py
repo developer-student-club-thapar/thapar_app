@@ -36,7 +36,6 @@ class QuestionAdmin(admin.ModelAdmin):
     list_filter = (
         'category',
         'owner',
-        'file',
         'created_at',
         'updated_at',
         'solved',
