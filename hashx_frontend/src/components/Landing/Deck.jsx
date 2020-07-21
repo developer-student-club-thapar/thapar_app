@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import { useSprings, animated, interpolate } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 import './Desk.css';
 import { v4 as uuidv4 } from 'uuid';
 import { Card, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { display } from '@material-ui/system';
 
 const cards = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
 

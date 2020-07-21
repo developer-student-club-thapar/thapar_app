@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
-import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -24,7 +22,7 @@ const Notifications = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -69,7 +67,7 @@ const Notifications = () => {
         </h4>
 
         <a
-          href="#"
+          href="#!"
           style={{
             textDecoration: 'none',
             color: '#FBF9FF',
@@ -80,7 +78,7 @@ const Notifications = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </h5>
         </a>
-        <a href="#" style={{ textDecoration: 'none', color: '#FBF9FF' }}>
+        <a href="#!" style={{ textDecoration: 'none', color: '#FBF9FF' }}>
           <h5 style={{ marginLeft: '10px' }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -1,55 +1,33 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import {
-  Container,
-  CssBaseline,
-  Hidden,
-  Grid,
-  Paper,
-  FormHelperText,
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
+import React, { Fragment, useState } from 'react';
+import { Container, Grid, Paper } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
-import Animation from '../components/Animation';
 import NinjaAnimation from '../components/NinjaAnimation';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
 import '../styles/StudentDetailsForm.css';
-import { useMutation, useQuery, useLazyQuery } from '@apollo/react-hooks';
+import { useMutation, useLazyQuery } from '@apollo/react-hooks';
 import {
   SEND_STUDENT_DETAILS,
   GET_BATCHES,
   GET_BRANCHES,
 } from './AuthQueriesMutations';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  loginPaper: {
-    height: '100vh',
-    borderRadius: '0px',
-  },
-}));
-
 const StudentDetailsForm = () => {
-  let batchesMap = new Map();
-  let branchesMap = new Map();
-  const classes = useStyles();
-  const [
-    getBatches,
-    { loading: batchLoading, error: batchError, data: batchData },
-  ] = useLazyQuery(GET_BATCHES);
-  const [
-    getBranches,
-    { loading: branchLoading, error: branchError, data: branchData },
-  ] = useLazyQuery(GET_BRANCHES);
+  // let batchesMap = new Map();
+  // let branchesMap = new Map();
+
+  //****GraphQL Query *//
+  // const [
+  //   getBatches,
+  //   { loading: batchLoading, error: batchError, data: batchData },
+  // ] = useLazyQuery(GET_BATCHES);
+  // const [
+  //   getBranches,
+  //   { loading: branchLoading, error: branchError, data: branchData },
+  // ] = useLazyQuery(GET_BRANCHES);
+  //** *//
+
   // if (batchLoading || branchLoading) return 'Loading...';
   // if (batchError || branchError) return `Error! ${error.message}`;
   // batchData.allBatches.edges.map((batches) => {

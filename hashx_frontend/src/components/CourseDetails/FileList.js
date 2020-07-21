@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
-import { Link } from 'react-router-dom';
-import image from '../../assets/img.jpg';
 import { FILES_QUERY } from './Queries';
 
 const FileList = (props) => {
@@ -19,38 +17,40 @@ const FileList = (props) => {
   console.log(filesData);
   return (
     <Fragment>
-      {filesData.allFiles.edges.map((files) => {
-        const { thumbnailImage, name, file, id } = files.node;
-        return (
-          <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
-            <img
-              src={thumbnailImage}
-              style={{ borderRadius: '10px', cursor: 'pointer' }}
-              onClick={() => {
-                history.push(`/pdfview`); //file
-              }}
-            />
-            <div
-              style={{
-                position: 'relative',
-                bottom: '40px',
-                background: 'rgba(57, 57, 57, 0.5)',
-                width: '150px',
-                height: '40px',
-                borderRadius: '0px 0px 10px 10px',
-                cursor: 'pointer',
-                margin: 'auto',
-                textAlign: 'center',
-              }}
-              onClick={() => {
-                history.push(`/pdfview`);
-              }}
-            >
-              <div style={{ paddingTop: '10px' }}>{name}</div>
-            </div>
-          </Grid>
-        );
-      })}
+      {filesData.allFiles.edges &&
+        filesData.allFiles.edges.map((files) => {
+          const { thumbnailImage, name, id } = files.node;
+          return (
+            <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
+              <img
+                src={thumbnailImage}
+                style={{ borderRadius: '10px', cursor: 'pointer' }}
+                alt="thumbnail"
+                onClick={() => {
+                  history.push(`/pdfview`); //file
+                }}
+              />
+              <div
+                style={{
+                  position: 'relative',
+                  bottom: '40px',
+                  background: 'rgba(57, 57, 57, 0.5)',
+                  width: '150px',
+                  height: '40px',
+                  borderRadius: '0px 0px 10px 10px',
+                  cursor: 'pointer',
+                  margin: 'auto',
+                  textAlign: 'center',
+                }}
+                onClick={() => {
+                  history.push(`/pdfview`);
+                }}
+              >
+                <div style={{ paddingTop: '10px' }}>{name}</div>
+              </div>
+            </Grid>
+          );
+        })}
     </Fragment>
   );
 };

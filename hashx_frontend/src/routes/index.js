@@ -11,7 +11,6 @@ import StudentDetailsForm from '../pages/StudentDetailsForm';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
-import LandingII from '../pages/Landing-temp';
 import TimeTable from '../pages/TimeTable';
 import Landing from '../pages/Landing';
 

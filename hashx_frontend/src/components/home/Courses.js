@@ -2,14 +2,13 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import CoursesSkeleton from './CoursesSkeleton';
 import { motion } from 'framer-motion';
 
@@ -67,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     cursor: 'pointer',
   },
+  title: {
+    display: 'inline-block',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '30px',
+    },
+  },
 }));
 
 const Courses = (props) => {
@@ -85,7 +90,7 @@ const Courses = (props) => {
   if (loading) return <CoursesSkeleton />;
   if (error) {
     // return <CoursesSkeleton />;
-    console.log(error)
+    console.log(error);
   }
   console.log(data);
   console.log(props);
@@ -136,7 +141,7 @@ const Courses = (props) => {
         </Popover>
         <br />
         <br />
-        <h1 style={{ display: 'inline-block' }}>
+        <h1 className={classes.title}>
           <i
             className="fas fa-book fa-sm"
             style={{ display: 'inline-block' }}
@@ -146,7 +151,8 @@ const Courses = (props) => {
         <br />
         <br />
         <Grid container spacing={2} style={{ justifyContent: 'space-around' }}>
-          {data && data.allCourses !== null &&
+          {data &&
+            data.allCourses !== null &&
             data.allCourses.edges.map((course) => {
               const colorBG = `${RandomColor()}`;
               return (
@@ -166,7 +172,6 @@ const Courses = (props) => {
                   >
                     <Paper
                       elevation={0}
-                      
                       className={classes.courseCard}
                       style={{ backgroundColor: `${colorBG}` }}
                       onClick={() => {
