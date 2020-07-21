@@ -4,8 +4,6 @@ from django.contrib import admin
 from .models import TimetableBoard, Location, Class, Holidays
 
 
-
-
 @admin.register(TimetableBoard)
 class TimetableBoardAdmin(admin.ModelAdmin):
     list_display = (
@@ -65,7 +63,6 @@ class ClassAdmin(admin.ModelAdmin):
         'created_date',
         'modified_date',
         'course',
-        'day',
         'location',
         'published',
         'private',

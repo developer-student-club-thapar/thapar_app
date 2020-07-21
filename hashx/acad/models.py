@@ -137,9 +137,11 @@ class Branch(models.Model):
 
 class FirstYearBatch(models.Model):
     """
+
     This is being designed For For Handling Batchs for First Year 
     cause they follow a different pattern than most, rest 3 years ( 2 - 4 )
     When First Year Signs Up this is the Batch to be alloted
+
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -151,8 +153,10 @@ class FirstYearBatch(models.Model):
 
 class Batch(models.Model):
     """
+
     Valid Only for 2 - 4th Year 
     When 2-4 yearuser Signs Up this is the Batch to be alloted
+
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

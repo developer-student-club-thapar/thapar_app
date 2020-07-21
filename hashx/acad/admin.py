@@ -64,20 +64,6 @@ class BatchAdmin(admin.ModelAdmin):
     list_filter = ("branch", "GR", "created_date")
 
 
-@admin.register(Textbook)
-class TextbookAdmin(admin.ModelAdmin):
-    list_display = (
-        "id",
-        "name",
-        "auth_name",
-        "publisher",
-        "course",
-        "created_date",
-    )
-    list_filter = ("course", "created_date")
-    search_fields = ("name",)
-
-
 @admin.register(FileType)
 class FileTypeAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
@@ -104,7 +90,6 @@ class FileAdmin(admin.ModelAdmin):
         "course",
         "branch",
         "batch",
-        # "drivefolder",
         "published",
         "admin_starred",
         "is_reviewed",
@@ -113,10 +98,7 @@ class FileAdmin(admin.ModelAdmin):
     list_filter = (
         "type",
         "date_posted",
-        # "course",
-        # "branch",
         "batch",
-        # "drivefolder",
         "published",
         "admin_starred",
         "is_reviewed",
