@@ -9,6 +9,46 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = [ 'username', 'email', 'password1',
+        fields = ['username', 'email', 'password1',
                   'password2']
 
+
+class RegisterForm(forms.ModelForm):
+    password1 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={'placeholder': 'Password', 'class': 'form-control'},
+        ),
+    )
+    password2 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={'placeholder': 'Repeat Password', 'class': 'form-control'},
+        ),
+    )
+
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={'placeholder': 'Email', 'class': 'form-control'}),
+        max_length=254,
+    )
+
+    class Meta:
+        model = User
+        fields = ('email', 'password1', 'password2')
+
+
+class LoginForm(forms.ModelForm):
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={'placeholder': 'Password', 'class': 'form-control'},
+        ),
+    )
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={'placeholder': 'Username', 'class': 'form-control'}),
+        max_length=30,
+        required=True,
+    )
+
+    class Meta:
+        model = User
+        fields = ('username', 'password',)
