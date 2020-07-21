@@ -6,7 +6,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { Card, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-const cards = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+const cards = [
+  { image: '1.png', color: '#eee' },
+  { image: '2.png', color: '#f4f1de' },
+  { image: '3.png', color: '#fff1e6' },
+  { image: '4.png', color: '#ECE3C9' },
+  { image: '5.png', color: '##ffd0d5' },
+  { image: '6.png', color: '##a4c9d8' },
+];
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -46,10 +53,11 @@ const from = (i) => ({ x: 1000, rot: 0, scale: 1.5, y: 0 });
 const trans = (r, s) =>
   ` rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
-export default function Deck() {
+export default function Deck(props) {
+  const { setcolor } = props;
   const classes = useStyles();
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
-  const [props, set] = useSprings(cards.length, (i) => ({
+  const [prop, set] = useSprings(cards.length, (i) => ({
     ...to(i),
     from: from(i),
   }));
@@ -63,21 +71,25 @@ export default function Deck() {
       direction: [xDir],
       velocity,
     }) => {
-      let trigger = velocity > 0.2;
+      const trigger = velocity > 0.2;
+
       const dir = xDir < 0 ? -1 : 1;
       if (!down && trigger) gone.add(index);
       set((i) => {
         if (index !== i) return;
 
-        console.log(0, 0);
         const isGone = gone.has(index);
-        let x = isGone
+        const x = isGone
           ? (200 + window.innerWidth - 2 * 0) * dir
           : down
           ? xDelta + 0
           : 0;
-        let rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
-        let scale = down ? 1.1 : 1;
+        const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
+        if (isGone) {
+          setcolor(cards[5 - i].color);
+          console.log(cards[5 - i].color);
+        }
+        const scale = down ? 1.1 : 1;
 
         return {
           x,
@@ -90,12 +102,13 @@ export default function Deck() {
           },
         };
       });
-      if (!down && gone.size === cards.length)
+      if (!down && gone.size === cards.length) {
         setTimeout(() => gone.clear() || set((i) => to(i)), 600);
+      }
     },
   );
 
-  return props.map(({ x, y, rot, scale }, i) => (
+  return prop.map(({ x, y, rot, scale }, i) => (
     <animated.div
       // className="deck"
       key={uuidv4()}
@@ -122,7 +135,7 @@ export default function Deck() {
             id="card-image"
             component="img"
             alt="Card"
-            image={require('../../assets/' + cards[5 - i])}
+            image={require('../../assets/' + cards[5 - i].image)}
             title="Card Image"
           />
         </Card>
