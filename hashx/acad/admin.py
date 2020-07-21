@@ -95,6 +95,7 @@ class FileAdmin(admin.ModelAdmin):
     list_display = (
         "type",
         "file",
+        "web_content_link",
         "thumbnail_image",
         "date_posted",
         "name",
@@ -112,8 +113,8 @@ class FileAdmin(admin.ModelAdmin):
     list_filter = (
         "type",
         "date_posted",
-        "course",
-        "branch",
+        # "course",
+        # "branch",
         "batch",
         # "drivefolder",
         "published",
