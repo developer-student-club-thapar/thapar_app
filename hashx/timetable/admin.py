@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import TimetableBoard, Location, Class, Holidays
+from .models import TimetableBoard, Location, OnlineClass, OfflineClass, Holidays
 
 
 @admin.register(TimetableBoard)
