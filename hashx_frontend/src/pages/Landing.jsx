@@ -1,7 +1,7 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
 
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles/Landing.css';
 
 import Navbar from '../components/Landing/Navbar';
@@ -26,6 +26,8 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
+import { animated, useSpring } from 'react-spring';
+
 import IconButton from '@material-ui/core/IconButton';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -36,9 +38,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
-    root: {
-      backgroundColor: '#faf9f9',
-    },
+    root: {},
     page1Root: {
       position: 'relative',
       height: '100vh',
@@ -103,8 +103,9 @@ const LightTooltip = withStyles((theme) => ({
 }))(Tooltip);
 
 const Landing = () => {
+  const [color, setcolor] = useState('#eee');
   const classes = useStyles();
-  let history = useHistory();
+  const history = useHistory();
   const [
     socialMutation,
     { loading: socialLoading, error: socialError },
@@ -115,9 +116,9 @@ const Landing = () => {
         localStorage.setItem('token', token);
         authenticate(user.id, user.username, token, newUser);
         if (newUser) {
-          history.push(`/studentdetailform`);
+          history.push('/studentdetailform');
         } else {
-          history.push(`/`);
+          history.push('/');
         }
       }
     },
@@ -144,8 +145,10 @@ const Landing = () => {
     console.log('fail');
   };
 
+  const props = useSpring({ backgroundColor: color });
+
   return (
-    <div id="main-container" className={classes.root}>
+    <animated.div id="main-container" className={classes.root} style={props}>
       <div className={classes.page1Root}>
         <MouseScroll />
         <Navbar />
@@ -164,7 +167,7 @@ const Landing = () => {
                 {/* <Paper elevation={4} className={classes.deck}>
                 yo
               </Paper> */}
-                <Deck />
+                <Deck setcolor={setcolor} />
               </Box>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -262,7 +265,7 @@ const Landing = () => {
           </Grid>
         </Grid>
       </Box>
-    </div>
+    </animated.div>
   );
 };
 
