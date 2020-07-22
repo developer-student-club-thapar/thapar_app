@@ -51,8 +51,8 @@ class Student(models.Model):
     # Email Verification token sent on url
     token = models.UUIDField(default=uuid.uuid4)
     matched_in_database = models.BooleanField(default=False)
-    #invite logic
-    invited_code = models.CharField(max_length=8 , null = True)
+    # invite logic
+    invited_code = models.CharField(max_length=8, null=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -94,7 +94,8 @@ class Instructor(models.Model):
                                 related_query_name='instructor',  on_delete=models.CASCADE, null=True)
     course_codinator = models.BooleanField(default=None, blank=True, null=True)
     email = models.EmailField(default=None, blank=True, null=True)
-    department = models.CharField(max_length=50, null=True, blank=True, choices=DEPARTMENTS)
+    department = models.CharField(
+        max_length=50, null=True, blank=True, choices=DEPARTMENTS)
     office = models.CharField(max_length=5)
     course = models.ManyToManyField(Course)
     batches = models.ManyToManyField(Batch)
@@ -104,7 +105,9 @@ class Instructor(models.Model):
     biography = models.CharField(max_length=10000)
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
-
+    token = models.UUIDField(
+        unique=True, default=uuid.uuid4, editable=False)
+    is_email_verified = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = ("Instructor")

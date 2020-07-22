@@ -1,30 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import { Container, CssBaseline, Hidden, Grid, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { Fragment } from 'react';
+import { Container, Grid, Paper, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import Button from '@material-ui/core/Button';
-import Alert from '@material-ui/lab/Alert';
-import Snackbar from '@material-ui/core/Snackbar';
 import Animation from '../components/Animation';
 import GoogleLogin from 'react-google-login';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  loginPaper: {
-    height: '100vh',
-    borderRadius: '0px',
-  },
-}));
-
 const Register = () => {
-  const classes = useStyles();
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  // };
   const responseGoogle = (response) => {
     console.log(response);
   };
@@ -116,9 +99,5 @@ const Register = () => {
     </Fragment>
   );
 };
-
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
 
 export default Register;

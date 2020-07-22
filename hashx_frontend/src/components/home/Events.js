@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
-import Fade from 'react-reveal/Fade';
 import Maps from './Maps';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
   gridItem: {
     width: 'auto',
+  },
+  title: {
+    display: 'inline-block',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '30px',
+    },
   },
 }));
 
@@ -36,7 +39,7 @@ const Events = () => {
         }}
       >
         <br />
-        <h1 style={{ display: 'inline-block' }}>
+        <h1 className={classes.title}>
           <i
             className="fas fa-calendar-day fa-sm"
             style={{ display: 'inline-block' }}

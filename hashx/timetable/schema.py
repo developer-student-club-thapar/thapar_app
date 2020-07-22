@@ -2,7 +2,7 @@ import graphene
 import django_filters
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
-from .models import TimetableBoard , Holidays ,Location,Class
+from .models import TimetableBoard , Holidays ,Location, OnlineClass, OfflineClass
 
 class TimetableBoardFilter(django_filters.FilterSet):
     class Meta:
@@ -27,11 +27,11 @@ class HolidaysNode(DjangoObjectType):
 
 class ClassFilter(django_filters.FilterSet):
     class Meta:
-        model = Class
+        model = OnlineClass
         fields = '__all__'
 class ClassNode(DjangoObjectType):
     class Meta:
-        model = Class
+        model = OnlineClass
         interfaces = (AuthenticatedNode , )
 class LocationFilter(django_filters.FilterSet):
     class Meta:

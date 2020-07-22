@@ -1,12 +1,8 @@
 import React, { Fragment, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import SearchBar from '../components/home/SearchBar';
-import Notifications from '../components/home/Notifications';
-import HomeImg from '../assets/HomeImg.svg';
 import Courses from '../components/home/Courses';
 import Announcements from '../components/home/Announcements';
 import Events from '../components/home/Events';
@@ -102,7 +98,7 @@ const Home = () => {
                     style={{ color: '#FBF9FF', marginTop: '20px' }}
                   />
                 </Paper>
-                <h3
+                <h4
                   style={{
                     marginLeft: '120px',
                     marginTop: '-50px',
@@ -111,7 +107,7 @@ const Home = () => {
                   }}
                 >
                   Courses
-                </h3>
+                </h4>
               </Paper>
             </Grid>
             <Grid item lg={3} xl={3}>
@@ -143,7 +139,7 @@ const Home = () => {
                       style={{ color: '#FBF9FF', marginTop: '20px' }}
                     />
                   </Paper>
-                  <h3
+                  <h4
                     style={{
                       marginLeft: '100px',
                       marginTop: '-50px',
@@ -152,7 +148,7 @@ const Home = () => {
                     }}
                   >
                     Today's Events
-                  </h3>
+                  </h4>
                 </Paper>
               </a>
             </Grid>
@@ -185,7 +181,7 @@ const Home = () => {
                     style={{ color: '#FBF9FF', marginTop: '20px' }}
                   />
                 </Paper>
-                <h3
+                <h4
                   style={{
                     marginLeft: '100px',
                     marginTop: '-50px',
@@ -194,7 +190,7 @@ const Home = () => {
                   }}
                 >
                   Mess Menu
-                </h3>
+                </h4>
               </Paper>
             </Grid>
             <Grid item lg={3} xl={3}>
@@ -225,7 +221,7 @@ const Home = () => {
                     style={{ color: '#FBF9FF', marginTop: '20px' }}
                   />
                 </Paper>
-                <h3
+                <h4
                   style={{
                     marginLeft: '100px',
                     marginTop: '-50px',
@@ -234,7 +230,7 @@ const Home = () => {
                   }}
                 >
                   Time Table
-                </h3>
+                </h4>
               </Paper>
             </Grid>
           </Grid>

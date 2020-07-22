@@ -1,13 +1,12 @@
-import React, { Fragment, useRef } from 'react';
+import React, { Fragment } from 'react';
 import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 import Nav from '../components/Nav';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { useHistory, NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import RightNav from '../components/CourseDetails/RightNav';
 import Books from '../components/CourseDetails/Books';
@@ -15,16 +14,7 @@ import Notes from '../components/CourseDetails/Notes';
 import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
 const CourseDetail = (props) => {
-  const classes = useStyles();
   const history = useHistory();
   const id = props.match.params.id;
   const path = history.location.pathname.split('/')[2];
