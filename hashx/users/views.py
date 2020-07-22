@@ -66,10 +66,10 @@ def loginpage(request):
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
         if user is not None:
-            # if user.is_active:
-            login(request, user)
-            # print("logged in")
-            return render(request, 'acad/homepage.html')
+            if user.is_active:
+                login(request, user)
+                # print("logged in")
+                return render(request, 'acad/homepage.html')
         else:
             # print("nope")
             messages.error(request, 'Username or Password is Incorrect')
