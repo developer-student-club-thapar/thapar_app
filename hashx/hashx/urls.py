@@ -25,6 +25,7 @@ from graphql_jwt.decorators import jwt_cookie
 from users.views import activate_account
 from social_django.utils import load_strategy
 from django.conf.urls.static import static
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
@@ -40,8 +41,10 @@ urlpatterns = [
     ),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("confirm/<uidb64>/<token>/", activate_account, name="activate"),
+    path('accounts/', include('allauth.urls')),
+    # path('users/', include('users.urls')),
     # path('profile/', user_views.profile, name='profile'),
-    # path('', include('users.urls'))
+    path('', include('users.urls'))
 ]
 if settings.DEBUG:
     urlpatterns += [

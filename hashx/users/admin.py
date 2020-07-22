@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from .models import Student, Instructor, Verification
 
+
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = (
@@ -39,10 +40,12 @@ class InstructorAdmin(admin.ModelAdmin):
         'email',
         'office',
         'created_date',
+        'token',
     )
     list_filter = ('user', 'course_codinator', 'created_date')
     raw_id_fields = ('course',)
     search_fields = ('name',)
+
 
 @admin.register(Verification)
 class VerificationAdmin(admin.ModelAdmin):
