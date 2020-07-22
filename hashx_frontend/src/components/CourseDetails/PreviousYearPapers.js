@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useHistory } from 'react-router-dom';
 import { FILE_TYPE_QUERY } from './Queries';
 import FileList from './FileList';
+import { secondaryColor } from '../../theme/theme';
 
 const PreviousYearPapers = (props) => {
   let history = useHistory();
@@ -23,7 +24,9 @@ const PreviousYearPapers = (props) => {
   if (!fileTypeData || fileTypeData === undefined) {
     return <div>No Files</div>;
   }
-  const typeId = fileTypeData.allFiletypes.edges[0].node.id;
+  const typeId =
+    fileTypeData.allFiletypes.edges[0] &&
+    fileTypeData.allFiletypes.edges[0].node.id;
   return (
     <Fragment>
       <Paper
@@ -32,7 +35,7 @@ const PreviousYearPapers = (props) => {
           //   width: "550px",
           borderRadius: '20px',
           textAlign: 'center',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
           marginTop: '-30px',
         }}

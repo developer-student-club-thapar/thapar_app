@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import { secondaryColor } from '../../theme/theme';
 
 const Discussions = () => {
   return (
@@ -14,7 +15,7 @@ const Discussions = () => {
             //   width: "550px",
             borderRadius: '20px',
 
-            backgroundColor: '#2C3055',
+            backgroundColor: `${secondaryColor}`,
             color: '#FBF9FF',
             marginTop: '-30px',
           }}

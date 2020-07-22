@@ -13,7 +13,11 @@ const Timeline = () => {
   return (
     <>
       <Grid item xs={12}>
-        <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          themeSystem="standard"
+        />
       </Grid>
     </>
   );

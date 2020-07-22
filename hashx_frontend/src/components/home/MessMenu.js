@@ -6,6 +6,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
+import { secondaryColor } from '../../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -37,7 +38,7 @@ const MessMenu = () => {
           borderRadius: '20px',
           textAlign: 'center',
           height: '500px',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
         }}
       >
