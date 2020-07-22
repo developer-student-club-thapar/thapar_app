@@ -41,6 +41,7 @@ urlpatterns = [
     ),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("confirm/<uidb64>/<token>/", activate_account, name="activate"),
+    path('accounts/', include('allauth.urls')),
     # path('users/', include('users.urls')),
     # path('profile/', user_views.profile, name='profile'),
     path('', include('users.urls'))

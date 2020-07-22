@@ -9,17 +9,16 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1',
-                  'password2']
+        fields = ['username', 'email', 'password']
 
 
 class RegisterForm(forms.ModelForm):
-    password1 = forms.CharField(
+    password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Password', 'class': 'form-control'},
         ),
     )
-    password2 = forms.CharField(
+    confirm_password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={'placeholder': 'Repeat Password', 'class': 'form-control'},
         ),
@@ -33,7 +32,7 @@ class RegisterForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2')
+        fields = ('email', 'password', 'confirm_password')
 
 
 class LoginForm(forms.ModelForm):

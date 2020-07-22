@@ -13,6 +13,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm
+from django.core.mail import BadHeaderError, send_mail
 # Create your views here.
 
 
@@ -86,16 +87,17 @@ def signuppage(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             email = request.POST.get('email')
-            password1 = request.POST.get('password1')
-            password2 = request.POST.get('password2')
-            if password1 != password2:
-                messages.danger('Passwords Do not match')
+            password = request.POST.get('password')
+            confirm_password = request.POST.get('confirm_password')
+            if password != confirm_password:
+                messages.error(request, 'Passwords Do not match')
                 return render(request, 'users/register.html', context)
-            instructor = Instructor.objects.get(email=email)
-            if instructor:
+
+            if Instructor.objects.get(email=email):
+                instructor = Instructor.objects.get(email=email)
                 username = email.replace("@thapar.edu", '')
                 new_user = User.objects.create_user(
-                    username=username, email=email, password=password1, first_name=instructor.name)
+                    username=username, email=email, password=password, first_name=instructor.name)
                 instructor.user = new_user
                 iname = instructor.name
                 instructor.save()
@@ -103,8 +105,8 @@ def signuppage(request):
                     request, f' Welcome { iname } , Please Check your email ')
                 messages.success(
                     request, f' You Username is { username }, It will be required while logging in ')
-                return HttpResponse("< H1 > REGISTERD < /H1 >")
-                render(request, 'users/register.html', {'form': form})
+                return render(request, 'users/register.html', {'form': form})
+
             else:
                 messages.error(
                     request, 'Sorry we couldn\'t find your email please contact')
