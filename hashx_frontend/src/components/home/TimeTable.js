@@ -8,6 +8,7 @@ import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import Flip from 'react-reveal/Flip';
 import { Hidden } from '@material-ui/core';
+import { secondaryColor } from '../../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -39,7 +40,7 @@ const TimeTable = () => {
           borderRadius: '20px',
           //   textAlign: "center",
           height: '500px',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
         }}
       >

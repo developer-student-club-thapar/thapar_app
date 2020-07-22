@@ -11,6 +11,7 @@ import { gql } from 'apollo-boost';
 import { withRouter } from 'react-router-dom';
 import CoursesSkeleton from './CoursesSkeleton';
 import { motion } from 'framer-motion';
+import { secondaryColor } from '../../theme/theme';
 
 const RandomColor = () => {
   let colorValues = [
@@ -103,7 +104,7 @@ const Courses = (props) => {
           borderRadius: '20px',
           textAlign: 'center',
           height: '500px',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
         }}
       >
