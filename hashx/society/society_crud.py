@@ -2,6 +2,7 @@ from .models import Society
 from graphql_relay.node.node import from_global_id
 from .schema import SocietyNode
 import graphene
+from hashx.decorators import compare_users, same_user
 from graphene_django.types import DjangoObjectType
 
 
@@ -53,6 +54,7 @@ class UpdateSociety(graphene.relay.ClientIDMutation):
         user = graphene.String()
 
     @classmethod
+    @compare_users(same_user, Society)
     def mutate_and_get_payload(cls, root, info, **input):
         id = input.get('id')
         id = from_global_id(id)
@@ -63,12 +65,14 @@ class UpdateSociety(graphene.relay.ClientIDMutation):
         student_head = input.get('student_head')
         site_link = input.get('site_link')
         user = info.context.user
-        logo = info.context.FILES['logo']
-        image = info.context.FILES['image']
+        # if info.context.FILES['image']:
+        #     image = info.context.FILES['image']
+        # if info.context.FILES['logo']:
+        #     logo = info.context.FILES['logo']
         society = Society.objects.get(pk=id)
-        if user != society.user and not user.is_authenticated :
+        if user != society.user and not user.is_authenticated:
             raise Exception("Permission Denied")
-        else :
+        else:
             if name:
                 society.name = name
             if category:
@@ -81,9 +85,9 @@ class UpdateSociety(graphene.relay.ClientIDMutation):
                 society.site_link = site_link
             if user:
                 society.user = user
-            if image:
-                society.image = image
-            if logo:
-                society.logo = logo
+            # if image:
+            #     society.image = image
+            # if logo:
+            #     society.logo = logo
             society.save()
         return UpdateSociety(society=society)

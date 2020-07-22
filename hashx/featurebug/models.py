@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 import uuid
+from profanity.validators import validate_is_profane
 length = 100
 # Implementation Guidance From https://acrobat.uservoice.com/forums/590923-acrobat-for-windows-and-mac/filters/new
 
@@ -35,8 +36,8 @@ class FeaturenBug(models.Model):
     type = models.CharField(choices=TYPES, max_length=7)
     category = models.ForeignKey(FeaturenBugCategory, on_delete=models.PROTECT)
     status = models.ForeignKey(FeaturenBugStatus, on_delete=models.PROTECT)
-    title = models.CharField(max_length=length*3)
-    text = models.TextField(max_length=length*20)
+    title = models.CharField(max_length=length*3, validators=[validate_is_profane])
+    text = models.TextField(max_length=length*20, validators=[validate_is_profane])
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to="featurenbug_images",

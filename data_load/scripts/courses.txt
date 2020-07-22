@@ -1,0 +1,1180 @@
+
+        {
+            "model": "acad.course",
+            "pk": "6618d816-69cf-470d-983d-0d48def69e9a",
+            "fields": {
+                "name": "Bio Info and Stats",
+                "code": "UBT602"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "6801e74a-9659-4ce9-a211-568cb4ba6e2c",
+            "fields": {
+                "name": "Bio Sensors",
+                "code": "UBT508"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "8c14514d-d688-41ae-ad17-2f1fccda882e",
+            "fields": {
+                "name": "Animal Biology",
+                "code": "UBT601"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a6bd46c7-a276-4d2b-bdb5-7d96f7b56e65",
+            "fields": {
+                "name": "Bio Process Engineering",
+                "code": "UBT60"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "814e6668-4feb-4156-8e83-c0e4a9319a27",
+            "fields": {
+                "name": "Humanities",
+                "code": "UHU005"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "4be86e2a-0547-4efc-a888-09e430fe2a4e",
+            "fields": {
+                "name": "MOS Ciruit Design",
+                "code": "UEC609"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d23179f2-33c8-4bc5-8488-ebc04a4dd599",
+            "fields": {
+                "name": "Digital Communication",
+                "code": "UEC607"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f88a82ab-aff7-4856-992d-0efd6e6e51c7",
+            "fields": {
+                "name": "Image Processing and Computer Vision",
+                "code": "UEC705"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "37989531-a424-4f96-81e2-36c941465334",
+            "fields": {
+                "name": "Digital Signal Processing",
+                "code": "UEC502"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c275e6b7-e15f-49f9-9477-9fd8cf79f740",
+            "fields": {
+                "name": "Data Communication and Computer Networks",
+                "code": "UEC706"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "087c7ad1-99e2-44c1-8ba2-e94220363aab",
+            "fields": {
+                "name": "Machine Learning",
+                "code": "UCS611"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "820da07b-598b-4195-a1b9-7906677bfcaa",
+            "fields": {
+                "name": "Computer Architecture",
+                "code": "UEC509"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "557e72f6-8dd5-4d4d-86d8-0dc1077a6d59",
+            "fields": {
+                "name": "Electromagentic Field Theory and Transmission Lines",
+                "code": "UEC307"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "4225183e-9223-481f-88f1-92eafc6270d0",
+            "fields": {
+                "name": "Analog Communication Systems",
+                "code": "UEC401"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d237db4d-78e7-4f81-ba66-e5021275af4f",
+            "fields": {
+                "name": "Innovation and Entrepreneurship",
+                "code": "UTA012"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "bb17eaf8-2b43-4821-8256-a843c88f51bc",
+            "fields": {
+                "name": "Advanced Datastructures and algorithms",
+                "code": "UCS616"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f7e0385d-b9c1-49a7-8af5-ade69cf6dd1a",
+            "fields": {
+                "name": "Professional Practices",
+                "code": "UCS310"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "9810f20d-ca66-45a9-9366-af2595512325",
+            "fields": {
+                "name": "Theoryof Computation",
+                "code": "UCS701"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "92c0ab19-4fb0-4418-83c7-00489b283318",
+            "fields": {
+                "name": "Computer Architecture and Organisation",
+                "code": "UCS507"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "84101876-dcb8-4175-a224-22b66b344a0d",
+            "fields": {
+                "name": "Artificial Intelligence",
+                "code": "UCS521"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "2a6fc575-6e59-4dfb-bbd9-3c1d6f24cb00",
+            "fields": {
+                "name": "Microprocessors",
+                "code": "UCS617"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a25ebc29-d934-4eeb-bd7f-83043d65d470",
+            "fields": {
+                "name": "Computer Architecture",
+                "code": "UCS507"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "25fef985-945f-4d73-86ab-f4a248718c06",
+            "fields": {
+                "name": "Image Processing",
+                "code": "UCSXXX"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "0454434d-fd81-4dc2-b796-76303bcbebe2",
+            "fields": {
+                "name": "Software Engineering",
+                "code": "UCS503"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f17c349b-c920-4f64-b6f0-4b0091abbca8",
+            "fields": {
+                "name": "Embedded Systems",
+                "code": "UCS614"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "b8e65014-f429-4640-b3dd-818c5a335c5d",
+            "fields": {
+                "name": "Computer Architecture and Architecture",
+                "code": "UCS614"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fd19e30d-4aa6-4e10-81af-818b50e674b1",
+            "fields": {
+                "name": "Natural Language Processing",
+                "code": "UCSXXX"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "41755931-d5e0-4c05-aeb1-76df9477361b",
+            "fields": {
+                "name": "Matrix Computation",
+                "code": "UMCXXX"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "3107456e-b0d1-4913-bd0e-f6dcb86f611a",
+            "fields": {
+                "name": "GPU Computing",
+                "code": "UCS631"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fbf53cbe-3bf5-46a1-9523-6ca55c2c53df",
+            "fields": {
+                "name": "Mathematical Modeling and simulation",
+                "code": "UMC511"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d9d1ae7e-145c-4e5d-9968-9d82e261e9b8",
+            "fields": {
+                "name": "Financial Mathematics",
+                "code": "UMCXXX"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fc0748dd-d79f-4625-b3ae-86f0400458f7",
+            "fields": {
+                "name": "Cloud Computing",
+                "code": "UCS641"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "cd08add7-99f1-4506-96d1-f4846b334ac4",
+            "fields": {
+                "name": "Secure Coding",
+                "code": "UCS634"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "bc48567f-3089-461f-a5a4-b47bb6389f47",
+            "fields": {
+                "name": "Parellel and Distributed Computing",
+                "code": "UCS608"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d8814442-2f28-484a-973e-c8d7b18d447f",
+            "fields": {
+                "name": "Data Analytics",
+                "code": "UCS633"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "6da9e43d-1c77-44d5-9453-3dad38998c85",
+            "fields": {
+                "name": "Machine Learning",
+                "code": "UML501"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "e496eabc-3f6a-4e23-ad1a-3b32567ce8ac",
+            "fields": {
+                "name": "Cognitive Science",
+                "code": "UHU009"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "599862a6-7f8c-4732-9a5a-18dd6ce25de2",
+            "fields": {
+                "name": "Cyber Security",
+                "code": "UCS001"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "74feb989-72d1-4022-8f91-b4fe68c55978",
+            "fields": {
+                "name": "Introduction to Corporate Finance",
+                "code": "UHU008"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "e3b500bc-79ff-4bd9-b0be-a2323498bf27",
+            "fields": {
+                "name": "Introductory Course to French",
+                "code": "UHU006"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "5431b6c6-86be-4775-8ae0-c83d99765bf7",
+            "fields": {
+                "name": "Graph Theory",
+                "code": "UMA066"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "7ab7d62b-a9ca-4568-8b0f-579594b4d2df",
+            "fields": {
+                "name": "Manufacturing Technology",
+                "code": "UME515"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "ca6975bb-bd48-447c-9a7a-2ccf6c1c3384",
+            "fields": {
+                "name": "Development Biology",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "e8ab4fe5-57e6-4b5b-8472-f4483bb96f79",
+            "fields": {
+                "name": "Biochemistry 1",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d23039ad-7c84-4216-b8a5-ff5249afa854",
+            "fields": {
+                "name": "Microbiology",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "62fc0757-30eb-4382-aae4-4cb9b958d70f",
+            "fields": {
+                "name": "Professional Communication",
+                "code": "UHU003"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "b16a2c23-510f-4cc2-8f2c-19d8a9c60784",
+            "fields": {
+                "name": "Engineering Drawing 1",
+                "code": "UTA015"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "78d3fe3e-b070-4caa-875c-2e005247d100",
+            "fields": {
+                "name": "Linear Algebra",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c24e3c48-fa3c-4487-a8e5-5bb28033f7fa",
+            "fields": {
+                "name": "Mechanics",
+                "code": "UES009"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "919846bb-9627-4b5e-8efe-990079857088",
+            "fields": {
+                "name": "Introductory Mathematics 2",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "39f71db1-e473-497e-8928-78b4a79a3010",
+            "fields": {
+                "name": "Electronics",
+                "code": "UEC001"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "b7c072a2-063a-4152-a3ad-6d4ccb5de42f",
+            "fields": {
+                "name": "Introductionto Biotechnology",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "24924543-297c-4307-a551-b7a0bd1cc177",
+            "fields": {
+                "name": "Computer Science 1",
+                "code": "UTA017"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "95fea50d-56e1-45aa-ba9d-1e94bd6898fa",
+            "fields": {
+                "name": "Mathematics 1",
+                "code": "UMA003"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "7548a3d1-bb10-419a-bfdb-6318dbdc25f2",
+            "fields": {
+                "name": "Introductionto Bio Technology",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "efcad368-f97d-4947-9b67-15bf992b0437",
+            "fields": {
+                "name": "Electrical",
+                "code": "UEE001"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "2ef88d6c-5d10-404e-be2f-a249c73a7ea6",
+            "fields": {
+                "name": "Cell Biology and Genetics",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "14e33980-cceb-46cc-9e03-a64b812db0ac",
+            "fields": {
+                "name": "Principlesof Electronics",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "0ebbf374-dd4c-4cf3-ad29-c31d036a7ae5",
+            "fields": {
+                "name": "Probability and Statistics",
+                "code": "UBS102"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f46300a1-c978-4340-9f8b-c79381505309",
+            "fields": {
+                "name": "Environment",
+                "code": "UEN002"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "e1724bb6-c5e8-42a5-a34f-2808cc67dc77",
+            "fields": {
+                "name": "Discrete Mathematical Structures",
+                "code": "UCT101"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "5e37e58b-7160-465c-a038-1951576d1238",
+            "fields": {
+                "name": "Introductory Mathematics1",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "9d999510-d40d-4a52-8f65-67c9a0d3d892",
+            "fields": {
+                "name": "Electrical and Electronics",
+                "code": "UES013"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "63bf99e7-9dac-4a3b-8121-5690affcf80a",
+            "fields": {
+                "name": "Computer Science 2",
+                "code": "UTA009"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "1a980509-5669-46f3-84c7-bf6edd8febd1",
+            "fields": {
+                "name": "Business Communicationand Value Science - I I",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f92ce676-be38-4cef-b5f5-f77670159583",
+            "fields": {
+                "name": "Mathematics 2",
+                "code": "UMA004"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c5c34d88-803f-4657-b937-dd16651fcf3c",
+            "fields": {
+                "name": "Engineering Drawing 2",
+                "code": "UTA013"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "9c3d32d6-11bd-48f2-8a0c-2b96a4b460ae",
+            "fields": {
+                "name": "Fundamental Physics",
+                "code": "UPH009"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "79871fe7-2cf2-4a1c-8ce9-a3b7756c6993",
+            "fields": {
+                "name": "Applied Physics",
+                "code": "UPH004"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "87dada9d-1319-459e-a045-6162ba71b557",
+            "fields": {
+                "name": "Statistical Modelling",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "0034dbb0-a5ee-4ba9-b118-5a3bec2d92f0",
+            "fields": {
+                "name": "Applied Chemistry",
+                "code": "UCBOO8"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "3a162db1-ab56-4094-a6ed-6e0ec6f4a1c5",
+            "fields": {
+                "name": "Fundamentalof Economics",
+                "code": ""
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "4c56cb9e-8be5-44a4-bc65-5176a61d3504",
+            "fields": {
+                "name": "Fundamentalsof Computer Science",
+                "code": "UBS103"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "1275f116-d2db-4955-a912-6542721f5f07",
+            "fields": {
+                "name": "Biosafety and IPR",
+                "code": "UBT801"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fd99bbf8-cf59-41a0-a054-bc4c28a98491",
+            "fields": {
+                "name": "Industrial Biotechnology",
+                "code": "UBT404"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "9a770b48-3400-409f-9243-dbae1e879940",
+            "fields": {
+                "name": "Food Science",
+                "code": "UBT302"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f18de55b-18b6-4abb-a17f-84fe48c82be0",
+            "fields": {
+                "name": "Biochemistry2",
+                "code": "UBT303"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "7d7a1443-b977-4afa-ae6b-692a6aed9172",
+            "fields": {
+                "name": "Unitoperations",
+                "code": "UCH407"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c8131950-ab3d-4a37-be5c-0ecca807f1eb",
+            "fields": {
+                "name": "Immunotechnology",
+                "code": "UBT504"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "6311ac0a-7201-46e8-bf15-80ed39151ada",
+            "fields": {
+                "name": "Bioanalyticaltechniques 1",
+                "code": "UBT501"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a23c5895-a1a1-4745-8291-1f4804e2ac9d",
+            "fields": {
+                "name": "Molecularbiology",
+                "code": "UBT304"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "bde44bf1-b605-4bce-8c61-b1c48c47b8dd",
+            "fields": {
+                "name": "Biophysics 2",
+                "code": "UPH305"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d8f42ed7-d2d2-41a6-90c7-8ad14e9ce898",
+            "fields": {
+                "name": "Genetic and metabolicengineering",
+                "code": "UBT503"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "2470100d-29e5-43a2-9b6b-360b6ca304ce",
+            "fields": {
+                "name": "DC machine and transformer",
+                "code": "UEE301"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "75f45920-b62e-41ec-ba7a-994114d82c40",
+            "fields": {
+                "name": "Network Theory and Design",
+                "code": "UEE405"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f619ca90-d109-4fd1-9d89-616fd4a26c41",
+            "fields": {
+                "name": "Engineeringel Electromagnets",
+                "code": "UEE507"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fb6ae34c-ed28-4cdd-a79c-55cc0c4fadc7",
+            "fields": {
+                "name": "Transmission and distribution of power",
+                "code": "UEE404"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "2f0c9cd2-7b50-42bb-b460-d5cc69b5b157",
+            "fields": {
+                "name": "Analog and digital electronics",
+                "code": "UEE505"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "0c3c778e-4338-4465-888f-fca393f1747f",
+            "fields": {
+                "name": "Architecturedrawing and construction",
+                "code": "UCE306"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d71b2cdc-3f77-487f-9b81-582698c4a346",
+            "fields": {
+                "name": "Surveying",
+                "code": "UCE403"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f521387e-f88f-4d1b-8775-458595df1e4a",
+            "fields": {
+                "name": "Buildingmaterials",
+                "code": "UCE308"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "0a04b68e-a136-4114-b2f2-c653b7250da0",
+            "fields": {
+                "name": "Design of concrete structures",
+                "code": "UCE508"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "f493786b-2281-4a2b-9a1b-eeac6f24ad40",
+            "fields": {
+                "name": "Structure analysis",
+                "code": "UCE404"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d9648caa-8d36-4bb4-b88c-3cfc2c2dfb24",
+            "fields": {
+                "name": "Network Analysis and Synthesis",
+                "code": "UEE503"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "93e71c4f-d14f-429e-8007-34c2c35a2bfd",
+            "fields": {
+                "name": "Analog Devices and Circuits",
+                "code": "UEI408"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "371b3e78-9e09-4cf6-bcc3-ed3813a16262",
+            "fields": {
+                "name": "Electrical and Electronic Measurements",
+                "code": "UIE403"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a1f71d51-34af-4205-9366-af70c2c44c19",
+            "fields": {
+                "name": "Data Structures and Algorithms",
+                "code": "UCS613"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "bd24c47a-68f7-43da-abb8-f56ce076cfb1",
+            "fields": {
+                "name": "Engineering design 2",
+                "code": "UTA014"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "28370059-7738-4b75-b6cc-8cb3221ba578",
+            "fields": {
+                "name": "Thermofluids",
+                "code": "UES011"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c6ed329b-0606-45bf-b851-70a83dc0de55",
+            "fields": {
+                "name": "Optimization Techniques",
+                "code": "UMA031"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "87600115-8453-4d6d-ae2b-c2273bbdd297",
+            "fields": {
+                "name": "Digital System Design",
+                "code": "UEC612"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a2c7b586-a37a-47c3-89ad-b912b9ae0a3f",
+            "fields": {
+                "name": "Mechanicsofmachines",
+                "code": "UME306"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "1e312785-e22a-4aae-b4f6-dc7fc9acda0a",
+            "fields": {
+                "name": "Mechanics of machines",
+                "code": "UME306"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fd94376c-90e7-47ea-855c-70cafb2130ce",
+            "fields": {
+                "name": "Manufacturing Processes",
+                "code": "UTA002"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a3339278-ffdc-4d1c-a489-29d6f229af99",
+            "fields": {
+                "name": "Solids and structures",
+                "code": "UES010"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "8d98bf81-9148-443b-9bc3-b74edac208ed",
+            "fields": {
+                "name": "Industrial engineering",
+                "code": "UME515"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "ab9fc2eb-8476-4823-8025-ad195212c53c",
+            "fields": {
+                "name": "Analog Electronic Circuits",
+                "code": "UEC301"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "183b8239-9857-49bd-81f3-fe4c3a6de30d",
+            "fields": {
+                "name": "Design and analysis",
+                "code": "UTA015"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "d53898ef-0125-4aad-a06a-4bcc106fa18b",
+            "fields": {
+                "name": "Embedded Systems",
+                "code": "UEC605"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "2699db1d-dc40-4070-b3f7-4645e6c639eb",
+            "fields": {
+                "name": "Circuit Analysis and Synthesis",
+                "code": "UEC403"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "677b3873-da71-4527-b405-70c498bd3a39",
+            "fields": {
+                "name": "Probability and Information Theory",
+                "code": "UEC408"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "a263ef59-6990-49fe-8f92-3ec985eee1b9",
+            "fields": {
+                "name": "Engineering materials",
+                "code": "UES012"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c9139671-deb9-4d0d-be9f-43950de5a159",
+            "fields": {
+                "name": "Material and energy balance",
+                "code": "UCH301"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "6edec814-2851-4bbc-97e3-e461829b3faa",
+            "fields": {
+                "name": "Machine design 1",
+                "code": "UME504"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "5a8d52d9-4403-4b74-a5d4-920937a09dfc",
+            "fields": {
+                "name": "Mechatronics",
+                "code": "UME410"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "44ed3afa-f21a-42f0-8da8-f6c22c2fd8c0",
+            "fields": {
+                "name": "Energy and environment",
+                "code": "UEN002"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "fc9c4098-cd69-4d3a-a0de-08be163ea0be",
+            "fields": {
+                "name": "Engineeringdesign1",
+                "code": "UTA013"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "cff39536-a190-400c-a17b-de5d990b87ec",
+            "fields": {
+                "name": "Numerical analysis",
+                "code": "UMA007"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "cdfeaa13-90a7-4994-80c9-097ccd552f5e",
+            "fields": {
+                "name": "Signals and Systems",
+                "code": "UEC404"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "c5ef4507-c2f8-42db-9814-9fc02d490f95",
+            "fields": {
+                "name": "Probability and Statistics",
+                "code": "UCS409"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "6f58f108-5db9-4e34-91a5-ceb17530da36",
+            "fields": {
+                "name": "Data Structures and Algorithms",
+                "code": "UCS406"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "4e39a969-6e17-4164-bc54-646b968fcdf1",
+            "fields": {
+                "name": "Invention and Innovationin Computing",
+                "code": "UCS407"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "632812f4-ba94-45de-ae58-9d4a466b5430",
+            "fields": {
+                "name": "Discrete mathematical structures",
+                "code": "UCS405"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "daeff6f1-ac32-46d9-8359-7b370160e56a",
+            "fields": {
+                "name": "Computernetworks",
+                "code": "UCS510"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "8ffaf6ad-9d52-438e-8fb9-1252110d9fac",
+            "fields": {
+                "name": "Measurement Science and Techniques",
+                "code": "UES034"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "3cd92793-69b8-4838-b802-244b70ac4de1",
+            "fields": {
+                "name": "Database Management System",
+                "code": "UCS310"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "aa9530ca-3126-4420-9555-863cdae5207c",
+            "fields": {
+                "name": "Operating system",
+                "code": "UCS303"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "5a1aff4c-2a00-4536-9472-0df109fbae0c",
+            "fields": {
+                "name": "Chemical process engineering",
+                "code": "UCH507"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "db3bbd4f-09e0-4614-8e19-da1fac2dbe5d",
+            "fields": {
+                "name": "Fluid and particle mechanics",
+                "code": "UCH401"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "3c5729fa-5217-4e60-bfb4-d99f6ee928ae",
+            "fields": {
+                "name": "Heat transfer",
+                "code": "UCH402"
+                }
+        },
+            
+        {
+            "model": "acad.course",
+            "pk": "479c1b5d-1005-48e8-b256-a919eddd8cc2",
+            "fields": {
+                "name": "Thermodynamics",
+                "code": "UCH303"
+                }
+        },
+            ]

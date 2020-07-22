@@ -8,6 +8,7 @@ import uuid
 from django.utils import timezone
 from django.urls import reverse
 from django.utils.text import slugify
+from acad.models import File
 # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
 
@@ -40,6 +41,8 @@ class Question(models.Model):
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='questions')
     title = models.CharField(max_length=150, unique=True)
+    file = models.ForeignKey(
+        File, on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.SlugField(max_length=150, unique=True, editable=False)
     content = models.TextField(max_length=50000, blank=False, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)

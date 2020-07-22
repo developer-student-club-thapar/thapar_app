@@ -2,19 +2,21 @@ from django.db import models
 from django.urls import reverse
 import uuid
 from django.utils import timezone
+
 # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 from acad.models import Course, Branch, Batch
 from django.contrib.auth.models import User
+
 # Functions need to written for each of the models
 
 DAYS = [
-    ("Monday", 'Monday'),
+    ("Monday", "Monday"),
     ("Tuesday", "Tuesday"),
     ("Wednesday", "Wednesday"),
     ("Thursday", "Thursday"),
     ("Friday", "Friday"),
     ("Saturday", "Saturday"),
-    ("Sunday", "Sunday")
+    ("Sunday", "Sunday"),
 ]
 
 
@@ -24,15 +26,17 @@ class TimetableBoard(models.Model):
     start_repetion = models.DateTimeField()
     end_repetition = models.DateTimeField()
     batch = models.OneToOneField(
-        Batch, on_delete=models.SET_NULL, null=True, blank=True)
+        Batch, on_delete=models.SET_NULL, null=True, blank=True
+    )
     admin_user = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+        User, on_delete=models.SET_NULL, null=True, blank=True
+    )
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(null=True)
 
     class Meta:
-        verbose_name = ("Timetable")
-        verbose_name_plural = ("Timetables")
+        verbose_name = "Timetable"
+        verbose_name_plural = "Timetables"
 
     def __str__(self):
         return self.name
@@ -43,10 +47,13 @@ class TimetableBoard(models.Model):
 
 class Location(models.Model):
     """
+
     This Location Model is used to contain all the non resendital buildings that are in Thapar 
     It Connects to both the TimeTable Locations and the Society Event Location. 
     This Database needs to be populated by the members Team
+
     """
+
     BUILDING = [
         ("TAN", "TAN"),
         ("LP", "LP"),
@@ -65,12 +72,11 @@ class Location(models.Model):
         ("AUDI", "Auditorium"),
         ("GH", "Guest House"),
         ("SP", "Sports Ground"),  # Fill Room no. with Game Names in this field
-
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     building = models.CharField(max_length=4, choices=BUILDING)
-    room = models.CharField(max_length=10,  null=True)
+    room = models.CharField(max_length=10, null=True)
     floor = models.PositiveSmallIntegerField(null=True)
 
     published = models.BooleanField(default=True)
@@ -78,15 +84,15 @@ class Location(models.Model):
 
     # Latitude and Logitude Data
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
-    latitute = models.DecimalField(max_digits=9, decimal_places=6)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
     location_url = models.URLField(null=True)  # Google Map link for location
     # Maybe connect online DWG CAD files in it one day 😂 so that it can be made as a virtual campus who knows LOLLL
 
     def __str__(self):
         if self.room:
-            return f'{self.building} {self.room}'
+            return f"{self.building} {self.room}"
         else:
-            return f'{self.building}'
+            return f"{self.building}"
 
 
 class Class(models.Model):
@@ -94,7 +100,7 @@ class Class(models.Model):
     TYPE = [
         ("Lecture", "Lecture"),
         ("Practical", "Practical"),
-        ("Tutorial", "Tutorial")
+        ("Tutorial", "Tutorial"),
     ]
     # Meta
     type = models.CharField(max_length=10, choices=TYPE)
@@ -103,10 +109,9 @@ class Class(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(null=True)
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
-    
 
     # WHEN
-    day = models.DateTimeField(max_length=10, choices=DAYS)
+    day = models.CharField(max_length=10, choices=DAYS)
     start_time = models.TimeField()
     end_time = models.TimeField()
 
@@ -117,6 +122,37 @@ class Class(models.Model):
     # Public/Private On-OFF Switch
     private = models.BooleanField(default=False)
 
+    class Meta:
+        abstract = True
+        verbose_name = "Class"
+        verbose_name_plural = "Classes"
+
+
+class OnlineClass(Class):
+    # Link to join the meeting
+    meetingURL = models.URLField(max_length=200, null=True, blank=True)
+
+    # If the meeting is complete, URL of the recording of the URL
+    isCompleted = models.BooleanField(default=True)
+    recordingURL = models.URLField(max_length=200, null=True, blank=True)
+    time = models.DateTimeField()
+
+    class Meta:
+        verbose_name = "OnlineClass"
+        verbose_name_plural = "OnlineClasses"
+
+    def __str__(self):
+        return f"Lecture scheduled for {self.batch} by {self.instructor} for the course {self.course}." 
+
+
+class OfflineClass(Class):
+    # WHERE
+    location = models.ForeignKey(Location, on_delete=models.PROTECT)
+
+    class Meta:
+        verbose_name = "OfflineClass"
+        verbose_name_plural = "OfflineClasses"
+        
 
 class Holidays(models.Model):
     """
@@ -124,6 +160,7 @@ class Holidays(models.Model):
     refer to this doc for populating
     https://drive.google.com/file/d/1IrTFyWEsGBiRxkKnN2l4Fr9Nnp_hqJmA/view
     """
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.TextField()
     date = models.DateField()

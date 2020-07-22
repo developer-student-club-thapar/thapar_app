@@ -4,16 +4,17 @@ import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import SearchBar from '../components/SearchBar';
-import Notifications from '../components/Notifications';
+import SearchBar from '../components/home/SearchBar';
+import Notifications from '../components/home/Notifications';
 import HomeImg from '../assets/HomeImg.svg';
-import Courses from '../components/Courses';
-import Announcements from '../components/Announcements';
-import Events from '../components/Events';
-import MessMenu from '../components/MessMenu';
-import TimeTable from '../components/TimeTable';
+import Courses from '../components/home/Courses';
+import Announcements from '../components/home/Announcements';
+import Events from '../components/home/Events';
+import MessMenu from '../components/home/MessMenu';
+import TimeTable from '../components/home/TimeTable';
+import Nav from '../components/Nav';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
@@ -22,6 +23,12 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  container: {
+    marginTop: '-100px',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '0px',
+    },
+  },
 }));
 
 const Home = () => {
@@ -29,6 +36,7 @@ const Home = () => {
   const eventsRef = useRef(null);
   return (
     <Fragment>
+      <Nav />
       <CssBaseline />
 
       <Grid
@@ -59,54 +67,14 @@ const Home = () => {
           </Paper>
         </Grid>
       </Grid>
-      <Container fixed>
-        <Grid
-          container
-          spacing={4}
-          style={{ position: 'relative', bottom: '100px' }}
-        >
-          <Grid item lg={3} xl={3}>
-            <Paper
-              elevation={0}
-              style={{
-                height: '160px',
-                backgroundColor: '#2C3055',
-                borderRadius: '20px',
-              }}
-            >
-              <Paper
-                elevation={0}
-                style={{
-                  height: '70px',
-                  width: '70px',
-                  backgroundImage:
-                    'linear-gradient(to bottom right, #7C73F0, #405AF9)',
-                  borderRadius: '20px',
-                  marginTop: '40px',
-                  marginLeft: '20px',
-                  display: 'inline-block',
-                  textAlign: 'center',
-                }}
-              >
-                <i
-                  className="fas fa-book fa-2x"
-                  style={{ color: '#FBF9FF', marginTop: '20px' }}
-                />
-              </Paper>
-              <h3
-                style={{
-                  marginLeft: '120px',
-                  marginTop: '-50px',
-                  color: '#FBF9FF',
-                  fontWeight: 'bold',
-                }}
-              >
-                Courses
-              </h3>
-            </Paper>
-          </Grid>
-          <Grid item lg={3} xl={3}>
-            <a href="#events">
+      <Hidden mdDown>
+        <Container fixed>
+          <Grid
+            container
+            spacing={4}
+            style={{ position: 'relative', bottom: '100px' }}
+          >
+            <Grid item lg={3} xl={3}>
               <Paper
                 elevation={0}
                 style={{
@@ -121,7 +89,7 @@ const Home = () => {
                     height: '70px',
                     width: '70px',
                     backgroundImage:
-                      'linear-gradient(to bottom right, #FA7087, #F5405F)',
+                      'linear-gradient(to bottom right, #7C73F0, #405AF9)',
                     borderRadius: '20px',
                     marginTop: '40px',
                     marginLeft: '20px',
@@ -130,7 +98,90 @@ const Home = () => {
                   }}
                 >
                   <i
-                    className="fas fa-calendar-day fa-2x"
+                    className="fas fa-book fa-2x"
+                    style={{ color: '#FBF9FF', marginTop: '20px' }}
+                  />
+                </Paper>
+                <h3
+                  style={{
+                    marginLeft: '120px',
+                    marginTop: '-50px',
+                    color: '#FBF9FF',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Courses
+                </h3>
+              </Paper>
+            </Grid>
+            <Grid item lg={3} xl={3}>
+              <a href="#events">
+                <Paper
+                  elevation={0}
+                  style={{
+                    height: '160px',
+                    backgroundColor: '#2C3055',
+                    borderRadius: '20px',
+                  }}
+                >
+                  <Paper
+                    elevation={0}
+                    style={{
+                      height: '70px',
+                      width: '70px',
+                      backgroundImage:
+                        'linear-gradient(to bottom right, #FA7087, #F5405F)',
+                      borderRadius: '20px',
+                      marginTop: '40px',
+                      marginLeft: '20px',
+                      display: 'inline-block',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <i
+                      className="fas fa-calendar-day fa-2x"
+                      style={{ color: '#FBF9FF', marginTop: '20px' }}
+                    />
+                  </Paper>
+                  <h3
+                    style={{
+                      marginLeft: '100px',
+                      marginTop: '-50px',
+                      color: '#FBF9FF',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    Today's Events
+                  </h3>
+                </Paper>
+              </a>
+            </Grid>
+            <Grid item lg={3} xl={3}>
+              <Paper
+                elevation={0}
+                style={{
+                  height: '160px',
+                  backgroundColor: '#2C3055',
+                  borderRadius: '20px',
+                }}
+              >
+                {' '}
+                <Paper
+                  elevation={0}
+                  style={{
+                    height: '70px',
+                    width: '70px',
+                    backgroundImage:
+                      'linear-gradient(to bottom right, #37B88F, #12A767)',
+                    borderRadius: '20px',
+                    marginTop: '40px',
+                    marginLeft: '20px',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                  }}
+                >
+                  <i
+                    className="fas fa-utensils fa-2x"
                     style={{ color: '#FBF9FF', marginTop: '20px' }}
                   />
                 </Paper>
@@ -142,95 +193,54 @@ const Home = () => {
                     fontWeight: 'bold',
                   }}
                 >
-                  Today's Events
+                  Mess Menu
                 </h3>
               </Paper>
-            </a>
-          </Grid>
-          <Grid item lg={3} xl={3}>
-            <Paper
-              elevation={0}
-              style={{
-                height: '160px',
-                backgroundColor: '#2C3055',
-                borderRadius: '20px',
-              }}
-            >
-              {' '}
+            </Grid>
+            <Grid item lg={3} xl={3}>
               <Paper
                 elevation={0}
                 style={{
-                  height: '70px',
-                  width: '70px',
-                  backgroundImage:
-                    'linear-gradient(to bottom right, #37B88F, #12A767)',
+                  height: '160px',
+                  backgroundColor: '#2C3055',
                   borderRadius: '20px',
-                  marginTop: '40px',
-                  marginLeft: '20px',
-                  display: 'inline-block',
-                  textAlign: 'center',
                 }}
               >
-                <i
-                  className="fas fa-utensils fa-2x"
-                  style={{ color: '#FBF9FF', marginTop: '20px' }}
-                />
+                <Paper
+                  elevation={0}
+                  style={{
+                    height: '70px',
+                    width: '70px',
+                    backgroundImage:
+                      'linear-gradient(to bottom right, #F2931F, #FF5E54)',
+                    borderRadius: '20px',
+                    marginTop: '40px',
+                    marginLeft: '20px',
+                    display: 'inline-block',
+                    textAlign: 'center',
+                  }}
+                >
+                  <i
+                    className="fas fa-calendar-alt fa-2x"
+                    style={{ color: '#FBF9FF', marginTop: '20px' }}
+                  />
+                </Paper>
+                <h3
+                  style={{
+                    marginLeft: '100px',
+                    marginTop: '-50px',
+                    color: '#FBF9FF',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Time Table
+                </h3>
               </Paper>
-              <h3
-                style={{
-                  marginLeft: '100px',
-                  marginTop: '-50px',
-                  color: '#FBF9FF',
-                  fontWeight: 'bold',
-                }}
-              >
-                Mess Menu
-              </h3>
-            </Paper>
+            </Grid>
           </Grid>
-          <Grid item lg={3} xl={3}>
-            <Paper
-              elevation={0}
-              style={{
-                height: '160px',
-                backgroundColor: '#2C3055',
-                borderRadius: '20px',
-              }}
-            >
-              <Paper
-                elevation={0}
-                style={{
-                  height: '70px',
-                  width: '70px',
-                  backgroundImage:
-                    'linear-gradient(to bottom right, #F2931F, #FF5E54)',
-                  borderRadius: '20px',
-                  marginTop: '40px',
-                  marginLeft: '20px',
-                  display: 'inline-block',
-                  textAlign: 'center',
-                }}
-              >
-                <i
-                  className="fas fa-calendar-alt fa-2x"
-                  style={{ color: '#FBF9FF', marginTop: '20px' }}
-                />
-              </Paper>
-              <h3
-                style={{
-                  marginLeft: '100px',
-                  marginTop: '-50px',
-                  color: '#FBF9FF',
-                  fontWeight: 'bold',
-                }}
-              >
-                Time Table
-              </h3>
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
-      <Container fixed style={{ marginTop: '-100px' }}>
+        </Container>
+      </Hidden>
+      <Container fixed className={classes.container}>
         <Grid container spacing={4}>
           <Grid item xs={12} lg={6} xl={6}>
             <TimeTable />
@@ -245,7 +255,7 @@ const Home = () => {
           <Grid item xs={12} lg={6} xl={6}>
             <Announcements />
           </Grid>
-          <Grid item lg={6} xl={6}>
+          <Grid item lg={6} xl={6} md={12}>
             <MessMenu />
           </Grid>
         </Grid>

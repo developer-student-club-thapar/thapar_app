@@ -1,7 +1,7 @@
 import graphene
 import django_filters
 from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
 from .models import FeaturenBugCategory , FeaturenBug , FeaturenBugStatus
 from django.db import models
 
@@ -28,7 +28,7 @@ class FeaturenBugFilter(django_filters.FilterSet):
 class FeaturenBugNode(DjangoObjectType):
     class Meta:
         model = FeaturenBug
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
 class FeaturenBugStatusFilter(django_filters.FilterSet):
     class Meta:
@@ -38,7 +38,7 @@ class FeaturenBugStatusFilter(django_filters.FilterSet):
 class FeaturenBugStatusNode(DjangoObjectType):
     class Meta:
         model = FeaturenBugStatus
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
 class FeaturenBugCategoryFilter(django_filters.FilterSet):
     class Meta:
         model = FeaturenBugCategory
@@ -46,17 +46,17 @@ class FeaturenBugCategoryFilter(django_filters.FilterSet):
 class FeaturenBugCategoryNode(DjangoObjectType):
     class Meta:
         model = FeaturenBugCategory
-        interfaces = (graphene.relay.Node , )
+        interfaces = (AuthenticatedNode , )
     
     
 
 class RelayQuery(graphene.ObjectType):
-    all_featurenbug =  DjangoFilterConnectionField(FeaturenBugNode , filterset_class=FeaturenBugFilter)
-    featurenbug = graphene.relay.Node.Field(FeaturenBugNode)
-    all_featurenbugstatus =  DjangoFilterConnectionField(FeaturenBugStatusNode , filterset_class=FeaturenBugStatusFilter)
-    featurenbugstatus = graphene.relay.Node.Field(FeaturenBugStatusNode)
-    all_featurenbugcategory =  DjangoFilterConnectionField(FeaturenBugCategoryNode , filterset_class=FeaturenBugCategoryFilter)
-    featurenbugcategory = graphene.relay.Node.Field(FeaturenBugCategoryNode)
+    all_featurenbug =  ViewAllAuthenticatedQuery(FeaturenBugNode , filterset_class=FeaturenBugFilter)
+    featurenbug = AuthenticatedNode.Field(FeaturenBugNode)
+    all_featurenbugstatus =  ViewAllAuthenticatedQuery(FeaturenBugStatusNode , filterset_class=FeaturenBugStatusFilter)
+    featurenbugstatus = AuthenticatedNode.Field(FeaturenBugStatusNode)
+    all_featurenbugcategory =  ViewAllAuthenticatedQuery(FeaturenBugCategoryNode , filterset_class=FeaturenBugCategoryFilter)
+    featurenbugcategory = AuthenticatedNode.Field(FeaturenBugCategoryNode)
 
 
 
