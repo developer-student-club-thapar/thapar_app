@@ -14,7 +14,7 @@ function RouteWrapper({
   const { newUser } = user;
   let isAuthenticated = localStorage.getItem('isAuthenticated');
 
-  isAuthenticated = isAuthenticated ? isAuthenticated : false;
+  isAuthenticated = isAuthenticated || false;
 
   if (isPrivate && !isAuthenticated) {
     return <Redirect to="/" />;

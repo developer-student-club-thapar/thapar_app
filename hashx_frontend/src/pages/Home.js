@@ -13,7 +13,7 @@ import TimeTable from '../components/home/TimeTable';
 
 const Home = () => {
   return (
-    <Fragment>
+    <>
       <CssBaseline />
       <Container fixed style={{ paddingTop: '20px' }}>
         <Grid container spacing={2} style={{}}>
@@ -93,7 +93,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 
