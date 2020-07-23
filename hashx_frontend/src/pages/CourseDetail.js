@@ -47,7 +47,7 @@ const CourseDetail = (props) => {
     }
   };
   return (
-    <Fragment>
+    <>
       {console.log(path)}
       <Nav />
       <CssBaseline />
@@ -350,7 +350,7 @@ const CourseDetail = (props) => {
           </Hidden>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

@@ -43,7 +43,7 @@ const Navbar = () => {
               animationDuration={0.5}
             />
           </Box>
-          <Box></Box>
+          <Box />
           {/* <Overlay isOpen={open} setOpen={setOpen} /> */}
         </Toolbar>
       </AppBar>

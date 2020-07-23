@@ -10,14 +10,14 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { onError } from 'apollo-link-error';
 import { ApolloLink, Observable } from 'apollo-link';
-import { getAccessToken, getRefreshToken } from './util/token';
+import { getAccessToken, getRefreshToken , setAccessToken } from './util/token';
 import { TokenRefreshLink } from 'apollo-link-token-refresh';
-import { setAccessToken } from './util/token';
+
 import jwtDecode from 'jwt-decode';
 
 const cache = new InMemoryCache({});
 
-let query = `mutation {
+const query = `mutation {
   refreshToken(refreshToken: "c869aa07fbe3e94f9eb8367404ced1cff18fa868") {
     token
   }
@@ -84,7 +84,7 @@ const client = new ApolloClient({
         });
         let k = await resp.json();
         console.log(k);
-        k = k['data']['refreshToken']['token'];
+        k = k.data.refreshToken.token;
         console.log(k);
         return JSON.stringify({ access_token: `${k}` });
       },

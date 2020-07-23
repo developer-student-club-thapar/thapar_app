@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Grid container spacing={2}>
         <Grid
           item
@@ -173,7 +173,7 @@ const Login = () => {
           <Animation />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

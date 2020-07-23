@@ -7,10 +7,10 @@ import { FILE_TYPE_QUERY } from './Queries';
 import FileList from './FileList';
 import { secondaryColor } from '../../theme/theme';
 
-//call file type query before loading the component
+// call file type query before loading the component
 
 const Tutorials = (props) => {
-  let history = useHistory();
+  const history = useHistory();
   const { id: courseId, path } = props;
   const {
     loading: fileTypeLoading,
@@ -30,7 +30,7 @@ const Tutorials = (props) => {
     fileTypeData.allFiletypes.edges[0] &&
     fileTypeData.allFiletypes.edges[0].node.id;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -48,7 +48,7 @@ const Tutorials = (props) => {
           <FileList typeId={typeId} courseId={courseId} history={history} />
         </Grid>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

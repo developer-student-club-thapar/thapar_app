@@ -5,7 +5,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { useHistory } from 'react-router-dom';
 
 const PdfView = () => {
-  let history = useHistory();
+  const history = useHistory();
 
   return (
     <>
@@ -32,7 +32,7 @@ const PdfView = () => {
             width="100%"
             height="700px"
             title="pdf"
-          ></iframe>
+          />
         </Grid>
       </Grid>
     </>

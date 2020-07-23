@@ -180,14 +180,12 @@ const Landing = () => {
               <Box p={1} textAlign="center">
                 <CssBaseline>
                   <GoogleLogin
-                    clientId={
-                      '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
-                    }
+                    clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
                     buttonText="Sign up with Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogleFail}
-                    cookiePolicy={'single_host_origin'}
-                    hostedDomain={'thapar.edu'}
+                    cookiePolicy="single_host_origin"
+                    hostedDomain="thapar.edu"
                   />
                 </CssBaseline>
               </Box>

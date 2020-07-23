@@ -17,7 +17,6 @@
     "apollo-boost": "^0.4.9",
     "apollo-link-token-refresh": "^0.3.1",
     "axios": "^0.19.2",
-    "eslint": "^6.6.0",
     "firebase": "^7.16.0",
     "framer-motion": "^1.11.0",
     "google-maps-react": "^2.0.6",
@@ -46,6 +45,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -65,8 +65,11 @@
   },
   "proxy": "http://localhost:8000/",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.4",

@@ -3,7 +3,7 @@ import { getAccessToken, setAccessToken } from '../util/token';
 import jwtDecode from 'jwt-decode';
 import { Route, Redirect } from 'react-router-dom';
 
-let query = `mutation {
+const query = `mutation {
   refreshToken(refreshToken: "0f1453d7ad2f7762fa351236a9c0bae994fb29bf") {
     token
   }
@@ -23,11 +23,9 @@ try {
       }),
     })
       .then((r) => r.json())
-      .then((data) => setAccessToken(data['data']['refreshToken']['token']));
+      .then((data) => setAccessToken(data.data.refreshToken.token));
   }
-} catch (err) {
- 
-}
+} catch (err) {}
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {

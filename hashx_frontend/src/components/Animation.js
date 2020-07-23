@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import student from '../assets/student.json';
 import Lottie from 'react-lottie';
 
@@ -12,14 +12,14 @@ const Animation = () => {
     },
   };
   return (
-    <Fragment>
+    <>
       <Lottie
         options={defaultOptions}
         height={500}
         width={500}
         style={{ marginTop: '80px', display: 'block' }}
       />
-    </Fragment>
+    </>
   );
 };
 

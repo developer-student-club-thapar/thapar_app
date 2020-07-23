@@ -7,7 +7,7 @@ import { secondaryColor } from '../../theme/theme';
 
 const RightNav = ({ id, path }) => {
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -187,7 +187,7 @@ const RightNav = ({ id, path }) => {
           </Grid>
         </NavLink>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

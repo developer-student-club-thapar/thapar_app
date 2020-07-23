@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 const Hostel = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <Nav />
       <CssBaseline />
       <Grid
@@ -189,7 +189,7 @@ const Hostel = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

@@ -32,7 +32,7 @@ const Home = () => {
   const classes = useStyles();
   const eventsRef = useRef(null);
   return (
-    <Fragment>
+    <>
       <Nav />
       <CssBaseline />
 
@@ -264,7 +264,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

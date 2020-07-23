@@ -4,11 +4,13 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: 'babel-eslint',
   extends: [
     'plugin:react/recommended',
-    'standard',
-    'prettier',
     'eslint:recommended',
+    'standard',
+    'standard-react',
+    'prettier',
   ],
   globals: {
     Atomics: 'readonly',

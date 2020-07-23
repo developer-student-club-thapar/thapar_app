@@ -18,10 +18,11 @@ class Maps extends Component {
         time: '5pm-8pm',
       },
     ],
-    showingInfoWindow: false, //Hides or the shows the infoWindow
-    activeMarker: {}, //Shows the active marker upon click
-    selectedPlace: {}, //Shows the infoWindow to the selected place upon a marker
+    showingInfoWindow: false, // Hides or the shows the infoWindow
+    activeMarker: {}, // Shows the active marker upon click
+    selectedPlace: {}, // Shows the infoWindow to the selected place upon a marker
   };
+
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -29,6 +30,7 @@ class Maps extends Component {
       showingInfoWindow: true,
     });
   };
+
   onClose = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -55,6 +57,7 @@ class Maps extends Component {
       );
     });
   };
+
   displayInfo = () => {
     return (
       <InfoWindow

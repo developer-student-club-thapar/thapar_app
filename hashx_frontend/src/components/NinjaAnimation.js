@@ -12,14 +12,14 @@ const NinjaAnimation = () => {
     },
   };
   return (
-    <Fragment>
+    <>
       <Lottie
         options={defaultOptions}
         height={500}
         width={500}
         style={{ marginTop: '80px', display: 'block' }}
       />
-    </Fragment>
+    </>
   );
 };
 
