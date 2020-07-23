@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
     background: 'transparent',
   },
   media: {
-    fill: 'yellow',
     width: 50,
     height: 50,
   },
