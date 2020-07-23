@@ -68,14 +68,11 @@ def loginpage(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                # print("logged in")
                 return render(request, 'acad/homepage.html')
         else:
-            # print("nope")
             messages.error(request, 'Username or Password is Incorrect')
             render(request, 'users/login.html', context)
 
-    # print("yeah wtf happened")
     return render(request, 'users/login.html', context)
 
 
