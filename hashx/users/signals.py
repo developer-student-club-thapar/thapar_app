@@ -11,7 +11,7 @@ from django.utils.encoding import force_bytes, force_text
 from invite.models import Invite
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from push_notifications.models import APNSDevice, GCMDevice
-
+import re
 
 # @receiver(post_save, sender=Student)
 # def send_cofirm_email(sender , instance , created , **kwargs):
@@ -68,6 +68,6 @@ def save_invite(sender, instance, created, **kwargs):
     if created:
         user = instance
         invite = Invite.objects.create(user=user)
-        invite.invite_code = user.first_name[:4].upper() + get_random_string(4)
+        invite.invite_code = re.sub('[^A-Za-z0-9]' , '' , user.first_name + user.last_name)[:4].upper() + get_random_string(4)
         invite.can_invite = True
         invite.save()
