@@ -54,24 +54,20 @@ class OnlineClassAdmin(admin.ModelAdmin):
         'day',
         'start_time',
         'end_time',
-        'location',
         'published',
         'private',
         'meetingURL',
         'isCompleted',
         'recordingURL',
-        'time',
     )
     list_filter = (
         'timetableboard',
         'created_date',
         'modified_date',
         'course',
-        'location',
         'published',
         'private',
         'isCompleted',
-        'time',
     )
 
 
