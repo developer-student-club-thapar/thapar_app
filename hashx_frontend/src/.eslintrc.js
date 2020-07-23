@@ -26,5 +26,6 @@ module.exports = {
     semi: 'off',
     'space-before-function-paren': 'off',
     'react/prop-types': 'off',
+    'no-unused-vars': 'warn',
   },
 };

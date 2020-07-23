@@ -7,6 +7,8 @@ import '../styles/Landing.css';
 import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
 import MouseScroll from '../components/Landing/MouseScroll';
+import CardList from '../components/Landing/CardList';
+
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
 import { useHistory } from 'react-router-dom';
@@ -86,6 +88,9 @@ const useStyles = makeStyles((theme) =>
       [theme.breakpoints.up('lg')]: { height: '570px', width: '550px' },
       [theme.breakpoints.up('xl')]: { height: '730px', width: '700px' },
     },
+    cardListGrid: {
+      paddingTop: theme.spacing(4),
+    },
   }),
 );
 
@@ -109,7 +114,7 @@ const Landing = () => {
   ] = useMutation(SOCIAL_AUTH, {
     onCompleted(data) {
       if (data !== null || data !== undefined) {
-        const { token, user, newUser , refreshToken } = data.socialAuth;
+        const { token, user, newUser, refreshToken } = data.socialAuth;
         setAccessToken(token);
         setRefreshToken(refreshToken);
         authenticate(user.id, user.username, token, newUser);
@@ -260,6 +265,15 @@ const Landing = () => {
             >
               To strong beginnings
             </Typography>
+          </Grid>
+          <Grid
+            container
+            item
+            direction="row"
+            justify="center"
+            className={classes.cardListGrid}
+          >
+            <CardList />
           </Grid>
         </Grid>
       </Box>
