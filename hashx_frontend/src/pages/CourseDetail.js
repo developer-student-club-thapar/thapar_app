@@ -13,6 +13,7 @@ import Books from '../components/CourseDetails/Books';
 import Notes from '../components/CourseDetails/Notes';
 import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
+import { secondaryColor, tertiaryColor } from '../theme/theme';
 
 const CourseDetail = (props) => {
   const history = useHistory();
@@ -60,7 +61,7 @@ const CourseDetail = (props) => {
             elevation={0}
             style={{
               height: '200px',
-              backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
+              backgroundImage: `${tertiaryColor}`,
               color: '#FFFFFF',
             }}
           >
@@ -81,7 +82,7 @@ const CourseDetail = (props) => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  style={{ backgroundColor: '#2C3055' }}
+                  style={{ backgroundColor: `${secondaryColor}` }}
                   onClick={() => {
                     window.open(
                       'https://sites.google.com/a/thapar.edu/uta018/l',
@@ -107,7 +108,7 @@ const CourseDetail = (props) => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >
@@ -148,7 +149,7 @@ const CourseDetail = (props) => {
                   elevation={0}
                   style={{
                     height: '160px',
-                    backgroundColor: '#2C3055',
+                    backgroundColor: `${secondaryColor}`,
                     borderRadius: '20px',
                   }}
                 >
@@ -189,7 +190,7 @@ const CourseDetail = (props) => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >
@@ -230,7 +231,7 @@ const CourseDetail = (props) => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >

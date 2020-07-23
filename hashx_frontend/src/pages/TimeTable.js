@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Timeline from '../components/Timetable/Timeline';
+import { secondaryColor, tertiaryColor } from '../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   mainTitle: {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   daysText: {
-    backgroundColor: '#2C3055',
+    backgroundColor: `${secondaryColor}`,
     color: '#ffffff',
     height: '50px',
   },
@@ -44,7 +45,7 @@ const TimeTable = () => {
             elevation={0}
             style={{
               height: '200px',
-              backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
+              backgroundImage: `${tertiaryColor}`,
               color: '#FFFFFF',
             }}
           >

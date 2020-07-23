@@ -27,6 +27,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import SearchBar from './home/SearchBar';
+import { tertiaryColor } from '../theme/theme';
 
 const drawerWidth = 250;
 
@@ -246,7 +247,7 @@ function SearchAppBar(props) {
       <AppBar
         position="fixed"
         style={{
-          backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
+          backgroundImage: `${tertiaryColor}`,
         }}
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,

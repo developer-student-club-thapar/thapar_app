@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { useHistory } from 'react-router-dom';
 import { FILE_TYPE_QUERY } from './Queries';
 import FileList from './FileList';
+import { secondaryColor } from '../../theme/theme';
 
 //call file type query before loading the component
 
@@ -26,7 +27,7 @@ const Tutorials = (props) => {
     return <div>No Files</div>;
   }
   const typeId =
-    fileTypeData.allFiletypes.edges[0].node.id &&
+    fileTypeData.allFiletypes.edges[0] &&
     fileTypeData.allFiletypes.edges[0].node.id;
   return (
     <Fragment>
@@ -36,7 +37,7 @@ const Tutorials = (props) => {
           //   width: "550px",
           borderRadius: '20px',
           textAlign: 'center',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
           marginTop: '-30px',
         }}
