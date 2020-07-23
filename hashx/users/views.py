@@ -62,17 +62,16 @@ def loginpage(request):
     }
     if request.method == 'POST':
         form = LoginForm(request.POST)
-        if form.is_valid():
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(username=email, password=password)
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return render(request, 'acad/homepage.html')
-            else:
-                messages.error(request, 'Username or Password is Incorrect')
-                render(request, 'users/login.html', context)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return render(request, 'acad/homepage.html')
+        else:
+            messages.error(request, 'Username or Password is Incorrect')
+            render(request, 'users/login.html', context)
 
     return render(request, 'users/login.html', context)
 
@@ -90,26 +89,27 @@ def signuppage(request):
             password = request.POST.get('password')
             confirm_password = request.POST.get('confirm_password')
             if password != confirm_password:
-                messages.error(request, 'Passwords Do not match')
+                messages.error(request, 'Passwords do not match')
                 return render(request, 'users/register.html', context)
 
-            if Instructor.objects.get(email=email):
+            try:
+                Instructor.objects.get(email=email)
                 instructor = Instructor.objects.get(email=email)
-                username = email.replace("@thapar.edu", '')
+                username = email.replace("@thapar.edu", "")
                 new_user = User.objects.create_user(
                     username=username, email=email, password=password, first_name=instructor.name)
                 instructor.user = new_user
                 iname = instructor.name
                 instructor.save()
                 messages.success(
-                    request, f' Welcome { iname } , Please Check your email ')
+                    request, f' Welcome { iname } , please check your email ')
                 messages.success(
-                    request, f' You Username is { username }, It will be required while logging in ')
+                    request, f' You Username is { username }. It will be required while logging in ')
                 return render(request, 'users/register.html', {'form': form})
 
-            else:
+            except:
                 messages.error(
-                    request, 'Sorry we couldn\'t find your email please contact')
+                    request, 'Sorry we couldn\'t find your email please contact us at projectvexio@gmail.com')
                 render(request, 'users/register.html', {'form': form})
 
     return render(request, 'users/register.html', context)
