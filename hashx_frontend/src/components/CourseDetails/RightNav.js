@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { NavLink } from 'react-router-dom';
 import '../../styles/RightNav.css';
+import { secondaryColor } from '../../theme/theme';
 
 const RightNav = ({ id, path }) => {
   return (
@@ -14,7 +15,7 @@ const RightNav = ({ id, path }) => {
           borderRadius: '20px',
           textAlign: 'center',
           height: '617px',
-          backgroundColor: '#2C3055',
+          backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
           marginTop: '-30px',
         }}

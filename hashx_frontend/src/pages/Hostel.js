@@ -9,6 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Discussions from '../components/Hostel/Discussions';
 import Complaints from '../components/Hostel/Complaints';
 import MessMenu from '../components/Hostel/MessMenu';
+import { tertiaryColor } from '../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -48,7 +49,7 @@ const Hostel = () => {
             elevation={0}
             style={{
               height: '230px',
-              backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
+              backgroundImage: `${tertiaryColor}`,
               color: '#FFFFFF',
             }}
           >
