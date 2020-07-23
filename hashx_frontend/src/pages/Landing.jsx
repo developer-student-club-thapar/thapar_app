@@ -18,8 +18,7 @@ import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
 // eslint-disable-next-line no-unused-vars
 import { spacing } from '@material-ui/system'; // dont delete this
 
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -265,15 +264,17 @@ const Landing = () => {
               To strong beginnings
             </Typography>
           </Grid>
-          <Grid
-            container
-            item
-            direction="row"
-            justify="center"
-            className={classes.cardListGrid}
-          >
-            <CardList />
-          </Grid>
+          <Container maxWidth="lg">
+            <Grid
+              container
+              item
+              direction="row"
+              justify="center"
+              className={classes.cardListGrid}
+            >
+              <CardList />
+            </Grid>
+          </Container>
         </Grid>
       </Box>
     </animated.div>
