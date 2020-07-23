@@ -1,5 +1,33 @@
 import React, { useState, createContext } from 'react';
+import { getAccessToken, setAccessToken } from '../util/token';
+import jwtDecode from 'jwt-decode';
+import { Route, Redirect } from 'react-router-dom';
 
+let query = `mutation {
+  refreshToken(refreshToken: "0f1453d7ad2f7762fa351236a9c0bae994fb29bf") {
+    token
+  }
+}`;
+
+try {
+  const { exp } = jwtDecode(getAccessToken());
+  if (Date.now() >= exp * 1000 || getAccessToken() === '') {
+    fetch('/graphql/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+      }),
+    })
+      .then((r) => r.json())
+      .then((data) => setAccessToken(data['data']['refreshToken']['token']));
+  }
+} catch (err) {
+ 
+}
 export const UserContext = createContext();
 
 const UserContextProvider = (props) => {
@@ -19,6 +47,10 @@ const UserContextProvider = (props) => {
   const authenticate = (id, username, token, newUser) => {
     setUser({ ...user, id, username, token, newUser });
   };
+
+  if (!user.token) {
+    user.token = getAccessToken();
+  }
 
   const logOut = () => {
     setUser({

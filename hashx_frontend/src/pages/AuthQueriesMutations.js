@@ -52,6 +52,7 @@ export const SOCIAL_AUTH = gql`
   mutation SocialAuth($accessToken: String!) {
     socialAuth(accessToken: $accessToken, provider: "google-oauth2") {
       token
+      refreshToken
       newUser
       user {
         username
