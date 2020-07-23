@@ -29,5 +29,7 @@ module.exports = {
     'space-before-function-paren': 'off',
     'react/prop-types': 'off',
     'no-unused-vars': 'warn',
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-handler-names': 'off',
   },
 };

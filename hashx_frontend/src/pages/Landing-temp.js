@@ -41,11 +41,14 @@ const useStyles = makeStyles((theme) => ({
 const Landing = () => {
   const classes = useStyles();
   const history = useHistory();
-  const [socialMutation , {loading:socialLoading , error:socialError}] = useMutation(SOCIAL_AUTH, {
+  const [
+    socialMutation,
+    { loading: socialLoading, error: socialError },
+  ] = useMutation(SOCIAL_AUTH, {
     onCompleted(data) {
       if (data !== null || data !== undefined) {
         const { token, user, newUser } = data.socialAuth;
-        localStorage.setItem('token', token)
+        localStorage.setItem('token', token);
         authenticate(user.id, user.username, token, newUser);
         if (newUser) {
           history.push(`/studentdetailform`);
@@ -89,7 +92,7 @@ const Landing = () => {
                 </h1>
                 <GoogleLogin
                   clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
-                  render={(renderProps) => (
+                  render={(handleRenderProps) => (
                     <Button
                       variant="contained"
                       color="secondary"
@@ -100,8 +103,8 @@ const Landing = () => {
                           arrow_right_alt
                         </Icon>
                       }
-                      onClick={renderProps.onClick}
-                      disabled={renderProps.disabled}
+                      onClick={handleRenderProps.onClick}
+                      onDisabled={handleRenderProps.disabled}
                     >
                       Sign up with Google
                     </Button>

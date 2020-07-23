@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ninja from '../assets/ninja.json';
 import Lottie from 'react-lottie';
 

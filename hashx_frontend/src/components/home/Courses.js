@@ -1,13 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
-import { Link , withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
+import { v4 as uuidv4 } from 'uuid';
 
 import CoursesSkeleton from './CoursesSkeleton';
 import { motion } from 'framer-motion';
@@ -159,6 +160,7 @@ const Courses = (props) => {
               return (
                 <Grid
                   item
+                  key={uuidv4()}
                   xs={6}
                   sm={4}
                   md={4}

@@ -1,7 +1,6 @@
 import React, { useState, createContext } from 'react';
 import { getAccessToken, setAccessToken } from '../util/token';
 import jwtDecode from 'jwt-decode';
-import { Route, Redirect } from 'react-router-dom';
 
 const query = `mutation {
   refreshToken(refreshToken: "0f1453d7ad2f7762fa351236a9c0bae994fb29bf") {

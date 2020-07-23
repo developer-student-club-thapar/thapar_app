@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, Grid, Paper, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import Animation from '../components/Animation';
@@ -57,7 +57,7 @@ const Register = () => {
                           color="secondary"
                           style={{ backgroundColor: '#DE5246' }}
                           onClick={handleRenderProps.onClick}
-                          onDisabled={handleRenderProps.onDisabled}
+                          onDisabled={handleRenderProps.disabled}
                         >
                           Sign up with Google
                         </Button>
