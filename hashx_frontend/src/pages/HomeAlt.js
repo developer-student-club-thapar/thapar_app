@@ -9,6 +9,7 @@ import Events from '../components/home/Events';
 import MessMenu from '../components/home/MessMenu';
 import TimeTable from '../components/home/TimeTable';
 import Nav from '../components/Nav';
+import { secondaryColor, tertiaryColor } from '../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +46,7 @@ const Home = () => {
             elevation={0}
             style={{
               height: '160px',
-              backgroundImage: 'linear-gradient(to right, #D04682 , #4A55EB)',
+              backgroundImage: `${tertiaryColor}`,
               color: '#FFFFFF',
             }}
           >
@@ -75,7 +76,7 @@ const Home = () => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >
@@ -116,7 +117,7 @@ const Home = () => {
                   elevation={0}
                   style={{
                     height: '160px',
-                    backgroundColor: '#2C3055',
+                    backgroundColor: `${secondaryColor}`,
                     borderRadius: '20px',
                   }}
                 >
@@ -157,7 +158,7 @@ const Home = () => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >
@@ -198,7 +199,7 @@ const Home = () => {
                 elevation={0}
                 style={{
                   height: '160px',
-                  backgroundColor: '#2C3055',
+                  backgroundColor: `${secondaryColor}`,
                   borderRadius: '20px',
                 }}
               >

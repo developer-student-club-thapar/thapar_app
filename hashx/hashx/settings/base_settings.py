@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.admindocs",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'axes',
     "graphene_django",
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
@@ -76,6 +79,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 'social_django.context_processors.backends',
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -97,7 +101,7 @@ GRAPHQL_JWT = {
     # ...
     "JWT_VERIFY_EXPIRATION": True,
     'JWT_LONG_RUNNING_REFRESH_TOKEN': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=30),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=30),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
@@ -108,7 +112,8 @@ AUTHENTICATION_BACKENDS = [
     # Insert New Auth if adding below this point
     "graphql_jwt.backends.JSONWebTokenBackend",
     "django.contrib.auth.backends.ModelBackend",
-    'social_core.backends.google.GoogleOAuth2'
+    "social_core.backends.google.GoogleOAuth2",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 GRAPH_MODELS = {
@@ -201,3 +206,22 @@ AXES_COOLOFF_TIME = 15  # No. of Hours after with Restrcited User will be allowe
 AXES_USE_USER_AGENT = True
 AXES_VERBOSE = True
 AXES_RESET_ON_SUCCESS = True
+
+
+# DJANGO ALL AUTH
+# Refer to this doc https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = LOGIN_URL
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[ Vexio.in ]"
+ACCOUNT_EMAIL_CONFIRMATION_COOLDOWN = 200
+ACCOUNT_EMAIL_MAX_LENGTH = 254
+ACCOUNT_FORMS = {'instructor-login': 'users.forms.LoginForm',
+                 'instructor-register': 'users.forms.RegisterForm'}
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_BLACKLIST = None
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True

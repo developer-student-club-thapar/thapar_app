@@ -14,7 +14,6 @@ import { SOCIAL_AUTH } from './AuthQueriesMutations';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import { UserContext } from '../context/UserProvider';
-
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
 import { spacing } from '@material-ui/system'; // dont delete this
 
@@ -26,9 +25,7 @@ import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
 import { animated, useSpring } from 'react-spring';
-
 import IconButton from '@material-ui/core/IconButton';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -36,6 +33,7 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { setAccessToken, setRefreshToken } from '../util/token';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -116,13 +114,14 @@ const Landing = () => {
   ] = useMutation(SOCIAL_AUTH, {
     onCompleted(data) {
       if (data !== null || data !== undefined) {
-        const { token, user, newUser } = data.socialAuth;
-        localStorage.setItem('token', token);
+        const { token, user, newUser, refreshToken } = data.socialAuth;
+        setAccessToken(token);
+        setRefreshToken(refreshToken);
         authenticate(user.id, user.username, token, newUser);
         if (newUser) {
           history.push('/studentdetailform');
         } else {
-          history.push('/');
+          history.push('/dashboard');
         }
       }
     },
