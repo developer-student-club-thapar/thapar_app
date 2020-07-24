@@ -4,11 +4,13 @@ module.exports = {
     es6: true,
     node: true,
   },
+  parser: 'babel-eslint',
   extends: [
     'plugin:react/recommended',
-    'standard',
-    'prettier',
     'eslint:recommended',
+    'standard',
+    'standard-react',
+    'prettier',
   ],
   globals: {
     Atomics: 'readonly',
@@ -26,5 +28,8 @@ module.exports = {
     semi: 'off',
     'space-before-function-paren': 'off',
     'react/prop-types': 'off',
+    'no-unused-vars': 'warn',
+    'react/no-unescaped-entities': 'off',
+    'react/jsx-handler-names': 'off',
   },
 };

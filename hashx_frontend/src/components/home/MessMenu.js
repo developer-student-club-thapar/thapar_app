@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Fade from 'react-reveal/Fade';
@@ -30,7 +30,7 @@ const MessMenu = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -69,7 +69,7 @@ const MessMenu = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" /> View More
               </h5>
             </Link>
           </Paper>
@@ -108,7 +108,7 @@ const MessMenu = () => {
           </div>
         </Fade>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

@@ -34,7 +34,7 @@ const Overlay = () => {
   });
   const classes = userStyle();
 
-  return <div></div>;
+  return <div />;
 };
 
 export default Overlay;

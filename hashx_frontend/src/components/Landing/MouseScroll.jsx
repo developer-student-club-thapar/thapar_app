@@ -35,7 +35,7 @@ const MouseScroll = () => {
   return (
     <div className={classes.mouseRoot}>
       <div className="mousey">
-        <div className="scroller"></div>
+        <div className="scroller" />
       </div>
     </div>
   );

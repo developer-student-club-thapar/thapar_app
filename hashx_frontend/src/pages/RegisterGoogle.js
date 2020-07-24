@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, Grid, Paper, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import Animation from '../components/Animation';
@@ -16,7 +16,7 @@ const Register = () => {
     console.log('fail');
   };
   return (
-    <Fragment>
+    <>
       <Grid container spacing={2}>
         <Grid
           item
@@ -50,24 +50,22 @@ const Register = () => {
                   <br />
                   <Grid item xs={12}>
                     <GoogleLogin
-                      clientId={
-                        '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
-                      }
-                      render={(renderProps) => (
+                      clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
+                      render={(handleRenderProps) => (
                         <Button
                           variant="contained"
                           color="secondary"
                           style={{ backgroundColor: '#DE5246' }}
-                          onClick={renderProps.onClick}
-                          disabled={renderProps.disabled}
+                          onClick={handleRenderProps.onClick}
+                          onDisabled={handleRenderProps.disabled}
                         >
                           Sign up with Google
                         </Button>
                       )}
                       onSuccess={responseGoogle}
                       onFailure={responseGoogleFail}
-                      cookiePolicy={'single_host_origin'}
-                      hostedDomain={'thapar.edu'}
+                      cookiePolicy="single_host_origin"
+                      hostedDomain="thapar.edu"
                     />
                   </Grid>
                 </Grid>
@@ -96,7 +94,7 @@ const Register = () => {
           <Animation />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

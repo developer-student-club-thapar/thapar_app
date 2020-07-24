@@ -31,7 +31,7 @@ const Notifications = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <IconButton
         color="inherit"
         style={{ height: '35px' }}
@@ -85,7 +85,7 @@ const Notifications = () => {
           </h5>
         </a>
       </Popover>
-    </Fragment>
+    </>
   );
 };
 

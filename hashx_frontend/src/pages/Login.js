@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Grid, Paper } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
@@ -35,7 +35,7 @@ const Login = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <Grid container spacing={2}>
         <Grid
           item
@@ -173,7 +173,7 @@ const Login = () => {
           <Animation />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

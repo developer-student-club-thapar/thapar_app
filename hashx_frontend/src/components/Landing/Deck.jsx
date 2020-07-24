@@ -135,7 +135,8 @@ export default function Deck(props) {
             id="card-image"
             component="img"
             alt="Card"
-            image={require('../../assets/' + cards[5 - i].image)}
+            image={require('../../assets/Landing-page-Cards/' +
+              cards[5 - i].image)}
             title="Card Image"
           />
         </Card>
