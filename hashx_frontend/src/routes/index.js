@@ -8,6 +8,7 @@ import CourseDetail from '../pages/CourseDetail';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import StudentDetailsForm from '../pages/StudentDetailsForm';
+import Dashboard from '../pages/Dashboard';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
@@ -19,6 +20,7 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard" component={HomeAlt} />
+      <Route exact path="/temp" component={Dashboard} />
       <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:content/:id" component={CourseDetail} />
       <Route exact path="/pdfview" component={PdfView} />

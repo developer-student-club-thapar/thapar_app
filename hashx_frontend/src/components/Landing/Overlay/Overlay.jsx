@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
+      cursor: 'pointer',
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
