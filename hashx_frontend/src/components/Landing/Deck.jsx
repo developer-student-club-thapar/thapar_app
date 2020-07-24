@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSprings, animated, interpolate } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
-import './Desk.css';
 import { v4 as uuidv4 } from 'uuid';
 import { Card, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,6 +17,7 @@ const cards = [
 const useStyles = makeStyles((theme) => ({
   card: {
     WebkitUserDrag: 'none',
+    userSelect: 'none',
     boxShadow: 'rgba(0, 0, 0, 0.1) 2px 5px 27px !important',
     [theme.breakpoints.down('sm')]: {
       height: '255px',
@@ -129,7 +129,7 @@ export default function Deck(props) {
         {...bind(i)}
         style={{ transform: interpolate([rot, scale], trans) }}
       >
-        <Card className="card">
+        <Card className="card" elevation={1}>
           <CardMedia
             className={classes.card}
             id="card-image"

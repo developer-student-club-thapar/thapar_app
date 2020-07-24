@@ -1,6 +1,5 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
-
 import React, { useState, useEffect, useContext } from 'react';
 import '../styles/Landing.css';
 
@@ -8,6 +7,7 @@ import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
 import MouseScroll from '../components/Landing/MouseScroll';
 import CardList from '../components/Landing/CardList';
+import AvatarButton from '../components/Landing/AvatarButton';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) =>
       position: 'relative',
       height: '100vh',
       width: '100vw',
-      overflowX: 'hidden',
+      overflow: 'hidden',
     },
     page2Root: {
       height: '100vh',
@@ -167,9 +167,6 @@ const Landing = () => {
           >
             <Grid item xs={12} md={7}>
               <Box className={classes.deckBox}>
-                {/* <Paper elevation={4} className={classes.deck}>
-                yo
-              </Paper> */}
                 <Deck setcolor={setcolor} />
               </Box>
             </Grid>
@@ -253,16 +250,30 @@ const Landing = () => {
           </Grid>
           <Grid item xs={12} md={6} style={{ alignSelf: 'center' }}>
             <Typography
-              variant="h4"
+              variant="h2"
               style={{
-                fontWeight: '900',
-                fontSize: '30px',
+                fontWeight: '700',
+                color: 'textSecondary',
                 textAlign: 'center',
                 display: 'block',
               }}
             >
               To strong beginnings
             </Typography>
+            <Box
+              m={3}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                outline: 'none',
+              }}
+            >
+              <AvatarButton
+                collapsed={false}
+                text="Virtual Campus Tour"
+                icon="https://www.svgrepo.com/show/131150/college.svg"
+              />
+            </Box>
           </Grid>
           <Container maxWidth="lg">
             <Grid
