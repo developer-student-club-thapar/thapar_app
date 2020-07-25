@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const SideNav = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <div id="mySidebar" className="sidebar">
         <div className="heading">
           <span>
@@ -96,7 +96,7 @@ const SideNav = () => {
           </Paper>
         </Zoom>
       </div>
-    </Fragment>
+    </>
   );
 };
 export default SideNav;

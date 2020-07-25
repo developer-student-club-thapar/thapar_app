@@ -17,7 +17,7 @@ const StudentDetailsForm = () => {
   // let batchesMap = new Map();
   // let branchesMap = new Map();
 
-  //****GraphQL Query *//
+  //* ***GraphQL Query *//
   // const [
   //   getBatches,
   //   { loading: batchLoading, error: batchError, data: batchData },
@@ -26,7 +26,7 @@ const StudentDetailsForm = () => {
   //   getBranches,
   //   { loading: branchLoading, error: branchError, data: branchData },
   // ] = useLazyQuery(GET_BRANCHES);
-  //** *//
+  //* * *//
 
   // if (batchLoading || branchLoading) return 'Loading...';
   // if (batchError || branchError) return `Error! ${error.message}`;
@@ -106,7 +106,7 @@ const StudentDetailsForm = () => {
   }
 
   return (
-    <Fragment>
+    <>
       <Grid container spacing={2}>
         <Grid
           item
@@ -255,7 +255,7 @@ const StudentDetailsForm = () => {
                       <br />
                       <Grid container spacing={2}>
                         <Grid item xs={12} style={{ paddingLeft: '80px' }}>
-                          <label for="profile">Profile Pic</label>
+                          <label htmlFor="profile">Profile Pic</label>
                           &nbsp;
                           <input
                             type="file"
@@ -352,7 +352,7 @@ const StudentDetailsForm = () => {
           <NinjaAnimation />
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

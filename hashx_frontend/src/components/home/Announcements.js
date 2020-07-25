@@ -48,7 +48,7 @@ const Announcements = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -87,7 +87,7 @@ const Announcements = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" /> View More
               </h5>
             </Link>
           </Paper>
@@ -106,29 +106,29 @@ const Announcements = () => {
         <Bounce bottom cascade>
           <div>
             <h4 className={classes.text}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
+              <i className="fas fa-arrow-alt-circle-right" /> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
             <h4 className={classes.text}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
+              <i className="fas fa-arrow-alt-circle-right" /> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
             <h4 className={classes.text}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
+              <i className="fas fa-arrow-alt-circle-right" /> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
             <h4 className={classes.text}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
+              <i className="fas fa-arrow-alt-circle-right" /> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
             <h4 className={classes.text}>
-              <i class="fas fa-arrow-alt-circle-right"></i> This is a
+              <i className="fas fa-arrow-alt-circle-right" /> This is a
               announcement.Blah blah blah.Lorem ipsum sommte siodfgosidh.
             </h4>
           </div>
         </Bounce>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

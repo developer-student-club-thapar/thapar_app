@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -13,7 +13,7 @@ import TimeTable from '../components/home/TimeTable';
 
 const Home = () => {
   return (
-    <Fragment>
+    <>
       <CssBaseline />
       <Container fixed style={{ paddingTop: '20px' }}>
         <Grid container spacing={2} style={{}}>
@@ -93,7 +93,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 const Hostel = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <Nav />
       <CssBaseline />
       <Grid
@@ -189,7 +189,7 @@ const Hostel = () => {
           </Grid>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 
