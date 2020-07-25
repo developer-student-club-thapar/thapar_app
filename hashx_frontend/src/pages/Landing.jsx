@@ -34,6 +34,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { setAccessToken, setRefreshToken } from '../util/token';
+import Footer from '../components/Landing/Footer/Footer';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -288,6 +289,7 @@ const Landing = () => {
           </Container>
         </Grid>
       </Box>
+      <Footer />
     </animated.div>
   );
 };
