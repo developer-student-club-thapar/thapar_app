@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Container, CssBaseline, Hidden } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -47,7 +47,7 @@ const CourseDetail = (props) => {
     }
   };
   return (
-    <Fragment>
+    <>
       {console.log(path)}
       <Nav />
       <CssBaseline />
@@ -350,7 +350,7 @@ const CourseDetail = (props) => {
           </Hidden>
         </Grid>
       </Container>
-    </Fragment>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -32,7 +32,7 @@ const TimeTable = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -71,7 +71,7 @@ const TimeTable = () => {
           <Paper elevation={0} style={{ width: '' }}>
             <Link to="/" style={{ textDecoration: 'none' }}>
               <h5 style={{ margin: 'auto' }}>
-                <i class="fas fa-eye"></i> View More
+                <i className="fas fa-eye" /> View More
               </h5>
             </Link>
           </Paper>
@@ -186,7 +186,7 @@ const TimeTable = () => {
           </Grid>
         </Flip>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

@@ -1,33 +1,31 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
-
 import React, { useState, useEffect, useContext } from 'react';
 import '../styles/Landing.css';
 
 import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
 import MouseScroll from '../components/Landing/MouseScroll';
+import CardList from '../components/Landing/CardList';
+import AvatarButton from '../components/Landing/AvatarButton';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
 import { useHistory } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import { UserContext } from '../context/UserProvider';
-
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
+// eslint-disable-next-line no-unused-vars
 import { spacing } from '@material-ui/system'; // dont delete this
 
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
 import { animated, useSpring } from 'react-spring';
-
 import IconButton from '@material-ui/core/IconButton';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
@@ -35,6 +33,8 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { setAccessToken, setRefreshToken } from '../util/token';
+import Footer from '../components/Landing/Footer/Footer';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) =>
       position: 'relative',
       height: '100vh',
       width: '100vw',
-      overflowX: 'hidden',
+      overflow: 'hidden',
     },
     page2Root: {
       height: '100vh',
@@ -89,6 +89,9 @@ const useStyles = makeStyles((theme) =>
       [theme.breakpoints.up('lg')]: { height: '570px', width: '550px' },
       [theme.breakpoints.up('xl')]: { height: '730px', width: '700px' },
     },
+    cardListGrid: {
+      paddingTop: theme.spacing(4),
+    },
   }),
 );
 
@@ -112,13 +115,14 @@ const Landing = () => {
   ] = useMutation(SOCIAL_AUTH, {
     onCompleted(data) {
       if (data !== null || data !== undefined) {
-        const { token, user, newUser } = data.socialAuth;
-        localStorage.setItem('token', token);
+        const { token, user, newUser, refreshToken } = data.socialAuth;
+        setAccessToken(token);
+        setRefreshToken(refreshToken);
         authenticate(user.id, user.username, token, newUser);
         if (newUser) {
           history.push('/studentdetailform');
         } else {
-          history.push('/');
+          history.push('/dashboard');
         }
       }
     },
@@ -164,9 +168,6 @@ const Landing = () => {
           >
             <Grid item xs={12} md={7}>
               <Box className={classes.deckBox}>
-                {/* <Paper elevation={4} className={classes.deck}>
-                yo
-              </Paper> */}
                 <Deck setcolor={setcolor} />
               </Box>
             </Grid>
@@ -177,14 +178,12 @@ const Landing = () => {
               <Box p={1} textAlign="center">
                 <CssBaseline>
                   <GoogleLogin
-                    clientId={
-                      '423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com'
-                    }
+                    clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
                     buttonText="Sign up with Google"
                     onSuccess={responseGoogle}
                     onFailure={responseGoogleFail}
-                    cookiePolicy={'single_host_origin'}
-                    hostedDomain={'thapar.edu'}
+                    cookiePolicy="single_host_origin"
+                    hostedDomain="thapar.edu"
                   />
                 </CssBaseline>
               </Box>
@@ -252,19 +251,45 @@ const Landing = () => {
           </Grid>
           <Grid item xs={12} md={6} style={{ alignSelf: 'center' }}>
             <Typography
-              variant="h4"
+              variant="h2"
               style={{
-                fontWeight: '900',
-                fontSize: '30px',
+                fontWeight: '700',
+                color: 'textSecondary',
                 textAlign: 'center',
                 display: 'block',
               }}
             >
               To strong beginnings
             </Typography>
+            <Box
+              m={3}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                outline: 'none',
+              }}
+            >
+              <AvatarButton
+                collapsed={false}
+                text="Virtual Campus Tour"
+                icon="https://www.svgrepo.com/show/131150/college.svg"
+              />
+            </Box>
           </Grid>
+          <Container maxWidth="lg">
+            <Grid
+              container
+              item
+              direction="row"
+              justify="center"
+              className={classes.cardListGrid}
+            >
+              <CardList />
+            </Grid>
+          </Container>
         </Grid>
       </Box>
+      <Footer />
     </animated.div>
   );
 };

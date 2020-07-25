@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 const Events = () => {
   const classes = useStyles();
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -49,7 +49,7 @@ const Events = () => {
         </h1>
         <Maps />
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

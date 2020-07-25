@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
 import { FILES_QUERY } from './Queries';
@@ -16,7 +16,7 @@ const FileList = (props) => {
   if (filesError) return <div> Error..</div>;
   console.log(filesData);
   return (
-    <Fragment>
+    <>
       {filesData.allFiles.edges &&
         filesData.allFiles.edges.map((files) => {
           const { thumbnailImage, name, id } = files.node;
@@ -27,7 +27,7 @@ const FileList = (props) => {
                 style={{ borderRadius: '10px', cursor: 'pointer' }}
                 alt="thumbnail"
                 onClick={() => {
-                  history.push(`/pdfview`); //file
+                  history.push(`/pdfview`); // file
                 }}
               />
               <div
@@ -51,7 +51,7 @@ const FileList = (props) => {
             </Grid>
           );
         })}
-    </Fragment>
+    </>
   );
 };
 

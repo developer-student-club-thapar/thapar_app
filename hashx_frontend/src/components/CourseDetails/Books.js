@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
@@ -8,7 +8,7 @@ import FileList from './FileList';
 import { secondaryColor } from '../../theme/theme';
 
 const Books = (props) => {
-  let history = useHistory();
+  const history = useHistory();
   const { id: courseId, path } = props;
   const {
     loading: fileTypeLoading,
@@ -28,7 +28,7 @@ const Books = (props) => {
     fileTypeData.allFiletypes.edges[0] &&
     fileTypeData.allFiletypes.edges[0].node.id;
   return (
-    <Fragment>
+    <>
       <Paper
         elevation={3}
         style={{
@@ -46,7 +46,7 @@ const Books = (props) => {
           <FileList typeId={typeId} courseId={courseId} history={history} />
         </Grid>
       </Paper>
-    </Fragment>
+    </>
   );
 };
 

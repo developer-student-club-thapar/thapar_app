@@ -5,8 +5,6 @@ from django.utils import timezone
 import uuid
 from django.utils.text import slugify
 
-# Create your models here.
-
 
 class DrivefolderManager(models.Manager):
     def get_by_natural_key(self, year, drive_id):

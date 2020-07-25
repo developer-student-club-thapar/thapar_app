@@ -19,11 +19,11 @@ const Navbar = () => {
       <CssBaseline />
       <Menu
         right
-        pageWrapId={'page-wrap'}
-        width={'280px'}
+        pageWrapId="page-wrap"
+        width="280px"
         customBurgerIcon={<img src={require('../../assets/menu.svg')} />}
       >
-        <main id="page-wrap"></main>
+        <main id="page-wrap" />
         <div className="img">
           <ExampleComponent
             image={MyPhoto}
@@ -34,25 +34,25 @@ const Navbar = () => {
           />
         </div>
         <div className="name">Rishabh Malhotra</div>
-        <nav class="bm-item-list">
+        <nav className="bm-item-list">
           <a id="home" className="bm-item" href="/">
-            <HomeIcon fontSize={'inherit'} />
+            <HomeIcon fontSize="inherit" />
             <span className="wrap">Home</span>
           </a>
           <a id="event" className="bm-item" href="/">
-            <EventIcon fontSize={'inherit'} />
+            <EventIcon fontSize="inherit" />
             <span className="wrap">Event</span>
           </a>
           <a id="resources" className="bm-item" href="/">
-            <BookIcon fontSize={'inherit'} />
+            <BookIcon fontSize="inherit" />
             <span className="wrap">Resources</span>
           </a>
           <a id="Project" className="bm-item" href="/">
-            <CodeIcon fontSize={'inherit'} />
+            <CodeIcon fontSize="inherit" />
             <span className="wrap">Projects</span>
           </a>
           <a id="team" className="bm-item" href="/">
-            <GroupIcon fontSize={'inherit'} />
+            <GroupIcon fontSize="inherit" />
             <span className="wrap">Team</span>
           </a>
         </nav>
