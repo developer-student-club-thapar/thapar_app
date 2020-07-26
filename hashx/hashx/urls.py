@@ -52,7 +52,7 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += [
-        path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))
+        path("graphql/", jwt_cookie(GraphQLView.as_view(graphiql=True, schema=schema)))
     ]
 
     # Add urls for the debug toolbar
