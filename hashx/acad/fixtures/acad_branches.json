@@ -1,0 +1,633 @@
+[
+    {
+        "model": "acad.branch",
+        "pk": "84309e00-7e41-488b-93f1-8fb81d0df58e",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Freshman",
+            "code": "ENC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "15749603-7437-4c5b-a63a-71357bcc7057",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Sophomore",
+            "code": "ENC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "769fc51d-d906-474c-927d-8747112832e9",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Junior Year",
+            "code": "ENC"
+        }
+    },
+        
+    
+    {
+        "model": "acad.branch",
+        "pk": "e5c745e6-d7c3-497b-881a-366f32ea44f7",
+        "fields": {
+            "name": "Electronics and Computer",
+            "year": "Senior Year",
+            "code": "ENC"
+        }
+    },
+
+    {
+        "model": "acad.branch",
+        "pk": "84309e00-7e41-488b-93f1-8fb81d0df58e",
+        "fields": {
+            "name": "Computer Science Engineering (Patiala Campus)",
+            "year": "Freshman",
+            "code": "COPC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "15749603-7437-4c5b-a63a-71357bcc7057",
+        "fields": {
+            "name": "Computer Science Engineering (Patiala Campus)",
+            "year": "Sophomore",
+            "code": "COPC"
+        }
+    },
+        
+    
+    {
+        "model": "acad.branch",
+        "pk": "769fc51d-d906-474c-927d-8747112832e9",
+        "fields": {
+            "name": "Computer Science Engineering (Patiala Campus)",
+            "year": "Junior Year",
+            "code": "CS"
+        }
+    },
+        
+    
+    {
+        "model": "acad.branch",
+        "pk": "e5c745e6-d7c3-497b-881a-366f32ea44f7",
+        "fields": {
+            "name": "Computer Science Engineering (Patiala Campus)",
+            "year": "Senior Year",
+            "code": "COPC"
+        }
+    },
+
+    {
+        "model": "acad.branch",
+        "pk": "7c70012e-3c2c-4372-8922-f32a0f94b9cc",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Freshman",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a5fbdf3b-4160-4b62-83de-94b5fb353436",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Sophomore",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "70915625-6cc4-4e48-ac90-6420f184a516",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Junior Year",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "e31770eb-f29d-4217-9a4b-b57d533277f3",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Senior Year",
+            "code": "CSBS"
+        }
+    },
+
+    {
+        "model": "acad.branch",
+        "pk": "bc5f2bc4-a69e-47ac-962d-8d3443d53ef9",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Freshman",
+            "code": "BME"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "5825f29e-1b5f-49fe-96f6-f989e143fc59",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Sophomore",
+            "code": "BME"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "00209a07-a97f-4794-b94c-355dad1d6b94",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Junior Year",
+            "code": "BME"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "ed26f4d0-c5b4-4753-ad02-8bbd04c48a9b",
+        "fields": {
+            "name": "Biomedical Engineering",
+            "year": "Senior Year",
+            "code": "BME"
+        }
+    },
+
+    {
+        "model": "acad.branch",
+        "pk": "7c70012e-3c2c-4372-8922-f32a0f94b9cc",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Freshman",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a5fbdf3b-4160-4b62-83de-94b5fb353436",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Sophomore",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "70915625-6cc4-4e48-ac90-6420f184a516",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Junior Year",
+            "code": "BT"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "e31770eb-f29d-4217-9a4b-b57d533277f3",
+        "fields": {
+            "name": "Biotechnology",
+            "year": "Senior Year",
+            "code": "BT"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "569b2f80-9fb8-44ae-8702-26a18b433404",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Freshman",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "54cc7f7c-5ddd-4777-a40f-2b6f53b0e164",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Sophomore",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "4da3b4b0-89a7-4dc9-9e1b-4b530677bc1d",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Junior Year",
+            "code": "CHE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "1dbfc5d2-3299-4aa2-a214-608f643846bd",
+        "fields": {
+            "name": "Chemical Engineering",
+            "year": "Senior Year",
+            "code": "CHE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "feebd0b4-eeb5-4008-8a5d-f51cd4192b0c",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Freshman",
+            "code": "CE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "83e7406f-b8f4-4277-ad6f-9294e8e200a4",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Sophomore",
+            "code": "CE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "bf727545-0ddc-4bae-b5c6-8ed2f6002455",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Junior Year",
+            "code": "CE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "eda3df32-5080-4d0b-80b5-187cfcc55d62",
+        "fields": {
+            "name": "Civil Engineering",
+            "year": "Senior Year",
+            "code": "CE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "a3a5c462-dc52-4082-ba0f-f21a5f0ded59",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Freshman",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "cd7f57b1-316d-4449-baae-03c32c226361",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Sophomore",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "593dcc54-d031-43db-a821-6a82e3c2c34b",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Junior Year",
+            "code": "COE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "d87141ff-f198-479a-bfab-b1fc69eb32fa",
+        "fields": {
+            "name": "Computer Engineering",
+            "year": "Senior Year",
+            "code": "COE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "8ea1de9e-1390-4e6b-b54a-1d4a5011c654",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Freshman",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "379a7a00-40d7-447c-bd9e-ae9ab6e24f08",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Sophomore",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "f9879f33-0d1d-48ac-b11f-fdc0a3705d9c",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Junior Year",
+            "code": "CSE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "96e6dd1a-2634-444b-a820-292cc2c5c9e1",
+        "fields": {
+            "name": "Computer Science Engineering",
+            "year": "Senior Year",
+            "code": "CSE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "d2120cba-b1b5-49e4-87d1-70c83d16e7c0",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Freshman",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a20429ec-3428-42f9-a38b-313d5470a1e5",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Sophomore",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "eac7fdac-18dc-4413-9764-03a4c3461507",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Junior Year",
+            "code": "CSBS"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "74c8922e-7e5c-41e5-aad4-787c97fae281",
+        "fields": {
+            "name": "Computer Science and Business Systems",
+            "year": "Senior Year",
+            "code": "CSBS"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "0702b492-2214-4921-b50e-c9fb590444e7",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Freshman",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "2baaafcd-0302-4e97-95e6-5e99f78a5180",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Sophomore",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "703bd317-7904-4467-91ac-304cade92929",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Junior Year",
+            "code": "ELE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "e50270f2-6c0f-4153-a204-58c1597b5134",
+        "fields": {
+            "name": "Electrical Engineering",
+            "year": "Senior Year",
+            "code": "ELE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "534f77c4-f58e-4a46-9b17-81c11706cfe8",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Freshman",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "006ab078-2f02-4d86-b0b4-326520e3572f",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Sophomore",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "afd6f5a9-dfff-4bb0-a6b1-18b4c282c8ec",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Junior Year",
+            "code": "ECE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "11f0d45d-b7a5-44ca-89cb-1e53f6d3cf72",
+        "fields": {
+            "name": "Electronics and Communication",
+            "year": "Senior Year",
+            "code": "ECE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "9a8ff12c-cfb5-4181-ba6d-d1e34628f354",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Freshman",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "042e6a23-2890-4793-8db1-e05f0fce6151",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Sophomore",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "241cd622-8400-4529-af16-8eb817fffc07",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Junior Year",
+            "code": "EIC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "9a7bb3af-a979-4e3e-91eb-2aa270840601",
+        "fields": {
+            "name": "Electronics (Instrumentation and Control) Engineering",
+            "year": "Senior Year",
+            "code": "EIC"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "e3eca3bd-480c-4778-8463-f93b2fd9fd97",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Freshman",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "807d7135-fed9-4c29-92f6-39e3aa74f7a0",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Sophomore",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "51253db4-511b-4029-87bf-f4946ab35939",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Junior Year",
+            "code": "MEE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "f0484df9-bcca-4f91-aa42-f7b355b339b3",
+        "fields": {
+            "name": "Mechanical Engineering",
+            "year": "Senior Year",
+            "code": "MEE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "e48ddc12-4a41-4720-a4e9-34021eb03857",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Freshman",
+            "code": "MPE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "6fa763c9-131f-4191-a6b5-4a29f78425fa",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Sophomore",
+            "code": "MPE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "93017e99-bcaa-499d-8eae-72b53ffe2b4c",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Junior Year",
+            "code": "MPE"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "7f468cc1-c89f-440c-a221-67f347400c07",
+        "fields": {
+            "name": "Mechanical Engineering (Production)",
+            "year": "Senior Year",
+            "code": "MPE"
+        }
+    },
+    {
+        "model": "acad.branch",
+        "pk": "c4422bc7-dc2f-4ac7-97ab-98c323ba1f2c",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Freshman",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "a7447480-90e0-44a0-9e97-245d150ae9b0",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Sophomore",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "500632da-389c-4c08-9bab-1f531ac528d8",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Junior Year",
+            "code": "MEC"
+        }
+    },
+    
+    {
+        "model": "acad.branch",
+        "pk": "18e08828-b9bf-48d1-840b-78141dfed724",
+        "fields": {
+            "name": "Mechatronics",
+            "year": "Senior Year",
+            "code": "MEC"
+        }
+    }
+]
