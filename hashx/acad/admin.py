@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import requests
 from django.contrib import admin
 
 from .models import (
@@ -80,6 +81,7 @@ class FileTagsAdmin(admin.ModelAdmin):
 class FileAdmin(admin.ModelAdmin):
     list_display = (
         "type",
+        "is_downloaded",
         "file",
         "web_content_link",
         "thumbnail_image",
@@ -104,8 +106,9 @@ class FileAdmin(admin.ModelAdmin):
         "is_reviewed",
     )
     raw_id_fields = ("tags",)
-    search_fields = ("name", "course", "branch", "slug")
+    search_fields = ("file", "web_content_link", )
     prepopulated_fields = {"slug": ["name"]}
+    # actions = [download_file]
 
 
 @admin.register(AcademicCalendar)
