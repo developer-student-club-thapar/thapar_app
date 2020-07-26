@@ -26,9 +26,10 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     semi: 'off',
+    'semi-style': ['error', 'last'],
     'space-before-function-paren': 'off',
-    'react/prop-types': 'off',
     'no-unused-vars': 'warn',
+    'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
     'react/jsx-handler-names': 'off',
   },
