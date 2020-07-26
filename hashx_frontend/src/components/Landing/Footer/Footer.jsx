@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Container, Box } from '@material-ui/core';
+import { Grid, Paper, Container, Box , CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import { Typography } from '@material-ui/core';
@@ -63,6 +63,7 @@ const Footer = () => {
   };
   return (
     <>
+    <CssBaseline>
       <Grid container spacing={2}>
         <Paper elevation={0} className={classes.paper}>
           <Box mx={5} className={classes.box}>
@@ -122,6 +123,7 @@ const Footer = () => {
           </Box>
         </Paper>
       </Grid>
+      </CssBaseline>
     </>
   );
 };
