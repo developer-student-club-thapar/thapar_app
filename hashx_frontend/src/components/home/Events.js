@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Maps from './Maps';
-import { secondaryColor } from '../../theme/theme';
+import { secondaryColor, textColor } from '../../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,23 +22,21 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '30px',
     },
   },
+  paperGrid: {
+    borderRadius: '20px',
+    textAlign: 'center',
+    height: '500px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
 }));
 
 const Events = () => {
   const classes = useStyles();
   return (
     <>
-      <Paper
-        elevation={3}
-        style={{
-          //   width: "550px",
-          borderRadius: '20px',
-          textAlign: 'center',
-          height: '500px',
-          backgroundColor: `${secondaryColor}`,
-          color: '#FBF9FF',
-        }}
-      >
+      <Paper elevation={3} className={classes.paperGrid}>
         <br />
         <h1 className={classes.title}>
           <i
