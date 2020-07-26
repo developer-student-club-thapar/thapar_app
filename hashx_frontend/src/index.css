@@ -4,6 +4,6 @@ html {
   border: 0;
 }
 
-button {
+button * {
   outline: none;
 }

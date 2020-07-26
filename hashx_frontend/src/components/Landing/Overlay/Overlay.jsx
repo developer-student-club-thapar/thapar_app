@@ -57,7 +57,7 @@ const Overlay = ({ isOpen }) => {
 
   const springRef = useRef();
   const props = useSpring({
-    config: config.default,
+    config: { ...config.stiff, clamp: true },
     to: {
       height: '100vh',
       width: isOpen ? '100vw' : '0vw',
@@ -66,7 +66,8 @@ const Overlay = ({ isOpen }) => {
 
   const trailRef = useRef();
   const trail = useTrail(items.length, {
-    to: { opacity: isOpen ? 1 : 0, x: isOpen ? 0 : 60 },
+    to: { opacity: isOpen ? 1 : 0 },
+    config: config.stiff,
   });
 
   useChain([springRef, trailRef]);

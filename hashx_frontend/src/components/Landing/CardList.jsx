@@ -35,7 +35,9 @@ const data = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    textAlign: '-webkit-center',
+    textAlign: '-webkit-center ',
+    // eslint-disable-next-line no-dupe-keys
+    textAlign: '-moz-center',
     maxWidth: 290,
     background: 'transparent',
   },
