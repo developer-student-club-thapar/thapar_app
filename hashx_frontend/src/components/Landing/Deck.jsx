@@ -4,6 +4,7 @@ import { useGesture } from 'react-use-gesture';
 import { v4 as uuidv4 } from 'uuid';
 import { Card, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
 
 const cards = [
   { image: '1.png', color: '#eee' },
@@ -17,7 +18,6 @@ const cards = [
 const useStyles = makeStyles((theme) => ({
   card: {
     WebkitUserDrag: 'none',
-    userSelect: 'none',
     boxShadow: 'rgba(0, 0, 0, 0.1) 2px 5px 27px !important',
     [theme.breakpoints.down('sm')]: {
       height: '255px',
@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
       width: '800px',
     },
   },
+  cursor: {
+    cursor: 'grabbing',
+  },
 }));
 
 const to = (i) => ({
@@ -56,6 +59,8 @@ const trans = (r, s) =>
 export default function Deck(props) {
   const { setcolor } = props;
   const classes = useStyles();
+  const [cursor, setCursor] = useState(true);
+  let cardClass = classes.card;
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [prop, set] = useSprings(cards.length, (i) => ({
     ...to(i),
@@ -131,13 +136,18 @@ export default function Deck(props) {
       >
         <Card className="card" elevation={1}>
           <CardMedia
-            className={classes.card}
+            className={cardClass}
             id="card-image"
             component="img"
             alt="Card"
             image={require('../../assets/Landing-page-Cards/' +
               cards[5 - i].image)}
             title="Card Image"
+            onMouseDown={(e) => {
+              e.preventDefault();
+              cardClass = clsx(classes.card, classes.cursor);
+            }}
+            onMouseUp={() => setCursor(!cursor)}
           />
         </Card>
       </animated.div>
