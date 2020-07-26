@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import CoursesSkeleton from './CoursesSkeleton';
 import { motion } from 'framer-motion';
-import { secondaryColor } from '../../theme/theme';
+import { secondaryColor, textColor } from '../../theme/theme';
 
 const RandomColor = () => {
   const colorValues = [
@@ -74,6 +74,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '30px',
     },
   },
+  paperGrid: {
+    borderRadius: '20px',
+    textAlign: 'center',
+    height: '500px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
 }));
 
 const Courses = (props) => {
@@ -98,17 +106,7 @@ const Courses = (props) => {
   console.log(props);
   return (
     <>
-      <Paper
-        elevation={3}
-        style={{
-          //   width: "550px",
-          borderRadius: '20px',
-          textAlign: 'center',
-          height: '500px',
-          backgroundColor: `${secondaryColor}`,
-          color: '#FBF9FF',
-        }}
-      >
+      <Paper elevation={3} className={classes.paperGrid}>
         <IconButton
           color="inherit"
           style={{

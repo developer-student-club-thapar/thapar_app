@@ -6,7 +6,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
-import { secondaryColor } from '../../theme/theme';
+import { secondaryColor, textColor } from '../../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,6 +33,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '30px',
     },
   },
+  paperGrid: {
+    borderRadius: '20px',
+    textAlign: 'center',
+    height: '500px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
 }));
 
 const Announcements = () => {
@@ -49,17 +57,7 @@ const Announcements = () => {
   const id = open ? 'simple-popover' : undefined;
   return (
     <>
-      <Paper
-        elevation={3}
-        style={{
-          //   width: "550px",
-          borderRadius: '20px',
-          textAlign: 'center',
-          height: '500px',
-          backgroundColor: `${secondaryColor}`,
-          color: '#FBF9FF',
-        }}
-      >
+      <Paper elevation={3} className={classes.paperGrid}>
         <IconButton
           color="inherit"
           style={{
