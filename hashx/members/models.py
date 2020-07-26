@@ -75,3 +75,12 @@ class VolunteershipApplication(models.Model):
     # User Type connection for Application of Volunteership
     type = models.ForeignKey(VolunteershipType, on_delete=models.CASCADE)
     why = models.TextField(max_length=1000, validators=[validate_is_profane])
+
+
+class Contributors(models.Model):
+    name = models.CharField(max_length=50)
+    logo = models.ImageField(upload_to='contributors-logo/', blank=True)
+    website_url = models.URLField(blank=True)
+    linkedin_url = models.URLField(blank=True)
+    instagram_url = models.URLField(blank=True)
+    is_published = models.BooleanField(default=True)

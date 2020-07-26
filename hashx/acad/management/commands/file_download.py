@@ -5,7 +5,6 @@ from time import sleep
 import random
 
 
-# Enter Your Path to hash/media/academic_files
 path = ''
 
 
@@ -28,7 +27,7 @@ class Command(BaseCommand):
                 try:
 
                     urllib.request.urlretrieve(
-                        link, f'{path}{new_file_name}')
+                        link, f'/Users/shreshth/sandbox/projects/thapar_app/hashx/media/{new_file_name}')
                     file.file = new_file_name
                     file.is_downloaded = True
                     file.save()
@@ -37,7 +36,7 @@ class Command(BaseCommand):
                     sleep(2)
                 except Exception:
                     print(f'Some Error Happened Downloading {new_file_name} ')
-                    s = 0  # random.randint(100, 160)
+                    s = random.randint(100, 160)
                     print(f'sleeping for {s}')
                     sleep(s)
 
@@ -48,7 +47,7 @@ class Command(BaseCommand):
                 i += 1
             else:
                 i += 1
-                s = 0  # random.randint(30, 60)
+                s = random.randint(30, 60)
                 print(f'sleeping for {s}')
                 sleep(s)
         self.stdout.write(self.style.SUCCESS(

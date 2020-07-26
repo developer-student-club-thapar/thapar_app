@@ -21,6 +21,9 @@ import {
   FooterMockUp,
 } from '@mui-treasury/mockup/layout';
 import { TextSidebar } from '@mui-treasury/mockup/sidebars';
+import Sidebar from '../components/Dashboard/Sidebar';
+import Layout from '@mui-treasury/layout';
+import HomeAlt from './HomeAlt';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
@@ -31,11 +34,37 @@ const Content = getContent(styled);
 const Footer = getFooter(styled);
 
 const fixedScheme = getFixedScheme();
+const scheme = Layout();
+
+scheme.configureHeader((builder) => {
+  builder.registerConfig('xs', {
+    position: 'sticky',
+  });
+});
+
+scheme.configureEdgeSidebar((builder) => {
+  builder
+    .create('primarySidebar', { anchor: 'left' })
+    .registerTemporaryConfig('xs', {
+      anchor: 'left',
+      width: '40vw',
+    })
+    .registerTemporaryConfig('sm', {
+      anchor: 'left',
+      width: '20vw',
+    })
+    .registerPermanentConfig('lg', {
+      width: '12vw',
+      persistentBehavior: {
+        whatever_id: 'fit',
+        _others: 'none',
+      },
+    });
+});
 
 const useStyles = makeStyles(() => ({
   header: {
-    backgroundColor: '#fff',
-    borderBottom: '1px solid hsl(210, 32%, 93%)',
+    backgroundColor: '#F0F0F3',
   },
   collapseBtn: {
     color: '#fff',
@@ -50,18 +79,18 @@ const useStyles = makeStyles(() => ({
     },
   },
   sidebar: {
-    backgroundColor: '#4065E0',
+    backgroundColor: '#00293B',
     border: 'none',
   },
   content: {
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#F0F0F3',
   },
 }));
 
 const CustomStylesDemo = () => {
   const styles = useStyles();
   return (
-    <Root scheme={fixedScheme}>
+    <Root scheme={scheme}>
       <CssBaseline />
       <Header className={styles.header}>
         <Toolbar>
@@ -74,16 +103,14 @@ const CustomStylesDemo = () => {
         PaperProps={{ className: styles.sidebar }}
       >
         <SidebarContent>
-          <TextSidebar />
+          {/* <TextSidebar /> */}
+          <Sidebar />
         </SidebarContent>
-        <CollapseBtn className={cx(styles.collapseBtn)} />
+        {/* <CollapseBtn className={cx(styles.collapseBtn)} /> */}
       </DrawerSidebar>
       <Content className={styles.content}>
-        <ContentMockUp />
+        <HomeAlt />
       </Content>
-      <Footer>
-        <FooterMockUp />
-      </Footer>
     </Root>
   );
 };

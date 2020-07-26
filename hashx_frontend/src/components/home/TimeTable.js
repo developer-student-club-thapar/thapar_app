@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,7 +9,8 @@ import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import Flip from 'react-reveal/Flip';
 import { Hidden } from '@material-ui/core';
-import { secondaryColor } from '../../theme/theme';
+import { secondaryColor, textColor } from '../../theme/theme';
+import { useNeumorphShadowStyles } from '@mui-treasury/styles/shadow/neumorph';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -17,10 +19,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '30px',
     },
   },
+  paperGrid: {
+    borderRadius: '20px',
+    textAlign: 'center',
+    height: '500px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
 }));
 
 const TimeTable = () => {
   const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -33,17 +44,7 @@ const TimeTable = () => {
   const id = open ? 'simple-popover' : undefined;
   return (
     <>
-      <Paper
-        elevation={3}
-        style={{
-          //   width: "550px",
-          borderRadius: '20px',
-          //   textAlign: "center",
-          height: '500px',
-          backgroundColor: `${secondaryColor}`,
-          color: '#FBF9FF',
-        }}
-      >
+      <Paper elevation={3} className={classes.paperGrid}>
         <IconButton
           color="inherit"
           style={{

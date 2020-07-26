@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
+from django.contrib.auth import password_validation
 
 
 class UserRegisterForm(UserCreationForm):
@@ -33,6 +34,10 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('email', 'password', 'confirm_password')
+
+    def validate_password(self):
+        password = self.cleaned_data.get('password')
+        password_validation.validate_password(password)
 
 
 class LoginForm(forms.ModelForm):
