@@ -108,6 +108,8 @@ class Instructor(models.Model):
     token = models.UUIDField(
         unique=True, default=uuid.uuid4, editable=False)
     is_email_verified = models.BooleanField(default=False)
+    # Teacher Codes in Timetable
+    code = models.CharField(max_length=3, default='AAA')
 
     class Meta:
         verbose_name = ("Instructor")
