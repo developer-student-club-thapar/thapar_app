@@ -5,6 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
+import { TextareaAutosize } from '@material-ui/core';
 
 const data = [
   {
@@ -35,13 +36,11 @@ const data = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    textAlign: '-webkit-center ',
-    // eslint-disable-next-line no-dupe-keys
-    textAlign: '-moz-center',
     maxWidth: 290,
     background: 'transparent',
   },
   media: {
+    margin: 'auto',
     width: 50,
     height: 50,
   },
