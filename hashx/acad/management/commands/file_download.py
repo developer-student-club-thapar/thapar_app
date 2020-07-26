@@ -6,7 +6,7 @@ import random
 
 
 # Enter Your Path to hash/media/academic_files
-path = ''
+path = '/Users/sanchitjain/Documents/Thapar_App/thapar_app/hashx/media/academic_files'
 
 
 class Command(BaseCommand):
