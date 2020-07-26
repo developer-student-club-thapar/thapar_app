@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.admindocs",
+    'corsheaders',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -91,7 +93,7 @@ WSGI_APPLICATION = "hashx.wsgi.application"
 
 
 GRAPHENE = {
-    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware", ],
+    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware",],
     "SCHEMA": "hashx.schema.schema",
     "SCHEMA_OUTPUT": "schema.graphql",  # defaults to schema.json,
     # Defaults to None (displays all data on a single line)
@@ -101,7 +103,7 @@ GRAPHQL_JWT = {
     # ...
     "JWT_VERIFY_EXPIRATION": True,
     'JWT_LONG_RUNNING_REFRESH_TOKEN': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=30),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(minutes=30),
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
@@ -225,3 +227,6 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
+
+CORS_ORIGIN_ALLOW_ALL = True

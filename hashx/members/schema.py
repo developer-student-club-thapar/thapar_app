@@ -3,9 +3,28 @@ from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
-from .models import Member, VolunteershipApplication
+from .models import Member, VolunteershipApplication , Contributors
 from django.db import models
 from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode
+
+
+class ContributorsFilter(django_filters.FilterSet):
+    class Meta:
+        model = Contributors
+        fields = '__all__'
+        filter_overrides = {
+            models.ImageField :{
+                'filter_class' : django_filters.CharFilter,
+                'extra' : lambda f:{
+                    'lookup_expr': 'icontains'
+                }
+            }
+        }
+class ContributorsNode(DjangoObjectType):
+    class Meta:
+        model = Contributors
+        interfaces = (graphene.relay.Node , )
+    
 
 
 class MemberFilter(django_filters.FilterSet):
@@ -45,3 +64,5 @@ class RelayQuery(graphene.ObjectType):
     member = AuthenticatedNode.Field(MemberNode)
     all_volunteershipapplications = DjangoFilterConnectionField(VolunteershipApplicationNode, filterset_class=VolunteershipApplicationFilter)
     volunteershipapplication = AuthenticatedNode.Field(VolunteershipApplicationNode)
+    all_contributors =  DjangoFilterConnectionField(ContributorsNode , filterset_class=ContributorsFilter)
+    contributors = graphene.relay.Node.Field(ContributorsNode)

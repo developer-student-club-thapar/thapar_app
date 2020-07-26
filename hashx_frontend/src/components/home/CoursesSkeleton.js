@@ -2,7 +2,9 @@ import React from 'react';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import { secondaryColor, textColor } from '../../theme/theme';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,22 +26,20 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     cursor: 'pointer',
   },
+  paperGrid: {
+    borderRadius: '20px',
+    textAlign: 'center',
+    height: '500px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
 }));
 
 const CoursesSkeleton = () => {
   const classes = useStyles();
   return (
-    <Paper
-      elevation={3}
-      style={{
-        //   width: "550px",
-        borderRadius: '20px',
-        textAlign: 'center',
-        height: '500px',
-        backgroundColor: '#2C3055',
-        color: '#FBF9FF',
-      }}
-    >
+    <Paper elevation={3} className={classes.paperGrid}>
       <br />
       <br />
       <h1 style={{ display: 'inline-block' }}>

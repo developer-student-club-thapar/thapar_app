@@ -286,6 +286,7 @@ class File(models.Model):
     is_reviewed = models.BooleanField(default=False)
     # Is Reviewed is a File that has been checked by an independent Fact Checker!
     slug = models.SlugField(blank=True, null=True, max_length=255)
+    is_downloaded = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

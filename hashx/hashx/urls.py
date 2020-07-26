@@ -26,6 +26,10 @@ from users.views import activate_account
 from social_django.utils import load_strategy
 from django.conf.urls.static import static
 
+admin.site.site_header = "Vexio Admin Panel"
+admin.site.site_title = "Vexio Admin Panel"
+admin.site.index_title = "The Control Panel for this Space Ship"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('admin/doc/', include('django.contrib.admindocs.urls')),
@@ -48,7 +52,7 @@ urlpatterns = [
 ]
 if settings.DEBUG:
     urlpatterns += [
-        path("graphql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))
+        path("graphql/", jwt_cookie(GraphQLView.as_view(graphiql=True, schema=schema)))
     ]
 
     # Add urls for the debug toolbar

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Container, Box, Typography } from '@material-ui/core';
+import { Grid, Paper, Box, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import './styles.css';
@@ -67,66 +67,68 @@ const Footer = () => {
   };
   return (
     <>
-      <Grid container spacing={2}>
-        <Paper elevation={0} className={`${classes.paper} svg-bg`}>
-          <Box mx={5} className={classes.box}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={4}>
-                <h2 className={classes.heading}>Vexio</h2>
-              </Grid>
-              <Grid item xs={12} lg={4}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} lg={6}>
-                    {' '}
-                    <h2 className="socialLink">Instagram</h2>
+      <CssBaseline>
+        <Grid container spacing={2}>
+          <Paper elevation={0} className={`${classes.paper} svg-bg`}>
+            <Box mx={5} className={classes.box}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} lg={4}>
+                  <h2 className={classes.heading}>Vexio</h2>
+                </Grid>
+                <Grid item xs={12} lg={4}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} lg={6}>
+                      {' '}
+                      <h2 className="socialLink">Instagram</h2>
+                    </Grid>
+                    <Grid item xs={12} lg={6}>
+                      <h2 className="socialLink">Twitter</h2>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12} lg={6}>
-                    <h2 className="socialLink">Twitter</h2>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12} lg={6}>
+                      <h2 className="socialLink">Facebook</h2>
+                    </Grid>
+                    <Grid item xs={12} lg={6}>
+                      {' '}
+                      <h2 className="socialLink">Reddit</h2>
+                    </Grid>
                   </Grid>
                 </Grid>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} lg={6}>
-                    <h2 className="socialLink">Facebook</h2>
-                  </Grid>
-                  <Grid item xs={12} lg={6}>
-                    {' '}
-                    <h2 className="socialLink">Reddit</h2>
-                  </Grid>
+                <Grid item xs={12} lg={4}>
+                  <h2>
+                    <div className={classes.clock}>
+                      <Clock />
+                    </div>
+                  </h2>
                 </Grid>
               </Grid>
-              <Grid item xs={12} lg={4}>
-                <h2>
-                  <div className={classes.clock}>
-                    <Clock />
-                  </div>
-                </h2>
+            </Box>
+            <Box mx={5} className={classes.bottomBox}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} lg={6} style={{ margin: 'auto' }}>
+                  <h4 className={classes.copyrightText}>© 2020 Vexio</h4>
+                  <h4 className={classes.copyrightText}>Legal</h4>
+                  <h4 className={classes.copyrightText}>Privacy</h4>
+                  <h4 className={classes.copyrightText}>Cookies</h4>
+                </Grid>
+                <Grid item xs={12} lg={6} style={{ textAlign: 'right' }}>
+                  <h4 className={classes.copyrightText}>Back To Top</h4>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    className={classes.button}
+                    onClick={scrollTop}
+                    style={{ outline: 'none' }}
+                  >
+                    <ExpandLessIcon fontSize="large" />
+                  </Button>
+                </Grid>
               </Grid>
-            </Grid>
-          </Box>
-          <Box mx={5} className={classes.bottomBox}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} lg={6} style={{ margin: 'auto' }}>
-                <h4 className={classes.copyrightText}>© 2020 Vexio</h4>
-                <h4 className={classes.copyrightText}>Legal</h4>
-                <h4 className={classes.copyrightText}>Privacy</h4>
-                <h4 className={classes.copyrightText}>Cookies</h4>
-              </Grid>
-              <Grid item xs={12} lg={6} style={{ textAlign: 'right' }}>
-                <h4 className={classes.copyrightText}>Back To Top</h4>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  className={classes.button}
-                  onClick={scrollTop}
-                  style={{ outline: 'none' }}
-                >
-                  <ExpandLessIcon fontSize="large" />
-                </Button>
-              </Grid>
-            </Grid>
-          </Box>
-        </Paper>
-      </Grid>
+            </Box>
+          </Paper>
+        </Grid>
+      </CssBaseline>
     </>
   );
 };

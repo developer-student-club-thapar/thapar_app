@@ -55,7 +55,6 @@ def check_invite_code(sender, instance, *args, **kwargs):
     if invite_user.exists():
         if invite_user.first().can_invite:
             invite_user = invite_user.first()
-            print(f'{invite_user.invite_code} found')
             invite_user.invited_users.add(instance.user)
         else:
             raise PermissionDenied

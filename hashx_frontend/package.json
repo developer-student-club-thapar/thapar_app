@@ -44,6 +44,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "uuid": "^8.2.0"
   },
@@ -69,7 +70,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8000/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.6.0",
