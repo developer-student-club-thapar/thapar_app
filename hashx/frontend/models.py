@@ -7,8 +7,8 @@ import uuid
 
 class Snippet(models.Model):
     """
-      Rabdom Snipets or Jokes Inserted in the Codebase which randomly get rendered on screen while loading or around side spcaes
-      Effor of these is towards humour
+      Random Snnipets or Jokes Inserted in the Codebase which randomly get rendered on screen while loading or around side spcaes
+      Effotr of these is towards humour
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     text = models.CharField(max_length=255)
@@ -16,7 +16,7 @@ class Snippet(models.Model):
 
 class Collaborators(models.Model):
     """
-        Data of Colloborators who colloborate with us on the Project and there repsective links Pixxel Panda, Humans of Tiet etc.
+        Data of Colloborators who colloborate with us on the Project and there repsective links of Pixxel Panda, Humans of Tiet etc.
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=40)
