@@ -1,0 +1,2061 @@
+
+    {
+        "model": "acad.batch",
+        "pk": "55e53aa9-0882-4a6e-8f45-826c49fee483",
+        "fields": {
+            "num": "1",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f81c7d0a-b3ff-476a-8f75-0d2fcc55ad9b",
+        "fields": {
+            "num": "2",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "985be500-e971-4fd3-aceb-e5184d385420",
+        "fields": {
+            "num": "3",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "51e8b459-5402-4c78-bffa-6831e5a4894d",
+        "fields": {
+            "num": "4",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b8dc7ff1-2d64-4145-b38a-e695916e672b",
+        "fields": {
+            "num": "5",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8345d9a1-337d-4699-ab94-7bf21fcf5407",
+        "fields": {
+            "num": "6",
+            "branch": ["EIC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f1287ad5-694b-4890-9237-1bcc7283dc8e",
+        "fields": {
+            "num": "1",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b761765d-2278-4a38-bff6-fdcea365761a",
+        "fields": {
+            "num": "2",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e62ea1f1-acf2-4aa2-a804-795f7dd1e938",
+        "fields": {
+            "num": "3",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "90aad895-97b7-4325-af27-e7fc27adc6f9",
+        "fields": {
+            "num": "4",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "de4d99d0-7af3-4b13-9890-b4c17a5cd90c",
+        "fields": {
+            "num": "5",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "42a556b3-cc5a-43be-8327-88310ea912a5",
+        "fields": {
+            "num": "6",
+            "branch": ["ELE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0acf282a-cad9-486d-a7f6-5645b010c097",
+        "fields": {
+            "num": "1",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "fc80d39d-e4d6-49be-83f2-386506c12fc8",
+        "fields": {
+            "num": "2",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c264474c-28aa-466b-98a9-2fc41799ce93",
+        "fields": {
+            "num": "3",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ee681547-56f1-4a52-971c-30e57b3bf82c",
+        "fields": {
+            "num": "4",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "55791d97-73f3-478b-a9de-6185e26b0b7b",
+        "fields": {
+            "num": "5",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "6b27e78b-03b8-4163-9511-b9e7eb6c737d",
+        "fields": {
+            "num": "6",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "af1ba357-2647-4e16-ba20-235177e6be28",
+        "fields": {
+            "num": "7",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "529cb20e-7e67-4ed6-9b6a-332369a235ee",
+        "fields": {
+            "num": "8",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "97000e40-f2d3-45d7-b474-1c68cf8255f8",
+        "fields": {
+            "num": "9",
+            "branch": ["MEE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d61a3e65-539e-449b-85ca-c72dc4233d01",
+        "fields": {
+            "num": "1",
+            "branch": ["MEC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "eb24883e-2e6e-4e0a-8dd6-bb04f210e0b7",
+        "fields": {
+            "num": "2",
+            "branch": ["MEC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4cded036-84f0-41e0-a97b-fc559d5f212f",
+        "fields": {
+            "num": "3",
+            "branch": ["MEC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8b0df98d-30d6-4f03-9bde-7c503b6a0c2f",
+        "fields": {
+            "num": "1",
+            "branch": ["MPE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "80307347-da37-4843-b7ff-b06dd566ffc5",
+        "fields": {
+            "num": "1",
+            "branch": ["CHE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f129ee46-c642-46c8-8e0c-c85da165c4f7",
+        "fields": {
+            "num": "2",
+            "branch": ["CHE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "349762e6-cd72-4613-9f75-6c5f60ba2d39",
+        "fields": {
+            "num": "1",
+            "branch": ["BT", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0133786b-6476-42e5-adcc-c0cba8209ab1",
+        "fields": {
+            "num": "2",
+            "branch": ["BT", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e051b9e8-846a-4677-9332-8af2358a558c",
+        "fields": {
+            "num": "1",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9517fdf6-1fd8-4bf3-be8b-2a1718220e73",
+        "fields": {
+            "num": "2",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3654b301-38a7-4923-b0ba-cad725407da2",
+        "fields": {
+            "num": "3",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5b05d8f0-0175-4c99-889c-de7f94223b54",
+        "fields": {
+            "num": "4",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "20fb2975-a845-4421-87f0-28483dd3f1b4",
+        "fields": {
+            "num": "5",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ef6a013d-f319-4d04-a876-d4e66206904d",
+        "fields": {
+            "num": "6",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4d4ddf23-823e-4c47-97ad-65c17f02ab18",
+        "fields": {
+            "num": "7",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "83d2e319-5abb-447e-ae30-4472d6bfa91d",
+        "fields": {
+            "num": "8",
+            "branch": ["COPC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "584efd58-88ae-44a4-9a9c-91530c911f6a",
+        "fields": {
+            "num": "1",
+            "branch": ["BME", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0384a6ae-0ae8-4a90-a6e2-20d3eb583192",
+        "fields": {
+            "num": "1",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "dfdf2d16-c5a5-465d-9eca-655c8b4f9e94",
+        "fields": {
+            "num": "2",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "67720e7b-c118-49be-b14a-0e9105303c0f",
+        "fields": {
+            "num": "3",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "42e36ad7-c1c3-4b7f-8edb-f18fdbfd08a6",
+        "fields": {
+            "num": "4",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "406bfe20-c595-4178-8a33-02977cd27d99",
+        "fields": {
+            "num": "5",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "bbdc7f76-2443-4948-8d28-ba8f6eb6a3f3",
+        "fields": {
+            "num": "6",
+            "branch": ["CE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c024f858-90ad-401f-a970-35b2900d703d",
+        "fields": {
+            "num": "1",
+            "branch": ["CSBS", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "65b23347-cf35-46e6-93df-684288e529a6",
+        "fields": {
+            "num": "2",
+            "branch": ["CSBS", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8bd9cc90-0192-4f58-8b4b-4cc5ffc6e8d4",
+        "fields": {
+            "num": "3",
+            "branch": ["CSBS", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "350df99b-72c7-4608-a10e-ae4cdda3a7e6",
+        "fields": {
+            "num": "1",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8f0ba62f-0100-43fc-8ff8-33eac66d9830",
+        "fields": {
+            "num": "2",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1f0f355a-abdf-4778-8d35-bd9cc9f8c07b",
+        "fields": {
+            "num": "3",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "08abe574-a44c-4757-8f07-b33604c0b25f",
+        "fields": {
+            "num": "4",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d2cd7433-24d2-49c6-a8ba-9f941229dcfc",
+        "fields": {
+            "num": "5",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d428211c-3668-4e91-bec6-057bf6fcbb8f",
+        "fields": {
+            "num": "6",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3900d622-ce35-43da-8cb5-517a0a11304b",
+        "fields": {
+            "num": "7",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c3ef07c6-adec-4393-b4b8-03ced9a058d5",
+        "fields": {
+            "num": "8",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "48f77869-8c6a-40df-9cea-fdc7fd80acc8",
+        "fields": {
+            "num": "9",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "6ae843df-70d2-47e1-be15-ef3bb382ed90",
+        "fields": {
+            "num": "10",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "2b955cec-41f9-4616-bafa-dad41389d7e2",
+        "fields": {
+            "num": "11",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "62d7a746-a814-40ff-a894-40ba6fbcab77",
+        "fields": {
+            "num": "12",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "34e35497-0378-4f91-b6ed-4e6f58f6ab3e",
+        "fields": {
+            "num": "13",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9776abba-711a-4c4c-98d4-8c4862e2fe98",
+        "fields": {
+            "num": "14",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "29c73cdf-8291-4759-8202-837abbbb39b6",
+        "fields": {
+            "num": "15",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b801e53e-9203-4507-8762-895a9177e920",
+        "fields": {
+            "num": "16",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8d379054-db75-4d93-b5ed-46c4f8781a3c",
+        "fields": {
+            "num": "17",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "504980e3-2238-4f89-adb3-3a189d235a73",
+        "fields": {
+            "num": "18",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c06fe371-bbc5-495b-9d59-db144e82c5d1",
+        "fields": {
+            "num": "19",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1315f056-4e23-48e2-a7b6-3d677b13e176",
+        "fields": {
+            "num": "20",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4d97c6ef-2920-4a2e-9fad-a81dee3e610b",
+        "fields": {
+            "num": "21",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "fe39658f-0505-4aee-a780-a3ef64aefab5",
+        "fields": {
+            "num": "22",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f3f90ed9-ccca-4e2a-8c85-fae2b75cc693",
+        "fields": {
+            "num": "23",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7b85a639-21b3-4834-b9a9-018c83d42c98",
+        "fields": {
+            "num": "24",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "37e48d46-c469-454e-9de0-54ba53b14b98",
+        "fields": {
+            "num": "25",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c8b14780-d9dd-42c8-99d3-0009090044d9",
+        "fields": {
+            "num": "26",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ee72f728-eaff-4acd-b372-e97377932446",
+        "fields": {
+            "num": "27",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "207cde09-ccd8-47d0-890d-bdd70fce23fd",
+        "fields": {
+            "num": "28",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "2088ee89-64a3-4cd8-944d-f3175cb12f4b",
+        "fields": {
+            "num": "29",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "753bbdb4-a621-468b-b9e4-2354f5cab915",
+        "fields": {
+            "num": "30",
+            "branch": ["COE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3ef33e6a-508d-4d52-b389-cd2eaf9c65ec",
+        "fields": {
+            "num": "1",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "fac231d1-ce9a-4f2e-bdac-a1ea5b12a37f",
+        "fields": {
+            "num": "2",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "a2819f67-427f-4e74-9a0a-f0233f61e255",
+        "fields": {
+            "num": "3",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5690ff76-49a7-474a-84f5-39c914d83295",
+        "fields": {
+            "num": "4",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ee4b2af8-00f9-49ba-88ac-c253e776f518",
+        "fields": {
+            "num": "5",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7ff9a8f9-5a24-4011-b63a-888d6ba3296e",
+        "fields": {
+            "num": "6",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ad8df04d-0c1b-448c-bde8-9017b01871cf",
+        "fields": {
+            "num": "7",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cdec2da5-37bb-4447-803c-abefe8bfcb74",
+        "fields": {
+            "num": "8",
+            "branch": ["ECE", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1fae5b18-fd8f-4492-b4e1-e89e4cd8dac7",
+        "fields": {
+            "num": "1",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b75f1fe6-95bf-4f2e-96f0-2db09f2fc20a",
+        "fields": {
+            "num": "2",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "aa324893-6c39-424b-9958-ccb399627fff",
+        "fields": {
+            "num": "3",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5bf179dc-1358-4ea2-bb3a-9d8c5b6d001e",
+        "fields": {
+            "num": "4",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "38eae5df-6237-44f3-a8eb-397858b840b4",
+        "fields": {
+            "num": "5",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7870d2e6-0ae2-49f2-b7e3-453e7bc975de",
+        "fields": {
+            "num": "6",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "11c6ffa5-84f1-4619-b539-261041e9a9dd",
+        "fields": {
+            "num": "7",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8dc085dc-1d45-4592-a885-e33785401f18",
+        "fields": {
+            "num": "8",
+            "branch": ["ENC", "Sophomore"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1a740854-e8b0-47a3-b1fb-fcac83e1f1c2",
+        "fields": {
+            "num": "1",
+            "branch": ["EIC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "680e076d-90bc-4b5c-9fee-23d29a98242e",
+        "fields": {
+            "num": "2",
+            "branch": ["EIC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "710a09ef-4168-436a-861d-031aaf9152d0",
+        "fields": {
+            "num": "1",
+            "branch": ["ELE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ba40d8cb-0dc3-4757-8038-0f6f11b56bad",
+        "fields": {
+            "num": "2",
+            "branch": ["ELE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "dbcd332c-e803-4435-9906-8e0e2af2af88",
+        "fields": {
+            "num": "3",
+            "branch": ["ELE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cc1a5a38-f0cc-4674-ab18-4b34e6938058",
+        "fields": {
+            "num": "4",
+            "branch": ["ELE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e94f05ff-5905-4a12-bdbb-f079e2a60223",
+        "fields": {
+            "num": "1",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "48c99366-e7f9-43e4-b64e-21f6b6d7dc40",
+        "fields": {
+            "num": "2",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "da7a79c7-f2be-4fbd-af95-593d0a23a2c6",
+        "fields": {
+            "num": "3",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f8931846-dc47-4f3f-8cff-7ae32f19ef5b",
+        "fields": {
+            "num": "4",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "bfa9d0d9-4225-449f-bf18-71b4f48a979e",
+        "fields": {
+            "num": "5",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5c030566-ad0a-4c9d-a455-0bb903144082",
+        "fields": {
+            "num": "6",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "a782bb3a-9d44-47cb-884d-5ee7c7a823db",
+        "fields": {
+            "num": "7",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5f00e82f-fe71-42bd-8215-7fa3b6bcca64",
+        "fields": {
+            "num": "8",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0a527ca3-6872-45c1-ac0c-dfb827ad1cbd",
+        "fields": {
+            "num": "9",
+            "branch": ["MEE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4b3f7c76-33a8-4012-ab11-6d83b33b5446",
+        "fields": {
+            "num": "1",
+            "branch": ["MEC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "085d335b-16d3-4710-8338-0a137e5aa8bf",
+        "fields": {
+            "num": "2",
+            "branch": ["MEC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "06952df9-64ff-4e57-87e6-cd57294bf30e",
+        "fields": {
+            "num": "1",
+            "branch": ["CHE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c71675c5-8da0-4aa9-afe0-c84415ec1397",
+        "fields": {
+            "num": "1",
+            "branch": ["BT", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3586e4bc-a074-4ef6-9ea6-bfd138b4773e",
+        "fields": {
+            "num": "2",
+            "branch": ["BT", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "39802daf-d3a1-4245-a388-87306f0b7e53",
+        "fields": {
+            "num": "1",
+            "branch": ["CE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9e3e2adc-9413-4eca-ba3e-dc8b12dab4b9",
+        "fields": {
+            "num": "2",
+            "branch": ["CE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7b006058-6eb3-40ec-bdce-ae4fad0d762f",
+        "fields": {
+            "num": "3",
+            "branch": ["CE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "040a0cca-2259-42de-af20-170a667c2b52",
+        "fields": {
+            "num": "1",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b6145fdb-194f-4f65-9af5-31c51cf0dbea",
+        "fields": {
+            "num": "2",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "acc067f1-9de4-4023-b741-4be3c3497363",
+        "fields": {
+            "num": "3",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "90416407-c507-419f-9e57-aa0d0053a176",
+        "fields": {
+            "num": "4",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "27bf4e91-21ab-41f1-935c-fc675e35b9bb",
+        "fields": {
+            "num": "5",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "be2a8d28-8689-443f-acb8-2139e634abb1",
+        "fields": {
+            "num": "6",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "26af8385-a507-4311-a718-1a2ecc17120b",
+        "fields": {
+            "num": "7",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9835fed5-c2ad-4ddd-a38b-4358c0cf360a",
+        "fields": {
+            "num": "8",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f3ed1992-8050-4662-9b4a-80b5836b39ff",
+        "fields": {
+            "num": "9",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "dd6d3135-a0c8-429d-b023-533be8619b33",
+        "fields": {
+            "num": "10",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ffbba501-6a4e-4ae5-8f66-eb66c450c801",
+        "fields": {
+            "num": "11",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3796cc8a-5255-48ab-a526-b663d995c133",
+        "fields": {
+            "num": "12",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d4af7929-bb23-4c5e-968b-2c319247b5a7",
+        "fields": {
+            "num": "13",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5fc1de16-750f-4476-9d9a-82d3c62b493c",
+        "fields": {
+            "num": "14",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b740a16b-d6ba-41b1-b806-28cd06629d4d",
+        "fields": {
+            "num": "15",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "94f5f95b-3292-4bd3-bbf3-ee25c4e638b3",
+        "fields": {
+            "num": "16",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c13c0b80-9221-42b0-94b3-cfcf8224c09c",
+        "fields": {
+            "num": "17",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "bd662cee-fc59-46a8-b700-3fe1b5cc528d",
+        "fields": {
+            "num": "18",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7b6b21ff-c1b9-4650-a868-a4b09800142f",
+        "fields": {
+            "num": "19",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ab01300c-5be6-40f6-ad6d-f2e129e9a75f",
+        "fields": {
+            "num": "20",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "facb7025-c614-4a0a-89ec-b495a514a928",
+        "fields": {
+            "num": "21",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e17abae1-83d0-44c8-9b03-20506e041da9",
+        "fields": {
+            "num": "22",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "6c7e2b03-88ad-4169-ae1d-bd072197ad77",
+        "fields": {
+            "num": "23",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4476c825-74b5-4ca4-8118-789c67be6c0f",
+        "fields": {
+            "num": "24",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "3c0657bc-3cfd-41d7-b62c-75bddbe1c886",
+        "fields": {
+            "num": "25",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5378b817-881b-415c-aa98-0e5584b88672",
+        "fields": {
+            "num": "26",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "815e61cf-fde9-40bb-9ac7-9b2330c09804",
+        "fields": {
+            "num": "27",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "44bd09e9-0d13-44da-ab2a-fc4cb520756f",
+        "fields": {
+            "num": "28",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "6de398a3-47ef-4045-90f1-7fffda47fea4",
+        "fields": {
+            "num": "29",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "891d2a92-5055-4b6c-8269-962bca66658e",
+        "fields": {
+            "num": "30",
+            "branch": ["COE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "73bef68b-e95b-48a6-8c7c-e6ac392b3f4d",
+        "fields": {
+            "num": "1",
+            "branch": ["CS", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "552a4720-db40-43e0-99c7-bb8dd3b071f7",
+        "fields": {
+            "num": "2",
+            "branch": ["CS", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4a7ccaa4-1ee4-4b0d-b517-df12ee032624",
+        "fields": {
+            "num": "3",
+            "branch": ["CS", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "86162ee0-7219-4b7f-a180-3883b95820d7",
+        "fields": {
+            "num": "1",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d304f050-f3b6-4cda-bc47-e2fff30d3b7c",
+        "fields": {
+            "num": "2",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c5bf18ef-c5a3-4972-a92c-9b3d2bc7db3d",
+        "fields": {
+            "num": "3",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "37e06b3c-a49c-4f1f-a5a7-96a8f9ad932b",
+        "fields": {
+            "num": "4",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b6e4188b-171c-4c0a-a17f-b3d9efa9a4b4",
+        "fields": {
+            "num": "5",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0f64e569-4a9a-4e0c-a924-97a8c4756d42",
+        "fields": {
+            "num": "6",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "27b5ed27-5903-469f-a594-066a8ddf0bea",
+        "fields": {
+            "num": "7",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "19241e15-a49b-4e36-912f-5dca2f02d549",
+        "fields": {
+            "num": "8",
+            "branch": ["ECE", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9b2e9cae-8e01-4db4-8893-86eee18343f4",
+        "fields": {
+            "num": "1",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "87af94ae-f0f6-4bd3-8b11-040afa4c44bd",
+        "fields": {
+            "num": "2",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d08c06e2-b091-41ef-896d-9fbab4daa51b",
+        "fields": {
+            "num": "3",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "dab30693-2611-49f6-8c13-8e8efc0125f8",
+        "fields": {
+            "num": "4",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b4dcdf75-be1f-4e1f-9daa-5e9e110e1322",
+        "fields": {
+            "num": "5",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "383556c3-febe-4f3b-be32-5a16baec573b",
+        "fields": {
+            "num": "6",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8d978857-3f1e-4e73-aa2d-5034385a4ffc",
+        "fields": {
+            "num": "7",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b6357689-ca6d-411d-a734-b33f4c21650e",
+        "fields": {
+            "num": "8",
+            "branch": ["ENC", "Junior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "548821a3-c8f2-4380-82cc-b484812632b2",
+        "fields": {
+            "num": "1",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9f6726ae-bd25-4b1e-9993-1ac34b334217",
+        "fields": {
+            "num": "2",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "beb046f7-22dc-40dc-9d03-112660645241",
+        "fields": {
+            "num": "3",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cc92eccd-437f-4735-af2e-2900df8d516d",
+        "fields": {
+            "num": "4",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "254806c4-96a1-4fc4-8b5c-d097f8a37f1b",
+        "fields": {
+            "num": "5",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "882d6202-5a96-4622-b850-512be0657989",
+        "fields": {
+            "num": "6",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "9de62f63-5be6-4cb3-8d9e-c95ad744f961",
+        "fields": {
+            "num": "7",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "dc50f27f-286c-40ec-a588-8c26f88bdace",
+        "fields": {
+            "num": "8",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "fa7c3197-db81-44ff-9456-efe9bc7ef34a",
+        "fields": {
+            "num": "9",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cdd8cb23-e68d-4f56-81a6-292317f83b7c",
+        "fields": {
+            "num": "10",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cc542c43-0747-4c45-9905-c9362dbdf78f",
+        "fields": {
+            "num": "11",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "42b47980-9a6f-45e4-8e55-dd2038d36fdb",
+        "fields": {
+            "num": "12",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1554dc1c-f4fd-4542-a989-2f2e2dfbcac0",
+        "fields": {
+            "num": "13",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "6872a6d4-60b6-4e84-9328-efefd4dd4161",
+        "fields": {
+            "num": "14",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5d36cdb8-9287-46d6-870b-9ed3a22505fb",
+        "fields": {
+            "num": "15",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ec567fe5-cafd-4205-aa1d-c99082dfbad0",
+        "fields": {
+            "num": "16",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b0518212-a707-4650-af9c-c1e06fa9cd7d",
+        "fields": {
+            "num": "17",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "26d4d7b7-5351-480d-b3df-ce96f112b80a",
+        "fields": {
+            "num": "18",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d2fbab9a-2af1-4856-a84c-6ec0577436a5",
+        "fields": {
+            "num": "19",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "2e9495be-6c7e-451c-88e6-4a28c8d4ad7e",
+        "fields": {
+            "num": "20",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cc14c942-e6c6-4259-b7c9-8394aae68dc9",
+        "fields": {
+            "num": "21",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4dff0eb9-5099-4265-ab18-ccdcbd3effe5",
+        "fields": {
+            "num": "22",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d088158e-5fd1-49a6-9013-e979ae28d69d",
+        "fields": {
+            "num": "23",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4be60eb8-80f7-4f5f-8e5b-86637fdff4c7",
+        "fields": {
+            "num": "24",
+            "branch": ["COE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c8e6d8a1-d115-42e2-bc78-1326323f023b",
+        "fields": {
+            "num": "1",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "315a128f-865f-45cb-b783-17cce5aa46a7",
+        "fields": {
+            "num": "2",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4c644607-d14a-4a88-a088-4c6dc5c1ac4a",
+        "fields": {
+            "num": "3",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d1bc28db-e6bd-45c5-89d6-378cd616e6e6",
+        "fields": {
+            "num": "4",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e0941583-bf84-4ed2-b8ad-9512ad1b6af8",
+        "fields": {
+            "num": "5",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "03ace3fb-56a6-40c7-87d1-9bc998dcc194",
+        "fields": {
+            "num": "6",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8d899e32-2acf-4be5-a22c-20f2116b2ef2",
+        "fields": {
+            "num": "7",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "afb8a388-2f05-47e4-8093-65b30f887f31",
+        "fields": {
+            "num": "8",
+            "branch": ["ECE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e191a6a4-d383-47f1-aba7-d49a93a99ad3",
+        "fields": {
+            "num": "1",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8b3f7b27-f1c1-44de-8258-58d400a24b71",
+        "fields": {
+            "num": "2",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "de720b3f-3540-4460-afc5-ebc5ae45e5bf",
+        "fields": {
+            "num": "3",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5b62773b-6722-4a19-9d87-1f1e6c9ca147",
+        "fields": {
+            "num": "4",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b48c69fe-5677-4da2-b369-59de183f7957",
+        "fields": {
+            "num": "5",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c63278fe-91ae-47b3-b3b4-fea4ef5a70d0",
+        "fields": {
+            "num": "6",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "8de088ec-06fd-4882-a60e-eee2d8bfe790",
+        "fields": {
+            "num": "7",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "21c3f485-c80a-4cf5-8852-26cf38ffa3a8",
+        "fields": {
+            "num": "8",
+            "branch": ["ENC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "2057fdfb-889a-4d8f-bafd-de2f1c8646e2",
+        "fields": {
+            "num": "1",
+            "branch": ["EIC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f33b1c7a-7f76-4ff8-8a00-19e4b1d68f76",
+        "fields": {
+            "num": "2",
+            "branch": ["EIC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "f3f03e50-b4ab-494d-aaa8-eb6ce081882a",
+        "fields": {
+            "num": "1",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "7688caa3-24e0-4fd8-a3bf-b61fc5f65f47",
+        "fields": {
+            "num": "2",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "b302ea4b-7d1d-41d6-82da-89301569727d",
+        "fields": {
+            "num": "3",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "e5ddbd1e-ed6e-465e-9a6f-100d65e81e8b",
+        "fields": {
+            "num": "4",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "57f2057a-0654-48f9-8b6d-9868c140c9b4",
+        "fields": {
+            "num": "5",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "2f93a7ef-244a-4d17-b705-547477dadf75",
+        "fields": {
+            "num": "6",
+            "branch": ["ELE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "0e740632-6dfa-4570-9c9c-ce83c0e4dbe1",
+        "fields": {
+            "num": "1",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "d20e516e-fb93-41e2-9dc2-1b2f3f7688e0",
+        "fields": {
+            "num": "2",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "ee20416b-22b8-48d0-9903-d606a8567441",
+        "fields": {
+            "num": "3",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "60be1b44-1534-4090-b88c-122c58713a70",
+        "fields": {
+            "num": "4",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1be7a30c-dfd3-4be7-bcdb-954537dfeae1",
+        "fields": {
+            "num": "5",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4730aca7-f894-441c-b043-24a868be40a8",
+        "fields": {
+            "num": "6",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4f3234b2-f97a-47dd-80f0-ef94300c4fda",
+        "fields": {
+            "num": "7",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "020be403-af2d-4154-9963-5e7d9b1d8731",
+        "fields": {
+            "num": "8",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "4e404fa4-be57-4edf-a019-0479d0495ff9",
+        "fields": {
+            "num": "9",
+            "branch": ["MEE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "19db6cea-b04a-4822-bb97-6f8ae29bd953",
+        "fields": {
+            "num": "1",
+            "branch": ["MEC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "c0a5c38a-934e-49e1-b1e2-4c395f4a3d9e",
+        "fields": {
+            "num": "2",
+            "branch": ["MEC", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "1f7ca459-d169-4a9d-ba85-6d389d269fbd",
+        "fields": {
+            "num": "1",
+            "branch": ["MPE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "cc8e2e15-d3c0-4b46-965c-ffc76e7d28f7",
+        "fields": {
+            "num": "1",
+            "branch": ["CHE", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "5dc16f73-f9c3-4afe-aa6f-914d9742d10f",
+        "fields": {
+            "num": "1",
+            "branch": ["BT", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "db8cf1f0-5a17-4e73-a567-5cfcfdd7cd01",
+        "fields": {
+            "num": "2",
+            "branch": ["BT", "Senior Year"]
+            }
+    },
+
+    {
+        "model": "acad.batch",
+        "pk": "a5e2c50e-3693-4043-9109-504035411837",
+        "fields": {
+            "num": "2",
+            "branch": ["CE", "Senior Year"]
+            }
+    },
