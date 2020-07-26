@@ -289,7 +289,7 @@ const Landing = () => {
           </Container>
         </Grid>
       </Box>
-     
+      <Footer />
     </animated.div>
   );
 };

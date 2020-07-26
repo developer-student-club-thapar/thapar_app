@@ -34,8 +34,7 @@ const fixedScheme = getFixedScheme();
 
 const useStyles = makeStyles(() => ({
   header: {
-    backgroundColor: '#fff',
-    borderBottom: '1px solid hsl(210, 32%, 93%)',
+    backgroundColor: '#F0F0F3',
   },
   collapseBtn: {
     color: '#fff',
@@ -50,7 +49,7 @@ const useStyles = makeStyles(() => ({
     },
   },
   sidebar: {
-    backgroundColor: '#4065E0',
+    backgroundColor: '#00293B',
     border: 'none',
   },
   content: {
@@ -73,9 +72,7 @@ const CustomStylesDemo = () => {
         sidebarId="primarySidebar"
         PaperProps={{ className: styles.sidebar }}
       >
-        <SidebarContent>
-          <TextSidebar />
-        </SidebarContent>
+        <SidebarContent>{/* <TextSidebar /> */}</SidebarContent>
         <CollapseBtn className={cx(styles.collapseBtn)} />
       </DrawerSidebar>
       <Content className={styles.content}>
