@@ -13,6 +13,7 @@ import members.schema as members_schema
 import timetable.mutation as timetable_mutations
 import timetable.schema as timetable_schema
 from social_django.models import UserSocialAuth
+from .middleware import CustomAuthorizationMiddleware
 
 
 """import members.mutation as member_mutations
