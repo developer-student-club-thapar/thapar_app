@@ -5,6 +5,9 @@ from time import sleep
 import random
 
 
+path = ''
+
+
 class Command(BaseCommand):
     help = 'Downloads file from MyHerupa and saves it to django application'
 
