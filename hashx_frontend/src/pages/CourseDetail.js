@@ -48,7 +48,6 @@ const CourseDetail = (props) => {
   };
   return (
     <>
-      {console.log(path)}
       <Nav />
       <CssBaseline />
       <Grid
