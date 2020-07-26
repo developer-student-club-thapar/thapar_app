@@ -21,7 +21,6 @@ const Routes = () => {
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard" component={HomeAlt} />
       <Route exact path="/temp" component={Dashboard} />
-      <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:content/:id" component={CourseDetail} />
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
