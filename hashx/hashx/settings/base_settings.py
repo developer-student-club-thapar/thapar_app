@@ -93,7 +93,7 @@ WSGI_APPLICATION = "hashx.wsgi.application"
 
 
 GRAPHENE = {
-    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware",],
+    "MIDDLEWARE": ["graphql_jwt.middleware.JSONWebTokenMiddleware", ],
     "SCHEMA": "hashx.schema.schema",
     "SCHEMA_OUTPUT": "schema.graphql",  # defaults to schema.json,
     # Defaults to None (displays all data on a single line)
@@ -229,4 +229,34 @@ ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS CONFIG
+CORS_ORIGIN_WHITELIST = [
+    "https://vexio.in",
+    "https://front.vexio.in",
+    "https://vexio.netlify.app",
+]
+
+if DEBUG == True:
+    CORS_ORIGIN_WHITELIST += ['http://localhost:300']
+
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]

@@ -36,7 +36,7 @@ class Command(BaseCommand):
                     sleep(2)
                 except Exception:
                     print(f'Some Error Happened Downloading {new_file_name} ')
-                    s = random.randint(100, 160)
+                    s = 0  # random.randint(100, 160)
                     print(f'sleeping for {s}')
                     sleep(s)
 
@@ -47,7 +47,7 @@ class Command(BaseCommand):
                 i += 1
             else:
                 i += 1
-                s = random.randint(30, 60)
+                s = 0  # random.randint(30, 60)
                 print(f'sleeping for {s}')
                 sleep(s)
         self.stdout.write(self.style.SUCCESS(
