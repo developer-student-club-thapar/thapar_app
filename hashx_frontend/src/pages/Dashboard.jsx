@@ -13,7 +13,6 @@ import {
   getCollapseBtn,
   getContent,
   getFooter,
-  getFixedScheme,
 } from '@mui-treasury/layout';
 import {
   HeaderMockUp,
@@ -33,7 +32,7 @@ const CollapseBtn = getCollapseBtn(styled);
 const Content = getContent(styled);
 const Footer = getFooter(styled);
 
-const fixedScheme = getFixedScheme();
+
 const scheme = Layout();
 
 scheme.configureHeader((builder) => {
