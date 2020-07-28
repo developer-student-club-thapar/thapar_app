@@ -13,6 +13,7 @@ from .models import (
     FileTags,
     File,
     AcademicCalendar,
+    Department,
 )
 
 
@@ -115,4 +116,10 @@ class FileAdmin(admin.ModelAdmin):
 class AcademicCalendarAdmin(admin.ModelAdmin):
     list_display = ("id", "type", "name", "start_date", "end_date")
     list_filter = ("start_date", "end_date")
+    search_fields = ("name",)
+
+
+@admin.register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")
     search_fields = ("name",)
