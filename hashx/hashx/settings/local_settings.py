@@ -1,4 +1,4 @@
-import logging
+
 from .base_settings import *
 
 

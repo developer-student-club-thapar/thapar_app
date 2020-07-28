@@ -1,5 +1,5 @@
 from .base_settings import *
-
+import logging
 DEBUG = True
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
@@ -66,4 +66,5 @@ LOGGING = {
         },
     },
 }
+
 AXES_ENABLED = True
