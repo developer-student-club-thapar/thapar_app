@@ -1,21 +1,10 @@
-import logging
 from .base_settings import *
 
-DEBUG = config("DEBUG", default=True)
-
-INSTALLED_APPS += [
-    "debug_toolbar",
-]
-
-
-MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-
+DEBUG = True
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.sqlite3",
-    #     "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    # }
+
     "default": {
         "ENGINE": config("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": config("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
@@ -25,29 +14,13 @@ DATABASES = {
         "PORT": config("SQL_PORT", "5432"),
     }
 }
-
-if os.environ.get('GITHUB_WORKFLOW'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'test_database',
-            'USER': 'test_user',
-            'PASSWORD': 'test_password',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-
-
-# Debug Toolbar
-
-# Debug toolbar will only be shown on these IPs
+INSTALLED_APPS += [
+    'debug_toolbar',
+]
 INTERNAL_IPS = [
     "127.0.0.1",
     "localhost",
 ]
-
-# Add, remove or change the order of panels here.
 DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.versions.VersionsPanel",
     "debug_toolbar.panels.timer.TimerPanel",
@@ -63,15 +36,12 @@ DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.redirects.RedirectsPanel",
     "debug_toolbar.panels.profiling.ProfilingPanel",
 ]
-
-# Add custom toolbar settings here
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": True,
     "SHOW_COLLAPSED": True,
 }
 
-STATIC_ROOT = ""
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
 
 l = logging.getLogger("django.db.backends")
