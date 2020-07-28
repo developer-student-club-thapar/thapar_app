@@ -36,7 +36,7 @@ with open('drive.csv') as data:
         elif branch == "electrical":
             branch = "ELE"
         elif branch == "civil":
-            branch = "CIE"
+            branch = "CE"
         elif branch == "electronics":
             branch = "ECE"
         else:
@@ -44,12 +44,11 @@ with open('drive.csv') as data:
 
         year = re.sub('\s+', ' ', row[3])
         if year == "third-year":
-            year = "Junior Year"
+            year = "JR"
         elif year == "second-year":
-            year = "Sophomore"
+            year = "SO"
         else:
-
-            year = "Freshman"
+            year = "FR"
 
         drive_id = re.sub('\s+', ' ', row[4]).strip()
         course_name = re.sub('\s+', ' ', row[1]).strip()
@@ -61,8 +60,9 @@ with open('drive.csv') as data:
             file_name = file_data[0]
             file_id = file_data[1]
             webContentLink = file_data[2]
+            webViewLink = file_data[3]
             print(file_name)
-            d[i] = [re.sub('\s+', ' ', row[0]).strip(), re.sub('\s+', ' ', row[1]).strip(), filetype, re.sub('\s+', ' ', row[2]).strip(), year, drive_id, file_name, branch, file_id, webContentLink]
+            d[i] = [re.sub('\s+', ' ', row[0]).strip(), re.sub('\s+', ' ', row[1]).strip(), filetype, re.sub('\s+', ' ', row[2]).strip(), year, drive_id, file_name, branch, file_id, webContentLink, webViewLink]
             print(i)
             i += 1
             
@@ -82,10 +82,11 @@ for val in d.values():
             \"branch\": [\"{}\", \"{}\"],
             \"file\": \"academic_File/{}\",
             \"file_id\": \"{}\",
-            \"web_content_link\": \"{}\"
+            \"web_content_link\": \"{}\",
+            \"web_view_link\": \"{}\"
             }}
     }},
-    '''.format(uuid.uuid4(), val[6], val[2], val[1], val[0], val[7], val[4], val[6], val[8], val[9]))
+    '''.format(uuid.uuid4(), val[6], val[2], val[1], val[0], val[7], val[4], val[6], val[8], val[9], val[10]))
     
 
 

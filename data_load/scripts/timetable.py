@@ -16,7 +16,7 @@ def read_file():
 
 
 j = 0
-d = {}
+batch_d = {}
 
 
 def get_all_batches(year, row_number, leng, start):
@@ -25,7 +25,7 @@ def get_all_batches(year, row_number, leng, start):
     from the file.
     """
     global j
-    global d
+    global batch_d
     with open('timetable.csv') as data:
         reader = list(csv.reader(data))
         current_row = reader[row_number]
@@ -38,15 +38,15 @@ def get_all_batches(year, row_number, leng, start):
             branch = str(''.join(filter(str.isalpha, batch)))
             # print(branch, num)
             i += 2
-            d[j] = [branch, num, year]
+            batch_id = uuid.uuid4()
+            batch_d[j] = [branch, num, year, batch_id]
             j += 1
 
-    print_fixtures(d)
 
+def batch_fixtures(batch_d):
 
-def print_fixtures(d):
     f = open("batches.txt", "w+")
-    for val in d.values():
+    for val in batch_d.values():
         f.write('''
         {{
             \"model\": \"acad.batch\",
@@ -56,15 +56,37 @@ def print_fixtures(d):
                 \"branch\": [\"{}\", \"{}\"]
                 }}
         }},
-        '''.format(uuid.uuid4(), val[1], val[0], val[2]))
+        '''.format(val[3], val[1], val[0], val[2]))
 
 
-get_all_batches("Sophomore", 3, 97, 3)
-get_all_batches("Sophomore", 186, 95, 3)
-get_all_batches("Junior Year", 362, 48, 2)
-get_all_batches("Junior Year", 514, 101, 3)
-get_all_batches("Senior Year", 666, 82, 2)
-get_all_batches("Senior Year", 818, 50, 2)
+def makeBoards(d):
+
+    f = open("timetableboard.txt", "w+")
+    for val in d.values():
+        f.write('''
+        {{
+            \"model\": \"timetable.timetableboard\",
+            \"pk\": \"{}\",
+            \"fields\": {{
+                \"name\": \"{}{}\",
+                \"batch\": \"{}\",
+                \"start_repetition\": \"2020-07-20T06:33:34Z\",
+                \"end_repetition\": \"2020-12-20T06:33:34Z\"
+                }}
+        }},
+        '''.format(uuid.uuid4(), val[0], val[1], val[3]))
+
+
+get_all_batches("SO", 3, 97, 3)
+get_all_batches("SO", 186, 95, 3)
+get_all_batches("JR", 362, 48, 2)
+get_all_batches("JR", 514, 101, 3)
+get_all_batches("SR", 666, 82, 2)
+get_all_batches("SR", 818, 50, 2)
+
+makeBoards(batch_d)
+
+batch_fixtures(batch_d)
 
 
 # batch = "COE69"
