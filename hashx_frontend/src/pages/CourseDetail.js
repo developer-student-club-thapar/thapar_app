@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
 import { Root } from '@mui-treasury/layout';
 import { gql } from 'apollo-boost';
-import Button from '@material-ui/core/Button';
 import { useHistory } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import Books from '../components/CourseDetails/Books';
@@ -13,7 +12,7 @@ import Notes from '../components/CourseDetails/Notes';
 import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import { makeStyles } from '@material-ui/core/styles';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
-import { secondaryColor, tertiaryColor, textColor } from '../theme/theme';
+import { secondaryColor } from '../theme/theme';
 import {
   DrawerSidebar,
   useStyles,
@@ -32,6 +31,39 @@ const useClasses = makeStyles(() => ({
     fontSize: '36px',
     fontWeight: 'bolder',
     color: '#C4C5D1',
+  },
+  breadCrumbs: {
+    height: '5vh',
+    display: 'grid',
+    placeItems: 'center',
+    borderRadius: 15,
+    textAlign: 'center',
+    backgroundColor: `${secondaryColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
+  breadCrumbsText: {
+    color: '#747474',
+    fontSize: 25,
+    margin: '0 auto',
+  },
+  heroPaper: {
+    margin: 10,
+    borderRadius: 15,
+    textAlign: 'center',
+    height: '100vh',
+    backgroundColor: `${secondaryColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 45,
+  },
+  navigatioBar: {
+    backgroundColor: '#00293B',
+    height: '15vh',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    width: '85.7vw',
   },
   listItemPrimary: {
     display: 'grid',
@@ -147,61 +179,54 @@ const CourseDetail = (props) => {
                 backgroundImage: `${secondaryColor}`,
               }}
             >
-              <Grid container style={{ padding: 30 }}>
+              <Grid
+                container
+                justify="flex-start"
+                alignItems="stretch"
+                style={{ padding: 30 }}
+              >
                 <Grid item xs={3}>
                   <img
                     src={require('../assets/kid.svg')}
                     style={{ marginLeft: '2vw' }}
                   />
                 </Grid>
-                <Grid item l={8}>
-                  <Grid container direction="column">
-                    <Grid item>
-                      <h1 style={{ fontWeight: 'bold', fontSize: 45 }}>
+                <Grid item xs={8}>
+                  <Grid
+                    container
+                    direction="column"
+                    justify="space-around"
+                    alignItems="flex-start"
+                  >
+                    <Grid item xs={5}>
+                      <h1 className={classes.title}>
                         Computer{' '}
                         <span style={{ color: '#898989' }}>Science</span>
                       </h1>
                     </Grid>
-                    <Grid item>
+
+                    <Grid item xs={4}>
                       <Paper
                         elevation={3}
+                        className={classes.breadCrumbs}
                         style={{
                           width: '10vw',
-                          height: '5vh',
-
-                          borderRadius: 15,
-                          textAlign: 'center',
-                          backgroundColor: `${secondaryColor}`,
                         }}
                       >
-                        <h1
-                          style={{
-                            color: '#747474',
-                            fontSize: 25,
-                            margin: '0 auto',
-                          }}
-                        >
-                          UCS001
-                        </h1>
+                        <h1 className={classes.breadCrumbsText}>UCS001</h1>
                       </Paper>
+                    </Grid>
+                    <Grid item xs={4}>
                       <Paper
                         elevation={3}
+                        className={classes.breadCrumbs}
                         style={{
                           width: '15vw',
-                          height: '5vh',
-marginTop:10 , 
-                          borderRadius: 15,
-                          textAlign: 'center',
-                          backgroundColor: `${secondaryColor}`,
+
+                          marginTop: 10,
                         }}
                       >
-                        <h1
-                          style={{
-                            color: '#747474',
-                            fontSize: 25,
-                            margin: '0 auto',
-                          }}
-                        >
+                        <h1 className={classes.breadCrumbsText}>
                           {'View Course Site ->'}
                         </h1>
                       </Paper>
@@ -213,25 +238,9 @@ marginTop:10 ,
           </Grid>
 
           <Grid item xs={12}>
-            <Paper
-              elevation={3}
-              style={{
-                margin: 5,
-                borderRadius: 15,
-                textAlign: 'center',
-                height: '100vh',
-              }}
-            >
+            <Paper elevation={3} className={classes.heroPaper}>
               <Grid item xs={2}>
-                <Box
-                  style={{
-                    backgroundColor: '#00293B',
-                    height: '15vh',
-                    width: '100vw',
-                    borderTopLeftRadius: 15,
-                    borderTopRightRadius: 15,
-                  }}
-                >
+                <Box className={classes.navigatioBar}>
                   <Grid container>
                     <Grid item xs={2} className={classes.listItem}>
                       <Paper elevation={0} className={classes.logoIcons}>

@@ -1,11 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import cx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
 import {
-  Root,
+
   getHeader,
   getDrawerSidebar,
   getSidebarTrigger,
@@ -15,15 +11,8 @@ import {
   getFooter,
   getFixedScheme,
 } from '@mui-treasury/layout';
-import {
-  HeaderMockUp,
-  ContentMockUp,
-  FooterMockUp,
-} from '@mui-treasury/mockup/layout';
-import { TextSidebar } from '@mui-treasury/mockup/sidebars';
 
 import Layout from '@mui-treasury/layout';
-
 
 export const Header = getHeader(styled);
 export const DrawerSidebar = getDrawerSidebar(styled);

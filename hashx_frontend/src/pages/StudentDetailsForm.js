@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, {useState } from 'react';
 import { Container, Grid, Paper } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
@@ -6,11 +6,9 @@ import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import NinjaAnimation from '../components/NinjaAnimation';
 import '../styles/StudentDetailsForm.css';
-import { useMutation, useLazyQuery } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/react-hooks';
 import {
   SEND_STUDENT_DETAILS,
-  GET_BATCHES,
-  GET_BRANCHES,
 } from './AuthQueriesMutations';
 
 const StudentDetailsForm = () => {
