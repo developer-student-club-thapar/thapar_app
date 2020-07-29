@@ -3,11 +3,13 @@ from graphql_relay.node.node import from_global_id
 from .schema import ClassNode
 import graphene
 from graphene_django.types import DjangoObjectType
+
+
 class CreateClass(graphene.relay.ClientIDMutation):
     classes = graphene.Field(ClassNode)
+
     class Input:
         type = graphene.String()
-        timetableboard = graphene.String()
         course = graphene.String()
         created_date = graphene.types.datetime.DateTime()
         modified_date = graphene.types.datetime.DateTime()
@@ -17,11 +19,10 @@ class CreateClass(graphene.relay.ClientIDMutation):
         location = graphene.String()
         published = graphene.Boolean()
         private = graphene.Boolean()
-    
+
     @classmethod
-    def mutate_and_get_payload(cls,root, info, **input):
+    def mutate_and_get_payload(cls, root, info, **input):
         type = input.get('type')
-        timetableboard = input.get('timetableboard')
         course = input.get('course')
         created_date = input.get('created_date')
         modified_date = input.get('modified_date')
@@ -30,16 +31,19 @@ class CreateClass(graphene.relay.ClientIDMutation):
         end_time = input.get('end_time')
         location = input.get('location')
         published = input.get('published')
-        private = input.get('private') 
-        classes = Class(type=type , timetableboard=timetableboard , course=course , created_date = created_date , modified_date = modified_date , day=day , start_time = start_time , end_time = end_time , location = location , private = private , published = published)
+        private = input.get('private')
+        classes = Class(type=type, course=course, created_date=created_date, modified_date=modified_date,
+                        day=day, start_time=start_time, end_time=end_time, location=location, private=private, published=published)
         classes.save()
-        return  CreateClass(classes=classes)
+        return CreateClass(classes=classes)
+
+
 class UpdateClass(graphene.relay.ClientIDMutation):
     classes = graphene.Field(ClassNode)
+
     class Input:
         id = graphene.String()
         type = graphene.String()
-        timetableboard = graphene.String()
         course = graphene.String()
         created_date = graphene.types.datetime.DateTime()
         modified_date = graphene.types.datetime.DateTime()
@@ -49,15 +53,14 @@ class UpdateClass(graphene.relay.ClientIDMutation):
         location = graphene.String()
         published = graphene.Boolean()
         private = graphene.Boolean()
-        
+
     @classmethod
-    def mutate_and_get_payload(cls,root, info, **input):
+    def mutate_and_get_payload(cls, root, info, **input):
         id = input.get('id')
         id = from_global_id(id)
         id = id[1]
         classes = Class.objects.get(pk=id)
         type = input.get('type')
-        timetableboard = input.get('timetableboard')
         course = input.get('course')
         created_date = input.get('created_date')
         modified_date = input.get('modified_date')
@@ -69,8 +72,6 @@ class UpdateClass(graphene.relay.ClientIDMutation):
         private = input.get('private')
         if type:
             classes.type = type
-        if timetableboard:
-            classes.timetableboard = timetableboard
         if course:
             classes.course = course
         if created_date:
@@ -90,4 +91,4 @@ class UpdateClass(graphene.relay.ClientIDMutation):
         if location:
             classes.location = location
         classes.save()
-        return UpdateClass(classes = classes )
+        return UpdateClass(classes=classes)
