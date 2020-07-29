@@ -93,10 +93,7 @@ class Class(models.Model):
     # Meta
     type = models.CharField(max_length=10, choices=TYPE)
 
-    batch = models.ManyToManyField(
-        Batch,
-
-    )
+    batch = models.ManyToManyField(Batch)
 
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
 
