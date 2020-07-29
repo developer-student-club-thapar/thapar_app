@@ -82,8 +82,8 @@ class Period(models.Model):
         return f"Per :{self.no} {self.semester.status} Sem"
 
 
-class Class():
-
+class Class(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     TYPE = [
         ("Lecture", "Lecture"),
         ("Practical", "Practical"),
@@ -93,21 +93,23 @@ class Class():
     # Meta
     type = models.CharField(max_length=10, choices=TYPE)
 
-    batch = models.ForeignKey(
-        Batch, on_delete=models.PROTECT
+    batch = models.ManyToManyField(
+        Batch,
+
     )
 
-    created_date = models.DateTimeField(default=timezone.now)
-    modified_date = models.DateTimeField(default=timezone.now)
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
 
     # WHEN
     day = models.CharField(max_length=10, choices=DAYS)
     period = models.ManyToManyField(Period)
+    # Site Wide On-OFF Switch
+    published = models.BooleanField(default=True)
 
-    published = models.BooleanField(default=True)  # Site Wide On-OFF Switch
     # Public/Private On-OFF Switch
     private = models.BooleanField(default=False)
+    created_date = models.DateTimeField(default=timezone.now)
+    modified_date = models.DateTimeField(default=timezone.now)
 
     class Meta:
         abstract = True
@@ -120,7 +122,7 @@ class OnlineClass(Class):
     meetingURL = models.URLField(max_length=200, null=True, blank=True)
 
     # If the meeting is complete, URL of the recording of the URL
-    isCompleted = models.BooleanField(default=True)
+    isCompleted = models.BooleanField(default=False)
     recordingURL = models.URLField(max_length=200, null=True, blank=True)
 
     class Meta:
@@ -128,7 +130,7 @@ class OnlineClass(Class):
         verbose_name_plural = "OnlineClasses"
 
     def __str__(self):
-        return f" {self.batch.year} {self.instructor} {self.course}."
+        return f"{self.course} {self.day}"
 
 
 class OfflineClass(Class):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Location, Period, Holidays,
+from .models import Location, Period, OnlineClass, OfflineClass, Holidays
 
 
 @admin.register(Location)
@@ -23,6 +23,53 @@ class LocationAdmin(admin.ModelAdmin):
 class PeriodAdmin(admin.ModelAdmin):
     list_display = ('id', 'semester', 'no', 'start_time', 'end_time')
     list_filter = ('semester',)
+
+
+@admin.register(OnlineClass)
+class OnlineClassAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'type',
+        'course',
+        'day',
+        'published',
+        'private',
+        'meetingURL',
+        'isCompleted',
+        'recordingURL',
+    )
+    list_filter = (
+        'created_date',
+        'modified_date',
+        'published',
+        'private',
+        'isCompleted',
+    )
+    # raw_id_fields = ('batch', 'period')
+
+
+@admin.register(OfflineClass)
+class OfflineClassAdmin(admin.ModelAdmin):
+    list_display = (
+        'id',
+        'type',
+        'created_date',
+        'modified_date',
+        'course',
+        'day',
+        'published',
+        'private',
+        'location',
+    )
+    list_filter = (
+        'created_date',
+        'modified_date',
+        'course',
+        'published',
+        'private',
+        'location',
+    )
+    raw_id_fields = ('batch', 'period')
 
 
 @admin.register(Holidays)
