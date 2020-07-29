@@ -10,10 +10,37 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: '#171313',
     backgroundColor: 'whitesmoke',
+    [theme.breakpoints.down('sm')]: {
+      paddingX: '50px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      paddingX: '50px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      paddingX: '200px',
+    },
   },
   text: {
+    display: 'flex',
+    flexFlow: 'column',
+
+    [theme.breakpoints.down('sm')]: {
+      alignItems: 'center',
+    },
+    [theme.breakpoints.up('sm')]: {
+      alignItems: 'center',
+    },
+    [theme.breakpoints.up('md')]: {
+      alignItems: 'flex-start',
+    },
+    [theme.breakpoints.up('lg')]: {
+      // alignItems: 'flex-start',
+    },
+    [theme.breakpoints.up('xl')]: {
+      // alignItems: 'flex-start',
+    },
+
     color: '#171313',
     fontWeight: 'bold',
     paddingTop: '100px',
