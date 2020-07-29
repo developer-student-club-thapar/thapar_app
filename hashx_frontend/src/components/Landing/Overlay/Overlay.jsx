@@ -3,16 +3,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useSpring, useTrail, config, animated, useChain } from 'react-spring';
 import background from '../../../assets/Overlay-menu/Sun-Tornado.svg';
+import { Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    position: 'fixed',
+    overflow: 'hidden',
     zIndex: 99,
-    position: 'absolute',
     right: '0%',
     top: '0%',
     backgroundColor: 'black',
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
+    '::-webkit-scrollbar': { display: 'none' },
   },
   items: {
     display: 'flex',
