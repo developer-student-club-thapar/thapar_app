@@ -45,6 +45,7 @@ class OnlineClassAdmin(admin.ModelAdmin):
         'private',
         'isCompleted',
     )
+    autocomplete_fields = ["course"]
     # raw_id_fields = ('batch', 'period')
 
 
