@@ -9,7 +9,6 @@ from django.utils import timezone
 from django.urls import reverse
 from django.utils.text import slugify
 from acad.models import File
-id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
 
 class Category(models.Model):
