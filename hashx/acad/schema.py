@@ -86,7 +86,7 @@ class FileFilter(django_filters.FilterSet):
             models.FileField: {
                 'filter_class': django_filters.CharFilter,
                 'extra': lambda f: {
-                    'lookup_expr': 'icontains'
+                    'lookup_expr': 'icontains',
                 }
             },
             models.ImageField: {
