@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils import timezone
 import uuid
 from django.utils.text import slugify
-from hashx.custom_models import FileUrlField
+
 
 
 class Semester(models.Model):
