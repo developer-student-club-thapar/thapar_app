@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import cx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,13 +12,8 @@ import {
   getCollapseBtn,
   getContent,
   getFooter,
-  getFixedScheme,
 } from '@mui-treasury/layout';
-import {
-  HeaderMockUp,
-  ContentMockUp,
-  FooterMockUp,
-} from '@mui-treasury/mockup/layout';
+import {HeaderMockUp} from '@mui-treasury/mockup/layout';
 import { TextSidebar } from '@mui-treasury/mockup/sidebars';
 import Sidebar from '../components/Dashboard/Sidebar';
 import Layout from '@mui-treasury/layout';
@@ -29,11 +23,11 @@ const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
 const SidebarTrigger = getSidebarTrigger(styled);
 const SidebarContent = getSidebarContent(styled);
-const CollapseBtn = getCollapseBtn(styled);
-const Content = getContent(styled);
-const Footer = getFooter(styled);
 
-const fixedScheme = getFixedScheme();
+const Content = getContent(styled);
+
+
+
 const scheme = Layout();
 
 scheme.configureHeader((builder) => {
