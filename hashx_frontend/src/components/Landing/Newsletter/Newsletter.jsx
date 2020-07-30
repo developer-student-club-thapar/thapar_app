@@ -108,8 +108,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   responsiveBtnSize: {
-    'stroke-dasharray': 1000,
-    'stroke-dashoffset': 1000,
     [theme.breakpoints.down('sm')]: {
       fontSize: '12px',
     },

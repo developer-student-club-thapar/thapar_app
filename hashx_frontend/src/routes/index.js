@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import PrivateTest from '../pages/PrivateTest';
 import Route from './Route';
 import Home from '../pages/Home';
@@ -14,6 +14,7 @@ import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
 import TimeTable from '../pages/TimeTable';
 import Landing from '../pages/Landing';
+import PageNotFound from '../pages/404';
 
 const Routes = () => {
   return (
@@ -41,6 +42,8 @@ const Routes = () => {
         component={StudentDetailsForm}
         New
       />
+      <Route path="/404" component={PageNotFound} />
+      <Redirect to="/404" />
 
       {/* <Route component={Home} /> */}
     </Switch>

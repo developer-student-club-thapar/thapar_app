@@ -9,6 +9,7 @@ import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
 import Overlay from '../Landing/Overlay/Overlay.jsx';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   hamburgerBox: {
@@ -83,9 +84,15 @@ const Navbar = () => {
           <Overlay isOpen={open} />
           <Box />
           <Box className={classes.listBox}>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Login</Button>
+            <Link to="/">
+              <Button>Home</Button>
+            </Link>
+            <Link to="/about">
+              <Button>About</Button>
+            </Link>
+            <Link to="/contact">
+              <Button>Contact</Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
