@@ -6,6 +6,24 @@ import uuid
 from django.utils.text import slugify
 
 
+class Semester(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+    # This is for whole semester
+    start = models.DateTimeField(default=timezone.now)
+    end = models.DateTimeField(default=timezone.now)
+
+    status = [
+        ('ODD', 'ODD'),
+        ('EVEN', 'EVEN')
+    ]
+
+    status = models.CharField(max_length=4, choices=status)
+
+    def __str__(self):
+        return f" {self.status} Sem {self.name}"
+
+
 class DrivefolderManager(models.Manager):
     def get_by_natural_key(self, year, drive_id):
         return self.get(year=year, drive_id=drive_id)
@@ -149,6 +167,11 @@ class FirstYearBatch(models.Model):
     created_date = models.DateTimeField(default=timezone.now, editable=False)
 
 
+class BatchManager(models.Manager):
+    def get_by_natural_key(self, branch, num):
+        return self.get(branch=branch, num=num)
+
+
 class Batch(models.Model):
     """
 
@@ -163,9 +186,12 @@ class Batch(models.Model):
     GR = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
     created_date = models.DateTimeField(default=timezone.now, editable=False)
 
+    objects = BatchManager()
+
     class Meta:
         verbose_name = "Batch"
         verbose_name_plural = "Batchs"
+        unique_together = [['branch', 'num']]
 
     def __str__(self):
         return f"{self.branch.year} {self.branch.code} {str(self.num)}"
@@ -278,6 +304,7 @@ class File(models.Model):
     batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
     file_id = models.CharField(max_length=100, null=True)
     web_content_link = models.URLField(max_length=150, null=True)
+    web_view_link = models.URLField(max_length=150, null=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
@@ -320,3 +347,15 @@ class AcademicCalendar(models.Model):  # Don't make mutations of this model
         # Slugify the name for the URL
         self.slug = slugify(self.name)
         super(AcademicCalendar, self).save(*args, **kwargs)
+
+
+class Department(models.Model):
+    """
+    Departments for all teachers
+    """
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name

@@ -1,2059 +1,2059 @@
 [
     {
         "model": "acad.batch",
-        "pk": "55e53aa9-0882-4a6e-8f45-826c49fee483",
+        "pk": "f48fa756-6a5e-46cb-870d-bb0d6c98aad1",
         "fields": {
             "num": "1",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f81c7d0a-b3ff-476a-8f75-0d2fcc55ad9b",
+        "pk": "c2c5ea0d-fd68-4c92-9fb3-7229634ddd60",
         "fields": {
             "num": "2",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "985be500-e971-4fd3-aceb-e5184d385420",
+        "pk": "dcd812f4-3784-4ca4-9341-0a6c54f132c0",
         "fields": {
             "num": "3",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "51e8b459-5402-4c78-bffa-6831e5a4894d",
+        "pk": "88c822f8-79c1-4dd6-ad8f-26d85b0317a9",
         "fields": {
             "num": "4",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b8dc7ff1-2d64-4145-b38a-e695916e672b",
+        "pk": "2607a74f-d5a6-4d5a-9f7f-127b21974cf6",
         "fields": {
             "num": "5",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8345d9a1-337d-4699-ab94-7bf21fcf5407",
+        "pk": "a7a382d4-1874-4ad3-a015-29059536138b",
         "fields": {
             "num": "6",
             "branch": ["EIC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f1287ad5-694b-4890-9237-1bcc7283dc8e",
+        "pk": "1600bf36-84a0-445a-924d-2815f3fd21a6",
         "fields": {
             "num": "1",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b761765d-2278-4a38-bff6-fdcea365761a",
+        "pk": "54ce87f9-c428-4d91-b96c-6429baacaf4b",
         "fields": {
             "num": "2",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e62ea1f1-acf2-4aa2-a804-795f7dd1e938",
+        "pk": "e57dc366-77b3-444f-91ca-64613b634fd4",
         "fields": {
             "num": "3",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "90aad895-97b7-4325-af27-e7fc27adc6f9",
+        "pk": "5c5aa73c-801c-44f8-9397-0f1fd5a45f46",
         "fields": {
             "num": "4",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "de4d99d0-7af3-4b13-9890-b4c17a5cd90c",
+        "pk": "7d3d18f1-73d9-4370-8b46-9010b5ef7339",
         "fields": {
             "num": "5",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "42a556b3-cc5a-43be-8327-88310ea912a5",
+        "pk": "7d0d4db7-7763-4871-9ac8-db178ac748ee",
         "fields": {
             "num": "6",
             "branch": ["ELE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0acf282a-cad9-486d-a7f6-5645b010c097",
+        "pk": "f73c2766-a654-4a40-b4cf-3ff61b152580",
         "fields": {
             "num": "1",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "fc80d39d-e4d6-49be-83f2-386506c12fc8",
+        "pk": "2ae38cc8-2f3a-42ac-ad3a-3615f7716277",
         "fields": {
             "num": "2",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c264474c-28aa-466b-98a9-2fc41799ce93",
+        "pk": "3b05ed99-2ea6-4e23-9bed-6e75ff8612dd",
         "fields": {
             "num": "3",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ee681547-56f1-4a52-971c-30e57b3bf82c",
+        "pk": "0728f02d-5397-48d7-b3ed-87fb18a1bef4",
         "fields": {
             "num": "4",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "55791d97-73f3-478b-a9de-6185e26b0b7b",
+        "pk": "9057613b-a3fb-43cc-aa29-ac330c06b976",
         "fields": {
             "num": "5",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "6b27e78b-03b8-4163-9511-b9e7eb6c737d",
+        "pk": "b251ddea-bf7a-4b80-b7d2-5e3a4a51d9cf",
         "fields": {
             "num": "6",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "af1ba357-2647-4e16-ba20-235177e6be28",
+        "pk": "7a8a2fc8-ea7f-464c-87d4-129aa08aa24c",
         "fields": {
             "num": "7",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "529cb20e-7e67-4ed6-9b6a-332369a235ee",
+        "pk": "089e7a10-0ef6-4950-9804-e66daf1e2d04",
         "fields": {
             "num": "8",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "97000e40-f2d3-45d7-b474-1c68cf8255f8",
+        "pk": "b2b21aab-60eb-4c71-8b7c-84ef26456c96",
         "fields": {
             "num": "9",
             "branch": ["MEE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d61a3e65-539e-449b-85ca-c72dc4233d01",
+        "pk": "8244561d-1a66-4560-b48a-39a7a1d60ec1",
         "fields": {
             "num": "1",
             "branch": ["MEC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "eb24883e-2e6e-4e0a-8dd6-bb04f210e0b7",
+        "pk": "29d6dce2-0a11-4bdd-8ea9-3b7057e25427",
         "fields": {
             "num": "2",
             "branch": ["MEC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4cded036-84f0-41e0-a97b-fc559d5f212f",
+        "pk": "de97b3df-522a-4e33-aa74-e4d457fc1366",
         "fields": {
             "num": "3",
             "branch": ["MEC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8b0df98d-30d6-4f03-9bde-7c503b6a0c2f",
+        "pk": "f7389545-9790-4ebc-b753-711604821143",
         "fields": {
             "num": "1",
             "branch": ["MPE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "80307347-da37-4843-b7ff-b06dd566ffc5",
+        "pk": "7750ebbd-ca48-4830-b7c3-cdeb7ff1554f",
         "fields": {
             "num": "1",
             "branch": ["CHE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f129ee46-c642-46c8-8e0c-c85da165c4f7",
+        "pk": "2be96b8c-a45f-49d4-9fe5-f3b50590a540",
         "fields": {
             "num": "2",
             "branch": ["CHE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "349762e6-cd72-4613-9f75-6c5f60ba2d39",
+        "pk": "6500a1df-176a-4853-b905-d99b0535ca3c",
         "fields": {
             "num": "1",
             "branch": ["BT", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0133786b-6476-42e5-adcc-c0cba8209ab1",
+        "pk": "3bac8a6e-9c4b-4525-ad39-fb092c7dc62d",
         "fields": {
             "num": "2",
             "branch": ["BT", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e051b9e8-846a-4677-9332-8af2358a558c",
+        "pk": "0d24e06d-50e8-4c91-8077-a2d737396eb7",
         "fields": {
             "num": "1",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9517fdf6-1fd8-4bf3-be8b-2a1718220e73",
+        "pk": "06656b63-979f-4d6c-8c80-e45b477e3371",
         "fields": {
             "num": "2",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3654b301-38a7-4923-b0ba-cad725407da2",
+        "pk": "ef9a1a31-c1be-4b32-851e-ca7a6c5d4d55",
         "fields": {
             "num": "3",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5b05d8f0-0175-4c99-889c-de7f94223b54",
+        "pk": "12eb30b2-5678-457a-b480-bf41b4ff9c1c",
         "fields": {
             "num": "4",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "20fb2975-a845-4421-87f0-28483dd3f1b4",
+        "pk": "a643b847-43e9-40a2-b13c-c4ce5d8447eb",
         "fields": {
             "num": "5",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ef6a013d-f319-4d04-a876-d4e66206904d",
+        "pk": "8aeb856e-e174-4d88-b6f1-f5953000d88f",
         "fields": {
             "num": "6",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4d4ddf23-823e-4c47-97ad-65c17f02ab18",
+        "pk": "e0ab398c-81df-428e-a9e9-d4f227ebea9e",
         "fields": {
             "num": "7",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "83d2e319-5abb-447e-ae30-4472d6bfa91d",
+        "pk": "bc01e5c3-dc09-4ef9-9ba8-2a34f69a2b93",
         "fields": {
             "num": "8",
             "branch": ["COPC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "584efd58-88ae-44a4-9a9c-91530c911f6a",
+        "pk": "1c329f69-d11a-40de-af24-a79eeb8ef4ac",
         "fields": {
             "num": "1",
             "branch": ["BME", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0384a6ae-0ae8-4a90-a6e2-20d3eb583192",
+        "pk": "4516176c-13b5-4d6b-b757-936534061a88",
         "fields": {
             "num": "1",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "dfdf2d16-c5a5-465d-9eca-655c8b4f9e94",
+        "pk": "1b4b9c51-0905-48ac-8c1d-b28ed0bc8c0a",
         "fields": {
             "num": "2",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "67720e7b-c118-49be-b14a-0e9105303c0f",
+        "pk": "14bdf841-272e-43a4-9e3f-aaed763f93f2",
         "fields": {
             "num": "3",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "42e36ad7-c1c3-4b7f-8edb-f18fdbfd08a6",
+        "pk": "0b3f65ea-5348-4997-af82-ab903dc9dec2",
         "fields": {
             "num": "4",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "406bfe20-c595-4178-8a33-02977cd27d99",
+        "pk": "b9845203-acf0-420f-afd3-757e006805fb",
         "fields": {
             "num": "5",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "bbdc7f76-2443-4948-8d28-ba8f6eb6a3f3",
+        "pk": "5bb7bd4b-685d-4278-bdee-6e3b4c95a09a",
         "fields": {
             "num": "6",
             "branch": ["CE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c024f858-90ad-401f-a970-35b2900d703d",
+        "pk": "8ee4624c-db7e-4b51-8419-66cd1c5702f3",
         "fields": {
             "num": "1",
             "branch": ["CSBS", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "65b23347-cf35-46e6-93df-684288e529a6",
+        "pk": "d276b3ff-4acf-4686-a2c0-3696bb2c6fe7",
         "fields": {
             "num": "2",
             "branch": ["CSBS", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8bd9cc90-0192-4f58-8b4b-4cc5ffc6e8d4",
+        "pk": "9518d100-7d1e-4c6c-be72-3b077b9f572f",
         "fields": {
             "num": "3",
             "branch": ["CSBS", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "350df99b-72c7-4608-a10e-ae4cdda3a7e6",
+        "pk": "3123131d-f810-4ebb-a395-9cbb8d2d094b",
         "fields": {
             "num": "1",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8f0ba62f-0100-43fc-8ff8-33eac66d9830",
+        "pk": "de8dee61-6539-4ff2-afdc-d408b91690ad",
         "fields": {
             "num": "2",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1f0f355a-abdf-4778-8d35-bd9cc9f8c07b",
+        "pk": "5cc76084-ddb8-42a8-b4e6-81d0b19d7dd8",
         "fields": {
             "num": "3",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "08abe574-a44c-4757-8f07-b33604c0b25f",
+        "pk": "ceaaaae4-9b62-4072-ab37-4bc4b97364ce",
         "fields": {
             "num": "4",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d2cd7433-24d2-49c6-a8ba-9f941229dcfc",
+        "pk": "70f90a29-53a7-4be3-ace2-a6dbbb7d80e4",
         "fields": {
             "num": "5",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d428211c-3668-4e91-bec6-057bf6fcbb8f",
+        "pk": "d94d20ab-33f9-49a0-9164-022a29c38a78",
         "fields": {
             "num": "6",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3900d622-ce35-43da-8cb5-517a0a11304b",
+        "pk": "97551e71-be0e-4577-bf57-fffa4384c768",
         "fields": {
             "num": "7",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c3ef07c6-adec-4393-b4b8-03ced9a058d5",
+        "pk": "ffe2282d-5019-4d5c-b2cc-2ab79ee575ad",
         "fields": {
             "num": "8",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "48f77869-8c6a-40df-9cea-fdc7fd80acc8",
+        "pk": "7bf43e16-2c7d-4653-be36-747ca6cbddb6",
         "fields": {
             "num": "9",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "6ae843df-70d2-47e1-be15-ef3bb382ed90",
+        "pk": "289caa71-2eff-4357-96c4-986ffe776a67",
         "fields": {
             "num": "10",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "2b955cec-41f9-4616-bafa-dad41389d7e2",
+        "pk": "9bf36586-1ff9-4119-b0c3-b1eeec11865a",
         "fields": {
             "num": "11",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "62d7a746-a814-40ff-a894-40ba6fbcab77",
+        "pk": "8a7c8cc5-b2fc-47ce-b115-5fad457ca85c",
         "fields": {
             "num": "12",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "34e35497-0378-4f91-b6ed-4e6f58f6ab3e",
+        "pk": "fde89543-3d44-49f5-a170-84730bd25283",
         "fields": {
             "num": "13",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9776abba-711a-4c4c-98d4-8c4862e2fe98",
+        "pk": "af45936b-2907-46b0-aee9-6492b4153ef1",
         "fields": {
             "num": "14",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "29c73cdf-8291-4759-8202-837abbbb39b6",
+        "pk": "41b6730a-dc8e-428c-bc23-a4849d9e24d3",
         "fields": {
             "num": "15",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b801e53e-9203-4507-8762-895a9177e920",
+        "pk": "8353cd13-e734-43cd-9437-c7e819637979",
         "fields": {
             "num": "16",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8d379054-db75-4d93-b5ed-46c4f8781a3c",
+        "pk": "425f2a99-b03e-4489-bea9-27ad3b4f69d3",
         "fields": {
             "num": "17",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "504980e3-2238-4f89-adb3-3a189d235a73",
+        "pk": "752ad61c-cfd9-4c10-bd98-8d9009920f94",
         "fields": {
             "num": "18",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c06fe371-bbc5-495b-9d59-db144e82c5d1",
+        "pk": "993dbe6c-6330-4e69-a4b3-806babab787c",
         "fields": {
             "num": "19",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1315f056-4e23-48e2-a7b6-3d677b13e176",
+        "pk": "3c640874-5e1f-459b-b905-4a8b32e72a54",
         "fields": {
             "num": "20",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4d97c6ef-2920-4a2e-9fad-a81dee3e610b",
+        "pk": "e2eb8a0e-85a5-4e8f-8024-756efff43285",
         "fields": {
             "num": "21",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "fe39658f-0505-4aee-a780-a3ef64aefab5",
+        "pk": "c29f876c-7e1a-4a63-a058-b317af103700",
         "fields": {
             "num": "22",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f3f90ed9-ccca-4e2a-8c85-fae2b75cc693",
+        "pk": "3f4716e5-76fd-467b-83f5-f85585dcdf16",
         "fields": {
             "num": "23",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7b85a639-21b3-4834-b9a9-018c83d42c98",
+        "pk": "701a7e57-e93e-43b1-b9b5-cc958839ccd6",
         "fields": {
             "num": "24",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "37e48d46-c469-454e-9de0-54ba53b14b98",
+        "pk": "f441ad08-5a15-408c-9cc8-87ebc00c282d",
         "fields": {
             "num": "25",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c8b14780-d9dd-42c8-99d3-0009090044d9",
+        "pk": "d73462c3-1f99-4f9f-9095-f9a15c4d958b",
         "fields": {
             "num": "26",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ee72f728-eaff-4acd-b372-e97377932446",
+        "pk": "5b21ca8d-e929-46eb-8162-9560244a427c",
         "fields": {
             "num": "27",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "207cde09-ccd8-47d0-890d-bdd70fce23fd",
+        "pk": "568c327b-67f5-4ceb-8af2-ed3956330e1a",
         "fields": {
             "num": "28",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "2088ee89-64a3-4cd8-944d-f3175cb12f4b",
+        "pk": "0f6a81fd-77f4-47c4-a76b-3f00c35203e2",
         "fields": {
             "num": "29",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "753bbdb4-a621-468b-b9e4-2354f5cab915",
+        "pk": "17a10d0c-f993-4200-9ac5-4cdbddb4321e",
         "fields": {
             "num": "30",
             "branch": ["COE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3ef33e6a-508d-4d52-b389-cd2eaf9c65ec",
+        "pk": "1878eb38-8143-4ba2-a5c5-346880ec8cb3",
         "fields": {
             "num": "1",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "fac231d1-ce9a-4f2e-bdac-a1ea5b12a37f",
+        "pk": "cf2f160f-ff54-44d8-8cda-ea5cec343524",
         "fields": {
             "num": "2",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "a2819f67-427f-4e74-9a0a-f0233f61e255",
+        "pk": "4b67be20-48a3-4613-a507-be10972ddb18",
         "fields": {
             "num": "3",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5690ff76-49a7-474a-84f5-39c914d83295",
+        "pk": "ab2e1656-2e13-4386-b9ba-0bb730f6ffc9",
         "fields": {
             "num": "4",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ee4b2af8-00f9-49ba-88ac-c253e776f518",
+        "pk": "e5e2d7f5-db6f-49bd-8465-a0b164287e65",
         "fields": {
             "num": "5",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7ff9a8f9-5a24-4011-b63a-888d6ba3296e",
+        "pk": "cdb126f2-a23f-4aef-b1f7-24a33f2140c4",
         "fields": {
             "num": "6",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ad8df04d-0c1b-448c-bde8-9017b01871cf",
+        "pk": "7660d3cf-4ce7-445e-8ec7-8409c38c874b",
         "fields": {
             "num": "7",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cdec2da5-37bb-4447-803c-abefe8bfcb74",
+        "pk": "fc827ef4-d6eb-46bd-84a5-6c85cbdd3aa9",
         "fields": {
             "num": "8",
             "branch": ["ECE", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1fae5b18-fd8f-4492-b4e1-e89e4cd8dac7",
+        "pk": "33c90c4a-5861-4687-9e39-ac0e853a02da",
         "fields": {
             "num": "1",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b75f1fe6-95bf-4f2e-96f0-2db09f2fc20a",
+        "pk": "19e0378b-0d1a-4605-8ecb-8b49ab09c409",
         "fields": {
             "num": "2",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "aa324893-6c39-424b-9958-ccb399627fff",
+        "pk": "4e57325c-f5c3-4a1e-b308-62c79475eaf7",
         "fields": {
             "num": "3",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5bf179dc-1358-4ea2-bb3a-9d8c5b6d001e",
+        "pk": "12cd8fd0-552c-4f7f-b2b9-1a5df12d96a7",
         "fields": {
             "num": "4",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "38eae5df-6237-44f3-a8eb-397858b840b4",
+        "pk": "79af5842-de34-4b74-b212-2cf8d2873544",
         "fields": {
             "num": "5",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7870d2e6-0ae2-49f2-b7e3-453e7bc975de",
+        "pk": "42ec24b1-3806-42d8-a2b4-1309c2188ba6",
         "fields": {
             "num": "6",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "11c6ffa5-84f1-4619-b539-261041e9a9dd",
+        "pk": "87e98234-209e-4f2e-882f-82b2b2409fa8",
         "fields": {
             "num": "7",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8dc085dc-1d45-4592-a885-e33785401f18",
+        "pk": "ac502379-0252-4989-9043-cd0e1e818016",
         "fields": {
             "num": "8",
             "branch": ["ENC", "SO"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1a740854-e8b0-47a3-b1fb-fcac83e1f1c2",
+        "pk": "c0e24e23-dd4f-42ff-bcae-b014f24bde6d",
         "fields": {
             "num": "1",
             "branch": ["EIC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "680e076d-90bc-4b5c-9fee-23d29a98242e",
+        "pk": "15afd906-dbfb-4703-b121-211d6457953b",
         "fields": {
             "num": "2",
             "branch": ["EIC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "710a09ef-4168-436a-861d-031aaf9152d0",
+        "pk": "6092f789-fb2d-4d71-b0b9-45c4e1b2b62d",
         "fields": {
             "num": "1",
             "branch": ["ELE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ba40d8cb-0dc3-4757-8038-0f6f11b56bad",
+        "pk": "e266e57d-1506-4746-9fa8-7ef97c571bbd",
         "fields": {
             "num": "2",
             "branch": ["ELE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "dbcd332c-e803-4435-9906-8e0e2af2af88",
+        "pk": "4dd496a6-31d0-4791-9976-58271102fa3b",
         "fields": {
             "num": "3",
             "branch": ["ELE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cc1a5a38-f0cc-4674-ab18-4b34e6938058",
+        "pk": "f9a8be0c-6844-4015-84dd-cc8d5d15c50a",
         "fields": {
             "num": "4",
             "branch": ["ELE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e94f05ff-5905-4a12-bdbb-f079e2a60223",
+        "pk": "4253ec8f-2b92-4958-8e6a-7e5b5c6251c1",
         "fields": {
             "num": "1",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "48c99366-e7f9-43e4-b64e-21f6b6d7dc40",
+        "pk": "2c522821-2bde-46dc-ac15-19e85ddcecd5",
         "fields": {
             "num": "2",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "da7a79c7-f2be-4fbd-af95-593d0a23a2c6",
+        "pk": "73f3d2cc-2ce2-467e-85a0-383c87802130",
         "fields": {
             "num": "3",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f8931846-dc47-4f3f-8cff-7ae32f19ef5b",
+        "pk": "1142e2f6-1dd0-4a15-81a4-023ea6ce7a34",
         "fields": {
             "num": "4",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "bfa9d0d9-4225-449f-bf18-71b4f48a979e",
+        "pk": "2961155c-8e30-42b9-8bf4-39ad1f808f69",
         "fields": {
             "num": "5",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5c030566-ad0a-4c9d-a455-0bb903144082",
+        "pk": "49cf5856-a3ac-4fb2-9ccb-b5c7b0d71e43",
         "fields": {
             "num": "6",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "a782bb3a-9d44-47cb-884d-5ee7c7a823db",
+        "pk": "b8cc215b-ce2b-457a-9180-06d5eb21f9a9",
         "fields": {
             "num": "7",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5f00e82f-fe71-42bd-8215-7fa3b6bcca64",
+        "pk": "37e19c40-be8c-4ca2-8d3f-024750254a47",
         "fields": {
             "num": "8",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0a527ca3-6872-45c1-ac0c-dfb827ad1cbd",
+        "pk": "45a74a96-4b04-4b1e-ac04-65522e762dcf",
         "fields": {
             "num": "9",
             "branch": ["MEE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4b3f7c76-33a8-4012-ab11-6d83b33b5446",
+        "pk": "c2302499-d740-4d5c-a4f0-f30e6077b0b6",
         "fields": {
             "num": "1",
             "branch": ["MEC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "085d335b-16d3-4710-8338-0a137e5aa8bf",
+        "pk": "3156ca50-b048-49a9-adef-d53f9bf6f433",
         "fields": {
             "num": "2",
             "branch": ["MEC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "06952df9-64ff-4e57-87e6-cd57294bf30e",
+        "pk": "492f75b9-4d56-4201-87d6-792f9ec36f4b",
         "fields": {
             "num": "1",
             "branch": ["CHE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c71675c5-8da0-4aa9-afe0-c84415ec1397",
+        "pk": "efea29bf-b704-4973-b1db-b7810967e88f",
         "fields": {
             "num": "1",
             "branch": ["BT", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3586e4bc-a074-4ef6-9ea6-bfd138b4773e",
+        "pk": "8a7dcfb1-10e2-4f7e-b75d-78feb1303692",
         "fields": {
             "num": "2",
             "branch": ["BT", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "39802daf-d3a1-4245-a388-87306f0b7e53",
+        "pk": "cb756f3d-b0cc-451d-83d8-7890fb2ce14c",
         "fields": {
             "num": "1",
             "branch": ["CE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9e3e2adc-9413-4eca-ba3e-dc8b12dab4b9",
+        "pk": "1a7164ef-f880-4244-b29c-05b3bf17f7df",
         "fields": {
             "num": "2",
             "branch": ["CE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7b006058-6eb3-40ec-bdce-ae4fad0d762f",
+        "pk": "ec531105-73d5-46b8-80e5-a63d7bd23af0",
         "fields": {
             "num": "3",
             "branch": ["CE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "040a0cca-2259-42de-af20-170a667c2b52",
+        "pk": "559778e2-257a-488e-b025-156af799da21",
         "fields": {
             "num": "1",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b6145fdb-194f-4f65-9af5-31c51cf0dbea",
+        "pk": "1f2af198-5213-49c8-966f-375e7c9e2a13",
         "fields": {
             "num": "2",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "acc067f1-9de4-4023-b741-4be3c3497363",
+        "pk": "94d2e7ea-cee9-4392-aa5f-a27f49ba8823",
         "fields": {
             "num": "3",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "90416407-c507-419f-9e57-aa0d0053a176",
+        "pk": "0dfbbf98-3b90-45dc-99fb-0d729bcff871",
         "fields": {
             "num": "4",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "27bf4e91-21ab-41f1-935c-fc675e35b9bb",
+        "pk": "5152be9b-65ee-44cc-98b1-7d721b3f9a9e",
         "fields": {
             "num": "5",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "be2a8d28-8689-443f-acb8-2139e634abb1",
+        "pk": "650e0538-64f0-400f-9dc1-851d67d577a7",
         "fields": {
             "num": "6",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "26af8385-a507-4311-a718-1a2ecc17120b",
+        "pk": "fcd1e16e-ed37-408f-b2a9-fda790a62d0b",
         "fields": {
             "num": "7",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9835fed5-c2ad-4ddd-a38b-4358c0cf360a",
+        "pk": "d6298652-507b-47b9-abd6-f00a2b7086ff",
         "fields": {
             "num": "8",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f3ed1992-8050-4662-9b4a-80b5836b39ff",
+        "pk": "877de5c6-745d-4b01-80fe-027ec40d04ed",
         "fields": {
             "num": "9",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "dd6d3135-a0c8-429d-b023-533be8619b33",
+        "pk": "c67a3c31-8ea0-433d-9370-54d461072514",
         "fields": {
             "num": "10",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ffbba501-6a4e-4ae5-8f66-eb66c450c801",
+        "pk": "5707d45e-b713-49d1-a464-d53526011ef7",
         "fields": {
             "num": "11",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3796cc8a-5255-48ab-a526-b663d995c133",
+        "pk": "aff14416-99e2-492b-83b6-639fc636c899",
         "fields": {
             "num": "12",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d4af7929-bb23-4c5e-968b-2c319247b5a7",
+        "pk": "1e227d6f-bd6a-4c82-b017-a853f203e9ad",
         "fields": {
             "num": "13",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5fc1de16-750f-4476-9d9a-82d3c62b493c",
+        "pk": "e326177c-1045-4862-a2fb-b08282b2c868",
         "fields": {
             "num": "14",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b740a16b-d6ba-41b1-b806-28cd06629d4d",
+        "pk": "eb850ee1-151e-4c93-961d-9f5cbcf189d8",
         "fields": {
             "num": "15",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "94f5f95b-3292-4bd3-bbf3-ee25c4e638b3",
+        "pk": "0b1f37b6-a1d5-49c8-9f10-36fe334c0859",
         "fields": {
             "num": "16",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c13c0b80-9221-42b0-94b3-cfcf8224c09c",
+        "pk": "9641ca76-71c0-44ea-b00b-4c887044485a",
         "fields": {
             "num": "17",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "bd662cee-fc59-46a8-b700-3fe1b5cc528d",
+        "pk": "c75afa72-f798-4570-9686-0844a52ea46a",
         "fields": {
             "num": "18",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7b6b21ff-c1b9-4650-a868-a4b09800142f",
+        "pk": "e612ee46-59f5-4c36-869a-2f1ac2c58de0",
         "fields": {
             "num": "19",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ab01300c-5be6-40f6-ad6d-f2e129e9a75f",
+        "pk": "e230222d-796c-45a4-8d97-72fde5e78da7",
         "fields": {
             "num": "20",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "facb7025-c614-4a0a-89ec-b495a514a928",
+        "pk": "c16afcb7-be2e-4419-8407-1472fcefb722",
         "fields": {
             "num": "21",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e17abae1-83d0-44c8-9b03-20506e041da9",
+        "pk": "18b37ab6-d3c1-43f9-90fd-b0d872cee65e",
         "fields": {
             "num": "22",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "6c7e2b03-88ad-4169-ae1d-bd072197ad77",
+        "pk": "30c4a759-c643-443b-8731-48ea4565bbfe",
         "fields": {
             "num": "23",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4476c825-74b5-4ca4-8118-789c67be6c0f",
+        "pk": "37ac7067-bf47-4759-9cdb-f9be97f6eb52",
         "fields": {
             "num": "24",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "3c0657bc-3cfd-41d7-b62c-75bddbe1c886",
+        "pk": "17b7dbed-8a1f-4972-9816-828706421b9f",
         "fields": {
             "num": "25",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5378b817-881b-415c-aa98-0e5584b88672",
+        "pk": "77190ebb-725c-48ae-b7e3-af9d5d0ba2eb",
         "fields": {
             "num": "26",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "815e61cf-fde9-40bb-9ac7-9b2330c09804",
+        "pk": "851dd8f7-0190-4ad9-bf26-4c366cbc61df",
         "fields": {
             "num": "27",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "44bd09e9-0d13-44da-ab2a-fc4cb520756f",
+        "pk": "5dd07eec-2605-4c8e-94f6-9337131d170f",
         "fields": {
             "num": "28",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "6de398a3-47ef-4045-90f1-7fffda47fea4",
+        "pk": "8023de6a-13bf-419b-85d3-dad705f08210",
         "fields": {
             "num": "29",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "891d2a92-5055-4b6c-8269-962bca66658e",
+        "pk": "1273f8fe-25e7-41eb-b5e2-3c71262a59bf",
         "fields": {
             "num": "30",
             "branch": ["COE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "73bef68b-e95b-48a6-8c7c-e6ac392b3f4d",
+        "pk": "5723ad4a-ba08-44f8-a63f-4d8f37220e47",
         "fields": {
             "num": "1",
             "branch": ["CS", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "552a4720-db40-43e0-99c7-bb8dd3b071f7",
+        "pk": "e269e3fe-cb4c-4ff8-aaef-08e34beb2e77",
         "fields": {
             "num": "2",
             "branch": ["CS", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4a7ccaa4-1ee4-4b0d-b517-df12ee032624",
+        "pk": "ee123bac-53f9-4d32-98c3-28632923965b",
         "fields": {
             "num": "3",
             "branch": ["CS", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "86162ee0-7219-4b7f-a180-3883b95820d7",
+        "pk": "e3593f5f-5b5a-4752-9438-b02b5bff1139",
         "fields": {
             "num": "1",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d304f050-f3b6-4cda-bc47-e2fff30d3b7c",
+        "pk": "a45e279a-aa8e-4170-8dd1-b90677453870",
         "fields": {
             "num": "2",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c5bf18ef-c5a3-4972-a92c-9b3d2bc7db3d",
+        "pk": "b0315daa-0fd4-4141-b017-b2618f2127df",
         "fields": {
             "num": "3",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "37e06b3c-a49c-4f1f-a5a7-96a8f9ad932b",
+        "pk": "8ddc4cee-c6e7-4731-a8a8-2fd6e4bdf5ba",
         "fields": {
             "num": "4",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b6e4188b-171c-4c0a-a17f-b3d9efa9a4b4",
+        "pk": "74cfffce-fa31-426f-8170-b7bfcd5e3e8b",
         "fields": {
             "num": "5",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0f64e569-4a9a-4e0c-a924-97a8c4756d42",
+        "pk": "6b2d04c9-efa0-4a7c-973b-426daa4101f2",
         "fields": {
             "num": "6",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "27b5ed27-5903-469f-a594-066a8ddf0bea",
+        "pk": "2b0deb8b-d8ae-4703-8e7e-8467bfdd6e7d",
         "fields": {
             "num": "7",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "19241e15-a49b-4e36-912f-5dca2f02d549",
+        "pk": "ab6d833b-fda9-42c5-b994-2f51724de727",
         "fields": {
             "num": "8",
             "branch": ["ECE", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9b2e9cae-8e01-4db4-8893-86eee18343f4",
+        "pk": "d3f2ed09-6dab-4230-8ea5-ca12c3efdd25",
         "fields": {
             "num": "1",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "87af94ae-f0f6-4bd3-8b11-040afa4c44bd",
+        "pk": "1d808e98-ab0f-425b-9dad-df412aba68c4",
         "fields": {
             "num": "2",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d08c06e2-b091-41ef-896d-9fbab4daa51b",
+        "pk": "d2d9c1cd-15e5-4575-bb3d-864f5ce31b71",
         "fields": {
             "num": "3",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "dab30693-2611-49f6-8c13-8e8efc0125f8",
+        "pk": "9f2f539e-95cb-4dd1-bdff-20b5cb9c016a",
         "fields": {
             "num": "4",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b4dcdf75-be1f-4e1f-9daa-5e9e110e1322",
+        "pk": "d00385d4-a140-470c-825c-d0cb8dd2c466",
         "fields": {
             "num": "5",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "383556c3-febe-4f3b-be32-5a16baec573b",
+        "pk": "1f1b037f-0e5f-40ec-8533-0bd9fe2cf60d",
         "fields": {
             "num": "6",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8d978857-3f1e-4e73-aa2d-5034385a4ffc",
+        "pk": "29abd68f-20f6-4204-a185-a2bb1463ad70",
         "fields": {
             "num": "7",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b6357689-ca6d-411d-a734-b33f4c21650e",
+        "pk": "eee3d5c9-b034-4061-9478-a5433c84e3ca",
         "fields": {
             "num": "8",
             "branch": ["ENC", "JR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "548821a3-c8f2-4380-82cc-b484812632b2",
+        "pk": "401052b5-6256-4541-9788-4e28c141b6ba",
         "fields": {
             "num": "1",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9f6726ae-bd25-4b1e-9993-1ac34b334217",
+        "pk": "078a33d3-2363-4633-8e8c-f6f34ceef8d2",
         "fields": {
             "num": "2",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "beb046f7-22dc-40dc-9d03-112660645241",
+        "pk": "1e67981e-332e-4a17-8317-e6266b57c1c7",
         "fields": {
             "num": "3",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cc92eccd-437f-4735-af2e-2900df8d516d",
+        "pk": "bc6ff065-d7c3-42ac-bd88-a53c3dacdcee",
         "fields": {
             "num": "4",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "254806c4-96a1-4fc4-8b5c-d097f8a37f1b",
+        "pk": "70e3e096-bbf6-4161-98ce-be55fd8c5368",
         "fields": {
             "num": "5",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "882d6202-5a96-4622-b850-512be0657989",
+        "pk": "72b7f840-aa30-432b-b7b6-adffe0f85988",
         "fields": {
             "num": "6",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "9de62f63-5be6-4cb3-8d9e-c95ad744f961",
+        "pk": "148b131f-ccfa-44e8-a5e3-8b4727943e81",
         "fields": {
             "num": "7",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "dc50f27f-286c-40ec-a588-8c26f88bdace",
+        "pk": "95096870-ec98-442c-b64e-143c7763357b",
         "fields": {
             "num": "8",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "fa7c3197-db81-44ff-9456-efe9bc7ef34a",
+        "pk": "b731de6f-32f6-4e13-ada7-8bc9e1a0db40",
         "fields": {
             "num": "9",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cdd8cb23-e68d-4f56-81a6-292317f83b7c",
+        "pk": "b6866501-8e77-41e9-b18b-04e06d5e664d",
         "fields": {
             "num": "10",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cc542c43-0747-4c45-9905-c9362dbdf78f",
+        "pk": "d7382b2d-4afe-4357-a2ce-b559fafb2f3a",
         "fields": {
             "num": "11",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "42b47980-9a6f-45e4-8e55-dd2038d36fdb",
+        "pk": "f8f2bc36-80a0-4a55-baad-12e1b8326eff",
         "fields": {
             "num": "12",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1554dc1c-f4fd-4542-a989-2f2e2dfbcac0",
+        "pk": "2caaee88-2a1f-4e4a-825d-5005bcf4f98d",
         "fields": {
             "num": "13",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "6872a6d4-60b6-4e84-9328-efefd4dd4161",
+        "pk": "eb3dafea-5272-4bbc-860b-4da8d68826d7",
         "fields": {
             "num": "14",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5d36cdb8-9287-46d6-870b-9ed3a22505fb",
+        "pk": "1d5da73a-ea11-484c-8b42-ccb3908dd792",
         "fields": {
             "num": "15",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ec567fe5-cafd-4205-aa1d-c99082dfbad0",
+        "pk": "8c585fb9-f733-4352-a3b1-030fd425e02f",
         "fields": {
             "num": "16",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b0518212-a707-4650-af9c-c1e06fa9cd7d",
+        "pk": "14afba5c-3db8-4786-a3cf-34c8d67a0a01",
         "fields": {
             "num": "17",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "26d4d7b7-5351-480d-b3df-ce96f112b80a",
+        "pk": "baa467e7-6caa-49af-bddb-a31f5d61bf7b",
         "fields": {
             "num": "18",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d2fbab9a-2af1-4856-a84c-6ec0577436a5",
+        "pk": "38495f27-61a7-4e04-a042-411f91393e77",
         "fields": {
             "num": "19",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "2e9495be-6c7e-451c-88e6-4a28c8d4ad7e",
+        "pk": "64effa52-b14b-4c2f-8a95-f4c05a3ea676",
         "fields": {
             "num": "20",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cc14c942-e6c6-4259-b7c9-8394aae68dc9",
+        "pk": "2bf7c86a-6c88-4c85-899f-dac0f6d14393",
         "fields": {
             "num": "21",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4dff0eb9-5099-4265-ab18-ccdcbd3effe5",
+        "pk": "2fdc4d01-fa0a-4e54-bfb0-6acf1735fcad",
         "fields": {
             "num": "22",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d088158e-5fd1-49a6-9013-e979ae28d69d",
+        "pk": "6e4ff277-1919-45cc-b036-7957cb7e14b9",
         "fields": {
             "num": "23",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4be60eb8-80f7-4f5f-8e5b-86637fdff4c7",
+        "pk": "d396b3e9-0064-462f-9590-ff14fc417a17",
         "fields": {
             "num": "24",
             "branch": ["COE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c8e6d8a1-d115-42e2-bc78-1326323f023b",
+        "pk": "d5e16fc4-044b-4ce4-a1db-c8ae442da945",
         "fields": {
             "num": "1",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "315a128f-865f-45cb-b783-17cce5aa46a7",
+        "pk": "d7bec745-9df6-4862-8115-c8b430c3be62",
         "fields": {
             "num": "2",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4c644607-d14a-4a88-a088-4c6dc5c1ac4a",
+        "pk": "cdd435bd-db76-45d6-9819-b99d02589b61",
         "fields": {
             "num": "3",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d1bc28db-e6bd-45c5-89d6-378cd616e6e6",
+        "pk": "cae6cb70-7a08-4e1f-9057-dd924c1ca0a4",
         "fields": {
             "num": "4",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e0941583-bf84-4ed2-b8ad-9512ad1b6af8",
+        "pk": "785937ef-f9a9-42a3-8219-e5b8978141fb",
         "fields": {
             "num": "5",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "03ace3fb-56a6-40c7-87d1-9bc998dcc194",
+        "pk": "b034f574-f528-4950-a755-7d0916806179",
         "fields": {
             "num": "6",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8d899e32-2acf-4be5-a22c-20f2116b2ef2",
+        "pk": "a0c15121-4d54-4b9b-8e76-577477f74173",
         "fields": {
             "num": "7",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "afb8a388-2f05-47e4-8093-65b30f887f31",
+        "pk": "17ce5a16-cff1-42fc-a8ce-bdaf7d453afd",
         "fields": {
             "num": "8",
             "branch": ["ECE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e191a6a4-d383-47f1-aba7-d49a93a99ad3",
+        "pk": "7529b927-c344-497a-ae7e-19a026b10ab8",
         "fields": {
             "num": "1",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8b3f7b27-f1c1-44de-8258-58d400a24b71",
+        "pk": "20cf5296-5698-4615-8fa8-acfa8c5f4d84",
         "fields": {
             "num": "2",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "de720b3f-3540-4460-afc5-ebc5ae45e5bf",
+        "pk": "a9148cce-89ba-453b-a97c-9fda2a3d06ca",
         "fields": {
             "num": "3",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5b62773b-6722-4a19-9d87-1f1e6c9ca147",
+        "pk": "cf5698a7-b2ef-497c-b4ae-015c3aead9b8",
         "fields": {
             "num": "4",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b48c69fe-5677-4da2-b369-59de183f7957",
+        "pk": "d703f9e5-c436-4865-b1fe-94442a0f623e",
         "fields": {
             "num": "5",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c63278fe-91ae-47b3-b3b4-fea4ef5a70d0",
+        "pk": "f85af836-b716-4268-be22-33ef45b5336e",
         "fields": {
             "num": "6",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "8de088ec-06fd-4882-a60e-eee2d8bfe790",
+        "pk": "0815792a-d3e0-47bc-aebb-f8fd56d2da0b",
         "fields": {
             "num": "7",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "21c3f485-c80a-4cf5-8852-26cf38ffa3a8",
+        "pk": "f30691cd-292e-405d-a402-5f7762b1a9b0",
         "fields": {
             "num": "8",
             "branch": ["ENC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "2057fdfb-889a-4d8f-bafd-de2f1c8646e2",
+        "pk": "262593c8-9744-4ef3-9ab0-f08c4faadad5",
         "fields": {
             "num": "1",
             "branch": ["EIC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f33b1c7a-7f76-4ff8-8a00-19e4b1d68f76",
+        "pk": "781c9c12-0582-4d44-9ada-e08a800a825f",
         "fields": {
             "num": "2",
             "branch": ["EIC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "f3f03e50-b4ab-494d-aaa8-eb6ce081882a",
+        "pk": "cdcbfff2-0451-497e-b819-0ec42c828bb3",
         "fields": {
             "num": "1",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "7688caa3-24e0-4fd8-a3bf-b61fc5f65f47",
+        "pk": "f7a36d5f-7c5c-4f2d-9c75-6d3d29f0e326",
         "fields": {
             "num": "2",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "b302ea4b-7d1d-41d6-82da-89301569727d",
+        "pk": "df11531f-16ac-436e-ac7d-e2be4dc95814",
         "fields": {
             "num": "3",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "e5ddbd1e-ed6e-465e-9a6f-100d65e81e8b",
+        "pk": "25d83bac-8a10-49ee-802a-ba97afc75a44",
         "fields": {
             "num": "4",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "57f2057a-0654-48f9-8b6d-9868c140c9b4",
+        "pk": "9a608a80-a397-4a4a-846a-31e0c2015e36",
         "fields": {
             "num": "5",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "2f93a7ef-244a-4d17-b705-547477dadf75",
+        "pk": "14e45175-37a6-421a-94ad-7a2388777215",
         "fields": {
             "num": "6",
             "branch": ["ELE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "0e740632-6dfa-4570-9c9c-ce83c0e4dbe1",
+        "pk": "74eeaec8-3769-432a-a77a-a5d0c53551be",
         "fields": {
             "num": "1",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "d20e516e-fb93-41e2-9dc2-1b2f3f7688e0",
+        "pk": "0e3479d1-2242-4d0f-9860-c9af14e47d3f",
         "fields": {
             "num": "2",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "ee20416b-22b8-48d0-9903-d606a8567441",
+        "pk": "d031e136-ba74-41c0-a4b4-8d7abe424e4f",
         "fields": {
             "num": "3",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "60be1b44-1534-4090-b88c-122c58713a70",
+        "pk": "a49c4f28-f72f-4cec-9a6e-5f0a6894dd59",
         "fields": {
             "num": "4",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1be7a30c-dfd3-4be7-bcdb-954537dfeae1",
+        "pk": "293f6811-4b13-4f53-89eb-7a68bf430134",
         "fields": {
             "num": "5",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4730aca7-f894-441c-b043-24a868be40a8",
+        "pk": "af316a7c-a33e-4cd7-8a56-475d5c67337a",
         "fields": {
             "num": "6",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4f3234b2-f97a-47dd-80f0-ef94300c4fda",
+        "pk": "df096a06-528e-4a51-82b2-b72e6d52834d",
         "fields": {
             "num": "7",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "020be403-af2d-4154-9963-5e7d9b1d8731",
+        "pk": "b3a10ba9-a758-4c44-88e1-c7c53ac0193a",
         "fields": {
             "num": "8",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "4e404fa4-be57-4edf-a019-0479d0495ff9",
+        "pk": "efefb0e1-e8f3-4626-8489-0861cf3ed690",
         "fields": {
             "num": "9",
             "branch": ["MEE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "19db6cea-b04a-4822-bb97-6f8ae29bd953",
+        "pk": "3571db51-cf6b-4a1b-9b4c-d575fb9328ea",
         "fields": {
             "num": "1",
             "branch": ["MEC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "c0a5c38a-934e-49e1-b1e2-4c395f4a3d9e",
+        "pk": "825bcca3-e4b2-48f6-b602-c43891fe1614",
         "fields": {
             "num": "2",
             "branch": ["MEC", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "1f7ca459-d169-4a9d-ba85-6d389d269fbd",
+        "pk": "4a8763c9-734c-42bd-82f0-7f9505a5990a",
         "fields": {
             "num": "1",
             "branch": ["MPE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "cc8e2e15-d3c0-4b46-965c-ffc76e7d28f7",
+        "pk": "8a505752-b7f0-443b-8994-fa334d8d6148",
         "fields": {
             "num": "1",
             "branch": ["CHE", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "5dc16f73-f9c3-4afe-aa6f-914d9742d10f",
+        "pk": "a2254d82-f9d9-421c-8b31-f539e1a4d105",
         "fields": {
             "num": "1",
             "branch": ["BT", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "db8cf1f0-5a17-4e73-a567-5cfcfdd7cd01",
+        "pk": "7b86b1a4-b636-497c-b14c-82e3aed96c03",
         "fields": {
             "num": "2",
             "branch": ["BT", "SR"]
             }
     },
-
+    
     {
         "model": "acad.batch",
-        "pk": "a5e2c50e-3693-4043-9109-504035411837",
+        "pk": "39f9ff6a-a1b6-4f36-a97a-eeb030151fb5",
         "fields": {
             "num": "2",
             "branch": ["CE", "SR"]

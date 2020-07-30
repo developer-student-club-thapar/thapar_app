@@ -18,7 +18,8 @@ def fetch_data(resURL):
             name = file["name"]
             file_id = file["id"]
             webContentLink = file["webContentLink"]
-            l.append(list((name, file_id, webContentLink)))
+            webViewLink = file["webViewLink"]
+            l.append(list((name, file_id, webContentLink, webViewLink)))
     except:
         print("Didnt work")
     # print(l)

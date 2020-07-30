@@ -10,8 +10,8 @@ import acad.mutation as acad_mutations
 import featurebug.schema as featurebug_schema
 import featurebug.mutation as featurebug_mutations
 import members.schema as members_schema
-import timetable.mutation as timetable_mutations
-import timetable.schema as timetable_schema
+# import timetable.mutation as timetable_mutations
+# import timetable.schema as timetable_schema
 from social_django.models import UserSocialAuth
 from .middleware import CustomAuthorizationMiddleware
 
@@ -30,7 +30,7 @@ import hostel.schema as hostel_schema
 import timetable.mutation as timetable_mutations"""
 
 
-class SocialAuth(graphql_social_auth.SocialAuthMutation , graphql_social_auth.mixins.JSONWebTokenMixin):
+class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mixins.JSONWebTokenMixin):
     user = graphene.Field(users_schema.UserNode)
     new_user = graphene.Boolean()
     refresh_token = graphene.String()
@@ -43,14 +43,14 @@ class SocialAuth(graphql_social_auth.SocialAuthMutation , graphql_social_auth.mi
             print(Exception)
         else:
             new_user = False
-        return cls(user=social.user , new_user=new_user , token=graphql_jwt.shortcuts.get_token(social.user, info.context) , refresh_token  = graphql_jwt.shortcuts.create_refresh_token(social.user) )
+        return cls(user=social.user, new_user=new_user, token=graphql_jwt.shortcuts.get_token(social.user, info.context), refresh_token=graphql_jwt.shortcuts.create_refresh_token(social.user))
 
 
 class Query(acad_schema.RelayQuery,
             users_schema.RelayQuery,
             members_schema.RelayQuery,
             society_schema.RelayQuery,
-            timetable_schema.RelayQuery,
+            # timetable_schema.RelayQuery,
             featurebug_schema.RelayQuery,
             graphene.ObjectType):
     # This Class wil inherit from multiple Queries
@@ -67,7 +67,7 @@ class Query(acad_schema.RelayQuery,
     # Open these end points in next update
 
 
-class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, timetable_mutations.Mutation, featurebug_mutations.Mutation, graphene.ObjectType):
+class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, featurebug_mutations.Mutation, graphene.ObjectType):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
@@ -76,7 +76,6 @@ class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutati
     #    hostel_mutations.Mutation,
     #    lostfound_mutations.Mutation,
     #    exam_mutations.Mutation,
-    #    timetable_mutations.Mutation,
     #    shop_mutations.Mutation,
     #    member_mutations.Mutation,
     # Open these end points in next update

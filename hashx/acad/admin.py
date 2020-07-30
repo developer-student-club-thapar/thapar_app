@@ -3,23 +3,23 @@ import requests
 from django.contrib import admin
 
 from .models import (
-    Drivefolder,
     Course,
     Branch,
     FirstYearBatch,
     Batch,
-    Textbook,
     FileType,
     FileTags,
     File,
     AcademicCalendar,
+    Department,
+    Semester,
 )
 
 
-@admin.register(Drivefolder)
-class DrivefolderAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "drive_id", "year", "file_name")
-    search_fields = ("name",)
+@admin.register(Semester)
+class SemesterAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'start', 'end', 'status')
+    search_fields = ('name',)
 
 
 @admin.register(Course)
@@ -100,10 +100,10 @@ class FileAdmin(admin.ModelAdmin):
     list_filter = (
         "type",
         "date_posted",
-        "batch",
         "published",
         "admin_starred",
         "is_reviewed",
+        "is_downloaded"
     )
     raw_id_fields = ("tags",)
     search_fields = ("file", "web_content_link", )
@@ -115,4 +115,10 @@ class FileAdmin(admin.ModelAdmin):
 class AcademicCalendarAdmin(admin.ModelAdmin):
     list_display = ("id", "type", "name", "start_date", "end_date")
     list_filter = ("start_date", "end_date")
+    search_fields = ("name",)
+
+
+@admin.register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")
     search_fields = ("name",)
