@@ -100,10 +100,10 @@ class FileAdmin(admin.ModelAdmin):
     list_filter = (
         "type",
         "date_posted",
-        "batch",
         "published",
         "admin_starred",
         "is_reviewed",
+        "is_downloaded"
     )
     raw_id_fields = ("tags",)
     search_fields = ("file", "web_content_link", )

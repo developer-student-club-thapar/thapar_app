@@ -2,11 +2,14 @@ from decouple import config
 from django.contrib import messages
 import os
 import datetime
+import environ
+from environ import Env, Path
+env = Env()
 
-
-DEBUG = config("DEBUG", default=True)
-SECRET_KEY = config("SECRET_KEY", default="default-secret-key")
-ALLOWED_HOSTS = config("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
+DEBUG = True
+SECRET_KEY = config('SECRET_KEY', cast=str)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [
+                       s.strip() for s in v.split(',')])
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
@@ -20,38 +23,43 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.admindocs",
-    'corsheaders',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'axes',
-    "graphene_django",
-    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
-    'social_django',
-    "rest_framework",
-    "users.apps.UsersConfig",
-    "acad",
-    "society",
-    "featurebug",
-    "lostfound",
-    "permission",
-    "buzz",
-    "invite",
-    "hostel",
-    "forum",
-    "notification",
-    "shop",
-    "developer",
-    "social_connect",
-    "wifipass",
-    "timetable",
-    "analytics",
-    "members",
-    "chat",
-    "exam",
-    "frontend",
+
+    # Third Party Application
     "django_extensions",
+    "storages",
+    "corsheaders",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "axes",
+    "graphene_django",
     "push_notifications",
+    "graphql_jwt.refresh_token.apps.RefreshTokenConfig",
+    "social_django",
+    "rest_framework",
+
+    # Local Apps
+    "users.apps.UsersConfig",
+    "acad.apps.AcadConfig",
+    "society.apps.SocietyConfig",
+    "featurebug.apps.FeaturebugConfig",
+    "lostfound.apps.LostfoundConfig",
+    "permission.apps.PermissionConfig",
+    "buzz.apps.BuzzConfig",
+    "invite.apps.InviteConfig",
+    "hostel.apps.HostelConfig",
+    "forum.apps.ForumConfig",
+    "notification.apps.NotificationConfig",
+    "shop.apps.ShopConfig",
+    "developer.apps.DeveloperConfig",
+    "wifipass.apps.WifipassConfig",
+    "timetable.apps.TimetableConfig",
+    "analytics.apps.AnalyticsConfig",
+    "members.apps.MembersConfig",
+    "chat.apps.ChatConfig",
+    "exam.apps.ExamConfig",
+    "frontend.apps.FrontendConfig",
+
 ]
 
 MIDDLEWARE = [
@@ -149,11 +157,8 @@ USE_TZ = True
 SITE_ID = 1
 
 
-# Static files
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-# Media Files
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
@@ -177,8 +182,10 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 # SOCIAL_AUTH_POSTGRES_JSONFIELD = True
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "DWUYJullIXwbKIbpyNOINszt"
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = config(
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_KEY", default="")
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = config(
+    "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET", default="")
 
 # IMPORTANT: Logging section moved to dev settings
 
@@ -191,7 +198,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "DWUYJullIXwbKIbpyNOINszt"
 # Push Notification Settings
 
 PUSH_NOTIFICATIONS_SETTINGS = {
-    "FCM_API_KEY": "AAAArfSaP2o:APA91bGaon9PlNQNseZyJl27TA-jXwXKW7q7lf9R-qXAMQEDsL5E8q3cqYEjOFlZr0VlEcbkNpLp9H4Zk6jn0hT8Tl9jezYOOrXiau_bXBO88p-MdbXq8fVsakqL5RANepmClYhf0Tek",
+    "FCM_API_KEY": config("FCM_API_KEY", default=""),
 }
 
 # Axes Config
@@ -227,36 +234,3 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-
-
-# CORS CONFIG
-CORS_ORIGIN_WHITELIST = [
-    "https://vexio.in",
-    "https://front.vexio.in",
-    "https://vexio.netlify.app",
-]
-
-if DEBUG == True:
-    CORS_ORIGIN_WHITELIST += ['http://localhost:300']
-
-
-CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
