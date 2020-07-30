@@ -1,28 +1,31 @@
 from django.test import TestCase
-from .models import Holidays , Class , TimetableBoard , Location
+from .models import Holidays, Class, Location
 from acad.models import Course, Branch, Batch
 
 # Create your tests here.
+
+
 class HolidaysTest(TestCase):
     def test_holidays_present(self):
-        holiday = Holidays(name='xyz' , date='2020-01-01')
+        holiday = Holidays(name='xyz', date='2020-01-01')
         holiday.save()
         holidays = Holidays.objects.count()
-        self.assertGreater(holidays , 0)
-        self.assertRaises(TypeError, holidays , 0)
+        self.assertGreater(holidays, 0)
+        self.assertRaises(TypeError, holidays, 0)
 
     def test_holidays_added(self):
         initial_count = Holidays.objects.count()
-        holiday = Holidays(name='xyz' , date='2020-01-01')
-        self.assertEqual(Holidays.objects.count() , initial_count)
+        holiday = Holidays(name='xyz', date='2020-01-01')
+        self.assertEqual(Holidays.objects.count(), initial_count)
         holiday.save()
-        self.assertEqual(Holidays.objects.count() , initial_count + 1)
-        self.assertRaises(TypeError,Holidays.objects.count() , initial_count + 1)
+        self.assertEqual(Holidays.objects.count(), initial_count + 1)
+        self.assertRaises(
+            TypeError, Holidays.objects.count(), initial_count + 1)
 
     def test_holiday_create_fail(self):
-        self.assertRaises(TypeError , Holidays(name='' , date=''))
-        self.assertRaises(TypeError , Holidays(name='a' , date=''))
-        self.assertRaises(TypeError , Holidays(name='a' , date='2020'))
+        self.assertRaises(TypeError, Holidays(name='', date=''))
+        self.assertRaises(TypeError, Holidays(name='a', date=''))
+        self.assertRaises(TypeError, Holidays(name='a', date='2020'))
 
 # class ClassTest(TestCase):
 #     @classmethod

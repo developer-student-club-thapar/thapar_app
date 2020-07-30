@@ -3,24 +3,23 @@ import requests
 from django.contrib import admin
 
 from .models import (
-    Drivefolder,
     Course,
     Branch,
     FirstYearBatch,
     Batch,
-    Textbook,
     FileType,
     FileTags,
     File,
     AcademicCalendar,
     Department,
+    Semester,
 )
 
 
-@admin.register(Drivefolder)
-class DrivefolderAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "drive_id", "year", "file_name")
-    search_fields = ("name",)
+@admin.register(Semester)
+class SemesterAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'start', 'end', 'status')
+    search_fields = ('name',)
 
 
 @admin.register(Course)
