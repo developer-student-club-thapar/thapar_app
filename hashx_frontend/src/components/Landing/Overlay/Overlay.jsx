@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import { useSpring, useTrail, config, animated, useChain } from 'react-spring';
 import background from '../../../assets/Overlay-menu/Sun-Tornado.svg';
 import { Hidden } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,6 +67,7 @@ const Overlay = ({ isOpen }) => {
       width: isOpen ? '100vw' : '0vw',
     },
   });
+  const AnimatedButton = animated(Button);
 
   const trailRef = useRef();
   const trail = useTrail(items.length, {
@@ -85,11 +87,13 @@ const Overlay = ({ isOpen }) => {
           {trail.map((element, i) => {
             const item = items[i];
             return (
-              <animated.div
-                style={{ ...element, color: '#8167a9', margin: '5px' }}
-                key={item}
-              >
-                {item}
+              <animated.div style={{ ...element }} key={item}>
+                <Button
+                  className={classes.items}
+                  style={{ color: '#8167a9', margin: '5px', outline: 'none' }}
+                >
+                  {item}
+                </Button>
               </animated.div>
             );
           })}

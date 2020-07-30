@@ -1,14 +1,41 @@
 import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import { spacing } from '@material-ui/system';
 import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
 import Overlay from '../Landing/Overlay/Overlay.jsx';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  hamburgerBox: {
+    zIndex: '100',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  listBox: {
+    zIndex: '100',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+    '& button': {
+      outline: 'none',
+    },
+  },
+}));
 
 const Navbar = () => {
+  const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   return (
@@ -38,8 +65,9 @@ const Navbar = () => {
           </Typography>
           <Box
             m={2}
+            className={classes.hamburgerBox}
             onClick={() => setOpen((open) => !open)}
-            style={{ cursor: 'pointer', zIndex: '100' }}
+            style={{ zIndex: '100' }}
           >
             <HamburgerMenu
               isOpen={open}
@@ -49,12 +77,16 @@ const Navbar = () => {
               color={open ? '#8167a9' : 'black'}
               borderRadius={0}
               animationDuration={0.5}
-              style={{}}
+              style={{ cursor: 'pointer' }}
             />
           </Box>
           <Overlay isOpen={open} />
           <Box />
-          {/* <Overlay isOpen={open} setOpen={setOpen} /> */}
+          <Box className={classes.listBox}>
+            <Button color="inherit">Home</Button>
+            <Button color="inherit">About</Button>
+            <Button color="inherit">Login</Button>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
