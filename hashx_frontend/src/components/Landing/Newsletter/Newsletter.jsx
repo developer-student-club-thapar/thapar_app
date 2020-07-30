@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -10,163 +9,181 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: 'whitesmoke',
+    backgroundColor: '#FFFFF0',
     [theme.breakpoints.down('sm')]: {
-      paddingX: '50px',
+      paddingX: '0px',
     },
     [theme.breakpoints.up('sm')]: {
-      paddingX: '50px',
+      paddingX: '90px',
     },
     [theme.breakpoints.up('lg')]: {
-      paddingX: '200px',
+      paddingX: '140px',
+      paddingTop: '50px',
     },
   },
-  text: {
+  textBox: {
     display: 'flex',
     flexFlow: 'column',
+    color: '#171313',
+    fontWeight: 'bold',
 
     [theme.breakpoints.down('sm')]: {
       alignItems: 'center',
+      paddingTop: '50px',
+      paddingBottom: '50px',
+      paddingX: '10%',
     },
     [theme.breakpoints.up('sm')]: {
-      alignItems: 'center',
+      alignItems: 'flex-start',
+      paddingTop: '70px',
+      paddingBottom: '70px',
+      paddingLeft: '50%',
     },
     [theme.breakpoints.up('md')]: {
       alignItems: 'flex-start',
+      paddingTop: '70px',
     },
-    [theme.breakpoints.up('lg')]: {
-      // alignItems: 'flex-start',
-    },
-    [theme.breakpoints.up('xl')]: {
-      // alignItems: 'flex-start',
-    },
-
-    color: '#171313',
-    fontWeight: 'bold',
-    paddingTop: '100px',
-    paddingLeft: '50px',
   },
-  textField: {
-    color: 'white',
-  },
-  root2: {
-    padding: '2px 4px',
+  boxBg: {
     display: 'flex',
-    marginLeft: 'auto',
-    width: 800,
-    textAlign: 'end',
-  },
-  peepCrowd: {
-    display: 'flex',
-    margin: 'auto',
-    paddingTop: '8vh',
-    paddingleft: '40px',
-    width: '1400px',
+    justifyContent: 'center',
+    textAlign: 'center',
     maxWidth: '100%',
+    [theme.breakpoints.down('sm')]: {
+      height: '15vh',
+    },
   },
   bg: {
+    maxWidth: '100%',
+  },
+  peepCrowd: {
     position: 'absolute',
-    // zIndex: 1,
-    width: '50%',
-    'mix-blend-mode': 'multiply',
+    placeSelf: 'flex-end',
+    width: '1400px',
+    maxWidth: '100%',
   },
 
   responsiveSize: {
     [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
       fontSize: '24px',
     },
     [theme.breakpoints.up('sm')]: {
-      fontSize: '36px',
+      fontSize: '56px',
     },
     [theme.breakpoints.up('md')]: {
-      fontSize: '48px',
-    },
-    [theme.breakpoints.up('lg')]: {
       fontSize: '72px',
     },
-    [theme.breakpoints.up('xl')]: {
-      fontSize: '96px',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '102x',
     },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '112px',
+      paddingTop: '50px',
+      paddingBottom: '50px',
+    },
+  },
+
+  responsiveBtnSize: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '20px',
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '24px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '30px',
+    },
+    // [theme.breakpoints.up('xl')]: {
+    //   fontSize: '112px',
+    // },
   },
 }));
 
-const Newsletter = () => {
-  const CssTextField = withStyles({
-    root: {
-      '& .MuiInputBase-input': {
-        color: 'black',
-        fontSize: '36px',
+const textFieldStyles = (theme) => ({
+  root: {
+    '& .MuiInputBase-input': {
+      color: 'black',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 'small',
       },
-      '& .MuiInput-underline:after': {
-        borderBottom: '4px solid black',
+      [theme.breakpoints.up('sm')]: {
+        fontSize: 'medium',
+      },
+      [theme.breakpoints.up('md')]: {
+        fontSize: 'large',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: 'x-large',
+      },
+      [theme.breakpoints.up('xl')]: {
+        fontSize: 'xx-large',
       },
     },
-  })(TextField);
+    '& .MuiInput-underline:after': {
+      borderBottom: '4px solid black',
+    },
+  },
+});
+
+const Newsletter = () => {
+  const CssTextField = withStyles(textFieldStyles)(TextField);
   const classes = useStyles();
   return (
-    <Box px={5} pt={5} className={classes.root} style={{ paddingX: '200px' }}>
+    <Box pt={5} px={5} className={classes.root}>
       <Grid container direction="column" justify="flex-start" style={{}}>
-        <Grid item className={classes.text}>
+        <Grid item>
           <Typography
             variant="h1"
             className={classes.responsiveSize}
             style={{ fontWeight: '700' }}
           >
-            Want updates about Vexio
-          </Typography>
-          <Typography
-            variant="h1"
-            className={classes.responsiveSize}
-            style={{ fontWeight: '700' }}
-          >
-            sent straight to your
+            Get early access to
             <span
               variant="h1"
               className={classes.responsiveSize}
               style={{ fontWeight: '700' }}
             >
               {' '}
-              inbox
+              Vexio
             </span>
           </Typography>
         </Grid>
         <Grid
           item
-          className={classes.text}
-          style={{ display: 'flex', flexDirection: 'row-reverse' }}
+          className={classes.textBox}
+          style={{
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            alignItems: 'baseline',
+          }}
         >
           <Button style={{ outline: 'none' }} disableFocusRipple>
-            <Box style={{ fontSize: '24px' }}>send</Box>
+            <Box className={classes.responsiveBtnSize}>send</Box>
           </Button>
           <CssTextField
-            id="standard-full-width"
             label=""
-            style={{ margin: 8, width: '40%', right: 0, fontSize: '36px' }}
+            style={{ margin: 8, width: '100%', right: 0, fontSize: '36px' }}
             placeholder="We have saved a spot for your email!"
-            margin="normal"
+            margin="dense"
           />
         </Grid>
         <Grid item xs={12} style={{ paddingTop: '5vh', postion: 'relative' }}>
-          <Box
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: ' center',
-            }}
-          >
+          <Box className={classes.boxBg}>
             <img
               className={classes.bg}
               alt="ripple"
               src="https://scrimba.com/static/art/shape-coral.svg"
             />
-          </Box>
-          <div>
             <img
               className={classes.peepCrowd}
-              alt="team"
+              alt="ripple"
               src="https://scrimba.com/static/art/peep-crowd.svg"
             />
-          </div>
+          </Box>
         </Grid>
       </Grid>
     </Box>
