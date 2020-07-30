@@ -41,6 +41,7 @@
     "react-scripts": "^3.4.1",
     "react-spring": "^8.0.27",
     "react-use-gesture": "^5.0.0",
+    "react-zoom-pan-pinch": "^1.6.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",

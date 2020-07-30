@@ -1,18 +1,19 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
 import React, { useState, useEffect, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import '../styles/Landing.css';
 
 import Navbar from '../components/Landing/Navbar';
 import Deck from '../components/Landing/Deck';
 import MouseScroll from '../components/Landing/MouseScroll';
 import CardList from '../components/Landing/CardList';
-import AvatarButton from '../components/Landing/AvatarButton';
+import AvatarButton from '../components/Helper/AvatarButton';
 import Newsletter from '../components/Landing/Newsletter/Newsletter.jsx';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
-import { useHistory } from 'react-router-dom';
+
 import GoogleLogin from 'react-google-login';
 import { UserContext } from '../context/UserProvider';
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
@@ -273,11 +274,13 @@ const Landing = () => {
                 outline: 'none',
               }}
             >
-              <AvatarButton
-                collapsed={false}
-                text="Virtual Campus Tour"
-                icon="https://www.svgrepo.com/show/131150/college.svg"
-              />
+              <Link to="/campus-tour">
+                <AvatarButton
+                  collapsed={false}
+                  text="Virtual Campus Tour"
+                  icon="https://www.svgrepo.com/show/131150/college.svg"
+                />
+              </Link>
             </Box>
           </Grid>
           <Container maxWidth="lg">

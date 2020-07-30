@@ -15,6 +15,7 @@ import RegisterGoogle from '../pages/RegisterGoogle';
 import TimeTable from '../pages/TimeTable';
 import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
+import VirtualCampus from '../pages/VirtualCampusPage';
 
 const Routes = () => {
   return (
@@ -30,6 +31,7 @@ const Routes = () => {
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} isRestricted />
+      <Route exact path="/campus-tour" component={VirtualCampus} />
       <Route
         exact
         path="/registergoogle"
