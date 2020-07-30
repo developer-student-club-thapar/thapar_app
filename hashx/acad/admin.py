@@ -3,24 +3,23 @@ import requests
 from django.contrib import admin
 
 from .models import (
-    Drivefolder,
     Course,
     Branch,
     FirstYearBatch,
     Batch,
-    Textbook,
     FileType,
     FileTags,
     File,
     AcademicCalendar,
     Department,
+    Semester,
 )
 
 
-@admin.register(Drivefolder)
-class DrivefolderAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "drive_id", "year", "file_name")
-    search_fields = ("name",)
+@admin.register(Semester)
+class SemesterAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'start', 'end', 'status')
+    search_fields = ('name',)
 
 
 @admin.register(Course)
@@ -43,15 +42,15 @@ class CourseAdmin(admin.ModelAdmin):
         "syllabus",
     )
     list_filter = ("created_date",)
-    search_fields = ("name",)
+    search_fields = ("name", "code",)
 
 
 @admin.register(Branch)
 class BranchAdmin(admin.ModelAdmin):
     list_display = ("id", "year", "code", "name", "created_date")
     list_filter = ("created_date",)
-    raw_id_fields = ("course",)
-    search_fields = ("name",)
+    autocomplete_field = ("course",)
+    search_fields = ("name", "code", "year")
 
 
 @admin.register(FirstYearBatch)
@@ -64,6 +63,7 @@ class FirstYearBatchAdmin(admin.ModelAdmin):
 class BatchAdmin(admin.ModelAdmin):
     list_display = ("id", "branch", "num", "GR", "created_date")
     list_filter = ("branch", "GR", "created_date")
+    search_fields = ("branch", "num", "GR")
 
 
 @admin.register(FileType)
@@ -101,15 +101,14 @@ class FileAdmin(admin.ModelAdmin):
     list_filter = (
         "type",
         "date_posted",
-        "batch",
         "published",
         "admin_starred",
         "is_reviewed",
+        "is_downloaded"
     )
-    raw_id_fields = ("tags",)
-    search_fields = ("file", "web_content_link", )
+    autocomplete_fields = ("tags", "batch", "user")
+    search_fields = ("file", "web_content_link", "name")
     prepopulated_fields = {"slug": ["name"]}
-    # actions = [download_file]
 
 
 @admin.register(AcademicCalendar)

@@ -1,30 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import TimetableBoard, Location, OnlineClass, OfflineClass, Holidays
-
-
-@admin.register(TimetableBoard)
-class TimetableBoardAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-        'name',
-        'start_repetion',
-        'end_repetition',
-        'batch',
-        'admin_user',
-        'created_date',
-        'modified_date',
-    )
-    list_filter = (
-        'start_repetion',
-        'end_repetition',
-        'batch',
-        'admin_user',
-        'created_date',
-        'modified_date',
-    )
-    search_fields = ('name',)
+from .models import Location, Period, OnlineClass, OfflineClass, Holidays
 
 
 @admin.register(Location)
@@ -40,6 +17,14 @@ class LocationAdmin(admin.ModelAdmin):
         'location_url',
     )
     list_filter = ('published',)
+    search_fields = ['building', 'floor']
+
+
+@admin.register(Period)
+class PeriodAdmin(admin.ModelAdmin):
+    list_display = ('id', 'semester', 'no', 'start_time', 'end_time')
+    list_filter = ('semester',)
+    search_fields = ('semester', 'start_time', 'end_time')
 
 
 @admin.register(OnlineClass)
@@ -47,13 +32,8 @@ class OnlineClassAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'type',
-        'timetableboard',
-        'created_date',
-        'modified_date',
         'course',
         'day',
-        'start_time',
-        'end_time',
         'published',
         'private',
         'meetingURL',
@@ -61,14 +41,13 @@ class OnlineClassAdmin(admin.ModelAdmin):
         'recordingURL',
     )
     list_filter = (
-        'timetableboard',
         'created_date',
         'modified_date',
-        'course',
         'published',
         'private',
         'isCompleted',
     )
+    autocomplete_fields = ["course"]
 
 
 @admin.register(OfflineClass)
@@ -76,19 +55,15 @@ class OfflineClassAdmin(admin.ModelAdmin):
     list_display = (
         'id',
         'type',
-        'timetableboard',
         'created_date',
         'modified_date',
         'course',
         'day',
-        'start_time',
-        'end_time',
         'published',
         'private',
         'location',
     )
     list_filter = (
-        'timetableboard',
         'created_date',
         'modified_date',
         'course',
@@ -96,6 +71,8 @@ class OfflineClassAdmin(admin.ModelAdmin):
         'private',
         'location',
     )
+    raw_id_fields = ('batch', 'period')
+    autocomplete_fields = ["course"]
 
 
 @admin.register(Holidays)

@@ -4,7 +4,7 @@ import uuid
 from django.utils import timezone
 
 # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-from acad.models import Course, Branch, Batch
+from acad.models import Course, Branch, Batch, Semester
 from django.contrib.auth.models import User
 
 # Functions need to written for each of the models
@@ -20,36 +20,11 @@ DAYS = [
 ]
 
 
-class TimetableBoard(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=100)
-    start_repetion = models.DateTimeField()
-    end_repetition = models.DateTimeField()
-    batch = models.OneToOneField(
-        Batch, on_delete=models.SET_NULL, null=True, blank=True
-    )
-    admin_user = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True
-    )
-    created_date = models.DateTimeField(default=timezone.now)
-    modified_date = models.DateTimeField(null=True)
-
-    class Meta:
-        verbose_name = "Timetable"
-        verbose_name_plural = "Timetables"
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("Timetable_detail", kwargs={"pk": self.pk})
-
-
 class Location(models.Model):
     """
 
-    This Location Model is used to contain all the non resendital buildings that are in Thapar 
-    It Connects to both the TimeTable Locations and the Society Event Location. 
+    This Location Model is used to contain all the non resendital buildings that are in Thapar
+    It Connects to both the TimeTable Locations and the Society Event Location.
     This Database needs to be populated by the members Team
 
     """
@@ -95,6 +70,18 @@ class Location(models.Model):
             return f"{self.building}"
 
 
+class Period(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    semester = models.ForeignKey(
+        Semester, on_delete=models.PROTECT)
+    no = models.PositiveSmallIntegerField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+
+    def __str__(self):
+        return f"Per :{self.no} {self.semester.status} Sem"
+
+
 class Class(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     TYPE = [
@@ -102,22 +89,24 @@ class Class(models.Model):
         ("Practical", "Practical"),
         ("Tutorial", "Tutorial"),
     ]
+
     # Meta
     type = models.CharField(max_length=10, choices=TYPE)
-    timetableboard = models.ForeignKey(
-        TimetableBoard, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(default=timezone.now)
-    modified_date = models.DateTimeField(null=True)
+
+    batch = models.ManyToManyField(Batch)
+
     course = models.ForeignKey(Course, on_delete=models.PROTECT)
 
     # WHEN
     day = models.CharField(max_length=10, choices=DAYS)
-    start_time = models.TimeField()
-    end_time = models.TimeField()
+    period = models.ManyToManyField(Period)
+    # Site Wide On-OFF Switch
+    published = models.BooleanField(default=True)
 
-    published = models.BooleanField(default=True)  # Site Wide On-OFF Switch
     # Public/Private On-OFF Switch
     private = models.BooleanField(default=False)
+    created_date = models.DateTimeField(default=timezone.now)
+    modified_date = models.DateTimeField(default=timezone.now)
 
     class Meta:
         abstract = True
@@ -130,7 +119,7 @@ class OnlineClass(Class):
     meetingURL = models.URLField(max_length=200, null=True, blank=True)
 
     # If the meeting is complete, URL of the recording of the URL
-    isCompleted = models.BooleanField(default=True)
+    isCompleted = models.BooleanField(default=False)
     recordingURL = models.URLField(max_length=200, null=True, blank=True)
 
     class Meta:
@@ -138,7 +127,7 @@ class OnlineClass(Class):
         verbose_name_plural = "OnlineClasses"
 
     def __str__(self):
-        return f"Lecture scheduled for {self.batch} by {self.instructor} for the course {self.course}."
+        return f"{self.course} {self.day}"
 
 
 class OfflineClass(Class):
