@@ -17,12 +17,14 @@ class LocationAdmin(admin.ModelAdmin):
         'location_url',
     )
     list_filter = ('published',)
+    search_fields = ['building', 'floor']
 
 
 @admin.register(Period)
 class PeriodAdmin(admin.ModelAdmin):
     list_display = ('id', 'semester', 'no', 'start_time', 'end_time')
     list_filter = ('semester',)
+    search_fields = ('semester', 'start_time', 'end_time')
 
 
 @admin.register(OnlineClass)
@@ -46,7 +48,6 @@ class OnlineClassAdmin(admin.ModelAdmin):
         'isCompleted',
     )
     autocomplete_fields = ["course"]
-    # raw_id_fields = ('batch', 'period')
 
 
 @admin.register(OfflineClass)
@@ -71,6 +72,7 @@ class OfflineClassAdmin(admin.ModelAdmin):
         'location',
     )
     raw_id_fields = ('batch', 'period')
+    autocomplete_fields = ["course"]
 
 
 @admin.register(Holidays)
