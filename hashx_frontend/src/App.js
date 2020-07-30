@@ -9,21 +9,8 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import {getApiUrl} from './util/url';
 // import { InMemoryCache } from 'apollo-cache-inmemory';
 // import { ApolloClient } from 'apollo-client';
-import { HttpLink } from 'apollo-link-http';
-import { onError } from 'apollo-link-error';
-import { ApolloLink, Observable } from 'apollo-link';
-import { getAccessToken, getRefreshToken , setAccessToken } from './util/token';
-import { TokenRefreshLink } from 'apollo-link-token-refresh';
+import { getAccessToken} from './util/token';
 
-import jwtDecode from 'jwt-decode';
-
-const cache = new InMemoryCache({});
-
-const query = `mutation {
-  refreshToken(refreshToken: "c869aa07fbe3e94f9eb8367404ced1cff18fa868") {
-    token
-  }
-}`;
 
 const client = new ApolloClient({
   uri: getApiUrl(),
