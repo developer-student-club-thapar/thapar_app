@@ -6,6 +6,24 @@ import uuid
 from django.utils.text import slugify
 
 
+class Semester(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name = models.CharField(max_length=100)
+    # This is for whole semester
+    start = models.DateTimeField(default=timezone.now)
+    end = models.DateTimeField(default=timezone.now)
+
+    status = [
+        ('ODD', 'ODD'),
+        ('EVEN', 'EVEN')
+    ]
+
+    status = models.CharField(max_length=4, choices=status)
+
+    def __str__(self):
+        return f" {self.status} Sem {self.name}"
+
+
 class DrivefolderManager(models.Manager):
     def get_by_natural_key(self, year, drive_id):
         return self.get(year=year, drive_id=drive_id)
@@ -330,13 +348,14 @@ class AcademicCalendar(models.Model):  # Don't make mutations of this model
         self.slug = slugify(self.name)
         super(AcademicCalendar, self).save(*args, **kwargs)
 
+
 class Department(models.Model):
     """
     Departments for all teachers
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length = 100)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
