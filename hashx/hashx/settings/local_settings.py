@@ -79,3 +79,36 @@ DEBUG_TOOLBAR_CONFIG = {
 
 STATIC_ROOT = ""
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+
+# CORS CONFIG
+CORS_ORIGIN_WHITELIST = [
+    "https://vexio.in",
+    "https://front.vexio.in",
+    "https://vexio.netlify.app",
+]
+
+if DEBUG == True:
+    CORS_ORIGIN_WHITELIST += ['http://localhost:3000']
+
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
