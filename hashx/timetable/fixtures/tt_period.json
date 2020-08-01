@@ -1,0 +1,122 @@
+[
+  {
+    "model": "timetable.period",
+    "pk": "06b1709c-3fad-4bc9-978f-ca2a83f1883d",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 12,
+      "start_time": "17:10:00",
+      "end_time": "18:00:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "0c1da778-38ba-493e-a092-36cca71ac503",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 8,
+      "start_time": "13:50:00",
+      "end_time": "14:40:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "1cf9815d-f414-44b1-9b2d-00dcd76930f0",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 10,
+      "start_time": "15:30:00",
+      "end_time": "16:20:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "32fba279-9fff-4387-b080-f9b9b6aea985",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 1,
+      "start_time": "08:00:00",
+      "end_time": "08:50:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 3,
+      "start_time": "09:40:00",
+      "end_time": "10:30:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 9,
+      "start_time": "14:40:00",
+      "end_time": "15:30:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "60844b9e-d22e-4cb6-8b68-3baf14b5c299",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 4,
+      "start_time": "10:30:00",
+      "end_time": "11:20:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "8240074a-4c4a-4210-8ecd-f6c1156a9026",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 7,
+      "start_time": "13:00:00",
+      "end_time": "13:50:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "a0cb6159-f251-4d24-9efa-d17ed06f42bc",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 5,
+      "start_time": "11:20:00",
+      "end_time": "12:10:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 11,
+      "start_time": "16:20:00",
+      "end_time": "17:10:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "b6c80f6f-0594-44a9-aba9-91add17f76e2",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 6,
+      "start_time": "12:10:00",
+      "end_time": "13:00:00"
+    }
+  },
+  {
+    "model": "timetable.period",
+    "pk": "f76627df-3321-42e9-afef-2db3a0e06d65",
+    "fields": {
+      "semester": "b1c8eba9-a9fd-46ed-ab15-1741e83bf351",
+      "no": 2,
+      "start_time": "08:50:00",
+      "end_time": "09:40:00"
+    }
+  }
+]
