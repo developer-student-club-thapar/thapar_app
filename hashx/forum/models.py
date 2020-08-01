@@ -9,10 +9,10 @@ from django.utils import timezone
 from django.urls import reverse
 from django.utils.text import slugify
 from acad.models import File
-# id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
 
 class Category(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True, editable=False)
     description = models.CharField(max_length=300)
@@ -36,6 +36,7 @@ class Category(models.Model):
 
 
 class Question(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name='questions')
     owner = models.ForeignKey(
@@ -77,6 +78,7 @@ class Question(models.Model):
 
 
 class Reply(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(
         Question, on_delete=models.CASCADE, related_name='replies')
@@ -103,6 +105,7 @@ class Reply(models.Model):
 
 
 class Like(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
