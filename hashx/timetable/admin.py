@@ -31,9 +31,12 @@ class PeriodAdmin(admin.ModelAdmin):
 class OnlineClassAdmin(admin.ModelAdmin):
     list_display = (
         'id',
+        'time',
+        'batches',
+        'day',
         'type',
         'course',
-        'day',
+
         'published',
         'private',
         'meetingURL',
