@@ -145,7 +145,17 @@ class Branch(models.Model):
     objects = BranchManager()
 
     def __str__(self):
-        return f"{self.year} {self.name} ({self.code}) {self.created_date}"
+        y = self.year
+
+        if self.year == 'JR':
+            y = '3rd Y'
+        elif self.year == 'SO':
+            y = '2nd Y'
+        elif self.year == 'SR':
+            y = '4th Year'
+        elif self.year == 'FR':
+            y = '1st Year'
+        return f"{y} {self.name} ({self.code})"
 
     def get_absolute_url(self):
         return reverse("branch-detail", kwargs={"pk": self.pk})
@@ -176,7 +186,7 @@ class Batch(models.Model):
     """
 
     Valid Only for 2 - 4th Year 
-    When 2-4 yearuser Signs Up this is the Batch to be alloted
+    When 2-4 year user Signs Up this is the Batch to be alloted
 
     """
 
@@ -201,6 +211,9 @@ class Batch(models.Model):
 
 
 class Textbook(models.Model):
+    """
+    This Model Can be used by Teachers to Upload Official Books Or Something
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=128, unique=True)
     auth_name = models.CharField(max_length=128)
@@ -231,7 +244,7 @@ class Textbook(models.Model):
 
 class FileType(models.Model):
     """
-    Used to Mark weather this file is a 
+    Used to Mark wether this file is a 
     Tutorial File, Tutorial Solution File or a Notes File. etc. depending on
     the needs and requirements of the course 
 
@@ -331,12 +344,9 @@ class AcademicCalendar(models.Model):  # Don't make mutations of this model
     for poulating this Data in Database 
     """
 
-    TYPES = [
-        ("ODD", "ODD"),
-        ("EVEN", "EVEN"),
-    ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    type = models.CharField(choices=TYPES, max_length=30)
+    semester = models.ForeignKey(
+        Semester, on_delete=models.PROTECT, null=True)
     name = models.CharField(max_length=256)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -351,7 +361,7 @@ class AcademicCalendar(models.Model):  # Don't make mutations of this model
 
 class Department(models.Model):
     """
-    Departments for all teachers
+    Departments for all teachers and Courses
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

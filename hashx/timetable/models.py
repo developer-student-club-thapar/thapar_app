@@ -79,7 +79,7 @@ class Period(models.Model):
     end_time = models.TimeField()
 
     def __str__(self):
-        return f"Per :{self.no} {self.start_time} {self.end_time} Sem"
+        return f"Per :{self.no} {self.start_time} {self.end_time}"
 
 
 class Class(models.Model):
