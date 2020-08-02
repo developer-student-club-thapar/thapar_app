@@ -2,6 +2,7 @@
 from django.contrib import admin
 
 from .models import Location, Period, OnlineClass, OfflineClass, Holidays
+from .forms import OnlineClassModelForm
 
 
 @admin.register(Location)
@@ -29,7 +30,7 @@ class PeriodAdmin(admin.ModelAdmin):
 
 @admin.register(OnlineClass)
 class OnlineClassAdmin(admin.ModelAdmin):
-
+    form = OnlineClassModelForm
     list_display = (
         'id',
         'time',

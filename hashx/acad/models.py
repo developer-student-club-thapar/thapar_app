@@ -314,10 +314,11 @@ class File(models.Model):
     # Batch Specific Academic Files are also entertained.
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
-    batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
-    file_id = models.CharField(max_length=100, null=True)
-    web_content_link = models.URLField(max_length=150, null=True)
-    web_view_link = models.URLField(max_length=150, null=True)
+    batch = models.ForeignKey(
+        Batch, on_delete=models.SET_NULL, null=True, blank=True)
+    file_id = models.CharField(max_length=100, null=True, blank=True)
+    web_content_link = models.URLField(max_length=150, null=True, blank=True)
+    web_view_link = models.URLField(max_length=150, null=True, blank=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
