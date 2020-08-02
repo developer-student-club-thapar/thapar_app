@@ -24,30 +24,35 @@ class LocationAdmin(admin.ModelAdmin):
 class PeriodAdmin(admin.ModelAdmin):
     list_display = ('id', 'semester', 'no', 'start_time', 'end_time')
     list_filter = ('semester',)
-    search_fields = ('semester', 'start_time', 'end_time')
+    search_fields = ('semester', 'no', 'start_time', 'end_time')
 
 
 @admin.register(OnlineClass)
 class OnlineClassAdmin(admin.ModelAdmin):
+
     list_display = (
         'id',
+        'time',
+        'batches',
+        'day',
         'type',
         'course',
-        'day',
-        'published',
-        'private',
         'meetingURL',
-        'isCompleted',
-        'recordingURL',
+        'published'
     )
+
     list_filter = (
+        'course',
         'created_date',
         'modified_date',
         'published',
         'private',
         'isCompleted',
     )
-    autocomplete_fields = ["course"]
+    fields = ('type', 'day', 'course', 'batch', 'period', 'meetingURL')
+    autocomplete_fields = ["course", ]
+    readonly_fields = ('id', 'private', 'published',
+                       'isCompleted', 'recordingURL', 'created_date', 'modified_date')
 
 
 @admin.register(OfflineClass)

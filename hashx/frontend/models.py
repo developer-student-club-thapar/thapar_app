@@ -12,14 +12,3 @@ class Snippet(models.Model):
     """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     text = models.CharField(max_length=255)
-
-
-class Collaborators(models.Model):
-    """
-        Data of Colloborators who colloborate with us on the Project and there repsective links of Pixxel Panda, Humans of Tiet etc.
-    """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=40)
-    image = models.FileField(upload_to="collab", null=True)
-    link = models.URLField(null=True)
-    date_created = models.DateTimeField(auto_now_add=True, editable=False)

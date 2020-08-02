@@ -40,6 +40,11 @@
     "react-scripts": "^3.4.1",
     "react-spring": "^8.0.27",
     "react-use-gesture": "^5.0.0",
+    "react-zoom-pan-pinch": "^1.6.1",
+    "redux": "^4.0.5",
+    "redux-devtools": "^3.6.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "serve": "^11.3.2",
     "styled-components": "^5.1.1",
     "uuid": "^8.2.0"
@@ -77,6 +82,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.0.5"
   }
 }
