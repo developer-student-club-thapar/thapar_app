@@ -10,8 +10,9 @@ import acad.mutation as acad_mutations
 import featurebug.schema as featurebug_schema
 import featurebug.mutation as featurebug_mutations
 import members.schema as members_schema
+import forum.schema as forum_schema
 # import timetable.mutation as timetable_mutations
-# import timetable.schema as timetable_schema
+import timetable.schema as timetable_schema
 from social_django.models import UserSocialAuth
 from .middleware import CustomAuthorizationMiddleware
 
@@ -50,8 +51,9 @@ class Query(acad_schema.RelayQuery,
             users_schema.RelayQuery,
             members_schema.RelayQuery,
             society_schema.RelayQuery,
-            # timetable_schema.RelayQuery,
+            timetable_schema.RelayQuery,
             featurebug_schema.RelayQuery,
+            forum_schema.RelayQuery,
             graphene.ObjectType):
     # This Class wil inherit from multiple Queries
     # as we begin to add more apps to the project
