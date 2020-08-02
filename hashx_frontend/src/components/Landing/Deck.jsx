@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
     WebkitUserDrag: 'none',
     boxShadow: 'rgba(0, 0, 0, 0.1) 2px 5px 27px !important',
     [theme.breakpoints.down('sm')]: {
-      height: '255px',
-      width: '255px',
+      height: '300px',
+      width: '300px',
     },
     [theme.breakpoints.up('sm')]: {
       height: '360px',
@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
       width: '400px',
     },
     [theme.breakpoints.up('lg')]: {
-      height: '550px',
-      width: '550px',
+      height: '600px',
+      width: '600px',
     },
     [theme.breakpoints.up('xl')]: {
       height: '800px',
@@ -60,7 +60,7 @@ export default function Deck(props) {
   const { setcolor } = props;
   const classes = useStyles();
   const [cursor, setCursor] = useState(true);
-  let cardClass = classes.card;
+  const cardClass = classes.card;
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [prop, set] = useSprings(cards.length, (i) => ({
     ...to(i),
@@ -136,7 +136,8 @@ export default function Deck(props) {
       >
         <Card className="card" elevation={1}>
           <CardMedia
-            className={cardClass}
+            className={classes.card}
+            style={{ cursor: cursor ? 'grabbing' : 'grab' }}
             id="card-image"
             component="img"
             alt="Card"
@@ -145,9 +146,9 @@ export default function Deck(props) {
             title="Card Image"
             onMouseDown={(e) => {
               e.preventDefault();
-              cardClass = clsx(classes.card, classes.cursor);
+              setCursor(true);
             }}
-            onMouseUp={() => setCursor(!cursor)}
+            onMouseUp={() => setCursor(false)}
           />
         </Card>
       </animated.div>

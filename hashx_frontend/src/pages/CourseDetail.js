@@ -21,6 +21,7 @@ import {
   Content,
 } from '../components/home/Global';
 import Sidebar from '../components/Dashboard/Sidebar';
+import { ScalarLeafsRule } from 'graphql';
 
 const useClasses = makeStyles(() => ({
   box: {
@@ -33,17 +34,21 @@ const useClasses = makeStyles(() => ({
     color: '#C4C5D1',
   },
   breadCrumbs: {
-    height: '5vh',
+    height: '60px',
     display: 'grid',
     placeItems: 'center',
-    borderRadius: 15,
+    borderRadius: 29,
     textAlign: 'center',
     backgroundColor: `${secondaryColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    '&:hover': {
+      transform: 'scale(1.2)',
+    },
   },
   breadCrumbsText: {
     color: '#747474',
     fontSize: 25,
+    fontWeight: 'bolder',
     margin: '0 auto',
   },
   heroPaper: {
@@ -60,10 +65,10 @@ const useClasses = makeStyles(() => ({
   },
   navigatioBar: {
     backgroundColor: '#00293B',
-    height: '15vh',
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    width: '85.7vw',
+    height: '140px',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    width: '90vw',
   },
   listItemPrimary: {
     display: 'grid',
@@ -179,24 +184,20 @@ const CourseDetail = (props) => {
                 backgroundImage: `${secondaryColor}`,
               }}
             >
-              <Grid
-                container
-                justify="flex-start"
-                alignItems="stretch"
-                style={{ padding: 30 }}
-              >
+              <Grid container justify="flex-start" style={{ padding: 30 }}>
                 <Grid item xs={3}>
                   <img
                     src={require('../assets/kid.svg')}
-                    style={{ marginLeft: '2vw' }}
+                    style={{ marginLeft: '2vw', objectFit: 'contain' }}
                   />
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={9}>
                   <Grid
                     container
                     direction="column"
                     justify="space-around"
                     alignItems="flex-start"
+                    spacing={4}
                   >
                     <Grid item xs={5}>
                       <h1 className={classes.title}>
@@ -210,26 +211,43 @@ const CourseDetail = (props) => {
                         elevation={3}
                         className={classes.breadCrumbs}
                         style={{
-                          width: '10vw',
+                          width: '150px',
                         }}
                       >
                         <h1 className={classes.breadCrumbsText}>UCS001</h1>
                       </Paper>
                     </Grid>
-                    <Grid item xs={4}>
-                      <Paper
-                        elevation={3}
-                        className={classes.breadCrumbs}
-                        style={{
-                          width: '15vw',
-
-                          marginTop: 10,
-                        }}
-                      >
-                        <h1 className={classes.breadCrumbsText}>
-                          {'View Course Site ->'}
-                        </h1>
-                      </Paper>
+                    <Grid item xs={12}>
+                      <Grid container spacing={3}>
+                        <Grid item xs={7}>
+                          <Paper
+                            elevation={3}
+                            className={classes.breadCrumbs}
+                            style={{
+                              width: '280px',
+                            }}
+                          >
+                            <h1 className={classes.breadCrumbsText}>
+                              View Course Site &nbsp;
+                              <i className="fas fa-long-arrow-alt-right"></i>
+                            </h1>
+                          </Paper>
+                        </Grid>
+                        <Grid item xs={5}>
+                          <Paper
+                            elevation={3}
+                            className={classes.breadCrumbs}
+                            style={{
+                              width: '190px',
+                            }}
+                          >
+                            <h1 className={classes.breadCrumbsText}>
+                              Syllabus &nbsp;
+                              <i className="fas fa-long-arrow-alt-right"></i>
+                            </h1>
+                          </Paper>
+                        </Grid>
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
@@ -239,8 +257,8 @@ const CourseDetail = (props) => {
 
           <Grid item xs={12}>
             <Paper elevation={3} className={classes.heroPaper}>
-              <Grid item xs={2}>
-                <Box className={classes.navigatioBar}>
+              <Grid item xs={12}>
+                <Grid item xs={12} className={classes.navigatioBar}>
                   <Grid container>
                     <Grid item xs={2} className={classes.listItem}>
                       <Paper elevation={0} className={classes.logoIcons}>
@@ -297,7 +315,7 @@ const CourseDetail = (props) => {
                       <h2 className={classes.listText}>Courses</h2>
                     </Grid>
                   </Grid>
-                </Box>
+                </Grid>
               </Grid>
               <Hidden lgUp>
                 <Grid

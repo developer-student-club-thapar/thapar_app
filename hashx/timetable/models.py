@@ -79,7 +79,7 @@ class Period(models.Model):
     end_time = models.TimeField()
 
     def __str__(self):
-        return f"Per :{self.no} {self.semester.status} Sem"
+        return f"Per :{self.no} {self.start_time} {self.end_time}"
 
 
 class Class(models.Model):
@@ -108,6 +108,17 @@ class Class(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     modified_date = models.DateTimeField(default=timezone.now)
 
+    def time(self):
+        period = self.period.all()
+
+        try:
+            if period[1].start_time > period[0].start_time:
+                return f'{period[0].start_time} - {period[1].end_time}'
+            else:
+                return f'{period[1].start_time} - {period[0].end_time}'
+        except Exception:
+            return f'{period[0].start_time} - { period[0].end_time}'
+
     class Meta:
         abstract = True
         verbose_name = "Class"
@@ -121,6 +132,15 @@ class OnlineClass(Class):
     # If the meeting is complete, URL of the recording of the URL
     isCompleted = models.BooleanField(default=False)
     recordingURL = models.URLField(max_length=200, null=True, blank=True)
+
+    def batches(self):
+
+        s = ''  # str(self.batch[0].branch.code)
+
+        for bat in self.batch.all():
+            s += str(bat) + ' '
+
+        return f'{s}'
 
     class Meta:
         verbose_name = "OnlineClass"

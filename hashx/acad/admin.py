@@ -26,7 +26,7 @@ from .models import (
 @admin.register(Semester)
 class SemesterAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'start', 'end', 'status')
-    search_fields = ('name',)
+    search_fields = ('name', 'start', 'end', 'status')
 
 
 @admin.register(Course)
@@ -49,28 +49,29 @@ class CourseAdmin(admin.ModelAdmin):
         "syllabus",
     )
     list_filter = ("created_date",)
-    search_fields = ("name", "code",)
+    search_fields = ("name", "code", "syllabus")
 
 
 @admin.register(Branch)
 class BranchAdmin(admin.ModelAdmin):
-    list_display = ("id", "year", "code", "name", "created_date")
+    list_display = ("id", "year", "code", "name", "created_date", "batch_of")
     list_filter = ("created_date",)
-    autocomplete_field = ("course",)
-    search_fields = ("name", "code", "year")
+    autocomplete_field = ("course")
+    search_fields = ("name", "code", "year", "batch_of")
 
 
 @admin.register(FirstYearBatch)
 class FirstYearBatchAdmin(admin.ModelAdmin):
     list_display = ("id", "code", "no", "GR", "created_date")
-    list_filter = ("GR", "created_date")
+    list_filter = ("GR", "code", "no", "created_date")
 
 
 @admin.register(Batch)
 class BatchAdmin(admin.ModelAdmin):
     list_display = ("id", "branch", "num", "GR", "created_date")
     list_filter = ("branch", "GR", "created_date")
-    search_fields = ("branch", "num", "GR")
+    search_fields = ("branch", "num",)
+    autocomplete_field = ("branch")
 
 
 @admin.register(FileType)
@@ -121,7 +122,7 @@ class FileAdmin(admin.ModelAdmin):
 
 @admin.register(AcademicCalendar)
 class AcademicCalendarAdmin(admin.ModelAdmin):
-    list_display = ("id", "type", "name", "start_date", "end_date")
+    list_display = ("id", "name", "start_date", "end_date")
     list_filter = ("start_date", "end_date")
     search_fields = ("name",)
 
