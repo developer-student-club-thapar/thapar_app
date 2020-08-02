@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   box: {
@@ -88,16 +88,18 @@ const Sidebar = () => {
             item
             xs={12}
             className={
-              path === '/dashboard' ? classes.listItemActive : classes.listItem
+              path === '/dashboard/home'
+                ? classes.listItemActive
+                : classes.listItem
             }
             onClick={() => {
-              history.push('/dashboard');
+              history.push('/dashboard/home');
             }}
           >
             <Paper
               elevation={0}
               className={
-                path === '/dashboard'
+                path === '/dashboard/home'
                   ? classes.logoIconsActive
                   : classes.logoIcons
               }
@@ -106,7 +108,7 @@ const Sidebar = () => {
             </Paper>
             <h2
               className={
-                path === '/dashboard'
+                path === '/dashboard/home'
                   ? classes.listTextActive
                   : classes.listText
               }
@@ -124,7 +126,9 @@ const Sidebar = () => {
             <Paper elevation={0} className={classes.logoIcons}>
               <i className="fas fa-book fa-2x" style={{ color: '#00293B' }} />
             </Paper>
-            <h2 className={classes.listText}>TimeTable</h2>
+            <Link to="/dashboard/timetable">
+              <h2 className={classes.listText}>TimeTable</h2>
+            </Link>
           </Grid>
           <Grid item xs={12} className={classes.listItem}>
             <Paper elevation={0} className={classes.logoIcons}>

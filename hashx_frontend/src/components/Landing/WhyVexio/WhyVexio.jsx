@@ -33,10 +33,10 @@ const WhyVexio = () => {
   const classes = useStyles();
   return (
     <Box p={5}>
-      <Grid container>
+      <Grid container justify="space-between">
         <Grid item container direction="column" xs={5}>
           <Grid item>
-            <h3>Why Vexio?</h3>
+            <h1 style={{ textAlign: '', fontSize: '48px' }}>Why Vexio?</h1>
           </Grid>
           <Grid item container>
             <Grid item direction="row">
@@ -44,32 +44,49 @@ const WhyVexio = () => {
                 <img
                   className={classes.laptopMan}
                   src="https://scrimba.com/static/art/peep-guy-macbook.svg"
-                ></img>
+                  alt="laptop-peep-guy"
+                />
                 <img
                   className={classes.wheelChairGirl}
                   src="https://scrimba.com/static/art/peep-girl-wheelchair.svg"
-                ></img>
+                  alt="wheelchair-peep-girl"
+                />
                 <img
                   className={classes.turbanMan}
                   src="https://scrimba.com/static/art/peep-man-bearded.svg"
-                ></img>
+                  alt="turban-peep-guy"
+                />
               </Box>
             </Grid>
           </Grid>
         </Grid>{' '}
-        {/*container1*/}
-        <Grid item container xs={3}>
+        {/* container1 */}
+        <Grid item container xs={3} style={{}}>
           <Grid item>
-            <h3> By the people for the peopl </h3>
+            <h1 style={{ borderLeft: '6px solid pink', paddingLeft: '15px' }}>
+              {' '}
+              Made by the students{' '}
+            </h1>
           </Grid>
           <Grid item>
-            <img></img>
+            <h6>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
+              deleniti repudiandae. At quod nobis rerum!
+            </h6>
           </Grid>
         </Grid>
         {/* 2nd container done */}
         <Grid item container xs={3}>
           <Grid item>
-            <h3> For the people by the people</h3>
+            <h1 style={{ borderLeft: '6px solid purple', paddingLeft: '15px' }}>
+              For the students
+            </h1>
+          </Grid>
+          <Grid item>
+            <h6>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
+              deleniti repudiandae. At quod nobis rerum!
+            </h6>
           </Grid>
         </Grid>
       </Grid>
