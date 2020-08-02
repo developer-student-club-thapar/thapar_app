@@ -7,7 +7,7 @@ import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import { spacing } from '@material-ui/system';
 import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
-import Overlay from '../Landing/Overlay/Overlay.jsx';
+import Overlay from '../../Landing/Overlay/Overlay.jsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 

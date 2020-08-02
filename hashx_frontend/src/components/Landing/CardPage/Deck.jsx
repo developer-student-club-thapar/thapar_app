@@ -141,7 +141,7 @@ export default function Deck(props) {
             id="card-image"
             component="img"
             alt="Card"
-            image={require('../../assets/Landing-page-Cards/' +
+            image={require('../../../assets/Landing-page-Cards/' +
               cards[5 - i].image)}
             title="Card Image"
             onMouseDown={(e) => {
