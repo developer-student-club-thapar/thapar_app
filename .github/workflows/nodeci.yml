@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [12.x, 14.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -20,13 +20,13 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: 'CI Checks'
+      - name: "CI Checks"
         working-directory: ./hashx_frontend
         run: npm ci
       - name: Install Dependencies
         working-directory: ./hashx_frontend
         run: npm install
-      - name: 'Build'
+      - name: "Build"
         working-directory: ./hashx_frontend
         run: CI=false npm run build --if-present
       # - name: 'Test'
