@@ -2,13 +2,6 @@
 import requests
 from django.contrib import admin
 
-
-def add_url(modeladmin, request, queryset):
-    for obj in queryset:
-        obj.amazon_url = obj.file.url
-        obj.save()
-
-
 from .models import (
     Course,
     Branch,
@@ -117,7 +110,6 @@ class FileAdmin(admin.ModelAdmin):
     autocomplete_fields = ("tags", "batch", "user")
     search_fields = ("file", "web_content_link", "name")
     prepopulated_fields = {"slug": ["name"]}
-    actions = [add_url]
 
 
 @admin.register(AcademicCalendar)
