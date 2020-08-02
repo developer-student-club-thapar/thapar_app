@@ -12,7 +12,7 @@ import Dashboard from '../pages/Dashboard';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
-import TimeTable from '../pages/TimeTable';
+import TimeTable from '../pages/TimeTableOLD';
 import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
@@ -21,15 +21,14 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
-      {/* <Route exact path="/dashboard" component={HomeAlt} /> */}
-      <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/dashboard/:page" component={Dashboard} />
       <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:content/:id" component={CourseDetail} />
-  <Route exact path="/courses" component={CourseDetail} />
-               
+      <Route exact path="/courses" component={CourseDetail} />
+
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
-      <Route exact path="/timetable" component={TimeTable} />
+      {/* <Route exact path="/timetable" component={TimeTable} /> */}
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} isRestricted />
