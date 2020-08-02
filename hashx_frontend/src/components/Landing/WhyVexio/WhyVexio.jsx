@@ -66,7 +66,7 @@ const WhyVexio = () => {
             <h3> By the people for the peopl </h3>
           </Grid>
           <Grid item>
-            <img />
+            <h1>hey there</h1>
           </Grid>
         </Grid>
         {/* 2nd container done */}
