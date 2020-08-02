@@ -228,6 +228,7 @@ const Landing = () => {
           </Box>
         </div>
       </animated.div>
+      {/* why vexio */}
       <WhyVexio />
       {/* Page 1 end page 2 start make these pages as seperate files */}
       <Box className="page2-root">

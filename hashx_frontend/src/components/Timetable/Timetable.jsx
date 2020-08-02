@@ -9,7 +9,7 @@ import { Grid } from '@material-ui/core';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
-const Timeline = () => {
+const Timetable = () => {
   return (
     <>
       <Grid item xs={12}>
@@ -23,4 +23,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default Timetable;

@@ -87,11 +87,11 @@ const Navbar = () => {
             <Link to="/">
               <Button>Home</Button>
             </Link>
-            <Link to="/about">
-              <Button>About</Button>
-            </Link>
             <Link to="/contact">
               <Button>Contact</Button>
+            </Link>
+            <Link to="/dashboard/home">
+              <Button>Dashboard</Button>
             </Link>
           </Box>
         </Toolbar>

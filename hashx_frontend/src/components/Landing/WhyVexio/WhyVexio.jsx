@@ -44,26 +44,29 @@ const WhyVexio = () => {
                 <img
                   className={classes.laptopMan}
                   src="https://scrimba.com/static/art/peep-guy-macbook.svg"
-                ></img>
+                  alt="laptop-peep-guy"
+                />
                 <img
                   className={classes.wheelChairGirl}
                   src="https://scrimba.com/static/art/peep-girl-wheelchair.svg"
-                ></img>
+                  alt="wheelchair-peep-girl"
+                />
                 <img
                   className={classes.turbanMan}
                   src="https://scrimba.com/static/art/peep-man-bearded.svg"
-                ></img>
+                  alt="turban-peep-guy"
+                />
               </Box>
             </Grid>
           </Grid>
         </Grid>{' '}
-        {/*container1*/}
+        {/* container1 */}
         <Grid item container xs={3}>
           <Grid item>
             <h3> By the people for the peopl </h3>
           </Grid>
           <Grid item>
-            <img></img>
+            <img />
           </Grid>
         </Grid>
         {/* 2nd container done */}
