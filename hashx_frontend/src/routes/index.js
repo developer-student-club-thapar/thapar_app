@@ -16,6 +16,7 @@ import TimeTable from '../pages/TimeTableOLD';
 import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
+import Forum from '../pages/Forum';
 
 const Routes = () => {
   return (
@@ -45,6 +46,7 @@ const Routes = () => {
         component={StudentDetailsForm}
         New
       />
+      <Route exact path="/forum/:page" component={Forum} />
       <Route path="/404" component={PageNotFound} />
       <Redirect to="/404" />
 
