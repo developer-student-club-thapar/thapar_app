@@ -2,9 +2,10 @@ import graphene
 from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
-from hashx.mixins import ViewAllAuthenticatedQuery , AuthenticatedNode , AuthenticatedNode
+from hashx.mixins import ViewAllAuthenticatedQuery, AuthenticatedNode, AuthenticatedNode
 from .models import Drivefolder, Course, Batch, Branch, Textbook, File, FirstYearBatch, AcademicCalendar, FileType
 from django.db import models
+
 
 class DrivefolderFilter(django_filters.FilterSet):
     class Meta:
@@ -86,13 +87,13 @@ class FileFilter(django_filters.FilterSet):
             models.FileField: {
                 'filter_class': django_filters.CharFilter,
                 'extra': lambda f: {
-                    'lookup_expr': 'icontains'
+                    'lookup_expr': 'icontains',
                 }
             },
             models.ImageField: {
                 'filter_class': django_filters.CharFilter,
                 'extra': lambda f: {
-                    'lookup_expr': 'icontains'
+                    'lookup_expr': 'icontains',
                 }
             }}
 
@@ -137,7 +138,7 @@ class AcademicCalendarNode(DjangoObjectType):
 class RelayQuery(graphene.ObjectType):
     all_filetypes = ViewAllAuthenticatedQuery(
         FileTypeNode, filterset_class=FileTypeFilter)
-    filetypes  = AuthenticatedNode.Field(FileTypeNode)
+    filetypes = AuthenticatedNode.Field(FileTypeNode)
     all_drivefolders = ViewAllAuthenticatedQuery(
         DrivefolderNode, filterset_class=DrivefolderFilter)
     drivefolder = AuthenticatedNode.Field(DrivefolderNode)

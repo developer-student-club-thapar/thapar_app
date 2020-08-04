@@ -4,12 +4,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/Landing.css';
 
-import Navbar from '../components/Landing/Navbar';
-import Deck from '../components/Landing/Deck';
-import MouseScroll from '../components/Landing/MouseScroll';
-import CardList from '../components/Landing/CardList';
+import Navbar from '../components/Landing/Navbar/Navbar';
+import Deck from '../components/Landing/CardPage/Deck';
+import MouseScroll from '../components/Landing/CardPage/MouseScroll';
+import CardList from '../components/Landing/CardPage/CardList';
+import Newsletter from '../components/Landing/Newsletter/Newsletter';
+import WhyVexio from '../components/Landing/WhyVexio/WhyVexio';
 import AvatarButton from '../components/Helper/AvatarButton';
-import Newsletter from '../components/Landing/Newsletter/Newsletter.jsx';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
@@ -227,6 +228,7 @@ const Landing = () => {
           </Box>
         </div>
       </animated.div>
+      <WhyVexio />
       {/* Page 1 end page 2 start make these pages as seperate files */}
       <Box className="page2-root">
         <Grid container direction="row" style={{ height: '100%' }}>

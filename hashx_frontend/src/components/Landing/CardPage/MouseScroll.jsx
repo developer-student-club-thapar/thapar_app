@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/MouseScroll.css';
+import '../../../styles/MouseScroll.css';
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({

@@ -52,6 +52,7 @@ class OnlineClassAdmin(admin.ModelAdmin):
     )
     fields = ('type', 'day', 'course', 'batch', 'period', 'meetingURL')
     autocomplete_fields = ["course", ]
+    filter_horizontal = ["batch", "period"]
     readonly_fields = ('id', 'private', 'published',
                        'isCompleted', 'recordingURL', 'created_date', 'modified_date')
 

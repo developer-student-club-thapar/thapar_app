@@ -6,6 +6,7 @@ import uuid
 from django.utils.text import slugify
 
 
+
 class Semester(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
@@ -337,7 +338,6 @@ class File(models.Model):
         self.slug = slugify(self.name)
         self.date_modified = timezone.now()
         super(File, self).save(*args, **kwargs)
-
 
 class AcademicCalendar(models.Model):  # Don't make mutations of this model
     """
