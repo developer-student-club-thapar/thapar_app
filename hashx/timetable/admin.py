@@ -2,6 +2,7 @@
 from django.contrib import admin
 
 from .models import Location, Period, OnlineClass, OfflineClass, Holidays
+from .forms import OnlineClassModelForm
 
 
 @admin.register(Location)
@@ -29,7 +30,7 @@ class PeriodAdmin(admin.ModelAdmin):
 
 @admin.register(OnlineClass)
 class OnlineClassAdmin(admin.ModelAdmin):
-
+    form = OnlineClassModelForm
     list_display = (
         'id',
         'time',
@@ -51,6 +52,7 @@ class OnlineClassAdmin(admin.ModelAdmin):
     )
     fields = ('type', 'day', 'course', 'batch', 'period', 'meetingURL')
     autocomplete_fields = ["course", ]
+    filter_horizontal = ["batch", "period"]
     readonly_fields = ('id', 'private', 'published',
                        'isCompleted', 'recordingURL', 'created_date', 'modified_date')
 

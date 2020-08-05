@@ -68,7 +68,7 @@ class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=75)
     code = models.CharField(max_length=10)
-    course_site = models.URLField()  # Links to old field of the site
+    course_site = models.URLField(blank=True)  # Links to old field of the site
     is_elective = models.BooleanField(default=False)
 
     credit = models.DecimalField(default=0.0, decimal_places=1, max_digits=3)
@@ -93,7 +93,7 @@ class Course(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
-    syllabus = models.TextField()  # Need this to markdown
+    syllabus = models.TextField(blank=True)  # Need this to markdown
 
     objects = CourseManager()
 
@@ -315,10 +315,11 @@ class File(models.Model):
     # Batch Specific Academic Files are also entertained.
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
-    batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
-    file_id = models.CharField(max_length=100, null=True)
-    web_content_link = models.URLField(max_length=150, null=True)
-    web_view_link = models.URLField(max_length=150, null=True)
+    batch = models.ForeignKey(
+        Batch, on_delete=models.SET_NULL, null=True, blank=True)
+    file_id = models.CharField(max_length=100, null=True, blank=True)
+    web_content_link = models.URLField(max_length=150, null=True, blank=True)
+    web_view_link = models.URLField(max_length=150, null=True, blank=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)

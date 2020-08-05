@@ -1,4 +1,4 @@
-import React, {useRef } from 'react';
+import React, { useRef } from 'react';
 import { Container, CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -8,6 +8,7 @@ import Events from '../components/home/Events';
 import MessMenu from '../components/home/MessMenu';
 import TimeTable from '../components/home/TimeTable';
 import { secondaryColor, tertiaryColor } from '../theme/theme';
+import CoursesCard from '../components/Dashboard/CoursesCard/CoursesCard';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +48,7 @@ const Home = () => {
             <TimeTable />
           </Grid>
           <Grid item xs={12} lg={6} xl={6}>
-            <Courses />
+            <CoursesCard />
           </Grid>
         </Grid>
         <br />

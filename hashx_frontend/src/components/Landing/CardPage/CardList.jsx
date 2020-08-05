@@ -65,7 +65,7 @@ const CardList = () => {
             <Card className={classes.root} key={index} elevation={0}>
               <CardMedia
                 className={classes.media}
-                image={require('../../assets/Landing-page-list/' +
+                image={require('../../../assets/Landing-page-list/' +
                   element.icon)}
               />
               <CardContent style={{ textAlign: 'center' }}>
