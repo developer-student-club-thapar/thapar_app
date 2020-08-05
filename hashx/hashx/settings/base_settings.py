@@ -60,6 +60,13 @@ INSTALLED_APPS = [
     "exam.apps.ExamConfig",
     "frontend.apps.FrontendConfig",
 
+    # V2 Stuff
+    "cyclepool.apps.CyclepoolConfig",
+    "library.apps.LibraryConfig",
+    "acadmatch.apps.AcadmatchConfig",
+    "laundry.apps.LaundryConfig"
+
+
 ]
 
 MIDDLEWARE = [
