@@ -4,8 +4,10 @@ import Box from '@material-ui/core/Box';
 import ClassCard from './ClassCard';
 import { makeStyles } from '@material-ui/core/styles';
 import DayHeaderCard from './DayHeaderCard';
+import EmptyCard from './Emptycard.jsx';
 import './style.css';
 import SideTime from './SideTime';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     overflow: 'auto',
@@ -27,6 +29,36 @@ const Timetable = () => {
       <Grid item direction="column">
         <DayHeaderCard />
         <Box class="main-1">
+          <ClassCard />
+          <ClassCard />
+        </Box>
+      </Grid>
+      <Grid item direction="column">
+        <DayHeaderCard />
+        <Box class="main-1">
+          <ClassCard />
+          <ClassCard />
+        </Box>
+      </Grid>
+      <Grid item direction="column">
+        <DayHeaderCard />
+        <Box class="main-1">
+          <ClassCard />
+        </Box>
+      </Grid>
+      <Grid item direction="column">
+        <DayHeaderCard />
+        <Box class="main-1">
+          <ClassCard />
+          <ClassCard />
+        </Box>
+      </Grid>
+      <Grid item direction="column">
+        <DayHeaderCard />
+        <Box class="main-1">
+          <ClassCard />
+          <EmptyCard />
+          <EmptyCard />
           <ClassCard />
           <ClassCard />
         </Box>

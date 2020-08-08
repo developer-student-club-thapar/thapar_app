@@ -1,0 +1,35 @@
+{
+  allOnlineclasses {
+    edges{
+      node{
+        id
+        day
+        meetingURL
+        course{
+          id
+          name
+        }
+        period{
+          edges{
+            node{
+              id 
+              startTime
+              endTime
+            }
+          }
+        }
+        batch{
+          edges{
+            node {
+              id
+              num
+              branch{
+                code
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

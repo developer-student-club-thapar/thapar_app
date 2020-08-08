@@ -1,0 +1,75 @@
+{
+  "data": {
+    "allOnlineclasses": {
+      "edges": [
+        {
+          "node": {
+            "id": "T25saW5lQ2xhc3NOb2RlOjRlNDBiZDhhLWVhNjAtNDY0OC1hYzllLWY2ZDY4YzdiZjIyMw==",
+            "day": "MONDAY",
+            "meetingURL": "https://seeklogo.com/images/Z/zoom-icon-logo-C552F99BAC-seeklogo.com.png",
+            "course": {
+              "id": "Q291cnNlTm9kZTo0YzIyZmE4ZS02YWRjLTQ4NjgtOGVlYy0yYTkwZjA2ODlhZWY=",
+              "name": "Data Structures and Algorithms"
+            },
+            "period": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "UGVyaW9kTm9kZTo1NDA4YmFlOS0zYWMwLTQ0ODQtODJlYi1mZDg1YmRmNGQ4Nzc=",
+                    "startTime": "09:40:00",
+                    "endTime": "10:30:00"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "UGVyaW9kTm9kZTo2MDdiMWFhZi0wMGM3LTQ3MzAtOGY1My0zMjg3MmJmZDhjZWU=",
+                    "startTime": "14:40:00",
+                    "endTime": "15:30:00"
+                  }
+                },
+                {
+                  "node": {
+                    "id": "UGVyaW9kTm9kZTozMmZiYTI3OS05ZmZmLTQzODctYjA4MC1mOWI5YjZhZWE5ODU=",
+                    "startTime": "08:00:00",
+                    "endTime": "08:50:00"
+                  }
+                }
+              ]
+            },
+            "batch": {
+              "edges": [
+                {
+                  "node": {
+                    "id": "QmF0Y2hOb2RlOjdiZjQzZTE2LTJjN2QtNDY1My1iZTM2LTc0N2NhNmNiZGRiNg==",
+                    "num": 9,
+                    "branch": {
+                      "code": "COE"
+                    }
+                  }
+                },
+                {
+                  "node": {
+                    "id": "QmF0Y2hOb2RlOmZkZTg5NTQzLTNkNDQtNDlmNS1hMTcwLTg0NzMwYmQyNTI4Mw==",
+                    "num": 13,
+                    "branch": {
+                      "code": "COE"
+                    }
+                  }
+                },
+                {
+                  "node": {
+                    "id": "QmF0Y2hOb2RlOjU2OGMzMjdiLTY3ZjUtNGNlYi04YWYyLWVkMzk1NjMzMGUxYQ==",
+                    "num": 28,
+                    "branch": {
+                      "code": "COE"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

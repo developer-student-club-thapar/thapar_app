@@ -12,12 +12,40 @@ import LinkIcon from '@material-ui/icons/Link';
 import Chip from '@material-ui/core/Chip';
 import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
+function ZoomIcon(props) {
+  return (
+    <SvgIcon {...props}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 48 48"
+        width="24px"
+        height="24px"
+      >
+        <circle cx="24" cy="24" r="20" fill="#2196f3" />
+        <path
+          fill="#fff"
+          d="M29,31H14c-1.657,0-3-1.343-3-3V17h15c1.657,0,3,1.343,3,3V31z"
+        />
+        <polygon fill="#fff" points="37,31 31,27 31,21 37,17" />
+      </svg>
+    </SvgIcon>
+  );
+}
 const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 375,
-    minHeight: '160px',
+    '&:hover': {
+      transform: 'scale(1.1)',
+      'box-shadow': '6.6px 6.6px 17.6px #d1cdc7',
+    },
+    transition: 'transform .2s',
+    minWidth: 275,
+    minHeight: '70px',
     margin: '10px 0px 10px 0px',
+    borderLeft: '10px solid pink',
+    'box-shadow': '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    // 'border-radius': '20px',
   },
   bullet: {
     display: 'inline-block',
@@ -102,10 +130,10 @@ const ClassCard = () => {
           Data Structures and Algorithms
         </Typography>
         {/* tags */}
-        <Box className={classes.tags}>
+        {/* <Box className={classes.tags}>
           <Chip label="Lab" />
           <Chip label="Tutorial" style={{ backgroundColor: '#e76f51' }} />
-        </Box>
+        </Box> */}
       </CardContent>
       <CardActions disableSpacing style={{ padding: '0px 0rem 0px 1rem' }}>
         <Box className={classes.iconArea}>
@@ -130,7 +158,7 @@ const ClassCard = () => {
               TransitionComponent={Zoom}
             >
               <IconButton aria-label="Lecture Link">
-                <LinkIcon />
+                <ZoomIcon />
               </IconButton>
             </LightTooltip>
           </Box>
