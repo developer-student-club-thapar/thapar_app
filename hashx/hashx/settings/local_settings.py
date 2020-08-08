@@ -2,7 +2,7 @@
 from .base_settings import *
 
 
-DEBUG = config("DEBUG", default=True)
+DEBUG = True
 
 INSTALLED_APPS += [
     'debug_toolbar',
@@ -16,8 +16,11 @@ AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = config('AWS_S3_REGION_NAME', default="")
 AWS_S3_HOST = config('AWS_S3_HOST', default="")
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+if DEBUG == True:
+    STATIC_ROOT = ""
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
@@ -76,9 +79,6 @@ DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": True,
     "SHOW_COLLAPSED": True,
 }
-
-STATIC_ROOT = ""
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 
 # CORS CONFIG
