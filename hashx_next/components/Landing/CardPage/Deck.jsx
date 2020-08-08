@@ -56,8 +56,8 @@ const from = (i) => ({ x: 1000, rot: 0, scale: 1.5, y: 0 });
 const trans = (r, s) =>
   ` rotateX(30deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`;
 
-export default function Deck(props) {
-  const { setcolor } = props;
+export default function Deck() {
+  // const { setcolor } = props;
   const classes = useStyles();
   const [cursor, setCursor] = useState(true);
   const cardClass = classes.card;
@@ -91,8 +91,8 @@ export default function Deck(props) {
           : 0;
         const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
         if (isGone) {
-          setcolor(cards[5 - i].color);
-          console.log(cards[5 - i].color);
+          // setcolor(cards[5 - i].color);
+          // console.log(cards[5 - i].color);
         }
         const scale = down ? 1.1 : 1;
 

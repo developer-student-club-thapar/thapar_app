@@ -9,7 +9,7 @@ import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
 import Overlay from '../../Landing/Overlay/Overlay.jsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+import Link from 'next/link'
 
 const useStyles = makeStyles((theme) => ({
   hamburgerBox: {
@@ -74,6 +74,7 @@ const Navbar = () => {
               isOpen={open}
               width={30}
               height={20}
+              menuClicked={console.log('clicked')}
               strokeWidth={2}
               color={open ? '#8167a9' : 'black'}
               borderRadius={0}
@@ -85,15 +86,15 @@ const Navbar = () => {
           <Overlay isOpen={open} />
           <Box />
           <Box className={classes.listBox}>
-            {/* <Link to="/"> */}
+            <Link href="/" passHref> 
               <Button>Home</Button>
-            {/* </Link> */}
-            {/* <Link to="/contact"> */}
+             </Link> 
+             <Link href="/contact" passHref> 
               <Button>Contact</Button>
-            {/* </Link> */}
-            {/* <Link to="/dashboard/home"> */}
+            </Link> 
+             <Link href="/dashboard" passHref >
               <Button>Dashboard</Button>
-            {/* </Link> */}
+            </Link> 
           </Box>
         </Toolbar>
       </AppBar>

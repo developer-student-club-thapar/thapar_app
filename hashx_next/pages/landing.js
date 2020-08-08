@@ -96,12 +96,11 @@ const LightTooltip = withStyles((theme) => ({
 }))(Tooltip);
 
 function Home ()  {
-  const [color, setcolor] = useState("#eee");
   const classes = useStyles();
   const responseGoogle = (response) => {};
   const responseGoogleFail = (response) => {};
 
-  const props = useSpring({ backgroundColor: color });
+  const props = useSpring({ backgroundColor: "#eee" });
 
   return (
     <>
@@ -121,7 +120,7 @@ function Home ()  {
             >
               <Grid item xs={12} md={7}>
                 <Box className={classes.deckBox}>
-                  <Deck setcolor={setcolor} />
+                  <Deck/>
                 </Box>
               </Grid>
               <Grid item xs={12} md={4}>
