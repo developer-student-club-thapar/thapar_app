@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
     top: '20px',
     left: '-48px',
     maxWidth: '150px',
+    [theme.breakpoints.down('sm')]: {
+      top: '10px',
+    },
   },
 
   wheelChairGirl: {
@@ -19,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     width: '40%',
     top: '40px',
     maxWidth: '170px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
 
   laptopMan: {
@@ -27,6 +33,21 @@ const useStyles = makeStyles((theme) => ({
     left: '0px',
     maxWidth: '170px',
     top: '30px',
+    [theme.breakpoints.down('sm')]: {
+      top: '10px',
+    },
+  },
+
+  textContainer: {
+    [theme.breakpoints.down('md')]: {
+      marginTop: '15px',
+    },
+  },
+
+  heading: {
+    [theme.breakpoints.down('md')]: {
+      padding: '15px',
+    },
   },
 }));
 const WhyVexio = () => {
@@ -34,7 +55,7 @@ const WhyVexio = () => {
   return (
     <Box p={5}>
       <Grid container justify="space-between">
-        <Grid item container direction="column" xs={5}>
+        <Grid item container direction="column" xs={12} lg={5}>
           <Grid item>
             <h1 style={{ textAlign: '', fontSize: '48px' }}>Why Vexio?</h1>
           </Grid>
@@ -61,9 +82,12 @@ const WhyVexio = () => {
           </Grid>
         </Grid>{' '}
         {/* container1 */}
-        <Grid item container xs={3} style={{}}>
+        <Grid item container xs={12} lg={3} className={classes.textContainer}>
           <Grid item>
-            <h1 style={{ borderLeft: '6px solid pink', paddingLeft: '15px' }}>
+            <h1
+              style={{ borderLeft: '6px solid pink', paddingLeft: '15px' }}
+              className={classes.heading}
+            >
               {' '}
               Made by the students{' '}
             </h1>
@@ -76,9 +100,12 @@ const WhyVexio = () => {
           </Grid>
         </Grid>
         {/* 2nd container done */}
-        <Grid item container xs={3}>
+        <Grid item container xs={12} lg={3} className={classes.textContainer}>
           <Grid item>
-            <h1 style={{ borderLeft: '6px solid purple', paddingLeft: '15px' }}>
+            <h1
+              style={{ borderLeft: '6px solid purple', paddingLeft: '15px' }}
+              className={classes.heading}
+            >
               For the students
             </h1>
           </Grid>
