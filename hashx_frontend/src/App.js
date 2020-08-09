@@ -14,7 +14,6 @@ import { getAccessToken} from './util/token';
 
 const client = new ApolloClient({
   uri: getApiUrl(),
-  credentials: 'include',
   request: (operation) => {
     const accessToken = getAccessToken();
     operation.setContext({

@@ -31,8 +31,7 @@ class InstructorOnlyQuery(DjangoFilterConnectionField):
 
 class ViewAllAuthenticatedQuery(DjangoFilterConnectionField):
     @classmethod
-    @login_required
-    @every_authenticated
+    
     def resolve_queryset(
         cls, connection, iterable, info, args, filtering_args=None, filterset_class=None
     ):

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
+import {ALL_COURSES} from '../components/Dashboard/Queries'
 // import { useParams } from 'react-router-dom';
 import Layout, {
   Root,
@@ -119,5 +120,21 @@ const Dashboard = () => {
     </Root>
   );
 };
+
+export async function getServerSideProps() {
+  const apolloClient = initializeApollo()
+
+  await apolloClient.query({
+    query: ALL_COURSES,
+    })
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  
+  }
+}
+
 
 export default Dashboard;

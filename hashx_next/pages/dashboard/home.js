@@ -6,7 +6,7 @@ import Announcements from "../../components/home/Announcements";
 import Events from "../../components/home/Events";
 import MessMenu from "../../components/home/MessMenu";
 import TimeTable from "../../components/home/TimeTable";
-import CoursesCard from "../../components/Dashboard/CoursesCard/CoursesCard";
+import CoursesCard from "../../components/home/CoursesCard/CoursesCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
