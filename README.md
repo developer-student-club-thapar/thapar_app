@@ -10,7 +10,7 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-# Thapar Application 🚀
+# Thapar Application [VEXIO](Vexio.in) 🚀
 
 The Plan is to build an amazing application for Thapar Campus People from all walks of life !
 
@@ -118,7 +118,8 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Ramyak Mehra** - *Backend Django and API* - [ramyak-mehra](https://github.com/ramyak-mehra)
 * **Sanchit Jain** - *Backend Django and API* - [sanchjain](https://github.com/sanchjain)
 * **Aniket Biswas** - *React Web Application* - [aniketbiswas21](https://github.com/aniketbiswas21)
-* **Sanchit Nanda** - *UI/UX Designer* - [sanchitnanda](https://github.com/sanchitnanda)
+* **Rishabh Malhotra** - _*React Web Application*_ - [Rishabh-malhotraa](https://github.com/Rishabh-malhotraa)
+* **Abhishek Sheoran** - _*UI/UX Designer*_ - []()
 
 See also the list of [contributors](https://github.com/developer-student-club-thapar/thapar_app/graphs/contributors) who participated in this project.
 
