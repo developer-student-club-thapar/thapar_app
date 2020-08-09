@@ -55,6 +55,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
 INTERNAL_IPS = [
     "127.0.0.1",
     "localhost",
+    "tietdev.vexio.in"
 ]
 
 # Add, remove or change the order of panels here.
