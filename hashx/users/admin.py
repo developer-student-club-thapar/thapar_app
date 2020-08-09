@@ -1,7 +1,22 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-
+import requests
+from notification.fcm import sendNotifications
+from notification.email import sendEmail
 from .models import Student, Instructor, Verification
+
+def send_data(modeladmin  , request  , queryset):
+    users = []
+    for obj in queryset:
+        users.append(obj.user)
+    sendNotifications(users=users ,title='ooolalal' , body = "chaman lal" )
+
+
+def send_email(modeladmin, request, queryset):
+    users = []
+    for obj in queryset:
+        users.append(obj.user)
+    sendEmail(users=users, title="oolala", body="chaman lal")
 
 
 @admin.register(Student)
@@ -20,14 +35,15 @@ class StudentAdmin(admin.ModelAdmin):
         'created_date',
         'token',
     )
-    list_filter = (
-        'user',
-        'branch',
-        'batch',
-        'firstyearbatch',
-        'created_date',
-    )
+    # list_filter = (
+    #     'user',
+    #     'branch',
+    #     'batch',
+    #     'firstyearbatch',
+    #     'created_date',
+    # )
     raw_id_fields = ('starred_files',)
+    actions = [send_data , send_email]
 
 
 @admin.register(Instructor)
