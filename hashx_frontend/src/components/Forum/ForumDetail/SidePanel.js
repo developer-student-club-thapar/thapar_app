@@ -5,6 +5,7 @@ import { secondaryColor, textColor } from '../../../theme/theme';
 import { Document, Page, pdfjs } from 'react-pdf';
 import sample from '../../../assets/sample.pdf';
 import Avatar from '@material-ui/core/Avatar';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '29px',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     margin: '10px',
+    cursor: 'pointer',
   },
   seeMoreText: {
     color: '#FFFFFF',
@@ -60,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SidePanel = () => {
   const classes = useStyles();
+  const history = useHistory();
   const discussionCards = [];
   for (let i = 0; i < 4; i++) {
     discussionCards.push(
@@ -125,7 +128,13 @@ const SidePanel = () => {
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Paper elevation={3} className={classes.paperButtons1}>
+            <Paper
+              elevation={3}
+              className={classes.paperButtons1}
+              onClick={() => {
+                history.push('/forum/discussion-panel');
+              }}
+            >
               <span className={classes.seeMoreText}>
                 See More&nbsp;&nbsp;&nbsp;
                 <i className="fas fa-share-square fa-lg" />

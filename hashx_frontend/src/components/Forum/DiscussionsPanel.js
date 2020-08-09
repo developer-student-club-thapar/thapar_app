@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import FileSideView from './DiscussionsPanel/FileSideView';
@@ -17,6 +17,9 @@ const useStyles = makeStyles(() => ({
 
 const DiscussionsPanel = () => {
   const classes = useStyles();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Box className={classes.box}>
       <Grid container spacing={2}>
