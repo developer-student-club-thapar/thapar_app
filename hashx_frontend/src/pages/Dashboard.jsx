@@ -110,10 +110,8 @@ const Dashboard = () => {
         PaperProps={{ className: styles.sidebar }}
       >
         <SidebarContent>
-          {/* <TextSidebar /> */}
           <Sidebar />
         </SidebarContent>
-        {/* <CollapseBtn className={cx(styles.collapseBtn)} /> */}
       </DrawerSidebar>
       <Content className={styles.content}>{renderPage(page)}</Content>
     </Root>

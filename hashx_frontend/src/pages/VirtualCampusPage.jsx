@@ -1,11 +1,11 @@
 import React from 'react';
 import Tour from '../components/VirtualCampus/VirtualCampus';
 
-const VirtualCampus = () => {
+const VirtualCampus = (props) => {
   return (
     <>
       <div className="">hey there</div>
-      <Tour />
+      <Tour navigate={props} />
     </>
   );
 };
