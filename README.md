@@ -10,7 +10,7 @@
 <a href="https://facebook.com/dscthapar"><img src="https://github.com/aritraroy/social-icons/blob/master/facebook-icon.png?raw=true" width="60"></a>
 <a href="https://instagram.com/dsc.tiet"><img src="https://github.com/aritraroy/social-icons/blob/master/instagram-icon.png?raw=true" width="60"></a>
 
-# Thapar Application [VEXIO](Vexio.in) 🚀
+# Thapar Application [VEXIO](https://Vexio.in) 🚀
 
 The Plan is to build an amazing application for Thapar Campus People from all walks of life !
 
