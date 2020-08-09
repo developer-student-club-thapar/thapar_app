@@ -90,7 +90,7 @@ const DocumentPreview = () => {
           <Grid item lg={3}>
             <Paper elevation={3} className={classes.paperButtons3}>
               <span className={classes.forumText}>
-                <i class="fas fa-paperclip fa-lg" />
+                <i className="fas fa-paperclip fa-lg" />
                 &nbsp;&nbsp;Vexio Forums
               </span>
             </Paper>
