@@ -41,11 +41,6 @@ const CoursesCard = (props) => {
   const styles = useStyles();
   return (
     <Paper elevation={3} className={styles.papergrid}>
-      <Grid container>
-        <Grid item xs={12}>
-          <h2>Courses</h2>
-        </Grid>
-      </Grid>
       <Grid container spacing={4}>
         <Grid item xs={12} lg={4} xl={4}>
           {[
