@@ -183,7 +183,6 @@ const Chat = () => {
             <Grid container spacing={2}>
               <Grid item xs={12} className={classes.chatBox}>
                 <Grid container spacing={2} className={classes.chatItem}>
-                  {console.log(messages)}
                   {messages.map((item) => (
                     <Grow in>
                       <Grid item xs={9}>
