@@ -81,7 +81,6 @@ class Period(models.Model):
     def __str__(self):
         return f"Per :{self.no} {self.start_time} {self.end_time}"
 
-
 class Class(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     TYPE = [
