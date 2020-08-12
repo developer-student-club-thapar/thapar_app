@@ -63,9 +63,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -234,3 +234,10 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+JWT_COOKIE_DOMAIN = ['http://localhost:3000', "https://ssr.vexio.in"]
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000",
+    "https://ssr.vexio.in"
+]
+JWT_COOKIE_SECURE = False
+CORS_ALLOW_CREDENTIALS = True
