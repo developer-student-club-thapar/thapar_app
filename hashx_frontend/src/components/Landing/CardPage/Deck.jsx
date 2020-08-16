@@ -4,7 +4,6 @@ import { useGesture } from 'react-use-gesture';
 import { v4 as uuidv4 } from 'uuid';
 import { Card, CardMedia } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 
 const cards = [
   { image: '1.png', color: '#eee' },
@@ -60,7 +59,7 @@ export default function Deck(props) {
   const { setcolor } = props;
   const classes = useStyles();
   const [cursor, setCursor] = useState(true);
-  const cardClass = classes.card;
+  // const cardClass = classes.card;
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [prop, set] = useSprings(cards.length, (i) => ({
     ...to(i),

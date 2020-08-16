@@ -1,7 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import spacing from '@material-ui/system';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     left: '-48px',
     maxWidth: '150px',
     [theme.breakpoints.down('sm')]: {
-      display: 'none'
+      display: 'none',
     },
   },
 
@@ -45,12 +44,12 @@ const useStyles = makeStyles((theme) => ({
   },
 
   textBox: {
-    [theme.breakpoints.between('md','lg')]: {
-      flexDirection: 'column'
+    [theme.breakpoints.between('md', 'lg')]: {
+      flexDirection: 'column',
     },
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
     },
   },
 
@@ -61,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   container: {
-    backgroundColor: 'white'
-  }
+    backgroundColor: 'white',
+  },
 }));
 const WhyVexio = () => {
   const classes = useStyles();
@@ -131,7 +130,7 @@ const WhyVexio = () => {
               </h6>
             </Grid>
           </Grid>
-          </Grid>
+        </Grid>
       </Grid>
     </Box>
   );
