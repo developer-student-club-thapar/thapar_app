@@ -18,6 +18,7 @@ def setup_jwt_cookie_social(f):
 
         if getattr(info.context, 'jwt_cookie', False):
             info.context.jwt_token = result.token
+            # info.context.jwt_refresh_token = graphql_jwt.shortcuts.create_refresh_token(social.user)
         return result
     return wrapper
 
