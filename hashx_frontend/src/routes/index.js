@@ -2,8 +2,6 @@ import React from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 import PrivateTest from '../pages/PrivateTest';
 import Route from './Route';
-import Home from '../pages/Home';
-import HomeAlt from '../pages/HomeAlt';
 import CourseDetail from '../pages/CourseDetail';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
@@ -12,7 +10,6 @@ import Dashboard from '../pages/Dashboard';
 import PdfView from '../pages/PdfView';
 import Hostel from '../pages/Hostel';
 import RegisterGoogle from '../pages/RegisterGoogle';
-import TimeTable from '../pages/TimeTableOLD';
 import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
@@ -23,10 +20,8 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard/:page" component={Dashboard} />
-      <Route exact path="/alternate" component={Home} />
       <Route exact path="/course/:content/:id" component={CourseDetail} />
       <Route exact path="/courses" component={CourseDetail} />
-
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
       {/* <Route exact path="/timetable" component={TimeTable} /> */}
@@ -49,8 +44,6 @@ const Routes = () => {
       <Route exact path="/forum/:page" component={Forum} />
       <Route path="/404" component={PageNotFound} />
       <Redirect to="/404" />
-
-      {/* <Route component={Home} /> */}
     </Switch>
   );
 };
