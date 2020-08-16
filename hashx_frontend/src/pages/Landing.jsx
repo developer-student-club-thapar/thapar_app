@@ -1,17 +1,20 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
 import React, { useState, useEffect, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import '../styles/Landing.css';
 
-import Navbar from '../components/Landing/Navbar';
-import Deck from '../components/Landing/Deck';
-import MouseScroll from '../components/Landing/MouseScroll';
-import CardList from '../components/Landing/CardList';
-import AvatarButton from '../components/Landing/AvatarButton';
+import Navbar from '../components/Landing/Navbar/Navbar';
+import Deck from '../components/Landing/CardPage/Deck';
+import MouseScroll from '../components/Landing/CardPage/MouseScroll';
+import CardList from '../components/Landing/CardPage/CardList';
+import Newsletter from '../components/Landing/Newsletter/Newsletter';
+import WhyVexio from '../components/Landing/WhyVexio/WhyVexio';
+import AvatarButton from '../components/Helper/AvatarButton';
 
 import { useMutation } from '@apollo/react-hooks';
 import { SOCIAL_AUTH } from './AuthQueriesMutations';
-import { useHistory } from 'react-router-dom';
+
 import GoogleLogin from 'react-google-login';
 import { UserContext } from '../context/UserProvider';
 import { makeStyles, withStyles, createStyles } from '@material-ui/core/styles';
@@ -152,77 +155,81 @@ const Landing = () => {
   const props = useSpring({ backgroundColor: color });
 
   return (
-    <animated.div id="main-container" className={classes.root} style={props}>
-      <div className={classes.page1Root}>
-        <MouseScroll />
-        <Navbar />
+    <>
+      <animated.div id="main-container" className={classes.root} style={props}>
+        <div className={classes.page1Root}>
+          <MouseScroll />
+          <Navbar />
 
-        <br />
-        <Box p={2}>
-          <Grid
-            container
-            direction="row-reverse"
-            spacing={3}
-            alignItems="center"
-            justify="center"
-          >
-            <Grid item xs={12} md={7}>
-              <Box className={classes.deckBox}>
-                <Deck setcolor={setcolor} />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={4}>
-              <Paper className={classes.paper} elevation={0}>
-                <Typography variant="h3">PLACEHOLDER TEXT</Typography>
-              </Paper>
-              <Box p={1} textAlign="center">
-                <CssBaseline>
-                  <GoogleLogin
-                    clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
-                    buttonText="Sign up with Google"
-                    onSuccess={responseGoogle}
-                    onFailure={responseGoogleFail}
-                    cookiePolicy="single_host_origin"
-                    hostedDomain="thapar.edu"
-                  />
-                </CssBaseline>
-              </Box>
-            </Grid>
+          <br />
+          <Box p={2}>
             <Grid
               container
-              item
-              className={classes.iconGridContainer}
-              xs={12}
-              md={1}
+              direction="row-reverse"
+              spacing={3}
               alignItems="center"
-              spacing={2}
+              justify="center"
             >
-              <Grid item>
-                <LightTooltip
-                  TransitionComponent={Zoom}
-                  title="Next Post"
-                  placement="right"
-                >
-                  <IconButton aria-label="next">
-                    <SkipNextIcon style={{ color: 'black' }} />
-                  </IconButton>
-                </LightTooltip>
+              <Grid item xs={12} md={7}>
+                <Box className={classes.deckBox}>
+                  <Deck setcolor={setcolor} />
+                </Box>
               </Grid>
-              <Grid item>
-                <LightTooltip
-                  TransitionComponent={Zoom}
-                  title="Previous Post"
-                  placement="right"
-                >
-                  <IconButton aria-label="delete">
-                    <SkipPreviousIcon style={{ color: 'black' }} />
-                  </IconButton>
-                </LightTooltip>
+              <Grid item xs={12} md={4}>
+                <Paper className={classes.paper} elevation={0}>
+                  <Typography variant="h3">PLACEHOLDER TEXT</Typography>
+                </Paper>
+                <Box p={1} textAlign="center">
+                  <CssBaseline>
+                    <GoogleLogin
+                      clientId="423818856081-ocfj6oq6okclmqokie0hp9rvru6nmjo6.apps.googleusercontent.com"
+                      buttonText="Sign up with Google"
+                      onSuccess={responseGoogle}
+                      onFailure={responseGoogleFail}
+                      cookiePolicy="single_host_origin"
+                      hostedDomain="thapar.edu"
+                    />
+                  </CssBaseline>
+                </Box>
+              </Grid>
+              <Grid
+                container
+                item
+                className={classes.iconGridContainer}
+                xs={12}
+                md={1}
+                alignItems="center"
+                spacing={2}
+              >
+                <Grid item>
+                  <LightTooltip
+                    TransitionComponent={Zoom}
+                    title="Next Post"
+                    placement="right"
+                  >
+                    <IconButton aria-label="next">
+                      <SkipNextIcon style={{ color: 'black' }} />
+                    </IconButton>
+                  </LightTooltip>
+                </Grid>
+                <Grid item>
+                  <LightTooltip
+                    TransitionComponent={Zoom}
+                    title="Previous Post"
+                    placement="right"
+                  >
+                    <IconButton aria-label="delete">
+                      <SkipPreviousIcon style={{ color: 'black' }} />
+                    </IconButton>
+                  </LightTooltip>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-        </Box>
-      </div>
+          </Box>
+        </div>
+      </animated.div>
+      <WhyVexio />
+      {/* Page 1 end page 2 start make these pages as seperate files */}
       <Box className="page2-root">
         <Grid container direction="row" style={{ height: '100%' }}>
           <Grid item xs={12} md={6}>
@@ -269,11 +276,13 @@ const Landing = () => {
                 outline: 'none',
               }}
             >
-              <AvatarButton
-                collapsed={false}
-                text="Virtual Campus Tour"
-                icon="https://www.svgrepo.com/show/131150/college.svg"
-              />
+              <Link to="/campus-tour">
+                <AvatarButton
+                  collapsed={false}
+                  text="Virtual Campus Tour"
+                  icon="https://www.svgrepo.com/show/131150/college.svg"
+                />
+              </Link>
             </Box>
           </Grid>
           <Container maxWidth="lg">
@@ -286,11 +295,14 @@ const Landing = () => {
             >
               <CardList />
             </Grid>
+            <Box py={2} />
           </Container>
         </Grid>
       </Box>
+      {/* Page 2 finish */}
+      <Newsletter />
       <Footer />
-    </animated.div>
+    </>
   );
 };
 

@@ -6,6 +6,7 @@ import uuid
 from django.utils.text import slugify
 
 
+
 class Semester(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
@@ -67,7 +68,7 @@ class Course(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=75)
     code = models.CharField(max_length=10)
-    course_site = models.URLField()  # Links to old field of the site
+    course_site = models.URLField(blank=True)  # Links to old field of the site
     is_elective = models.BooleanField(default=False)
 
     credit = models.DecimalField(default=0.0, decimal_places=1, max_digits=3)
@@ -92,7 +93,7 @@ class Course(models.Model):
     created_date = models.DateTimeField(
         default=timezone.now, blank=True, null=True)
     # textbook = models.ForeignKey(Textbook, on_delete=models.CASCADE)
-    syllabus = models.TextField()  # Need this to markdown
+    syllabus = models.TextField(blank=True)  # Need this to markdown
 
     objects = CourseManager()
 
@@ -145,7 +146,17 @@ class Branch(models.Model):
     objects = BranchManager()
 
     def __str__(self):
-        return f"{self.year} {self.name} ({self.code}) {self.created_date}"
+        y = self.year
+
+        if self.year == 'JR':
+            y = '3rd Y'
+        elif self.year == 'SO':
+            y = '2nd Y'
+        elif self.year == 'SR':
+            y = '4th Year'
+        elif self.year == 'FR':
+            y = '1st Year'
+        return f"{y} {self.name} ({self.code})"
 
     def get_absolute_url(self):
         return reverse("branch-detail", kwargs={"pk": self.pk})
@@ -176,7 +187,7 @@ class Batch(models.Model):
     """
 
     Valid Only for 2 - 4th Year 
-    When 2-4 yearuser Signs Up this is the Batch to be alloted
+    When 2-4 year user Signs Up this is the Batch to be alloted
 
     """
 
@@ -201,6 +212,9 @@ class Batch(models.Model):
 
 
 class Textbook(models.Model):
+    """
+    This Model Can be used by Teachers to Upload Official Books Or Something
+    """
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=128, unique=True)
     auth_name = models.CharField(max_length=128)
@@ -231,7 +245,7 @@ class Textbook(models.Model):
 
 class FileType(models.Model):
     """
-    Used to Mark weather this file is a 
+    Used to Mark wether this file is a 
     Tutorial File, Tutorial Solution File or a Notes File. etc. depending on
     the needs and requirements of the course 
 
@@ -301,10 +315,11 @@ class File(models.Model):
     # Batch Specific Academic Files are also entertained.
     # So That specific stuff could be made.
     # Keep Batch Support for Later Stages
-    batch = models.ForeignKey(Batch, on_delete=models.SET_NULL, null=True)
-    file_id = models.CharField(max_length=100, null=True)
-    web_content_link = models.URLField(max_length=150, null=True)
-    web_view_link = models.URLField(max_length=150, null=True)
+    batch = models.ForeignKey(
+        Batch, on_delete=models.SET_NULL, null=True, blank=True)
+    file_id = models.CharField(max_length=100, null=True, blank=True)
+    web_content_link = models.URLField(max_length=150, null=True, blank=True)
+    web_view_link = models.URLField(max_length=150, null=True, blank=True)
     # drivefolder = models.ForeignKey(Drivefolder, on_delete=models.PROTECT)
     # Turn this off to False after inital DB Setup
     published = models.BooleanField(default=True)
@@ -324,19 +339,15 @@ class File(models.Model):
         self.date_modified = timezone.now()
         super(File, self).save(*args, **kwargs)
 
-
 class AcademicCalendar(models.Model):  # Don't make mutations of this model
     """
     Refer to doc : https://drive.google.com/file/d/1NZLMKmbKw_S0W0MKPcbpGS9RUSddqBNl/view
     for poulating this Data in Database 
     """
 
-    TYPES = [
-        ("ODD", "ODD"),
-        ("EVEN", "EVEN"),
-    ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    type = models.CharField(choices=TYPES, max_length=30)
+    semester = models.ForeignKey(
+        Semester, on_delete=models.PROTECT, null=True)
     name = models.CharField(max_length=256)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -351,7 +362,7 @@ class AcademicCalendar(models.Model):  # Don't make mutations of this model
 
 class Department(models.Model):
     """
-    Departments for all teachers
+    Departments for all teachers and Courses
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

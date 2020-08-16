@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Box, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   box: {
@@ -77,8 +77,10 @@ const Sidebar = () => {
   const classes = useStyles();
   const history = useHistory();
   const path = history.location.pathname;
+  const pathHead = history.location.pathname.split('/')[1];
   return (
     <>
+      {console.log(pathHead)}
       <Box className={classes.box}>
         <Grid container spacing={2}>
           <Grid item xs={12} className={classes.listItemPrimary}>
@@ -88,16 +90,18 @@ const Sidebar = () => {
             item
             xs={12}
             className={
-              path === '/dashboard' ? classes.listItemActive : classes.listItem
+              path === '/dashboard/home'
+                ? classes.listItemActive
+                : classes.listItem
             }
             onClick={() => {
-              history.push('/dashboard');
+              history.push('/dashboard/home');
             }}
           >
             <Paper
               elevation={0}
               className={
-                path === '/dashboard'
+                path === '/dashboard/home'
                   ? classes.logoIconsActive
                   : classes.logoIcons
               }
@@ -106,7 +110,7 @@ const Sidebar = () => {
             </Paper>
             <h2
               className={
-                path === '/dashboard'
+                path === '/dashboard/home'
                   ? classes.listTextActive
                   : classes.listText
               }
@@ -120,17 +124,66 @@ const Sidebar = () => {
             </Paper>
             <h2 className={classes.listText}>Courses</h2>
           </Grid>
-          <Grid item xs={12} className={classes.listItem}>
-            <Paper elevation={0} className={classes.logoIcons}>
+          <Grid
+            item
+            xs={12}
+            className={
+              path === '/dashboard/timetable'
+                ? classes.listItemActive
+                : classes.listItem
+            }
+            onClick={() => {
+              history.push('/dashboard/timetable');
+            }}
+          >
+            <Paper
+              elevation={0}
+              className={
+                path === '/dashboard/timetable'
+                  ? classes.logoIconsActive
+                  : classes.logoIcons
+              }
+            >
               <i className="fas fa-book fa-2x" style={{ color: '#00293B' }} />
             </Paper>
-            <h2 className={classes.listText}>TimeTable</h2>
+
+            <h2
+              className={
+                path === '/dashboard/timetable'
+                  ? classes.listTextActive
+                  : classes.listText
+              }
+            >
+              TimeTable
+            </h2>
           </Grid>
-          <Grid item xs={12} className={classes.listItem}>
-            <Paper elevation={0} className={classes.logoIcons}>
+          <Grid
+            item
+            xs={12}
+            className={
+              pathHead === 'forum' ? classes.listItemActive : classes.listItem
+            }
+            onClick={() => {
+              history.push('/forum/forum-details');
+            }}
+          >
+            <Paper
+              elevation={0}
+              className={
+                pathHead === 'forum'
+                  ? classes.logoIconsActive
+                  : classes.logoIcons
+              }
+            >
               <i className="fas fa-book fa-2x" style={{ color: '#00293B' }} />
             </Paper>
-            <h2 className={classes.listText}>Forums</h2>
+            <h2
+              className={
+                pathHead === 'forum' ? classes.listTextActive : classes.listText
+              }
+            >
+              Forums
+            </h2>
           </Grid>
         </Grid>
       </Box>

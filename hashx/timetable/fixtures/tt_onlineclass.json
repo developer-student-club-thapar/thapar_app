@@ -1,0 +1,710 @@
+[
+  {
+    "model": "timetable.onlineclass",
+    "pk": "08248d20-3abf-4c9b-a3dc-46a285d18294",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:10:42Z",
+      "modified_date": "2020-08-01T12:10:42Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed12",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["e17abae1-83d0-44c8-9b03-20506e041da9"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "1576eb26-0023-4f20-b0d9-d7980faa12cf",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:17:19Z",
+      "modified_date": "2020-08-01T12:17:19Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed19",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["5378b817-881b-415c-aa98-0e5584b88672"],
+      "period": [
+        "a0cb6159-f251-4d24-9efa-d17ed06f42bc",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "1ac9448d-9a88-43b0-a5c6-d19662e7a7df",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:41:36Z",
+      "modified_date": "2020-08-01T11:41:36Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed14",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["f3ed1992-8050-4662-9b4a-80b5836b39ff"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "06b1709c-3fad-4bc9-978f-ca2a83f1883d"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "1b18adaa-acb9-4cc1-8510-72ef1fe26cd6",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:19:19Z",
+      "modified_date": "2020-08-01T12:19:19Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed9",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["44bd09e9-0d13-44da-ab2a-fc4cb520756f"],
+      "period": [
+        "a0cb6159-f251-4d24-9efa-d17ed06f42bc",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "21169645-2d28-41f9-99df-ba6ea694c9ac",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:13:20Z",
+      "modified_date": "2020-08-01T12:13:20Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed13",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["4476c825-74b5-4ca4-8118-789c67be6c0f"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "22a54a94-55f4-47ac-b1ea-7bf397636040",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:32:15Z",
+      "modified_date": "2020-08-01T12:32:15Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed7",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["891d2a92-5055-4b6c-8269-962bca66658e"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "06b1709c-3fad-4bc9-978f-ca2a83f1883d"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "3a9bfe32-26d1-4e15-bb92-fb8f3281d425",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:54:43Z",
+      "modified_date": "2020-08-01T11:54:43Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed9",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["5378b817-881b-415c-aa98-0e5584b88672"],
+      "period": [
+        "f76627df-3321-42e9-afef-2db3a0e06d65",
+        "32fba279-9fff-4387-b080-f9b9b6aea985"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "3b137785-4c0f-469c-a767-26b75b1c6a11",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:56:21Z",
+      "modified_date": "2020-08-01T11:56:21Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed8",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["c13c0b80-9221-42b0-94b3-cfcf8224c09c"],
+      "period": ["1cf9815d-f414-44b1-9b2d-00dcd76930f0"]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "4063ad1c-db19-4a41-af5d-920eb40dd1a0",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:38:58Z",
+      "modified_date": "2020-08-01T12:38:58Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed16",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["4a7ccaa4-1ee4-4b0d-b517-df12ee032624"],
+      "period": [
+        "8240074a-4c4a-4210-8ecd-f6c1156a9026",
+        "0c1da778-38ba-493e-a092-36cca71ac503"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "5176df61-1a37-430e-a90d-f1250e22780f",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:02:52Z",
+      "modified_date": "2020-08-01T12:02:52Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed5",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["1315f056-4e23-48e2-a7b6-3d677b13e176"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "561430f5-0dd2-4e8e-99a5-58d86cb61ad3",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:48:27Z",
+      "modified_date": "2020-08-01T11:48:27Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed12",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["d4af7929-bb23-4c5e-968b-2c319247b5a7"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "6d006d62-1da5-4f36-8e95-0d9a133a78cf",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:21:17Z",
+      "modified_date": "2020-08-01T11:21:17Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed30",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["040a0cca-2259-42de-af20-170a667c2b52"],
+      "period": [
+        "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "6d50b69e-fbac-402d-b10d-ba02b41762d1",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:05:28Z",
+      "modified_date": "2020-08-01T12:05:28Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed7",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["facb7025-c614-4a0a-89ec-b495a514a928"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "76042c63-0b5b-416d-aeea-9df9ca1ba266",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:37:32Z",
+      "modified_date": "2020-08-01T11:37:32Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed14",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["be2a8d28-8689-443f-acb8-2139e634abb1"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "7a599549-2fe5-4e96-910c-2cba229e452b",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:39:37Z",
+      "modified_date": "2020-08-01T11:39:37Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed21",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["c3ef07c6-adec-4393-b4b8-03ced9a058d5"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "7be3b139-763a-44b9-9935-02072f29013f",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Wednesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:33:58Z",
+      "modified_date": "2020-08-01T12:33:58Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed10",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["73bef68b-e95b-48a6-8c7c-e6ac392b3f4d"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "06b1709c-3fad-4bc9-978f-ca2a83f1883d"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "7c475831-9117-499f-8d2b-210174b1b1a3",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:36:42Z",
+      "modified_date": "2020-08-01T12:36:42Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed6",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["552a4720-db40-43e0-99c7-bb8dd3b071f7"],
+      "period": [
+        "8240074a-4c4a-4210-8ecd-f6c1156a9026",
+        "0c1da778-38ba-493e-a092-36cca71ac503"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "83ed04d3-d27d-4638-a27d-1f3dabe08465",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:00:26Z",
+      "modified_date": "2020-08-01T12:00:26Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed22",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["d2fbab9a-2af1-4856-a84c-6ec0577436a5"],
+      "period": [
+        "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+        "0c1da778-38ba-493e-a092-36cca71ac503"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "8472885f-e0d6-40f8-83da-c93fb03a19e3",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:23:49Z",
+      "modified_date": "2020-08-01T11:23:49Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed20",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["1f0f355a-abdf-4778-8d35-bd9cc9f8c07b"],
+      "period": [
+        "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "8a8913f7-6d18-4e52-ad64-0fe1f05eb853",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:38:40Z",
+      "modified_date": "2020-08-01T11:38:40Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed16",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["26af8385-a507-4311-a718-1a2ecc17120b"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "9052ab75-4f66-4352-8919-4a9ece305558",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:18:21Z",
+      "modified_date": "2020-08-01T12:18:21Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed9",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["815e61cf-fde9-40bb-9ac7-9b2330c09804"],
+      "period": [
+        "a0cb6159-f251-4d24-9efa-d17ed06f42bc",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "a8759dce-7083-4a49-8e1d-255eb6bed191",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:59:18Z",
+      "modified_date": "2020-08-01T11:59:18Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed10",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["bd662cee-fc59-46a8-b700-3fe1b5cc528d"],
+      "period": ["1cf9815d-f414-44b1-9b2d-00dcd76930f0"]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "aa38acc1-19f4-4b02-90a0-9ce9a4673e7e",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:53:08Z",
+      "modified_date": "2020-08-01T11:53:08Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed15",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["b740a16b-d6ba-41b1-b806-28cd06629d4d"],
+      "period": [
+        "f76627df-3321-42e9-afef-2db3a0e06d65",
+        "32fba279-9fff-4387-b080-f9b9b6aea985"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "af3d65e3-2637-491c-8461-1807b0dc12cf",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:43:17Z",
+      "modified_date": "2020-08-01T11:43:17Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed16",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["6ae843df-70d2-47e1-be15-ef3bb382ed90"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "06b1709c-3fad-4bc9-978f-ca2a83f1883d"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "b555f3c7-19cf-4fc4-b570-25ca4f201b09",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:22:31Z",
+      "modified_date": "2020-08-01T11:22:31Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed19",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["b6145fdb-194f-4f65-9af5-31c51cf0dbea"],
+      "period": [
+        "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "b88eb545-c18c-40e5-be98-75772197607a",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Friday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:15:52Z",
+      "modified_date": "2020-08-01T12:15:52Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed7",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["3c0657bc-3cfd-41d7-b62c-75bddbe1c886"],
+      "period": [
+        "a0cb6159-f251-4d24-9efa-d17ed06f42bc",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "c5f49d45-ee3b-4149-b8d9-d0583c93ca1e",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Saturday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:31:07Z",
+      "modified_date": "2020-08-01T12:31:07Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed1",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["6de398a3-47ef-4045-90f1-7fffda47fea4"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "ca53d324-ab7b-4f2e-93cb-5c2f20f04408",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:47:24Z",
+      "modified_date": "2020-08-01T11:47:24Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed16",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["42b47980-9a6f-45e4-8e55-dd2038d36fdb"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "d93d74e6-c6a6-4501-8f10-d931538e8554",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:11:35Z",
+      "modified_date": "2020-08-01T12:11:35Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed21",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["6c7e2b03-88ad-4169-ae1d-bd072197ad77"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "dde1a301-51bf-43bd-84a4-fe545138a54d",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:45:31Z",
+      "modified_date": "2020-08-01T11:45:31Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed3",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["ffbba501-6a4e-4ae5-8f66-eb66c450c801"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "e8b731f7-8c12-4f5b-a962-48a46be85a1c",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T12:37:34Z",
+      "modified_date": "2020-08-01T12:37:34Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed6",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["552a4720-db40-43e0-99c7-bb8dd3b071f7"],
+      "period": [
+        "8240074a-4c4a-4210-8ecd-f6c1156a9026",
+        "0c1da778-38ba-493e-a092-36cca71ac503"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "eb438065-33ee-41dd-908c-040a26078b4c",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Tuesday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:33:48Z",
+      "modified_date": "2020-08-01T11:33:48Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed10",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["27bf4e91-21ab-41f1-935c-fc675e35b9bb"],
+      "period": [
+        "b43592b4-3d1a-44e1-b231-15d116a5bf26",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "f7254a78-d4e3-49db-8e58-571bd621f032",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Thursday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:31:13Z",
+      "modified_date": "2020-08-01T11:31:13Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed22",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["90416407-c507-419f-9e57-aa0d0053a176"],
+      "period": [
+        "607b1aaf-00c7-4730-8f53-32872bfd8cee",
+        "1cf9815d-f414-44b1-9b2d-00dcd76930f0"
+      ]
+    }
+  },
+  {
+    "model": "timetable.onlineclass",
+    "pk": "f86efdf5-8b82-4dc7-bba1-f344d559bfc8",
+    "fields": {
+      "type": "Practical",
+      "course": "1ca7c9f6-499c-41b6-a632-e2194ba92e39",
+      "day": "Monday",
+      "published": true,
+      "private": false,
+      "created_date": "2020-08-01T11:49:58Z",
+      "modified_date": "2020-08-01T11:49:58Z",
+      "meetingURL": "https://tiet.zoom.us/my/csed11",
+      "isCompleted": false,
+      "recordingURL": null,
+      "batch": ["5fc1de16-750f-4476-9d9a-82d3c62b493c"],
+      "period": [
+        "5408bae9-3ac0-4484-82eb-fd85bdf4d877",
+        "60844b9e-d22e-4cb6-8b68-3baf14b5c299"
+      ]
+    }
+  }
+]
