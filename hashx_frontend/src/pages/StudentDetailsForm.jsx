@@ -1,15 +1,37 @@
 import React, { useState } from 'react';
-import { Container, Grid, Paper } from '@material-ui/core';
+import { Container, Grid, Paper, TextField } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import NinjaAnimation from '../components/NinjaAnimation';
 import '../styles/StudentDetailsForm.css';
-import { useMutation } from '@apollo/react-hooks';
-import { SEND_STUDENT_DETAILS } from '../graphql/AuthQueriesMutations';
+import { useMutation, useLazyQuery } from '@apollo/react-hooks';
+import {
+  SEND_STUDENT_DETAILS,
+  GET_BRANCHES,
+  GET_BATCHES,
+} from '../graphql/AuthQueriesMutations';
 
 const StudentDetailsForm = () => {
+  const [
+    getBranches,
+    { loading: branchLoading, data: branchData },
+  ] = useLazyQuery(GET_BRANCHES, {
+    onCompleted: (data) => {
+      console.log('data ', data);
+      setBranchOptions(data);
+    },
+  });
+  const [getBatches, { loading: batchLoading, data: batchData }] = useLazyQuery(
+    GET_BATCHES,
+    {
+      onCompleted: (data) => {
+        console.log('data', data);
+        setBatchOptions(data);
+      },
+    },
+  );
   // let batchesMap = new Map();
   // let branchesMap = new Map();
 
@@ -44,6 +66,9 @@ const StudentDetailsForm = () => {
   ] = useMutation(SEND_STUDENT_DETAILS);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [branchOptions, setBranchOptions] = useState(null);
+  const [batchOptions, setBatchOptions] = useState(null);
+
   const [user, setUser] = useState({
     rollno: '',
     year: '',
@@ -51,11 +76,32 @@ const StudentDetailsForm = () => {
     batch: '',
     gender: '',
     bio: '',
-    profile: '',
+    invitedCode: '',
   });
-  const { rollno, year, branch, batch, gender, bio } = user;
+  const { rollno, year, branch, batch, gender, bio, invitedCode } = user;
   const onChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
+  };
+  const onChangeYear = (e) => {
+    setUser({ ...user, [e.target.id]: e.target.value });
+    getBranches({ variables: { year: e.target.value } });
+    if (branchLoading) {
+      console.log('loading');
+    }
+    if (branchData) {
+      console.log(branchData);
+      // setBranchOptions(branchData);
+    }
+  };
+  const onChangeBranch = (e) => {
+    setUser({ ...user, [e.target.id]: e.target.value });
+    getBatches({ variables: { branch: e.target.value } });
+    if (batchLoading) {
+      console.log('loading');
+    }
+    if (batchData) {
+      // console.log(batchData);
+    }
   };
   const onSubmit = (e) => {
     e.preventDefault();
@@ -75,6 +121,8 @@ const StudentDetailsForm = () => {
           batch: batch,
           gender: gender,
           rollno: rollno,
+          invitedCode: invitedCode,
+          bio: bio,
         },
       });
 
@@ -137,15 +185,19 @@ const StudentDetailsForm = () => {
                     >
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
-                          <TextValidator
+                          <TextField
                             id="rollno"
                             label="Roll no"
                             variant="outlined"
                             style={{ width: '300px' }}
                             onChange={onChange}
                             value={rollno}
-                            validators={['required']}
-                            errorMessages={['this field is required']}
+                            error={rollno !== '' && rollno.length !== 9}
+                            helperText={
+                              rollno !== '' &&
+                              rollno.length !== 9 &&
+                              'Please enter a valid Roll No'
+                            }
                             required
                           />
                         </Grid>
@@ -158,61 +210,65 @@ const StudentDetailsForm = () => {
                             name="year"
                             id="year"
                             value={year}
-                            onChange={onChange}
+                            onChange={onChangeYear}
                             className="select-css"
                           >
                             <option value="">Year</option>
-                            <option>First Year</option>
-                            <option>Second Year</option>
-                            <option>Third Year</option>
-                            <option>Fourth Year</option>
+                            <option value="FR">First Year</option>
+                            <option value="SO">Second Year</option>
+                            <option value="JR">Third Year</option>
+                            <option value="SR">Fourth Year</option>
                           </select>
                         </Grid>
                       </Grid>
                       <br />
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
-                          <select
-                            name="branch"
-                            id="branch"
-                            value={branch}
-                            onChange={onChange}
-                            className="select-css"
-                          >
-                            <option value="">Branch</option>
-                            <option>COE</option>
-                            <option>CSE</option>
-                            <option>ENC</option>
-                            <option>ECE</option>
-                            <option>EIC</option>
-                            <option>MEE</option>
-                            <option>Civil</option>
-                          </select>
+                          {branchOptions ? (
+                            <select
+                              name="branch"
+                              id="branch"
+                              value={branch}
+                              onChange={onChangeBranch}
+                              className="select-css"
+                            >
+                              <option value="">Select a branch</option>
+                              {branchOptions.allBranches.edges.map((item) => (
+                                <option key={item.node.id} value={item.node.id}>
+                                  {item.node.name}
+                                </option>
+                              ))}
+                            </select>
+                          ) : (
+                            <select className="select-css">
+                              <option value="">Select a branch</option>
+                            </select>
+                          )}
                         </Grid>
                       </Grid>
                       <br />
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
-                          <select
-                            name="batch"
-                            id="batch"
-                            value={batch}
-                            onChange={onChange}
-                            className="select-css"
-                          >
-                            <option value="">Batch</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
-                            <option>E</option>
-                            <option>F</option>
-                            <option>G</option>
-                            <option>H</option>
-                            <option>I</option>
-                            <option>J</option>
-                            <option>K</option>
-                          </select>
+                          {batchOptions ? (
+                            <select
+                              name="batch"
+                              id="batch"
+                              value={batch}
+                              onChange={onChange}
+                              className="select-css"
+                            >
+                              <option value="">Select a batch</option>
+                              {batchOptions.allBatches.edges.map((item) => (
+                                <option key={item.node.id} value={item.node.id}>
+                                  {item.node.num}
+                                </option>
+                              ))}
+                            </select>
+                          ) : (
+                            <select className="select-css">
+                              <option value="">Select a batch</option>
+                            </select>
+                          )}
                         </Grid>
                       </Grid>
                       <br />
@@ -227,10 +283,30 @@ const StudentDetailsForm = () => {
                             className="select-css"
                           >
                             <option value="">Gender</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                            <option value="T">Transgender</option>
                           </select>
+                        </Grid>
+                      </Grid>
+                      <br />
+                      <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                          <TextField
+                            id="invitedCode"
+                            label="Invite Code"
+                            variant="outlined"
+                            style={{ width: '300px' }}
+                            onChange={onChange}
+                            value={invitedCode}
+                            error={invitedCode !== '' && invitedCode.length > 8}
+                            helperText={
+                              invitedCode !== '' &&
+                              invitedCode.length > 8 &&
+                              'Please enter a valid invite code'
+                            }
+                            required
+                          />
                         </Grid>
                       </Grid>
                       <br />
@@ -238,18 +314,19 @@ const StudentDetailsForm = () => {
                         <Grid item xs={12}>
                           <TextValidator
                             id="bio"
-                            label="Bio (optional)"
+                            label="Bio"
                             variant="outlined"
                             style={{ width: '300px' }}
                             onChange={onChange}
                             value={bio}
                             validators={['required']}
                             errorMessages={['this field is required']}
+                            required
                           />
                         </Grid>
                       </Grid>
                       <br />
-                      <Grid container spacing={2}>
+                      {/* <Grid container spacing={2}>
                         <Grid item xs={12} style={{ paddingLeft: '80px' }}>
                           <label htmlFor="profile">Profile Pic</label>
                           &nbsp;
@@ -261,7 +338,7 @@ const StudentDetailsForm = () => {
                             onChange={onChange}
                           />
                         </Grid>
-                      </Grid>
+                      </Grid> */}
 
                       <br />
                       <Grid container spacing={2}>

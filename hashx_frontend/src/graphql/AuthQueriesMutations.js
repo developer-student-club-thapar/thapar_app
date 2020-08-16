@@ -6,6 +6,8 @@ export const SEND_STUDENT_DETAILS = gql`
     $batch: String!
     $gender: String!
     $rollno: Int!
+    $bio: String!
+    $invitedCode: String!
   ) {
     createStudent(
       input: {
@@ -13,6 +15,8 @@ export const SEND_STUDENT_DETAILS = gql`
         batch: $batch
         gender: $gender
         rollno: $rollno
+        bio: $bio
+        invitedCode: $invitedCode
       }
     ) {
       student {
@@ -23,8 +27,8 @@ export const SEND_STUDENT_DETAILS = gql`
 `;
 
 export const GET_BATCHES = gql`
-  query GetBatches($branch: ID!){
-    allBatches(branch : $branch) {
+  query GetBatches($branch: ID!) {
+    allBatches(branch: $branch) {
       edges {
         node {
           id
@@ -52,7 +56,7 @@ export const SOCIAL_AUTH = gql`
   mutation SocialAuth($accessToken: String!) {
     socialAuth(accessToken: $accessToken, provider: "google-oauth2") {
       token
-      refreshToken
+      jwtRefreshToken
       newUser
       user {
         username
