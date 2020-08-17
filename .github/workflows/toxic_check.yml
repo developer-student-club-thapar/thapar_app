@@ -1,0 +1,14 @@
+on: [issue_comment, pull_request_review]
+
+jobs:
+  toxic_check:
+    runs-on: ubuntu-latest
+    name: Toxicity check
+    steps:
+      - uses: actions/checkout@v2
+      - name: Safe space - action step
+        uses: charliegerard/safe-space@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: "Toxicity found in message"
+          toxicity_threshold: 0.8
