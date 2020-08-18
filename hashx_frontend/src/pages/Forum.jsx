@@ -14,9 +14,8 @@ import Layout, {
 } from '@mui-treasury/layout';
 import { HeaderMockUp } from '@mui-treasury/mockup/layout';
 import Sidebar from '../components/Sidebar/Sidebar';
-
-import HomeAlt from './HomeAlt';
-import Timetable from '../components/Timetable/TimeTable';
+import ForumDetail from '../components/ForumDetail/ForumDetail';
+import DiscussionPanelMain from '../components/DiscussionPanelMain/DiscussionPanelMain';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
@@ -78,19 +77,19 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function renderPage(page) {
-  console.log(page);
+const renderPage = (page) => {
   switch (page) {
-    case 'home':
-      return <HomeAlt />;
-    case 'timetable':
-      return <Timetable />;
-    default:
-      return <HomeAlt />;
-  }
-}
+    case 'forum-details':
+      return <ForumDetail />;
 
-const Dashboard = () => {
+    case 'discussion-panel':
+      return <DiscussionPanelMain />;
+    default:
+      return <ForumDetail />;
+  }
+};
+
+const Forum = () => {
   const styles = useStyles();
   const { page } = useParams();
   return (
@@ -115,4 +114,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Forum;

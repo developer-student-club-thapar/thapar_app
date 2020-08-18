@@ -4,7 +4,6 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
-import { spacing } from '@material-ui/system';
 import { Typography } from '@material-ui/core';
 import HamburgerMenu from 'react-hamburger-menu';
 import Overlay from '../../Landing/Overlay/Overlay.jsx';

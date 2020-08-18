@@ -1,15 +1,13 @@
 import React, { useState, createContext } from 'react';
 import { getAccessToken, setAccessToken } from '../util/token';
 import jwtDecode from 'jwt-decode';
-import {getApiUrl} from  '../util/url'
+// import {getApiUrl} from  '../util/url'
 
 const query = `mutation {
   refreshToken(refreshToken: "0f1453d7ad2f7762fa351236a9c0bae994fb29bf") {
     token
   }
 }`;
-
-
 
 try {
   const { exp } = jwtDecode(getAccessToken());
@@ -44,7 +42,6 @@ const UserContextProvider = (props) => {
 
   const addGoogleToken = (googleToken) => {
     setUser({ ...user, googleToken, isAuthenticated: true });
-    
   };
   const authenticate = (id, username, token, newUser) => {
     setUser({ ...user, id, username, token, newUser });
