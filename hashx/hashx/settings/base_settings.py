@@ -234,24 +234,13 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-<<<<<<< HEAD
-JWT_COOKIE_DOMAIN = ['http://localhost:3000', "https://ssr.vexio.in" , "https://front.vexio.in" , "https://vue.vexio.in" , "http://localhost:45911"]
-CORS_ORIGIN_WHITELIST = [
-    "http://localhost:45911",
-=======
 JWT_COOKIE_DOMAIN = ['http://localhost:3000', "https://ssr.vexio.in" , "https://front.vexio.in" , "https://vue.vexio.in"]
 CORS_ORIGIN_WHITELIST = [
->>>>>>> 0e94e5891d7c14c5d13cb41fe99848c6ac721d78
     "http://localhost:3000",
     "https://ssr.vexio.in",
     "https://ssr.vexio.in" ,
     "https://front.vexio.in", 
-<<<<<<< HEAD
-    "https://vue.vexio.in",
-    "http://localhost:45911"
-=======
     "https://vue.vexio.in"
->>>>>>> 0e94e5891d7c14c5d13cb41fe99848c6ac721d78
 ]
 JWT_COOKIE_SECURE = False #true on server(https only)
 CORS_ALLOW_CREDENTIALS = True
