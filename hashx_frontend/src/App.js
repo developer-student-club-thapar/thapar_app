@@ -15,15 +15,15 @@ const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql/',
   credentials: 'include',
 
-  // request: (operation) => {
-  //   const accessToken =
-  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwMTY5NTg5LCJvcmlnSWF0IjoxNTk3NTc3NTg5fQ.2rgoUzT1ZpwO_dJDkW574BwsYAp1IPTIm_htYIk5t2s';
-  //   operation.setContext({
-  //     headers: {
-  //       Authorization: `JWT ${accessToken}`,
-  //     },
-  //   });
-  // },
+  request: (operation) => {
+    const accessToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
+    operation.setContext({
+      headers: {
+        authorization: accessToken ? `JWT ${accessToken}` : '',
+      },
+    });
+  },
   cache: new InMemoryCache(),
 });
 
