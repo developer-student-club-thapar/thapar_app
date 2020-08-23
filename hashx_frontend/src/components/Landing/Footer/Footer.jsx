@@ -1,12 +1,11 @@
 import React from 'react';
-import { Grid, Paper, Box, CssBaseline } from '@material-ui/core';
+import { Grid, Paper, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import CodeRoundedIcon from '@material-ui/icons/CodeRounded';
 import './styles.css';
 import Clock from 'react-digital-clock';
 import Button from '@material-ui/core/Button';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import svg from '../../../assets/Footer/Wavey-Fingerprint.svg';
+// import svg from '../../../assets/Footer/Wavey-Fingerprint.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {},

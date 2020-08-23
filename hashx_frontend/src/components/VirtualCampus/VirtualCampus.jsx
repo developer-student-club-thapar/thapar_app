@@ -1,5 +1,5 @@
 import React from 'react';
-import AvatarButton from '../Helper/AvatarButton';
+import AvatarButton from '../AvatarButton/AvatarButton';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import thapar from './thapar.png';
 import Grid from '@material-ui/core/Grid';

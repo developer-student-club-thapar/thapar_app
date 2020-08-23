@@ -1,29 +1,30 @@
 import React, { useEffect } from 'react';
-import firebase from './components/init-fcm';
+import firebase from './util/init-fcm';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 import { ApolloProvider } from '@apollo/react-hooks';
 import UserContextProvider from './context/UserProvider';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import {getApiUrl} from './util/url';
+import { getApiUrl } from './util/url';
 // import { InMemoryCache } from 'apollo-cache-inmemory';
 // import { ApolloClient } from 'apollo-client';
-import { getAccessToken} from './util/token';
-
+import { getAccessToken } from './util/token';
 
 const client = new ApolloClient({
-  uri: getApiUrl(),
+  uri: 'http://localhost:8000/graphql/',
   credentials: 'include',
-  request: (operation) => {
-    const accessToken = getAccessToken();
-    operation.setContext({
-      headers: {
-        authorization: accessToken ? `JWT ${accessToken}` : '',
-      },
-    });
-  },
-  cache: new InMemoryCache()
+
+  // request: (operation) => {
+  //   const accessToken =
+  //     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwMTY5NTg5LCJvcmlnSWF0IjoxNTk3NTc3NTg5fQ.2rgoUzT1ZpwO_dJDkW574BwsYAp1IPTIm_htYIk5t2s';
+  //   operation.setContext({
+  //     headers: {
+  //       Authorization: `JWT ${accessToken}`,
+  //     },
+  //   });
+  // },
+  cache: new InMemoryCache(),
 });
 
 // const requestLink = new ApolloLink(
