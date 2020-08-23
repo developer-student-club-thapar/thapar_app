@@ -1,5 +1,4 @@
 import graphene
-from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery, AuthenticatedNode, AuthenticatedNode
