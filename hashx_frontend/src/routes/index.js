@@ -14,13 +14,20 @@ import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
 import Forum from '../pages/Forum';
+import CousesOverview from '../pages/CourseOverView';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard/:page" component={Dashboard} />
+<<<<<<< HEAD
+      <Route exact path="/courses-overview" component={CousesOverview} />
+      <Route exact path="/course/:content/:id" component={CourseDetail} />
+      <Route exact path="/courses" component={CourseDetail} />
+=======
       <Route exact path="/courses/:id/:content" component={CourseDetail} />
+>>>>>>> upstream/dev
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
       {/* <Route exact path="/timetable" component={TimeTable} /> */}

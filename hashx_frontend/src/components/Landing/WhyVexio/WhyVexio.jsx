@@ -62,6 +62,32 @@ const useStyles = makeStyles((theme) => ({
   container: {
     backgroundColor: 'white',
   },
+
+  textContainer: {
+    [theme.breakpoints.down('md')]: {
+      marginTop: '15px',
+    },
+  },
+
+  textBox: {
+    [theme.breakpoints.between('md', 'lg')]: {
+      flexDirection: 'column',
+    },
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+  },
+
+  heading: {
+    [theme.breakpoints.down('md')]: {
+      padding: '15px',
+    },
+  },
+
+  container: {
+    backgroundColor: 'white',
+  },
 }));
 const WhyVexio = () => {
   const classes = useStyles();
