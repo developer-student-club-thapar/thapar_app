@@ -292,7 +292,6 @@ const CourseDetail = (props) => {
             </Grid>
 
             <Grid item xs={12}>
-              {/* <Paper elevation={3} className={classes.heroPaper}> */}
               <Box className={classes.boxWrapper}>
                 <Grid item xs={12}>
                   <Grid item xs={12} className={classes.navigatioBar}>
@@ -324,7 +323,6 @@ const CourseDetail = (props) => {
                     {renderComponent()}
                   </Grid>
                 </Grid>
-                {/* </Paper> */}
               </Box>
             </Grid>
           </Grid>

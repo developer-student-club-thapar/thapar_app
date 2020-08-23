@@ -21,13 +21,8 @@ const Routes = () => {
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard/:page" component={Dashboard} />
-
       <Route exact path="/courses-overview" component={CousesOverview} />
-      <Route exact path="/course/:content/:id" component={CourseDetail} />
-      <Route exact path="/courses" component={CourseDetail} />
-
       <Route exact path="/courses/:id/:content" component={CourseDetail} />
-
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
       {/* <Route exact path="/timetable" component={TimeTable} /> */}
@@ -47,7 +42,7 @@ const Routes = () => {
         component={StudentDetailsForm}
         New
       />
-      <Route exact path="/forum/:page" component={Forum} />
+      <Route exact={false} path="/forum/:page" component={Forum} />
       <Route path="/404" component={PageNotFound} />
       <Redirect to="/404" />
     </Switch>
