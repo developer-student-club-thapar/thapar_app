@@ -1,10 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useQuery, useLazyQuery } from '@apollo/react-hooks';
 import { FILES_QUERY, CDN_URL } from './Queries';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useClasses = makeStyles(() => ({
+  thumbnail: {
+    height: '200px',
+    width: '400px',
+    cursor: 'pointer',
+    borderRadius: '10px',
+  },
+  thumbnailTitleBox: {
+    position: 'relative',
+    bottom: '40px',
+    background: '#597480',
+    width: '400px',
+    height: '60px',
+    borderRadius: '0px 0px 10px 10px',
+    cursor: 'pointer',
+    margin: 'auto',
+    textAlign: 'left',
+    paddingLeft: 5,
+    fontWeight: 'bolder',
+    fontSize: '17px',
+  },
+}));
 
 const FileList = (props) => {
   const { typeId, courseId, history } = props;
+  const classes = useClasses();
   const [getUrl, { loading, data, error }] = useLazyQuery(CDN_URL, {});
   const {
     loading: filesLoading,
@@ -27,26 +52,16 @@ const FileList = (props) => {
                 src={
                   thumbnailImage !== ''
                     ? thumbnailImage
-                    : 'https://picsum.photos/200/300'
+                    : 'https://picsum.photos/400/200'
                 }
-                style={{ borderRadius: '10px', cursor: 'pointer' }}
+                className={classes.thumbnail}
                 alt="thumbnail"
                 onClick={() => {
                   history.push(`/pdfview`); // file
                 }}
               />
               <div
-                style={{
-                  position: 'relative',
-                  bottom: '40px',
-                  background: 'rgba(57, 57, 57, 0.5)',
-                  width: '150px',
-                  height: '40px',
-                  borderRadius: '0px 0px 10px 10px',
-                  cursor: 'pointer',
-                  margin: 'auto',
-                  textAlign: 'center',
-                }}
+                className={classes.thumbnailTitleBox}
                 onClick={() => {
                   history.push(`/pdfview`);
                 }}

@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FileSideView = () => {
+const FileSideView = ({ file }) => {
   const classes = useStyles();
   return (
     <>
@@ -79,7 +79,7 @@ const FileSideView = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <h4>Operator Overloading</h4>
+          <h4>{file.name}</h4>
         </Grid>
       </Grid>
       <Grid container spacing={2} className={classes.buttonGrid}>

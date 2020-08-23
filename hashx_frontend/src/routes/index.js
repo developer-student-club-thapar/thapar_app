@@ -40,7 +40,7 @@ const Routes = () => {
         component={StudentDetailsForm}
         New
       />
-      <Route exact path="/forum/:page" component={Forum} />
+      <Route exact={false} path="/forum/:page" component={Forum} />
       <Route path="/404" component={PageNotFound} />
       <Redirect to="/404" />
     </Switch>

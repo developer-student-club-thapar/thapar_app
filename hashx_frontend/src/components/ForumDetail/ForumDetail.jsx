@@ -3,6 +3,8 @@ import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Document from '../Document/Document';
 import SidePanel from '../SidePanel/SidePanel';
+import { useQuery } from '@apollo/react-hooks';
+import { FILE_QUESTIONS } from './Queries';
 
 const useStyles = makeStyles(() => ({
   headerText: {
@@ -16,13 +18,24 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ForumDetail = () => {
+  const { data, loading, error } = useQuery(FILE_QUESTIONS, {
+    variables: {
+      file: 'RmlsZU5vZGU6Y2YwN2Y3NjktOTE1Ny00NjAyLTk4ODMtM2FkNjY0ZmMyZDNj',
+    },
+  });
   const classes = useStyles();
+
+  if (loading) return <div>Loading..</div>;
+  if (error) return <div>error..</div>;
+  console.log(data);
+  const { file } = data.allQuestions.edges[0].node;
+  console.log(file);
   return (
     <Box className={classes.box}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <h1 className={classes.headerText}>
-            Operator <span style={{ color: '#747474' }}>Overloading</span>
+            <span style={{ color: '#747474' }}>{file.name}</span>
           </h1>
         </Grid>
       </Grid>
@@ -32,7 +45,7 @@ const ForumDetail = () => {
           <Document />
         </Grid>
         <Grid item xs={12} lg={4}>
-          <SidePanel />
+          <SidePanel data={data} />
         </Grid>
       </Grid>
     </Box>
