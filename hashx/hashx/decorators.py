@@ -11,6 +11,18 @@ instructor_check = user_passes_test(lambda user: user.instructor)
 every_authenticated = user_passes_test(lambda user: user.is_authenticated)
 
 
+def setup_jwt_cookie_social(f):
+    @wraps(f)
+    def wrapper(cls, root, info, social, **kwargs):
+        result = f(cls, root, info, social, **kwargs)
+
+        if getattr(info.context, 'jwt_cookie', False):
+            info.context.jwt_token = result.token
+            # info.context.jwt_refresh_token = graphql_jwt.shortcuts.create_refresh_token(social.user)
+        return result
+    return wrapper
+
+
 def same_user(object_user, current_user):
     if object_user != current_user:
         raise PermissionDenied
