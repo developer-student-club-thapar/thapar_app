@@ -242,5 +242,5 @@ CORS_ORIGIN_WHITELIST = [
     "https://front.vexio.in", 
     "https://vue.vexio.in"
 ]
-JWT_COOKIE_SECURE = False #true on server(https only)
+JWT_COOKIE_SECURE = True #true on server(https only)
 CORS_ALLOW_CREDENTIALS = True
