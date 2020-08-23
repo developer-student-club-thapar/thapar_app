@@ -1,7 +1,7 @@
 aniso8601==7.0.0
 apns2==0.7.1
 appdirs==1.4.3
-asgiref==3.2.7
+asgiref==3.2.10
 astroid==2.4.0
 autopep8==1.5.2
 beautifulsoup4==4.9.1
@@ -16,7 +16,7 @@ cryptography==2.9.2
 defusedxml==0.6.0
 distlib==0.3.0
 dj-environ==0.0.1
-Django==3.0.8
+Django==3.1.0
 django-allauth==0.42.0
 django-analytical==2.6.0
 django-appconf==1.0.4
@@ -25,7 +25,7 @@ django-cors-headers==3.4.0
 django-debug-toolbar==2.2
 django-environ==0.4.5
 django-extensions==2.2.9
-django-filter==2.2.0
+django-filter==2.3.0
 django-graphiql-debug-toolbar==0.1.4
 django-graphql-extensions==0.0.7
 django-graphql-geojson==0.1.4

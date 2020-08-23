@@ -246,3 +246,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 JWT_COOKIE_SECURE = False #true on server(https only)
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    '*.vexio.in',
+    'http://localhost:3000'
+]
