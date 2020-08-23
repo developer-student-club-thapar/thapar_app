@@ -12,6 +12,7 @@ import { secondaryColor } from '../../theme/theme';
 const Tutorials = (props) => {
   const history = useHistory();
   const { id: courseId, path } = props;
+  console.log(path);
   const {
     loading: fileTypeLoading,
     error: fileTypeError,
@@ -34,16 +35,14 @@ const Tutorials = (props) => {
       <Paper
         elevation={3}
         style={{
-          //   width: "550px",
-          borderRadius: '20px',
           textAlign: 'center',
           backgroundColor: `${secondaryColor}`,
           color: '#FBF9FF',
-          marginTop: '-30px',
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
         }}
       >
         <br />
-        <h1 style={{ fontWeight: '400' }}>Tutorials</h1>
         <Grid container spacing={2}>
           <FileList typeId={typeId} courseId={courseId} history={history} />
         </Grid>

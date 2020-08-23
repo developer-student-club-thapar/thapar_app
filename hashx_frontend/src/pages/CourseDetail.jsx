@@ -2,9 +2,10 @@ import React from 'react';
 import { Box, Paper, Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/react-hooks';
+import { COURSE_QUERY } from '../components/CourseDetails/Queries';
 import { Root } from '@mui-treasury/layout';
 import { gql } from 'apollo-boost';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import Books from '../components/CourseDetails/Books';
 import Notes from '../components/CourseDetails/Notes';
@@ -126,22 +127,26 @@ const useClasses = makeStyles(() => ({
     fontSize: '17px',
     color: '#00293B',
   },
+  boxWrapper: {
+    margin: 30,
+  },
 }));
 
 const CourseDetail = (props) => {
   const history = useHistory();
   const classes = useClasses();
   const styles = useStyles();
-  const id = props.match.params.id;
-  const path = history.location.pathname.split('/')[2];
+  const { content, id } = useParams();
+  const courseId = id; //props.match.params.id
+  const path = content;
   const list = [
     {
-      mainText: 'Courses',
-      path: '/dashboard/home',
+      mainText: 'Tutorial',
+      path: `/courses/${courseId}/tutorials`,
       iconClassName: 'fas fa-book fa-2x',
     },
     {
-      mainText: 'Courses',
+      mainText: 'Lab',
       path: '/courses',
       iconClassName: 'fas fa-book fa-2x',
     },
@@ -166,15 +171,12 @@ const CourseDetail = (props) => {
       iconClassName: 'fas fa-book fa-2x',
     },
   ];
-  const COURSE_QUERY = gql`
-    query CourseQuery {
-      course(id: "${props.match.params.id}") {
-        name
-        code
-      }
-    }
-  `;
-  const { loading, error, data } = useQuery(COURSE_QUERY);
+
+  const { loading, error, data } = useQuery(COURSE_QUERY, {
+    variables: {
+      id: courseId,
+    },
+  });
   if (loading) return <h4>Loading....</h4>;
   if (error) {
     console.log(error);
@@ -182,248 +184,154 @@ const CourseDetail = (props) => {
   console.log(data);
   const renderComponent = () => {
     if (path === 'tutorials') {
-      return <Tutorials id={id} path={path} />;
+      return <Tutorials id={courseId} path={path} />;
     } else if (path === 'books') {
-      return <Books id={id} path={path} />;
+      return <Books id={courseId} path={path} />;
     } else if (path === 'notes') {
-      return <Notes id={id} path={path} />;
+      return <Notes id={courseId} path={path} />;
     } else if (path === 'previousyearpapers') {
-      return <PreviousYearPapers id={id} path={path} />;
+      return <PreviousYearPapers id={courseId} path={path} />;
     } else if (path === 'tutorialssolution') {
-      return <TutorialsSolution id={id} path={path} />;
+      return <TutorialsSolution id={courseId} path={path} />;
     }
   };
-  return (
-    <Root scheme={scheme}>
-      <DrawerSidebar
-        sidebarId="primarySidebar"
-        PaperProps={{ className: styles.sidebar }}
-      >
-        <SidebarContent>
-          <Sidebar />
-        </SidebarContent>
-      </DrawerSidebar>
-      <Content className={styles.content}>
-        <Grid container spacing={2} direction="column">
-          <Grid item xs={12} lg={12} xl={12}>
-            <Box
-              elevation={0}
-              style={{
-                backgroundImage: `${secondaryColor}`,
-              }}
-            >
-              <Grid container justify="flex-start" style={{ padding: 30 }}>
-                <Grid item xs={3}>
-                  <img
-                    src={require('../assets/kid.svg')}
-                    style={{ marginLeft: '2vw', objectFit: 'contain' }}
-                    alt="kid"
-                  />
-                </Grid>
-                <Grid item xs={9}>
-                  <Grid
-                    container
-                    direction="column"
-                    justify="space-around"
-                    alignItems="flex-start"
-                    spacing={4}
-                  >
-                    <Grid item xs={5}>
-                      <h1 className={classes.title}>
-                        Computer{' '}
-                        <span style={{ color: '#898989' }}>Science</span>
-                      </h1>
-                    </Grid>
-
-                    <Grid item xs={4}>
-                      <Paper
-                        elevation={3}
-                        className={classes.breadCrumbs}
-                        style={{
-                          width: '150px',
-                        }}
-                      >
-                        <h1 className={classes.breadCrumbsText}>UCS001</h1>
-                      </Paper>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Grid container spacing={3}>
-                        <Grid item xs={7}>
-                          <Paper
-                            elevation={3}
-                            className={classes.breadCrumbs}
-                            style={{
-                              width: '280px',
-                            }}
-                          >
-                            <h1 className={classes.breadCrumbsText}>
-                              View Course Site &nbsp;
-                              <i className="fas fa-long-arrow-alt-right" />
-                            </h1>
-                          </Paper>
-                        </Grid>
-                        <Grid item xs={5}>
-                          <Paper
-                            elevation={3}
-                            className={classes.breadCrumbs}
-                            style={{
-                              width: '190px',
-                            }}
-                          >
-                            <h1 className={classes.breadCrumbsText}>
-                              Syllabus &nbsp;
-                              <i className="fas fa-long-arrow-alt-right" />
-                            </h1>
-                          </Paper>
-                        </Grid>
-                      </Grid>
-                    </Grid>
+  if (data) {
+    return (
+      <Root scheme={scheme}>
+        {console.log(path, 'path')}
+        <DrawerSidebar
+          sidebarId="primarySidebar"
+          PaperProps={{ className: styles.sidebar }}
+        >
+          <SidebarContent>
+            <Sidebar />
+          </SidebarContent>
+        </DrawerSidebar>
+        <Content className={styles.content}>
+          <Grid container spacing={2} direction="column">
+            <Grid item xs={12} lg={12} xl={12}>
+              <Box
+                elevation={0}
+                style={{
+                  backgroundImage: `${secondaryColor}`,
+                }}
+              >
+                <Grid container justify="flex-start" style={{ padding: 30 }}>
+                  <Grid item xs={3}>
+                    <img
+                      src={require('../assets/kid.svg')}
+                      style={{ marginLeft: '2vw', objectFit: 'contain' }}
+                      alt="kid"
+                    />
                   </Grid>
-                </Grid>
-              </Grid>
-            </Box>
-          </Grid>
+                  <Grid item xs={9}>
+                    <Grid
+                      container
+                      direction="column"
+                      justify="space-around"
+                      alignItems="flex-start"
+                      spacing={4}
+                    >
+                      <Grid item xs={12}>
+                        <h1 className={classes.title}>{data.course.name}</h1>
+                      </Grid>
 
-          <Grid item xs={12}>
-            <Paper elevation={3} className={classes.heroPaper}>
-              <Grid item xs={12}>
-                <Grid item xs={12} className={classes.navigatioBar}>
-                  <Grid container>
-                    {list.map((item, index) => (
-                      <Grid
-                        item
-                        xs={2}
-                        className={classes.listItem}
-                        key={index}
-                      >
-                        <Paper elevation={0} className={classes.logoIcons}>
-                          <i
-                            className={item.iconClassName}
-                            style={{ color: '#00293B' }}
-                          />
+                      <Grid item xs={4}>
+                        <Paper
+                          elevation={3}
+                          className={classes.breadCrumbs}
+                          style={{
+                            width: '150px',
+                          }}
+                        >
+                          <h1 className={classes.breadCrumbsText}>
+                            {data.course.code}
+                          </h1>
                         </Paper>
-                        <h2 className={classes.listText}>{item.mainText}</h2>
                       </Grid>
-                    ))}
+                      <Grid item xs={12}>
+                        <Grid container spacing={3}>
+                          <Grid item xs={7}>
+                            <Paper
+                              elevation={3}
+                              className={classes.breadCrumbs}
+                              style={{
+                                width: '280px',
+                              }}
+                              onClick={() => {
+                                data.course.courseSite !== '' &&
+                                  window.open(data.course.courseSite);
+                              }}
+                            >
+                              <h1 className={classes.breadCrumbsText}>
+                                View Course Site &nbsp;
+                                <i className="fas fa-long-arrow-alt-right" />
+                              </h1>
+                            </Paper>
+                          </Grid>
+                          <Grid item xs={5}>
+                            <Paper
+                              elevation={3}
+                              className={classes.breadCrumbs}
+                              style={{
+                                width: '190px',
+                              }}
+                            >
+                              <h1 className={classes.breadCrumbsText}>
+                                Syllabus &nbsp;
+                                <i className="fas fa-long-arrow-alt-right" />
+                              </h1>
+                            </Paper>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
-              <Hidden lgUp>
-                <Grid
-                  container
-                  spacing={2}
-                  style={{ height: '200px', textAlign: 'center' }}
-                >
-                  <Grid item xs={12}>
-                    <select
-                      name="course1"
-                      id="course1"
-                      style={{
-                        width: '100%',
-                        height: '50px',
-                      }}
-                    >
-                      <option>About</option>
-                      <option>Forums</option>
-                      <option>Teacher's Details</option>
-                      <option>Syllabus</option>
-                    </select>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <select
-                      name="course2"
-                      id="course2"
-                      style={{
-                        width: '100%',
-                        height: '50px',
-                      }}
-                    >
-                      <option
-                        onClick={() => {
-                          history.push(`/course/tutorials/${id}`);
-                        }}
-                      >
-                        Tutorials
-                      </option>
-                      <option
-                        onClick={() => {
-                          history.push(`/course/books/${id}`);
-                        }}
-                      >
-                        Books
-                      </option>
-                      <option
-                        onClick={() => {
-                          history.push(`/course/notes/${id}`);
-                        }}
-                      >
-                        Notes/Slides
-                      </option>
-                      <option
-                        onClick={() => {
-                          history.push(`/course/previousyearpapers/${id}`);
-                        }}
-                      >
-                        Previous Year Papers
-                      </option>
-                      <option
-                        onClick={() => {
-                          history.push(`/course/tutorialssolution/${id}`);
-                        }}
-                      >
-                        Tutorials Solution
-                      </option>
-                    </select>
-                  </Grid>
-                </Grid>
-                <br />
-                <br />
-              </Hidden>
-              <Grid container spacing={3}>
-                <Grid item xs={12} sm={12} md={12} lg={9} xl={9}>
-                  {renderComponent()}
-                </Grid>
-                {/* <Hidden mdDown>
-            <Grid item lg={3}>
-              <RightNav id={props.match.params.id} path={path} />
+              </Box>
             </Grid>
-          </Hidden> */}
-              </Grid>
-            </Paper>
+
+            <Grid item xs={12}>
+              {/* <Paper elevation={3} className={classes.heroPaper}> */}
+              <Box className={classes.boxWrapper}>
+                <Grid item xs={12}>
+                  <Grid item xs={12} className={classes.navigatioBar}>
+                    <Grid container>
+                      {list.map((item, index) => (
+                        <Grid
+                          item
+                          xs={2}
+                          className={classes.listItem}
+                          key={index}
+                          onClick={() => {
+                            history.push(`${item.path}`);
+                          }}
+                        >
+                          <Paper elevation={0} className={classes.logoIcons}>
+                            <i
+                              className={item.iconClassName}
+                              style={{ color: '#00293B' }}
+                            />
+                          </Paper>
+                          <h2 className={classes.listText}>{item.mainText}</h2>
+                        </Grid>
+                      ))}
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid container spacing={3}>
+                  <Grid item xs={12}>
+                    {renderComponent()}
+                  </Grid>
+                </Grid>
+                {/* </Paper> */}
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Content>
-    </Root>
-  );
+        </Content>
+      </Root>
+    );
+  }
 };
 
 export default CourseDetail;
-
-// <Container fixed>
-// <h1
-//   style={{
-//     paddingTop: '10px',
-//     paddingLeft: '10px',
-//     fontWeight: 'bold',
-//     textAlign: 'center',
-//   }}
-// >
-//   'lol'
-// </h1>
-// {/* <h3 style={{ paddingLeft: '10px' }}>{data.course.code}</h3> */}
-// <div style={{ textAlign: 'center' }}>
-//   <Button
-//     variant="contained"
-//     color="primary"
-//     size="large"
-//     style={{ backgroundColor: `${secondaryColor}` }}
-//     onClick={() => {
-//       window.open(
-//         'https://sites.google.com/a/thapar.edu/uta018/l',
-//       );
-//     }}
-//   >
-//     {/* {data.course.code} */}'uta019'
-//   </Button>
-// </div>
-// </Container>
