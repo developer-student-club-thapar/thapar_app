@@ -1,10 +1,11 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/react-hooks';
-import { FILES_QUERY } from './Queries';
+import { useQuery, useLazyQuery } from '@apollo/react-hooks';
+import { FILES_QUERY, CDN_URL } from './Queries';
 
 const FileList = (props) => {
   const { typeId, courseId, history } = props;
+  const [getUrl, { loading, data, error }] = useLazyQuery(CDN_URL, {});
   const {
     loading: filesLoading,
     error: filesError,
@@ -23,7 +24,11 @@ const FileList = (props) => {
           return (
             <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
               <img
-                src={thumbnailImage}
+                src={
+                  thumbnailImage !== ''
+                    ? thumbnailImage
+                    : 'https://picsum.photos/200/300'
+                }
                 style={{ borderRadius: '10px', cursor: 'pointer' }}
                 alt="thumbnail"
                 onClick={() => {
