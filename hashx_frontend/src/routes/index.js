@@ -14,12 +14,14 @@ import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
 import Forum from '../pages/Forum';
+import CousesOverview from '../pages/CourseOverView';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
       <Route exact path="/dashboard/:page" component={Dashboard} />
+      <Route exact path="/courses-overview" component={CousesOverview} />
       <Route exact path="/courses/:id/:content" component={CourseDetail} />
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
@@ -40,7 +42,7 @@ const Routes = () => {
         component={StudentDetailsForm}
         New
       />
-      <Route exact path="/forum/:page" component={Forum} />
+      <Route exact={false} path="/forum/:page" component={Forum} />
       <Route path="/404" component={PageNotFound} />
       <Redirect to="/404" />
     </Switch>

@@ -4,11 +4,13 @@ import graphql_social_auth
 import users.schema as users_schema
 import users.mutation as users_mutations
 import society.schema as society_schema
+import forum.schema as forum_schema
 import society.mutation as society_mutations
 import acad.schema as acad_schema
 import acad.mutation as acad_mutations
 import featurebug.schema as featurebug_schema
 import featurebug.mutation as featurebug_mutations
+import forum.mutation as forum_mutations
 import members.schema as members_schema
 from graphql_jwt.decorators import setup_jwt_cookie
 from graphql_social_auth.decorators import social_auth
@@ -34,13 +36,11 @@ import hostel.schema as hostel_schema
 import timetable.mutation as timetable_mutations"""
 
 
-
-
 class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mixins.JSONWebTokenMixin):
     user = graphene.Field(users_schema.UserNode)
     new_user = graphene.Boolean()
     jwt_refresh_token = graphene.String()
-    
+
     @classmethod
     @setup_jwt_cookie_social
     def resolve(cls, root, info, social, **kwargs):
@@ -59,6 +59,7 @@ class Query(acad_schema.RelayQuery,
             members_schema.RelayQuery,
             society_schema.RelayQuery,
             timetable_schema.RelayQuery,
+            forum_schema.RelayQuery,
             featurebug_schema.RelayQuery,
             graphene.ObjectType):
     # This Class wil inherit from multiple Queries
@@ -75,7 +76,7 @@ class Query(acad_schema.RelayQuery,
     # Open these end points in next update
 
 
-class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, featurebug_mutations.Mutation, graphene.ObjectType):
+class Mutation(acad_mutations.Mutation, users_mutations.Mutation, society_mutations.Mutation, featurebug_mutations.Mutation, forum_mutations.Mutation,  graphene.ObjectType):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     verify_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()

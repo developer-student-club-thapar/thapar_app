@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import { secondaryColor, textColor } from '../../theme/theme';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -23,6 +24,21 @@ const useStyles = makeStyles((theme) => ({
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
   },
+  paperMenu: {
+    borderRadius: '15px',
+    height: '100px',
+    // backgroundColor: '#D2E2FF',
+    marginLeft: 30,
+    marginRight: 30,
+    textAlign: 'left',
+    padding: 10,
+  },
+  foodHeader: {
+    fontWeight: 'bolder',
+  },
+  foodItems: {
+    fontSize: '1.1rem',
+  },
 }));
 
 const MessMenu = () => {
@@ -37,6 +53,26 @@ const MessMenu = () => {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+  const menu = [
+    {
+      type: 'Breakfast',
+      foodItems: 'Egg , Aaloo Paratha , Rajma , Bournvita Milk , Poha',
+      backgroundColor: '#D2E2FF',
+      fontColor: 'black',
+    },
+    {
+      type: 'Lunch',
+      foodItems: 'Egg , Aaloo Paratha , Rajma , Bournvita Milk , Poha',
+      backgroundColor: '#FFF7AD',
+      fontColor: 'black',
+    },
+    {
+      type: 'Dinner',
+      foodItems: 'Egg , Aaloo Paratha , Rajma , Bournvita Milk , Poha',
+      backgroundColor: '#364F88',
+      fontColor: 'white',
+    },
+  ];
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
@@ -84,26 +120,32 @@ const MessMenu = () => {
         <br />
         <br />
         <Fade bottom cascade delay={600}>
-          <div>
-            <h3 style={{ fontWeight: 'bold' }}>Breakfast</h3>
-            <h4 style={{ textAlign: 'left' }}>
-              &nbsp; Food, Food, Food, Food, Food, Food, Food, Food, Food
-            </h4>
-          </div>
-          <br />
-          <div>
-            <h3 style={{ fontWeight: 'bold' }}>Lunch</h3>
-            <h4 style={{ textAlign: 'left' }}>
-              &nbsp; Food, Food, Food, Food, Food, Food, Food, Food, Food
-            </h4>
-          </div>
-          <br />
-          <div>
-            <h3 style={{ fontWeight: 'bold' }}>Dinner</h3>
-            <h4 style={{ textAlign: 'left' }}>
-              &nbsp; Food, Food, Food, Food, Food, Food, Food, Food, Food
-            </h4>
-          </div>
+          <Grid container spacing={2}>
+            {menu.map((item, index) => (
+              <Grid item xs={12} key={index}>
+                <Paper
+                  elevation={0}
+                  className={classes.paperMenu}
+                  style={{
+                    backgroundColor: item.backgroundColor,
+                  }}
+                >
+                  <h3
+                    className={classes.foodHeader}
+                    style={{ color: item.fontColor }}
+                  >
+                    {item.type}
+                  </h3>
+                  <p
+                    className={classes.foodItems}
+                    style={{ color: item.fontColor }}
+                  >
+                    {item.foodItems}
+                  </p>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
         </Fade>
       </Paper>
     </>

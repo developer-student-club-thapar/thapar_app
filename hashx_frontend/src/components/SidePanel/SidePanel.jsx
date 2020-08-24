@@ -58,61 +58,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SidePanel = () => {
+const SidePanel = ({ data }) => {
   const classes = useStyles();
   const history = useHistory();
-  const discussionCards = [];
-  for (let i = 0; i < 4; i++) {
-    discussionCards.push(
-      <Grid item xs={12}>
-        <Paper elevation={3} className={classes.discussionItem}>
-          <Grid container spacing={2}>
-            <Grid item xs={2} style={{ padding: '10px' }}>
-              <Avatar
-                alt="Profile"
-                src="https://picsum.photos/200/300"
-                className={classes.profileAvatar}
-              />
-            </Grid>
-            <Grid item xs={10}>
-              <h4 className={classes.primaryGridText}>
-                Processes in Queue&nbsp;&nbsp;
-                <i
-                  className="fas fa-share-square"
-                  style={{ color: '#466D3D' }}
-                />
-              </h4>
-              <p>
-                Consider three processes (process id 0, 1, 2 respectively) with
-                compute time bursts 2, 4 and 8 time units. All processes arrive
-                at time zero......
-              </p>
-              <Grid container spacing={2}>
-                <Grid item xs={2}>
-                  <h6 style={{ fontWeight: 'bolder' }}>
-                    <i
-                      className="far fa-heart fa-lg"
-                      style={{ color: '#E10505' }}
-                    />
-                    &nbsp;10
-                  </h6>
-                </Grid>
-                <Grid item xs={2}>
-                  <h6 style={{ fontWeight: 'bolder' }}>
-                    <i
-                      className="far fa-edit fa-lg"
-                      style={{ color: '#7C73F0' }}
-                    />
-                    &nbsp;10
-                  </h6>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Paper>
-      </Grid>,
-    );
-  }
+
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
@@ -125,7 +74,63 @@ const SidePanel = () => {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          {discussionCards}
+          {data.allQuestions.edges.map((question) => {
+            const {
+              title,
+              content,
+              id,
+              replies,
+              owner: { username },
+            } = question.node;
+            return (
+              <Grid item xs={12} key={id}>
+                <Paper elevation={3} className={classes.discussionItem}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={2} style={{ padding: '10px' }}>
+                      <Avatar
+                        alt="Profile"
+                        src="https://picsum.photos/200/300"
+                        className={classes.profileAvatar}
+                      />
+                    </Grid>
+                    <Grid item xs={10}>
+                      <h4 className={classes.primaryGridText}>
+                        {title}&nbsp;&nbsp;
+                        <i
+                          onClick={() => {
+                            history.push(`/forum/discussion-panel/${id}`);
+                          }}
+                          className="fas fa-share-square"
+                          style={{ color: '#466D3D', cursor: 'pointer' }}
+                        />
+                      </h4>
+                      <p>{content}</p>
+                      <Grid container spacing={2}>
+                        <Grid item xs={2}>
+                          <h6 style={{ fontWeight: 'bolder' }}>
+                            <i
+                              className="far fa-heart fa-lg"
+                              style={{ color: '#E10505' }}
+                            />
+                            &nbsp;10
+                          </h6>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <h6 style={{ fontWeight: 'bolder' }}>
+                            <i
+                              className="far fa-edit fa-lg"
+                              style={{ color: '#7C73F0' }}
+                            />
+                            &nbsp;{replies.edges.length}
+                          </h6>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+            );
+          })}
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12}>
