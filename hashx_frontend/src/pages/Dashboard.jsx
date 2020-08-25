@@ -10,16 +10,13 @@ import Layout, {
   getDrawerSidebar,
   getSidebarTrigger,
   getSidebarContent,
-  getCollapseBtn,
   getContent,
-  getFooter,
 } from '@mui-treasury/layout';
 import { HeaderMockUp } from '@mui-treasury/mockup/layout';
-import { TextSidebar } from '@mui-treasury/mockup/sidebars';
-import Sidebar from '../components/Dashboard/Sidebar';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 import HomeAlt from './HomeAlt';
-import Timetable from '../components/Dashboard/Timetable';
+import Timetable from '../components/Timetable/TimeTable';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
