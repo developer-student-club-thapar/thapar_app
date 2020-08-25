@@ -3,7 +3,7 @@ import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Document from '../Document/Document';
 import SidePanel from '../SidePanel/SidePanel';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
 
 const useStyles = makeStyles(() => ({
