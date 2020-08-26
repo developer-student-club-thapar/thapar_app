@@ -15,9 +15,25 @@ import members.schema as members_schema
 from graphql_social_auth.decorators import social_auth
 # import timetable.mutation as timetable_mutations
 import timetable.schema as timetable_schema
-from .mixins import SocialAuth
+from .decorators import setup_jwt_cookie_social
 
 
+
+class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mixins.JSONWebTokenMixin):
+    user = graphene.Field(users_schema.UserNode)
+    new_user = graphene.Boolean()
+    jwt_refresh_token = graphene.String()
+    @classmethod
+    @setup_jwt_cookie_social
+    def resolve(cls, root, info, social, **kwargs):
+        new_user = True
+        try:
+            social.user.student
+        except Exception:
+            print(Exception)
+        else:
+            new_user = False
+        return cls(user=social.user, new_user=new_user, token=graphql_jwt.shortcuts.get_token(social.user, info.context), jwt_refresh_token=graphql_jwt.shortcuts.create_refresh_token(social.user))
 
 
 """import members.mutation as member_mutations

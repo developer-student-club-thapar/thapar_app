@@ -16,11 +16,6 @@ export const QUESTION_DETAIL = gql`
         edges {
           node {
             id
-            creator {
-              username
-              id
-            }
-            content
           }
         }
       }
