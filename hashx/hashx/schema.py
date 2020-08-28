@@ -55,6 +55,7 @@ import timetable.mutation as timetable_mutations"""
 
 
 
+
 class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mixins.JSONWebTokenMixin):
     user = graphene.Field(users_schema.UserNode)
     new_user = graphene.Boolean()
@@ -71,6 +72,7 @@ class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mix
         # else:
         #     new_user = False
         return cls(user=social.user, new_user=new_user, token=graphql_jwt.shortcuts.get_token(social.user, info.context), jwt_refresh_token=graphql_jwt.shortcuts.create_refresh_token(social.user))
+
 
 
 class Query(acad_schema.RelayQuery,

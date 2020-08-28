@@ -8,7 +8,6 @@ from .decorators import setup_jwt_cookie_social
 import graphql_social_auth
 import graphene
 import graphql_jwt
-import users.schema as users_schema
 
 
 
