@@ -14,3 +14,19 @@ export const REPLY_MUTATION = gql`
     }
   }
 `;
+
+export const QUESTION_REPLIES = gql`
+  query QuestionReplies($question: ID!) {
+    allReplies(question: $question) {
+      edges {
+        node {
+          id
+          content
+          creator {
+            username
+          }
+        }
+      }
+    }
+  }
+`;
