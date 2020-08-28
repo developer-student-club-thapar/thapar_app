@@ -86,8 +86,7 @@ const Sidebar = () => {
     },
     {
       mainText: 'Courses',
-      path:
-        '/courses/Q291cnNlTm9kZTowNDUyYjEzYy1lNmExLTQ5NDEtOWMzNS1iOWRlZTljNzJhNWU=/tutorials',
+      path: '/courses-overview',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
