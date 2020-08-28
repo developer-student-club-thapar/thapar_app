@@ -3,10 +3,12 @@ from graphene_django.filter import DjangoFilterConnectionField
 from .decorators import student_check, instructor_check, every_authenticated
 from graphene.relay.node import Node, NodeField
 from graphql_relay import from_global_id, to_global_id
+
 from .decorators import setup_jwt_cookie_social
 import graphql_social_auth
 import graphene
 import graphql_jwt
+
 
 
 class StudentOnlyQuery(DjangoFilterConnectionField):
