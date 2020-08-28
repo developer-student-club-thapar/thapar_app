@@ -6,8 +6,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link, withRouter } from 'react-router-dom';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
+import { useQuery } from '@apollo/client';
+import { gql } from '@apollo/client';
 import { v4 as uuidv4 } from 'uuid';
 
 import CoursesSkeleton from './CoursesSkeleton';

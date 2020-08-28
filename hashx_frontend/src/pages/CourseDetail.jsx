@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Paper, Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { COURSE_QUERY } from '../components/CourseDetails/Queries';
 import { Root } from '@mui-treasury/layout';
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/client';
 import { useHistory, useParams } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import Books from '../components/CourseDetails/Books';
