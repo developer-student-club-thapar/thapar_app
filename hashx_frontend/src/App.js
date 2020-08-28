@@ -3,26 +3,22 @@ import firebase from './util/init-fcm';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
-import { ApolloProvider } from '@apollo/react-hooks';
 import UserContextProvider from './context/UserProvider';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
 import { getApiUrl } from './util/url';
-// import { InMemoryCache } from 'apollo-cache-inmemory';
-// import { ApolloClient } from 'apollo-client';
 import { getAccessToken } from './util/token';
 
-const client = new ApolloClient({
-  uri: 'https://tietdev.vexio.in/graphql/',
-  credentials: 'include',
-
-  request: (operation) => {
-    const accessToken =
+const accessToken =
       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
-    operation.setContext({
-      headers: {
-        authorization: accessToken ? `JWT ${accessToken}` : '',
-      },
-    });
+    
+const client = new ApolloClient({
+  uri: 'http://localhost:8000/graphql/',
+  credentials: 'include',
+  headers:{
+    authorization: accessToken ? `JWT ${accessToken}` : '',
+  },
+  request: (operation) => {
+    
   },
   cache: new InMemoryCache(),
 });

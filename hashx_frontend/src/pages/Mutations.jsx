@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/clientnt';
 
 export const SEND_STUDENT_DETAILS = gql`
   mutation CreateStudent($branch: String, $batch: String, $gender: String) {

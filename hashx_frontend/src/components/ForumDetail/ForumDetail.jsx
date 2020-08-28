@@ -3,7 +3,7 @@ import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Document from '../Document/Document';
 import SidePanel from '../SidePanel/SidePanel';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
 
 const useStyles = makeStyles(() => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
 const ForumDetail = () => {
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6Y2YwN2Y3NjktOTE1Ny00NjAyLTk4ODMtM2FkNjY0ZmMyZDNj',
+      file: 'RmlsZU5vZGU6MDAxMGVkODItNzE2Ny00MTQ5LTg2YTMtMTFhNWM0MjE0MGRk',
     },
   });
   const classes = useStyles();

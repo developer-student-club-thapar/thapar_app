@@ -1,7 +1,7 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
 import { FILE_TYPE_QUERY } from './Queries';
 import FileList from './FileList';
