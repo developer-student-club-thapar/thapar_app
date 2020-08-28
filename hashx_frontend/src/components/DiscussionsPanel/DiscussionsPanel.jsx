@@ -69,9 +69,6 @@ const useStyles = makeStyles((theme) => ({
   sendButton: {
     backgroundColor: '#F0F0F3',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    '&:focus': {
-      outline: 'none',
-    },
   },
   profileAvatarMessage: {
     width: theme.spacing(9),
@@ -107,9 +104,7 @@ const Discussions = (props) => {
       cache.writeQuery({
         query: QUESTION_REPLIES,
         variables: { question: questionId },
-        data: {
-          allReplies: [...allReplies.edges, data.data.createReply.reply],
-        },
+        data: { allReplies: allReplies.edges.concat(data.data.createReply.reply) },
       });
     },
   });
@@ -134,15 +129,12 @@ const Discussions = (props) => {
       message: currentMessage,
       likes: 10,
     };
-    if (currentMessage !== '' || currentMessage !== null) {
-      console.log(currentMessage);
-      sendReply({
-        variables: {
-          question: questionData.questions.id,
-          content: currentMessage,
-        },
-      });
-    } else console.log('empty');
+    sendReply({
+      variables: {
+        question: questionData.questions.id,
+        content: currentMessage,
+      },
+    });
 
     if (loading || repliesLoading) {
       console.log(loading);
