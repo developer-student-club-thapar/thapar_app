@@ -2,14 +2,14 @@ name: NodeJS_CI
 
 on:
   push:
-    branches: [dev]
+    branches: [dev, master]
   pull_request:
-    branches: [dev]
+    branches: [dev, master]
 
 jobs:
   React:
     runs-on: ubuntu-latest
-
+ 
     strategy:
       matrix:
         node-version: [12.x, 14.x]
