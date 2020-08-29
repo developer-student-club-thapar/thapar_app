@@ -95,7 +95,6 @@ TEMPLATES = [
     },
 ]
 
-AdminSite.enable_nav_sidebar
 
 WSGI_APPLICATION = "hashx.wsgi.application"
 
