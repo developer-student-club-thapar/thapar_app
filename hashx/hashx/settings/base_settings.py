@@ -246,7 +246,9 @@ CORS_ORIGIN_WHITELIST = [
     "https://vue.vexio.in",
     "http://localhost:45911"
 ]
-JWT_COOKIE_SECURE = False  # true on server(https only)
+
+JWT_COOKIE_SECURE = False  # true for https 
+
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     '*.vexio.in',
