@@ -5,8 +5,8 @@ import { secondaryColor, textColor } from '../../theme/theme';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { useMutation } from '@apollo/react-hooks';
-import { REPLY_MUTATION } from './Queries';
+import { useMutation, useQuery, gql } from '@apollo/client';
+import { REPLY_MUTATION, QUESTION_REPLIES } from './Queries';
 
 const useStyles = makeStyles((theme) => ({
   paperGrid: {
@@ -82,8 +82,32 @@ const useStyles = makeStyles((theme) => ({
 
 const Discussions = (props) => {
   const { questionData, questionLoading, questionError } = props;
+  const questionId = questionData.questions.id;
+  const {
+    loading: repliesLoading,
+    data: repliesData,
+    error: repliesError,
+  } = useQuery(QUESTION_REPLIES, {
+    variables: {
+      question: questionData.questions.id,
+    },
+  });
 
-  const [sendReply, { data, loading, error }] = useMutation(REPLY_MUTATION);
+  const [sendReply, { data, loading, error }] = useMutation(REPLY_MUTATION, {
+    update(cache, data) {
+      const { allReplies } = cache.readQuery({
+        query: QUESTION_REPLIES,
+        variables: { question: questionId },
+      });
+      console.log(data.data.createReply);
+
+      cache.writeQuery({
+        query: QUESTION_REPLIES,
+        variables: { question: questionId },
+        data: { allReplies: allReplies.edges.concat(data.data.createReply.reply) },
+      });
+    },
+  });
 
   const classes = useStyles();
   const messageBox = useRef();
@@ -112,10 +136,10 @@ const Discussions = (props) => {
       },
     });
 
-    if (loading) {
+    if (loading || repliesLoading) {
       console.log(loading);
     }
-    if (error) {
+    if (error || repliesError) {
       console.log(error);
     }
     if (data) {
@@ -132,7 +156,7 @@ const Discussions = (props) => {
   };
   useEffect(() => {
     scrollToBottom();
-  }, [questionData]);
+  }, [repliesData]);
 
   if (questionLoading) {
     return <div>{questionLoading}</div>;
@@ -140,8 +164,13 @@ const Discussions = (props) => {
   if (questionError) {
     return <div>{questionError}</div>;
   }
-  console.log(questionData);
+  if (repliesLoading) {
+    return <div>Loading..</div>;
+  }
 
+  if (repliesError) {
+    return <div>{repliesError}</div>;
+  }
   return (
     <>
       <Grid container spacing={2}>
@@ -217,7 +246,7 @@ const Discussions = (props) => {
             <Grid container spacing={2}>
               <Grid item xs={12} className={classes.chatBox}>
                 <Grid container spacing={2} className={classes.chatItem}>
-                  {questionData.questions.replies.edges.map((reply) => {
+                  {repliesData.allReplies.edges.map((reply) => {
                     const { id, content, creator } = reply.node;
                     return (
                       <Grow in key={id}>

@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/client';
 export const FILE_QUESTIONS = gql`
   query FileQuestions($file: ID!) {
     allQuestions(file: $file) {

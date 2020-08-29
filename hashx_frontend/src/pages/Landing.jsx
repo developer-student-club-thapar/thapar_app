@@ -12,7 +12,7 @@ import Newsletter from '../components/Landing/Newsletter/Newsletter';
 import WhyVexio from '../components/Landing/WhyVexio/WhyVexio';
 import AvatarButton from '../components/AvatarButton/AvatarButton';
 
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { SOCIAL_AUTH } from '../graphql/AuthQueriesMutations';
 
 import GoogleLogin from 'react-google-login';
