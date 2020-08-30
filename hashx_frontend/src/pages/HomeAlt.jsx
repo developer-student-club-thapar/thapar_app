@@ -7,6 +7,16 @@ import Events from '../components/HomeEvents/HomeEvents';
 import MessMenu from '../components/HomeMessMenu/HomeMessMenu';
 import TimeTable from '../components/HomeTimeTable/HomeTimeTable';
 import CoursesCard from '../components/CoursesCard/CoursesCard';
+import { useQuery, gql } from '@apollo/client';
+import { userDataVar } from '../graphql/Cache';
+
+const FIRSTNAME = gql`
+query GetFirstName {
+  cachedUserData @client{
+      firstName
+  }
+}
+`;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
   const eventsRef = useRef(null);
+  const { data, loading, error } = useQuery(FIRSTNAME);
+
+  console.log(data, ' userdata');
+
   return (
     <>
       <CssBaseline />
@@ -38,7 +52,7 @@ const Home = () => {
         <br />
         <br />
         <h1 className={classes.introductoryText}>
-          Hey <span style={{ color: '#898989' }}>Lorem</span>
+          Hey <span style={{ color: '#898989' }}>{data.cachedUserData.firstName}</span>
         </h1>
         <br />
         <Grid container spacing={4}>

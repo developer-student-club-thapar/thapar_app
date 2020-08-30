@@ -4,23 +4,22 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 import UserContextProvider from './context/UserProvider';
-import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
+import { ApolloClient, ApolloProvider} from '@apollo/client';
 import { getApiUrl } from './util/url';
+import {cache} from './graphql/Cache.js';
 import { getAccessToken } from './util/token';
 
-const accessToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
-    
+// const accessToken =
+//       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
+
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql/',
   credentials: 'include',
-  headers:{
-    authorization: accessToken ? `JWT ${accessToken}` : '',
-  },
+
   request: (operation) => {
     
   },
-  cache: new InMemoryCache(),
+  cache: cache,
 });
 
 // const requestLink = new ApolloLink(
