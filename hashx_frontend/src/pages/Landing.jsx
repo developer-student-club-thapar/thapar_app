@@ -1,6 +1,6 @@
 // dont change the identation of imports its for legibility
 // of importing componets material ui stuff 🤬
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/Landing.css';
 
@@ -10,10 +10,10 @@ import MouseScroll from '../components/Landing/CardPage/MouseScroll';
 import CardList from '../components/Landing/CardPage/CardList';
 import Newsletter from '../components/Landing/Newsletter/Newsletter';
 import WhyVexio from '../components/Landing/WhyVexio/WhyVexio';
-import AvatarButton from '../components/Helper/AvatarButton';
+import AvatarButton from '../components/AvatarButton/AvatarButton';
 
-import { useMutation } from '@apollo/react-hooks';
-import { SOCIAL_AUTH } from './AuthQueriesMutations';
+import { useMutation } from '@apollo/client';
+import { SOCIAL_AUTH } from '../graphql/AuthQueriesMutations';
 
 import GoogleLogin from 'react-google-login';
 import { UserContext } from '../context/UserProvider';
@@ -130,7 +130,7 @@ const Landing = () => {
       }
     },
   });
-  const { addGoogleToken, authenticate, user } = useContext(UserContext);
+  const { addGoogleToken, authenticate } = useContext(UserContext);
   const responseGoogle = (response) => {
     addGoogleToken(response.wc.access_token);
     socialMutation({

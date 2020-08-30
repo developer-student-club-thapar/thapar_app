@@ -1,5 +1,4 @@
 import graphene
-from graphql_relay import to_global_id
 import django_filters
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery, AuthenticatedNode, AuthenticatedNode
@@ -162,3 +161,11 @@ class RelayQuery(graphene.ObjectType):
     all_firstyearbatches = ViewAllAuthenticatedQuery(
         FirstYearBatchNode, filterset_class=FirstYearBatchFilter)
     firstyearbatch = AuthenticatedNode.Field(FirstYearBatchNode)
+    amazonurl = graphene.String(fileId = graphene.String())
+    
+    def resolve_amazonurl(self, info, fileId=None, **kwargs):
+        if fileId:
+            fileId = AuthenticatedNode.from_global_id(fileId)[1]
+            file = File.objects.get(pk= fileId)
+            return file.file.url
+        return Exception('File Not Found')

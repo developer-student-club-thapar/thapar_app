@@ -30,7 +30,7 @@ from django.contrib.auth import views as auth_views
 admin.site.site_header = "Vexio Admin Panel"
 admin.site.site_title = "Vexio Admin Panel"
 admin.site.index_title = "The Control Panel for this Space Ship"
-
+admin.site.enable_nav_sidebar = False
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('admin/doc/', include('django.contrib.admindocs.urls')),

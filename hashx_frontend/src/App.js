@@ -1,29 +1,26 @@
 import React, { useEffect } from 'react';
-import firebase from './components/init-fcm';
+import firebase from './util/init-fcm';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
-import { ApolloProvider } from '@apollo/react-hooks';
 import UserContextProvider from './context/UserProvider';
-import { ApolloClient, InMemoryCache } from '@apollo/client';
-import {getApiUrl} from './util/url';
-// import { InMemoryCache } from 'apollo-cache-inmemory';
-// import { ApolloClient } from 'apollo-client';
-import { getAccessToken} from './util/token';
+import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
+import { getApiUrl } from './util/url';
+import { getAccessToken } from './util/token';
 
-
+const accessToken =
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
+    
 const client = new ApolloClient({
-  uri: getApiUrl(),
+  uri: 'http://localhost:8000/graphql/',
   credentials: 'include',
-  request: (operation) => {
-    const accessToken = getAccessToken();
-    operation.setContext({
-      headers: {
-        authorization: accessToken ? `JWT ${accessToken}` : '',
-      },
-    });
+  headers:{
+    authorization: accessToken ? `JWT ${accessToken}` : '',
   },
-  cache: new InMemoryCache()
+  request: (operation) => {
+    
+  },
+  cache: new InMemoryCache(),
 });
 
 // const requestLink = new ApolloLink(

@@ -1,0 +1,13 @@
+SECRET_KEY='(n9h_4qb2c^7d&vux#3!#bk9h9g#gkh)s1i774=$jl7bb=j-2f'
+DEBUG=1
+REACT_APP_MAPS_API=AIzaSyB3JAqF0AMxgbfnGtt0R5Yk0MaBe9p1P5s
+DJANGO_ALLOWED_HOSTS=127.0.0.1 
+DJANGO_SETTINGS_MODULE=hashx.settings.dev_settings
+EMAIL_HOST_USER=noreplyvexio@gmail.com
+EMAIL_HOST_PASSWORD=vexiopass@#$
+SQL_ENGINE=django.db.backends.postgresql_psycopg2
+SQL_DATABASE=thapar_app
+SQL_USER=thapar_app_devuser
+SQL_PASSWORD=Dk3%90sh+
+
+
