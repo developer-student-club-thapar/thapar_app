@@ -4,18 +4,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 import UserContextProvider from './context/UserProvider';
-import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
+import { ApolloClient, ApolloProvider } from '@apollo/client';
 import { getApiUrl } from './util/url';
+import { cache } from './graphql/Cache.js';
 import { getAccessToken } from './util/token';
-
 
 const client = new ApolloClient({
   uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
-  request: (operation) => {
-    
-  },
-  cache: new InMemoryCache(),
+  request: (operation) => {},
+  cache: cache,
 });
 
 // const requestLink = new ApolloLink(
