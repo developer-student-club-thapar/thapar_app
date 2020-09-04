@@ -12,9 +12,6 @@ import { getAccessToken } from './util/token';
 const client = new ApolloClient({
   uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
-  headers:{
-    authorization: accessToken ? `JWT ${accessToken}` : '',
-  },
   request: (operation) => {
     
   },
