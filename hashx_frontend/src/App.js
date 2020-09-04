@@ -8,11 +8,9 @@ import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
 import { getApiUrl } from './util/url';
 import { getAccessToken } from './util/token';
 
-const accessToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
-    
+
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql/',
+  uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
   headers:{
     authorization: accessToken ? `JWT ${accessToken}` : '',
