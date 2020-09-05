@@ -16,7 +16,7 @@ import { HeaderMockUp } from '@mui-treasury/mockup/layout';
 import Sidebar from '../components/Sidebar/Sidebar';
 
 import HomeAlt from './HomeAlt';
-import Timetable from '../components/Timetable/TimeTable';
+import Timetable from '../components/Timetable/Timetable';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);

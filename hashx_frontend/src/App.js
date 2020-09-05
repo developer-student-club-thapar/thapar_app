@@ -9,8 +9,7 @@ import { getApiUrl } from './util/url';
 import {cache} from './graphql/Cache.js';
 import { getAccessToken } from './util/token';
 
-// const accessToken =
-//       'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
+
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql/',
