@@ -7,8 +7,8 @@ import DayHeaderCard from './DayHeaderCard';
 import EmptyCard from './Emptycard.jsx';
 import './style.css';
 import SideTime from './SideTime';
-import { useQuery  } from "@apollo/client";
-import {TIMETABLE_DAY} from './Queries';
+import { useQuery } from '@apollo/client';
+import { TIMETABLE_DAY } from './Queries';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,21 +23,15 @@ const useStyles = makeStyles((theme) => ({
 
 const Timetable = () => {
   const classes = useStyles();
-  const { data , error , loading} = useQuery(TIMETABLE_DAY);
-  if(loading){
-    return <div>{loading}</div>
-
-  }
-  if(error){
-    return <div>{error}</div>
-
-  }
- if(data){
-   console.log(data);
- }
+  // const { data, error, loading } = useQuery(TIMETABLE_DAY);
+  // if (loading) {
+  //   return <div>{loading}</div>;
+  // }
+  // if (error) {
+  //   return <div>{error}</div>;
+  // }
   return (
-
-<Grid className={classes.root}>
+    <Grid className={classes.root}>
       <Grid item direction="column">
         <SideTime />
       </Grid>
@@ -68,8 +62,6 @@ const Timetable = () => {
           <ClassCard />
         </Box>
       </Grid>
-    
-      <div>Hey there</div>
     </Grid>
   );
 };
