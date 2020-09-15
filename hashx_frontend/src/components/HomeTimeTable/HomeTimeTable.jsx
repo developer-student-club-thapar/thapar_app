@@ -1,14 +1,13 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconButton from '@material-ui/core/IconButton';
-import Popover from '@material-ui/core/Popover';
-import { Link } from 'react-router-dom';
 import Flip from 'react-reveal/Flip';
 import { secondaryColor, textColor } from '../../theme/theme';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import lightning from '../../assets/Home/Announcements/lightning.svg';
+import TimeTableComponent from './TimeTableComp';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -24,6 +23,25 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+  },
+  headingContainer: {
+    borderRadius: '20px',
+    backgroundColor: `${secondaryColor}`,
+    color: `${textColor}`,
+    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    paddingTop: '15px',
+    marginBottom: '15px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '70%',
+  },
+  headingText: {
+    fontSize: '24px',
+    fontWeight: 'bold',
+  },
+  tableHeader: {
+    display: 'grid',
   },
 }));
 
@@ -42,148 +60,52 @@ const TimeTable = () => {
   const id = open ? 'simple-popover' : undefined;
   return (
     <>
-      <Paper elevation={3} className={classes.paperGrid}>
-        <IconButton
-          color="inherit"
-          style={{
-            height: '35px',
-            float: 'right',
-          }}
-          onClick={handleClick}
-        >
-          <MoreHorizIcon />
-        </IconButton>
-        <Popover
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-        >
-          <Paper elevation={0} style={{ width: '' }}>
-            <Link to="/" style={{ textDecoration: 'none' }}>
-              <h5 style={{ margin: 'auto' }}>
-                <i className="fas fa-eye" /> View More
-              </h5>
-            </Link>
+      <Grid container spacing={4}>
+        <Grid item xs={10}>
+          <Paper elevation={3} className={classes.headingContainer}>
+            <p className={classes.headingText}>Classes Today</p>
+            <ArrowForwardIcon />
           </Paper>
-        </Popover>
-        <br />
-        <br />
-        <div style={{ textAlign: 'center' }}>
-          <h1 className={classes.title}>
-            <i
-              className="fas fa-calendar-alt fa-sm"
-              style={{ display: 'inline-block' }}
-            />{' '}
-            Timetable
-          </h1>
+        </Grid>
+        <Grid item xs={2} container justify="flex-end">
+          <img src={lightning} alt=" " />
+        </Grid>
+      </Grid>
+      <Paper elevation={3} className={classes.paperGrid}>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            padding: '40px 10px',
+          }}
+        >
+          <p style={{ fontWeight: 'bold' }}>Time</p>
+          <p style={{ fontWeight: 'bold' }}>Subject</p>
+          <p style={{ fontWeight: 'bold' }}>Type</p>
+          <p style={{ fontWeight: 'bold' }}>Venue</p>
+          <p style={{ fontWeight: 'bold' }}>Status</p>
         </div>
         <Flip top cascade>
-          <Grid container spacing={3}>
-            <Grid item xs={4} style={{ textAlign: 'center' }}>
-              <h3
-                style={{
-                  fontWeight: 'bold',
-                }}
-              >
-                Time
-              </h3>
-              <Hidden only="xs">
-                <h4>8am-9am</h4>
-                <h4>9am-10am</h4>
-                <h4>10am-11am</h4>
-                <h4>11am-12pm</h4>
-                <h4>12pm-1pm</h4>
-                <h4>1pm-2pm</h4>
-                <h4>2pm-3pm</h4>
-                <h4>3pm-4pm</h4>
-                <h4>4pm-5pm</h4>
-              </Hidden>
-              <Hidden smUp>
-                <h5>8am-9am</h5>
-                <h5>9am-10am</h5>
-                <h5>10am-11am</h5>
-                <h5>11am-12pm</h5>
-                <h5>12pm-1pm</h5>
-                <h5>1pm-2pm</h5>
-                <h5>2pm-3pm</h5>
-                <h5>3pm-4pm</h5>
-                <h5>4pm-5pm</h5>
-              </Hidden>
-            </Grid>
-
-            <Grid item xs={4} style={{ textAlign: 'center' }}>
-              <h3
-                style={{
-                  fontWeight: 'bold',
-                }}
-              >
-                Subject
-              </h3>
-              <Hidden only="xs">
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-                <h4>UCS101 L</h4>
-              </Hidden>
-              <Hidden smUp>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-                <h5>UCS101 L</h5>
-              </Hidden>
-            </Grid>
-            <Grid item xs={4} style={{ textAlign: 'center' }}>
-              <h3
-                style={{
-                  fontWeight: 'bold',
-                }}
-              >
-                Venue
-              </h3>
-              <Hidden only="xs">
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-                <h4>LT101</h4>
-              </Hidden>
-              <Hidden smUp>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-                <h5>LT101</h5>
-              </Hidden>
-            </Grid>
+          <Grid container justify="center" alignItems="center" spacing={3}>
+            <TimeTableComponent />
+            <TimeTableComponent />
+            <TimeTableComponent />
+            <TimeTableComponent />
           </Grid>
         </Flip>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '10px',
+          }}
+        >
+          <p>SEE MORE</p>
+          <ExpandMoreIcon />
+        </div>
       </Paper>
     </>
   );

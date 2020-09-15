@@ -7,6 +7,8 @@ import Events from '../components/HomeEvents/HomeEvents';
 import MessMenu from '../components/HomeMessMenu/HomeMessMenu';
 import TimeTable from '../components/HomeTimeTable/HomeTimeTable';
 import CoursesCard from '../components/CoursesCard/CoursesCard';
+import AnnouncementCard from '../components/AnnouncementBox/AnnouncementBox';
+import kid from '../assets/Home/kid.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +27,16 @@ const useStyles = makeStyles((theme) => ({
   introductoryText: {
     fontSize: '45px',
     fontWeight: 'bolder',
+  },
+  imageContainer: {
+    padding: '10px',
+    height: '100%',
+  },
+  kidImg: {
+    height: '370px',
+    width: '150px',
+    position: 'relative',
+    top: '160px',
   },
 }));
 
@@ -45,8 +57,13 @@ const Home = () => {
           <Grid item xs={12} lg={6} xl={6}>
             <TimeTable />
           </Grid>
-          <Grid item xs={12} lg={6} xl={6}>
-            <CoursesCard />
+          <Grid container item xs={12} lg={6} xl={6}>
+            <Grid item xs={9}>
+              <AnnouncementCard />
+            </Grid>
+            <Grid item xs={3} className={classes.imageContainer}>
+              <img className={classes.kidImg} src={kid} />
+            </Grid>
           </Grid>
         </Grid>
         <br />
