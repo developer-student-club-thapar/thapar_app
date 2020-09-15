@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
 const ForumDetail = () => {
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6Y2YwN2Y3NjktOTE1Ny00NjAyLTk4ODMtM2FkNjY0ZmMyZDNj',
+      file: 'RmlsZU5vZGU6MDAxMGVkODItNzE2Ny00MTQ5LTg2YTMtMTFhNWM0MjE0MGRk',
     },
   });
   const classes = useStyles();
