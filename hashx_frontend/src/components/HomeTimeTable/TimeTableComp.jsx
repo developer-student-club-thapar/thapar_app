@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { secondaryColor, textColor } from '../../theme/theme';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import lightning from '../../assets/Home/Announcements/lightning.svg';
 import live from '../../assets/Home/TimeTable/live.svg';
 import open from '../../assets/Home/TimeTable/open.svg';
 
@@ -17,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     marginBottom: '15px',
-    padding: '20px 5px',
+    padding: '20px 10px',
   },
   lastGrid: {
     display: 'flex',
@@ -32,7 +30,7 @@ const TimeTable = () => {
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
-        <Grid container justify="space-between" spacing={2}>
+        <Grid container justify="space-between" alignItems="center" spacing={2}>
           <Grid item xs={2}>
             <p style={{ fontSize: '13px' }}>8:00-8:40</p>
           </Grid>

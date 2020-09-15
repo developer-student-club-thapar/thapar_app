@@ -7,8 +7,9 @@ import Events from '../components/HomeEvents/HomeEvents';
 import MessMenu from '../components/HomeMessMenu/HomeMessMenu';
 import TimeTable from '../components/HomeTimeTable/HomeTimeTable';
 import CoursesCard from '../components/CoursesCard/CoursesCard';
-import AnnouncementCard from '../components/AnnouncementBox/AnnouncementBox';
+import AnnouncementCard from '../components/HomeAnnouncementBox/AnnouncementBox';
 import kid from '../assets/Home/kid.svg';
+import Sponsor from '../components/Sponsor/Sponsor';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,12 +69,22 @@ const Home = () => {
         </Grid>
         <br />
         <br />
-        <Grid container spacing={4}>
+        {/* <Grid container spacing={4}>
           <Grid item xs={12} lg={6} xl={6}>
             <Announcements />
           </Grid>
           <Grid item lg={6} xl={6} md={12}>
             <MessMenu />
+          </Grid>
+        </Grid> */}
+        <Grid container spacing={4}>
+          <Grid container item xs={6}>
+            <Grid item xs={6} lg={6} xl={6}>
+              <Sponsor />
+            </Grid>
+            <Grid item xs={6} lg={6} xl={6}>
+              <MessMenu />
+            </Grid>
           </Grid>
         </Grid>
         <br />

@@ -3,41 +3,44 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Fade from 'react-reveal/Fade';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import { secondaryColor, textColor } from '../../theme/theme';
 import { Grid } from '@material-ui/core';
+import lightning from '../../assets/Home/Announcements/lightning.svg';
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    display: 'inline-block',
-    [theme.breakpoints.only('xs')]: {
-      fontSize: '30px',
-    },
+    fontWeight: 'bold',
+    fontSize: '24px',
   },
   paperGrid: {
     borderRadius: '20px',
     textAlign: 'center',
-    height: '500px',
+    height: '400px',
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    marginTop: '10px',
   },
   paperMenu: {
     borderRadius: '15px',
     height: '100px',
+    width: '90%',
     // backgroundColor: '#D2E2FF',
     marginLeft: 30,
     marginRight: 30,
     textAlign: 'left',
     padding: 10,
+    marginTop: '10px',
   },
   foodHeader: {
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '27px',
   },
   foodItems: {
-    fontSize: '1.1rem',
+    fontSize: '0.8rem',
   },
 }));
 
@@ -76,7 +79,7 @@ const MessMenu = () => {
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
-        <IconButton
+        {/* <IconButton
           color="inherit"
           style={{
             height: '35px',
@@ -85,8 +88,8 @@ const MessMenu = () => {
           onClick={handleClick}
         >
           <MoreHorizIcon />
-        </IconButton>
-        <Popover
+        </IconButton> */}
+        {/* <Popover
           id={id}
           open={open}
           anchorEl={anchorEl}
@@ -107,29 +110,27 @@ const MessMenu = () => {
               </h5>
             </Link>
           </Paper>
-        </Popover>
-        <br />
-        <br />
-        <h1 className={classes.title}>
-          <i
-            className="fas fa-utensils fa-sm"
-            style={{ display: 'inline-block' }}
-          />{' '}
-          Mess Menu
-        </h1>
-        <br />
-        <br />
+        </Popover> */}
+        <Grid container alignItems="center" justify="space-around" spacing={3}>
+          <Grid item xs={8}>
+            <h1 className={classes.title}>Mess Menu</h1>
+          </Grid>
+          <Grid item xs={2} container justify="flex-end">
+            <img src={lightning} alt=" " />
+          </Grid>
+        </Grid>
         <Fade bottom cascade delay={600}>
           <Grid container spacing={2}>
             {menu.map((item, index) => (
-              <Grid item xs={12} key={index}>
-                <Paper
-                  elevation={0}
-                  className={classes.paperMenu}
-                  style={{
-                    backgroundColor: item.backgroundColor,
-                  }}
-                >
+              <Paper
+                elevation={0}
+                className={classes.paperMenu}
+                style={{
+                  backgroundColor: item.backgroundColor,
+                }}
+                key={index}
+              >
+                <Grid item xs={12}>
                   <h3
                     className={classes.foodHeader}
                     style={{ color: item.fontColor }}
@@ -142,8 +143,8 @@ const MessMenu = () => {
                   >
                     {item.foodItems}
                   </p>
-                </Paper>
-              </Grid>
+                </Grid>
+              </Paper>
             ))}
           </Grid>
         </Fade>
