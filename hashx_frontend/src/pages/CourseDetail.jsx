@@ -21,8 +21,9 @@ import {
   Content,
 } from '../components/Global/Global';
 import Sidebar from '../components/Sidebar/Sidebar';
+import backgroundText from '../assets/cs.svg';
 
-const useClasses = makeStyles(() => ({
+const useClasses = makeStyles((theme) => ({
   box: {
     overflowX: 'hidden',
     overflowY: 'hidden',
@@ -43,12 +44,18 @@ const useClasses = makeStyles(() => ({
     '&:hover': {
       transform: 'scale(1.2)',
     },
+    [theme.breakpoints.only('xs')]: {
+      height: '45px',
+    },
   },
   breadCrumbsText: {
     color: '#747474',
     fontSize: 25,
     fontWeight: 'bolder',
     margin: '0 auto',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: 20,
+    },
   },
   heroPaper: {
     margin: 10,
@@ -68,6 +75,12 @@ const useClasses = makeStyles(() => ({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     width: '90vw',
+    [theme.breakpoints.only('xs')]: {
+      width: '100%',
+      borderRadius: 0,
+      height: '110px',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    },
   },
   listItemPrimary: {
     display: 'grid',
@@ -83,6 +96,9 @@ const useClasses = makeStyles(() => ({
       backgroundColor: '#F0F0F3',
       cursor: 'pointer',
     },
+    [theme.breakpoints.only('xs')]: {
+      height: '110px',
+    },
   },
   logoIcons: {
     height: '70px',
@@ -93,12 +109,20 @@ const useClasses = makeStyles(() => ({
     textAlign: 'center',
     display: 'grid',
     placeItems: 'center',
+    [theme.breakpoints.only('xs')]: {
+      height: '40px',
+      width: '40px',
+      borderRadius: 9,
+    },
   },
   listText: {
     fontSize: '17px',
     color: '#ffffff',
     '&:hover': {
       color: '#00293B',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '0.8rem',
     },
   },
   listItemActive: {
@@ -129,6 +153,21 @@ const useClasses = makeStyles(() => ({
   },
   boxWrapper: {
     margin: 30,
+    [theme.breakpoints.only('xs')]: {
+      margin: 0,
+    },
+  },
+  paperlinkContainer: {
+    [theme.breakpoints.only('xs')]: {
+      flexDirection: 'column',
+    },
+  },
+  paperBackground: {
+    backgroundColor: `${secondaryColor}`,
+    [theme.breakpoints.up('lg')]: {
+      backgroundImage: `url(${backgroundText})`,
+      backgroundRepeat: 'no-repeat',
+    },
   },
 }));
 
@@ -144,31 +183,37 @@ const CourseDetail = (props) => {
       mainText: 'Tutorial',
       path: `/courses/${courseId}/tutorials`,
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Lab',
       path: '/courses',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/dashboard/timetable',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
   ];
 
@@ -217,75 +262,83 @@ const CourseDetail = (props) => {
                 }}
               >
                 <Grid container justify="flex-start" style={{ padding: 30 }}>
-                  <Grid item xs={3}>
-                    <img
-                      src={require('../assets/kid.svg')}
-                      style={{ marginLeft: '2vw', objectFit: 'contain' }}
-                      alt="kid"
-                    />
-                  </Grid>
-                  <Grid item xs={9}>
-                    <Grid
-                      container
-                      direction="column"
-                      justify="space-around"
-                      alignItems="flex-start"
-                      spacing={4}
-                    >
-                      <Grid item xs={12}>
-                        <h1 className={classes.title}>{data.course.name}</h1>
-                      </Grid>
+                  <Hidden mdDown>
+                    <Grid item xs={3}>
+                      <img
+                        src={require('../assets/kid.svg')}
+                        style={{ marginLeft: '2vw', objectFit: 'contain' }}
+                        alt="kid"
+                      />
+                    </Grid>
+                  </Hidden>
+                  <Grid item xs={12} lg={9}>
+                    <Paper elevation={0} className={classes.paperBackground}>
+                      <Grid
+                        container
+                        direction="column"
+                        justify="space-around"
+                        alignItems="flex-start"
+                        spacing={4}
+                      >
+                        <Grid item xs={12}>
+                          <h1 className={classes.title}>{data.course.name}</h1>
+                        </Grid>
 
-                      <Grid item xs={4}>
-                        <Paper
-                          elevation={3}
-                          className={classes.breadCrumbs}
-                          style={{
-                            width: '150px',
-                          }}
-                        >
-                          <h1 className={classes.breadCrumbsText}>
-                            {data.course.code}
-                          </h1>
-                        </Paper>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Grid container spacing={3}>
-                          <Grid item xs={7}>
-                            <Paper
-                              elevation={3}
-                              className={classes.breadCrumbs}
-                              style={{
-                                width: '280px',
-                              }}
-                              onClick={() => {
-                                data.course.courseSite !== '' &&
-                                  window.open(data.course.courseSite);
-                              }}
-                            >
-                              <h1 className={classes.breadCrumbsText}>
-                                View Course Site &nbsp;
-                                <i className="fas fa-long-arrow-alt-right" />
-                              </h1>
-                            </Paper>
-                          </Grid>
-                          <Grid item xs={5}>
-                            <Paper
-                              elevation={3}
-                              className={classes.breadCrumbs}
-                              style={{
-                                width: '190px',
-                              }}
-                            >
-                              <h1 className={classes.breadCrumbsText}>
-                                Syllabus &nbsp;
-                                <i className="fas fa-long-arrow-alt-right" />
-                              </h1>
-                            </Paper>
+                        <Grid item xs={4}>
+                          <Paper
+                            elevation={3}
+                            className={classes.breadCrumbs}
+                            style={{
+                              width: '150px',
+                            }}
+                          >
+                            <h1 className={classes.breadCrumbsText}>
+                              {data.course.code}
+                            </h1>
+                          </Paper>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <Grid
+                            container
+                            spacing={3}
+                            className={classes.paperlinkContainer}
+                          >
+                            <Grid item xs={7}>
+                              <Paper
+                                elevation={3}
+                                className={classes.breadCrumbs}
+                                style={{
+                                  width: '280px',
+                                }}
+                                onClick={() => {
+                                  data.course.courseSite !== '' &&
+                                    window.open(data.course.courseSite);
+                                }}
+                              >
+                                <h1 className={classes.breadCrumbsText}>
+                                  View Course Site &nbsp;
+                                  <i className="fas fa-long-arrow-alt-right" />
+                                </h1>
+                              </Paper>
+                            </Grid>
+                            <Grid item xs={5}>
+                              <Paper
+                                elevation={3}
+                                className={classes.breadCrumbs}
+                                style={{
+                                  width: '190px',
+                                }}
+                              >
+                                <h1 className={classes.breadCrumbsText}>
+                                  Syllabus &nbsp;
+                                  <i className="fas fa-long-arrow-alt-right" />
+                                </h1>
+                              </Paper>
+                            </Grid>
                           </Grid>
                         </Grid>
                       </Grid>
-                    </Grid>
+                    </Paper>
                   </Grid>
                 </Grid>
               </Box>
@@ -307,10 +360,18 @@ const CourseDetail = (props) => {
                           }}
                         >
                           <Paper elevation={0} className={classes.logoIcons}>
-                            <i
-                              className={item.iconClassName}
-                              style={{ color: '#00293B' }}
-                            />
+                            <Hidden only="xs">
+                              <i
+                                className={item.iconClassName}
+                                style={{ color: '#00293B' }}
+                              />
+                            </Hidden>
+                            <Hidden smUp>
+                              <i
+                                className={item.iconClassNameMoblie}
+                                style={{ color: '#00293B' }}
+                              />
+                            </Hidden>
                           </Paper>
                           <h2 className={classes.listText}>{item.mainText}</h2>
                         </Grid>
