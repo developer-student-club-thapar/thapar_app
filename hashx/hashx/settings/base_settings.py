@@ -236,7 +236,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_BLACKLIST = None
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 JWT_COOKIE_DOMAIN = ['http://localhost:3000', "https://ssr.vexio.in",
-                     "https://front.vexio.in", "https://vue.vexio.in", "http://localhost:45911"]
+                     "https://front.vexio.in", "https://vue.vexio.in", "http://localhost:45911" , "https://react.vexio.in"]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:45911",
     "http://localhost:3000",
@@ -244,7 +244,8 @@ CORS_ORIGIN_WHITELIST = [
     "https://ssr.vexio.in",
     "https://front.vexio.in",
     "https://vue.vexio.in",
-    "http://localhost:45911"
+    "http://localhost:45911",
+    "https://react.vexio.in"
 ]
 
 JWT_COOKIE_SECURE = True  # true for https 
