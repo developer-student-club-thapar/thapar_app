@@ -10,7 +10,7 @@ import { cache } from './graphql/Cache.js';
 import { getAccessToken } from './util/token';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql/',
+  uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
 
   request: (operation) => {},
