@@ -3,13 +3,18 @@ import Grid from '@material-ui/core/Grid';
 import { useQuery, useLazyQuery } from '@apollo/client';
 import { FILES_QUERY, CDN_URL } from './Queries';
 import { makeStyles } from '@material-ui/core/styles';
+import { motion } from 'framer-motion';
 
-const useClasses = makeStyles(() => ({
+const useClasses = makeStyles((theme) => ({
   thumbnail: {
     height: '200px',
     width: '400px',
     cursor: 'pointer',
     borderRadius: '10px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: '250px',
+    },
   },
   thumbnailTitleBox: {
     position: 'relative',
@@ -24,8 +29,13 @@ const useClasses = makeStyles(() => ({
     paddingLeft: 5,
     fontWeight: 'bolder',
     fontSize: '17px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
 }));
+
+const transition = { duration: 0.2, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const FileList = (props) => {
   const { typeId, courseId, history } = props;
@@ -48,26 +58,28 @@ const FileList = (props) => {
           const { thumbnailImage, name, id } = files.node;
           return (
             <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
-              <img
-                src={
-                  thumbnailImage !== ''
-                    ? thumbnailImage
-                    : 'https://picsum.photos/400/200'
-                }
-                className={classes.thumbnail}
-                alt="thumbnail"
-                onClick={() => {
-                  history.push(`/pdfview`); // file
-                }}
-              />
-              <div
-                className={classes.thumbnailTitleBox}
-                onClick={() => {
-                  history.push(`/pdfview`);
-                }}
-              >
-                <div style={{ paddingTop: '10px' }}>{name}</div>
-              </div>
+              <motion.div whileHover={{ scale: 0.9 }} transition={transition}>
+                <img
+                  src={
+                    thumbnailImage !== ''
+                      ? thumbnailImage
+                      : 'https://picsum.photos/400/200'
+                  }
+                  className={classes.thumbnail}
+                  alt="thumbnail"
+                  onClick={() => {
+                    history.push(`/pdfview`); // file
+                  }}
+                />
+                <div
+                  className={classes.thumbnailTitleBox}
+                  onClick={() => {
+                    history.push(`/pdfview`);
+                  }}
+                >
+                  <div style={{ paddingTop: '10px' }}>{name}</div>
+                </div>
+              </motion.div>
             </Grid>
           );
         })}

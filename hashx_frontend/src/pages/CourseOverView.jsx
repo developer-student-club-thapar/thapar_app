@@ -1,7 +1,5 @@
 import React from 'react';
 import { Grid, Divider, Paper } from '@material-ui/core';
-import CourseBox from '../components/CourseBox/CourseBox';
-import profile from '../assets/profileImage.svg';
 import guy from '../assets/guy.svg';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,8 +16,8 @@ import Layout, {
 } from '@mui-treasury/layout';
 import { HeaderMockUp } from '@mui-treasury/mockup/layout';
 import Sidebar from '../components/Sidebar/Sidebar';
-import ForumDetail from '../components/ForumDetail/ForumDetail';
-import DiscussionPanelMain from '../components/DiscussionPanelMain/DiscussionPanelMain';
+import CourseTeam from '../components/CourseTeam/CourseTeam';
+import CourseGrid from '../components/CourseGrid/CourseGrid';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
@@ -57,18 +55,9 @@ scheme.configureEdgeSidebar((builder) => {
 });
 
 const useStyles = makeStyles(() => ({
-  papergrid: {
-    borderRadius: '40px',
-    height: '500px',
-    background: '#f0f0f3',
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-  },
-  coursesgrid: {
-    padding: '10px',
-  },
   team: {
     borderRadius: '40px',
-    height: '320px',
+    height: '500px',
     background: '#f0f0f3',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     padding: '10px',
@@ -78,9 +67,10 @@ const useStyles = makeStyles(() => ({
     padding: '50px',
   },
   title: {
-    fontSize: '20px',
+    fontSize: '1.7rem',
     display: 'inline-block',
     fontWeight: 'bold',
+    paddingTop: 20,
   },
   btn: {
     borderRadius: '27px',
@@ -89,9 +79,10 @@ const useStyles = makeStyles(() => ({
     marginTop: '30px',
     display: 'grid',
     placeItems: 'center',
-    height: '30px',
-    fontSize: '12px',
+    height: '50px',
+    fontSize: '16px',
     color: 'white',
+    fontWeight: 'bold',
   },
   header: {
     backgroundColor: '#F0F0F3',
@@ -117,30 +108,6 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const CourseGrid = () => {
-  const styles = useStyles();
-  return (
-    <Paper elevation={3} className={styles.papergrid}>
-      <Grid container spacing={2} className={styles.coursesgrid}>
-        {[
-          { subject: 'COMPUTER NETWORKS', color: '#4378DB' },
-          { subject: 'NUMERICAL ANALYSIS', color: '#FDCD55' },
-          { subject: 'OPERATING SYSTEMS', color: '#6036AA' },
-          { subject: 'ENGINEERING MATERIALS', color: '#FF846E' },
-          { subject: 'ENGINEERING DESIGN', color: '#2B4172' },
-          { subject: 'DISCRETE MATHEMATICS', color: '#00293B' },
-          {
-            subject: 'DATA STRUCTURES & ALGORITHMS',
-            color: '#F35555',
-          },
-        ].map((ele, i) => {
-          return <CourseBox subject={ele.subject} color={ele.color} key={i} />;
-        })}
-      </Grid>
-    </Paper>
-  );
-};
-
 const Button = () => {
   const styles = useStyles();
   return (
@@ -154,38 +121,7 @@ const Button = () => {
   );
 };
 
-const Team = () => {
-  const styles = useStyles();
-  return (
-    <Grid container style={{ marginTop: '20px' }} justify="center">
-      <Grid item xs={2}>
-        <img
-          src={profile}
-          alt=" "
-          height="40px"
-          style={{ borderRadius: '50%' }}
-        />
-      </Grid>
-      <Grid item xs={8} style={{ textAlign: 'left', padding: ' 5px 10px' }}>
-        {/* <div> */}
-        <h1 style={{ fontSize: '10px', fontWeight: 'bold' }}>
-          Divanshu Agarwal
-        </h1>
-        <h1
-          style={{
-            fontSize: '10px',
-            color: 'gray',
-          }}
-        >
-          @divanshuroxs
-        </h1>
-        {/* </div> */}
-      </Grid>
-    </Grid>
-  );
-};
-
-const App = (props) => {
+const App = () => {
   const styles = useStyles();
   return (
     <Root scheme={scheme}>
@@ -213,21 +149,23 @@ const App = (props) => {
                   <CourseGrid />
                 </Grid>
                 <Grid item xs={12} lg={4} xl={4}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={12}>
+                  <Grid container spacing={2} justify="center">
+                    <Grid item xs={10}>
                       <img
                         src={guy}
                         alt="guy"
-                        style={{ height: '160px', width: '300' }}
+                        style={{
+                          height: '200px',
+                          width: '300px',
+                          objectFit: 'contain',
+                        }}
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <Paper elevation={3} className={styles.team}>
                         <h3 className={styles.title}>YOUR STREAMMATES</h3>
                         <Divider variant="middle" />
-                        <Team />
-                        <Team />
-                        <Team />
+                        <CourseTeam />
                         <Button />
                       </Paper>
                     </Grid>

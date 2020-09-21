@@ -247,8 +247,9 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:45911"
 ]
 
-JWT_COOKIE_SECURE = False  # true for https 
-
+JWT_COOKIE_SECURE = True  # true for https 
+JWT_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SAMESITE = 'None'
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     '*.vexio.in',
