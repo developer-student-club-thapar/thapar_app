@@ -8,6 +8,7 @@ import TimeTable from '../components/HomeTimeTable/HomeTimeTable';
 import CoursesCard from '../components/HomeMyCourses/Courses';
 import AnnouncementCard from '../components/HomeAnnouncements/AnnouncementBox';
 import kid from '../assets/Home/kid.svg';
+import EventsList from '../components/HomeEvents/HomeEventsList';
 import Sponsor from '../components/HomeSponsor/Sponsor';
 // import CoursesCard from '../components/CoursesCard/CoursesCard';
 import { useQuery, gql } from '@apollo/client';
@@ -88,15 +89,12 @@ const Home = () => {
         <br />
         <Grid container spacing={4}>
           <Grid container item xs={12} lg={6}>
-            <Grid item xs={6} lg={6} xl={6}>
-              <Sponsor />
-            </Grid>
-            <Grid item xs={6} lg={6} xl={6}>
-              <MessMenu />
-            </Grid>
+            <MessMenu />
+            <EventsList />
           </Grid>
           <Grid container item xs={12} lg={6}>
             <CoursesCard />
+            <Sponsor />
           </Grid>
         </Grid>
         <br />

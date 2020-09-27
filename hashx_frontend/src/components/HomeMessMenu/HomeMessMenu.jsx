@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: 'bold',
     fontSize: '24px',
+    padding: '10px',
   },
   paperGrid: {
     borderRadius: '20px',
@@ -79,38 +80,6 @@ const MessMenu = () => {
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
-        {/* <IconButton
-          color="inherit"
-          style={{
-            height: '35px',
-            float: 'right',
-          }}
-          onClick={handleClick}
-        >
-          <MoreHorizIcon />
-        </IconButton> */}
-        {/* <Popover
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-        >
-          <Paper elevation={0} style={{ width: '' }}>
-            <Link to="/" style={{ textDecoration: 'none' }}>
-              <h5 style={{ margin: 'auto' }}>
-                <i className="fas fa-eye" /> View More
-              </h5>
-            </Link>
-          </Paper>
-        </Popover> */}
         <Grid container alignItems="center" justify="space-around" spacing={3}>
           <Grid item xs={8}>
             <h1 className={classes.title}>Mess Menu</h1>
