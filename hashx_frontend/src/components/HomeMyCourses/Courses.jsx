@@ -85,6 +85,7 @@ const TimeTable = () => {
             style={{
               position: 'relative',
               left: '-40px',
+              top: '-20px',
             }}
           />
         </Grid>

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     padding: '20px 20px',
     marginRight: '30px',
-    marginTop: '20px',
+    marginTop: '5px',
     width: '650px',
   },
   headingText: {
@@ -38,10 +38,13 @@ const useStyles = makeStyles((theme) => ({
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     paddingTop: '15px',
+    marginBottom: '15px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '70%',
+    [theme.breakpoints.down('sm')]: {
+      padding: '5px 15px',
+    },
   },
   headingText: {
     fontSize: '24px',
@@ -52,6 +55,12 @@ const useStyles = makeStyles((theme) => ({
   },
   mainHeader: {
     marginBottom: '20px',
+  },
+  arrowContainer: {
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+      top: '30px',
+    },
   },
 }));
 
@@ -88,7 +97,9 @@ const TimeTable = () => {
         <Grid item xs={8} className={classes.mainHeader}>
           <Paper elevation={3} className={classes.headingContainer}>
             <p className={classes.headingText}>Events Today</p>
-            <ArrowForwardIcon />
+            <Grid item className={classes.arrowContainer}>
+              <ArrowForwardIcon />
+            </Grid>
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">

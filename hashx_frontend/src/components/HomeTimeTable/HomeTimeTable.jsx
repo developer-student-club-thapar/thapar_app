@@ -35,7 +35,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '70%',
+    width: '80%',
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: '5px',
+      paddingRight: '15px',
+      paddingLeft: '15px',
+    },
   },
   headingText: {
     fontSize: '24px',
@@ -43,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
   },
   tableHeader: {
     display: 'grid',
+  },
+  arrowContainer: {
+    [theme.breakpoints.down('sm')]: {
+      position: 'relative',
+      top: '30px',
+    },
   },
 }));
 
@@ -65,7 +76,9 @@ const TimeTable = () => {
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.headingContainer}>
             <p className={classes.headingText}>Classes Today</p>
-            <ArrowForwardIcon />
+            <Grid item className={classes.arrowContainer}>
+              <ArrowForwardIcon />
+            </Grid>
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">

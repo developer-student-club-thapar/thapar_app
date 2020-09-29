@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   imageContainer: {
     padding: '10px',
     height: '100%',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   kidImg: {
     height: '370px',
@@ -77,10 +80,10 @@ const Home = () => {
             <TimeTable />
           </Grid>
           <Grid container item xs={12} lg={6} xl={6}>
-            <Grid item xs={9}>
+            <Grid item xs={12} md={9}>
               <AnnouncementCard />
             </Grid>
-            <Grid item xs={3} className={classes.imageContainer}>
+            <Grid item xs={0} md={3} className={classes.imageContainer}>
               <img className={classes.kidImg} src={kid} />
             </Grid>
           </Grid>
