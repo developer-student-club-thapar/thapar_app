@@ -80,7 +80,7 @@ const useStyles = makeStyles(() => ({
 const renderPage = (page) => {
   switch (page) {
     case 'forum-details':
-      return <ForumDetail />;
+      return <ForumDetail />; //TODO add file-ID as a prop
 
     case 'discussion-panel':
       return <DiscussionPanelMain />;
