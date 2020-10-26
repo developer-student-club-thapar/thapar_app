@@ -22,6 +22,7 @@ import {
 } from '../components/Global/Global';
 import Sidebar from '../components/Sidebar/Sidebar';
 import backgroundText from '../assets/cs.svg';
+import Error from '../components/Error/Error';
 
 const useClasses = makeStyles((theme) => ({
   box: {
@@ -223,8 +224,8 @@ const CourseDetail = (props) => {
     },
   });
   if (loading) return <h4>Loading....</h4>;
-  if (error) {
-    console.log(error);
+  if (error || data.course === undefined || data.course === null) {
+    return <Error />;
   }
   console.log(data);
   const renderComponent = () => {
