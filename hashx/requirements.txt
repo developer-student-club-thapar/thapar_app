@@ -12,7 +12,7 @@ cffi==1.14.0
 cfgv==3.1.0
 chardet==3.0.4
 colorama==0.4.3
-cryptography==2.9.2
+cryptography==3.2
 defusedxml==0.6.0
 distlib==0.3.0
 dj-environ==0.0.1
