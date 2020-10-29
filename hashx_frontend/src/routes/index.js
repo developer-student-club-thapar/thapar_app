@@ -15,17 +15,18 @@ import PageNotFound from '../pages/404';
 import VirtualCampus from '../pages/VirtualCampusPage';
 import Forum from '../pages/Forum';
 import CousesOverview from '../pages/CourseOverView';
+import Timetable from '../components/Timetable/TimeTable';
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing} />
-      <Route exact path="/dashboard/:page" component={Dashboard} />
+      <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/courses-overview" component={CousesOverview} />
       <Route exact path="/courses/:id/:content" component={CourseDetail} />
       <Route exact path="/pdfview" component={PdfView} />
       <Route exact path="/hostel" component={Hostel} />
-      {/* <Route exact path="/timetable" component={TimeTable} /> */}
+      <Route exact path="/timetable" component={Timetable} />
       <Route exact path="/private" component={PrivateTest} />
       <Route exact path="/register" component={Register} isRestricted />
       <Route exact path="/login" component={Login} isRestricted />

@@ -9,6 +9,7 @@ import './style.css';
 import SideTime from './SideTime';
 import { useQuery } from '@apollo/client';
 import { TIMETABLE_DAY } from './Queries';
+import LayoutWrapper from '../Layout/Layout';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,38 +32,40 @@ const Timetable = () => {
   //   return <div>{error}</div>;
   // }
   return (
-    <Grid className={classes.root}>
-      <Grid item direction="column">
-        <SideTime />
+    <LayoutWrapper>
+      <Grid className={classes.root}>
+        <Grid item direction="column">
+          <SideTime />
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard />
+          <Box class="main-1">
+            <ClassCard />
+            <ClassCard />
+          </Box>
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard />
+          <Box class="main-1">
+            <ClassCard />
+            <ClassCard />
+          </Box>
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard />
+          <Box class="main-1">
+            <ClassCard />
+          </Box>
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard />
+          <Box class="main-1">
+            <ClassCard />
+            <ClassCard />
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item direction="column">
-        <DayHeaderCard />
-        <Box class="main-1">
-          <ClassCard />
-          <ClassCard />
-        </Box>
-      </Grid>
-      <Grid item direction="column">
-        <DayHeaderCard />
-        <Box class="main-1">
-          <ClassCard />
-          <ClassCard />
-        </Box>
-      </Grid>
-      <Grid item direction="column">
-        <DayHeaderCard />
-        <Box class="main-1">
-          <ClassCard />
-        </Box>
-      </Grid>
-      <Grid item direction="column">
-        <DayHeaderCard />
-        <Box class="main-1">
-          <ClassCard />
-          <ClassCard />
-        </Box>
-      </Grid>
-    </Grid>
+    </LayoutWrapper>
   );
 };
 

@@ -89,7 +89,7 @@ const Navbar = () => {
             <Link to="/contact">
               <Button>Contact</Button>
             </Link>
-            <Link to="/dashboard/home">
+            <Link to="/dashboard">
               <Button>Dashboard</Button>
             </Link>
           </Box>
