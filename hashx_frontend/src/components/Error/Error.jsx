@@ -68,7 +68,7 @@ const Error = () => {
               className={classes.button}
               startIcon={<HomeIcon />}
               onClick={() => {
-                history.push('/dashboard/home');
+                history.push('/dashboard');
               }}
             >
               Back to Dashboard
