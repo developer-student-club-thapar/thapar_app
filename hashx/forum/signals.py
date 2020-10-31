@@ -24,5 +24,5 @@ def on_like(sender , instance , created , **kwargs):
 def on_question(sender , instance , created, **kwargs):
     if created:
         course = instance.file.course
-        """ get users in that particular course"""j
+        """ get users in that particular course"""
         
