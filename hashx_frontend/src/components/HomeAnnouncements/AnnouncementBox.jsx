@@ -21,15 +21,18 @@ const useStyles = makeStyles(() => ({
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    paddingTop: '15px',
+    padding: '15px',
     marginBottom: '15px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    width: 'fit-content',
   },
   headingText: {
     fontSize: '24px',
-    fontWeight: 'bold',
+    letterSpacing: '1px',
+    lineHeight: '36px',
+    fontWeight: '900',
   },
   team: {
     borderRadius: '40px',
@@ -53,8 +56,10 @@ const CoursesCard = (props) => {
       <Grid container spacing={4}>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.headingContainer}>
-            <p className={classes.headingText}>Announcements</p>
-            <ArrowForwardIcon />
+            <div className={classes.headingText}>Announcements&nbsp;</div>
+            <div style={{ margin: 'auto' }}>
+              <ArrowForwardIcon />
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">

@@ -93,13 +93,18 @@ const Home = () => {
         <br />
         <br />
         <Grid container spacing={4}>
-          <Grid container item xs={12} lg={6}>
-            <MessMenu />
-            <EventsList />
+          <Grid container item xs={12} lg={6} xl={5} spacing={4}>
+            <Grid item xl={6}>
+              <Sponsor />
+            </Grid>
+            <Grid item xl={6}>
+              <MessMenu />
+            </Grid>
+
+            {/* <EventsList /> */}
           </Grid>
           <Grid container item xs={12} lg={6}>
             <CoursesCard />
-            <Sponsor />
           </Grid>
         </Grid>
         <br />

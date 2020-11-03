@@ -11,9 +11,11 @@ import lightning from '../../assets/Home/Announcements/lightning.svg';
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    fontWeight: 'bold',
+    fontWeight: '900',
     fontSize: '24px',
     padding: '10px',
+    textAlign: 'left',
+    letterSpacing: '2px',
   },
   paperGrid: {
     borderRadius: '20px',
@@ -80,7 +82,13 @@ const MessMenu = () => {
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
-        <Grid container alignItems="center" justify="space-around" spacing={3}>
+        <Grid
+          container
+          alignItems="center"
+          justify="space-around"
+          spacing={3}
+          style={{ paddingTop: 10 }}
+        >
           <Grid item xs={8}>
             <h1 className={classes.title}>Mess Menu</h1>
           </Grid>
@@ -89,7 +97,7 @@ const MessMenu = () => {
           </Grid>
         </Grid>
         <Fade bottom cascade delay={600}>
-          <Grid container spacing={2}>
+          <Grid container spacing={6} style={{ padding: 10 }}>
             {menu.map((item, index) => (
               <Paper
                 elevation={0}

@@ -93,7 +93,7 @@ const TimeTable = () => {
       <Grid container spacing={4}>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.headingContainer}>
-            <div className={classes.headingText}>Classes Today</div>
+            <div className={classes.headingText}>Classes Today&nbsp;</div>
             <div style={{ margin: 'auto' }}>
               <ArrowForwardIcon />
             </div>

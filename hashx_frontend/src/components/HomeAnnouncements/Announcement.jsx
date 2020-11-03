@@ -10,8 +10,8 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'row',
   },
   text: {
-    fontSize: '9px',
-    lineHeight: '11px',
+    fontSize: '12px',
+    lineHeight: '14px',
     fontWeight: 'bold',
   },
   mainContainer: {
@@ -30,13 +30,13 @@ const CoursesCard = (props) => {
   return (
     <Grid container item xs={12} className={classes.mainContainer}>
       <Grid item xs={10}>
-        <Grid container direction="row">
+        <Grid container direction="row" spacing={2}>
           <img src={image} />
           <Grid container item xs={8} alignItems="center">
-            <p className={classes.text}>
+            <span className={classes.text}>
               Perfect for Small & Medium Businesses in India ,Samsung Launches
               New Range of UHD Business TVs
-            </p>
+            </span>
           </Grid>
         </Grid>
       </Grid>

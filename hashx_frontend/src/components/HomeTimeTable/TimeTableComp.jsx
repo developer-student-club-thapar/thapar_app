@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { secondaryColor, textColor } from '../../theme/theme';
 import live from '../../assets/Home/TimeTable/live.svg';
 import open from '../../assets/Home/TimeTable/open.svg';
+import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
   paperGrid: {
@@ -16,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     marginBottom: '15px',
     padding: '20px 10px',
+    transition: 'box-shadow 0.2s ease-in',
+    '&:hover': {
+      boxShadow: '-6px -6px 16px #fff, 15px 15px 16px #d1cdc7',
+    },
   },
   tableText: {
     fontSize: '16px',

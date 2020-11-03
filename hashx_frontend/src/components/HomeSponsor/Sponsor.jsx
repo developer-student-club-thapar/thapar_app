@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     padding: '10px 20px',
     marginRight: '30px',
-    marginTop: '30px',
+    // marginTop: '30px',
     width: '100%',
   },
   headingText: {
@@ -32,16 +32,17 @@ const TimeTable = () => {
             <p className={classes.headingText}>Sponsored</p>
           </Grid>
         </Grid>
-        <div style={{ padding: '10px 50px' }}>
-          <img
-            style={{
-              borderRadius: '10px',
-              height: '100%',
-              width: '100%',
-            }}
-            src={sponsor}
-          />
-        </div>
+        {/* <div style={{ padding: '10px 50px' }}> */}
+        <img
+          style={{
+            borderRadius: '10px',
+            height: '100%',
+            width: '100%',
+            objectFit: 'contain',
+          }}
+          src={sponsor}
+        />
+        {/* </div> */}
       </Paper>
     </>
   );
