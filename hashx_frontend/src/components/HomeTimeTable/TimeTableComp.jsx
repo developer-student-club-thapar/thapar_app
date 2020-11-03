@@ -17,12 +17,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '15px',
     padding: '20px 10px',
   },
-  lastGrid: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+  tableText: {
+    fontSize: '16px',
   },
+  tableItemFlex: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  zoomIcon: {},
 }));
 
 const TimeTable = () => {
@@ -32,24 +35,28 @@ const TimeTable = () => {
       <Paper elevation={3} className={classes.paperGrid}>
         <Grid container justify="space-between" alignItems="center" spacing={2}>
           <Grid item xs={2}>
-            <p style={{ fontSize: '13px' }}>8:00-8:40</p>
+            <span className={classes.tableText}>8:00-8:40</span>
           </Grid>
           <Grid item xs={3}>
-            <p>UCS301</p>
+            <span className={classes.tableText}>UCS301</span>
           </Grid>
-          <Grid item xs={1}>
-            <p>L</p>
+          <Grid item xs={2}>
+            <span className={classes.tableText}>L</span>
           </Grid>
-          <Grid item xs={2} className={classes.lastGrid}>
-            <p>Zoom</p>
-            <div style={{ position: 'relative', top: '-6px', left: '4px' }}>
-              <img src={open} />
+          <Grid item xs={2}>
+            <div className={classes.tableItemFlex}>
+              <div className={classes.tableText}>Zoom&nbsp;</div>
+              <div>
+                <img src={open} />
+              </div>
             </div>
           </Grid>
-          <Grid item xs={3} className={classes.lastGrid}>
-            <p>Live</p>
-            <div style={{ position: 'relative', top: '-4px' }}>
-              <img src={live} />
+          <Grid item xs={3}>
+            <div className={classes.tableItemFlex}>
+              <div className={classes.tableText}>Live&nbsp;</div>
+              <div>
+                <img src={live} />
+              </div>
             </div>
           </Grid>
         </Grid>

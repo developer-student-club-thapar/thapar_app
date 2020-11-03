@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    paddingTop: '15px',
+    padding: '15px',
     marginBottom: '15px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '80%',
+    justifyContent: 'space-between',
+    width: 'fit-content',
     [theme.breakpoints.down('sm')]: {
       paddingTop: '5px',
       paddingRight: '15px',
@@ -44,7 +44,9 @@ const useStyles = makeStyles((theme) => ({
   },
   headingText: {
     fontSize: '24px',
-    fontWeight: 'bold',
+    letterSpacing: '1px',
+    lineHeight: '36px',
+    fontWeight: '900',
   },
   tableHeader: {
     display: 'grid',
@@ -54,6 +56,22 @@ const useStyles = makeStyles((theme) => ({
       position: 'relative',
       top: '30px',
     },
+  },
+  tableHeading: {
+    fontWeight: 'bolder',
+    color: '#000000',
+    fontSize: '18px',
+  },
+  seemoreText: {
+    fontWeight: 900,
+    fontSize: '20px',
+  },
+  seemoreContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '30px',
   },
 }));
 
@@ -75,10 +93,10 @@ const TimeTable = () => {
       <Grid container spacing={4}>
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.headingContainer}>
-            <p className={classes.headingText}>Classes Today</p>
-            <Grid item className={classes.arrowContainer}>
+            <div className={classes.headingText}>Classes Today</div>
+            <div style={{ margin: 'auto' }}>
               <ArrowForwardIcon />
-            </Grid>
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">
@@ -94,11 +112,11 @@ const TimeTable = () => {
             padding: '40px 10px',
           }}
         >
-          <p style={{ fontWeight: 'bold' }}>Time</p>
-          <p style={{ fontWeight: 'bold' }}>Subject</p>
-          <p style={{ fontWeight: 'bold' }}>Type</p>
-          <p style={{ fontWeight: 'bold' }}>Venue</p>
-          <p style={{ fontWeight: 'bold' }}>Status</p>
+          <span className={classes.tableHeading}>Time</span>
+          <span className={classes.tableHeading}>Subject</span>
+          <span className={classes.tableHeading}>Type</span>
+          <span className={classes.tableHeading}>Venue</span>
+          <span className={classes.tableHeading}>Status</span>
         </div>
         <Flip top cascade>
           <Grid container justify="center" alignItems="center" spacing={3}>
@@ -108,17 +126,11 @@ const TimeTable = () => {
             <TimeTableComponent />
           </Grid>
         </Flip>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '10px',
-          }}
-        >
-          <p>SEE MORE</p>
-          <ExpandMoreIcon />
+        <div className={classes.seemoreContainer}>
+          <div className={classes.seemoreText}>See More</div>
+          <div>
+            <ExpandMoreIcon />
+          </div>
         </div>
       </Paper>
     </>

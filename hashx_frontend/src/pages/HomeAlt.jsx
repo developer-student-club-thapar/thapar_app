@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   container: {
+    padding: 30,
     [theme.breakpoints.down('md')]: {
       marginTop: '0px',
     },
@@ -65,7 +66,8 @@ const Home = () => {
   return (
     <>
       <CssBaseline />
-      <Container fixed className={classes.container}>
+      {/* <Container fixed className={classes.container}> */}
+      <div className={classes.container}>
         <br />
         <br />
         <h1 className={classes.introductoryText}>
@@ -76,10 +78,10 @@ const Home = () => {
         </h1>
         <br />
         <Grid container spacing={4}>
-          <Grid item xs={12} lg={6} xl={6}>
+          <Grid item xs={12} lg={3} xl={5}>
             <TimeTable />
           </Grid>
-          <Grid container item xs={12} lg={6} xl={6}>
+          <Grid container item xs={12} lg={6} xl={7}>
             <Grid item xs={12} md={9}>
               <AnnouncementCard />
             </Grid>
@@ -107,7 +109,8 @@ const Home = () => {
             <Events />
           </Grid>
         </Grid>
-      </Container>
+        {/* </Container> */}
+      </div>
     </>
   );
 };
