@@ -4,6 +4,7 @@ import { Grid, Paper, makeStyles } from '@material-ui/core';
 import { useQuery } from '@apollo/client';
 import { ALL_COURSES } from './Queries';
 import { getBranchId } from '../../graphql/UserData';
+import Error from '../Error/Error';
 
 const useStyles = makeStyles(() => ({
   papergrid: {
@@ -25,8 +26,12 @@ const CourseGrid = () => {
   if (loading) {
     return <div>{loading}</div>;
   }
-  if (error) {
-    return <div>{error}</div>;
+  if (
+    error ||
+    data.branch.course.edges === undefined ||
+    data.branch.course.edges === null
+  ) {
+    return <Error />;
   }
 
   console.log(data);
@@ -35,11 +40,14 @@ const CourseGrid = () => {
     <>
       <Paper elevation={3} className={styles.papergrid}>
         <Grid container spacing={2} className={styles.coursesgrid}>
-          {data &&
+          {data && data.branch.course.edges.length > 0 ? (
             data.branch.course.edges.map((course, i) => {
               const { name, code, id } = course.node;
               return <CourseBox name={name} color="#fdcd55" id={id} key={i} />;
-            })}
+            })
+          ) : (
+            <h3 style={{ fontWeight: 'bolder' }}>No Courses Found</h3>
+          )}
         </Grid>
       </Paper>
     </>

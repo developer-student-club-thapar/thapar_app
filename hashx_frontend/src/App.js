@@ -8,14 +8,45 @@ import { ApolloClient, ApolloProvider } from '@apollo/client';
 import { getApiUrl } from './util/url';
 import { cache } from './graphql/Cache.js';
 import { getAccessToken } from './util/token';
+import { createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
-
-  request: (operation) => {},
-  cache: cache,
 });
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('accessToken');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `JWT ${token}` : "",
+    }
+  }
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: cache
+});
+
+// const client = new ApolloClient({
+//   uri: 'https://tietdev.vexio.in/graphql/',
+//   credentials: 'include',
+
+//   request: (operation) => {
+//     const accessToken = getAccessToken();
+//     operation.setContext({
+//       headers: {
+//         authorization: accessToken ? `JWT ${accessToken}` : '',
+//       },
+//     });
+//   },
+//   cache: cache,
+// });
 
 // const requestLink = new ApolloLink(
 //   (operation, forward) =>

@@ -5,6 +5,7 @@ import Document from '../Document/Document';
 import SidePanel from '../SidePanel/SidePanel';
 import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
+import Error from '../Error/Error';
 
 const useStyles = makeStyles(() => ({
   headerText: {
@@ -26,7 +27,12 @@ const ForumDetail = () => {
   const classes = useStyles();
 
   if (loading) return <div>Loading..</div>;
-  if (error) return <div>error..</div>;
+  if (
+    error ||
+    data.allQuestions.edges[0] === undefined ||
+    data.allQuestions.edges[0] === null
+  )
+    return <Error />;
   console.log(data);
   const { file } = data.allQuestions.edges[0].node;
   console.log(file);

@@ -81,7 +81,7 @@ const Sidebar = () => {
   const list = [
     {
       mainText: 'Home',
-      path: '/dashboard/home',
+      path: '/dashboard',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
@@ -91,7 +91,7 @@ const Sidebar = () => {
     },
     {
       mainText: 'TimeTable',
-      path: '/dashboard/timetable',
+      path: '/timetable',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
