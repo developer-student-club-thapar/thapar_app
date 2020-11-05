@@ -66,7 +66,6 @@ const Home = () => {
   return (
     <>
       <CssBaseline />
-      {/* <Container fixed className={classes.container}> */}
       <div className={classes.container}>
         <br />
         <br />
@@ -93,17 +92,18 @@ const Home = () => {
         <br />
         <br />
         <Grid container spacing={4}>
-          <Grid container item xs={12} lg={6} xl={5} spacing={4}>
-            <Grid item xl={6}>
-              <Sponsor />
+          <Grid container item xl={5} direction="column">
+            <Grid container item xs={12} lg={12} xl={12} spacing={4}>
+              <Grid item xl={6}>
+                <Sponsor />
+              </Grid>
+              <Grid item xl={6}>
+                <MessMenu />
+              </Grid>
             </Grid>
-            <Grid item xl={6}>
-              <MessMenu />
-            </Grid>
-
-            {/* <EventsList /> */}
+            <EventsList />
           </Grid>
-          <Grid container item xs={12} lg={6}>
+          <Grid item xs={12} lg={6}>
             <CoursesCard />
           </Grid>
         </Grid>
@@ -114,7 +114,6 @@ const Home = () => {
             <Events />
           </Grid>
         </Grid>
-        {/* </Container> */}
       </div>
     </>
   );

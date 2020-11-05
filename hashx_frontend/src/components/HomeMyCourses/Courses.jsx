@@ -26,11 +26,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    paddingTop: '15px',
+    padding: '15px',
+    marginBottom: '15px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '70%',
+    justifyContent: 'space-between',
+    width: 'fit-content',
   },
   headingText: {
     fontSize: '24px',
@@ -46,6 +47,22 @@ const useStyles = makeStyles((theme) => ({
   },
   mainHeader: {
     marginBottom: '20px',
+  },
+  subjects: {
+    color: 'white',
+    fontWeight: '900',
+    fontSize: '20px',
+  },
+  seemoreText: {
+    fontWeight: 900,
+    fontSize: '20px',
+  },
+  seemoreContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '10px',
   },
 }));
 
@@ -71,28 +88,22 @@ const TimeTable = () => {
   ];
   return (
     <>
-      <Grid container justify="space-between" spacing={4}>
-        <Grid item xs={8} className={classes.mainHeader}>
+      <Grid container justify="space-between" spacing={6}>
+        <Grid item xs={6} className={classes.mainHeader}>
           <Paper elevation={3} className={classes.headingContainer}>
-            <p className={classes.headingText}>My Courses</p>
-            <ArrowForwardIcon />
+            <div className={classes.headingText}>My Courses&nbsp;&nbsp;</div>
+            <div style={{ margin: 'auto' }}>
+              <ArrowForwardIcon />
+            </div>
           </Paper>
         </Grid>
-        <Grid item xs={2} container justify="flex-end">
-          <img
-            src={lightning}
-            alt=" "
-            style={{
-              position: 'relative',
-              left: '-40px',
-              top: '-20px',
-            }}
-          />
+        <Grid item xs={2} style={{ marginTop: 'auto', marginBottom: 'auto' }}>
+          <img src={lightning} alt=" " />
         </Grid>
       </Grid>
       <Paper elevation={3} className={classes.paperGrid}>
         <Flip top cascade>
-          <Grid container spacing={3} className={classes.mainContainer}>
+          <Grid container spacing={4} className={classes.mainContainer}>
             {data.map((ele, index) => {
               return (
                 <Grid
@@ -102,24 +113,18 @@ const TimeTable = () => {
                   style={{ backgroundColor: ele.color }}
                   className={classes.coursesCard}
                 >
-                  <p style={{ color: 'white', fontWeight: 'bold' }}>
-                    {ele.subject}
-                  </p>
+                  <p className={classes.subjects}>{ele.subject}</p>
                 </Grid>
               );
             })}
           </Grid>
         </Flip>
-        <Grid container item xs={12} justify="center" alignItems="center">
-          <p>See More</p>
-          <ExpandMoreIcon
-            style={{
-              position: 'relative',
-              top: '-5px',
-              marginLeft: '10px',
-            }}
-          />
-        </Grid>
+        <div className={classes.seemoreContainer}>
+          <div className={classes.seemoreText}>See More</div>
+          <div>
+            <ExpandMoreIcon />
+          </div>
+        </div>
       </Paper>
     </>
   );

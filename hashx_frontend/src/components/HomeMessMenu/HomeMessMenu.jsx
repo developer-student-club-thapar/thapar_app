@@ -82,13 +82,7 @@ const MessMenu = () => {
   return (
     <>
       <Paper elevation={3} className={classes.paperGrid}>
-        <Grid
-          container
-          alignItems="center"
-          justify="space-around"
-          spacing={3}
-          style={{ paddingTop: 10 }}
-        >
+        <Grid container alignItems="center" justify="space-around" spacing={3}>
           <Grid item xs={8}>
             <h1 className={classes.title}>Mess Menu</h1>
           </Grid>
@@ -96,35 +90,33 @@ const MessMenu = () => {
             <img src={lightning} alt=" " />
           </Grid>
         </Grid>
-        <Fade bottom cascade delay={600}>
-          <Grid container spacing={6} style={{ padding: 10 }}>
-            {menu.map((item, index) => (
-              <Paper
-                elevation={0}
-                className={classes.paperMenu}
-                style={{
-                  backgroundColor: item.backgroundColor,
-                }}
-                key={index}
-              >
-                <Grid item xs={12}>
-                  <h3
-                    className={classes.foodHeader}
-                    style={{ color: item.fontColor }}
-                  >
-                    {item.type}
-                  </h3>
-                  <p
-                    className={classes.foodItems}
-                    style={{ color: item.fontColor }}
-                  >
-                    {item.foodItems}
-                  </p>
-                </Grid>
-              </Paper>
-            ))}
-          </Grid>
-        </Fade>
+        <Grid container spacing={8} style={{ padding: 10 }}>
+          {menu.map((item, index) => (
+            <Paper
+              elevation={0}
+              className={classes.paperMenu}
+              style={{
+                backgroundColor: item.backgroundColor,
+              }}
+              key={index}
+            >
+              <Grid item xs={12}>
+                <h3
+                  className={classes.foodHeader}
+                  style={{ color: item.fontColor }}
+                >
+                  {item.type}
+                </h3>
+                <p
+                  className={classes.foodItems}
+                  style={{ color: item.fontColor }}
+                >
+                  {item.foodItems}
+                </p>
+              </Grid>
+            </Paper>
+          ))}
+        </Grid>
       </Paper>
     </>
   );
