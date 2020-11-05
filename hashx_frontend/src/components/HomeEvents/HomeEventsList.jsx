@@ -37,11 +37,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    paddingTop: '15px',
+    padding: '15px',
     marginBottom: '15px',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
+    width: 'fit-content',
     [theme.breakpoints.down('sm')]: {
       padding: '5px 15px',
     },
@@ -62,6 +63,21 @@ const useStyles = makeStyles((theme) => ({
       top: '30px',
     },
   },
+  eventHeading: {
+    fontSize: '20px',
+    fontWeight: '900',
+  },
+  seemoreText: {
+    fontWeight: 900,
+    fontSize: '20px',
+  },
+  seemoreContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '10px',
+  },
 }));
 
 const LargeComponent = ({ color }) => {
@@ -74,7 +90,7 @@ const LargeComponent = ({ color }) => {
       className={classes.eventsCard}
     >
       <div style={{ padding: '20px 20px', lineHeight: '10px' }}>
-        <p style={{ fontSize: '20px', fontWeight: 'bold' }}>DSC Event</p>
+        <p className={classes.eventHeading}>DSC Event</p>
         <div style={{ lineHeight: '3px' }}>
           <p style={{ fontSize: '10px' }}>HacktoberFest</p>
           <p style={{ fontSize: '10px' }}>3:00 PM</p>
@@ -96,10 +112,10 @@ const TimeTable = () => {
       >
         <Grid item xs={8} className={classes.mainHeader}>
           <Paper elevation={3} className={classes.headingContainer}>
-            <p className={classes.headingText}>Events Today</p>
-            <Grid item className={classes.arrowContainer}>
+            <div className={classes.headingText}>Events Today&nbsp;&nbsp;</div>
+            <div style={{ margin: 'auto' }}>
               <ArrowForwardIcon />
-            </Grid>
+            </div>
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">
@@ -115,14 +131,19 @@ const TimeTable = () => {
         </Grid>
       </Grid>
       <Paper elevation={3} className={classes.paperGrid}>
-        <Flip top cascade>
-          <Grid container spacing={3}>
-            <LargeComponent color={'#9999F1'} />
-            <LargeComponent color={'#F35555'} />
-            <LargeComponent color={'#F35555'} />
-            <LargeComponent color={'#A12828'} />
-          </Grid>
-        </Flip>
+        <Grid container spacing={3}>
+          <LargeComponent color={'#9999F1'} />
+          <LargeComponent color={'#F35555'} />
+          <LargeComponent color={'#F35555'} />
+          <LargeComponent color={'#A12828'} />
+        </Grid>
+
+        <div className={classes.seemoreContainer}>
+          <div className={classes.seemoreText}>See More</div>
+          <div>
+            <ExpandMoreIcon />
+          </div>
+        </div>
       </Paper>
     </>
   );

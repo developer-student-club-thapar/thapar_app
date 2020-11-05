@@ -13,6 +13,7 @@ import Sponsor from '../components/HomeSponsor/Sponsor';
 // import CoursesCard from '../components/CoursesCard/CoursesCard';
 import { useQuery, gql } from '@apollo/client';
 import { userDataVar } from '../graphql/Cache';
+import SponsorBig from '../components/HomeSponsor/SponsorBig';
 
 const FIRSTNAME = gql`
   query GetFirstName {
@@ -101,19 +102,28 @@ const Home = () => {
                 <MessMenu />
               </Grid>
             </Grid>
-            <EventsList />
+            <Grid item xs={12} lg={12} xl={12} spacing={4}>
+              <EventsList />
+            </Grid>
           </Grid>
           <Grid item xs={12} lg={6}>
-            <CoursesCard />
+            <Grid container spacing={2} direction="column">
+              <Grid item xs={12}>
+                <CoursesCard />
+              </Grid>
+              <Grid item xs={12}>
+                <SponsorBig />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
         <br />
         <br />
-        <Grid container spacing={4} ref={eventsRef}>
-          <Grid item xs={12} lg={12} xl={12}>
+        {/* <Grid container spacing={4} ref={eventsRef}>
+          <Grid item xs={12} lg={12} xl={11}>
             <Events />
           </Grid>
-        </Grid>
+        </Grid> */}
       </div>
     </>
   );

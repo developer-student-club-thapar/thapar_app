@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const TimeTable = () => {
+const Sponsor = () => {
   const classes = useStyles();
   return (
     <>
@@ -57,4 +57,4 @@ const TimeTable = () => {
   );
 };
 
-export default TimeTable;
+export default Sponsor;
