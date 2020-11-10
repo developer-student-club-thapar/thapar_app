@@ -119,8 +119,7 @@ GRAPHQL_JWT = {
 AUTHENTICATION_BACKENDS = [
     # Caution Axes Backedn should be the first one
     # because it should process every login request via any system
-    # "axes.backends.AxesBackend",
-    # Insert New Auth if adding below this point
+
     "django.contrib.auth.backends.ModelBackend",
     "graphql_jwt.backends.JSONWebTokenBackend",
     "social_core.backends.google.GoogleOAuth2",
