@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
-import { Container, CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Events from '../components/HomeEvents/HomeEvents';
 import MessMenu from '../components/HomeMessMenu/HomeMessMenu';
 import TimeTable from '../components/HomeTimeTable/HomeTimeTable';
 import CoursesCard from '../components/HomeMyCourses/Courses';
@@ -10,9 +9,7 @@ import AnnouncementCard from '../components/HomeAnnouncements/AnnouncementBox';
 import kid from '../assets/Home/kid.svg';
 import EventsList from '../components/HomeEvents/HomeEventsList';
 import Sponsor from '../components/HomeSponsor/Sponsor';
-// import CoursesCard from '../components/CoursesCard/CoursesCard';
 import { useQuery, gql } from '@apollo/client';
-import { userDataVar } from '../graphql/Cache';
 import SponsorBig from '../components/HomeSponsor/SponsorBig';
 
 const FIRSTNAME = gql`
@@ -36,11 +33,15 @@ const useStyles = makeStyles((theme) => ({
     padding: 30,
     [theme.breakpoints.down('md')]: {
       marginTop: '0px',
+      padding: '0.5rem',
     },
   },
   introductoryText: {
     fontSize: '45px',
     fontWeight: 'bolder',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '2rem',
+    },
   },
   imageContainer: {
     padding: '10px',
@@ -54,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
     width: '150px',
     position: 'relative',
     top: '160px',
+  },
+  messmenuContainer: {
+    [theme.breakpoints.only('xs')]: {
+      maxWidth: '100vw',
+    },
   },
 }));
 
@@ -93,12 +99,20 @@ const Home = () => {
         <br />
         <br />
         <Grid container spacing={4}>
-          <Grid container item xl={5} direction="column">
-            <Grid container item xs={12} lg={12} xl={12} spacing={4}>
-              <Grid item xl={6}>
+          <Grid container item xs={12} xl={5} direction="column">
+            <Grid
+              container
+              item
+              xs={12}
+              lg={12}
+              xl={12}
+              spacing={4}
+              className={classes.messmenuContainer}
+            >
+              <Grid item xs={12} xl={6}>
                 <Sponsor />
               </Grid>
-              <Grid item xl={6}>
+              <Grid item xs={12} xl={6}>
                 <MessMenu />
               </Grid>
             </Grid>

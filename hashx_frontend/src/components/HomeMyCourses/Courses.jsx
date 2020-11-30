@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { secondaryColor, textColor } from '../../theme/theme';
-import lightning from '../../assets/Home/Announcements/lightning.svg';
+import lightning from '../../assets/lightning.svg';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import Flip from 'react-reveal/Flip';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { motion } from 'framer-motion';
+import { Grow } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   paperGrid: {
@@ -20,6 +21,11 @@ const useStyles = makeStyles((theme) => ({
   headingText: {
     fontSize: '24px',
     fontWeight: 'bold',
+    lineHeight: '36px',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '1.2rem',
+      letterSpacing: 0,
+    },
   },
   headingContainer: {
     borderRadius: '20px',
@@ -33,10 +39,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     width: 'fit-content',
   },
-  headingText: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
   coursesCard: {
     borderRadius: '17px',
     marginBottom: '10px',
@@ -46,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '10px 10px',
   },
   mainHeader: {
-    marginBottom: '20px',
+    marginBottom: '0',
   },
   subjects: {
     color: 'white',
@@ -63,6 +65,19 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '10px',
+  },
+  main: {
+    [theme.breakpoints.only('xs')]: {
+      justifyContent: 'stretch',
+    },
+  },
+  lightningIcon: {
+    height: 'auto',
+    width: '1.9rem',
+    objectFit: 'contain',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
 }));
 
@@ -88,8 +103,13 @@ const TimeTable = () => {
   ];
   return (
     <>
-      <Grid container justify="space-between" spacing={6}>
-        <Grid item xs={6} className={classes.mainHeader}>
+      <Grid
+        container
+        justify="space-between"
+        spacing={6}
+        className={classes.main}
+      >
+        <Grid item xs={8} lg={6} xl={6} className={classes.mainHeader}>
           <Paper elevation={3} className={classes.headingContainer}>
             <div className={classes.headingText}>My Courses&nbsp;&nbsp;</div>
             <div style={{ margin: 'auto' }}>
@@ -98,11 +118,16 @@ const TimeTable = () => {
           </Paper>
         </Grid>
         <Grid item xs={2} style={{ marginTop: 'auto', marginBottom: 'auto' }}>
-          <img src={lightning} alt=" " />
+          <motion.img
+            src={lightning}
+            alt=" "
+            className={classes.lightningIcon}
+            whileHover={{ rotate: 360 }}
+          />
         </Grid>
       </Grid>
-      <Paper elevation={3} className={classes.paperGrid}>
-        <Flip top cascade>
+      <Grow in timeout={4000}>
+        <Paper elevation={3} className={classes.paperGrid}>
           <Grid container spacing={4} className={classes.mainContainer}>
             {data.map((ele, index) => {
               return (
@@ -118,14 +143,15 @@ const TimeTable = () => {
               );
             })}
           </Grid>
-        </Flip>
-        <div className={classes.seemoreContainer}>
-          <div className={classes.seemoreText}>See More</div>
-          <div>
-            <ExpandMoreIcon />
+
+          <div className={classes.seemoreContainer}>
+            <div className={classes.seemoreText}>See More</div>
+            <div>
+              <ExpandMoreIcon />
+            </div>
           </div>
-        </div>
-      </Paper>
+        </Paper>
+      </Grow>
     </>
   );
 };

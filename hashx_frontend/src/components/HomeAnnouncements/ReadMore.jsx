@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Divider, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { motion } from 'framer-motion';

@@ -1,9 +1,8 @@
 import React from 'react';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import image from '../../assets/Home/Announcements/image.svg';
 import ReadMore from './ReadMore';
-import { secondaryColor, textColor } from '../../theme/theme';
 
 const useStyles = makeStyles(() => ({
   firstCont: {

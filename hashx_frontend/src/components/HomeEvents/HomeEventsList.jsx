@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { secondaryColor, textColor } from '../../theme/theme';
-import lightning from '../../assets/Home/Announcements/lightning.svg';
+import lightning from '../../assets/lightning.svg';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import Flip from 'react-reveal/Flip';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { motion } from 'framer-motion';
+import { Grow } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   all: {
@@ -21,15 +22,15 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '30px',
     marginTop: '5px',
     width: '650px',
-  },
-  headingText: {
-    fontSize: '24px',
-    fontWeight: 'bold',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      height: 'fit-content',
+    },
   },
   eventsCard: {
     borderRadius: '17px',
     marginBottom: '10px',
-    height: '130px',
+    height: '120px',
     width: '400px',
   },
   headingContainer: {
@@ -50,12 +51,17 @@ const useStyles = makeStyles((theme) => ({
   headingText: {
     fontSize: '24px',
     fontWeight: 'bold',
+    lineHeight: '36px',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '1.2rem',
+      letterSpacing: 0,
+    },
   },
   mainContainer: {
     padding: 10,
   },
   mainHeader: {
-    marginBottom: '20px',
+    marginBottom: '0',
   },
   arrowContainer: {
     [theme.breakpoints.down('sm')]: {
@@ -77,6 +83,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '10px',
+  },
+  lightningIcon: {
+    height: 'auto',
+    width: '1.9rem',
+    objectFit: 'contain',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
 }));
 
@@ -119,32 +133,31 @@ const TimeTable = () => {
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">
-          <img
+          <motion.img
             src={lightning}
             alt=" "
-            style={{
-              position: 'relative',
-              left: '-35px',
-              top: '-10px',
-            }}
+            className={classes.lightningIcon}
+            whileHover={{ rotate: 360 }}
           />
         </Grid>
       </Grid>
-      <Paper elevation={3} className={classes.paperGrid}>
-        <Grid container spacing={3}>
-          <LargeComponent color={'#9999F1'} />
-          <LargeComponent color={'#F35555'} />
-          <LargeComponent color={'#F35555'} />
-          <LargeComponent color={'#A12828'} />
-        </Grid>
+      <Grow in timeout={3500}>
+        <Paper elevation={3} className={classes.paperGrid}>
+          <Grid container spacing={3}>
+            <LargeComponent color={'#9999F1'} />
+            <LargeComponent color={'#F35555'} />
+            <LargeComponent color={'#F35555'} />
+            <LargeComponent color={'#A12828'} />
+          </Grid>
 
-        <div className={classes.seemoreContainer}>
-          <div className={classes.seemoreText}>See More</div>
-          <div>
-            <ExpandMoreIcon />
+          <div className={classes.seemoreContainer}>
+            <div className={classes.seemoreText}>See More</div>
+            <div>
+              <ExpandMoreIcon />
+            </div>
           </div>
-        </div>
-      </Paper>
+        </Paper>
+      </Grow>
     </>
   );
 };

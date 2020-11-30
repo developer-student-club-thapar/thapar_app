@@ -1,20 +1,23 @@
 import React from 'react';
-import { Grid, Divider, Paper } from '@material-ui/core';
+import { Grid, Paper, Grow } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { secondaryColor, textColor } from '../../theme/theme';
 import Announcement from './Announcement';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import lightning from '../../assets/Home/Announcements/lightning.svg';
-import { Flip } from 'react-reveal';
+import lightning from '../../assets/lightning.svg';
+import { motion } from 'framer-motion';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   papergrid: {
     borderRadius: '20px',
-    // textAlign: 'center',
     height: '500px',
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    [theme.breakpoints.only('xs')]: {
+      height: 'fit-content',
+      padding: '0 0 1rem 0',
+    },
   },
   headingContainer: {
     borderRadius: '20px',
@@ -27,12 +30,19 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: 'fit-content',
+    [theme.breakpoints.down('sm')]: {
+      padding: 'auto',
+    },
   },
   headingText: {
     fontSize: '24px',
     letterSpacing: '1px',
     lineHeight: '36px',
     fontWeight: '900',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '1.2rem',
+      letterSpacing: 0,
+    },
   },
   team: {
     borderRadius: '40px',
@@ -46,6 +56,14 @@ const useStyles = makeStyles(() => ({
   title: {
     fontSize: '20px',
     display: 'inline-block',
+  },
+  lightningIcon: {
+    height: 'auto',
+    width: '1.9rem',
+    objectFit: 'contain',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
 }));
 
@@ -63,19 +81,24 @@ const CoursesCard = (props) => {
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">
-          <img src={lightning} alt=" " />
+          <motion.img
+            src={lightning}
+            alt=" "
+            className={classes.lightningIcon}
+            whileHover={{ rotate: 360 }}
+          />
         </Grid>
       </Grid>
-      <Paper elevation={3} className={classes.papergrid}>
-        <Flip top cascade>
+      <Grow in timeout={2000}>
+        <Paper elevation={3} className={classes.papergrid}>
           <Grid container spacing={0} className={classes.body}>
             <Announcement />
             <Announcement />
             <Announcement />
             <Announcement />
           </Grid>
-        </Flip>
-      </Paper>
+        </Paper>
+      </Grow>
     </>
   );
 };

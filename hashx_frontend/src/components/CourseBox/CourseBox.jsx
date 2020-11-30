@@ -46,7 +46,7 @@ const RandomColor = () => {
 };
 
 const CourseBox = (props) => {
-  const { name, id, code, color } = props;
+  const { name, id, code } = props;
   const styles = useStyles();
   const history = useHistory();
   return (
