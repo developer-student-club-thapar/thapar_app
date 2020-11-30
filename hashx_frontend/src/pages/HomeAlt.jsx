@@ -84,10 +84,10 @@ const Home = () => {
         </h1>
         <br />
         <Grid container spacing={4}>
-          <Grid item xs={12} lg={3} xl={5}>
+          <Grid item xs={12} lg={5} xl={5}>
             <TimeTable />
           </Grid>
-          <Grid container item xs={12} lg={6} xl={7}>
+          <Grid container item xs={12} lg={7} xl={7}>
             <Grid item xs={12} md={9}>
               <AnnouncementCard />
             </Grid>
@@ -99,7 +99,7 @@ const Home = () => {
         <br />
         <br />
         <Grid container spacing={4}>
-          <Grid container item xs={12} xl={5} direction="column">
+          <Grid container item xs={12} lg={5} xl={5} direction="column">
             <Grid
               container
               item
@@ -109,10 +109,10 @@ const Home = () => {
               spacing={4}
               className={classes.messmenuContainer}
             >
-              <Grid item xs={12} xl={6}>
+              <Grid item xs={12} lg={6} xl={6}>
                 <Sponsor />
               </Grid>
-              <Grid item xs={12} xl={6}>
+              <Grid item xs={12} lg={6} xl={6}>
                 <MessMenu />
               </Grid>
             </Grid>
@@ -120,7 +120,7 @@ const Home = () => {
               <EventsList />
             </Grid>
           </Grid>
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={12} lg={6} xl={6}>
             <Grid container spacing={2} direction="column">
               <Grid item xs={12}>
                 <CoursesCard />

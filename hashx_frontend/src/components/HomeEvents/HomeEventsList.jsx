@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '20px 20px',
     marginRight: '30px',
     marginTop: '5px',
-    width: '650px',
+    height: 'fit-content',
     [theme.breakpoints.down('md')]: {
       width: '100%',
       height: 'fit-content',
@@ -132,7 +132,7 @@ const TimeTable = () => {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={2} container justify="flex-end">
+        <Grid item xs={2} container>
           <motion.img
             src={lightning}
             alt=" "
