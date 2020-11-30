@@ -3,8 +3,6 @@ import { Box, Paper, Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/client';
 import { COURSE_QUERY } from '../components/CourseDetails/Queries';
-import { Root } from '@mui-treasury/layout';
-import { gql } from '@apollo/client';
 import { useHistory, useParams } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import Books from '../components/CourseDetails/Books';
@@ -13,14 +11,7 @@ import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import { makeStyles } from '@material-ui/core/styles';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
 import { secondaryColor } from '../theme/theme';
-import {
-  DrawerSidebar,
-  useStyles,
-  SidebarContent,
-  scheme,
-  Content,
-} from '../components/Global/Global';
-import Sidebar from '../components/Sidebar/Sidebar';
+import { useStyles } from '../components/Global/Global';
 import backgroundText from '../assets/cs.svg';
 import Error from '../components/Error/Error';
 import LayoutWrapper from '../components/Layout/Layout';
