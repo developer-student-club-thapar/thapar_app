@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   paperGrid: {
     borderRadius: '20px',
     textAlign: 'center',
-    height: '400px',
+    height: 'fit-content',
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',

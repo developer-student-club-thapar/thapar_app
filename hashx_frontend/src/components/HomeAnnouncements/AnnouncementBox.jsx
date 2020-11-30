@@ -10,7 +10,8 @@ import { motion } from 'framer-motion';
 const useStyles = makeStyles((theme) => ({
   papergrid: {
     borderRadius: '20px',
-    height: '500px',
+    height: 'fit-content',
+    padding: '0 0 2rem 0',
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
