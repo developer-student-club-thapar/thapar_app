@@ -119,10 +119,9 @@ GRAPHQL_JWT = {
 AUTHENTICATION_BACKENDS = [
     # Caution Axes Backedn should be the first one
     # because it should process every login request via any system
-    # "axes.backends.AxesBackend",
-    # Insert New Auth if adding below this point
-    "graphql_jwt.backends.JSONWebTokenBackend",
+
     "django.contrib.auth.backends.ModelBackend",
+    "graphql_jwt.backends.JSONWebTokenBackend",
     "social_core.backends.google.GoogleOAuth2",
 ]
 
@@ -236,7 +235,6 @@ CORS_ORIGIN_WHITELIST = [
 
 JWT_COOKIE_SECURE = True  # true for https 
 JWT_COOKIE_SAMESITE = 'None'
-SESSION_COOKIE_SAMESITE = 'None'
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     '*.vexio.in',
