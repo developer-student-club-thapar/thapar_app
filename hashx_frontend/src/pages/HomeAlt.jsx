@@ -99,7 +99,7 @@ const Home = () => {
         <br />
         <br />
         <Grid container spacing={4}>
-          <Grid container item xs={12} lg={5} xl={5} direction="column">
+          <Grid container item xs={12} lg={5} xl={5} direction="row">
             <Grid
               container
               item
