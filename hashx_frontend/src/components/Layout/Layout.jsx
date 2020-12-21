@@ -8,16 +8,14 @@ import Layout, {
   Root,
   getHeader,
   getDrawerSidebar,
-  getSidebarTrigger,
   getSidebarContent,
   getContent,
 } from '@mui-treasury/layout';
-import { HeaderMockUp } from '@mui-treasury/mockup/layout';
 import Sidebar from '../Sidebar/Sidebar';
+import Nav from '../Nav/Nav';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
-const SidebarTrigger = getSidebarTrigger(styled);
 const SidebarContent = getSidebarContent(styled);
 
 const Content = getContent(styled);
@@ -72,6 +70,7 @@ const useStyles = makeStyles(() => ({
   },
   content: {
     backgroundColor: '#F0F0F3',
+    marginTop: '1rem',
   },
 }));
 
@@ -82,8 +81,7 @@ const LayoutWrapper = ({ children }) => {
       <CssBaseline />
       <Header className={styles.header}>
         <Toolbar>
-          <SidebarTrigger sidebarId="primarySidebar" />
-          <HeaderMockUp />
+          <Nav sidebarId="primarySidebar" />
         </Toolbar>
       </Header>
       <DrawerSidebar
