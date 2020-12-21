@@ -76,12 +76,12 @@ const Home = () => {
       <div className={classes.container}>
         <br />
         <br />
-        <h1 className={classes.introductoryText}>
+        {/* <h1 className={classes.introductoryText}>
           Hey{' '}
           <span style={{ color: '#898989' }}>
             {data.cachedUserData.firstName}
           </span>
-        </h1>
+        </h1> */}
         <br />
         <Grid container spacing={4}>
           <Grid item xs={12} lg={5} xl={5}>
