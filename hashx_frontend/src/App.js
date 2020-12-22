@@ -19,18 +19,20 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = localStorage.getItem('accessToken');
-  // return the headers to the context so httpLink can read them
+  // // return the headers to the context so httpLink can read them
+  // TODO Add https cookie from server side
   return {
     headers: {
       ...headers,
-      authorization: token ? `JWT ${token}` : "",
-    }
-  }
+      authorization: token ? `JWT ${token}` : '',
+    },
+  };
 });
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: cache
+  cache: cache,
+  credentials: 'include',
 });
 
 // const client = new ApolloClient({
