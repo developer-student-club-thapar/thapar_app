@@ -28,12 +28,12 @@ const date =
   (nowDate.getMonth() + 1) +
   '-' +
   nowDate.getFullYear();
-const DayHeaderCard = () => {
+const DayHeaderCard = ({ day }) => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
       <Typography component="span" className={classes.day}>
-        MONDAY
+        {day}
       </Typography>
       <Typography component="span" className={classes.date}>
         {date}

@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^7.1.2",
     "apollo-link-token-refresh": "^0.3.2",
     "axios": "^0.19.2",
+    "date-fns": "^2.16.1",
     "firebase": "^7.17.1",
     "framer-motion": "^1.11.0",
     "google-maps-react": "^2.0.6",

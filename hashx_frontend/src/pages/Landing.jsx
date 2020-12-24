@@ -120,7 +120,7 @@ const Landing = () => {
   const responseGoogle = (response) => {
     addGoogleToken(response.accessToken);
     console.log('success');
-    socialMutation();
+    socialMutation({ variables: { accessToken: response.accessToken } });
     console.log(response);
     if (socialLoading) {
       console.log(socialLoading);
