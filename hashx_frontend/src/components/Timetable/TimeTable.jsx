@@ -10,6 +10,7 @@ import SideTime from './SideTime';
 import { useQuery } from '@apollo/client';
 import { TIMETABLE_DAY } from './Queries';
 import LayoutWrapper from '../Layout/Layout';
+import Error from '../Error/Error';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,19 +19,19 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     padding: '20px',
     // backgroundColor: '#f4f1de',
-    height: '100%',
+    height: 'fit-content',
   },
 }));
 
 const Timetable = () => {
   const classes = useStyles();
-  // const { data, error, loading } = useQuery(TIMETABLE_DAY);
-  // if (loading) {
-  //   return <div>{loading}</div>;
-  // }
-  // if (error) {
-  //   return <div>{error}</div>;
-  // }
+  const { data, error, loading } = useQuery(TIMETABLE_DAY);
+  if (loading) {
+    return <LayoutWrapper>Loading...</LayoutWrapper>;
+  }
+  if (error || !data) {
+    return <Error />;
+  }
   return (
     <LayoutWrapper>
       <Grid className={classes.root}>
@@ -38,30 +39,51 @@ const Timetable = () => {
           <SideTime />
         </Grid>
         <Grid item direction="column">
-          <DayHeaderCard />
+          <DayHeaderCard day="MONDAY" />
           <Box class="main-1">
-            <ClassCard />
-            <ClassCard />
+            {data?.monday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
           </Box>
         </Grid>
         <Grid item direction="column">
-          <DayHeaderCard />
+          <DayHeaderCard day="TUESDAY" />
           <Box class="main-1">
-            <ClassCard />
-            <ClassCard />
+            {data?.tuesday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
           </Box>
         </Grid>
         <Grid item direction="column">
-          <DayHeaderCard />
+          <DayHeaderCard day="WEDNESDAY" />
           <Box class="main-1">
-            <ClassCard />
+            {data?.wednesday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
           </Box>
         </Grid>
         <Grid item direction="column">
-          <DayHeaderCard />
+          <DayHeaderCard day="THURSDAY" />
           <Box class="main-1">
-            <ClassCard />
-            <ClassCard />
+            {data?.thursday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
+          </Box>
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard day="FRIDAY" />
+          <Box class="main-1">
+            {data?.friday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
+          </Box>
+        </Grid>
+        <Grid item direction="column">
+          <DayHeaderCard day="SATURDAY" />
+          <Box class="main-1">
+            {data?.saturday?.edges?.map((item, index) => (
+              <ClassCard key={index} item={item} />
+            ))}
           </Box>
         </Grid>
       </Grid>

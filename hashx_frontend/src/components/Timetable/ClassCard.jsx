@@ -94,78 +94,85 @@ const LightTooltip = withStyles((theme) => ({
   },
 }))(Tooltip);
 
-const ClassCard = () => {
+const ClassCard = ({ item }) => {
   const [set, toggle] = useState(false);
   const classes = useStyles();
-  return (
-    <Card className={classes.root}>
-      <CardContent style={{ paddingBottom: '0px' }}>
-        <Box
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Typography variant="h6" component="span">
-            UCS-309
-          </Typography>
-          <Typography
-            component="span"
+  if (item) {
+    return (
+      <Card className={classes.root}>
+        <CardContent style={{ paddingBottom: '0px' }}>
+          <Box
             style={{
-              color: '#e63946',
-              fontSize: '12px',
-              fontWeight: 'bolder',
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
             }}
           >
-            <FiberManualRecordRoundedIcon fontSize="small" />
-            LIVE
+            <Typography variant="h6" component="span">
+              {item.node.course.code}
+            </Typography>
+            <Typography
+              component="span"
+              style={{
+                color: '#e63946',
+                fontSize: '12px',
+                fontWeight: 'bolder',
+              }}
+            >
+              <FiberManualRecordRoundedIcon fontSize="small" />
+              LIVE
+            </Typography>
+          </Box>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            {item.node.course.name}
           </Typography>
-        </Box>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          Data Structures and Algorithms
-        </Typography>
-        {/* tags */}
-        {/* <Box className={classes.tags}>
+          {/* tags */}
+          {/* <Box className={classes.tags}>
           <Chip label="Lab" />
           <Chip label="Tutorial" style={{ backgroundColor: '#e76f51' }} />
         </Box> */}
-      </CardContent>
-      <CardActions disableSpacing style={{ padding: '0px 0rem 0px 1rem' }}>
-        <Box className={classes.iconArea}>
-          <Typography
-            className={classes.iconText}
-            component="span"
-            color="textSecondary"
-          >
-            8:10-8:50(Monday)
-          </Typography>
-          <Box className={classes.iconLink}>
-            <IconButton
-              aria-label="add to favorites"
-              onClick={() => toggle(!set)}
+        </CardContent>
+        <CardActions disableSpacing style={{ padding: '0px 0rem 0px 1rem' }}>
+          <Box className={classes.iconArea}>
+            <Typography
+              className={classes.iconText}
+              component="span"
+              color="textSecondary"
             >
-              <StarBorderRoundedIcon />
-            </IconButton>
-            <LightTooltip
-              title="https://tiet.zoom.us/my/csed11"
-              placement="right"
-              interactive
-              TransitionComponent={Zoom}
-            >
-              <IconButton aria-label="Lecture Link">
-                <ZoomIcon />
+              {item.node.period.edges[0].node.startTime}-
+              {item.node.period.edges[0].node.endTime}
+            </Typography>
+            <Box className={classes.iconLink}>
+              <IconButton
+                aria-label="add to favorites"
+                onClick={() => toggle(!set)}
+              >
+                <StarBorderRoundedIcon />
               </IconButton>
-            </LightTooltip>
+              <LightTooltip
+                title={item.node.meetingURL}
+                placement="right"
+                interactive
+                TransitionComponent={Zoom}
+              >
+                <IconButton aria-label="Lecture Link">
+                  <ZoomIcon
+                    onClick={() => {
+                      window.open(`${item.node.meetingURL}`);
+                    }}
+                  />
+                </IconButton>
+              </LightTooltip>
+            </Box>
           </Box>
-        </Box>
-      </CardActions>
-    </Card>
-  );
+        </CardActions>
+      </Card>
+    );
+  } else return <div></div>;
 };
 
 export default ClassCard;
