@@ -80,3 +80,5 @@ if os.environ.get('GITHUB_WORKFLOW'):
             'PORT': '5432',
         }
     }
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
