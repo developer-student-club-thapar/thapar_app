@@ -1,10 +1,8 @@
 import React from 'react';
 import { Box, Paper, Hidden } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { COURSE_QUERY } from '../components/CourseDetails/Queries';
-import { Root } from '@mui-treasury/layout';
-import { gql } from 'apollo-boost';
 import { useHistory, useParams } from 'react-router-dom';
 import Tutorials from '../components/CourseDetails/Tutorials';
 import Books from '../components/CourseDetails/Books';
@@ -13,16 +11,12 @@ import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
 import { makeStyles } from '@material-ui/core/styles';
 import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
 import { secondaryColor } from '../theme/theme';
-import {
-  DrawerSidebar,
-  useStyles,
-  SidebarContent,
-  scheme,
-  Content,
-} from '../components/Global/Global';
-import Sidebar from '../components/Sidebar/Sidebar';
+import { useStyles } from '../components/Global/Global';
+import backgroundText from '../assets/cs.svg';
+import Error from '../components/Error/Error';
+import LayoutWrapper from '../components/Layout/Layout';
 
-const useClasses = makeStyles(() => ({
+const useClasses = makeStyles((theme) => ({
   box: {
     overflowX: 'hidden',
     overflowY: 'hidden',
@@ -43,12 +37,18 @@ const useClasses = makeStyles(() => ({
     '&:hover': {
       transform: 'scale(1.2)',
     },
+    [theme.breakpoints.only('xs')]: {
+      height: '45px',
+    },
   },
   breadCrumbsText: {
     color: '#747474',
     fontSize: 25,
     fontWeight: 'bolder',
     margin: '0 auto',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: 20,
+    },
   },
   heroPaper: {
     margin: 10,
@@ -68,6 +68,12 @@ const useClasses = makeStyles(() => ({
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     width: '90vw',
+    [theme.breakpoints.only('xs')]: {
+      width: '100%',
+      borderRadius: 0,
+      height: '110px',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+    },
   },
   listItemPrimary: {
     display: 'grid',
@@ -83,6 +89,9 @@ const useClasses = makeStyles(() => ({
       backgroundColor: '#F0F0F3',
       cursor: 'pointer',
     },
+    [theme.breakpoints.only('xs')]: {
+      height: '110px',
+    },
   },
   logoIcons: {
     height: '70px',
@@ -93,12 +102,20 @@ const useClasses = makeStyles(() => ({
     textAlign: 'center',
     display: 'grid',
     placeItems: 'center',
+    [theme.breakpoints.only('xs')]: {
+      height: '40px',
+      width: '40px',
+      borderRadius: 9,
+    },
   },
   listText: {
     fontSize: '17px',
     color: '#ffffff',
     '&:hover': {
       color: '#00293B',
+    },
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '0.8rem',
     },
   },
   listItemActive: {
@@ -129,6 +146,21 @@ const useClasses = makeStyles(() => ({
   },
   boxWrapper: {
     margin: 30,
+    [theme.breakpoints.only('xs')]: {
+      margin: 0,
+    },
+  },
+  paperlinkContainer: {
+    [theme.breakpoints.only('xs')]: {
+      flexDirection: 'column',
+    },
+  },
+  paperBackground: {
+    backgroundColor: `${secondaryColor}`,
+    [theme.breakpoints.up('lg')]: {
+      backgroundImage: `url(${backgroundText})`,
+      backgroundRepeat: 'no-repeat',
+    },
   },
 }));
 
@@ -144,31 +176,37 @@ const CourseDetail = (props) => {
       mainText: 'Tutorial',
       path: `/courses/${courseId}/tutorials`,
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Lab',
       path: '/courses',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/dashboard/timetable',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
       mainText: 'Courses',
       path: '/forum/forum-details',
       iconClassName: 'fas fa-book fa-2x',
+      iconClassNameMoblie: 'fas fa-book fa-lg',
     },
   ];
 
@@ -178,8 +216,8 @@ const CourseDetail = (props) => {
     },
   });
   if (loading) return <h4>Loading....</h4>;
-  if (error) {
-    console.log(error);
+  if (error || data.course === undefined || data.course === null) {
+    return <Error />;
   }
   console.log(data);
   const renderComponent = () => {
@@ -197,26 +235,18 @@ const CourseDetail = (props) => {
   };
   if (data) {
     return (
-      <Root scheme={scheme}>
-        {console.log(path, 'path')}
-        <DrawerSidebar
-          sidebarId="primarySidebar"
-          PaperProps={{ className: styles.sidebar }}
-        >
-          <SidebarContent>
-            <Sidebar />
-          </SidebarContent>
-        </DrawerSidebar>
-        <Content className={styles.content}>
-          <Grid container spacing={2} direction="column">
-            <Grid item xs={12} lg={12} xl={12}>
-              <Box
-                elevation={0}
-                style={{
-                  backgroundImage: `${secondaryColor}`,
-                }}
-              >
-                <Grid container justify="flex-start" style={{ padding: 30 }}>
+      <LayoutWrapper>
+        {' '}
+        <Grid container spacing={2} direction="column">
+          <Grid item xs={12} lg={12} xl={12}>
+            <Box
+              elevation={0}
+              style={{
+                backgroundImage: `${secondaryColor}`,
+              }}
+            >
+              <Grid container justify="flex-start" style={{ padding: 30 }}>
+                <Hidden mdDown>
                   <Grid item xs={3}>
                     <img
                       src={require('../assets/kid.svg')}
@@ -224,7 +254,9 @@ const CourseDetail = (props) => {
                       alt="kid"
                     />
                   </Grid>
-                  <Grid item xs={9}>
+                </Hidden>
+                <Grid item xs={12} lg={9}>
+                  <Paper elevation={0} className={classes.paperBackground}>
                     <Grid
                       container
                       direction="column"
@@ -250,7 +282,11 @@ const CourseDetail = (props) => {
                         </Paper>
                       </Grid>
                       <Grid item xs={12}>
-                        <Grid container spacing={3}>
+                        <Grid
+                          container
+                          spacing={3}
+                          className={classes.paperlinkContainer}
+                        >
                           <Grid item xs={7}>
                             <Paper
                               elevation={3}
@@ -286,48 +322,56 @@ const CourseDetail = (props) => {
                         </Grid>
                       </Grid>
                     </Grid>
-                  </Grid>
+                  </Paper>
                 </Grid>
-              </Box>
-            </Grid>
+              </Grid>
+            </Box>
+          </Grid>
 
-            <Grid item xs={12}>
-              <Box className={classes.boxWrapper}>
-                <Grid item xs={12}>
-                  <Grid item xs={12} className={classes.navigatioBar}>
-                    <Grid container>
-                      {list.map((item, index) => (
-                        <Grid
-                          item
-                          xs={2}
-                          className={classes.listItem}
-                          key={index}
-                          onClick={() => {
-                            history.push(`${item.path}`);
-                          }}
-                        >
-                          <Paper elevation={0} className={classes.logoIcons}>
+          <Grid item xs={12}>
+            <Box className={classes.boxWrapper}>
+              <Grid item xs={12}>
+                <Grid item xs={12} className={classes.navigatioBar}>
+                  <Grid container>
+                    {list.map((item, index) => (
+                      <Grid
+                        item
+                        xs={2}
+                        className={classes.listItem}
+                        key={index}
+                        onClick={() => {
+                          history.push(`${item.path}`);
+                        }}
+                      >
+                        <Paper elevation={0} className={classes.logoIcons}>
+                          <Hidden only="xs">
                             <i
                               className={item.iconClassName}
                               style={{ color: '#00293B' }}
                             />
-                          </Paper>
-                          <h2 className={classes.listText}>{item.mainText}</h2>
-                        </Grid>
-                      ))}
-                    </Grid>
+                          </Hidden>
+                          <Hidden smUp>
+                            <i
+                              className={item.iconClassNameMoblie}
+                              style={{ color: '#00293B' }}
+                            />
+                          </Hidden>
+                        </Paper>
+                        <h2 className={classes.listText}>{item.mainText}</h2>
+                      </Grid>
+                    ))}
                   </Grid>
                 </Grid>
-                <Grid container spacing={3}>
-                  <Grid item xs={12}>
-                    {renderComponent()}
-                  </Grid>
+              </Grid>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  {renderComponent()}
                 </Grid>
-              </Box>
-            </Grid>
+              </Grid>
+            </Box>
           </Grid>
-        </Content>
-      </Root>
+        </Grid>
+      </LayoutWrapper>
     );
   }
 };

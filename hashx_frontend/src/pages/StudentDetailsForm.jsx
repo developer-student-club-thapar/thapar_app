@@ -6,7 +6,7 @@ import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import NinjaAnimation from '../components/NinjaAnimation';
 import '../styles/StudentDetailsForm.css';
-import { useMutation, useLazyQuery } from '@apollo/react-hooks';
+import { useMutation, useLazyQuery } from '@apollo/client';
 import {
   SEND_STUDENT_DETAILS,
   GET_BRANCHES,

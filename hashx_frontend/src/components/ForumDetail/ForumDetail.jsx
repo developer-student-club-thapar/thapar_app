@@ -3,8 +3,9 @@ import { Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Document from '../Document/Document';
 import SidePanel from '../SidePanel/SidePanel';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
+import Error from '../Error/Error';
 
 const useStyles = makeStyles(() => ({
   headerText: {
@@ -20,13 +21,18 @@ const useStyles = makeStyles(() => ({
 const ForumDetail = () => {
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6Y2YwN2Y3NjktOTE1Ny00NjAyLTk4ODMtM2FkNjY0ZmMyZDNj',
+      file: 'RmlsZU5vZGU6MDAxMGVkODItNzE2Ny00MTQ5LTg2YTMtMTFhNWM0MjE0MGRk',
     },
   });
   const classes = useStyles();
 
   if (loading) return <div>Loading..</div>;
-  if (error) return <div>error..</div>;
+  if (
+    error ||
+    data.allQuestions.edges[0] === undefined ||
+    data.allQuestions.edges[0] === null
+  )
+    return <Error />;
   console.log(data);
   const { file } = data.allQuestions.edges[0].node;
   console.log(file);

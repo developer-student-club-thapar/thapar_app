@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import Deck from '../components/Landing/Deck';
 import { UserContext } from '../context/UserProvider';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { SOCIAL_AUTH } from '../graphql/AuthQueriesMutations';
 import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({

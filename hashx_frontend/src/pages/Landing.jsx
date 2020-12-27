@@ -12,7 +12,7 @@ import Newsletter from '../components/Landing/Newsletter/Newsletter';
 import WhyVexio from '../components/Landing/WhyVexio/WhyVexio';
 import AvatarButton from '../components/AvatarButton/AvatarButton';
 
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { SOCIAL_AUTH } from '../graphql/AuthQueriesMutations';
 
 import GoogleLogin from 'react-google-login';
@@ -114,30 +114,14 @@ const Landing = () => {
   const history = useHistory();
   const [
     socialMutation,
-    { loading: socialLoading, error: socialError },
-  ] = useMutation(SOCIAL_AUTH, {
-    onCompleted(data) {
-      if (data !== null || data !== undefined) {
-        const { token, user, newUser, refreshToken } = data.socialAuth;
-        setAccessToken(token);
-        setRefreshToken(refreshToken);
-        authenticate(user.id, user.username, token, newUser);
-        if (newUser) {
-          history.push('/studentdetailform');
-        } else {
-          history.push('/dashboard');
-        }
-      }
-    },
-  });
+    { loading: socialLoading, error: socialError, data: socialData },
+  ] = useMutation(SOCIAL_AUTH);
   const { addGoogleToken, authenticate } = useContext(UserContext);
   const responseGoogle = (response) => {
-    addGoogleToken(response.wc.access_token);
-    socialMutation({
-      variables: {
-        accessToken: response.wc.access_token,
-      },
-    });
+    addGoogleToken(response.accessToken);
+    console.log('success');
+    socialMutation({ variables: { accessToken: response.accessToken } });
+    console.log(response);
     if (socialLoading) {
       console.log(socialLoading);
       return <h1>{socialLoading}</h1>;
@@ -145,6 +129,18 @@ const Landing = () => {
     if (socialError) {
       console.log(socialError);
       return <h1>{socialError}</h1>;
+    }
+    if (socialData) {
+      const { token, user, newUser, jwtRefreshToken } = socialData.socialAuth;
+      console.log(token, 'token');
+      setAccessToken(token);
+      setRefreshToken(jwtRefreshToken);
+      authenticate(user.id, user.username, token, newUser);
+      if (newUser) {
+        history.push('/studentdetailform');
+      } else {
+        history.push('/dashboard');
+      }
     }
   };
   const responseGoogleFail = (response) => {

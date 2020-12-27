@@ -17,6 +17,7 @@ const UserContextProvider = (props) => {
 
   const addGoogleToken = (googleToken) => {
     setUser({ ...user, googleToken, isAuthenticated: true });
+    localStorage.setItem('accessToken', googleToken);
   };
   const authenticate = (id, username, token, newUser) => {
     setUser({ ...user, id, username, token, newUser });

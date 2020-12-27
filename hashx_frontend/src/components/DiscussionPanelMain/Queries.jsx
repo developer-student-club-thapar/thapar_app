@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/client';
 export const QUESTION_DETAIL = gql`
   query QuestionDetail($id: ID!) {
     questions(id: $id) {
@@ -16,11 +16,6 @@ export const QUESTION_DETAIL = gql`
         edges {
           node {
             id
-            creator {
-              username
-              id
-            }
-            content
           }
         }
       }

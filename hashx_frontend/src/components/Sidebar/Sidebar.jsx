@@ -81,18 +81,17 @@ const Sidebar = () => {
   const list = [
     {
       mainText: 'Home',
-      path: '/dashboard/home',
+      path: '/dashboard',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
       mainText: 'Courses',
-      path:
-        '/courses/Q291cnNlTm9kZTowNDUyYjEzYy1lNmExLTQ5NDEtOWMzNS1iOWRlZTljNzJhNWU=/tutorials',
+      path: '/courses-overview',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
       mainText: 'TimeTable',
-      path: '/dashboard/timetable',
+      path: '/timetable',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
