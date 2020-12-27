@@ -31,6 +31,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://vexio.in",
     "https://front.vexio.in",
     "https://vexio.netlify.app",
+    "https://react.vexio.in"
 ]
 
 if DEBUG == True:
@@ -57,3 +58,5 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+SESSION_COOKIE_SAMESITE = 'None'
+SESSION_COOKIE_SECURE = True
