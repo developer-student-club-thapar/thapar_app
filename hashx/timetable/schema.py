@@ -36,7 +36,8 @@ class OnlineClassNode(DjangoObjectType):
         model = OnlineClass
         interfaces = (AuthenticatedNode, )
         filter_fields = {
-            'day' : ['exact']
+            'day' : ['exact'],
+            'batch' : ['exact']
         }
         order_by = '-period__start_time'
 
