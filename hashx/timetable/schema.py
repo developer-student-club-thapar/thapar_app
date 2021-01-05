@@ -68,7 +68,5 @@ class RelayQuery(graphene.ObjectType):
     periods = AuthenticatedNode.Field(PeriodNode)
     onlineclasses = AuthenticatedNode.Field(OnlineClassNode)
     all_onlineclasses = ViewAllAuthenticatedQuery( OnlineClassNode)
-    def resolve_all_onlineclasses(self, info , **kwargs):c
+    def resolve_all_onlineclasses(self, info , **kwargs):
         return OnlineClass.objects.order_by('period__start_time')
-
-    
