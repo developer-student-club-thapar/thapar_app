@@ -11,6 +11,7 @@ import { useQuery } from '@apollo/client';
 import { TIMETABLE_DAY } from './Queries';
 import LayoutWrapper from '../Layout/Layout';
 import Error from '../Error/Error';
+import RocketAnimation from '../RocketAnimation';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,10 +28,18 @@ const Timetable = () => {
   const classes = useStyles();
   const { data, error, loading } = useQuery(TIMETABLE_DAY);
   if (loading) {
-    return <LayoutWrapper>Loading...</LayoutWrapper>;
+    return (
+      <LayoutWrapper>
+        <RocketAnimation />
+      </LayoutWrapper>
+    );
   }
   if (error || !data) {
-    return <Error />;
+    return (
+      <LayoutWrapper>
+        <Error />
+      </LayoutWrapper>
+    );
   }
   return (
     <LayoutWrapper>

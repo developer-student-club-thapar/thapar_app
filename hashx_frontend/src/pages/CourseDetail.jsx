@@ -15,6 +15,7 @@ import { useStyles } from '../components/Global/Global';
 import backgroundText from '../assets/cs.svg';
 import Error from '../components/Error/Error';
 import LayoutWrapper from '../components/Layout/Layout';
+import RocketAnimation from '../components/RocketAnimation';
 
 const useClasses = makeStyles((theme) => ({
   box: {
@@ -215,7 +216,12 @@ const CourseDetail = (props) => {
       id: courseId,
     },
   });
-  if (loading) return <h4>Loading....</h4>;
+  if (loading)
+    return (
+      <LayoutWrapper>
+        <RocketAnimation />
+      </LayoutWrapper>
+    );
   if (error || data.course === undefined || data.course === null) {
     return <Error />;
   }

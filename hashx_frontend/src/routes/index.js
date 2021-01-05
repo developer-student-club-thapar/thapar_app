@@ -9,6 +9,7 @@ import RegisterGoogle from '../pages/RegisterGoogle';
 import Landing from '../pages/Landing';
 import PageNotFound from '../pages/404';
 import LayoutWrapper from '../components/Layout/Layout';
+import RocketAnimation from '../components/RocketAnimation';
 
 // * Lazy Imports => Splitting the bundle in multiple parts and only calling them when required. Decreases Webpage loadtime * //
 // * Use only if the component takes more than 30kb in webpack bundle * //
@@ -23,7 +24,13 @@ const VirtualCampus = lazy(() => import('../pages/VirtualCampusPage'));
 
 const Routes = () => {
   return (
-    <Suspense fallback={<LayoutWrapper>Loading...</LayoutWrapper>}>
+    <Suspense
+      fallback={
+        <LayoutWrapper>
+          <RocketAnimation />
+        </LayoutWrapper>
+      }
+    >
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />

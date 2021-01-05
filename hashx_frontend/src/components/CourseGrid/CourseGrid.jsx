@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { ALL_COURSES } from './Queries';
 import { getBranchId } from '../../graphql/UserData';
 import Error from '../Error/Error';
+import RocketAnimation from '../RocketAnimation';
 
 const useStyles = makeStyles(() => ({
   papergrid: {
@@ -24,7 +25,11 @@ const CourseGrid = () => {
     variables: { id: getBranchId() },
   });
   if (loading) {
-    return <div>{loading}</div>;
+    return (
+      <div>
+        <RocketAnimation />
+      </div>
+    );
   }
   if (
     error ||
