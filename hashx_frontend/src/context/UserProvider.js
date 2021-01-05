@@ -15,6 +15,15 @@ const UserContextProvider = (props) => {
     newUser: null,
   });
 
+  const [student, setStudent] = useState({
+    id: '',
+    branch: null,
+    batch: null,
+    gender: '',
+    rollno: '',
+    bio: '',
+  });
+
   const addGoogleToken = (googleToken) => {
     setUser({ ...user, googleToken, isAuthenticated: true });
     localStorage.setItem('accessToken', googleToken);
@@ -22,6 +31,11 @@ const UserContextProvider = (props) => {
   const authenticate = (id, username, token, newUser) => {
     setUser({ ...user, id, username, token, newUser });
     localStorage.setItem('isAuthenticated', true);
+  };
+
+  const setStudentData = (data) => {
+    const { id, rollno, gender, bio, batch, branch } = data;
+    setStudent({ ...student, id, rollno, gender, bio, batch, branch });
   };
 
   const logOut = () => {
@@ -36,7 +50,14 @@ const UserContextProvider = (props) => {
   };
   return (
     <UserContext.Provider
-      value={{ user, authenticate, addGoogleToken, logOut }}
+      value={{
+        user,
+        authenticate,
+        addGoogleToken,
+        logOut,
+        student,
+        setStudentData,
+      }}
     >
       {props.children}
     </UserContext.Provider>

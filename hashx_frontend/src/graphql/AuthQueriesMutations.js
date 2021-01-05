@@ -21,6 +21,17 @@ export const SEND_STUDENT_DETAILS = gql`
     ) {
       student {
         id
+        branch {
+          name
+          id
+        }
+        batch {
+          num
+          id
+        }
+        gender
+        rollno
+        bio
       }
     }
   }
