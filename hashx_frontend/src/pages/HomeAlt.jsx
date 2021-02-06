@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles();
-  const eventsRef = useRef(null);
   const { data, loading, error } = useQuery(FIRSTNAME);
 
   console.log(data, ' userdata');
@@ -106,7 +105,7 @@ const Home = () => {
               xs={12}
               lg={12}
               xl={12}
-              spacing={4}
+              spacing={2}
               className={classes.messmenuContainer}
             >
               <Grid item xs={12} lg={6} xl={6}>
@@ -116,7 +115,7 @@ const Home = () => {
                 <MessMenu />
               </Grid>
             </Grid>
-            <Grid item xs={12} lg={12} xl={12} spacing={4}>
+            <Grid item xs={12} lg={12} xl={12}>
               <EventsList />
             </Grid>
           </Grid>

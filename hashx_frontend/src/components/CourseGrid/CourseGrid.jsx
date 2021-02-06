@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import CourseBox from '../CourseBox/CourseBox';
 import { Grid, Paper, makeStyles } from '@material-ui/core';
 import { useQuery } from '@apollo/client';
@@ -6,6 +6,7 @@ import { ALL_COURSES } from './Queries';
 import { getBranchId } from '../../graphql/UserData';
 import Error from '../Error/Error';
 import RocketAnimation from '../RocketAnimation';
+import { UserContext } from '../../context/UserProvider';
 
 const useStyles = makeStyles(() => ({
   papergrid: {
@@ -21,8 +22,9 @@ const useStyles = makeStyles(() => ({
 
 const CourseGrid = () => {
   const styles = useStyles();
+  const { student } = useContext(UserContext);
   const { data, loading, error } = useQuery(ALL_COURSES, {
-    variables: { id: getBranchId() },
+    variables: { id: student.branch?.id },
   });
   if (loading) {
     return (

@@ -42,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
     transition: 'transform .2s',
     minWidth: 275,
     minHeight: '70px',
+    minHeight: '135px',
+    maxHeight: '135px',
     margin: '10px 0px 10px 0px',
     borderLeft: '10px solid pink',
     'box-shadow': '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
@@ -127,6 +129,7 @@ const ClassCard = ({ item }) => {
             className={classes.title}
             color="textSecondary"
             gutterBottom
+            noWrap
           >
             {item.node.course.name}
           </Typography>

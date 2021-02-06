@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Grid, Paper, TextField } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
@@ -12,8 +12,12 @@ import {
   GET_BRANCHES,
   GET_BATCHES,
 } from '../graphql/AuthQueriesMutations';
+import { UserContext } from '../context/UserProvider';
+import { useHistory } from 'react-router-dom';
 
 const StudentDetailsForm = () => {
+  const { setStudentData } = useContext(UserContext);
+  const history = useHistory();
   const [
     getBranches,
     { loading: branchLoading, data: branchData },
@@ -63,7 +67,14 @@ const StudentDetailsForm = () => {
       error: studentSendError,
       data: studentSendData,
     },
-  ] = useMutation(SEND_STUDENT_DETAILS);
+  ] = useMutation(SEND_STUDENT_DETAILS, {
+    onCompleted: (data) => {
+      const { student } = data.createStudent;
+      // * Sets student data to global context * //
+      setStudentData(student);
+      history.push('/dashboard');
+    },
+  });
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [branchOptions, setBranchOptions] = useState(null);
