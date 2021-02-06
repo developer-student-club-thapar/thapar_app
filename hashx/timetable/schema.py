@@ -1,6 +1,7 @@
 import graphene
 import django_filters
 from django_filters import OrderingFilter
+from graphql_relay.node.node import from_global_id
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery, AuthenticatedNode
 from .models import Holidays, Location, OnlineClass, OfflineClass, Period, Class
@@ -69,5 +70,3 @@ class RelayQuery(graphene.ObjectType):
     all_onlineclasses = ViewAllAuthenticatedQuery( OnlineClassNode)
     def resolve_all_onlineclasses(self, info , **kwargs):
         return OnlineClass.objects.order_by('period__start_time')
-
-    
