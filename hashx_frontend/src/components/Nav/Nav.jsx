@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Avatar, Grid, Hidden, makeStyles, Paper } from '@material-ui/core';
 import { secondaryColor } from '../../theme/theme';
 import { ReactComponent as BellIcon } from '../../assets/bell.svg';
 import { ReactComponent as MessageIcon } from '../../assets/message.svg';
 import { getSidebarTrigger } from '@mui-treasury/layout';
 import styled from 'styled-components';
+import { UserContext } from '../../context/UserProvider';
 
 const SidebarTrigger = getSidebarTrigger(styled);
 
@@ -64,8 +65,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Nav = ({ sidebarId }) => {
+const Nav = () => {
   const classes = useStyles();
+  const { user } = useContext(UserContext);
 
   return (
     <>
@@ -82,7 +84,8 @@ const Nav = ({ sidebarId }) => {
             <Grid item xs={3}>
               <Paper elevation={2} className={classes.paper}>
                 <div>
-                  <span style={{ color: '#A3A3A3' }}>Welcome</span> Foo
+                  <span style={{ color: '#A3A3A3' }}>Welcome</span>{' '}
+                  {user.username}
                 </div>
               </Paper>
               <SidebarTrigger sidebarId="primarySidebar" />
