@@ -33,6 +33,8 @@ const client = new ApolloClient({
   // link: authLink.concat(httpLink),
   link: httpLink,
   cache: cache,
+  // ! Disable in production
+  connectToDevTools: true,
 });
 
 // const client = new ApolloClient({

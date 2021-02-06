@@ -115,7 +115,22 @@ const Landing = () => {
   const [
     socialMutation,
     { loading: socialLoading, error: socialError, data: socialData },
-  ] = useMutation(SOCIAL_AUTH);
+  ] = useMutation(SOCIAL_AUTH, {
+    onCompleted: (socialData) => {
+      if (socialData) {
+        const { token, user, newUser, jwtRefreshToken } = socialData.socialAuth;
+        console.log(token, 'token');
+        setAccessToken(token);
+        setRefreshToken(jwtRefreshToken);
+        authenticate(user.id, user.username, token, newUser);
+        if (newUser) {
+          history.push('/studentdetailform');
+        } else {
+          history.push('/dashboard');
+        }
+      }
+    },
+  });
   const { addGoogleToken, authenticate } = useContext(UserContext);
   const responseGoogle = (response) => {
     addGoogleToken(response.accessToken);
@@ -124,23 +139,9 @@ const Landing = () => {
     console.log(response);
     if (socialLoading) {
       console.log(socialLoading);
-      return <h1>{socialLoading}</h1>;
     }
     if (socialError) {
       console.log(socialError);
-      return <h1>{socialError}</h1>;
-    }
-    if (socialData) {
-      const { token, user, newUser, jwtRefreshToken } = socialData.socialAuth;
-      console.log(token, 'token');
-      setAccessToken(token);
-      setRefreshToken(jwtRefreshToken);
-      authenticate(user.id, user.username, token, newUser);
-      if (newUser) {
-        history.push('/studentdetailform');
-      } else {
-        history.push('/dashboard');
-      }
     }
   };
   const responseGoogleFail = (response) => {

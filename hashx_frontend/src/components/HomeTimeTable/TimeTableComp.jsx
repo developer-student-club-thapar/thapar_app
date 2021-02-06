@@ -26,8 +26,10 @@ const useStyles = makeStyles((theme) => ({
   },
   tableText: {
     fontSize: '16px',
+    whiteSpace: 'nowrap',
     [theme.breakpoints.only('xs')]: {
       wordWrap: 'break-word',
+      whiteSpace: 'normal',
     },
   },
   tableItemFlex: {
