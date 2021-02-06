@@ -9,7 +9,8 @@ local_settings.py
 db.sqlite3
 media/*
 hashx/media/
-messag.txt
+messag
+dsc_tiet
 .env_server
 .env*
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
