@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '24px',
     padding: '10px',
     textAlign: 'left',
-    letterSpacing: '2px',
+    whiteSpace: 'nowrap',
     [theme.breakpoints.only('xs')]: {
       fontSize: '1.2rem',
       letterSpacing: 0,

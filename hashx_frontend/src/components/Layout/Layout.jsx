@@ -1,6 +1,7 @@
 // * Wrapper Component to get the complete sidebar layout in any page * //
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
+import { useLazyQuery, useMutation } from '@apollo/client';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +14,10 @@ import Layout, {
 } from '@mui-treasury/layout';
 import Sidebar from '../Sidebar/Sidebar';
 import Nav from '../Nav/Nav';
+import { GET_STUDENT, SOCIAL_AUTH } from '../../graphql/AuthQueriesMutations';
+import { getAccessToken } from '../../util/token';
+import { UserContext } from '../../context/UserProvider';
+import { useHistory } from 'react-router-dom';
 
 const Header = getHeader(styled);
 const DrawerSidebar = getDrawerSidebar(styled);
@@ -76,6 +81,55 @@ const useStyles = makeStyles(() => ({
 
 const LayoutWrapper = ({ children }) => {
   const styles = useStyles();
+  const { authenticate, setStudentData, setStudentRefreshedData } = useContext(
+    UserContext,
+  );
+  const history = useHistory();
+  // const [
+  //   socialMutation,
+  //   { loading: socialLoading, error: socialError, data: socialData },
+  // ] = useMutation(SOCIAL_AUTH, {
+  //   onCompleted: (socialData) => {
+  //     if (socialData) {
+  //       const { token, user, newUser } = socialData.socialAuth;
+  //       console.log(token, 'token');
+  //       authenticate(user.id, user.username, token, newUser);
+  //       getStudent();
+  //     }
+  //   },
+  // });
+  const [
+    getStudent,
+    { loading: studentLoading, data: studentData, error: studentError },
+  ] = useLazyQuery(GET_STUDENT, {
+    variables: {
+      id: localStorage.getItem('userId'),
+    },
+    onCompleted: (studentData) => {
+      // setStudentData(data);
+      setStudentRefreshedData(studentData);
+    },
+  });
+
+  useEffect(() => {
+    // * Fetch user and student details again as soon as a user refreshes the page
+    // * fetch-policy: cache => network
+    // socialMutation({ variables: { accessToken: getAccessToken() } });
+    getStudent();
+  }, []);
+
+  if (studentLoading) {
+    console.log('fetching...');
+  }
+
+  if (studentError) {
+    // * If error is encountered, redirect to the landing
+    // history.push('/');
+    console.log(studentError);
+
+    // TODO clear localStorage Stuff
+  }
+
   return (
     <Root scheme={scheme}>
       <CssBaseline />
