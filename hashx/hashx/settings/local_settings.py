@@ -88,6 +88,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://front.vexio.in",
     "https://vexio.netlify.app",
     "https://react.vexio.in"
+]
 
 if DEBUG == True:
     CORS_ORIGIN_WHITELIST += ['http://localhost:3000']
