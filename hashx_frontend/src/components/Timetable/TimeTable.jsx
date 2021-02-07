@@ -51,9 +51,6 @@ const Timetable = () => {
   const displayData = (day) => {
     let cardIndex = 0;
     return Object.keys(timeTableMap).map((key) => {
-      console.log(key);
-      console.log(cardIndex, 'c');
-
       if (
         timeTableMap[key] ===
         data[day]?.edges[cardIndex]?.node.period.edges[0].node.startTime

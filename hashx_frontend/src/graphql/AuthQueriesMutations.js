@@ -56,6 +56,8 @@ export const GET_STUDENT = gql`
       bio
       user {
         username
+        firstName
+        lastName
         id
       }
     }

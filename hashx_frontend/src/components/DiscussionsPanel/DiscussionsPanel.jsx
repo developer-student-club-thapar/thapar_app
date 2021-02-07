@@ -63,7 +63,8 @@ const useStyles = makeStyles((theme) => ({
   chatItem: {
     justifyContent: 'flex-end',
   },
-  inputBox: {
+  input: {
+    borderRadius: '20px',
     backgroundColor: '#ffffff',
   },
   sendButton: {
@@ -306,11 +307,14 @@ const Discussions = (props) => {
                   id="message-box"
                   fullWidth
                   variant="outlined"
-                  className={classes.inputBox}
+                  InputProps={{ className: classes.input }}
                   placeholder="Send a Message"
                   onChange={(event) => {
                     addMessage(event);
                   }}
+                  onKeyPress={(event) =>
+                    event.key === 'Enter' ? sendMessage(event) : null
+                  }
                   value={currentMessage}
                 />
               </Grid>
