@@ -11,6 +11,7 @@ export const FILE_QUESTIONS = gql`
             id
             thumbnailImage
             name
+            webContentLink
           }
           owner {
             username
