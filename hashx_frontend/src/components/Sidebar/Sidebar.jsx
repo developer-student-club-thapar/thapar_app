@@ -26,6 +26,32 @@ const useStyles = makeStyles(() => ({
     '&:hover': {
       backgroundColor: '#F0F0F3',
       cursor: 'pointer',
+      position: 'relative',
+      '&>h2': {
+        color: '#00293B',
+      },
+    },
+    '&:hover::after': {
+      content: '""',
+      position: 'absolute',
+      backgroundColor: 'transparent',
+      bottom: '100%',
+      right: '0',
+      height: '50px',
+      width: '50px',
+      borderBottomRightRadius: '60px',
+      boxShadow: '0 20px 0 0 #F0F0F3',
+    },
+    '&:hover::before': {
+      content: '""',
+      position: 'absolute',
+      backgroundColor: 'transparent',
+      top: '150px',
+      right: '0',
+      height: '50px',
+      width: '50px',
+      borderTopRightRadius: '60px',
+      boxShadow: '0 -20px 0 0 #F0F0F3',
     },
   },
   logoIcons: {
@@ -49,10 +75,33 @@ const useStyles = makeStyles(() => ({
     display: 'grid',
     placeItems: 'center',
     height: '150px',
+    position: 'relative',
     backgroundColor: '#F0F0F3',
     fontFamily: 'Lato',
     '&:hover': {
       cursor: 'pointer',
+    },
+    '&:after': {
+      content: '""',
+      position: 'absolute',
+      backgroundColor: 'transparent',
+      bottom: '100%',
+      right: '0',
+      height: '50px',
+      width: '50px',
+      borderBottomRightRadius: '60px',
+      boxShadow: '0 20px 0 0 #F0F0F3',
+    },
+    '&:before': {
+      content: '""',
+      position: 'absolute',
+      backgroundColor: 'transparent',
+      top: '150px',
+      right: '0',
+      height: '50px',
+      width: '50px',
+      borderTopRightRadius: '60px',
+      boxShadow: '0 -20px 0 0 #F0F0F3',
     },
   },
   logoIconsActive: {
@@ -81,18 +130,17 @@ const Sidebar = () => {
   const list = [
     {
       mainText: 'Home',
-      path: '/dashboard/home',
+      path: '/dashboard',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
       mainText: 'Courses',
-      path:
-        '/courses/Q291cnNlTm9kZTowNDUyYjEzYy1lNmExLTQ5NDEtOWMzNS1iOWRlZTljNzJhNWU=/tutorials',
+      path: '/courses-overview',
       iconClassName: 'fas fa-book fa-2x',
     },
     {
       mainText: 'TimeTable',
-      path: '/dashboard/timetable',
+      path: '/timetable',
       iconClassName: 'fas fa-book fa-2x',
     },
     {

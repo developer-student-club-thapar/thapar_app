@@ -3,41 +3,67 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Fade from 'react-reveal/Fade';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import IconButton from '@material-ui/core/IconButton';
 import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 import { secondaryColor, textColor } from '../../theme/theme';
-import { Grid } from '@material-ui/core';
+import { Grid, Grow } from '@material-ui/core';
+import lightning from '../../assets/lightning.svg';
+import { motion } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    display: 'inline-block',
+    fontWeight: '900',
+    fontSize: '24px',
+    padding: '10px',
+    textAlign: 'left',
+    whiteSpace: 'nowrap',
     [theme.breakpoints.only('xs')]: {
-      fontSize: '30px',
+      fontSize: '1.2rem',
+      letterSpacing: 0,
     },
   },
   paperGrid: {
     borderRadius: '20px',
     textAlign: 'center',
-    height: '500px',
+    height: 'fit-content',
     backgroundColor: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    marginTop: '10px',
+    [theme.breakpoints.only('xs')]: {
+      height: 'fit-content',
+    },
   },
   paperMenu: {
     borderRadius: '15px',
     height: '100px',
-    // backgroundColor: '#D2E2FF',
+    width: '90%',
     marginLeft: 30,
     marginRight: 30,
     textAlign: 'left',
     padding: 10,
+    marginTop: '10px',
   },
   foodHeader: {
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
+    fontSize: '18px',
+    lineHeight: '27px',
+    [theme.breakpoints.only('xs')]: {
+      fontSize: '1rem',
+      letterSpacing: 0,
+      lineHeight: '1.2rem',
+    },
   },
   foodItems: {
-    fontSize: '1.1rem',
+    fontSize: '0.8rem',
+  },
+  lightningIcon: {
+    height: 'auto',
+    width: '1.9rem',
+    objectFit: 'contain',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
 }));
 
@@ -75,61 +101,37 @@ const MessMenu = () => {
   ];
   return (
     <>
-      <Paper elevation={3} className={classes.paperGrid}>
-        <IconButton
-          color="inherit"
-          style={{
-            height: '35px',
-            float: 'right',
-          }}
-          onClick={handleClick}
-        >
-          <MoreHorizIcon />
-        </IconButton>
-        <Popover
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'center',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'right',
-          }}
-        >
-          <Paper elevation={0} style={{ width: '' }}>
-            <Link to="/" style={{ textDecoration: 'none' }}>
-              <h5 style={{ margin: 'auto' }}>
-                <i className="fas fa-eye" /> View More
-              </h5>
-            </Link>
-          </Paper>
-        </Popover>
-        <br />
-        <br />
-        <h1 className={classes.title}>
-          <i
-            className="fas fa-utensils fa-sm"
-            style={{ display: 'inline-block' }}
-          />{' '}
-          Mess Menu
-        </h1>
-        <br />
-        <br />
-        <Fade bottom cascade delay={600}>
-          <Grid container spacing={2}>
+      <Grow in timeout={3000}>
+        <Paper elevation={3} className={classes.paperGrid}>
+          <Grid
+            container
+            alignItems="center"
+            justify="space-around"
+            spacing={3}
+          >
+            <Grid item xs={8}>
+              <h1 className={classes.title}>Mess Menu</h1>
+            </Grid>
+            <Grid item xs={2} container justify="flex-end">
+              <motion.img
+                src={lightning}
+                alt=" "
+                className={classes.lightningIcon}
+                whileHover={{ rotate: 360 }}
+              />
+            </Grid>
+          </Grid>
+          <Grid container spacing={8} style={{ padding: 10 }}>
             {menu.map((item, index) => (
-              <Grid item xs={12} key={index}>
-                <Paper
-                  elevation={0}
-                  className={classes.paperMenu}
-                  style={{
-                    backgroundColor: item.backgroundColor,
-                  }}
-                >
+              <Paper
+                elevation={0}
+                className={classes.paperMenu}
+                style={{
+                  backgroundColor: item.backgroundColor,
+                }}
+                key={index}
+              >
+                <Grid item xs={12}>
                   <h3
                     className={classes.foodHeader}
                     style={{ color: item.fontColor }}
@@ -142,12 +144,12 @@ const MessMenu = () => {
                   >
                     {item.foodItems}
                   </p>
-                </Paper>
-              </Grid>
+                </Grid>
+              </Paper>
             ))}
           </Grid>
-        </Fade>
-      </Paper>
+        </Paper>
+      </Grow>
     </>
   );
 };

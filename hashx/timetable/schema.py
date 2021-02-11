@@ -1,5 +1,7 @@
 import graphene
 import django_filters
+from django_filters import OrderingFilter
+from graphql_relay.node.node import from_global_id
 from graphene_django import DjangoObjectType
 from hashx.mixins import ViewAllAuthenticatedQuery, AuthenticatedNode
 from .models import Holidays, Location, OnlineClass, OfflineClass, Period, Class
@@ -9,6 +11,7 @@ class PeriodFilter(django_filters.FilterSet):
     class Meta:
         model = Period
         fields = '__all__'
+
 
 
 class PeriodNode(DjangoObjectType):
@@ -29,22 +32,21 @@ class HolidaysNode(DjangoObjectType):
         interfaces = (AuthenticatedNode, )
 
 
-class OnlineClassFilter(django_filters.FilterSet):
-    class Meta:
-        model = OnlineClass
-        fields = '__all__'
-
-
 class OnlineClassNode(DjangoObjectType):
     class Meta:
         model = OnlineClass
         interfaces = (AuthenticatedNode, )
-
+        filter_fields = {
+            'day' : ['exact'],
+            'batch' : ['exact']
+        }
+        order_by = '-period__start_time'
 
 class LocationFilter(django_filters.FilterSet):
     class Meta:
         model = Location
         fields = '__all__'
+
 
 
 class LocationNode(DjangoObjectType):
@@ -64,6 +66,7 @@ class RelayQuery(graphene.ObjectType):
     all_periods = ViewAllAuthenticatedQuery(
         PeriodNode, filterset_class=PeriodFilter)
     periods = AuthenticatedNode.Field(PeriodNode)
-    all_onlineclasses = ViewAllAuthenticatedQuery(
-        OnlineClassNode, filterset_class=OnlineClassFilter)
     onlineclasses = AuthenticatedNode.Field(OnlineClassNode)
+    all_onlineclasses = ViewAllAuthenticatedQuery( OnlineClassNode)
+    def resolve_all_onlineclasses(self, info , **kwargs):
+        return OnlineClass.objects.order_by('period__start_time')

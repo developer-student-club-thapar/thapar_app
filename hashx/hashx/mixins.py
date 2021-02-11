@@ -10,7 +10,6 @@ import graphene
 import graphql_jwt
 
 
-
 class StudentOnlyQuery(DjangoFilterConnectionField):
     @classmethod
     @login_required

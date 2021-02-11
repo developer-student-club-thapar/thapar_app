@@ -4,24 +4,53 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
 import history from './services/history';
 import UserContextProvider from './context/UserProvider';
-import { ApolloClient, InMemoryCache  , ApolloProvider} from '@apollo/client';
-import { getApiUrl } from './util/url';
-import { getAccessToken } from './util/token';
+import { ApolloClient, ApolloProvider } from '@apollo/client';
+// import { getApiUrl } from './util/url';
+import { cache } from './graphql/Cache.js';
+// import { getAccessToken } from './util/token';
+import { createHttpLink } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
 
-const accessToken =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6InJhbXlha21laHJhIiwiZXhwIjoxNjAwNzU4MDI0LCJvcmlnSWF0IjoxNTk4MTY2MDI0fQ.iyD30BZpUDfEOPpkLqkO6IzB_Y8AKaWLNnxEKbzAwVU';
-    
-const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql/',
+const httpLink = createHttpLink({
+  uri: 'https://tietdev.vexio.in/graphql/',
   credentials: 'include',
-  headers:{
-    authorization: accessToken ? `JWT ${accessToken}` : '',
-  },
-  request: (operation) => {
-    
-  },
-  cache: new InMemoryCache(),
 });
+
+// const authLink = setContext((_, { headers }) => {
+//   // get the authentication token from local storage if it exists
+//   // const token = localStorage.getItem('accessToken');
+//   // // // return the headers to the context so httpLink can read them
+//   // // TODO Add https cookie from server side
+//   // return {
+//   //   headers: {
+//   //     ...headers,
+//   //     authorization: token ? `JWT ${token}` : '',
+//   //   },
+//   // };
+// });
+
+const client = new ApolloClient({
+  // link: authLink.concat(httpLink),
+  link: httpLink,
+  cache: cache,
+  // ! Disable in production
+  connectToDevTools: true,
+});
+
+// const client = new ApolloClient({
+//   uri: 'https://tietdev.vexio.in/graphql/',
+//   credentials: 'include',
+
+//   request: (operation) => {
+//     const accessToken = getAccessToken();
+//     operation.setContext({
+//       headers: {
+//         authorization: accessToken ? `JWT ${accessToken}` : '',
+//       },
+//     });
+//   },
+//   cache: cache,
+// });
 
 // const requestLink = new ApolloLink(
 //   (operation, forward) =>

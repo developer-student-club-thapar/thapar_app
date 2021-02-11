@@ -10,6 +10,8 @@ export const QUESTION_DETAIL = gql`
       file {
         name
         id
+        webContentLink
+        thumbnailImage
       }
       content
       replies {

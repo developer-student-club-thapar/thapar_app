@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
+import logo from 'assets/blob.svg';
 
 const useStyles = makeStyles((theme) => ({
   turbanMan: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: '40%',
     top: '40px',
     maxWidth: '170px',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
@@ -58,35 +59,14 @@ const useStyles = makeStyles((theme) => ({
       padding: '15px',
     },
   },
-
-  container: {
-    backgroundColor: 'white',
-  },
-
-  textContainer: {
-    [theme.breakpoints.down('md')]: {
-      marginTop: '15px',
-    },
-  },
-
-  textBox: {
-    [theme.breakpoints.between('md', 'lg')]: {
-      flexDirection: 'column',
-    },
-    [theme.breakpoints.up('md')]: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-    },
-  },
-
-  heading: {
-    [theme.breakpoints.down('md')]: {
-      padding: '15px',
-    },
+  peepsContainer: {
+    backgroundImage: `url(${logo})`,
+    // backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
   },
 
   container: {
-    backgroundColor: 'white',
+    backgroundColor: '#eee',
   },
 }));
 const WhyVexio = () => {
@@ -98,7 +78,7 @@ const WhyVexio = () => {
           <Grid item>
             <h1 style={{ textAlign: '', fontSize: '48px' }}>Why Vexio?</h1>
           </Grid>
-          <Grid item container>
+          <Grid item container className={classes.peepsContainer}>
             <Grid item direction="row">
               <Box style={{ position: 'relative' }}>
                 <img
@@ -121,19 +101,18 @@ const WhyVexio = () => {
           </Grid>
         </Grid>{' '}
         {/* container1 */}
-        <Grid item container xs={12} md={6} className={classes.textBox}>
+        <Grid item container xs={12} md={7} className={classes.textBox}>
           <Grid item container xs={12} lg={6} className={classes.textContainer}>
             <Grid item>
               <h1
                 style={{ borderLeft: '6px solid pink', paddingLeft: '15px' }}
                 className={classes.heading}
               >
-                {' '}
-                Made by the students{' '}
+                Made by the students
               </h1>
             </Grid>
             <Grid item>
-              <h6>
+              <h6 style={{ padding: '1rem' }}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
                 deleniti repudiandae. At quod nobis rerum!
               </h6>
@@ -150,7 +129,7 @@ const WhyVexio = () => {
               </h1>
             </Grid>
             <Grid item>
-              <h6>
+              <h6 style={{ padding: '1rem' }}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
                 deleniti repudiandae. At quod nobis rerum!
               </h6>

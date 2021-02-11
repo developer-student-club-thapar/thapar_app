@@ -87,6 +87,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://vexio.in",
     "https://front.vexio.in",
     "https://vexio.netlify.app",
+    "https://react.vexio.in"
 ]
 
 if DEBUG == True:

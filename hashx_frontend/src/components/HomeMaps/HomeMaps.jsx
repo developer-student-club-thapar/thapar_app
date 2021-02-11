@@ -75,7 +75,7 @@ class Maps extends Component {
 
   render() {
     const mapStyles = {
-      width: '1232px',
+      width: '1477px',
       height: '400px',
     };
     const mapStylesMobile = {

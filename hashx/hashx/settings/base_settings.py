@@ -119,12 +119,10 @@ GRAPHQL_JWT = {
 AUTHENTICATION_BACKENDS = [
     # Caution Axes Backedn should be the first one
     # because it should process every login request via any system
-    # "axes.backends.AxesBackend",
-    # Insert New Auth if adding below this point
-    "graphql_jwt.backends.JSONWebTokenBackend",
+
     "django.contrib.auth.backends.ModelBackend",
+    "graphql_jwt.backends.JSONWebTokenBackend",
     "social_core.backends.google.GoogleOAuth2",
-    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 GRAPH_MODELS = {
@@ -220,23 +218,10 @@ AXES_RESET_ON_SUCCESS = True
 
 # DJANGO ALL AUTH
 # Refer to this doc https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
-ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = LOGIN_URL
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = True
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "[ Vexio.in ]"
-ACCOUNT_EMAIL_CONFIRMATION_COOLDOWN = 200
-ACCOUNT_EMAIL_MAX_LENGTH = 254
-ACCOUNT_FORMS = {'instructor-login': 'users.forms.LoginForm',
-                 'instructor-register': 'users.forms.RegisterForm'}
-ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_BLACKLIST = None
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
+
+
 JWT_COOKIE_DOMAIN = ['http://localhost:3000', "https://ssr.vexio.in",
-                     "https://front.vexio.in", "https://vue.vexio.in", "http://localhost:45911"]
+                     "https://front.vexio.in", "https://vue.vexio.in", "http://localhost:45911" , "https://react.vexio.in"]
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:45911",
     "http://localhost:3000",
@@ -244,12 +229,14 @@ CORS_ORIGIN_WHITELIST = [
     "https://ssr.vexio.in",
     "https://front.vexio.in",
     "https://vue.vexio.in",
-    "http://localhost:45911"
+    "http://localhost:45911",
+    "https://react.vexio.in"
 ]
 
-JWT_COOKIE_SECURE = False  # true for https 
-
+JWT_COOKIE_SECURE = True  # true for https 
+JWT_COOKIE_SAMESITE = 'None'
 CORS_ALLOW_CREDENTIALS = True
+
 CSRF_TRUSTED_ORIGINS = [
     '*.vexio.in',
     'http://localhost:3000'
