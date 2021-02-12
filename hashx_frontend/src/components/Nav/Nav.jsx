@@ -83,9 +83,9 @@ const Nav = () => {
           <Grid container spacing={2} justify="space-between">
             <Grid item xs={3}>
               <Paper elevation={2} className={classes.paper}>
-                <div>
+                <div style={{ whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#A3A3A3' }}>Welcome</span>{' '}
-                  {user.firstName} {user.lastName}
+                  {user.firstName}
                 </div>
               </Paper>
               <SidebarTrigger sidebarId="primarySidebar" />
