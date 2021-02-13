@@ -28,15 +28,17 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const CoursesCard = (props) => {
+const CoursesCard = ({ setOpen }) => {
   const classes = useStyles();
   return (
-    <motion.div
-      className={classes.motionContainer}
-      whileTap={{ scale: 0.8 }}
-      whileHover={{ rotate: 360 }}
-    >
-      <Grid container className={classes.btn}>
+    <motion.div className={classes.motionContainer} whileTap={{ scale: 0.8 }}>
+      <Grid
+        container
+        className={classes.btn}
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
         <Grid item xs={12} className={classes.btnContainer}>
           <div className={classes.btnText}>Explore&nbsp;</div>
           <div className={classes.arrowContainer}>

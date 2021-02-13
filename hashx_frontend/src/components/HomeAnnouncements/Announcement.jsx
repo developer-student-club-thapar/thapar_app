@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import image from '../../assets/Home/Announcements/image.svg';
 import ReadMore from './ReadMore';
+import ReadMoreModal from './ReadMoreModal';
 
 const useStyles = makeStyles(() => ({
   firstCont: {
@@ -26,6 +27,7 @@ const useStyles = makeStyles(() => ({
 
 const CoursesCard = (props) => {
   const classes = useStyles();
+  const [open, setOpen] = useState(false);
   return (
     <Grid container item xs={12} className={classes.mainContainer}>
       <Grid item xs={10}>
@@ -40,7 +42,8 @@ const CoursesCard = (props) => {
         </Grid>
       </Grid>
       <Grid item xs={2} className={classes.btnContainer}>
-        <ReadMore />
+        <ReadMore setOpen={setOpen} />
+        <ReadMoreModal open={open} setOpen={setOpen} />
       </Grid>
     </Grid>
   );
