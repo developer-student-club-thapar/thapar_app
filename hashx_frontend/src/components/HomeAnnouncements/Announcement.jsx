@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
 
 const CoursesCard = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [modal, setModal] = useState(false);
   return (
     <Grid container item xs={12} className={classes.mainContainer}>
       <Grid item xs={10}>
@@ -42,8 +42,8 @@ const CoursesCard = (props) => {
         </Grid>
       </Grid>
       <Grid item xs={2} className={classes.btnContainer}>
-        <ReadMore setOpen={setOpen} />
-        <ReadMoreModal open={open} setOpen={setOpen} />
+        <ReadMore setModal={setModal} />
+        <ReadMoreModal modal={modal} setModal={setModal} />
       </Grid>
     </Grid>
   );

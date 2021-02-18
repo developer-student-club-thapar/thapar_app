@@ -28,7 +28,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const CoursesCard = ({ setOpen }) => {
+const CoursesCard = ({ setModal }) => {
   const classes = useStyles();
   return (
     <motion.div className={classes.motionContainer} whileTap={{ scale: 0.8 }}>
@@ -36,7 +36,7 @@ const CoursesCard = ({ setOpen }) => {
         container
         className={classes.btn}
         onClick={() => {
-          setOpen(true);
+          setModal(true);
         }}
       >
         <Grid item xs={12} className={classes.btnContainer}>

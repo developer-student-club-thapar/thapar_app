@@ -4,7 +4,7 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import Button from '@material-ui/core/Button';
 import Alert from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
-import NinjaAnimation from '../components/NinjaAnimation';
+import CollegeAnimation from '../components/CollegeAnimation';
 import '../styles/StudentDetailsForm.css';
 import { useMutation, useLazyQuery } from '@apollo/client';
 import {
@@ -14,6 +14,7 @@ import {
 } from '../graphql/AuthQueriesMutations';
 import { UserContext } from '../context/UserProvider';
 import { useHistory } from 'react-router-dom';
+import { secondaryColor, tertiaryColor, textColor } from '../theme/theme';
 
 const StudentDetailsForm = () => {
   const { setStudentData } = useContext(UserContext);
@@ -422,18 +423,21 @@ const StudentDetailsForm = () => {
           md={6}
           lg={6}
           xl={6}
-          style={{ textAlign: 'center', paddingTop: '100px' }}
+          style={{
+            textAlign: 'center',
+            paddingTop: '100px',
+            backgroundColor: `${textColor}`,
+          }}
         >
           <h1
             style={{
               color: 'white',
               fontWeight: 'bold',
-              fontFamily: 'Raleway',
             }}
           >
             Help us get to know you a little better.
           </h1>
-          <NinjaAnimation />
+          <CollegeAnimation />
         </Grid>
       </Grid>
     </>

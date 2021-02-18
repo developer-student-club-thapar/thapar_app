@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Modal, IconButton } from '@material-ui/core';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Close } from '@material-ui/icons';
+import image from '../../assets/Home/Announcements/image.svg';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -12,36 +13,46 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     width: '800px',
+    position: 'absolute',
+    left: '30%',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      left: '0%',
+    },
   },
   modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    overflowY: 'auto',
   },
   btnContainer: {
     alignSelf: 'flex-end',
   },
+  img: {
+    maxWidth: '100%',
+    objectFit: 'contain',
+    textAlign: 'center',
+  },
 }));
 
-const ReadMoreModal = ({ open, setOpen }) => {
+const ReadMoreModal = ({ modal, setModal }) => {
   const classes = useStyles();
   const handleClose = () => {
-    setOpen(false);
+    setModal(false);
   };
 
   return (
     <>
       <Modal
-        open={open}
+        open={modal}
         onClose={handleClose}
         aria-labelledby="read-more-modal"
         aria-describedby="read-more-modal-description"
         className={classes.modal}
-        closeAfterTransition
       >
-        {/* <Slide direction="up" in={open}> */}
         <AnimatePresence>
-          {open && (
+          {modal && (
             <motion.div
               className={classes.paper}
               initial={{ translateY: '100%' }}
@@ -53,6 +64,9 @@ const ReadMoreModal = ({ open, setOpen }) => {
                   color="primary"
                   aria-label="upload picture"
                   component="span"
+                  onClick={() => {
+                    setModal(false);
+                  }}
                 >
                   <Close />
                 </IconButton>
@@ -61,7 +75,18 @@ const ReadMoreModal = ({ open, setOpen }) => {
                 Perfect for Small & Medium Businesses in India ,Samsung Launches
                 New Range of UHD Business TVs
               </h4>
+              <img src={image} className={classes.img} alt="headline-img" />
               <p id="read-more-modal-description">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal distribution of letters, as opposed to using 'Content
+                here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem
+                Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by
+                accident, sometimes on purpose (injected humour and the like).
                 It is a long established fact that a reader will be distracted
                 by the readable content of a page when looking at its layout.
                 The point of using Lorem Ipsum is that it has a more-or-less
@@ -76,7 +101,6 @@ const ReadMoreModal = ({ open, setOpen }) => {
             </motion.div>
           )}
         </AnimatePresence>
-        {/* </Slide> */}
       </Modal>
     </>
   );
