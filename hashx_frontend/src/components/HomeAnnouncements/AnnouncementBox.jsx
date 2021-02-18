@@ -76,9 +76,9 @@ const CoursesCard = (props) => {
         <Grid item xs={10}>
           <Paper elevation={3} className={classes.headingContainer}>
             <div className={classes.headingText}>Announcements&nbsp;</div>
-            <div style={{ margin: 'auto' }}>
+            {/* <div style={{ margin: 'auto' }}>
               <ArrowForwardIcon />
-            </div>
+            </div> */}
           </Paper>
         </Grid>
         <Grid item xs={2} container justify="flex-end">

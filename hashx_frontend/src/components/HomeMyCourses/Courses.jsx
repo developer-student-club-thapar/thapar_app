@@ -112,9 +112,9 @@ const TimeTable = () => {
         <Grid item xs={8} lg={6} xl={6} className={classes.mainHeader}>
           <Paper elevation={3} className={classes.headingContainer}>
             <div className={classes.headingText}>My Courses&nbsp;&nbsp;</div>
-            <div style={{ margin: 'auto' }}>
+            {/* <div style={{ margin: 'auto' }}>
               <ArrowForwardIcon />
-            </div>
+            </div> */}
           </Paper>
         </Grid>
         <Grid item xs={2} style={{ marginTop: 'auto', marginBottom: 'auto' }}>
