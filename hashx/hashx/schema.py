@@ -51,8 +51,6 @@ class SocialAuth(graphql_social_auth.SocialAuthMutation, graphql_social_auth.mix
         except Exception:
             new_user = True
             print(Exception)
-        # else:
-        #     new_user = True
         return cls(user=social.user, new_user=new_user, token=graphql_jwt.shortcuts.get_token(social.user, info.context), jwt_refresh_token=graphql_jwt.shortcuts.create_refresh_token(social.user))
 
 
