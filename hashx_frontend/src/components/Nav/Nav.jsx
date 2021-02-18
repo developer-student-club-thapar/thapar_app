@@ -85,7 +85,7 @@ const Nav = () => {
               <Paper elevation={2} className={classes.paper}>
                 <div>
                   <span style={{ color: '#A3A3A3' }}>Welcome</span>{' '}
-                  {user.username}
+                  {user.firstName} {user.lastName}
                 </div>
               </Paper>
               <SidebarTrigger sidebarId="primarySidebar" />

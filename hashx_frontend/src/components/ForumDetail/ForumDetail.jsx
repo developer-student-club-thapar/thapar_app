@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 const ForumDetail = () => {
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6MDAxMGVkODItNzE2Ny00MTQ5LTg2YTMtMTFhNWM0MjE0MGRk',
+      file: 'RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
     },
   });
   const classes = useStyles();
@@ -48,7 +48,7 @@ const ForumDetail = () => {
       <br />
       <Grid container spacing={2}>
         <Grid item xs={12} lg={8}>
-          <Document />
+          <Document file={data?.allQuestions.edges[0].node.file} />
         </Grid>
         <Grid item xs={12} lg={4}>
           <SidePanel data={data} />

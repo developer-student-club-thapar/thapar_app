@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid } from '@material-ui/core';
 import profile from '../../assets/profileImage.svg';
+import { UserContext } from '../../context/UserProvider';
 
 const CourseTeam = () => {
+  const { user } = useContext(UserContext);
   return (
     <>
       <Grid container style={{ marginTop: '20px' }} justify="center">
@@ -16,7 +18,7 @@ const CourseTeam = () => {
         </Grid>
         <Grid item xs={8} style={{ textAlign: 'left', padding: ' 5px 10px' }}>
           <h1 style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>
-            Divanshu Agarwal
+            {user.firstName} {user.lastName}
           </h1>
           <h1
             style={{
@@ -24,7 +26,7 @@ const CourseTeam = () => {
               color: 'gray',
             }}
           >
-            @divanshuroxs
+            @{user.username}
           </h1>
         </Grid>
       </Grid>

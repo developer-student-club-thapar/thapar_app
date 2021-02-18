@@ -118,8 +118,13 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Ramyak Mehra** - *Backend Django and API* - [ramyak-mehra](https://github.com/ramyak-mehra)
 * **Sanchit Jain** - *Backend Django and API* - [sanchjain](https://github.com/sanchjain)
 * **Aniket Biswas** - *React Web Application* - [aniketbiswas21](https://github.com/aniketbiswas21)
+<<<<<<< HEAD
 * **Rishabh Malhotra** - _*React Web Application*_ - [Rishabh-malhotraa](https://github.com/Rishabh-malhotraa)
 * **Abhishek Sheoran** - _*UI/UX Designer*_ - []()
+=======
+* **Rishabh Malhotra** - *React Web Applications* - [rishabh-malhotraa](https://github.com/rishabh-malhotraa)
+* **Sanchit Nanda** - *UI/UX Designer* - [sanchitnanda](https://github.com/sanchitnanda)
+>>>>>>> 20f72603dec0cfbd66ec9d70cf684306b4c12ecb
 
 See also the list of [contributors](https://github.com/developer-student-club-thapar/thapar_app/graphs/contributors) who participated in this project.
 

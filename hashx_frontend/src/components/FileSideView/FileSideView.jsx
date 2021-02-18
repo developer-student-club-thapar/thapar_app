@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     placeItems: 'center',
     borderRadius: '29px',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    cursor: 'pointer',
   },
   paperButtons2: {
     background: '#F0F0F3',
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '29px',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     marginTop: 10,
+    cursor: 'pointer',
   },
   paperButtons3: {
     background: 'rgba(7, 127, 214, 0.47)',
@@ -42,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '29px',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     marginTop: 10,
+    cursor: 'pointer',
   },
   previewText: {
     color: '#466D3D',
@@ -75,7 +78,11 @@ const FileSideView = ({ file }) => {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Paper elevation={3} className={classes.paperGrid}>
-            <img src={assignment} className={classes.img} alt="assignment" />
+            <img
+              src={file.thumbnailImage ? file.thumbnailImage : assignment}
+              className={classes.img}
+              alt="assignment"
+            />
           </Paper>
         </Grid>
         <Grid item xs={12}>
@@ -84,7 +91,13 @@ const FileSideView = ({ file }) => {
       </Grid>
       <Grid container spacing={2} className={classes.buttonGrid}>
         <Grid item xs={12}>
-          <Paper elevation={3} className={classes.paperButtons1}>
+          <Paper
+            elevation={3}
+            className={classes.paperButtons1}
+            onClick={() => {
+              window.open(`${file.webContentLink}`);
+            }}
+          >
             <span className={classes.previewText}>
               <i className="fas fa-share-square fa-lg" />
               &nbsp;&nbsp;Preview
@@ -92,7 +105,13 @@ const FileSideView = ({ file }) => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper elevation={3} className={classes.paperButtons2}>
+          <Paper
+            elevation={3}
+            className={classes.paperButtons2}
+            onClick={() => {
+              window.open(`${file.webContentLink}`);
+            }}
+          >
             <span className={classes.downloadText}>
               <i className="fas fa-download fa-lg" />
               &nbsp;&nbsp;Download
