@@ -6,6 +6,7 @@ import SidePanel from '../SidePanel/SidePanel';
 import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
 import Error from '../Error/Error';
+import { useParams } from 'react-router';
 
 const useStyles = makeStyles(() => ({
   headerText: {
@@ -19,9 +20,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ForumDetail = () => {
+  const { fileId } = useParams();
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
+      file: fileId,
     },
   });
   const classes = useStyles();
