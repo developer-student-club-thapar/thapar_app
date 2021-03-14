@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   primaryGridText: {
     fontWeight: 'bolder',
+    cursor: 'pointer',
   },
   paperButtons1: {
     background: '#00293B',
@@ -55,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFFFF',
     fontWeight: 'bold',
     fontSize: '1.2rem',
+  },
+  notFoundText: {
+    padding: '1.5rem',
   },
 }));
 
@@ -74,63 +78,65 @@ const SidePanel = ({ data }) => {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          {data.allQuestions.edges.map((question) => {
-            const {
-              title,
-              content,
-              id,
-              replies,
-              owner: { username },
-            } = question.node;
-            return (
-              <Grid item xs={12} key={id}>
-                <Paper elevation={3} className={classes.discussionItem}>
-                  <Grid container spacing={2}>
-                    <Grid item xs={2} style={{ padding: '10px' }}>
-                      <Avatar
-                        alt="Profile"
-                        src="https://picsum.photos/200/300"
-                        className={classes.profileAvatar}
-                      />
-                    </Grid>
-                    <Grid item xs={10}>
-                      <h4 className={classes.primaryGridText}>
-                        {title}&nbsp;&nbsp;
-                        <i
+          {data.allQuestions.edges.length > 0 ? (
+            data.allQuestions.edges.map((question) => {
+              const {
+                title,
+                content,
+                id,
+                replies,
+                owner: { username },
+              } = question.node;
+              return (
+                <Grid item xs={12} key={id}>
+                  <Paper elevation={3} className={classes.discussionItem}>
+                    <Grid container spacing={2}>
+                      <Grid item lg={3} xl={2} style={{ padding: '10px' }}>
+                        <Avatar
+                          alt="Profile"
+                          src="https://picsum.photos/200/300"
+                          className={classes.profileAvatar}
+                        />
+                      </Grid>
+                      <Grid item lg={9} xl={10}>
+                        <h4
+                          className={classes.primaryGridText}
                           onClick={() => {
                             history.push(`/forum/discussion-panel/${id}`);
                           }}
-                          className="fas fa-share-square"
-                          style={{ color: '#466D3D', cursor: 'pointer' }}
-                        />
-                      </h4>
-                      <p>{content}</p>
-                      <Grid container spacing={2}>
-                        <Grid item xs={2}>
-                          <h6 style={{ fontWeight: 'bolder' }}>
-                            <i
-                              className="far fa-heart fa-lg"
-                              style={{ color: '#E10505' }}
-                            />
-                            &nbsp;10
-                          </h6>
-                        </Grid>
-                        <Grid item xs={2}>
-                          <h6 style={{ fontWeight: 'bolder' }}>
-                            <i
-                              className="far fa-edit fa-lg"
-                              style={{ color: '#7C73F0' }}
-                            />
-                            &nbsp;{replies.edges.length}
-                          </h6>
+                        >
+                          {title}&nbsp;&nbsp;
+                        </h4>
+                        <p>{content}</p>
+                        <Grid container spacing={2}>
+                          <Grid item xs={2}>
+                            <h6 style={{ fontWeight: 'bolder' }}>
+                              <i
+                                className="far fa-heart fa-lg"
+                                style={{ color: '#E10505' }}
+                              />
+                              &nbsp;10
+                            </h6>
+                          </Grid>
+                          <Grid item xs={2}>
+                            <h6 style={{ fontWeight: 'bolder' }}>
+                              <i
+                                className="far fa-edit fa-lg"
+                                style={{ color: '#7C73F0' }}
+                              />
+                              &nbsp;{replies.edges.length}
+                            </h6>
+                          </Grid>
                         </Grid>
                       </Grid>
                     </Grid>
-                  </Grid>
-                </Paper>
-              </Grid>
-            );
-          })}
+                  </Paper>
+                </Grid>
+              );
+            })
+          ) : (
+            <h5 className={classes.notFoundText}>No related questions found</h5>
+          )}
         </Grid>
         <Grid container spacing={2}>
           <Grid item xs={12}>

@@ -38,6 +38,8 @@ import Zoom from '@material-ui/core/Zoom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { setAccessToken, setRefreshToken } from '../util/token';
 import Footer from '../components/Landing/Footer/Footer';
+import Alert from '@material-ui/lab/Alert';
+import { Snackbar } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -110,6 +112,7 @@ const LightTooltip = withStyles((theme) => ({
 
 const Landing = () => {
   const [color, setcolor] = useState('#eee');
+  const [open] = useState(false);
   const classes = useStyles();
   const history = useHistory();
   const [
@@ -134,18 +137,9 @@ const Landing = () => {
   const { addGoogleToken, authenticate } = useContext(UserContext);
   const responseGoogle = (response) => {
     addGoogleToken(response.accessToken);
-    console.log('success');
     socialMutation({ variables: { accessToken: response.accessToken } });
-    console.log(response);
-    if (socialLoading) {
-      console.log(socialLoading);
-    }
-    if (socialError) {
-      console.log(socialError);
-    }
   };
   const responseGoogleFail = (response) => {
-    console.log(response);
     console.log('fail');
   };
 
@@ -153,6 +147,26 @@ const Landing = () => {
 
   return (
     <>
+      {socialLoading && (
+        <Snackbar
+          open={true}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        >
+          <Alert severity="info">
+            Logging you in! Please wait while we load the land of awesomeness
+            for you
+          </Alert>
+        </Snackbar>
+      )}
+      {socialError && (
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        >
+          <Alert severity="error">Something went wrong! Please try again</Alert>
+        </Snackbar>
+      )}
       <animated.div id="main-container" className={classes.root} style={props}>
         <div className={classes.page1Root}>
           <MouseScroll />

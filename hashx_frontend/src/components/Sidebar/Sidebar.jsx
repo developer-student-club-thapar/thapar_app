@@ -145,7 +145,8 @@ const Sidebar = () => {
     },
     {
       mainText: 'Forums',
-      path: '/forum/forum-details',
+      path:
+        '/forum/forum-details/RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
       iconClassName: 'fas fa-comments fa-2x',
     },
   ];

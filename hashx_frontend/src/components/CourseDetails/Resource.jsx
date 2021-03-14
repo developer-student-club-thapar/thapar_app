@@ -1,12 +1,10 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/client';
 import { useHistory } from 'react-router-dom';
+import { makeStyles, CircularProgress, Paper, Grid } from '@material-ui/core';
+import { useQuery } from '@apollo/client';
 import { FILE_TYPE_QUERY } from './Queries';
 import FileList from './FileList';
 import { secondaryColor } from '../../theme/theme';
-import { makeStyles } from '@material-ui/core';
 
 // call file type query before loading the component
 
@@ -41,18 +39,23 @@ const useClasses = makeStyles((theme) => ({
   },
 }));
 
-const Tutorials = (props) => {
+const Resource = (props) => {
   const history = useHistory();
   const { id: courseId, path } = props;
   const classes = useClasses();
-  console.log(path);
+
   const {
     loading: fileTypeLoading,
     error: fileTypeError,
     data: fileTypeData,
   } = useQuery(FILE_TYPE_QUERY, { variables: { slug: `${path}` } });
+
   if (fileTypeLoading) {
-    return <div> loading...</div>;
+    return (
+      <Paper elevation={3} className={classes.mainPaper}>
+        <CircularProgress />
+      </Paper>
+    );
   }
   if (fileTypeError) {
     return <div>Error..</div>;
@@ -75,4 +78,4 @@ const Tutorials = (props) => {
   );
 };
 
-export default Tutorials;
+export default Resource;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,8 +8,6 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import FiberManualRecordRoundedIcon from '@material-ui/icons/FiberManualRecordRounded';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
-import LinkIcon from '@material-ui/icons/Link';
-import Chip from '@material-ui/core/Chip';
 import Tooltip from '@material-ui/core/Tooltip';
 import Zoom from '@material-ui/core/Zoom';
 import SvgIcon from '@material-ui/core/SvgIcon';
@@ -178,4 +176,4 @@ const ClassCard = ({ item }) => {
   } else return <div></div>;
 };
 
-export default ClassCard;
+export default memo(ClassCard);

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { useQuery, useLazyQuery } from '@apollo/client';
 import { FILES_QUERY, CDN_URL } from './Queries';
 import { makeStyles } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
+import NoPreviewImg from '../../assets/no-preview.png';
 
 const useClasses = makeStyles((theme) => ({
   thumbnail: {
@@ -28,7 +29,7 @@ const useClasses = makeStyles((theme) => ({
     textAlign: 'left',
     paddingLeft: 5,
     fontWeight: 'bolder',
-    fontSize: '17px',
+    fontSize: '1rem',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },
@@ -50,7 +51,7 @@ const FileList = (props) => {
   });
   if (filesLoading) return <div>Loading....</div>;
   if (filesError) return <div> Error..</div>;
-  console.log(filesData);
+
   return (
     <>
       {filesData.allFiles.edges &&
@@ -60,24 +61,28 @@ const FileList = (props) => {
             <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={id}>
               <motion.div whileHover={{ scale: 0.9 }} transition={transition}>
                 <img
-                  src={
-                    thumbnailImage !== ''
-                      ? thumbnailImage
-                      : 'https://picsum.photos/400/200'
-                  }
+                  src={thumbnailImage !== '' ? thumbnailImage : NoPreviewImg}
                   className={classes.thumbnail}
                   alt="thumbnail"
                   onClick={() => {
-                    history.push(`/pdfview`); // file
+                    history.push(`/forum/forum-details/${id}`); // file
                   }}
                 />
                 <div
                   className={classes.thumbnailTitleBox}
                   onClick={() => {
-                    history.push(`/pdfview`);
+                    history.push(`/forum/forum-details/${id}`);
                   }}
                 >
-                  <div style={{ paddingTop: '10px' }}>{name}</div>
+                  <div
+                    style={{
+                      padding: '10px',
+                      width: '100%',
+                      wordWrap: 'break-word',
+                    }}
+                  >
+                    {name}
+                  </div>
                 </div>
               </motion.div>
             </Grid>

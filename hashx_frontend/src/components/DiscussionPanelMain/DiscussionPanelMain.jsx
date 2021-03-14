@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import FileSideView from '../FileSideView/FileSideView';
 import Discussions from '../DiscussionsPanel/DiscussionsPanel';
 import { useQuery } from '@apollo/client';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { QUESTION_DETAIL } from './Queries';
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const DiscussionsPanel = () => {
   const history = useHistory();
-  const questionId = history.location.pathname.split('/')[3];
+  const { id: questionId } = useParams();
   const {
     loading: questionLoading,
     data: questionData,
