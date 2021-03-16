@@ -21,6 +21,10 @@ const Forum = lazy(() => import('../pages/Forum'));
 const Hostel = lazy(() => import('../pages/Hostel'));
 const PdfView = lazy(() => import('../pages/PdfView'));
 const VirtualCampus = lazy(() => import('../pages/VirtualCampusPage'));
+const ForumDetail = lazy(() => import('../components/ForumDetail/ForumDetail'));
+const DiscussionsPanel = lazy(() =>
+  import('../components/DiscussionPanelMain/DiscussionPanelMain'),
+);
 
 const Routes = () => {
   return (
@@ -32,13 +36,18 @@ const Routes = () => {
       }
     >
       <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/courses-overview" component={CoursesOverview} />
+        <Route exact path="/" component={Landing} isRestricted />
+        <Route exact path="/dashboard" component={Dashboard} isPrivate />
+        <Route
+          exact
+          path="/courses-overview"
+          component={CoursesOverview}
+          isPrivate
+        />
         <Route exact path="/courses/:id/:content" component={CourseDetail} />
-        <Route exact path="/pdfview" component={PdfView} />
-        <Route exact path="/hostel" component={Hostel} />
-        <Route exact path="/timetable" component={TimeTable} />
+        <Route exact path="/pdfview" component={PdfView} isPrivate />
+        <Route exact path="/hostel" component={Hostel} isPrivate />
+        <Route exact path="/timetable" component={TimeTable} isPrivate />
         <Route exact path="/private" component={PrivateTest} />
         <Route exact path="/register" component={Register} isRestricted />
         <Route exact path="/login" component={Login} isRestricted />
@@ -53,9 +62,28 @@ const Routes = () => {
           exact
           path="/studentdetailform"
           component={StudentDetailsForm}
-          New
+          isPrivate
         />
-        <Route exact={false} path="/forum/:page" component={Forum} />
+        <Route
+          exact={true}
+          path="/forum/discussion-panel/:id"
+          render={(props) => (
+            <Forum>
+              <DiscussionsPanel {...props} />
+            </Forum>
+          )}
+          isPrivate
+        />
+        <Route
+          exact={true}
+          path="/forum/forum-details/:fileId"
+          render={(props) => (
+            <Forum>
+              <ForumDetail {...props} />
+            </Forum>
+          )}
+          isPrivate
+        />
         <Route path="/404" component={PageNotFound} />
         <Redirect to="/404" />
       </Switch>

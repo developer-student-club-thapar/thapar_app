@@ -1,12 +1,12 @@
 import React from 'react';
-import ninja from '../assets/ninja.json';
+import animation from '../assets/education2.json';
 import Lottie from 'react-lottie';
 
-const NinjaAnimation = () => {
+const CollegeAnimation = () => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
-    animationData: ninja,
+    animationData: animation,
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },
@@ -23,4 +23,4 @@ const NinjaAnimation = () => {
   );
 };
 
-export default NinjaAnimation;
+export default CollegeAnimation;

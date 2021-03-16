@@ -131,7 +131,7 @@ const Sidebar = () => {
     {
       mainText: 'Home',
       path: '/dashboard',
-      iconClassName: 'fas fa-book fa-2x',
+      iconClassName: 'fas fa-home fa-2x',
     },
     {
       mainText: 'Courses',
@@ -141,12 +141,13 @@ const Sidebar = () => {
     {
       mainText: 'TimeTable',
       path: '/timetable',
-      iconClassName: 'fas fa-book fa-2x',
+      iconClassName: 'fas fa-calendar-alt fa-2x',
     },
     {
       mainText: 'Forums',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
+      path:
+        '/forum/forum-details/RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
+      iconClassName: 'fas fa-comments fa-2x',
     },
   ];
   return (

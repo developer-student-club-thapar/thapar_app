@@ -90,7 +90,7 @@ export const GET_BRANCHES = gql`
   }
 `;
 
-// * Login Query
+// * Login Mutation
 export const SOCIAL_AUTH = gql`
   mutation SocialAuth($accessToken: String!) {
     socialAuth(accessToken: $accessToken, provider: "google-oauth2") {
@@ -101,6 +101,15 @@ export const SOCIAL_AUTH = gql`
         username
         id
       }
+    }
+  }
+`;
+
+//  * Logout Mutation
+export const LOGOUT_MUTATION = gql`
+  mutation Logout {
+    deleteTokenCookie {
+      deleted
     }
   }
 `;

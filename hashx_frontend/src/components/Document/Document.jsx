@@ -119,7 +119,7 @@ const DocumentPreview = ({ file }) => {
                   height: '900px',
                 }}
               >
-                <Viewer fileUrl={sample} />
+                <Viewer fileUrl={file.file} />
               </div>
             </Grid>
           </Grid>

@@ -4,12 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import { useQuery } from '@apollo/client';
 import { COURSE_QUERY } from '../components/CourseDetails/Queries';
 import { useHistory, useParams } from 'react-router-dom';
-import Tutorials from '../components/CourseDetails/Tutorials';
-import Books from '../components/CourseDetails/Books';
-import Notes from '../components/CourseDetails/Notes';
-import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
+import Resource from '../components/CourseDetails/Resource';
 import { makeStyles } from '@material-ui/core/styles';
-import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
 import { secondaryColor } from '../theme/theme';
 import { useStyles } from '../components/Global/Global';
 import backgroundText from '../assets/cs.svg';
@@ -159,8 +155,9 @@ const useClasses = makeStyles((theme) => ({
   paperBackground: {
     backgroundColor: `${secondaryColor}`,
     [theme.breakpoints.up('lg')]: {
-      backgroundImage: `url(${backgroundText})`,
-      backgroundRepeat: 'no-repeat',
+      // backgroundImage: `url(${backgroundText})`,
+      // backgroundRepeat: 'no-repeat',
+      // backgroundPosition: 'right top',
     },
   },
 }));
@@ -174,40 +171,40 @@ const CourseDetail = (props) => {
   const path = content;
   const list = [
     {
-      mainText: 'Tutorial',
-      path: `/courses/${courseId}/tutorials`,
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Tutorials',
+      path: `/courses/${courseId}/tutorial`,
+      iconClassName: 'fas fa-sticky-note fa-2x',
+      iconClassNameMoblie: 'fas fa-sticky-note fa-lg',
+    },
+    {
+      mainText: 'Notes and Slides',
+      path: `/courses/${courseId}/notes-and-slides`,
+      iconClassName: 'fas fa-file-powerpoint fa-2x',
+      iconClassNameMoblie: 'fas fa-file-powerpoint fa-lg',
     },
     {
       mainText: 'Lab',
-      path: '/courses',
+      path: `/courses/${courseId}/lab`,
+      iconClassName: 'fas fa-vial fa-2x',
+      iconClassNameMoblie: 'fas fa-vial fa-lg',
+    },
+    {
+      mainText: 'Book',
+      path: `/courses/${courseId}/books`,
       iconClassName: 'fas fa-book fa-2x',
       iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
-      mainText: 'Courses',
-      path: '/dashboard/timetable',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Books and Lab Material',
+      path: `/courses/${courseId}/books-lab`,
+      iconClassName: 'fas fa-flask fa-2x',
+      iconClassNameMoblie: 'fas fa-flask fa-lg',
     },
     {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
-    },
-    {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
-    },
-    {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Previous year papers',
+      path: `/courses/${courseId}/prev-yr-papers`,
+      iconClassName: 'fas fa-question-circle fa-2x',
+      iconClassNameMoblie: 'fas fa-question-circle fa-lg',
     },
   ];
 
@@ -227,17 +224,18 @@ const CourseDetail = (props) => {
   }
   console.log(data);
   const renderComponent = () => {
-    if (path === 'tutorials') {
-      return <Tutorials id={courseId} path={path} />;
-    } else if (path === 'books') {
-      return <Books id={courseId} path={path} />;
-    } else if (path === 'notes') {
-      return <Notes id={courseId} path={path} />;
-    } else if (path === 'previousyearpapers') {
-      return <PreviousYearPapers id={courseId} path={path} />;
-    } else if (path === 'tutorialssolution') {
-      return <TutorialsSolution id={courseId} path={path} />;
-    }
+    // if (path === 'tutorial') {
+    //   return <Resource id={courseId} path={path} />;
+    // } else if (path === 'books') {
+    //   return <Resource id={courseId} path={path} />;
+    // } else if (path === 'notes-and-slides') {
+    //   return <Resource id={courseId} path={path} />;
+    // } else if (path === 'previousyearpapers') {
+    //   return <PreviousYearPapers id={courseId} path={path} />;
+    // } else if (path === 'tutorialssolution') {
+    //   return <TutorialsSolution id={courseId} path={path} />;
+    // }
+    return <Resource id={courseId} path={path} />;
   };
   if (data) {
     return (

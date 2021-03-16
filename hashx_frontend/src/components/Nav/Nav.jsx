@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Avatar, Grid, Hidden, makeStyles, Paper } from '@material-ui/core';
 import { secondaryColor } from '../../theme/theme';
 import { ReactComponent as BellIcon } from '../../assets/bell.svg';
@@ -6,6 +6,11 @@ import { ReactComponent as MessageIcon } from '../../assets/message.svg';
 import { getSidebarTrigger } from '@mui-treasury/layout';
 import styled from 'styled-components';
 import { UserContext } from '../../context/UserProvider';
+import DropDownMenu from '../DropdownMenu/DropDownMenu';
+import {
+  notificationItems,
+  profileOptions,
+} from '../../util/NavDropdownOptions';
 
 const SidebarTrigger = getSidebarTrigger(styled);
 
@@ -57,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navIcons: {
     margin: 'auto 0 auto 0',
+    cursor: 'pointer',
   },
   drawer: {
     [theme.breakpoints.only('lg', 'xl')]: {
@@ -68,6 +74,9 @@ const useStyles = makeStyles((theme) => ({
 const Nav = () => {
   const classes = useStyles();
   const { user } = useContext(UserContext);
+  const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
 
   return (
     <>
@@ -83,14 +92,14 @@ const Nav = () => {
           <Grid container spacing={2} justify="space-between">
             <Grid item xs={3}>
               <Paper elevation={2} className={classes.paper}>
-                <div>
+                <div style={{ whiteSpace: 'nowrap' }}>
                   <span style={{ color: '#A3A3A3' }}>Welcome</span>{' '}
-                  {user.firstName} {user.lastName}
+                  {user.firstName}
                 </div>
               </Paper>
               <SidebarTrigger sidebarId="primarySidebar" />
             </Grid>
-            <Grid item xs={6} lg={4}>
+            <Grid item xs={6} lg={6} xl={4}>
               <div className={classes.flexRow}>
                 <input
                   type="search"
@@ -101,13 +110,41 @@ const Nav = () => {
                 />
 
                 <span className={classes.navIcons}>
-                  <BellIcon />
+                  <BellIcon
+                    onClick={() => {
+                      setOpen2(!open2);
+                    }}
+                  />
+                  <DropDownMenu
+                    open={open2}
+                    options={notificationItems}
+                    setOpen={setOpen2}
+                  />
                 </span>
                 <span className={classes.navIcons}>
-                  <MessageIcon />
+                  <MessageIcon
+                    onClick={() => {
+                      setOpen3(!open3);
+                    }}
+                  />
+                  <DropDownMenu
+                    open={open3}
+                    options={profileOptions}
+                    setOpen={setOpen3}
+                  />
                 </span>
                 <span className={classes.navIcons}>
-                  <Avatar alt="profile" />
+                  <Avatar
+                    alt="profile"
+                    onClick={() => {
+                      setOpen(!open);
+                    }}
+                  />
+                  <DropDownMenu
+                    open={open}
+                    options={profileOptions}
+                    setOpen={setOpen}
+                  />
                 </span>
               </div>
             </Grid>

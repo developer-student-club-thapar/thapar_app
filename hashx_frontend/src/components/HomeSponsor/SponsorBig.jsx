@@ -40,7 +40,7 @@ const SponsorBig = () => {
               <p className={classes.headingText}>Sponsored</p>
             </Grid>
           </Grid>
-          <Grid container spacing={2} justify="stretch">
+          <Grid container spacing={2}>
             <img
               style={{
                 borderRadius: '10px',

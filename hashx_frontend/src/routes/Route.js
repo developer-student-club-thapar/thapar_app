@@ -12,22 +12,14 @@ function RouteWrapper({
 }) {
   const { user } = useContext(UserContext);
   const { newUser } = user;
-  let isAuthenticated = localStorage.getItem('isAuthenticated');
+  // * grab the authentication boolean from the context. If not present, grab from local storage
+  const auth = localStorage.getItem('isAuthenticated');
 
-  isAuthenticated = isAuthenticated || false;
-
-  if (isPrivate && !isAuthenticated) {
+  // * Redirection rules
+  if (isPrivate && auth === 'false') {
     return <Redirect to="/" />;
-  } else if (isPrivate && isAuthenticated && newUser === true) {
-    return <Redirect to="/studentdetailform" />;
-  } else if (isPrivateNew && newUser === false) {
+  } else if (isRestricted && auth === 'true') {
     return <Redirect to="/dashboard" />;
-  } else if (isPrivateNew && !isAuthenticated) {
-    return <Redirect to="/" />;
-  } else if (isRestricted && isAuthenticated && newUser === false) {
-    return <Redirect to="/dashboard" />;
-  } else if (isRestricted && isAuthenticated && newUser === true) {
-    return <Redirect to="/studentdetailform" />;
   }
 
   /**
@@ -39,7 +31,6 @@ function RouteWrapper({
 RouteWrapper.propTypes = {
   isPrivate: PropTypes.bool,
   isRestricted: PropTypes.bool,
-  isPrivateNew: PropTypes.bool,
   component: PropTypes.oneOfType([PropTypes.element, PropTypes.func])
     .isRequired,
 };

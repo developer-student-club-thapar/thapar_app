@@ -7,12 +7,6 @@ export const FILE_QUESTIONS = gql`
           title
           content
           id
-          file {
-            id
-            thumbnailImage
-            name
-            webContentLink
-          }
           owner {
             username
           }
@@ -25,6 +19,13 @@ export const FILE_QUESTIONS = gql`
           }
         }
       }
+    }
+    file(id: $file) {
+      id
+      thumbnailImage
+      name
+      file
+      webContentLink
     }
   }
 `;

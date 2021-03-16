@@ -63,14 +63,10 @@ const Navbar = () => {
           >
             Vexio
           </Typography>
-          <Box
-            m={2}
-            className={classes.hamburgerBox}
-            onClick={() => setOpen((open) => !open)}
-            style={{ zIndex: '100' }}
-          >
+          <Box m={2} className={classes.hamburgerBox} style={{ zIndex: '100' }}>
             <HamburgerMenu
               isOpen={open}
+              menuClicked={() => setOpen((open) => !open)}
               width={30}
               height={20}
               strokeWidth={2}

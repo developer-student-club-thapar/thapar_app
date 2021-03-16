@@ -73,16 +73,7 @@ const Home = () => {
     <>
       <CssBaseline />
       <div className={classes.container}>
-        <br />
-        <br />
-        {/* <h1 className={classes.introductoryText}>
-          Hey{' '}
-          <span style={{ color: '#898989' }}>
-            {data.cachedUserData.firstName}
-          </span>
-        </h1> */}
-        <br />
-        <Grid container spacing={4}>
+        <Grid container spacing={4} style={{ marginTop: '1.5rem' }}>
           <Grid item xs={12} lg={5} xl={5}>
             <TimeTable />
           </Grid>
@@ -95,9 +86,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Grid>
-        <br />
-        <br />
-        <Grid container spacing={4}>
+        <Grid container spacing={4} style={{ marginTop: '1rem' }}>
           <Grid container item xs={12} lg={5} xl={5} direction="row">
             <Grid
               container
@@ -130,8 +119,6 @@ const Home = () => {
             </Grid>
           </Grid>
         </Grid>
-        <br />
-        <br />
         {/* <Grid container spacing={4} ref={eventsRef}>
           <Grid item xs={12} lg={12} xl={11}>
             <Events />

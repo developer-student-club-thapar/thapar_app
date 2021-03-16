@@ -21,6 +21,7 @@ export const FILES_QUERY = gql`
           name
           thumbnailImage
           id
+          file
         }
       }
     }

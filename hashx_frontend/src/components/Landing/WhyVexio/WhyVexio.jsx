@@ -79,7 +79,7 @@ const WhyVexio = () => {
             <h1 style={{ textAlign: '', fontSize: '48px' }}>Why Vexio?</h1>
           </Grid>
           <Grid item container className={classes.peepsContainer}>
-            <Grid item direction="row">
+            <Grid item>
               <Box style={{ position: 'relative' }}>
                 <img
                   className={classes.laptopMan}
