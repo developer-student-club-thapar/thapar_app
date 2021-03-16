@@ -35,6 +35,7 @@ class Student(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.PROTECT)
     batch = models.ForeignKey(
         Batch,  on_delete=models.PROTECT, null=True, blank=True)
+    subscribed_courses = models.ManyToManyField(Course)
     firstyearbatch = models.ForeignKey(
         FirstYearBatch, on_delete=models.PROTECT, null=True, blank=True)
     points = models.DecimalField(default=0, max_digits=20, decimal_places=2)

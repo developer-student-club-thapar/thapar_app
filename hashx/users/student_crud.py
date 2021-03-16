@@ -3,12 +3,15 @@ from hashx.mixins import AuthenticatedNode
 from graphql_relay.node.node import from_global_id
 from .schema import StudentNode
 import graphene
-from acad.models import Branch , Batch
+from acad.models import Branch, Batch, Course
 from django.contrib.auth.models import User
 from graphene_django.types import DjangoObjectType
-from hashx.decorators import every_authenticated ,  same_user , compare_users, file_size_check
+from hashx.decorators import every_authenticated,  same_user, compare_users, file_size_check
+
+
 class CreateStudent(graphene.relay.ClientIDMutation):
     student = graphene.Field(StudentNode)
+
     class Input:
         branch = graphene.String()
         batch = graphene.String()
@@ -16,12 +19,12 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         rollno = graphene.Int()
         invited_code = graphene.String()
         bio = graphene.String()
-        
-        #starred files
-    
+
+        # starred files
+
     @classmethod
     @every_authenticated
-    def mutate_and_get_payload(cls,root, info, **input):
+    def mutate_and_get_payload(cls, root, info, **input):
         user = info.context.user
         gender = input.get('gender')
         invited_code = input.get('invited_code')
@@ -33,11 +36,15 @@ class CreateStudent(graphene.relay.ClientIDMutation):
         batchId = from_global_id(batch)[1]
         branchObject = Branch.objects.get(pk=branchId)
         batchObject = Batch.objects.get(pk=batchId)
-        student = Student.objects.create(user=user, branch=branchObject, batch = batchObject , gender = gender ,bio=bio ,rollno=rollno , invited_code = invited_code)
+        student = Student.objects.create(user=user, branch=branchObject, batch=batchObject,
+                                         gender=gender, bio=bio, rollno=rollno, invited_code=invited_code)
         student.save()
-        return  CreateStudent(student=student)
+        return CreateStudent(student=student)
+
+
 class UpdateStudent(graphene.relay.ClientIDMutation):
     student = graphene.Field(StudentNode)
+
     class Input:
         id = graphene.String()
         user = graphene.String()
@@ -47,12 +54,12 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
         firstyearbatch = graphene.String()
         points = graphene.String()
         gender = graphene.String()
-        
+
     @classmethod
     @every_authenticated
-    @compare_users(same_user , Student)
-    @file_size_check('image' , 10485760)
-    def mutate_and_get_payload(cls,root, info, **input):
+    @compare_users(same_user, Student)
+    @file_size_check('image', 10485760)
+    def mutate_and_get_payload(cls, root, info, **input):
         try:
             id = input.get('id')
             id = AuthenticatedNode.from_global_id(id)
@@ -66,8 +73,8 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
             points = input.get('points')
             gender = input.get('gender')
             try:
-                image = info.context.FILES['image'] 
-            except :
+                image = info.context.FILES['image']
+            except:
                 pass
             student = Student.objects.get(pk=id)
             if bio:
@@ -88,3 +95,26 @@ class UpdateStudent(graphene.relay.ClientIDMutation):
             return UpdateStudent(student=student)
         except:
             raise Exception('User Not Found')
+
+
+class SubscribeToCourse(graphene.relay.ClientIDMutation):
+    success = graphene.Boolean()
+
+    class Input:
+        courses = graphene.List(graphene.String)
+
+    @classmethod
+    @every_authenticated
+    def mutate_and_get_payload(cls, root, info, courses):
+        user = info.context.user
+        student = user.student
+
+        for course in courses:
+            try:
+                courseID = from_global_id(course)[1]
+                c = Course.objects.get(pk=courseID)
+                student.subscribed_courses.add(c)
+            except:
+                raise Exception('Course ID invalid')
+
+        return SubscribeToCourse(success=True)
