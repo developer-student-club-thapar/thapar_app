@@ -21,7 +21,12 @@ class DrivefolderNode(DjangoObjectType):
 class CourseFilter(django_filters.FilterSet):
     class Meta:
         model = Course
-        fields = '__all__'
+        fields = {
+            'name': ['exact', 'icontains'],
+            'code': ['exact'],
+            'id': ['exact']
+
+        }
 
 
 class CourseNode(DjangoObjectType):
