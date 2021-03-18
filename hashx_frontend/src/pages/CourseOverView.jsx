@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CourseTeam from '../components/CourseTeam/CourseTeam';
 import CourseGrid from '../components/CourseGrid/CourseGrid';
 import LayoutWrapper from '../components/Layout/Layout';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles(() => ({
   team: {
@@ -75,6 +76,11 @@ const Button = () => {
 
 const App = () => {
   const styles = useStyles();
+  const history = useHistory();
+  const {
+    location: { pathname },
+  } = history;
+
   return (
     <LayoutWrapper>
       <div className={styles.body}>
@@ -82,7 +88,7 @@ const App = () => {
           <Grid item xs={12} lg={10} xl={10}>
             <Grid container spacing={4}>
               <Grid item xs={12} lg={8} xl={8}>
-                <CourseGrid />
+                <CourseGrid pathname={pathname} />
               </Grid>
               <Grid item xs={12} lg={4} xl={4}>
                 <Grid container spacing={2} justify="center">
