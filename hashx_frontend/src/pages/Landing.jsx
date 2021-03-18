@@ -112,7 +112,7 @@ const LightTooltip = withStyles((theme) => ({
 
 const Landing = () => {
   const [color, setcolor] = useState('#eee');
-  const [open] = useState(false);
+  const [open, setOpen] = useState(true);
   const classes = useStyles();
   const history = useHistory();
   const [
@@ -122,7 +122,6 @@ const Landing = () => {
     onCompleted: (socialData) => {
       if (socialData) {
         const { token, user, newUser, jwtRefreshToken } = socialData.socialAuth;
-        console.log(token, 'token');
         setAccessToken(token);
         setRefreshToken(jwtRefreshToken);
         authenticate(user.id, user.username, token, newUser);
@@ -163,6 +162,9 @@ const Landing = () => {
           open={open}
           autoHideDuration={2000}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+          onClose={() => {
+            setOpen(false);
+          }}
         >
           <Alert severity="error">Something went wrong! Please try again</Alert>
         </Snackbar>
