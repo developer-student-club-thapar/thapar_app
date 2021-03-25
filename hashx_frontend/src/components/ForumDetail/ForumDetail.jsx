@@ -6,6 +6,7 @@ import SidePanel from '../SidePanel/SidePanel';
 import { useQuery } from '@apollo/client';
 import { FILE_QUESTIONS } from './Queries';
 import Error from '../Error/Error';
+import { useParams } from 'react-router';
 
 const useStyles = makeStyles(() => ({
   headerText: {
@@ -19,9 +20,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ForumDetail = () => {
+  const { fileId } = useParams();
   const { data, loading, error } = useQuery(FILE_QUESTIONS, {
     variables: {
-      file: 'RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
+      file: fileId,
     },
   });
   const classes = useStyles();
@@ -29,13 +31,13 @@ const ForumDetail = () => {
   if (loading) return <div>Loading..</div>;
   if (
     error ||
-    data.allQuestions.edges[0] === undefined ||
-    data.allQuestions.edges[0] === null
+    data.allQuestions.edges === undefined ||
+    data.allQuestions.edges === null
   )
     return <Error />;
-  console.log(data);
-  const { file } = data.allQuestions.edges[0].node;
-  console.log(file);
+
+  const { file } = data;
+
   return (
     <Box className={classes.box}>
       <Grid container spacing={2}>
@@ -48,7 +50,7 @@ const ForumDetail = () => {
       <br />
       <Grid container spacing={2}>
         <Grid item xs={12} lg={8}>
-          <Document file={data?.allQuestions.edges[0].node.file} />
+          <Document file={file} />
         </Grid>
         <Grid item xs={12} lg={4}>
           <SidePanel data={data} />

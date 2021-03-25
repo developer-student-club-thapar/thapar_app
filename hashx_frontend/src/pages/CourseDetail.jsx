@@ -1,21 +1,21 @@
-import React from 'react';
-import { Box, Paper, Hidden } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Box, Paper, Hidden, Snackbar } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
-import { useQuery } from '@apollo/client';
-import { COURSE_QUERY } from '../components/CourseDetails/Queries';
+import { useMutation, useQuery } from '@apollo/client';
+import {
+  COURSE_QUERY,
+  SUBSCRIBE_COURSE,
+} from '../components/CourseDetails/Queries';
 import { useHistory, useParams } from 'react-router-dom';
-import Tutorials from '../components/CourseDetails/Tutorials';
-import Books from '../components/CourseDetails/Books';
-import Notes from '../components/CourseDetails/Notes';
-import PreviousYearPapers from '../components/CourseDetails/PreviousYearPapers';
+import Resource from '../components/CourseDetails/Resource';
 import { makeStyles } from '@material-ui/core/styles';
-import TutorialsSolution from '../components/CourseDetails/TutorialsSolution';
 import { secondaryColor } from '../theme/theme';
 import { useStyles } from '../components/Global/Global';
 import backgroundText from '../assets/cs.svg';
 import Error from '../components/Error/Error';
 import LayoutWrapper from '../components/Layout/Layout';
 import RocketAnimation from '../components/RocketAnimation';
+import Alert from '@material-ui/lab/Alert';
 
 const useClasses = makeStyles((theme) => ({
   box: {
@@ -34,9 +34,16 @@ const useClasses = makeStyles((theme) => ({
     borderRadius: 29,
     textAlign: 'center',
     backgroundColor: `${secondaryColor}`,
+    width: 'fit-content',
+    padding: '1rem',
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
+    transition: 'all 0.2s ease-in-out',
+    cursor: 'pointer',
     '&:hover': {
-      transform: 'scale(1.2)',
+      transform: 'scale(1.1)',
+    },
+    '&:focus': {
+      transform: 'scale(0.9)',
     },
     [theme.breakpoints.only('xs')]: {
       height: '45px',
@@ -47,6 +54,7 @@ const useClasses = makeStyles((theme) => ({
     fontSize: 25,
     fontWeight: 'bolder',
     margin: '0 auto',
+    whiteSpace: 'nowrap',
     [theme.breakpoints.only('xs')]: {
       fontSize: 20,
     },
@@ -159,8 +167,9 @@ const useClasses = makeStyles((theme) => ({
   paperBackground: {
     backgroundColor: `${secondaryColor}`,
     [theme.breakpoints.up('lg')]: {
-      backgroundImage: `url(${backgroundText})`,
-      backgroundRepeat: 'no-repeat',
+      // backgroundImage: `url(${backgroundText})`,
+      // backgroundRepeat: 'no-repeat',
+      // backgroundPosition: 'right top',
     },
   },
 }));
@@ -170,44 +179,46 @@ const CourseDetail = (props) => {
   const classes = useClasses();
   const styles = useStyles();
   const { content, id } = useParams();
+  const [open, setOpen] = useState(true);
   const courseId = id; //props.match.params.id
   const path = content;
+
   const list = [
     {
-      mainText: 'Tutorial',
-      path: `/courses/${courseId}/tutorials`,
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Tutorials',
+      path: `/courses/${courseId}/tutorial`,
+      iconClassName: 'fas fa-sticky-note fa-2x',
+      iconClassNameMoblie: 'fas fa-sticky-note fa-lg',
+    },
+    {
+      mainText: 'Notes and Slides',
+      path: `/courses/${courseId}/notes-and-slides`,
+      iconClassName: 'fas fa-file-powerpoint fa-2x',
+      iconClassNameMoblie: 'fas fa-file-powerpoint fa-lg',
     },
     {
       mainText: 'Lab',
-      path: '/courses',
+      path: `/courses/${courseId}/lab`,
+      iconClassName: 'fas fa-vial fa-2x',
+      iconClassNameMoblie: 'fas fa-vial fa-lg',
+    },
+    {
+      mainText: 'Book',
+      path: `/courses/${courseId}/books`,
       iconClassName: 'fas fa-book fa-2x',
       iconClassNameMoblie: 'fas fa-book fa-lg',
     },
     {
-      mainText: 'Courses',
-      path: '/dashboard/timetable',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Books and Lab Material',
+      path: `/courses/${courseId}/books-lab`,
+      iconClassName: 'fas fa-flask fa-2x',
+      iconClassNameMoblie: 'fas fa-flask fa-lg',
     },
     {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
-    },
-    {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
-    },
-    {
-      mainText: 'Courses',
-      path: '/forum/forum-details',
-      iconClassName: 'fas fa-book fa-2x',
-      iconClassNameMoblie: 'fas fa-book fa-lg',
+      mainText: 'Previous year papers',
+      path: `/courses/${courseId}/prev-yr-papers`,
+      iconClassName: 'fas fa-question-circle fa-2x',
+      iconClassNameMoblie: 'fas fa-question-circle fa-lg',
     },
   ];
 
@@ -216,6 +227,9 @@ const CourseDetail = (props) => {
       id: courseId,
     },
   });
+  const [subscribeCourse, { data: subscribeData }] = useMutation(
+    SUBSCRIBE_COURSE,
+  );
   if (loading)
     return (
       <LayoutWrapper>
@@ -225,24 +239,28 @@ const CourseDetail = (props) => {
   if (error || data.course === undefined || data.course === null) {
     return <Error />;
   }
-  console.log(data);
+
   const renderComponent = () => {
-    if (path === 'tutorials') {
-      return <Tutorials id={courseId} path={path} />;
-    } else if (path === 'books') {
-      return <Books id={courseId} path={path} />;
-    } else if (path === 'notes') {
-      return <Notes id={courseId} path={path} />;
-    } else if (path === 'previousyearpapers') {
-      return <PreviousYearPapers id={courseId} path={path} />;
-    } else if (path === 'tutorialssolution') {
-      return <TutorialsSolution id={courseId} path={path} />;
-    }
+    return <Resource id={courseId} path={path} />;
   };
+
   if (data) {
     return (
       <LayoutWrapper>
-        {' '}
+        {subscribeData?.subscribeToCourse.success === true && (
+          <Snackbar
+            open={open}
+            autoHideDuration={2000}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+            onClose={() => {
+              setOpen(false);
+            }}
+          >
+            <Alert severity="success">
+              Successfully added the course to your subscriptions
+            </Alert>
+          </Snackbar>
+        )}
         <Grid container spacing={2} direction="column">
           <Grid item xs={12} lg={12} xl={12}>
             <Box
@@ -315,12 +333,18 @@ const CourseDetail = (props) => {
                             <Paper
                               elevation={3}
                               className={classes.breadCrumbs}
-                              style={{
-                                width: '190px',
+                              onClick={() => {
+                                subscribeCourse({
+                                  variables: {
+                                    input: {
+                                      courses: [data?.course.id],
+                                    },
+                                  },
+                                });
                               }}
                             >
                               <h1 className={classes.breadCrumbsText}>
-                                Syllabus &nbsp;
+                                Subscribe Course &nbsp;
                                 <i className="fas fa-long-arrow-alt-right" />
                               </h1>
                             </Paper>

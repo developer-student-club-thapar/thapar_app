@@ -1,14 +1,16 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 import { makeStyles } from '@material-ui/core/styles';
 import { AnimatePresence, motion } from 'framer-motion';
 import { secondaryColor, textColor } from '../../theme/theme';
 import { UserContext } from '../../context/UserProvider';
+import { useMutation } from '@apollo/client';
+import { LOGOUT_MUTATION } from '../../graphql/AuthQueriesMutations';
 
 const useStyles = makeStyles(() => ({
   container: {
-    display: (props) => (props.open === true ? 'block' : 'none'),
+    display: (props) => (props.open === true ? 'flex' : 'none'),
     visibility: 'none',
     opacity: (props) => (props.open === true ? 1 : 0),
     position: 'fixed',
@@ -20,7 +22,6 @@ const useStyles = makeStyles(() => ({
     background: `${secondaryColor}`,
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    display: 'flex',
     flexDirection: 'column',
     maxWidth: '600px',
   },
@@ -48,6 +49,7 @@ const useStyles = makeStyles(() => ({
 const DropDownMenu = (props) => {
   const { options, setOpen } = props;
   const classes = useStyles(props);
+  const [logout] = useMutation(LOGOUT_MUTATION);
   const {
     user: { token },
   } = useContext(UserContext);
@@ -61,8 +63,7 @@ const DropDownMenu = (props) => {
     } else if (item.text === 'Logout') {
       localStorage.setItem('isAuthenticated', false);
       history.push('/');
-      // ! Add logout query
-      //   logout({ variables: { refreshToken: token } });
+      logout();
     }
   };
 

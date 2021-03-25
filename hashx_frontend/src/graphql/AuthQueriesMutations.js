@@ -107,9 +107,9 @@ export const SOCIAL_AUTH = gql`
 
 //  * Logout Mutation
 export const LOGOUT_MUTATION = gql`
-  mutation Logout($refreshToken: String!) {
-    revokeToken(refreshToken: $refreshToken) {
-      revoked
+  mutation Logout {
+    deleteTokenCookie {
+      deleted
     }
   }
 `;

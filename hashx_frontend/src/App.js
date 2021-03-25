@@ -20,19 +20,21 @@ const client = new ApolloClient({
 
 const App = () => {
   useEffect(() => {
-    const messaging = firebase.messaging();
-    messaging
-      .requestPermission()
-      .then(() => {
-        console.log('Have Permission');
-        return messaging.getToken();
-      })
-      .then((token) => {
-        console.log(token);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (firebase.messaging.isSupported()) {
+      const messaging = firebase.messaging();
+      messaging
+        .requestPermission()
+        .then(() => {
+          console.log('Have Permission');
+          return messaging.getToken();
+        })
+        .then((token) => {
+          console.log(token);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return (
