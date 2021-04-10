@@ -1,10 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 
 import { secondaryColor, textColor } from '../theme/theme';
-import Avatar from '@material-ui/core/Avatar';
-import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   discussionItem: {
@@ -30,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+// The Question component, given the details of a question in its props, returns a card 
+// having the question, its content, the question asker and so on
 const Question = (props) => {
   const { questionId, questionTitle, questionUserName, questionContent} = props;
   const classes = useStyles();
@@ -48,6 +51,13 @@ const Question = (props) => {
               />
             </Grid>
             <Grid item xs={10}>
+            {
+              /* On clicking the title of a question, the discussion panel corresponding to the question
+                is displayed. 
+                The hyperLink class is added due to a bug which resulted in the cursor not changing to 
+                a pointer on hovering over the title of the question
+              */
+            }
               <h4 className={`${classes.primaryGridText} ${classes.hyperLink}`} onClick={() => {
                 history.push(`/forum/discussion-panel/${questionId}`)
               }}>
