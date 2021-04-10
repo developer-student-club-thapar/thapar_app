@@ -88,6 +88,9 @@ const useStyles = makeStyles((theme) => ({
     width: '90%',
     wordBreak: 'break-word',
   },
+  hyperLink: {
+    cursor: 'pointer',
+  }
 }));
 
 const Question = (props) => {
@@ -108,7 +111,7 @@ const Question = (props) => {
               />
             </Grid>
             <Grid item xs={10}>
-              <h4 className={classes.primaryGridText} onClick={() => {
+              <h4 className={`${classes.primaryGridText} ${classes.hyperLink}`} onClick={() => {
                 history.push(`/forum/discussion-panel/${questionId}`)
               }}>
                 {questionTitle}&nbsp;&nbsp;

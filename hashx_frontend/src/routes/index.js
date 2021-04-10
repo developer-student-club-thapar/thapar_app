@@ -71,9 +71,13 @@ const Routes = () => {
           exact={true}
           path="/forum/discussion-panel/:id"
           render={(props) => (
-            <Forum>
+            // <Forum>
+            //   <DiscussionsPanel {...props} />
+            // </Forum>
+            <LayoutWrapper>
               <DiscussionsPanel {...props} />
-            </Forum>
+            </LayoutWrapper>
+            
           )}
           isPrivate
         />
