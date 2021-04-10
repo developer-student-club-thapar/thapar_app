@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Paper, Grow } from '@material-ui/core';
+import { Box, Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from '@apollo/client';
 
@@ -7,7 +7,6 @@ import { ALL_QUESTIONS } from './Queries'
 
 import { secondaryColor, textColor } from '../../theme/theme';
 import Error from '../Error/Error';
-import Avatar from '@material-ui/core/Avatar';
 
 import LayoutWrapper from '../Layout/Layout';
 import RocketAnimation from '../RocketAnimation';
@@ -15,11 +14,6 @@ import RocketAnimation from '../RocketAnimation';
 import Question from '../Question'
 
 const useStyles = makeStyles((theme) => ({
-  headerText: {
-    fontSize: '45px',
-    color: '#000000',
-    fontWeight: 'bolder',
-  },
   box: {
     padding: '30px',
   },
@@ -51,50 +45,6 @@ const useStyles = makeStyles((theme) => ({
   addText: {
     color: '#747474',
     fontWeight: 'bolder',
-  },
-  chatBox: {
-    height: '60vh',
-    overflowY: 'scroll',
-  },
-  discussionItem: {
-    borderRadius: '30px',
-    backgroundColor: `${secondaryColor}`,
-    color: `${textColor}`,
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    padding: '30px',
-    margin: '0 40px 20px 40px',
-  },
-  profileAvatar: {
-    width: theme.spacing(11),
-    height: theme.spacing(11),
-  },
-  primaryGridText: {
-    fontWeight: 'bolder',
-  },
-  profileId: {
-    color: '#747474',
-  },
-  chatItem: {
-    justifyContent: 'flex-end',
-  },
-  input: {
-    borderRadius: '20px',
-    backgroundColor: '#ffffff',
-  },
-  sendButton: {
-    backgroundColor: '#F0F0F3',
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    '&:focus': {
-      outline: 'none',
-    },
-  },
-  profileAvatarMessage: {
-    width: theme.spacing(9),
-    height: theme.spacing(9),
-  },
-  contentBox: {
-    width: '90%',
-    wordBreak: 'break-word',
   },
 }));
 
@@ -160,7 +110,7 @@ const ForumExplore = () => {
             })
           }
 
-          <Grid container spacing={2}>
+          {/* <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={3} className={classes.discussionItem}>
                   <Grid container spacing={2}>
@@ -248,7 +198,7 @@ const ForumExplore = () => {
                   </Grid>
                 </Paper>
               </Grid>
-            </Grid>
+            </Grid> */}
 
             <Question 
               questionId = {123}
