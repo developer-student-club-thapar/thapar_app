@@ -7,47 +7,6 @@ import Avatar from '@material-ui/core/Avatar';
 import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-  headerText: {
-    fontSize: '45px',
-    color: '#000000',
-    fontWeight: 'bolder',
-  },
-  box: {
-    padding: '30px',
-  },
-  paperGrid: {
-    borderRadius: '20px',
-    backgroundColor: `${secondaryColor}`,
-    color: `${textColor}`,
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-  },
-  panelText: {
-    fontWeight: 'bolder',
-    padding: '20px',
-    color: '#00000',
-  },
-  addIconGrid: {
-    display: 'grid',
-    placeItems: 'center',
-  },
-  addGrid: {
-    borderRadius: '10px',
-    backgroundColor: `${secondaryColor}`,
-    color: `${textColor}`,
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    height: '50px',
-    width: '50px',
-    display: 'grid',
-    placeItems: 'center',
-  },
-  addText: {
-    color: '#747474',
-    fontWeight: 'bolder',
-  },
-  chatBox: {
-    height: '60vh',
-    overflowY: 'scroll',
-  },
   discussionItem: {
     borderRadius: '30px',
     backgroundColor: `${secondaryColor}`,
@@ -65,28 +24,6 @@ const useStyles = makeStyles((theme) => ({
   },
   profileId: {
     color: '#747474',
-  },
-  chatItem: {
-    justifyContent: 'flex-end',
-  },
-  input: {
-    borderRadius: '20px',
-    backgroundColor: '#ffffff',
-  },
-  sendButton: {
-    backgroundColor: '#F0F0F3',
-    boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
-    '&:focus': {
-      outline: 'none',
-    },
-  },
-  profileAvatarMessage: {
-    width: theme.spacing(9),
-    height: theme.spacing(9),
-  },
-  contentBox: {
-    width: '90%',
-    wordBreak: 'break-word',
   },
   hyperLink: {
     cursor: 'pointer',
