@@ -144,21 +144,21 @@ const ForumExplore = () => {
           </Grid>
 
           {
-              questions.map((question) => {
-                let questionId = question.node.id;
-                let questionTitle = question.node.title
-                let questionUserName = question.node.owner.username;
-                let questionContent = question.node.content;
-                return(
-                  <Question 
-                    questionId = {questionId}
-                    questionTitle = {questionTitle}
-                    questionUserName = {questionUserName}
-                    questionContent = {questionContent}
-                  />
-                )
-              })
-            }
+            questions.map((question) => {
+              let questionId = question.node.id;
+              let questionTitle = question.node.title
+              let questionUserName = question.node.owner.username;
+              let questionContent = question.node.content;
+              return(
+                <Question 
+                  questionId = {questionId}
+                  questionTitle = {questionTitle}
+                  questionUserName = {questionUserName}
+                  questionContent = {questionContent}
+                />
+              )
+            })
+          }
 
           <Grid container spacing={2}>
               <Grid item xs={12}>

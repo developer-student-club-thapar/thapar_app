@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { secondaryColor, textColor } from '../theme/theme';
 import Avatar from '@material-ui/core/Avatar';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   headerText: {
@@ -92,6 +93,8 @@ const useStyles = makeStyles((theme) => ({
 const Question = (props) => {
   const { questionId, questionTitle, questionUserName, questionContent} = props;
   const classes = useStyles();
+  const history = useHistory();
+
   return(
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -105,7 +108,9 @@ const Question = (props) => {
               />
             </Grid>
             <Grid item xs={10}>
-              <h4 className={classes.primaryGridText}>
+              <h4 className={classes.primaryGridText} onClick={() => {
+                history.push(`/forum/discussion-panel/${questionId}`)
+              }}>
                 {questionTitle}&nbsp;&nbsp;
               </h4>
               <h6 className={classes.profileId}>
