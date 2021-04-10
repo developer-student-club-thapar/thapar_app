@@ -143,6 +143,23 @@ const ForumExplore = () => {
             </Grid>
           </Grid>
 
+          {
+              questions.map((question) => {
+                let questionId = question.node.id;
+                let questionTitle = question.node.title
+                let questionUserName = question.node.owner.username;
+                let questionContent = question.node.content;
+                return(
+                  <Question 
+                    questionId = {questionId}
+                    questionTitle = {questionTitle}
+                    questionUserName = {questionUserName}
+                    questionContent = {questionContent}
+                  />
+                )
+              })
+            }
+
           <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={3} className={classes.discussionItem}>
@@ -161,7 +178,7 @@ const ForumExplore = () => {
                       <h6 className={classes.profileId}>
                         {questions[0].node.owner.username}
                       </h6>
-                      <p>{'This is a sample testing question, do not mind me'}</p>
+                      <p>{questions[0].node.content}</p>
                       <Grid container spacing={2}>
                         <Grid item xs={2}>
                           <h6 style={{ fontWeight: 'bolder' }}>
@@ -239,6 +256,8 @@ const ForumExplore = () => {
               questionUserName = {'Dummy Author'}
               questionContent = {'Dummy Content'}
             />
+
+            
         </Paper>
         </Grid>
       </Grid>
