@@ -3,8 +3,14 @@ import { Box, Grid, Paper, Grow } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery } from '@apollo/client';
 
+import { ALL_QUESTIONS } from './Queries'
+
 import { secondaryColor, textColor } from '../../theme/theme';
+import Error from '../Error/Error';
 import Avatar from '@material-ui/core/Avatar';
+
+import LayoutWrapper from '../Layout/Layout';
+import RocketAnimation from '../RocketAnimation';
 
 const useStyles = makeStyles((theme) => ({
   headerText: {
@@ -92,8 +98,22 @@ const useStyles = makeStyles((theme) => ({
 
 const ForumExplore = () => {
   const classes = useStyles();
+  const { data, loading, error } = useQuery(ALL_QUESTIONS);
+  if(loading){
+    return (
+      <LayoutWrapper>
+        <RocketAnimation />
+      </LayoutWrapper>
+    );
+  }
+  if( error || data.allQuestions.edges == undefined || data.allQuestions.edges == null){
+    return <Error />;
+  }
+  
   return(
     <>
+    <Box className={classes.box}>
+
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Paper elevation={3} className={classes.paperGrid}>
@@ -121,6 +141,51 @@ const ForumExplore = () => {
           </Grid>
 
           <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <Paper elevation={3} className={classes.discussionItem}>
+                  <Grid container spacing={2}>
+                    <Grid item xs={2} style={{ padding: '20px' }}>
+                      <Avatar
+                        alt="Profile"
+                        src="https://picsum.photos/200/300"
+                        className={classes.profileAvatar}
+                      />
+                    </Grid>
+                    <Grid item xs={10}>
+                      <h4 className={classes.primaryGridText}>
+                        {data.allQuestions.edges[0].node.title}&nbsp;&nbsp;
+                      </h4>
+                      <h6 className={classes.profileId}>
+                        {'Suprit Behera'}
+                      </h6>
+                      <p>{'This is a sample testing question, do not mind me'}</p>
+                      <Grid container spacing={2}>
+                        <Grid item xs={2}>
+                          <h6 style={{ fontWeight: 'bolder' }}>
+                            <i
+                              className="far fa-heart fa-lg"
+                              style={{ color: '#E10505' }}
+                            />
+                            &nbsp;10
+                          </h6>
+                        </Grid>
+                        <Grid item xs={2}>
+                          <h6 style={{ fontWeight: 'bolder' }}>
+                            <i
+                              className="far fa-edit fa-lg"
+                              style={{ color: '#7C73F0' }}
+                            />
+                            &nbsp;10
+                          </h6>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </Grid>
+            </Grid>
+
+            <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={3} className={classes.discussionItem}>
                   <Grid container spacing={2}>
@@ -169,6 +234,8 @@ const ForumExplore = () => {
         </Paper>
         </Grid>
       </Grid>
+
+      </Box>
     </>
 
   )
