@@ -12,6 +12,8 @@ import Avatar from '@material-ui/core/Avatar';
 import LayoutWrapper from '../Layout/Layout';
 import RocketAnimation from '../RocketAnimation';
 
+import Question from '../Question'
+
 const useStyles = makeStyles((theme) => ({
   headerText: {
     fontSize: '45px',
@@ -157,7 +159,7 @@ const ForumExplore = () => {
                         {questions[0].node.title}&nbsp;&nbsp;
                       </h4>
                       <h6 className={classes.profileId}>
-                        {'Suprit Behera'}
+                        {questions[0].node.owner.username}
                       </h6>
                       <p>{'This is a sample testing question, do not mind me'}</p>
                       <Grid container spacing={2}>
@@ -231,7 +233,12 @@ const ForumExplore = () => {
               </Grid>
             </Grid>
 
-
+            <Question 
+              questionId = {123}
+              questionTitle = {'Dummy Question'}
+              questionUserName = {'Dummy Author'}
+              questionContent = {'Dummy Content'}
+            />
         </Paper>
         </Grid>
       </Grid>
