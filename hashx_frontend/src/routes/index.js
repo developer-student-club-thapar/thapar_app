@@ -66,12 +66,23 @@ const Routes = () => {
           component={StudentDetailsForm}
           isPrivate
         />
+        
         <Route
           exact={true}
           path="/forum/discussion-panel/:id"
           render={(props) => (
             <Forum>
               <DiscussionsPanel {...props} />
+            </Forum>
+          )}
+          isPrivate
+        />
+        <Route
+          exact={true}
+          path="/forum"
+          render={(props) => (
+            <Forum>
+              
             </Forum>
           )}
           isPrivate

@@ -34,7 +34,7 @@ const ForumDetail = () => {
     data.allQuestions.edges === undefined ||
     data.allQuestions.edges === null
   )
-    return <Error />;
+  return <Error />;
 
   const { file } = data;
 
