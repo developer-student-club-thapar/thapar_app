@@ -109,6 +109,7 @@ const ForumExplore = () => {
   if( error || data.allQuestions.edges == undefined || data.allQuestions.edges == null){
     return <Error />;
   }
+  const questions = data.allQuestions.edges;
   
   return(
     <>
@@ -153,7 +154,7 @@ const ForumExplore = () => {
                     </Grid>
                     <Grid item xs={10}>
                       <h4 className={classes.primaryGridText}>
-                        {data.allQuestions.edges[0].node.title}&nbsp;&nbsp;
+                        {questions[0].node.title}&nbsp;&nbsp;
                       </h4>
                       <h6 className={classes.profileId}>
                         {'Suprit Behera'}
