@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Box, Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useQuery } from '@apollo/client';
 
+import { useQuery } from '@apollo/client';
 import { ALL_QUESTIONS } from './Queries'
 
 import { secondaryColor, textColor } from '../../theme/theme';
@@ -99,14 +100,14 @@ const ForumExplore = () => {
              */}
             {
               questions.map((question) => {
-                let questionId = question.node.id;
-                let questionTitle = question.node.title
-                let questionUserName = question.node.owner.username;
-                let questionContent = question.node.content;
+                const questionId = question.node.id;
+                const questionTitle = question.node.title
+                const questionUserName = question.node.owner.username;
+                const questionContent = question.node.content;
                 return(
                   <Question 
                     questionId = {questionId}
-                    questionTitle = {questionTitle}
+                    questionTitle = {questionTitle}b
                     questionUserName = {questionUserName}
                     questionContent = {questionContent}
                   />
