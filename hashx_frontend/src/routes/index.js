@@ -95,9 +95,9 @@ const Routes = () => {
           exact={true}
           path="/forum/forum-details/:fileId"
           render={(props) => (
-            <Forum>
+            <LayoutWrapper>
               <ForumDetail {...props} />
-            </Forum>
+            </LayoutWrapper> 
           )}
           isPrivate
         />
