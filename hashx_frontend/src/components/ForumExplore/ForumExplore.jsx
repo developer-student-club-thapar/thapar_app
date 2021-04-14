@@ -70,65 +70,62 @@ const ForumExplore = () => {
     <Box className={classes.box}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          {/* <Paper elevation={3} className={classes.paperGrid}> */}
-            <Grid container spacing={2}>
-              <Grid item xs={10}>
-                <h3 className={classes.panelText}>
-                  Forum <span style={{ color: '#747474' }}>Explore</span>
-                </h3>
-              </Grid>
-              <Grid item xs={2} className={classes.addIconGrid}>
-                <Grid container spacing={2}>
-                  <Grid item xs={6} className={classes.addIconGrid}>
-                    <h5 className={classes.addText}>Add a Post&nbsp;</h5>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Paper elevation={3} className={classes.addGrid}>
-                      <i
-                        className="fas fa-plus fa-lg"
-                        style={{ color: '#000000' }}
-                      />
-                    </Paper>
-                  </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={10}>
+              <h3 className={classes.panelText}>
+                Forum <span style={{ color: '#747474' }}>Explore</span>
+              </h3>
+            </Grid>
+            <Grid item xs={2} className={classes.addIconGrid}>
+              <Grid container spacing={2}>
+                <Grid item xs={6} className={classes.addIconGrid}>
+                  <h5 className={classes.addText}>Add a Post&nbsp;</h5>
+                </Grid>
+                <Grid item xs={6}>
+                  <Paper elevation={3} className={classes.addGrid}>
+                    <i
+                      className="fas fa-plus fa-lg"
+                      style={{ color: '#000000' }}
+                    />
+                  </Paper>
                 </Grid>
               </Grid>
             </Grid>
-
-            {/* For every question stored in questions, its id, title and other properties are extracted
-                and sent to the Question component as props. The Question component then returns an entire card
-                having one single question card
-             */}
-            {
-              questions.map((question) => {
-                const questionId = question.node.id;
-                const questionTitle = question.node.title
-                const questionUserName = question.node.owner.username;
-                const questionContent = question.node.content;
-                return(
-                  <Question 
-                    key = {questionId}
-                    questionId = {questionId}
-                    questionTitle = {questionTitle}
-                    questionUserName = {questionUserName}
-                    questionContent = {questionContent}
-                  />
-                )
-              })
-            }
-
-            {/* The Question component below is a hard-coded static question for development purposes */}
-
-            <Question 
-              questionId = {123}
-              questionTitle = {'Dummy Static Question'}
-              questionUserName = {'Dummy Author'}
-              questionContent = {'This is a hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx'}
-            />
-              
-          {/* </Paper> */}
           </Grid>
+
+          {/* For every question stored in questions, its id, title and other properties are extracted
+              and sent to the Question component as props. The Question component then returns an entire card
+              having one single question card
+            */}
+          {
+            questions.map((question) => {
+              const questionId = question.node.id;
+              const questionTitle = question.node.title
+              const questionUserName = question.node.owner.username;
+              const questionContent = question.node.content;
+              return(
+                <Question 
+                  key = {questionId}
+                  questionId = {questionId}
+                  questionTitle = {questionTitle}
+                  questionUserName = {questionUserName}
+                  questionContent = {questionContent}
+                />
+              )
+            })
+          }
+
+          {/* The Question component below is a hard-coded static question for development purposes */}
+
+          <Question 
+            questionId = {123}
+            questionTitle = {'Dummy Static Question'}
+            questionUserName = {'Dummy Author'}
+            questionContent = {'This is a hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx'}
+          />
         </Grid>
-      </Box>
+      </Grid>
+    </Box>
     </>
 
   )
