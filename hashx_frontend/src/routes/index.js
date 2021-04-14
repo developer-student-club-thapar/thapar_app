@@ -78,17 +78,6 @@ const Routes = () => {
           )}
           isPrivate
         />
-        {/* <Route
-          exact={true}
-          path="/forum"
-          render={(props) => (
-            <Forum>
-              
-            </Forum>
-          )}
-          isPrivate
-        /> */}
-        <Route
           exact={true}
           path="/forum/forum-details/:fileId"
           render={(props) => (

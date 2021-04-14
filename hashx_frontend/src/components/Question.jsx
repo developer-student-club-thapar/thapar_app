@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 // The Question component, given the details of a question in its props, returns a card 
 // having the question, its content, the question asker and so on
 const Question = (props) => {
-  const { questionId, questionTitle, questionUserName, questionContent} = props;
+  const { key, questionId, questionTitle, questionUserName, questionContent} = props;
   const classes = useStyles();
   const history = useHistory();
 

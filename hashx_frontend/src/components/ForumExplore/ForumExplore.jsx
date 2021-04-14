@@ -106,8 +106,9 @@ const ForumExplore = () => {
                 const questionContent = question.node.content;
                 return(
                   <Question 
+                    key = {questionId}
                     questionId = {questionId}
-                    questionTitle = {questionTitle}b
+                    questionTitle = {questionTitle}
                     questionUserName = {questionUserName}
                     questionContent = {questionContent}
                   />
