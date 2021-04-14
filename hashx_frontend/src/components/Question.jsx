@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Grid, Paper } from '@material-ui/core';
@@ -95,4 +95,4 @@ const Question = (props) => {
   )
 }
 
-export default Question;
+export default memo(Question);
