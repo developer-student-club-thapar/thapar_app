@@ -72,12 +72,12 @@ const ForumExplore = () => {
         <Grid item xs={12}>
           {/* <Paper elevation={3} className={classes.paperGrid}> */}
             <Grid container spacing={2}>
-              <Grid item xs={9}>
+              <Grid item xs={10}>
                 <h3 className={classes.panelText}>
                   Forum <span style={{ color: '#747474' }}>Explore</span>
                 </h3>
               </Grid>
-              <Grid item xs={3} className={classes.addIconGrid}>
+              <Grid item xs={2} className={classes.addIconGrid}>
                 <Grid container spacing={2}>
                   <Grid item xs={6} className={classes.addIconGrid}>
                     <h5 className={classes.addText}>Add a Post&nbsp;</h5>
