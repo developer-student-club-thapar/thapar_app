@@ -43,13 +43,18 @@ const Question = (props) => {
       <Grid item xs={12}>
         <Paper elevation={3} className={classes.discussionItem}>
           <Grid container spacing={2}>
-            <Grid item xs={2} style={{ padding: '20px' }}>
+
+          {/* Uncomment the below block to get the profile picture of the asker beside the question*/}
+
+            {/* <Grid item xs={2} style={{ padding: '20px' }}>
               <Avatar
                 alt="Profile"
                 src="https://picsum.photos/200/300"
                 className={classes.profileAvatar}
               />
-            </Grid>
+            </Grid> */}
+
+
             <Grid item xs={10}>
             {
               /* On clicking the title of a question, the discussion panel corresponding to the question
