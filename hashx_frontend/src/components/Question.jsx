@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     color: `${textColor}`,
     boxShadow: '-6px -6px 16px #fff, 6px 6px 16px #d1cdc7',
     padding: '30px',
-    margin: '0 40px 20px 40px',
+    margin: '0 40px 20px 00px',
   },
   profileAvatar: {
     width: theme.spacing(11),

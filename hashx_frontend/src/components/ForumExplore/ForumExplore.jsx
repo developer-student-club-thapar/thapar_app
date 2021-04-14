@@ -70,7 +70,7 @@ const ForumExplore = () => {
     <Box className={classes.box}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Paper elevation={3} className={classes.paperGrid}>
+          {/* <Paper elevation={3} className={classes.paperGrid}> */}
             <Grid container spacing={2}>
               <Grid item xs={9}>
                 <h3 className={classes.panelText}>
@@ -125,7 +125,7 @@ const ForumExplore = () => {
               questionContent = {'This is a hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx'}
             />
               
-          </Paper>
+          {/* </Paper> */}
           </Grid>
         </Grid>
       </Box>
