@@ -110,14 +110,18 @@ const Question = (props) => {
               </h4>
               )
               }
-              <span className={`${classes.primaryGridText} ${classes.hyperLink} ${classes.fileName}`}>
-                {fileName}
-              </span> 
-              <a href={fileDownloadLink}><i className="fas fa-share-square fa-lg" /></a>
+              {/* Conditionally render the file name and download link button only if the question has an associated file having a name */}
+              {
+                (questionFile && questionFile.name)? (
+                  <>
+                    <span className={`${classes.primaryGridText} ${classes.fileName}`}>
+                      {questionFile.name}
+                    </span> 
+                    <a href={fileDownloadLink}><i className="fas fa-share-square fa-lg" /></a>
+                  </>
+                ) : null
+              }
             </Grid>
-            {/* <Grid item xs={1}>
-              <i className="fas fa-share-square fa-lg" />
-            </Grid> */}
           </Grid>
         </Paper>
       </Grid>
