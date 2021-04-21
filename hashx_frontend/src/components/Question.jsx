@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { secondaryColor, textColor } from '../theme/theme';
@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
   },
   questionContent: {
     textOverflow: 'ellipsis',
+    // whiteSpace : nowrap and overflow : hidden required for textOverflow to work
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
   },
   fileName: {
     fontSize: '1.4rem',
@@ -49,6 +52,7 @@ const Question = (props) => {
   let fileDownloadLink = (questionFile && questionFile.webContentLink)? questionFile.webContentLink : "";
 
   return(
+    
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Paper elevation={3} className={classes.discussionItem}>
