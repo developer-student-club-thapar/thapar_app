@@ -10,6 +10,11 @@ export const ALL_QUESTIONS = gql`
           owner {
             username
           }
+          file{
+            id
+            name
+            webContentLink
+          }
         }
       }
     }

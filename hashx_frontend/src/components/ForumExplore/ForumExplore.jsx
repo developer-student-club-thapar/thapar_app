@@ -103,6 +103,7 @@ const ForumExplore = () => {
               const questionTitle = question.node.title
               const questionUserName = question.node.owner.username;
               const questionContent = question.node.content;
+              const questionFile = question.node.file
               return(
                 <Question 
                   key = {questionId}
@@ -110,6 +111,7 @@ const ForumExplore = () => {
                   questionTitle = {questionTitle}
                   questionUserName = {questionUserName}
                   questionContent = {questionContent}
+                  questionFile = {questionFile}
                 />
               )
             })
@@ -122,6 +124,13 @@ const ForumExplore = () => {
             questionTitle = {'Dummy Static Question'}
             questionUserName = {'Dummy Author'}
             questionContent = {'This is a hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx'}
+          />
+
+          <Question 
+            questionId = {123}
+            questionTitle = {'Dummy Static Long Question'}
+            questionUserName = {'Dummy Author'}
+            questionContent = {'This is a long paragraph hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
           />
         </Grid>
       </Grid>

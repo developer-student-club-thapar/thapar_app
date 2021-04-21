@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import { Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
 
 import { secondaryColor, textColor } from '../theme/theme';
 
@@ -28,15 +27,26 @@ const useStyles = makeStyles((theme) => ({
   },
   hyperLink: {
     cursor: 'pointer',
-  }
+  },
+  questionContent: {
+    textOverflow: 'ellipsis',
+  },
+  fileName: {
+    fontSize: '1.4rem',
+    margin: '5%'
+  },
 }));
 
 // The Question component, given the details of a question in its props, returns a card 
 // having the question, its content, the question asker and so on
 const Question = (props) => {
-  const { key, questionId, questionTitle, questionUserName, questionContent} = props;
+  const { key, questionId, questionTitle, questionUserName, questionContent, questionFile} = props;
+  console.log(questionFile);
   const classes = useStyles();
   const history = useHistory();
+
+  let fileName = (questionFile && questionFile.name)? questionFile.name : "No File";
+  let fileDownloadLink = (questionFile && questionFile.webContentLink)? questionFile.webContentLink : "";
 
   return(
     <Grid container spacing={2}>
@@ -55,7 +65,7 @@ const Question = (props) => {
             </Grid> */}
 
 
-            <Grid item xs={10}>
+            <Grid item xs={9}>
             {
               /* On clicking the title of a question, the discussion panel corresponding to the question
                 is displayed. 
@@ -71,7 +81,7 @@ const Question = (props) => {
               <h6 className={classes.profileId}>
                 {questionUserName}
               </h6>
-              <p>{questionContent}</p>
+              <p className={classes.questionContent}>{questionContent}</p>
               <Grid container spacing={2}>
                 <Grid item xs={2}>
                   <h6 style={{ fontWeight: 'bolder' }}>
@@ -93,6 +103,21 @@ const Question = (props) => {
                 </Grid>
               </Grid>
             </Grid>
+            <Grid item xs={2}>
+              {questionFile !== undefined && (
+                <h4 className={`${classes.primaryGridText} ${classes.hyperLink} ${classes.fileName}`}>
+                <a>{questionFile.title}</a>
+              </h4>
+              )
+              }
+              <span className={`${classes.primaryGridText} ${classes.hyperLink} ${classes.fileName}`}>
+                {fileName}
+              </span> 
+              <a href={fileDownloadLink}><i className="fas fa-share-square fa-lg" /></a>
+            </Grid>
+            {/* <Grid item xs={1}>
+              <i className="fas fa-share-square fa-lg" />
+            </Grid> */}
           </Grid>
         </Paper>
       </Grid>
