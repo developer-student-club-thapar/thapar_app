@@ -120,6 +120,7 @@ const ForumExplore = () => {
           {/* The Question component below is a hard-coded static question for development purposes */}
 
           <Question 
+            key = {123}
             questionId = {123}
             questionTitle = {'Dummy Static Question'}
             questionUserName = {'Dummy Author'}
@@ -127,7 +128,8 @@ const ForumExplore = () => {
           />
 
           <Question 
-            questionId = {123}
+            key = {1234}
+            questionId = {1234}
             questionTitle = {'Dummy Static Long Question'}
             questionUserName = {'Dummy Author'}
             questionContent = {'This is a long paragraph hard-coded static question. To remove it, just comment-out/remove it from ForumExplore.jsx. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
