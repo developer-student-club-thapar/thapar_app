@@ -146,7 +146,7 @@ const Sidebar = () => {
     {
       mainText: 'Forums',
       path:
-        '/forum/forum-details/RmlsZU5vZGU6MDAzZDIzZTgtM2QxOC00NGE1LWIwNTEtOWFjN2JhZDY1YWVl',
+        '/forum',
       iconClassName: 'fas fa-comments fa-2x',
     },
   ];

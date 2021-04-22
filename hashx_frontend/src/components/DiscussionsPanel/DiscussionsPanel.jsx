@@ -207,6 +207,7 @@ const Discussions = (props) => {
                 </Grid>
               </Grid>
             </Grid>
+            
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Paper elevation={3} className={classes.discussionItem}>

@@ -50,6 +50,7 @@ const Routes = () => {
         <Route exact path="/pdfview" component={PdfView} isPrivate />
         <Route exact path="/hostel" component={Hostel} isPrivate />
         <Route exact path="/timetable" component={TimeTable} isPrivate />
+        <Route exact path="/forum" component={Forum} isPrivate />
         <Route exact path="/private" component={PrivateTest} />
         <Route exact path="/register" component={Register} isRestricted />
         <Route exact path="/login" component={Login} isRestricted />
@@ -66,13 +67,14 @@ const Routes = () => {
           component={StudentDetailsForm}
           isPrivate
         />
+        
         <Route
           exact={true}
           path="/forum/discussion-panel/:id"
           render={(props) => (
-            <Forum>
+            <LayoutWrapper>
               <DiscussionsPanel {...props} />
-            </Forum>
+            </LayoutWrapper>
           )}
           isPrivate
         />
@@ -80,9 +82,9 @@ const Routes = () => {
           exact={true}
           path="/forum/forum-details/:fileId"
           render={(props) => (
-            <Forum>
+            <LayoutWrapper>
               <ForumDetail {...props} />
-            </Forum>
+            </LayoutWrapper> 
           )}
           isPrivate
         />

@@ -85,9 +85,9 @@ const Navbar = () => {
             <Link to="/contact">
               <Button>Contact</Button>
             </Link>
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard">
               <Button>Dashboard</Button>
-            </Link>
+            </Link> */}
           </Box>
         </Toolbar>
       </AppBar>

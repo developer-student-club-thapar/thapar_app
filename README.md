@@ -59,7 +59,7 @@ To do that run the following inside the project repo -
     On Windows
 ```source venv/Scripts/activate```
     On MacOS/Linux
-```source venv/bin/actiavte```
+```source venv/bin/activate```
 
 - Change into the `./hashx` directory.
    > All the following steps are to be executed in the hashx directory.
