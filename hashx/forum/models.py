@@ -58,9 +58,7 @@ class Question(models.Model):
         return reverse('question', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
-        if not self.pk:
-            self.slug = slugify(self.title)
-
+        self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
     def like(self, user):
