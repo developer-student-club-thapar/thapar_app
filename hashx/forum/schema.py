@@ -19,6 +19,13 @@ class QuestionFilter(django_filters.FilterSet):
     class Meta:
         model = Question
         fields = '__all__'
+    order_by = django_filters.OrderingFilter(
+        fields=(
+            ('created_at', 'created_at'),
+            ('title','title')
+
+        )
+    )
 class QuestionNode(DjangoObjectType):
     class Meta:
         model = Question
