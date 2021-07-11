@@ -41,6 +41,7 @@ const useStyles = makeStyles(() => ({
     width: '50px',
     display: 'grid',
     placeItems: 'center',
+    marginLeft: '-30px',
   },
   addText: {
     color: '#747474',
@@ -71,17 +72,17 @@ const ForumExplore = () => {
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item xs={10}>
+            <Grid item xs={9}>
               <h3 className={classes.panelText}>
                 Forum <span style={{ color: '#747474' }}>Explore</span>
               </h3>
             </Grid>
-            <Grid item xs={2} className={classes.addIconGrid}>
-              <Grid container spacing={2}>
-                <Grid item xs={6} className={classes.addIconGrid}>
+            <Grid item xs={3} className={classes.addIconGrid}>
+              <Grid container spacing={3}>
+                <Grid item xs={8} className={classes.addIconGrid}>
                   <h5 className={classes.addText}>Add a Post&nbsp;</h5>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={4}>
                   <Paper elevation={3} className={classes.addGrid}>
                     <i
                       className="fas fa-plus fa-lg"
