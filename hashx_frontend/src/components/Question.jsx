@@ -106,7 +106,7 @@ const Question = (props) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               {questionFile && (
                 <h4 className={`${classes.primaryGridText} ${classes.hyperLink} ${classes.fileName}`}>
                 <a>{questionFile.title}</a>
