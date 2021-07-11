@@ -41,13 +41,26 @@ const DiscussionsPanel = () => {
   if (questionError) {
     return <div>{questionError}</div>;
   }
+
+  const fileExists = (questionData.questions.file !== null)? true : false;
+
+  //  If there is a file associated with the question, the size of the Grid item holding
+  //  the Discussions component should be of size 9 (so as to accomodate the FileSideView component)
+  //  else 12, such that the entire space is occupied since there wouldn't be a FileSideView component
+  const discussionsSpacing = fileExists? 9 : 12;
+  
   return (
     <Box className={classes.box}>
       <Grid container spacing={2}>
-        <Grid item lg={3}>
-          <FileSideView file={questionData.questions.file} />
-        </Grid>
-        <Grid item lg={9}>
+        {/* The FileSideView should render only if there is a file associated with the question */}
+        {
+          fileExists && (
+            <Grid item lg={3}>
+              <FileSideView file={questionData.questions.file} />
+            </Grid>
+          )
+        }
+        <Grid item lg={discussionsSpacing}>
           <Discussions
             questionData={questionData}
             questionError={questionError}
