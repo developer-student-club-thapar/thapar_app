@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const DiscussionsPanel = () => {
-  const history = useHistory();
   const { id: questionId } = useParams();
   const {
     loading: questionLoading,
@@ -48,7 +47,7 @@ const DiscussionsPanel = () => {
   //  the Discussions component should be of size 9 (so as to accomodate the FileSideView component)
   //  else 12, such that the entire space is occupied since there wouldn't be a FileSideView component
   const discussionsSpacing = fileExists? 9 : 12;
-  
+
   return (
     <Box className={classes.box}>
       <Grid container spacing={2}>

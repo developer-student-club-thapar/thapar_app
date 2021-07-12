@@ -60,7 +60,7 @@ const ForumExplore = () => {
       </LayoutWrapper>
     );
   }
-  if( error || data.allQuestions.edges == undefined || data.allQuestions.edges == null){
+  if( error || data.allQuestions.edges === undefined || data.allQuestions.edges === null){
     return <Error />;
   }
   // questions stores an array having all the questions retreived from the allQuestions query
