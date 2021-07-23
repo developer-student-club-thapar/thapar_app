@@ -44,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
 // having the question, its content, the question asker and so on
 const Question = (props) => {
   const { key, questionId, questionTitle, questionUserName, questionContent, questionFile} = props;
-  console.log(questionFile);
   const classes = useStyles();
   const history = useHistory();
 
@@ -107,8 +106,8 @@ const Question = (props) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={2}>
-              {questionFile !== undefined && (
+            <Grid item xs={3}>
+              {questionFile && (
                 <h4 className={`${classes.primaryGridText} ${classes.hyperLink} ${classes.fileName}`}>
                 <a>{questionFile.title}</a>
               </h4>
