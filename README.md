@@ -85,10 +85,10 @@ The page will reload if you make edits.<br />
 - Navigate to `hashx_frontend`
 - Run `npm ci` to install all the dependencies
 - Start react dev server
-- ```npm run dev```
+- ```npm start```
 
 Runs the app in the development mode.<br />
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 #### Note
