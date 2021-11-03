@@ -82,7 +82,8 @@ To do that run the following inside the project repo -
 The page will reload if you make edits.<br />
 
 ### Setup and running of project (Frontend) 🔮
-- At your root directory run `npm install` to install all the dependencies
+- Navigate to `hashx_frontend`
+- Run `npm ci` to install all the dependencies
 - Start react dev server
 - ```npm run dev```
 
@@ -104,7 +105,8 @@ Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 * [Django Rest Framework](https://www.django-rest-framework.org) - Does the magic of making REST API endpoints 
 ### Web Application 🖥
 * [React](https://reactjs.org) - Do you Even Need an introduction to this ? 😂
-* [Relay](https://relay.dev) - Relay is specialized Framework from Facebook to integrate GraphQL in React
+* [Apollo](https://www.apollographql.com/docs/react/) - Apollo Client is used to integrate GraphQL in React
+* [Material-UI](https://mui.com/) - UI Framework used in the project.
 ### Mobile Application( New Repo Soon ) 📲
 * [React Native](https://reactnative.dev)- Better to write one codebase instead of two 😉
 
@@ -118,13 +120,10 @@ We use [SemVer](http://semver.org/) for versioning.
 * **Ramyak Mehra** - *Backend Django and API* - [ramyak-mehra](https://github.com/ramyak-mehra)
 * **Sanchit Jain** - *Backend Django and API* - [sanchjain](https://github.com/sanchjain)
 * **Aniket Biswas** - *React Web Application* - [aniketbiswas21](https://github.com/aniketbiswas21)
-<<<<<<< HEAD
 * **Rishabh Malhotra** - _*React Web Application*_ - [Rishabh-malhotraa](https://github.com/Rishabh-malhotraa)
 * **Abhishek Sheoran** - _*UI/UX Designer*_ - []()
-=======
 * **Rishabh Malhotra** - *React Web Applications* - [rishabh-malhotraa](https://github.com/rishabh-malhotraa)
 * **Sanchit Nanda** - *UI/UX Designer* - [sanchitnanda](https://github.com/sanchitnanda)
->>>>>>> 20f72603dec0cfbd66ec9d70cf684306b4c12ecb
 
 See also the list of [contributors](https://github.com/developer-student-club-thapar/thapar_app/graphs/contributors) who participated in this project.
 
