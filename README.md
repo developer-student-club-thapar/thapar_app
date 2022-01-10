@@ -65,7 +65,7 @@ To do that run the following inside the project repo -
    > All the following steps are to be executed in the hashx directory.
 - Install requirements\
 ```pip install -r requirements.txt```
-- Rename ```.env.debug``` to ```.env```
+- Copy the contents of ```.env.debug``` and paste it into a new file named as ```.env```. Note: this file should be present in the ```hashx/``` directory.
 - set secret key for your django project.
 - You can use [https://djecrety.ir/] to generate your secret key
 
