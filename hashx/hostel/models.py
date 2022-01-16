@@ -145,5 +145,5 @@ class Announcement(models.Model):
     date_updated = models.DateTimeField(default=timezone.now)
     user = models.ForeignKey(User, related_name='announcement',
                                 related_query_name='announcement', on_delete=models.SET_NULL, null=True, blank=True)
-    hostel = models.ForeignKey(Hostel, related_name='announcement',
-                                related_query_name='announcement', on_delete=models.CASCADE)
+    hostel = models.ManyToManyField(Hostel, related_name='announcement',
+                                    related_query_name='announcement', blank=True)
