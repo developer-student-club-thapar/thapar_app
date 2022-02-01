@@ -22,7 +22,7 @@ class Shop(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100)
     about = models.CharField(max_length=1000, null=True)
-    delivery = models.BooleanField(null=True)
+    delivery = models.BooleanField(null=True, default=False)
     in_campus = models.BooleanField(default=True)
     image = models.ImageField(upload_to='shop_profile')
     type = models.ForeignKey(
