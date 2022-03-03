@@ -1,0 +1,17 @@
+[
+    {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "username": "test",
+        "first_name": "test",
+        "last_name": "last",
+        "email": "test@email.com",
+        "is_staff": false,
+        "is_active": true,
+        "is_superuser": false,
+        "last_login": "2020-04-01T14:00:00.000Z",
+        "date_joined": "2020-04-01T14:00:00.000Z"
+        }
+    }
+]
