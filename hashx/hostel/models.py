@@ -70,6 +70,8 @@ class Complaint(models.Model):
     comments = models.TextField(max_length=300, validators=[validate_is_profane])
     user = models.ForeignKey(User, related_name='complaint', related_query_name='complaint',
                              on_delete=models.SET_NULL, null=True, blank=True)
+    hostel = models.ForeignKey(Hostel, related_name='complaint', related_query_name='complaint',
+                                on_delete=models.CASCADE, null=True, blank=True)
     slug = models.SlugField(max_length=100, null=True, blank=True)
 
     class Meta:
@@ -134,3 +136,14 @@ class Room(models.Model):
     def __str__(self):
         return f'{self.hostel.name} : {self.wing}-{self.num}'
 
+
+class Announcement(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=200, validators=[validate_is_profane])
+    description = models.TextField(max_length=1000, validators=[validate_is_profane])
+    date_posted = models.DateTimeField(default=timezone.now)
+    date_updated = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(User, related_name='announcement',
+                                related_query_name='announcement', on_delete=models.SET_NULL, null=True, blank=True)
+    hostel = models.ManyToManyField(Hostel, related_name='announcement',
+                                    related_query_name='announcement', blank=True)
