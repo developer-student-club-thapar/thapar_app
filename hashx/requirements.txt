@@ -68,7 +68,7 @@ psycopg2==2.9.3
 py-vapid==1.7.1
 pycodestyle==2.5.0
 pycparser==2.20
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.5.0
 pylint-django==2.0.15
 pylint-plugin-utils==0.6
