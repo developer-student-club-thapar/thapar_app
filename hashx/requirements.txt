@@ -38,7 +38,7 @@ django-push-notifications==2.0.0
 django-rest-framework==0.1.0
 django-storages==1.9.1
 django-user-sessions==1.7.1
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docutils==0.15.2
 filelock==3.0.12
 graphene==2.1.8
